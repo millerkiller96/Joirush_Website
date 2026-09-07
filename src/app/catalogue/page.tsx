@@ -9,7 +9,7 @@ const siteUrl = "https://joirush.com";
 export const metadata: Metadata = {
   title: "Shop Jumbo Cookie Wall Art | Full Catalogue of Oversized Cookie Sculptures",
   description:
-    "Browse all handmade jumbo cookie wall art — classic chocolate chip, M&M, peanut butter, and more oversized fake cookie sculptures. Starting at $90 with free U.S. shipping. Buy on Etsy.",
+    "Browse all handmade jumbo cookie wall art — classic chocolate chip, M&M, peanut butter, and more oversized fake cookie sculptures. Starting at $90 with free U.S. shipping.",
   keywords: [
     "jumbo cookie wall art",
     "oversized cookie sculptures",
@@ -70,7 +70,7 @@ function CatalogueSchema() {
             price: product.price,
             priceCurrency: "USD",
             availability: "https://schema.org/InStock",
-            url: product.etsyUrl,
+            url: product.stripeUrl,
           },
           brand: {
             "@type": "Brand",
@@ -157,7 +157,7 @@ export default function CataloguePage() {
         <p className="mt-4 max-w-2xl text-lg text-chocolate-mid">
           Every oversized cookie sculpture is hand-sculpted in Florida from wood, clay, and acrylic
           paint — lightweight enough to hang, realistic enough to make people hungry. Tap a piece
-          to see details, then buy on Etsy with free U.S. shipping.
+          to see details and buy directly with free U.S. shipping.
         </p>
         <p className="mt-2 text-sm text-chocolate-soft">
           {products.length} handmade pieces · Starting at $90 · Ships from Daytona Beach, FL

@@ -73,29 +73,42 @@ function ProductSchema({ product }: { product: ReturnType<typeof getProduct> }) 
       "@type": "Brand",
       name: site.name,
     },
-    offers: {
-      "@type": "Offer",
-      url: product.etsyUrl,
-      priceCurrency: "USD",
-      price: product.price,
-      availability: "https://schema.org/InStock",
-      seller: {
-        "@type": "Organization",
-        name: site.name,
-      },
-      shippingDetails: {
-        "@type": "OfferShippingDetails",
-        shippingDestination: {
-          "@type": "DefinedRegion",
-          addressCountry: "US",
+    offers: [
+      {
+        "@type": "Offer",
+        url: product.stripeUrl,
+        priceCurrency: "USD",
+        price: product.price,
+        availability: "https://schema.org/InStock",
+        seller: {
+          "@type": "Organization",
+          name: site.name,
         },
-        shippingRate: {
-          "@type": "MonetaryAmount",
-          value: 0,
-          currency: "USD",
+        shippingDetails: {
+          "@type": "OfferShippingDetails",
+          shippingDestination: {
+            "@type": "DefinedRegion",
+            addressCountry: "US",
+          },
+          shippingRate: {
+            "@type": "MonetaryAmount",
+            value: 0,
+            currency: "USD",
+          },
         },
       },
-    },
+      {
+        "@type": "Offer",
+        url: product.etsyUrl,
+        priceCurrency: "USD",
+        price: product.price,
+        availability: "https://schema.org/InStock",
+        seller: {
+          "@type": "Organization",
+          name: site.name,
+        },
+      },
+    ],
     material: product.materials,
     size: product.size,
     category: "Wall Art",
@@ -224,12 +237,20 @@ export default async function ProductPage({ params }: Props) {
             <p className="mt-4 text-sm text-chocolate-soft">Materials: {product.materials}</p>
             <div className="mt-8 flex flex-wrap gap-3">
               <a
-                href={product.etsyUrl}
+                href={product.stripeUrl}
                 target="_blank"
                 rel="noreferrer"
                 className="rounded-full bg-pink px-6 py-3 text-sm font-medium text-white hover:bg-pink-hot"
               >
-                Buy on Etsy — {formatPrice(product.price)}
+                Buy Now — {formatPrice(product.price)}
+              </a>
+              <a
+                href={product.etsyUrl}
+                target="_blank"
+                rel="noreferrer"
+                className="rounded-full border border-chocolate/15 px-6 py-3 text-sm font-medium text-chocolate hover:bg-cream"
+              >
+                Buy on Etsy
               </a>
               <Link
                 href="/custom"

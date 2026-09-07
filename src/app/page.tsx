@@ -11,7 +11,7 @@ const siteUrl = "https://joirush.com";
 export const metadata: Metadata = {
   title: "Jumbo Cookie Wall Art | Handmade Oversized Cookie Sculptures | JOIRUSH",
   description:
-    "Shop handmade jumbo cookie wall art — realistic oversized fake cookie sculptures for kitchens, cafés, bakeries, and content studios. Free U.S. shipping from Florida. Buy on Etsy.",
+    "Shop handmade jumbo cookie wall art — realistic oversized fake cookie sculptures for kitchens, cafés, bakeries, and content studios. Free U.S. shipping from Florida.",
   alternates: {
     canonical: siteUrl,
   },
@@ -182,7 +182,7 @@ export default function HomePage() {
             <SectionHeading
               eyebrow="Shop jumbo cookie wall art"
               title="Featured cookie sculptures"
-              copy="Handmade oversized cookie wall art from the Etsy shop — realistic, hangable, and ready to ship free in the U.S."
+              copy="Handmade oversized cookie wall art from the current collection — realistic, hangable, and ready to ship free in the U.S."
             />
             <Link href="/catalogue" className="text-sm font-medium text-pink hover:underline">
               See the full catalogue

@@ -32,9 +32,6 @@ export function SiteFooter() {
             <Link href="/catalogue/" className="hover:text-pink-blush">
               Full Catalogue
             </Link>
-            <Link href="/for/bakeries-cafes/" className="hover:text-pink-blush">
-              Bakeries & Cafés
-            </Link>
             <Link href="/custom/" className="hover:text-pink-blush">
               Custom Orders
             </Link>

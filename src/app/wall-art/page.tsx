@@ -8,9 +8,9 @@ import { site } from "@/data/site";
 import { getAbsoluteUrl, getImageUrl, siteUrl } from "@/lib/seo";
 
 export const metadata: Metadata = {
-  title: "Jumbo Cookie Wall Art | Oversized Faux Food Sculptures & Bakery Decor",
+  title: "Jumbo Cookie Wall Art | Oversized Faux Food Sculptures & Kitchen Decor",
   description:
-    "Handmade jumbo cookie wall art and oversized faux food sculptures for kitchens, bakeries, and cafés. Lightweight fake cookie sculptures in chocolate chip, M&M, and custom flavors. $90-$225, ships free.",
+    "Handmade jumbo cookie wall art and oversized faux food sculptures for kitchens and homes. Lightweight fake cookie sculptures in chocolate chip, M&M, and custom flavors. $90-$225, ships free.",
   keywords: [
     "jumbo cookie wall art",
     "oversized cookie wall decor",
@@ -19,14 +19,14 @@ export const metadata: Metadata = {
     "faux food wall art",
     "chocolate chip cookie wall art",
     "M&M cookie wall art",
-    "bakery wall decor",
     "kitschy kitchen wall art",
     "faux cookie sculpture",
+    "kitchen wall decor",
   ],
   openGraph: {
     title: "Jumbo Cookie Wall Art | Handmade Faux Food Sculptures",
     description:
-      "Oversized cookie sculptures handmade in Orlando, FL. Lightweight, hangable bakery decor for kitchens, cafés, and content studios. $90-$225.",
+      "Oversized cookie sculptures handmade in Orlando, FL. Lightweight, hangable wall decor for kitchens, homes, and content studios. $90-$225.",
     type: "website",
     images: [
       {
@@ -48,7 +48,7 @@ function CollectionJsonLd() {
     "@type": "CollectionPage",
     name: "Jumbo Cookie Wall Art Collection",
     description:
-      "Handmade oversized cookie wall sculptures for kitchens, bakeries, cafés, and content studios.",
+      "Handmade oversized cookie wall sculptures for kitchens, homes, and content studios.",
     url: getAbsoluteUrl("/wall-art/"),
     mainEntity: {
       "@type": "ItemList",
@@ -123,8 +123,8 @@ export default function WallArtPage() {
             </p>
             <p className="mt-4 text-chocolate-mid">
               Unlike heavy fiberglass commercial props, each piece is hand-sculpted in Orlando, Florida using 
-              spray foam and acrylic paint. Perfect for kitchens, <Link href="/for/bakeries-cafes/" className="text-pink hover:underline">bakeries and cafés</Link>, 
-              dessert rooms, and content studios.
+              spray foam and acrylic paint. Perfect for kitchens, dining rooms, 
+              dessert-themed spaces, and content studios.
             </p>
             <div className="mt-8 flex flex-wrap gap-3">
               <Link
@@ -177,7 +177,7 @@ export default function WallArtPage() {
                 },
                 {
                   title: "Made for Your Space",
-                  copy: "Perfect for kitschy kitchens, bakery wall decor, cafés, playrooms, dessert bars, and content studios.",
+                  copy: "Perfect for kitschy kitchens, playrooms, dessert bars, home offices, and content studios.",
                 },
               ].map((item) => (
                 <div key={item.title} className="rounded-[1.8rem] bg-cream p-6">
@@ -222,7 +222,7 @@ export default function WallArtPage() {
                   <strong>faux food wall art</strong> that looks — and feels — like real baked goods.
                 </p>
                 <p>
-                  Whether you're looking for <strong>bakery wall decor</strong>, a statement piece for your 
+                  Whether you're looking for a statement piece for your 
                   <Link href="/blog/kitchen-dopamine-decor-dessert-gallery-wall/" className="text-pink hover:underline"> dopamine decor kitchen</Link>, 
                   or a <Link href="/blog/foodie-gift-guide-jumbo-cookie-sculptures/" className="text-pink hover:underline">unique foodie gift</Link>, 
                   these sculptures deliver.
@@ -249,7 +249,7 @@ export default function WallArtPage() {
           <SectionHeading
             eyebrow="Custom options"
             title="Can't Find Your Perfect Cookie?"
-            copy="Commission a custom piece in your ideal colors, size, or flavor. Perfect for bakeries matching brand colors or collectors seeking something unique."
+            copy="Commission a custom piece in your ideal colors, size, or flavor. Perfect for matching your kitchen aesthetic or creating something uniquely yours."
           />
           <div className="mt-10 rounded-[2rem] bg-pink/10 p-8 md:p-12">
             <div className="grid items-center gap-8 md:grid-cols-2">

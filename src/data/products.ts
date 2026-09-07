@@ -68,7 +68,7 @@ export const products: Product[] = [
       "Spray foam + acrylic paint",
       "Built-in wall hanger",
       "Highly realistic texture and shading",
-      "Perfect for kitchens, cafés, bakeries, dessert rooms, and content studios",
+      "Perfect for kitchens, playrooms, dessert rooms, and content studios",
     ],
     materials: "Spray foam, acrylic paint",
     faqs: [
@@ -124,7 +124,7 @@ export const products: Product[] = [
       "Handmade and one of a kind",
       "Lightweight and durable",
       "Designed to be displayed together",
-      "Perfect for large walls, kitchens, cafés, and studios",
+      "Perfect for large walls, kitchens, living spaces, and studios",
     ],
     materials: "Spray foam, acrylic paint",
     faqs: defaultFAQs,

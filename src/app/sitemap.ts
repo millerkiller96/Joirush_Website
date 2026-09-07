@@ -45,12 +45,6 @@ export default function sitemap(): MetadataRoute.Sitemap {
       priority: 0.5,
     },
     {
-      url: getAbsoluteUrl("/for/bakeries-cafes/"),
-      lastModified: now,
-      changeFrequency: "monthly",
-      priority: 0.7,
-    },
-    {
       url: getAbsoluteUrl("/blog/"),
       lastModified: now,
       changeFrequency: "weekly",

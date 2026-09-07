@@ -10,7 +10,6 @@ const links = [
   { href: "/", label: "Home" },
   { href: "/wall-art/", label: "Cookie Wall Art" },
   { href: "/catalogue/", label: "Catalogue" },
-  { href: "/for/bakeries-cafes/", label: "Bakeries & Cafés" },
   { href: "/blog/", label: "Blog" },
   { href: "/custom/", label: "Custom" },
   { href: "/about/", label: "About" },

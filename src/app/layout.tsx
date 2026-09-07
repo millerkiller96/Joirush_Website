@@ -24,7 +24,7 @@ export const metadata: Metadata = {
     template: `%s | ${site.name}`,
   },
   description:
-    "Shop handmade jumbo cookie wall art and oversized fake cookie sculptures by JOIRUSH. Realistic dessert decor for kitchens, cafés, bakeries, and content studios. Free U.S. shipping from Florida.",
+    "Shop handmade jumbo cookie wall art and oversized fake cookie sculptures by JOIRUSH. Realistic dessert decor for kitchens, homes, and creative spaces. Free U.S. shipping from Florida.",
   keywords: [
     "jumbo cookie wall art",
     "oversized cookie wall decor",
@@ -32,7 +32,7 @@ export const metadata: Metadata = {
     "giant cookie art",
     "dessert wall decor",
     "handmade cookie sculptures",
-    "bakery wall art",
+    "dessert wall art",
     "kitchen wall decor",
     "faux cookie art",
     "realistic food art",
@@ -44,7 +44,7 @@ export const metadata: Metadata = {
   openGraph: {
     title: `Jumbo Cookie Wall Art | Handmade Oversized Cookie Sculptures | ${site.name}`,
     description:
-      "Shop handmade jumbo cookie wall art — realistic oversized cookie sculptures for kitchens, cafés, and content studios. Free U.S. shipping.",
+      "Shop handmade jumbo cookie wall art — realistic oversized cookie sculptures for kitchens, homes, and creative spaces. Free U.S. shipping.",
     type: "website",
     url: siteUrl,
     siteName: site.name,

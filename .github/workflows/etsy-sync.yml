@@ -1,0 +1,64 @@
+name: Etsy Sync & Deploy
+
+on:
+  schedule:
+    # Run daily at 6 AM UTC
+    - cron: "0 6 * * *"
+  workflow_dispatch:
+    inputs:
+      skip_deploy:
+        description: "Skip deploy (sync only)"
+        required: false
+        default: "false"
+        type: boolean
+
+permissions:
+  contents: write
+
+jobs:
+  sync-and-deploy:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: "20"
+          cache: "npm"
+
+      - name: Install dependencies
+        run: npm ci
+
+      - name: Sync Etsy data
+        env:
+          ETSY_API_KEY: ${{ secrets.ETSY_API_KEY }}
+          ETSY_ACCESS_TOKEN: ${{ secrets.ETSY_ACCESS_TOKEN }}
+          ETSY_SHOP_ID: ${{ secrets.ETSY_SHOP_ID }}
+        run: npm run sync:etsy
+
+      - name: Build site for GitHub Pages
+        if: ${{ github.event.inputs.skip_deploy != 'true' }}
+        run: npm run build:pages
+
+      - name: Check for changes
+        id: git-check
+        run: |
+          git diff --quiet src/data/etsy-sync.json docs/ || echo "changed=true" >> $GITHUB_OUTPUT
+
+      - name: Commit and push changes
+        if: steps.git-check.outputs.changed == 'true'
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "github-actions[bot]@users.noreply.github.com"
+          git add src/data/etsy-sync.json docs/
+          git commit -m "chore: sync Etsy data and rebuild site [skip ci]
+
+          Automated sync from Etsy API.
+          - Updated listing prices and stats
+          - Rebuilt static site with latest data"
+          git push

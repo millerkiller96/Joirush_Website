@@ -8,11 +8,12 @@ import { site } from "@/data/site";
 
 const links = [
   { href: "/", label: "Home" },
-  { href: "/catalogue", label: "Catalogue" },
-  { href: "/wall-art", label: "Wall Art" },
-  { href: "/jewelry", label: "Jewelry" },
-  { href: "/custom", label: "Custom" },
-  { href: "/about", label: "About" },
+  { href: "/wall-art/", label: "Cookie Wall Art" },
+  { href: "/catalogue/", label: "Catalogue" },
+  { href: "/for/bakeries-cafes/", label: "Bakeries & Cafés" },
+  { href: "/blog/", label: "Blog" },
+  { href: "/custom/", label: "Custom" },
+  { href: "/about/", label: "About" },
 ];
 
 export function SiteHeader() {

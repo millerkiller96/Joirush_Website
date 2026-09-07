@@ -41,26 +41,29 @@ export default function CustomPage() {
     <div className="mx-auto grid max-w-7xl items-start gap-12 px-5 py-16 md:grid-cols-2 md:px-8 md:py-20">
       <div>
         <p className="text-xs font-semibold uppercase tracking-[0.22em] text-pink">
-          Custom cookie wall art
+          Make it yours
         </p>
         <h1 className="mt-3 font-display text-5xl text-chocolate md:text-6xl">
-          Commission a custom piece
+          Have a Flavor Fantasy?
         </h1>
         <p className="mt-5 text-lg text-chocolate-mid">
-          Got a flavor or aesthetic in mind? Erynn will cook up something unforgettable — a jumbo
-          cookie wall art piece in your favorite colors, a custom dessert sculpture, or
-          something nobody&apos;s seen yet.
+          Hot pink candy cookie. Your kitchen&apos;s exact shade of sage. A peanut butter monster 
+          with rainbow sprinkles. <strong>Tell me your wildest craving</strong> — I&apos;ll 
+          sculpt it into wall art that stops people mid-sentence.
         </p>
         <ul className="mt-8 space-y-3 text-chocolate-mid">
-          <li>Custom jumbo cookie wall art in any color or flavor</li>
-          <li>Oversized fake cookie sculptures for kitchens, homes, and studios</li>
-          <li>14-day handmade production & shipping — true artistry takes time</li>
-          <li>Typically replies within a few hours</li>
-          <li>Handmade in Florida, free U.S. shipping</li>
-          <li>Because each piece is made to order, returns are not accepted</li>
+          <li>✓ Any color palette — match your vibe exactly</li>
+          <li>✓ Any flavor combo — the weirder the better</li>
+          <li>✓ Ships in 14 days — free U.S. shipping</li>
+          <li>✓ Usually reply within a few hours</li>
+          <li>✓ Handmade in Orlando with spray foam + acrylic paint</li>
         </ul>
-        <p className="mt-8 text-sm text-chocolate-soft">
-          Prefer to skip the form? Message the shop on{" "}
+        <p className="mt-6 text-sm text-chocolate-soft">
+          Because each piece is sculpted just for you, returns are not accepted — but that&apos;s 
+          also what makes it special.
+        </p>
+        <p className="mt-4 text-sm text-chocolate-soft">
+          Prefer to skip the form? DM on{" "}
           <a href={site.etsy} className="text-pink underline" target="_blank" rel="noreferrer">
             Etsy
           </a>{" "}

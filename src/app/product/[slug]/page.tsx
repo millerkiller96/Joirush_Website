@@ -257,7 +257,7 @@ export default async function ProductPage({ params }: Props) {
 
           <div>
             <p className="text-xs font-semibold uppercase tracking-[0.22em] text-pink">
-              Handmade wall art
+              Looks good enough to eat
             </p>
 
             <h1 className="mt-3 font-display text-4xl text-chocolate md:text-5xl">
@@ -373,7 +373,7 @@ export default async function ProductPage({ params }: Props) {
                 href="/custom/"
                 className="flex w-full items-center justify-center gap-2 rounded-full border border-chocolate/10 px-6 py-3 text-sm font-medium text-chocolate-soft transition hover:border-chocolate/20 hover:text-chocolate-mid"
               >
-                Want it custom?
+                Dream up a custom version
               </Link>
             </div>
 
@@ -400,7 +400,7 @@ export default async function ProductPage({ params }: Props) {
         <FAQAccordion faqs={product.faqs} />
 
         <section className="mt-20">
-          <h2 className="font-display text-3xl text-chocolate">More from the cookie wall</h2>
+          <h2 className="font-display text-3xl text-chocolate">Can&apos;t stop at just one?</h2>
           <div className="mt-8 grid gap-8 sm:grid-cols-2 lg:grid-cols-3">
             {related.map((item) => (
               <ProductCard key={item.slug} product={item} />

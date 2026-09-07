@@ -35,12 +35,13 @@ export default function AboutPage() {
       <section className="mx-auto max-w-7xl px-5 py-16 md:px-8 md:py-20">
         <p className="text-xs font-semibold uppercase tracking-[0.22em] text-pink">{site.studioLine}</p>
         <h1 className="mt-3 max-w-3xl font-display text-5xl text-chocolate md:text-6xl">
-          A mixed media artist obsessed with sweet, nostalgic, over-the-top fun.
+          Sweet, nostalgic, over-the-top. That&apos;s the whole vibe.
         </h1>
         <p className="mt-6 max-w-2xl text-lg text-chocolate-mid">
-          Welcome to Joi Rush by EBABYxo. {site.artist} is the owner and creative designer behind
-          every cookie, choker, and custom piece. Handmade everything with love — from an Orlando
-          studio, shipping out of Florida. Each piece ships in 14 days because true handcraft artistry takes time.
+          {site.artist} is the hands behind every cookie sculpture, every Y2K choker, every custom
+          piece that makes people do a double-take. Working out of her Orlando studio, she creates
+          art that sparks joy, starts conversations, and looks good enough to eat. Each piece ships
+          in 14 days — because real artistry takes time.
         </p>
       </section>
 
@@ -73,7 +74,7 @@ export default function AboutPage() {
       <section className="bg-white">
         <div className="mx-auto grid max-w-7xl gap-12 px-5 py-16 md:grid-cols-2 md:px-8">
           <div>
-            <h2 className="font-display text-4xl text-chocolate">The shop story</h2>
+            <h2 className="font-display text-4xl text-chocolate">How it all started</h2>
             <p className="mt-5 text-chocolate-mid">
               JoiRush started as a place for art that feels like a sugar high — jumbo realistic
               cookies and cakes, Y2K accessories, and custom work that doesn’t exist anywhere else.
@@ -137,7 +138,7 @@ export default function AboutPage() {
           href="/catalogue"
           className="mt-10 inline-flex rounded-full bg-chocolate px-6 py-3 text-sm font-medium text-cream"
         >
-          Shop the catalogue
+          Find your perfect cookie
         </Link>
       </section>
     </div>

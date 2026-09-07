@@ -115,16 +115,21 @@ export default function HomePage() {
           <div className="mx-auto grid max-w-7xl items-center gap-10 px-5 py-16 md:grid-cols-2 md:px-8 md:py-24">
             <div>
               <p className="text-xs font-semibold uppercase tracking-[0.24em] text-pink">
-                Handmade Faux Food Wall Art
+                All the craving. Zero calories.
               </p>
               <h1 className="mt-4 font-display text-5xl leading-[0.95] text-chocolate md:text-7xl">
-                Jumbo Cookie Wall Art & Dessert Sculptures
+                Cookies That Stop People Mid-Sentence
               </h1>
               <p className="mt-6 max-w-lg text-lg leading-relaxed text-chocolate-mid">
-                Hyper-realistic <strong>oversized cookie wall decor</strong> and faux food sculptures, 
-                handcrafted in Orlando, Florida. Lightweight, hangable, and built to spark joy in kitchens, 
-                homes, and beyond. Think <strong>giant cookie wall art</strong>, zero calories.
+                Golden-brown crumble. Glossy melty chips. Thick, craggy edges begging for a bite. 
+                These <strong>oversized cookie sculptures</strong> look so real, guests will reach out 
+                before their brain catches up. Wall-ready, lightweight, and permanently satisfying.
               </p>
+              <ul className="mt-5 flex flex-wrap gap-x-4 gap-y-1 text-sm text-chocolate-mid">
+                <li>✓ Handmade to order</li>
+                <li>✓ Ships in {site.shippingTime}</li>
+                <li>✓ Free U.S. shipping</li>
+              </ul>
               <div className="mt-8 flex flex-wrap gap-3">
                 <Link
                   href="/wall-art/"
@@ -145,7 +150,7 @@ export default function HomePage() {
                   <dd className="mt-1 font-display text-3xl">{site.stats.rating}</dd>
                 </div>
                 <div>
-                  <dt className="text-xs uppercase tracking-widest text-chocolate-soft">Sales</dt>
+                  <dt className="text-xs uppercase tracking-widest text-chocolate-soft">Happy Homes</dt>
                   <dd className="mt-1 font-display text-3xl">{site.stats.sales}+</dd>
                 </div>
                 <div>
@@ -175,19 +180,19 @@ export default function HomePage() {
               {
                 href: "/wall-art/",
                 title: "Jumbo Cookie Wall Art",
-                copy: "Oversized faux cookie sculptures for kitchens, homes, and content studios.",
+                copy: "The conversation starter your kitchen didn't know it needed.",
                 image: "/images/products/rainbow.jpg",
               },
               {
                 href: "/catalogue/",
                 title: "Full Catalogue",
-                copy: "Browse every cookie, set, and seasonal piece in the collection.",
+                copy: "Every flavor, every size. Find the one that makes your heart skip.",
                 image: "/images/products/mm-set.jpg",
               },
               {
                 href: "/custom/",
-                title: "Custom Orders",
-                copy: "Got a flavor or aesthetic in mind? Commission a one-of-a-kind piece.",
+                title: "Dream It. I'll Sculpt It.",
+                copy: "Your colors. Your vibe. A one-of-one piece made just for you.",
                 image: "/images/products/hot-pink-mm.jpg",
               },
             ].map((card) => (
@@ -216,12 +221,12 @@ export default function HomePage() {
         <section className="mx-auto max-w-7xl px-5 py-20 md:px-8">
           <div className="flex flex-col justify-between gap-6 md:flex-row md:items-end">
             <SectionHeading
-              eyebrow="Featured faux food art"
-              title="Bestselling Cookie Sculptures"
-              copy="Statement pieces from the collection — handmade oversized cookie wall decor that's lightweight, hangable, and dangerously realistic."
+              eyebrow="Collector favorites"
+              title="The Ones People Can't Stop Buying"
+              copy="Golden chips. Candy pops. That just-baked texture you can practically smell. These are the pieces that sell out first."
             />
             <Link href="/wall-art/" className="text-sm font-medium text-pink hover:underline">
-              See all cookie wall art
+              See the full collection →
             </Link>
           </div>
           <div className="mt-10 grid gap-8 sm:grid-cols-2 lg:grid-cols-3">
@@ -234,31 +239,31 @@ export default function HomePage() {
         <section className="bg-cream-deep">
           <div className="mx-auto max-w-7xl px-5 py-16 md:px-8">
             <SectionHeading
-              eyebrow="Why handmade"
-              title="Lightweight Faux Cookie Sculptures"
-              copy="Unlike heavy commercial food props, these artist-made pieces are built for real walls — lightweight, affordable, and ready to hang."
+              eyebrow="Not another mass-produced prop"
+              title="Handmade. Lightweight. Obsession-Worthy."
+              copy="Forget those $350+ fiberglass blobs. These are real artist sculptures — light enough to hang anywhere, detailed enough to fool everyone."
             />
             <div className="mt-10 grid gap-5 md:grid-cols-4">
               {[
                 {
                   stat: "2-4 lbs",
-                  label: "Lightweight",
-                  copy: "Easy to hang with standard picture hooks",
+                  label: "Featherweight",
+                  copy: "Hangs on a single nail. No contractor needed.",
                 },
                 {
                   stat: "$90–$225",
-                  label: "Affordable",
-                  copy: "Vs. $350+ for commercial fiberglass props",
+                  label: "Real Art Pricing",
+                  copy: "Not $350+ for factory fiberglass.",
                 },
                 {
                   stat: "14 Days",
-                  label: "Handmade Production",
-                  copy: "Each piece crafted to order with care",
+                  label: "Made For You",
+                  copy: "Sculpted by hand, shipped with love.",
                 },
                 {
                   stat: "Free",
-                  label: "US Shipping",
-                  copy: "Ships free within the US in 14 days",
+                  label: "U.S. Shipping",
+                  copy: "No hidden fees. Just dopamine.",
                 },
               ].map((item) => (
                 <div key={item.label} className="rounded-[1.5rem] bg-white p-5 text-center">
@@ -282,13 +287,13 @@ export default function HomePage() {
             />
             <div>
               <SectionHeading
-                eyebrow="The artist"
-                title="Handmade Everything With Love"
-                copy="Erynn is a mixed media artist in Orlando, Florida obsessed with all things sweet, nostalgic, and over-the-top fun. From jumbo cookie wall art to Y2K-inspired accessories, every piece is made to turn heads."
+                eyebrow="Meet the maker"
+                title="Every Cookie Has Her Fingerprints On It"
+                copy="Erynn sculpts each piece by hand in her Orlando studio — obsessed with nostalgic sweetness, maximalist color, and decor that makes you feel something."
               />
               <p className="mt-5 text-chocolate-mid">
-                Custom <strong>faux cookie sculptures</strong>, wall art in your brand colors, or a one-of-one 
-                design — if you can dream the flavor, she can sculpt it.
+                Dream up a custom flavor. Match your kitchen palette. Go completely wild. 
+                If you can imagine it, she can sculpt it — and it'll look good enough to eat.
               </p>
               <Link
                 href="/about/"
@@ -302,8 +307,8 @@ export default function HomePage() {
 
         <section className="mx-auto max-w-7xl px-5 py-20 md:px-8">
           <SectionHeading
-            eyebrow={`${site.stats.rating} from ${site.stats.reviews} reviews`}
-            title="Collectors Keep Coming Back"
+            eyebrow={`${site.stats.rating} stars from ${site.stats.reviews} happy collectors`}
+            title="People Really, Really Love These"
           />
           <div className="mt-10 grid gap-5 md:grid-cols-3">
             {reviews.slice(0, 3).map((review) => (
@@ -324,53 +329,54 @@ export default function HomePage() {
         <section className="mx-auto max-w-7xl px-5 py-12 md:px-8">
           <div className="rounded-[2rem] bg-cream p-8 md:p-12">
             <h2 className="font-display text-3xl text-chocolate">
-              Ideas & Inspiration
+              Steal These Ideas
             </h2>
             <p className="mt-3 max-w-2xl text-chocolate-mid">
-              From how to hang your jumbo cookies to creating the perfect dopamine decor kitchen, 
-              explore tips and stories from the studio.
+              How to hang your cookie. How to build a dessert gallery wall that sparks joy. 
+              Tips from the studio to make your space unforgettable.
             </p>
             <div className="mt-8 grid gap-4 md:grid-cols-2">
               <Link
                 href="/blog/how-to-hang-jumbo-cookie-wall-art/"
                 className="group rounded-xl bg-white p-5 shadow-card hover:shadow-lift"
               >
-                <p className="text-xs font-medium uppercase tracking-wider text-pink">How-To Guide</p>
+                <p className="text-xs font-medium uppercase tracking-wider text-pink">5-Minute Guide</p>
                 <h3 className="mt-2 font-display text-xl text-chocolate group-hover:text-pink">
-                  How to Hang Jumbo Cookie Wall Art
+                  How to Hang Your Jumbo Cookie
                 </h3>
               </Link>
               <Link
                 href="/blog/kitchen-dopamine-decor-dessert-gallery-wall/"
                 className="group rounded-xl bg-white p-5 shadow-card hover:shadow-lift"
               >
-                <p className="text-xs font-medium uppercase tracking-wider text-pink">Inspiration</p>
+                <p className="text-xs font-medium uppercase tracking-wider text-pink">Gallery Inspo</p>
                 <h3 className="mt-2 font-display text-xl text-chocolate group-hover:text-pink">
-                  Dopamine Decor: Creating a Dessert Gallery Wall
+                  Build a Dessert Gallery Wall That Slaps
                 </h3>
               </Link>
             </div>
             <Link href="/blog/" className="mt-6 inline-flex text-pink hover:underline">
-              Read more on the blog →
+              More ideas on the blog →
             </Link>
           </div>
         </section>
 
         <section className="mx-auto max-w-7xl px-5 pb-20 md:px-8">
           <div className="overflow-hidden rounded-[2.4rem] bg-emerald-600 px-8 py-14 text-white md:px-14">
-            <p className="text-xs uppercase tracking-[0.22em] text-white/70">Custom cookie wall art</p>
+            <p className="text-xs uppercase tracking-[0.22em] text-white/70">Make it yours</p>
             <h2 className="mt-3 max-w-2xl font-display text-4xl md:text-6xl">
-              Got a flavor or aesthetic in mind?
+              Have a flavor fantasy? Let's make it real.
             </h2>
             <p className="mt-4 max-w-xl text-white/85">
-              Commission a custom piece in your brand colors, favorite flavors, or unique design. 
-              Every sculpture is handmade in Orlando, FL — 14-day handmade production & free U.S. shipping.
+              Hot pink. Pastel rainbow. Your kitchen's exact shade of teal. Tell me the vibe, 
+              and I'll sculpt a one-of-one piece that's yours forever. Handmade in Orlando, 
+              ships in 14 days, free U.S. shipping.
             </p>
             <Link
               href="/custom/"
               className="mt-8 inline-flex rounded-full bg-white px-6 py-3 text-sm font-medium text-chocolate"
             >
-              Start a Custom Request
+              Start Your Custom Cookie
             </Link>
           </div>
         </section>

@@ -149,19 +149,21 @@ export default function CataloguePage() {
           </ol>
         </nav>
         <p className="text-xs font-semibold uppercase tracking-[0.22em] text-pink">
-          Shop jumbo cookie wall art
+          Every flavor. Every craving.
         </p>
         <h1 className="mt-3 font-display text-5xl text-chocolate md:text-6xl">
-          Cookie wall art catalogue
+          Pick Your Poison
         </h1>
         <p className="mt-4 max-w-2xl text-lg text-chocolate-mid">
-          Every oversized cookie sculpture is hand-sculpted in Florida from spray foam and acrylic
-          paint — lightweight enough to hang, realistic enough to make people hungry. Tap a piece
-          to see details and buy directly with free U.S. shipping.
+          Golden chocolate chip. Candy-loaded M&Ms. Peanut butter comfort. Ice cream sandwiches 
+          that stop conversations. Scroll until one makes your heart skip — then tap to bring it home.
         </p>
-        <p className="mt-2 text-sm text-chocolate-soft">
-          {products.length} handmade pieces · Starting at $90 · Ships in 14 days · Free U.S. shipping from Daytona Beach, FL
-        </p>
+        <ul className="mt-4 flex flex-wrap gap-x-4 gap-y-1 text-sm text-chocolate-soft">
+          <li>✓ {products.length} handmade pieces</li>
+          <li>✓ Starting at $90</li>
+          <li>✓ Ships in 14 days</li>
+          <li>✓ Free U.S. shipping</li>
+        </ul>
         <div className="mt-10">
           <CatalogueGrid />
         </div>

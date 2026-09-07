@@ -19,7 +19,7 @@ export function ChocolateChipStorySchema() {
         name: "What are JOIRUSH cookies made of?",
         acceptedAnswer: {
           "@type": "Answer",
-          text: "JOIRUSH cookie sculptures are made from wood, clay, and acrylic paint. The wood provides a sturdy, lightweight base, clay creates the realistic texture, and acrylic paint adds the lifelike coloring and glossy chip details.",
+          text: "JOIRUSH cookie sculptures are made from spray foam and acrylic paint. The spray foam provides a lightweight, sculpted base with realistic texture, and acrylic paint adds the lifelike coloring and glossy chip details.",
         },
       },
       {
@@ -95,10 +95,8 @@ export function ChocolateChipStoryContent() {
       </p>
 
       <ul>
-        <li><strong>The base:</strong> Wood provides a sturdy, lightweight foundation that won't 
-        warp or sag over time</li>
-        <li><strong>The texture:</strong> Clay sculpted by hand to mimic the organic, uneven 
-        surface of real baked dough</li>
+        <li><strong>The base and texture:</strong> Spray foam is sculpted by hand to create a lightweight 
+        foundation with realistic organic texture that mimics the uneven surface of real baked dough</li>
         <li><strong>The color:</strong> Multiple layers of acrylic paint, building up the 
         golden-brown gradients that make cookies look freshly baked</li>
         <li><strong>The chips:</strong> Each one placed and painted individually, with varying 
@@ -118,19 +116,13 @@ export function ChocolateChipStoryContent() {
         for both aesthetics and durability:
       </p>
 
-      <h3>Wood</h3>
+      <h3>Spray Foam</h3>
       <p>
-        The foundation. Wood keeps the piece lightweight (most jumbo cookies weigh just 2-3 
-        pounds) while providing stability. It won't crack, warp, or degrade over time like 
-        some alternative materials.
-      </p>
-
-      <h3>Clay</h3>
-      <p>
-        The texture layer. Hand-sculpted clay creates the distinctive surface — the bubbles, 
-        the ridges, the craggy edges that make each cookie unique. This is where the "handmade" 
-        part really shows. No two cookies are identical because no two sculpting sessions 
-        are identical.
+        The foundation and texture layer. Hand-sculpted spray foam keeps the piece lightweight 
+        (most jumbo cookies weigh just 2-3 pounds) while providing stability. The foam is 
+        carved and shaped to create the distinctive surface — the bubbles, the ridges, the 
+        craggy edges that make each cookie unique. This is where the "handmade" part really 
+        shows. No two cookies are identical because no two sculpting sessions are identical.
       </p>
 
       <h3>Acrylic Paint</h3>
@@ -205,8 +197,7 @@ export function ChocolateChipStoryContent() {
       </p>
 
       <ol>
-        <li><strong>Cut and shape the wood base</strong> — sized for the specific cookie design</li>
-        <li><strong>Sculpt the clay texture</strong> — this is the most time-intensive step</li>
+        <li><strong>Shape and sculpt the spray foam base</strong> — sized and textured for the specific cookie design, this is the most time-intensive step</li>
         <li><strong>Base coat painting</strong> — establishing the primary color</li>
         <li><strong>Detail painting</strong> — building up the gradients and variations</li>
         <li><strong>Chip or candy placement</strong> — each one positioned and painted individually</li>
@@ -270,16 +261,16 @@ export function ChocolateChipStoryContent() {
 
       <h3>What are JOIRUSH cookies made of?</h3>
       <p>
-        JOIRUSH <strong>cookie sculptures</strong> are made from wood, clay, and acrylic paint. 
-        The wood provides a sturdy, lightweight base. Clay creates the realistic sculpted 
-        texture. Acrylic paint adds the lifelike coloring, gradients, and glossy chip details 
+        JOIRUSH <strong>cookie sculptures</strong> are made from spray foam and acrylic paint. 
+        The spray foam provides a lightweight, sculpted base with realistic texture. 
+        Acrylic paint adds the lifelike coloring, gradients, and glossy chip details 
         that make each piece look good enough to eat.
       </p>
 
       <h3>How long does it take to make a jumbo cookie sculpture?</h3>
       <p>
         Each <strong>handmade cookie sculpture</strong> takes several days to complete. The 
-        process includes building the wood base, sculpting the clay texture, applying multiple 
+        process includes shaping and sculpting the spray foam base, applying multiple 
         layers of paint, adding individual chips, and finishing with protective sealant. The 
         process can't be rushed because each layer needs to dry properly before the next.
       </p>

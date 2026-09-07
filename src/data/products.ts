@@ -27,7 +27,7 @@ export type Product = {
 export const defaultFAQs: ProductFAQ[] = [
   {
     question: "Is this cookie edible?",
-    answer: "No, this is a decorative wall sculpture made from wood, clay, and acrylic paint. It's designed to look realistic but is not food.",
+    answer: "No, this is a decorative wall sculpture made from spray foam and acrylic paint. It's designed to look realistic but is not food.",
   },
   {
     question: "How do I hang this on my wall?",
@@ -65,12 +65,12 @@ export const products: Product[] = [
       "This jumbo chocolate chip cookie looks so real you'll want to take a bite. Hand-sculpted and painted to mimic the perfect golden-brown finish and melty chips, it's the piece that started the sugar rush. Built to hang, built to turn heads.",
     details: [
       "16 × 16 inches",
-      "Wood + clay + acrylic paint",
+      "Spray foam + acrylic paint",
       "Built-in wall hanger",
       "Highly realistic texture and shading",
       "Perfect for kitchens, cafés, bakeries, dessert rooms, and content studios",
     ],
-    materials: "Wood, clay, acrylic paint",
+    materials: "Spray foam, acrylic paint",
     faqs: [
       ...defaultFAQs,
       {
@@ -97,11 +97,11 @@ export const products: Product[] = [
     details: [
       "Two 14-inch handmade cookies",
       "Designed to be displayed together",
-      "Wood + clay + acrylic paint",
+      "Spray foam + acrylic paint",
       "Lightweight with built-in hangers",
       "One of a kind",
     ],
-    materials: "Wood, clay, acrylic paint",
+    materials: "Spray foam, acrylic paint",
     faqs: defaultFAQs,
   },
   {
@@ -126,7 +126,7 @@ export const products: Product[] = [
       "Designed to be displayed together",
       "Perfect for large walls, kitchens, cafés, and studios",
     ],
-    materials: "Wood, clay, acrylic paint",
+    materials: "Spray foam, acrylic paint",
     faqs: defaultFAQs,
   },
   {
@@ -145,11 +145,11 @@ export const products: Product[] = [
       "A jumbo white chocolate chip cookie sculpted with the same bakery-case realism as the classic — just a little more vanilla-dream. Hand-painted chips, craggy edges, and that just-baked glow, made for dessert-forward rooms.",
     details: [
       "Approximately 16 inches",
-      "Wood + clay + acrylic paint",
+      "Spray foam + acrylic paint",
       "Built-in wall hanger",
       "Pop-art dessert decor",
     ],
-    materials: "Wood, clay, acrylic paint",
+    materials: "Spray foam, acrylic paint",
     faqs: defaultFAQs,
   },
   {
@@ -170,10 +170,10 @@ export const products: Product[] = [
     details: [
       "14-inch handmade sculpture",
       "Rainbow candy chips",
-      "Wood + clay + acrylic paint",
+      "Spray foam + acrylic paint",
       "Built-in wall hanger",
     ],
-    materials: "Wood, clay, acrylic paint",
+    materials: "Spray foam, acrylic paint",
     faqs: defaultFAQs,
   },
   {
@@ -192,11 +192,11 @@ export const products: Product[] = [
       "All the golden-brown crumble and glossy chips of the jumbo classic, in a slightly more intimate size. Still a statement. Still handmade. Still the kind of piece people try to steal a bite from.",
     details: [
       "Smaller jumbo format",
-      "Wood + clay + acrylic paint",
+      "Spray foam + acrylic paint",
       "Built-in wall hanger",
       "Dessert-themed wall decor",
     ],
-    materials: "Wood, clay, acrylic paint",
+    materials: "Spray foam, acrylic paint",
     faqs: defaultFAQs,
   },
   {
@@ -216,10 +216,10 @@ export const products: Product[] = [
     details: [
       "Jumbo format",
       "Pastel candy detailing",
-      "Wood + clay + acrylic paint",
+      "Spray foam + acrylic paint",
       "Built-in wall hanger",
     ],
-    materials: "Wood, clay, acrylic paint",
+    materials: "Spray foam, acrylic paint",
     faqs: defaultFAQs,
   },
   {
@@ -239,10 +239,10 @@ export const products: Product[] = [
     details: [
       "Jumbo holiday sculpture",
       "Faux candy dessert decor",
-      "Wood + clay + acrylic paint",
+      "Spray foam + acrylic paint",
       "Built-in wall hanger",
     ],
-    materials: "Wood, clay, acrylic paint",
+    materials: "Spray foam, acrylic paint",
     faqs: defaultFAQs,
   },
   {
@@ -262,10 +262,10 @@ export const products: Product[] = [
     details: [
       "Giant format",
       "Colorful candy accents",
-      "Wood + clay + acrylic paint",
+      "Spray foam + acrylic paint",
       "Built-in wall hanger",
     ],
-    materials: "Wood, clay, acrylic paint",
+    materials: "Spray foam, acrylic paint",
     faqs: defaultFAQs,
   },
   {
@@ -285,10 +285,10 @@ export const products: Product[] = [
     details: [
       "Giant format",
       "Double chocolate finish",
-      "Wood + clay + acrylic paint",
+      "Spray foam + acrylic paint",
       "Built-in wall hanger",
     ],
-    materials: "Wood, clay, acrylic paint",
+    materials: "Spray foam, acrylic paint",
     faqs: defaultFAQs,
   },
   {
@@ -309,10 +309,10 @@ export const products: Product[] = [
     details: [
       "Statement dessert sculpture",
       "Cookie + faux ice cream construction",
-      "Wood + clay + acrylic paint",
+      "Spray foam + acrylic paint",
       "Dessert wall decor",
     ],
-    materials: "Wood, clay, acrylic paint",
+    materials: "Spray foam, acrylic paint",
     faqs: [
       ...defaultFAQs,
       {
@@ -338,10 +338,10 @@ export const products: Product[] = [
     details: [
       "Jumbo format",
       "Candy + chocolate detailing",
-      "Wood + clay + acrylic paint",
+      "Spray foam + acrylic paint",
       "Built-in wall hanger",
     ],
-    materials: "Wood, clay, acrylic paint",
+    materials: "Spray foam, acrylic paint",
     faqs: defaultFAQs,
   },
   {
@@ -362,10 +362,10 @@ export const products: Product[] = [
     details: [
       "Hot pink sculpted finish",
       "Candy and chocolate accents",
-      "Wood + clay + acrylic paint",
+      "Spray foam + acrylic paint",
       "Built-in wall hanger",
     ],
-    materials: "Wood, clay, acrylic paint",
+    materials: "Spray foam, acrylic paint",
     faqs: defaultFAQs,
   },
 ];

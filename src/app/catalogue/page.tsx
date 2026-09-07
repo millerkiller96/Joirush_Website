@@ -155,7 +155,7 @@ export default function CataloguePage() {
           Cookie wall art catalogue
         </h1>
         <p className="mt-4 max-w-2xl text-lg text-chocolate-mid">
-          Every oversized cookie sculpture is hand-sculpted in Florida from wood, clay, and acrylic
+          Every oversized cookie sculpture is hand-sculpted in Florida from spray foam and acrylic
           paint — lightweight enough to hang, realistic enough to make people hungry. Tap a piece
           to see details and buy directly with free U.S. shipping.
         </p>

@@ -360,7 +360,7 @@ export default function BakeriesCafesPage() {
                 {
                   question: "How durable are these pieces in a commercial setting?",
                   answer:
-                    "Made from wood, clay, and acrylic paint, these sculptures are built to last. They're sealed for durability and designed for permanent display. Avoid direct contact with grease or extreme heat.",
+                    "Made from spray foam and acrylic paint, these sculptures are built to last. They're sealed for durability and designed for permanent display. Avoid direct contact with grease or extreme heat.",
                 },
                 {
                   question: "Do you offer bulk or multi-location discounts?",

@@ -123,7 +123,7 @@ export default function WallArtPage() {
             </p>
             <p className="mt-4 text-chocolate-mid">
               Unlike heavy fiberglass commercial props, each piece is hand-sculpted in Orlando, Florida using 
-              wood, clay, and acrylic paint. Perfect for kitchens, <Link href="/for/bakeries-cafes/" className="text-pink hover:underline">bakeries and cafés</Link>, 
+              spray foam and acrylic paint. Perfect for kitchens, <Link href="/for/bakeries-cafes/" className="text-pink hover:underline">bakeries and cafés</Link>, 
               dessert rooms, and content studios.
             </p>
             <div className="mt-8 flex flex-wrap gap-3">
@@ -217,7 +217,7 @@ export default function WallArtPage() {
                   and made with artist attention to detail.
                 </p>
                 <p>
-                  The process takes days, not hours: sculpting the clay texture, building up paint layers, 
+                  The process takes days, not hours: sculpting the spray foam texture, building up paint layers, 
                   positioning individual chips, and finishing with protective sealant. The result is 
                   <strong>faux food wall art</strong> that looks — and feels — like real baked goods.
                 </p>

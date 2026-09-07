@@ -27,7 +27,7 @@ export function FoodieGiftGuideSchema() {
         name: "Do cookie sculptures ship safely?",
         acceptedAnswer: {
           "@type": "Answer",
-          text: "Yes! Each cookie sculpture is carefully packaged to arrive safely. They're made from durable materials (wood, clay, and acrylic paint) designed to withstand shipping and last for years on display.",
+          text: "Yes! Each cookie sculpture is carefully packaged to arrive safely. They're made from durable materials (spray foam and acrylic paint) designed to withstand shipping and last for years on display.",
         },
       },
     ],
@@ -240,7 +240,7 @@ export function FoodieGiftGuideContent() {
         <li>Careful packaging designed for safe shipping</li>
         <li>Free shipping within the United States</li>
         <li>Lightweight construction (2-4 lbs typically)</li>
-        <li>Durable materials built to last: wood, clay, and acrylic paint</li>
+        <li>Durable materials built to last: spray foam and acrylic paint</li>
       </ul>
 
       <h2>How to Present It</h2>
@@ -288,7 +288,7 @@ export function FoodieGiftGuideContent() {
       <h3>Do cookie sculptures ship safely?</h3>
       <p>
         Yes! Each <strong>cookie sculpture</strong> is carefully packaged to arrive safely. 
-        They're made from durable materials (wood, clay, and acrylic paint) designed to withstand 
+        They're made from durable materials (spray foam and acrylic paint) designed to withstand 
         shipping and last for years on display. JOIRUSH ships from Florida with free US shipping.
       </p>
 

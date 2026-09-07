@@ -394,7 +394,7 @@ export default async function ProductPage({ params }: Props) {
         <FAQAccordion faqs={product.faqs} />
 
         <section className="mt-20">
-          <h2 className="font-display text-3xl text-chocolate">More from the bakery wall</h2>
+          <h2 className="font-display text-3xl text-chocolate">More from the cookie wall</h2>
           <div className="mt-8 grid gap-8 sm:grid-cols-2 lg:grid-cols-3">
             {related.map((item) => (
               <ProductCard key={item.slug} product={item} />

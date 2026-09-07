@@ -15,7 +15,7 @@ export const metadata: Metadata = {
     "faux food wall art tips",
     "dopamine decor ideas",
     "kitschy kitchen inspiration",
-    "bakery wall decor guide",
+    "kitchen wall decor guide",
   ],
   openGraph: {
     title: "Blog | Jumbo Cookie Wall Art Tips & Inspiration",

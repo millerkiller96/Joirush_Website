@@ -78,7 +78,7 @@ export function CustomForm() {
           onChange={(event) => setNotes(event.target.value)}
           rows={5}
           className="w-full rounded-2xl border border-chocolate/10 bg-cream px-4 py-3 outline-none ring-pink focus:ring-2"
-          placeholder="A 16-inch pastel cookie for a bakery wall, or a Tamagotchi-style choker in hot pink..."
+          placeholder="A 16-inch pastel cookie for my kitchen, or a Tamagotchi-style choker in hot pink..."
         />
       </label>
       <button

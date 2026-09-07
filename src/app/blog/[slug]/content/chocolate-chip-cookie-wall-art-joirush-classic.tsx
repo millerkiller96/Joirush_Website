@@ -56,7 +56,7 @@ export function ChocolateChipStoryContent() {
 
       <p>
         This is how a mixed media artist in Orlando turned a love of nostalgia into 
-        <strong>chocolate chip cookie wall art</strong> that hangs in kitchens, bakeries, and 
+        <strong>chocolate chip cookie wall art</strong> that hangs in kitchens, homes, and 
         content studios across the country.
       </p>
 
@@ -221,9 +221,8 @@ export function ChocolateChipStoryContent() {
       <ul>
         <li><strong>Kitchen maximalists</strong> — people who want their kitchen to be as 
         personality-filled as the rest of their home</li>
-        <li><strong>Bakery and café owners</strong> — looking for 
-        <Link href="/for/bakeries-cafes/"> commercial-quality decor</Link> that's lighter and 
-        more affordable than traditional food props</li>
+        <li><strong>Home bakers and foodies</strong> — celebrating their love of desserts 
+        with unique wall decor</li>
         <li><strong>Content creators</strong> — building distinctive backdrops for photos 
         and videos</li>
         <li><strong>Gift givers</strong> — searching for unforgettable 

@@ -212,21 +212,16 @@ export function FoodieGiftGuideContent() {
         made for them — darker dough, glossy chips, extra-rich everything.
       </p>
 
-      <h3>For the Bakery or Café Owner</h3>
+      <h3>For the Home Baker or Food Enthusiast</h3>
 
       <p>
-        <strong>The pick:</strong> <Link href="/custom/">Custom piece</Link> in their brand colors
+        <strong>The pick:</strong> <Link href="/custom/">Custom piece</Link> in their favorite colors
       </p>
 
       <p>
-        Know someone opening a bakery, running a café, or launching a food business? A custom 
-        cookie in their brand colors or featuring their signature flavors makes for an 
-        unforgettable grand opening or anniversary gift.
-      </p>
-
-      <p>
-        See more about commercial pieces at the <Link href="/for/bakeries-cafes/">bakeries and 
-        cafés hub</Link>.
+        Know someone who loves baking at home, has a passion for all things dessert, or is 
+        building out their dream kitchen? A custom cookie in their favorite colors or featuring 
+        a design that matches their aesthetic makes for an unforgettable gift.
       </p>
 
       <h2>What's Included With Each Cookie</h2>

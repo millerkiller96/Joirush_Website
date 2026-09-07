@@ -19,13 +19,13 @@ export const metadata: Metadata = {
     "faux food wall art",
     "chocolate chip cookie wall art",
     "handmade wall art Orlando Florida",
-    "bakery wall decor",
+    "kitchen wall decor",
     "kitschy kitchen wall art",
   ],
   openGraph: {
     title: "JOIRUSH — Jumbo Cookie Wall Art & Faux Dessert Sculptures",
     description:
-      "Handmade oversized cookie sculptures and faux food wall art. Lightweight, hangable dessert decor for kitchens, bakeries, and cafés.",
+      "Handmade oversized cookie sculptures and faux food wall art. Lightweight, hangable dessert decor for kitchens, homes, and creative spaces.",
     type: "website",
     images: [
       {
@@ -123,8 +123,7 @@ export default function HomePage() {
               <p className="mt-6 max-w-lg text-lg leading-relaxed text-chocolate-mid">
                 Hyper-realistic <strong>oversized cookie wall decor</strong> and faux food sculptures, 
                 handcrafted in Orlando, Florida. Lightweight, hangable, and built to spark joy in kitchens, 
-                <Link href="/for/bakeries-cafes/" className="text-pink hover:underline"> bakeries</Link>, 
-                and beyond. Think <strong>giant cookie wall art</strong>, zero calories.
+                homes, and beyond. Think <strong>giant cookie wall art</strong>, zero calories.
               </p>
               <div className="mt-8 flex flex-wrap gap-3">
                 <Link
@@ -176,13 +175,13 @@ export default function HomePage() {
               {
                 href: "/wall-art/",
                 title: "Jumbo Cookie Wall Art",
-                copy: "Oversized faux cookie sculptures for kitchens, bakeries, cafés, and content studios.",
+                copy: "Oversized faux cookie sculptures for kitchens, homes, and content studios.",
                 image: "/images/products/rainbow.jpg",
               },
               {
-                href: "/for/bakeries-cafes/",
-                title: "Bakeries & Cafés",
-                copy: "Lightweight dessert decor for commercial spaces. Better than heavy fiberglass props.",
+                href: "/catalogue/",
+                title: "Full Catalogue",
+                copy: "Browse every cookie, set, and seasonal piece in the collection.",
                 image: "/images/products/mm-set.jpg",
               },
               {

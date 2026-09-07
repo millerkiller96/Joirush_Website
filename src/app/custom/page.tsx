@@ -7,12 +7,12 @@ const siteUrl = "https://joirush.com";
 export const metadata: Metadata = {
   title: "Custom Cookie Wall Art | Commission Handmade Oversized Cookie Sculptures",
   description:
-    "Commission custom jumbo cookie wall art — oversized fake cookie sculptures in your bakery's colors, custom flavors, or any design you dream up. Handmade in Florida with free U.S. shipping.",
+    "Commission custom jumbo cookie wall art — oversized fake cookie sculptures in your favorite colors, custom flavors, or any design you dream up. Handmade in Florida with free U.S. shipping.",
   keywords: [
     "custom cookie wall art",
     "commission cookie sculpture",
     "custom dessert decor",
-    "custom bakery wall art",
+    "custom kitchen wall art",
     "personalized cookie art",
     "custom fake cookie",
   ],
@@ -48,12 +48,12 @@ export default function CustomPage() {
         </h1>
         <p className="mt-5 text-lg text-chocolate-mid">
           Got a flavor or aesthetic in mind? Erynn will cook up something unforgettable — a jumbo
-          cookie wall art piece in your bakery&apos;s colors, a custom dessert sculpture, or
+          cookie wall art piece in your favorite colors, a custom dessert sculpture, or
           something nobody&apos;s seen yet.
         </p>
         <ul className="mt-8 space-y-3 text-chocolate-mid">
           <li>Custom jumbo cookie wall art in any color or flavor</li>
-          <li>Oversized fake cookie sculptures for bakeries, cafés, and studios</li>
+          <li>Oversized fake cookie sculptures for kitchens, homes, and studios</li>
           <li>Typically replies within a few hours</li>
           <li>Handmade in Florida, free U.S. shipping</li>
           <li>Because each piece is made to order, returns are not accepted</li>

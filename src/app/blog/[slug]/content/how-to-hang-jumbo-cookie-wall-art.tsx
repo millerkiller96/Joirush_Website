@@ -168,7 +168,7 @@ export function HowToHangContent() {
 
       <p>
         Popular spots for <strong>faux cookie sculptures</strong> include kitchens (of course), 
-        dining rooms, breakfast nooks, bakery-style cafés, content creator studios, and playrooms. 
+        dining rooms, breakfast nooks, content creator studios, and playrooms. 
         The <Link href="/product/jumbo-chocolate-chip-cookie/">classic chocolate chip cookie</Link> looks 
         stunning against white or light-colored walls, while colorful 
         <Link href="/product/hot-pink-mm-cookie/"> M&M cookie versions</Link> pop against neutral backgrounds.
@@ -285,17 +285,6 @@ export function HowToHangContent() {
         perfect pop to white kitchen cabinets</li>
       </ul>
 
-      <h3>Cafés and Bakeries</h3>
-      <p>
-        For commercial spaces like <Link href="/for/bakeries-cafes/">bakeries and cafés</Link>, 
-        consider:
-      </p>
-      <ul>
-        <li>High-traffic visibility — place where customers can photograph them</li>
-        <li>Groupings that tell a story about your menu</li>
-        <li>Secure mounting since spaces see more movement and vibration</li>
-      </ul>
-
       <h3>Content Creator Studios</h3>
       <p>
         For photoshoot and video backdrops:
@@ -344,7 +333,7 @@ export function HowToHangContent() {
       <p>
         Now that you know exactly how to hang <strong>faux food wall art</strong>, all you need is 
         the perfect piece. Browse the full <Link href="/wall-art/">cookie wall art collection</Link> to 
-        find your flavor, or <Link href="/custom/">request a custom piece</Link> in your bakery's 
+        find your flavor, or <Link href="/custom/">request a custom piece</Link> in your favorite 
         colors, your favorite candy combinations, or a one-of-a-kind design. Every cookie ships 
         free within the US, ready to hang with the built-in hanger.
       </p>

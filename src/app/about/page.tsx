@@ -3,10 +3,30 @@ import { Image } from "@/components/Image";
 import Link from "next/link";
 import { reviews, site } from "@/data/site";
 
+const siteUrl = "https://joirush.com";
+
 export const metadata: Metadata = {
-  title: "About",
+  title: "About JOIRUSH | Handmade Jumbo Cookie Wall Art by Erynn",
   description:
-    "Meet Erynn, mixed media artist and owner of JOIRUSH in Orlando, Florida. Handmade cookies, chokers, sneakers, and wall art.",
+    "Meet Erynn, the artist behind JOIRUSH handmade jumbo cookie wall art. Creating oversized fake cookie sculptures in Orlando, Florida since 2021. Shop realistic dessert wall decor.",
+  alternates: {
+    canonical: `${siteUrl}/about`,
+  },
+  openGraph: {
+    title: "About JOIRUSH | Handmade Jumbo Cookie Wall Art by Erynn",
+    description:
+      "Meet Erynn, the artist creating handmade jumbo cookie wall art in Orlando, Florida.",
+    type: "website",
+    url: `${siteUrl}/about`,
+    images: [
+      {
+        url: `${siteUrl}/images/brand/about-1.jpg`,
+        width: 1200,
+        height: 630,
+        alt: "Erynn, artist and owner of JOIRUSH",
+      },
+    ],
+  },
 };
 
 export default function AboutPage() {

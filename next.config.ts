@@ -1,6 +1,6 @@
 import type { NextConfig } from "next";
 
-const repo = "JoiRush_Shop";
+const repo = "Joirush_Website";
 const isGithubPages = process.env.GITHUB_PAGES === "true";
 
 const basePath = isGithubPages ? `/${repo}` : "";

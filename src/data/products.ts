@@ -5,6 +5,7 @@ export type Product = {
   name: string;
   shortName: string;
   price: number;
+  compareAtPrice: number;
   size: string;
   category: ProductCategory;
   featured?: boolean;
@@ -23,6 +24,7 @@ export const products: Product[] = [
     name: "Jumbo Chocolate Chip Cookie Wall Art",
     shortName: "Classic Chocolate Chip",
     price: 100,
+    compareAtPrice: 149,
     size: "16 × 16 in",
     category: "classic",
     featured: true,
@@ -31,7 +33,7 @@ export const products: Product[] = [
     stripeUrl: "https://buy.stripe.com/7sY14f8gr3287kmb9I2Nq00",
     tagline: "Your favorite comfort cookie — oversized and zero calories.",
     description:
-      "This jumbo chocolate chip cookie looks so real you’ll want to take a bite. Hand-sculpted and painted to mimic the perfect golden-brown finish and melty chips, it’s the piece that started the sugar rush. Built to hang, built to turn heads.",
+      "This jumbo chocolate chip cookie looks so real you'll want to take a bite. Hand-sculpted and painted to mimic the perfect golden-brown finish and melty chips, it's the piece that started the sugar rush. Built to hang, built to turn heads.",
     details: [
       "16 × 16 inches",
       "Wood + clay + acrylic paint",
@@ -46,6 +48,7 @@ export const products: Product[] = [
     name: "Oversized Mini Cookie Wall Decor Set",
     shortName: "Mini Cookie Pair",
     price: 175,
+    compareAtPrice: 249,
     size: "14 in pair",
     category: "set",
     featured: true,
@@ -54,7 +57,7 @@ export const products: Product[] = [
     stripeUrl: "https://buy.stripe.com/cNi7sD2W79qwgUWgu22Nq01",
     tagline: "A handmade 14-inch pair made to be hung together.",
     description:
-      "Two oversized “mini” cookies, designed as a set for walls that want twice the sweetness. Each piece is handmade food art with thick sculptural texture — playful, collectible, and ready to display as a pair.",
+      "Two oversized 'mini' cookies, designed as a set for walls that want twice the sweetness. Each piece is handmade food art with thick sculptural texture — playful, collectible, and ready to display as a pair.",
     details: [
       "Two 14-inch handmade cookies",
       "Designed to be displayed together",
@@ -69,6 +72,7 @@ export const products: Product[] = [
     name: "Jumbo M&M Cookie Wall Art Set",
     shortName: "M&M Cookie Set",
     price: 225,
+    compareAtPrice: 325,
     size: "16 in pair",
     category: "set",
     featured: true,
@@ -92,6 +96,7 @@ export const products: Product[] = [
     name: "Jumbo White Chocolate Chip Cookie Wall Art",
     shortName: "White Chocolate Chip",
     price: 115,
+    compareAtPrice: 165,
     size: "16 in",
     category: "classic",
     image: "/images/products/white-choc.jpg",
@@ -113,6 +118,7 @@ export const products: Product[] = [
     name: "Rainbow Candy Cookie Wall Art",
     shortName: "Rainbow Candy Cookie",
     price: 90,
+    compareAtPrice: 129,
     size: "14 in",
     category: "candy",
     featured: true,
@@ -135,6 +141,7 @@ export const products: Product[] = [
     name: "Mini Jumbo Chocolate Chip Cookie Wall Art",
     shortName: "Mini Jumbo Chip",
     price: 90,
+    compareAtPrice: 129,
     size: "Mini jumbo",
     category: "classic",
     image: "/images/products/mini-choc.jpg",
@@ -156,6 +163,7 @@ export const products: Product[] = [
     name: "Jumbo Pastel M&M Cookie Wall Art",
     shortName: "Pastel M&M Cookie",
     price: 115,
+    compareAtPrice: 165,
     size: "16 in",
     category: "candy",
     image: "/images/products/pastel-mm.jpg",
@@ -177,6 +185,7 @@ export const products: Product[] = [
     name: "Jumbo Christmas Cookie Wall Art",
     shortName: "Christmas Cookie",
     price: 100,
+    compareAtPrice: 149,
     size: "16 in",
     category: "seasonal",
     image: "/images/products/christmas.jpg",
@@ -184,7 +193,7 @@ export const products: Product[] = [
     stripeUrl: "https://buy.stripe.com/7sY5kv9kveKQ48a3Hg2Nq07",
     tagline: "Faux candy dessert decor for the holiday wall.",
     description:
-      "A jumbo Christmas cookie with festive candy energy — the holiday piece that doesn’t crumble, doesn’t stale, and doesn’t leave crumbs under the tree. Handmade faux candy dessert decor for seasonal kitchens and year-round maximalists.",
+      "A jumbo Christmas cookie with festive candy energy — the holiday piece that doesn't crumble, doesn't stale, and doesn't leave crumbs under the tree. Handmade faux candy dessert decor for seasonal kitchens and year-round maximalists.",
     details: [
       "Jumbo holiday sculpture",
       "Faux candy dessert decor",
@@ -198,6 +207,7 @@ export const products: Product[] = [
     name: "Giant Peanut Butter Cookie Wall Art",
     shortName: "Peanut Butter Cookie",
     price: 100,
+    compareAtPrice: 149,
     size: "16 in",
     category: "classic",
     image: "/images/products/peanut-butter.jpg",
@@ -219,6 +229,7 @@ export const products: Product[] = [
     name: "Giant Faux Double Chocolate Chip Cookie",
     shortName: "Double Chocolate",
     price: 110,
+    compareAtPrice: 159,
     size: "16 in",
     category: "classic",
     image: "/images/products/double-choc.jpg",
@@ -240,6 +251,7 @@ export const products: Product[] = [
     name: "Jumbo Cookie Ice Cream Sandwich Art",
     shortName: "Ice Cream Sandwich",
     price: 220,
+    compareAtPrice: 315,
     size: "Statement piece",
     category: "statement",
     featured: true,
@@ -262,6 +274,7 @@ export const products: Product[] = [
     name: "Jumbo M&M Cookie Wall Art",
     shortName: "Classic M&M Cookie",
     price: 115,
+    compareAtPrice: 165,
     size: "16 in",
     category: "candy",
     image: "/images/products/mm-classic.jpg",
@@ -283,6 +296,7 @@ export const products: Product[] = [
     name: "Hot Pink Jumbo M&M Cookie",
     shortName: "Hot Pink M&M Cookie",
     price: 115,
+    compareAtPrice: 165,
     size: "16 in",
     category: "candy",
     featured: true,
@@ -338,4 +352,10 @@ export function formatPrice(price: number) {
     currency: "USD",
     maximumFractionDigits: 0,
   }).format(price);
+}
+
+export function calculateSavings(price: number, compareAtPrice: number) {
+  const savings = compareAtPrice - price;
+  const percent = Math.round((savings / compareAtPrice) * 100);
+  return { savings, percent };
 }

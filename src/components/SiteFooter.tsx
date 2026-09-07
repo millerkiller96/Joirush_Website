@@ -24,20 +24,20 @@ export function SiteFooter() {
         </div>
 
         <div>
-          <p className="text-xs uppercase tracking-[0.2em] text-pink-blush">Shop</p>
+          <p className="text-xs uppercase tracking-[0.2em] text-pink-blush">Shop Cookie Wall Art</p>
           <div className="mt-4 flex flex-col gap-2 text-sm">
-            <Link href="/catalogue" className="hover:text-pink-blush">
-              Catalogue
-            </Link>
             <Link href="/wall-art" className="hover:text-pink-blush">
-              Cookie wall art
+              Jumbo cookie wall art
             </Link>
-            <Link href="/jewelry" className="hover:text-pink-blush">
-              Y2K jewelry
+            <Link href="/catalogue" className="hover:text-pink-blush">
+              Full catalogue
             </Link>
             <Link href="/custom" className="hover:text-pink-blush">
-              Custom orders
+              Custom cookie orders
             </Link>
+            <a href={site.etsy} target="_blank" rel="noreferrer" className="hover:text-pink-blush">
+              Buy on Etsy
+            </a>
           </div>
         </div>
 

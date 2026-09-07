@@ -30,6 +30,10 @@ export const defaultFAQs: ProductFAQ[] = [
     answer: "No, this is a decorative wall sculpture made from spray foam and acrylic paint. It's designed to look realistic but is not food.",
   },
   {
+    question: "How long does shipping take?",
+    answer: "Each piece ships in 14 days. Every sculpture is handcrafted to order — the 14-day timeline includes handmade production and shipping. True artistry takes time, and each cookie is individually sculpted and painted by hand.",
+  },
+  {
     question: "How do I hang this on my wall?",
     answer: "Each piece comes with a built-in wall hanger on the back. Simply use a nail or picture hook rated for the weight (most pieces are under 3 lbs). No special hardware needed.",
   },
@@ -39,7 +43,7 @@ export const defaultFAQs: ProductFAQ[] = [
   },
   {
     question: "Do you ship internationally?",
-    answer: "Currently we ship free within the United States. For international orders, please contact us through the custom order form for a shipping quote.",
+    answer: "Currently we offer free U.S. shipping with 14-day handmade production and delivery. For international orders, please contact us through the custom order form for a shipping quote.",
   },
   {
     question: "Can I order a custom version?",

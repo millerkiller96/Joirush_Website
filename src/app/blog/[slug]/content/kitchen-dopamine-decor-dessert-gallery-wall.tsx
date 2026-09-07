@@ -315,7 +315,7 @@ export function DopamineDecorContent() {
         heart happy. Browse the full collection of <Link href="/wall-art/">handmade jumbo cookie 
         wall art</Link> to find your starting point, or <Link href="/custom/">request a custom 
         piece</Link> in colors that match your existing decor. Every sculpture ships free within 
-        the US, ready to hang and ready to spark joy.
+        the US in 14 days — true handcraft artistry takes time. Ready to hang and ready to spark joy.
       </p>
     </>
   );

@@ -281,6 +281,12 @@ export default async function ProductPage({ params }: Props) {
             <div className="mt-5 flex flex-wrap gap-x-4 gap-y-2 text-sm text-chocolate-mid">
               <span className="flex items-center gap-1.5">
                 <svg className="h-4 w-4 text-success" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}>
+                  <path strokeLinecap="round" strokeLinejoin="round" d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z" />
+                </svg>
+                Ships in {site.shippingTime}
+              </span>
+              <span className="flex items-center gap-1.5">
+                <svg className="h-4 w-4 text-success" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}>
                   <path strokeLinecap="round" strokeLinejoin="round" d="M5 13l4 4L19 7" />
                 </svg>
                 Free U.S. shipping

@@ -19,7 +19,7 @@ export function FoodieGiftGuideSchema() {
         name: "How much do jumbo cookie sculptures cost?",
         acceptedAnswer: {
           "@type": "Answer",
-          text: "Handmade jumbo cookie wall art from JOIRUSH ranges from $90-$225, with single cookies starting at $90 and sets or statement pieces at the higher end. All pieces include free US shipping.",
+          text: "Handmade jumbo cookie wall art from JOIRUSH ranges from $90-$225, with single cookies starting at $90 and sets or statement pieces at the higher end. All pieces include free US shipping with 14-day handmade production and delivery.",
         },
       },
       {
@@ -27,7 +27,7 @@ export function FoodieGiftGuideSchema() {
         name: "Do cookie sculptures ship safely?",
         acceptedAnswer: {
           "@type": "Answer",
-          text: "Yes! Each cookie sculpture is carefully packaged to arrive safely. They're made from durable materials (spray foam and acrylic paint) designed to withstand shipping and last for years on display.",
+          text: "Yes! Each cookie sculpture is carefully packaged to arrive safely within 14 days. They're made from durable materials (spray foam and acrylic paint) designed to withstand shipping and last for years on display.",
         },
       },
     ],
@@ -232,8 +232,9 @@ export function FoodieGiftGuideContent() {
 
       <ul>
         <li>Built-in wall hanger — no additional hardware needed</li>
-        <li>Careful packaging designed for safe shipping</li>
+        <li>14-day handmade production & shipping — true artistry takes time</li>
         <li>Free shipping within the United States</li>
+        <li>Careful packaging designed for safe delivery</li>
         <li>Lightweight construction (2-4 lbs typically)</li>
         <li>Durable materials built to last: spray foam and acrylic paint</li>
       </ul>
@@ -276,15 +277,15 @@ export function FoodieGiftGuideContent() {
         <li>Statement pieces (ice cream sandwich): $220</li>
       </ul>
       <p>
-        All pieces include free US shipping. <Link href="/custom/">Custom pieces</Link> are priced 
+        All pieces include free US shipping with 14-day handmade production and delivery. <Link href="/custom/">Custom pieces</Link> are priced 
         based on size and complexity.
       </p>
 
       <h3>Do cookie sculptures ship safely?</h3>
       <p>
-        Yes! Each <strong>cookie sculpture</strong> is carefully packaged to arrive safely. 
+        Yes! Each <strong>cookie sculpture</strong> is carefully packaged to arrive safely within 14 days. 
         They're made from durable materials (spray foam and acrylic paint) designed to withstand 
-        shipping and last for years on display. JOIRUSH ships from Florida with free US shipping.
+        shipping and last for years on display. JOIRUSH ships from Florida with free US shipping — the 14-day timeline includes handmade production and delivery.
       </p>
 
       <h3>Can I get a custom cookie made?</h3>
@@ -302,8 +303,8 @@ export function FoodieGiftGuideContent() {
 
       <ul>
         <li><strong>Holiday gifts:</strong> Order at least 2-3 weeks before the date</li>
+        <li><strong>Standard pieces:</strong> 14-day handmade production & shipping</li>
         <li><strong>Custom pieces:</strong> Allow 3-4 weeks for creation and shipping</li>
-        <li><strong>In-stock pieces:</strong> Usually ship within a week</li>
       </ul>
 
       <p>
@@ -318,7 +319,7 @@ export function FoodieGiftGuideContent() {
         art</Link> to find the right piece for your favorite foodie. Or 
         <Link href="/custom/"> request something custom</Link> — a specific flavor, color palette, 
         or size that's perfectly matched to who they are. Every sculpture ships free within the 
-        US, gift-ready and built to last.
+        US in 14 days — gift-ready and built to last.
       </p>
     </>
   );

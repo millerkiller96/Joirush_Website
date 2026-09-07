@@ -172,12 +172,12 @@ export default function WallArtPage() {
                   copy: "Thick, bakery-case surfaces — bubbles, crags, and that just-baked edge. Looks real enough to make guests do a double-take.",
                 },
                 {
-                  title: "Ready to Hang Instantly",
-                  copy: "Built-in wall hangers. No contractor needed. Ships from Florida with free U.S. shipping.",
+                  title: "14-Day Handmade Production",
+                  copy: "Each piece is handcrafted to order. True artistry takes time — your sculpture ships in 14 days.",
                 },
                 {
-                  title: "Made for Your Space",
-                  copy: "Perfect for kitschy kitchens, playrooms, dessert bars, home offices, and content studios.",
+                  title: "Ready to Hang, Free Shipping",
+                  copy: "Built-in wall hangers. No contractor needed. Ships free within the U.S.",
                 },
               ].map((item) => (
                 <div key={item.title} className="rounded-[1.8rem] bg-cream p-6">
@@ -205,9 +205,9 @@ export default function WallArtPage() {
         <section className="bg-cream-deep">
           <div className="mx-auto max-w-7xl px-5 py-16 md:px-8">
             <SectionHeading
-              eyebrow="Handmade in Orlando"
+              eyebrow="14-day handmade production"
               title="Artist-Made, Not Factory Produced"
-              copy="Each faux cookie sculpture is individually crafted by Erynn in Orlando, Florida. No two pieces are identical — that's what makes them art."
+              copy="Each faux cookie sculpture is individually crafted by Erynn in Orlando, Florida. Ships in 14 days — true handcraft artistry takes time. No two pieces are identical."
             />
             <div className="mt-10 grid items-center gap-10 md:grid-cols-2">
               <div className="space-y-6 text-chocolate-mid">

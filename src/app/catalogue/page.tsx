@@ -160,7 +160,7 @@ export default function CataloguePage() {
           to see details and buy directly with free U.S. shipping.
         </p>
         <p className="mt-2 text-sm text-chocolate-soft">
-          {products.length} handmade pieces · Starting at $90 · Ships from Daytona Beach, FL
+          {products.length} handmade pieces · Starting at $90 · Ships in 14 days · Free U.S. shipping from Daytona Beach, FL
         </p>
         <div className="mt-10">
           <CatalogueGrid />

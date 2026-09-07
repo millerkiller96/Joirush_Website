@@ -40,7 +40,7 @@ export default function AboutPage() {
         <p className="mt-6 max-w-2xl text-lg text-chocolate-mid">
           Welcome to Joi Rush by EBABYxo. {site.artist} is the owner and creative designer behind
           every cookie, choker, and custom piece. Handmade everything with love — from an Orlando
-          studio, shipping out of Florida.
+          studio, shipping out of Florida. Each piece ships in 14 days because true handcraft artistry takes time.
         </p>
       </section>
 

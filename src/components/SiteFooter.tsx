@@ -57,7 +57,7 @@ export function SiteFooter() {
         </div>
       </div>
       <div className="border-t border-white/10 px-5 py-5 text-center text-xs text-cream/55 md:px-8">
-        Handmade everything with love · Ships from Florida · {site.name} © 2026
+        Handmade everything with love · Ships in 14 days · Free U.S. shipping from Florida · {site.name} © 2026
       </div>
     </footer>
   );

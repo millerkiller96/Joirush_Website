@@ -106,7 +106,7 @@ export default function HomePage() {
       <div>
         <div className="border-b border-chocolate/10 bg-chocolate text-center text-[13px] text-cream">
           <p className="px-4 py-2.5">
-            Handmade in {site.location} · Free U.S. shipping · {site.stats.rating} stars from{" "}
+            Handmade in {site.location} · Ships in {site.shippingTime} · Free U.S. shipping · {site.stats.rating} stars from{" "}
             {site.stats.reviews} collectors
           </p>
         </div>
@@ -251,14 +251,14 @@ export default function HomePage() {
                   copy: "Vs. $350+ for commercial fiberglass props",
                 },
                 {
-                  stat: "Free",
-                  label: "US Shipping",
-                  copy: "Every piece ships free within the US",
+                  stat: "14 Days",
+                  label: "Handmade Production",
+                  copy: "Each piece crafted to order with care",
                 },
                 {
-                  stat: "Orlando, FL",
-                  label: "Handmade",
-                  copy: "Each piece sculpted by hand in Florida",
+                  stat: "Free",
+                  label: "US Shipping",
+                  copy: "Ships free within the US in 14 days",
                 },
               ].map((item) => (
                 <div key={item.label} className="rounded-[1.5rem] bg-white p-5 text-center">
@@ -364,7 +364,7 @@ export default function HomePage() {
             </h2>
             <p className="mt-4 max-w-xl text-white/85">
               Commission a custom piece in your brand colors, favorite flavors, or unique design. 
-              Every sculpture is handmade in Orlando, FL and ships free.
+              Every sculpture is handmade in Orlando, FL — 14-day handmade production & free U.S. shipping.
             </p>
             <Link
               href="/custom/"

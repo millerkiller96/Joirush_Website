@@ -110,26 +110,30 @@ export default function WallArtPage() {
         <section className="mx-auto grid max-w-7xl items-center gap-10 px-5 py-16 md:grid-cols-2 md:px-8 md:py-20">
           <div>
             <p className="text-xs font-semibold uppercase tracking-[0.22em] text-pink">
-              Handmade Faux Food Wall Art
+              All the craving. Zero calories.
             </p>
             <h1 className="mt-3 font-display text-5xl leading-tight text-chocolate md:text-6xl">
-              Jumbo Cookie Wall Art & Oversized Dessert Sculptures
+              Wall Art That Makes People Hungry
             </h1>
             <p className="mt-5 text-lg text-chocolate-mid">
-              Hyper-realistic <strong>oversized cookie wall decor</strong> that looks good enough to eat and 
-              lasts forever on the wall. These handmade <strong>fake cookie wall sculptures</strong> feature 
-              classic chocolate chip, candyland M&Ms, peanut butter, holiday cookies, and ice cream sandwiches — 
-              all lightweight, hangable, and one of a kind.
+              Thick, craggy dough. Glossy chocolate chips catching the light. That golden-brown edge 
+              begging for a bite. These <strong>oversized cookie sculptures</strong> look so real, 
+              guests reach out before their brain catches up.
             </p>
             <p className="mt-4 text-chocolate-mid">
-              Unlike heavy fiberglass commercial props, each piece is hand-sculpted in Orlando, Florida using 
-              spray foam and acrylic paint. Perfect for kitchens, dining rooms, 
-              dessert-themed spaces, and content studios.
+              Classic chocolate chip. Candyland M&Ms. Peanut butter comfort. Ice cream sandwiches. 
+              Each piece hand-sculpted in Orlando using spray foam and acrylic — <strong>lightweight, 
+              hangable, and permanently satisfying</strong>.
             </p>
+            <ul className="mt-5 flex flex-wrap gap-x-4 gap-y-1 text-sm text-chocolate-mid">
+              <li>✓ Ships in {site.shippingTime}</li>
+              <li>✓ Free U.S. shipping</li>
+              <li>✓ 2-4 lbs — hangs on a nail</li>
+            </ul>
             <div className="mt-8 flex flex-wrap gap-3">
               <Link
                 href="/catalogue/"
-                className="rounded-full bg-pink px-6 py-3 text-sm font-medium text-white hover:bg-pink-hot"
+                className="rounded-full bg-emerald-600 px-6 py-3 text-sm font-medium text-white hover:bg-emerald-700"
               >
                 Shop All Cookies
               </Link>
@@ -137,13 +141,13 @@ export default function WallArtPage() {
                 href="/custom/"
                 className="rounded-full border border-chocolate/15 px-6 py-3 text-sm font-medium"
               >
-                Commission a Custom Flavor
+                Dream Up a Custom Flavor
               </Link>
             </div>
             <div className="mt-8 flex items-center gap-4 text-sm text-chocolate-soft">
               <span className="font-medium text-chocolate">{site.stats.rating} stars</span>
               <span>·</span>
-              <span>{site.stats.reviews} reviews</span>
+              <span>{site.stats.reviews} happy collectors</span>
               <span>·</span>
               <span>{site.stats.sales}+ sold</span>
             </div>
@@ -161,23 +165,23 @@ export default function WallArtPage() {
         <section className="bg-white">
           <div className="mx-auto max-w-7xl px-5 py-16 md:px-8">
             <SectionHeading
-              eyebrow="Why choose handmade"
-              title="Lightweight Faux Cookie Sculptures"
-              copy="Each piece is built as a lightweight sculpture with a built-in hanger. The craggy dough, glossy chips, and candy pieces are hand-finished so the texture reads from across the room."
+              eyebrow="Why collectors obsess"
+              title="Not a Prop. A Piece of Art."
+              copy="Thick, craggy texture that reads from across the room. Glossy chips. Built-in hangers. The kind of wall art that starts conversations and ends up on Instagram."
             />
             <div className="mt-10 grid gap-5 md:grid-cols-3">
               {[
                 {
-                  title: "Realistic Sculptural Texture",
-                  copy: "Thick, bakery-case surfaces — bubbles, crags, and that just-baked edge. Looks real enough to make guests do a double-take.",
+                  title: "That Just-Baked Look",
+                  copy: "Bubbles. Crags. Golden edges. The sculptural details that make people do a double-take — then reach out to touch it.",
                 },
                 {
-                  title: "14-Day Handmade Production",
-                  copy: "Each piece is handcrafted to order. True artistry takes time — your sculpture ships in 14 days.",
+                  title: "Made For You in 14 Days",
+                  copy: "Each cookie is sculpted by hand for your order. Real artistry takes time. The anticipation is part of the fun.",
                 },
                 {
-                  title: "Ready to Hang, Free Shipping",
-                  copy: "Built-in wall hangers. No contractor needed. Ships free within the U.S.",
+                  title: "Hang It Tonight",
+                  copy: "Built-in wall hanger. 2-4 lbs. No handyman, no hassle. Ships free in the U.S.",
                 },
               ].map((item) => (
                 <div key={item.title} className="rounded-[1.8rem] bg-cream p-6">
@@ -191,9 +195,9 @@ export default function WallArtPage() {
 
         <section className="mx-auto max-w-7xl px-5 py-16 md:px-8">
           <SectionHeading 
-            eyebrow="The collection" 
-            title="Every Cookie on the Wall"
-            copy="From classic chocolate chip to candy-studded M&Ms to statement ice cream sandwiches — find your perfect piece of giant cookie wall art."
+            eyebrow="The full collection" 
+            title="Find Your Flavor"
+            copy="Golden classic. Candy-studded rainbow. Peanut butter comfort. The ice cream sandwich that stops the room. Which one's calling your name?"
           />
           <div className="mt-10 grid gap-8 sm:grid-cols-2 lg:grid-cols-3">
             {products.map((product) => (
@@ -205,33 +209,33 @@ export default function WallArtPage() {
         <section className="bg-cream-deep">
           <div className="mx-auto max-w-7xl px-5 py-16 md:px-8">
             <SectionHeading
-              eyebrow="14-day handmade production"
-              title="Artist-Made, Not Factory Produced"
-              copy="Each faux cookie sculpture is individually crafted by Erynn in Orlando, Florida. Ships in 14 days — true handcraft artistry takes time. No two pieces are identical."
+              eyebrow="Handmade in 14 days"
+              title="Why These Hit Different"
+              copy="No factory. No fiberglass blob. Each cookie is hand-sculpted by Erynn in Orlando — one at a time, made for your wall."
             />
             <div className="mt-10 grid items-center gap-10 md:grid-cols-2">
               <div className="space-y-6 text-chocolate-mid">
                 <p>
-                  Unlike mass-produced commercial food props that cost $350+ and weigh 10+ pounds, 
-                  these <strong>handmade cookie sculptures</strong> are lightweight (2-4 lbs), affordable ($90-$225), 
-                  and made with artist attention to detail.
+                  Factory props cost $350+ and weigh 10+ pounds. These? <strong>$90-$225, 2-4 lbs</strong>, 
+                  and you can actually hang them on a single nail. Plus they look better because 
+                  an actual artist made them.
                 </p>
                 <p>
-                  The process takes days, not hours: sculpting the spray foam texture, building up paint layers, 
-                  positioning individual chips, and finishing with protective sealant. The result is 
-                  <strong>faux food wall art</strong> that looks — and feels — like real baked goods.
+                  The process takes days: sculpting spray foam texture layer by layer, building up 
+                  acrylic paint, positioning each chip by hand, sealing for durability. The result is 
+                  cookie wall art that makes people <strong>reach out to touch it</strong>.
                 </p>
                 <p>
-                  Whether you're looking for a statement piece for your 
-                  <Link href="/blog/kitchen-dopamine-decor-dessert-gallery-wall/" className="text-pink hover:underline"> dopamine decor kitchen</Link>, 
-                  or a <Link href="/blog/foodie-gift-guide-jumbo-cookie-sculptures/" className="text-pink hover:underline">unique foodie gift</Link>, 
-                  these sculptures deliver.
+                  Perfect for a{" "}
+                  <Link href="/blog/kitchen-dopamine-decor-dessert-gallery-wall/" className="text-pink hover:underline">dopamine decor kitchen</Link>,{" "}
+                  a <Link href="/blog/foodie-gift-guide-jumbo-cookie-sculptures/" className="text-pink hover:underline">foodie gift</Link>{" "}
+                  they'll never forget, or that blank wall that needs something joyful.
                 </p>
                 <Link
                   href="/about/"
                   className="mt-4 inline-flex text-pink hover:underline"
                 >
-                  Meet the artist →
+                  Meet Erynn →
                 </Link>
               </div>
               <Image
@@ -247,25 +251,25 @@ export default function WallArtPage() {
 
         <section className="mx-auto max-w-7xl px-5 py-16 md:px-8">
           <SectionHeading
-            eyebrow="Custom options"
-            title="Can't Find Your Perfect Cookie?"
-            copy="Commission a custom piece in your ideal colors, size, or flavor. Perfect for matching your kitchen aesthetic or creating something uniquely yours."
+            eyebrow="Dream it up"
+            title="Want Something No One Else Has?"
+            copy="Hot pink. Your kitchen's exact teal. Rainbow sprinkles on peanut butter. Tell me your flavor fantasy — I'll make it real."
           />
           <div className="mt-10 rounded-[2rem] bg-pink/10 p-8 md:p-12">
             <div className="grid items-center gap-8 md:grid-cols-2">
               <div>
-                <h3 className="font-display text-3xl text-chocolate">Custom Cookie Wall Art</h3>
+                <h3 className="font-display text-3xl text-chocolate">Your Cookie, Your Rules</h3>
                 <ul className="mt-6 space-y-3 text-chocolate-mid">
-                  <li>· Specific color palettes to match your space or brand</li>
-                  <li>· Custom sizes for particular wall dimensions</li>
-                  <li>· Unique flavor designs and candy combinations</li>
-                  <li>· Multi-piece commissions for gallery walls</li>
+                  <li>✓ Match your exact kitchen palette</li>
+                  <li>✓ Custom sizes for specific walls</li>
+                  <li>✓ Wild flavor combos nobody's seen</li>
+                  <li>✓ Multi-piece gallery walls that tell a story</li>
                 </ul>
                 <Link
                   href="/custom/"
-                  className="mt-8 inline-flex rounded-full bg-pink px-6 py-3 text-sm font-medium text-white hover:bg-pink-hot"
+                  className="mt-8 inline-flex rounded-full bg-emerald-600 px-6 py-3 text-sm font-medium text-white hover:bg-emerald-700"
                 >
-                  Start a Custom Request
+                  Start Your Custom Cookie
                 </Link>
               </div>
               <Image

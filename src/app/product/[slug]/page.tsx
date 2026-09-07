@@ -14,6 +14,8 @@ import { site, reviews } from "@/data/site";
 
 type Props = { params: Promise<{ slug: string }> };
 
+const siteUrl = "https://joirush.com";
+
 export function generateStaticParams() {
   return products.map((product) => ({ slug: product.slug }));
 }
@@ -22,9 +24,45 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
   const { slug } = await params;
   const product = getProduct(slug);
   if (!product) return { title: "Piece not found" };
+
+  const productUrl = `${siteUrl}/product/${product.slug}`;
+  const imageUrl = `${siteUrl}${product.image}`;
+
   return {
-    title: product.shortName,
-    description: product.description,
+    title: `${product.name} | Handmade Cookie Wall Art`,
+    description: `${product.tagline} ${product.size}. Handmade oversized cookie sculpture with built-in wall hanger. ${formatPrice(product.price)} with free U.S. shipping from Florida.`,
+    keywords: [
+      product.name.toLowerCase(),
+      "jumbo cookie wall art",
+      "oversized cookie decor",
+      "fake cookie sculpture",
+      "handmade wall art",
+      "dessert decor",
+      product.category === "candy" ? "candy cookie art" : "chocolate chip cookie art",
+    ],
+    alternates: {
+      canonical: productUrl,
+    },
+    openGraph: {
+      title: `${product.name} | ${site.name}`,
+      description: `${product.tagline} Handmade ${product.size} cookie sculpture. ${formatPrice(product.price)} with free U.S. shipping.`,
+      type: "website",
+      url: productUrl,
+      images: [
+        {
+          url: imageUrl,
+          width: 1200,
+          height: 630,
+          alt: product.name,
+        },
+      ],
+    },
+    twitter: {
+      card: "summary_large_image",
+      title: `${product.name} | ${site.name}`,
+      description: `${product.tagline} ${formatPrice(product.price)} with free U.S. shipping.`,
+      images: [imageUrl],
+    },
   };
 }
 

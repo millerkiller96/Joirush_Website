@@ -8,10 +8,9 @@ import { site } from "@/data/site";
 
 const links = [
   { href: "/", label: "Home" },
-  { href: "/catalogue", label: "Catalogue" },
-  { href: "/wall-art", label: "Wall Art" },
-  { href: "/jewelry", label: "Jewelry" },
-  { href: "/custom", label: "Custom" },
+  { href: "/wall-art", label: "Cookie Wall Art" },
+  { href: "/catalogue", label: "Shop All" },
+  { href: "/custom", label: "Custom Orders" },
   { href: "/about", label: "About" },
 ];
 

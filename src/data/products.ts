@@ -30,7 +30,7 @@ export const products: Product[] = [
     featured: true,
     image: "/images/products/choc-chip.jpg",
     etsyUrl: "https://www.etsy.com/listing/1831819997/jumbo-chocolate-chip-cookie-wall-art",
-    stripeUrl: "",
+    stripeUrl: "https://buy.stripe.com/7sY14f8gr3287kmb9I2Nq00",
     tagline: "Your favorite comfort cookie — oversized and zero calories.",
     description:
       "This jumbo chocolate chip cookie looks so real you'll want to take a bite. Hand-sculpted and painted to mimic the perfect golden-brown finish and melty chips, it's the piece that started the sugar rush. Built to hang, built to turn heads.",
@@ -54,7 +54,7 @@ export const products: Product[] = [
     featured: true,
     image: "/images/products/mini-set.jpg",
     etsyUrl: "https://www.etsy.com/listing/4452655428/oversized-mini-cookie-wall-decor-set",
-    stripeUrl: "",
+    stripeUrl: "https://buy.stripe.com/cNi7sD2W79qwgUWgu22Nq01",
     tagline: "A handmade 14-inch pair made to be hung together.",
     description:
       "Two oversized 'mini' cookies, designed as a set for walls that want twice the sweetness. Each piece is handmade food art with thick sculptural texture — playful, collectible, and ready to display as a pair.",
@@ -78,7 +78,7 @@ export const products: Product[] = [
     featured: true,
     image: "/images/products/mm-set.jpg",
     etsyUrl: "https://www.etsy.com/listing/4452651114/jumbo-mm-cookie-wall-art-set-fake-cookie",
-    stripeUrl: "",
+    stripeUrl: "https://buy.stripe.com/eVq5kvcwH5ag7km6Ts2Nq02",
     tagline: "Two 16-inch pop-art cookies for maximum visual impact.",
     description:
       "This jumbo cookie wall art set includes two handmade oversized cookies designed to be displayed together. Each piece features thick sculptural texture, candy color, and realistic detailing — playful, bold, and collectible. Art that feels fun, nostalgic, and unforgettable.",
@@ -101,7 +101,7 @@ export const products: Product[] = [
     category: "classic",
     image: "/images/products/white-choc.jpg",
     etsyUrl: "https://www.etsy.com/listing/4452647836/jumbo-white-chocolate-chip-cookie-wall",
-    stripeUrl: "",
+    stripeUrl: "https://buy.stripe.com/fZucMXfIT46c5cedhQ2Nq03",
     tagline: "A softer golden cookie with creamy white chips.",
     description:
       "A jumbo white chocolate chip cookie sculpted with the same bakery-case realism as the classic — just a little more vanilla-dream. Hand-painted chips, craggy edges, and that just-baked glow, made for dessert-forward rooms.",
@@ -124,7 +124,7 @@ export const products: Product[] = [
     featured: true,
     image: "/images/products/rainbow.jpg",
     etsyUrl: "https://www.etsy.com/listing/4452645632/colorful-candy-cookie-wall-decor",
-    stripeUrl: "",
+    stripeUrl: "https://buy.stripe.com/cNi6oz40b0U0awy3Hg2Nq04",
     tagline: "A 14-inch sculpture studded with candy-color chips.",
     description:
       "A handmade 14-inch rainbow candy cookie — beige dough texture with jewel-bright chips in orange, purple, yellow, red, blue, and green. Candyland energy for kitchens, playrooms, and anyone collecting color.",
@@ -146,7 +146,7 @@ export const products: Product[] = [
     category: "classic",
     image: "/images/products/mini-choc.jpg",
     etsyUrl: "https://www.etsy.com/listing/4452643820/mini-jumbo-chocolate-chip-cookie-wall",
-    stripeUrl: "",
+    stripeUrl: "https://buy.stripe.com/3cI14f0NZ46ceMOelU2Nq05",
     tagline: "The classic chip cookie, scaled for smaller walls.",
     description:
       "All the golden-brown crumble and glossy chips of the jumbo classic, in a slightly more intimate size. Still a statement. Still handmade. Still the kind of piece people try to steal a bite from.",
@@ -168,7 +168,7 @@ export const products: Product[] = [
     category: "candy",
     image: "/images/products/pastel-mm.jpg",
     etsyUrl: "https://www.etsy.com/listing/4452635945/jumbo-pastel-mm-cookie-wall-art",
-    stripeUrl: "",
+    stripeUrl: "https://buy.stripe.com/7sY6oz68jcCIcEGcdM2Nq06",
     tagline: "Candyland, but make it soft and dreamy.",
     description:
       "A jumbo cookie loaded with pastel candy pieces — lavender, baby blue, blush, and mint energy on a golden sculpted base. Soft color, loud texture. Candyland dessert decor with a gentler palette.",
@@ -190,7 +190,7 @@ export const products: Product[] = [
     category: "seasonal",
     image: "/images/products/christmas.jpg",
     etsyUrl: "https://www.etsy.com/listing/4438064219/jumbo-christmas-chocolate-chip-cookie",
-    stripeUrl: "",
+    stripeUrl: "https://buy.stripe.com/7sY5kv9kveKQ48a3Hg2Nq07",
     tagline: "Faux candy dessert decor for the holiday wall.",
     description:
       "A jumbo Christmas cookie with festive candy energy — the holiday piece that doesn't crumble, doesn't stale, and doesn't leave crumbs under the tree. Handmade faux candy dessert decor for seasonal kitchens and year-round maximalists.",
@@ -212,7 +212,7 @@ export const products: Product[] = [
     category: "classic",
     image: "/images/products/peanut-butter.jpg",
     etsyUrl: "https://www.etsy.com/listing/1817504830/giant-peanut-butter-cookie-wall-art",
-    stripeUrl: "",
+    stripeUrl: "https://buy.stripe.com/fZufZ954fcCIeMOgu22Nq08",
     tagline: "Warm peanut-butter dough with colorful candy pops.",
     description:
       "A giant peanut butter cookie with colorful candy decor — richer dough tones, craggy handmade texture, and a little extra sweetness on top. Comfort-food nostalgia as wall sculpture.",
@@ -234,7 +234,7 @@ export const products: Product[] = [
     category: "classic",
     image: "/images/products/double-choc.jpg",
     etsyUrl: "https://www.etsy.com/listing/1817632262/giant-faux-double-chocolate-chip-cookie",
-    stripeUrl: "",
+    stripeUrl: "https://buy.stripe.com/3cI6oz0NZ8msdIKfpY2Nq09",
     tagline: "Darker dough. Deeper chips. Same sugar-rush attitude.",
     description:
       "A giant faux double chocolate chip cookie for anyone who likes their dessert decor extra rich. Darker baked tones, glossy chips, and the same hand-sculpted texture that makes every JoiRush piece look good enough to eat.",
@@ -257,7 +257,7 @@ export const products: Product[] = [
     featured: true,
     image: "/images/products/ice-cream.jpg",
     etsyUrl: "https://www.etsy.com/listing/1892110346/jumbo-chocolate-chip-cookie-ice-cream",
-    stripeUrl: "",
+    stripeUrl: "https://buy.stripe.com/14A3cnfITgSYgUW7Xw2Nq0a",
     tagline: "Two jumbo cookies, one vanilla slab, zero melt.",
     description:
       "A jumbo chocolate chip cookie ice cream sandwich — two textured cookies hugging a thick vanilla layer. The ultimate dessert wall statement: nostalgic, oversized, and completely calorie-free. Made for rooms that want a conversation starter.",
@@ -279,7 +279,7 @@ export const products: Product[] = [
     category: "candy",
     image: "/images/products/mm-classic.jpg",
     etsyUrl: "https://www.etsy.com/listing/1831839675/jumbo-mm-cookie-wall-art-candyland",
-    stripeUrl: "",
+    stripeUrl: "https://buy.stripe.com/3cIbITcwHdGM3462Dc2Nq0b",
     tagline: "Candyland dessert decor with glossy candy pieces.",
     description:
       "A single jumbo M&M cookie — golden sculpted dough, chocolate chunks, and candy-coated pops of color. Candyland dessert decor that reads as pop art from across the room.",
@@ -302,7 +302,7 @@ export const products: Product[] = [
     featured: true,
     image: "/images/products/hot-pink-mm.jpg",
     etsyUrl: "https://www.etsy.com/listing/1831836105/hot-pink-jumbo-mm-cookie-candyland-wall",
-    stripeUrl: "",
+    stripeUrl: "https://buy.stripe.com/9B65kv0NZ1Y448a0v42Nq0c",
     tagline: "The loudest cookie on the wall.",
     description:
       "A hot pink jumbo cookie studded with candy pieces and dark chocolate chunks. Maximal, playful, and unapologetically extra — candyland wall art for rooms that already know who they are.",

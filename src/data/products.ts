@@ -1,9 +1,58 @@
+import etsySyncData from "./etsy-sync.json";
+
 export type ProductCategory = "classic" | "candy" | "set" | "seasonal" | "statement";
 
 export type ProductFAQ = {
   question: string;
   answer: string;
 };
+
+/**
+ * Synced data from Etsy API (populated by scripts/sync-etsy.mjs)
+ * All values here are optional with fallbacks to hardcoded values in products array.
+ * NOTE: Stripe Payment Links are NOT auto-updated from Etsy prices.
+ *       The price sync is for display purposes; Stripe checkout must be updated manually.
+ */
+export type EtsySyncListing = {
+  listingId: string;
+  title?: string;
+  price?: number | null;
+  originalPrice?: number | null;
+  state?: string;
+  views?: number;
+  numFavorers?: number;
+  quantity?: number;
+  lastModified?: number;
+};
+
+export type EtsySyncShop = {
+  shopId: number;
+  shopName: string;
+  title?: string;
+  reviewAverage?: number;
+  reviewCount?: number;
+  listingActiveCount?: number;
+  transactionSoldCount?: number;
+};
+
+export type EtsySyncReview = {
+  rating: number;
+  review: string;
+  createTimestamp: number;
+  buyerUserId?: number;
+};
+
+export type EtsySyncData = {
+  syncedAt: string | null;
+  listings: Record<string, EtsySyncListing>;
+  shop: EtsySyncShop | null;
+  reviews: {
+    count: number;
+    reviews: EtsySyncReview[];
+  } | null;
+};
+
+const syncData = etsySyncData as EtsySyncData;
 
 export type Product = {
   slug: string;
@@ -416,4 +465,97 @@ export function calculateSavings(price: number, compareAtPrice: number) {
   const savings = compareAtPrice - price;
   const percent = Math.round((savings / compareAtPrice) * 100);
   return { savings, percent };
+}
+
+/**
+ * Get synced price for a product with fallback to hardcoded value.
+ * Returns the Etsy-synced price if available, otherwise the original hardcoded price.
+ */
+export function getSyncedPrice(slug: string): number {
+  const product = getProduct(slug);
+  if (!product) return 0;
+
+  const synced = syncData.listings?.[slug];
+  if (synced?.price != null && synced.price > 0) {
+    return synced.price;
+  }
+  return product.price;
+}
+
+/**
+ * Get synced compare-at price for a product with fallback to hardcoded value.
+ * Uses Etsy's original_price if synced, otherwise falls back to hardcoded compareAtPrice.
+ */
+export function getSyncedCompareAtPrice(slug: string): number {
+  const product = getProduct(slug);
+  if (!product) return 0;
+
+  const synced = syncData.listings?.[slug];
+  if (synced?.originalPrice != null && synced.originalPrice > 0) {
+    return synced.originalPrice;
+  }
+  return product.compareAtPrice;
+}
+
+/**
+ * Get shop stats (rating, review count, etc.) with fallback defaults.
+ */
+export function getShopStats(): {
+  reviewAverage: number;
+  reviewCount: number;
+  transactionSoldCount: number;
+  syncedAt: string | null;
+} {
+  if (syncData.shop) {
+    return {
+      reviewAverage: syncData.shop.reviewAverage ?? 5.0,
+      reviewCount: syncData.shop.reviewCount ?? 0,
+      transactionSoldCount: syncData.shop.transactionSoldCount ?? 0,
+      syncedAt: syncData.syncedAt,
+    };
+  }
+  // Fallback defaults when no sync data
+  return {
+    reviewAverage: 5.0,
+    reviewCount: 0,
+    transactionSoldCount: 0,
+    syncedAt: null,
+  };
+}
+
+/**
+ * Get recent reviews from Etsy with fallback to empty array.
+ */
+export function getShopReviews(): EtsySyncReview[] {
+  return syncData.reviews?.reviews ?? [];
+}
+
+/**
+ * Get listing-specific stats (views, favorites) with fallbacks.
+ */
+export function getListingStats(slug: string): {
+  views: number;
+  favorites: number;
+  quantity: number;
+} {
+  const synced = syncData.listings?.[slug];
+  return {
+    views: synced?.views ?? 0,
+    favorites: synced?.numFavorers ?? 0,
+    quantity: synced?.quantity ?? 0,
+  };
+}
+
+/**
+ * Check if sync data is available and recent.
+ */
+export function isSyncDataAvailable(): boolean {
+  return syncData.syncedAt != null && Object.keys(syncData.listings).length > 0;
+}
+
+/**
+ * Get the timestamp of the last successful sync.
+ */
+export function getLastSyncTime(): string | null {
+  return syncData.syncedAt;
 }

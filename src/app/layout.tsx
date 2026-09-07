@@ -17,25 +17,109 @@ const outfit = Outfit({
   display: "swap",
 });
 
+const siteUrl = "https://joirush.com";
+
 export const metadata: Metadata = {
   title: {
-    default: `${site.name} — ${site.tagline}`,
-    template: `%s · ${site.name}`,
+    default: `Jumbo Cookie Wall Art | Handmade Oversized Cookie Sculptures | ${site.name}`,
+    template: `%s | ${site.name}`,
   },
   description:
-    "Handmade jumbo cookie wall art and Y2K statement jewelry by Erynn in Orlando, Florida. Dessert dreams, retro vibes, and zero calories.",
-  metadataBase: new URL("https://joirush.com"),
+    "Shop handmade jumbo cookie wall art and oversized fake cookie sculptures by JOIRUSH. Realistic dessert decor for kitchens, cafés, bakeries, and content studios. Free U.S. shipping from Florida.",
+  keywords: [
+    "jumbo cookie wall art",
+    "oversized cookie wall decor",
+    "fake cookie wall sculpture",
+    "giant cookie art",
+    "dessert wall decor",
+    "handmade cookie sculptures",
+    "bakery wall art",
+    "kitchen wall decor",
+    "faux cookie art",
+    "realistic food art",
+  ],
+  metadataBase: new URL(siteUrl),
+  alternates: {
+    canonical: siteUrl,
+  },
   openGraph: {
-    title: `${site.name} — ${site.tagline}`,
+    title: `Jumbo Cookie Wall Art | Handmade Oversized Cookie Sculptures | ${site.name}`,
     description:
-      "Mixed media dessert sculptures and custom accessories, handmade with love in Florida.",
+      "Shop handmade jumbo cookie wall art — realistic oversized cookie sculptures for kitchens, cafés, and content studios. Free U.S. shipping.",
     type: "website",
+    url: siteUrl,
+    siteName: site.name,
+    locale: "en_US",
+    images: [
+      {
+        url: `${siteUrl}/images/products/choc-chip.jpg`,
+        width: 1200,
+        height: 630,
+        alt: "Jumbo chocolate chip cookie wall art by JOIRUSH",
+      },
+    ],
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: `Jumbo Cookie Wall Art | ${site.name}`,
+    description:
+      "Handmade oversized cookie sculptures for walls — realistic dessert decor that ships free in the U.S.",
+    images: [`${siteUrl}/images/products/choc-chip.jpg`],
+  },
+  robots: {
+    index: true,
+    follow: true,
+    googleBot: {
+      index: true,
+      follow: true,
+      "max-video-preview": -1,
+      "max-image-preview": "large",
+      "max-snippet": -1,
+    },
   },
 };
+
+function OrganizationSchema() {
+  const schema = {
+    "@context": "https://schema.org",
+    "@type": "Organization",
+    name: site.name,
+    alternateName: "Joi Rush by EBABYxo",
+    url: siteUrl,
+    logo: `${siteUrl}/images/brand/avatar.jpg`,
+    description:
+      "Handmade jumbo cookie wall art and oversized dessert sculptures by artist Erynn in Orlando, Florida.",
+    foundingLocation: {
+      "@type": "Place",
+      address: {
+        "@type": "PostalAddress",
+        addressLocality: "Orlando",
+        addressRegion: "FL",
+        addressCountry: "US",
+      },
+    },
+    sameAs: [site.instagram, site.instagramAlt, site.etsy],
+    contactPoint: {
+      "@type": "ContactPoint",
+      contactType: "customer service",
+      url: site.etsy,
+    },
+  };
+
+  return (
+    <script
+      type="application/ld+json"
+      dangerouslySetInnerHTML={{ __html: JSON.stringify(schema) }}
+    />
+  );
+}
 
 export default function RootLayout({ children }: { children: React.ReactNode }) {
   return (
     <html lang="en" className={`${fraunces.variable} ${outfit.variable}`}>
+      <head>
+        <OrganizationSchema />
+      </head>
       <body className="font-sans antialiased">
         <SiteHeader />
         <main>{children}</main>

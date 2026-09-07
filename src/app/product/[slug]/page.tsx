@@ -11,10 +11,9 @@ import {
   calculateSavings,
 } from "@/data/products";
 import { site, reviews } from "@/data/site";
+import { siteUrl, getAbsoluteUrl, getImageUrl } from "@/lib/seo";
 
 type Props = { params: Promise<{ slug: string }> };
-
-const siteUrl = "https://joirush.com";
 
 export function generateStaticParams() {
   return products.map((product) => ({ slug: product.slug }));
@@ -25,8 +24,8 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
   const product = getProduct(slug);
   if (!product) return { title: "Piece not found" };
 
-  const productUrl = `${siteUrl}/product/${product.slug}`;
-  const imageUrl = `${siteUrl}${product.image}`;
+  const productUrl = getAbsoluteUrl(`/product/${product.slug}/`);
+  const imageUrl = getImageUrl(product.image);
 
   return {
     title: `${product.name} | Handmade Cookie Wall Art`,
@@ -74,45 +73,38 @@ function getRelevantReviews() {
   );
 }
 
-export default async function ProductPage({ params }: Props) {
-  const { slug } = await params;
-  const product = getProduct(slug);
-  if (!product) notFound();
-  const related = getRelatedProducts(product.slug);
-  const { savings, percent } = calculateSavings(product.price, product.compareAtPrice);
-  const relevantReviews = getRelevantReviews().slice(0, 2);
-
-  const jsonLd = {
+function ProductJsonLd({ product }: { product: NonNullable<ReturnType<typeof getProduct>> }) {
+  const productSchema = {
     "@context": "https://schema.org",
     "@type": "Product",
     name: product.name,
     description: product.description,
-    image: `https://joirush.com${product.image}`,
+    image: getImageUrl(product.image),
     brand: {
       "@type": "Brand",
-      name: "JOIRUSH",
+      name: site.name,
     },
     offers: {
       "@type": "Offer",
-      url: `https://joirush.com/product/${product.slug}`,
+      url: product.stripeUrl || product.etsyUrl,
       priceCurrency: "USD",
       price: product.price,
       priceValidUntil: new Date(Date.now() + 30 * 24 * 60 * 60 * 1000).toISOString().split("T")[0],
       availability: "https://schema.org/InStock",
       seller: {
         "@type": "Organization",
-        name: "JOIRUSH",
+        name: site.name,
       },
       shippingDetails: {
         "@type": "OfferShippingDetails",
+        shippingRate: {
+          "@type": "MonetaryAmount",
+          value: "0",
+          currency: "USD",
+        },
         shippingDestination: {
           "@type": "DefinedRegion",
           addressCountry: "US",
-        },
-        shippingRate: {
-          "@type": "MonetaryAmount",
-          value: 0,
-          currency: "USD",
         },
       },
     },
@@ -121,23 +113,139 @@ export default async function ProductPage({ params }: Props) {
       ratingValue: site.stats.rating,
       reviewCount: site.stats.reviews,
     },
+    material: product.materials,
+    size: product.size,
+    manufacturer: {
+      "@type": "Organization",
+      name: site.name,
+      address: {
+        "@type": "PostalAddress",
+        addressLocality: "Orlando",
+        addressRegion: "FL",
+        addressCountry: "US",
+      },
+    },
+  };
+
+  const faqSchema = {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    mainEntity: product.faqs.map((faq) => ({
+      "@type": "Question",
+      name: faq.question,
+      acceptedAnswer: {
+        "@type": "Answer",
+        text: faq.answer,
+      },
+    })),
+  };
+
+  const breadcrumbSchema = {
+    "@context": "https://schema.org",
+    "@type": "BreadcrumbList",
+    itemListElement: [
+      {
+        "@type": "ListItem",
+        position: 1,
+        name: "Home",
+        item: siteUrl,
+      },
+      {
+        "@type": "ListItem",
+        position: 2,
+        name: "Cookie Wall Art",
+        item: getAbsoluteUrl("/wall-art/"),
+      },
+      {
+        "@type": "ListItem",
+        position: 3,
+        name: product.shortName,
+        item: getAbsoluteUrl(`/product/${product.slug}/`),
+      },
+    ],
   };
 
   return (
     <>
       <script
         type="application/ld+json"
-        dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(productSchema) }}
       />
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(faqSchema) }}
+      />
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbSchema) }}
+      />
+    </>
+  );
+}
+
+function FAQAccordion({ faqs }: { faqs: { question: string; answer: string }[] }) {
+  return (
+    <div className="mt-10 border-t border-chocolate/10 pt-8">
+      <h2 className="font-display text-2xl text-chocolate">Frequently Asked Questions</h2>
+      <div className="mt-6 space-y-4">
+        {faqs.map((faq, index) => (
+          <details
+            key={index}
+            className="group rounded-xl border border-chocolate/10 bg-cream/50"
+          >
+            <summary className="flex cursor-pointer items-center justify-between p-4 font-medium text-chocolate">
+              {faq.question}
+              <span className="ml-4 text-pink transition-transform group-open:rotate-180">
+                <svg width="20" height="20" viewBox="0 0 20 20" fill="none">
+                  <path
+                    d="M5 7.5L10 12.5L15 7.5"
+                    stroke="currentColor"
+                    strokeWidth="2"
+                    strokeLinecap="round"
+                    strokeLinejoin="round"
+                  />
+                </svg>
+              </span>
+            </summary>
+            <div className="px-4 pb-4 text-chocolate-mid">{faq.answer}</div>
+          </details>
+        ))}
+      </div>
+    </div>
+  );
+}
+
+export default async function ProductPage({ params }: Props) {
+  const { slug } = await params;
+  const product = getProduct(slug);
+  if (!product) notFound();
+  const related = getRelatedProducts(product.slug);
+  const { savings, percent } = calculateSavings(product.price, product.compareAtPrice);
+  const relevantReviews = getRelevantReviews().slice(0, 2);
+
+  return (
+    <>
+      <ProductJsonLd product={product} />
       <div className="mx-auto max-w-7xl px-5 py-12 md:px-8 md:py-16">
-        <p className="text-sm text-chocolate-soft">
-          <Link href="/catalogue" className="hover:text-pink">
-            Catalogue
-          </Link>{" "}
-          / {product.shortName}
-        </p>
+        <nav aria-label="Breadcrumb" className="text-sm text-chocolate-soft">
+          <ol className="flex flex-wrap items-center gap-2">
+            <li>
+              <Link href="/" className="hover:text-pink">
+                Home
+              </Link>
+            </li>
+            <li>/</li>
+            <li>
+              <Link href="/wall-art/" className="hover:text-pink">
+                Cookie Wall Art
+              </Link>
+            </li>
+            <li>/</li>
+            <li className="text-chocolate">{product.shortName}</li>
+          </ol>
+        </nav>
+
         <div className="mt-6 grid items-start gap-10 md:grid-cols-2">
-          {/* Product Image */}
           <Image
             src={product.image}
             alt={product.name}
@@ -148,17 +256,14 @@ export default async function ProductPage({ params }: Props) {
           />
 
           <div>
-            {/* Category Label */}
             <p className="text-xs font-semibold uppercase tracking-[0.22em] text-pink">
               Handmade wall art
             </p>
 
-            {/* Product Name */}
             <h1 className="mt-3 font-display text-4xl text-chocolate md:text-5xl">
               {product.name}
             </h1>
 
-            {/* Price Block */}
             <div className="mt-5">
               <div className="flex items-baseline gap-3">
                 <span className="text-3xl font-bold text-chocolate">
@@ -173,7 +278,6 @@ export default async function ProductPage({ params }: Props) {
               </p>
             </div>
 
-            {/* Trust Row */}
             <div className="mt-5 flex flex-wrap gap-x-4 gap-y-2 text-sm text-chocolate-mid">
               <span className="flex items-center gap-1.5">
                 <svg className="h-4 w-4 text-success" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}>
@@ -202,7 +306,6 @@ export default async function ProductPage({ params }: Props) {
               </span>
             </div>
 
-            {/* Social Proof */}
             <div className="mt-6 rounded-2xl bg-cream-deep/60 p-4">
               <div className="flex items-center gap-4">
                 <div className="flex items-center gap-1">
@@ -223,7 +326,6 @@ export default async function ProductPage({ params }: Props) {
                 </span>
               </div>
 
-              {/* Review Quotes */}
               {relevantReviews.length > 0 && (
                 <div className="mt-4 space-y-3">
                   {relevantReviews.map((review, idx) => (
@@ -238,33 +340,18 @@ export default async function ProductPage({ params }: Props) {
               )}
             </div>
 
-            {/* CTA Buttons */}
             <div className="mt-8 space-y-3">
-              {product.stripeUrl ? (
-                <a
-                  href={product.stripeUrl}
-                  target="_blank"
-                  rel="noreferrer"
-                  className="flex w-full items-center justify-center gap-2 rounded-full bg-success px-8 py-4 text-lg font-bold text-white shadow-lg transition hover:bg-success-dark hover:shadow-xl"
-                >
-                  <svg className="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}>
-                    <path strokeLinecap="round" strokeLinejoin="round" d="M3 3h2l.4 2M7 13h10l4-8H5.4M7 13L5.4 5M7 13l-2.293 2.293c-.63.63-.184 1.707.707 1.707H17m0 0a2 2 0 100 4 2 2 0 000-4zm-8 2a2 2 0 11-4 0 2 2 0 014 0z" />
-                  </svg>
-                  Buy Now — {formatPrice(product.price)}
-                </a>
-              ) : (
-                <a
-                  href={product.etsyUrl}
-                  target="_blank"
-                  rel="noreferrer"
-                  className="flex w-full items-center justify-center gap-2 rounded-full bg-success px-8 py-4 text-lg font-bold text-white shadow-lg transition hover:bg-success-dark hover:shadow-xl"
-                >
-                  <svg className="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}>
-                    <path strokeLinecap="round" strokeLinejoin="round" d="M3 3h2l.4 2M7 13h10l4-8H5.4M7 13L5.4 5M7 13l-2.293 2.293c-.63.63-.184 1.707.707 1.707H17m0 0a2 2 0 100 4 2 2 0 000-4zm-8 2a2 2 0 11-4 0 2 2 0 014 0z" />
-                  </svg>
-                  Buy Now — {formatPrice(product.price)}
-                </a>
-              )}
+              <a
+                href={product.stripeUrl}
+                target="_blank"
+                rel="noreferrer"
+                className="flex w-full items-center justify-center gap-2 rounded-full bg-success px-8 py-4 text-lg font-bold text-white shadow-lg transition hover:bg-success-dark hover:shadow-xl"
+              >
+                <svg className="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}>
+                  <path strokeLinecap="round" strokeLinejoin="round" d="M3 3h2l.4 2M7 13h10l4-8H5.4M7 13L5.4 5M7 13l-2.293 2.293c-.63.63-.184 1.707.707 1.707H17m0 0a2 2 0 100 4 2 2 0 000-4zm-8 2a2 2 0 11-4 0 2 2 0 014 0z" />
+                </svg>
+                Buy Now — {formatPrice(product.price)}
+              </a>
               <a
                 href={product.etsyUrl}
                 target="_blank"
@@ -277,19 +364,17 @@ export default async function ProductPage({ params }: Props) {
                 Buy on Etsy
               </a>
               <Link
-                href="/custom"
+                href="/custom/"
                 className="flex w-full items-center justify-center gap-2 rounded-full border border-chocolate/10 px-6 py-3 text-sm font-medium text-chocolate-soft transition hover:border-chocolate/20 hover:text-chocolate-mid"
               >
                 Want it custom?
               </Link>
             </div>
 
-            {/* Description */}
             <div className="mt-8">
               <p className="text-lg leading-relaxed text-chocolate-mid">{product.description}</p>
             </div>
 
-            {/* Details */}
             <div className="mt-6">
               <h3 className="font-semibold text-chocolate">Details</h3>
               <ul className="mt-3 space-y-2 text-chocolate-mid">
@@ -306,7 +391,8 @@ export default async function ProductPage({ params }: Props) {
           </div>
         </div>
 
-        {/* Related Products */}
+        <FAQAccordion faqs={product.faqs} />
+
         <section className="mt-20">
           <h2 className="font-display text-3xl text-chocolate">More from the bakery wall</h2>
           <div className="mt-8 grid gap-8 sm:grid-cols-2 lg:grid-cols-3">

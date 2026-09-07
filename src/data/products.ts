@@ -1,5 +1,10 @@
 export type ProductCategory = "classic" | "candy" | "set" | "seasonal" | "statement";
 
+export type ProductFAQ = {
+  question: string;
+  answer: string;
+};
+
 export type Product = {
   slug: string;
   name: string;
@@ -16,7 +21,31 @@ export type Product = {
   description: string;
   details: string[];
   materials: string;
+  faqs: ProductFAQ[];
 };
+
+export const defaultFAQs: ProductFAQ[] = [
+  {
+    question: "Is this cookie edible?",
+    answer: "No, this is a decorative wall sculpture made from wood, clay, and acrylic paint. It's designed to look realistic but is not food.",
+  },
+  {
+    question: "How do I hang this on my wall?",
+    answer: "Each piece comes with a built-in wall hanger on the back. Simply use a nail or picture hook rated for the weight (most pieces are under 3 lbs). No special hardware needed.",
+  },
+  {
+    question: "How big is this piece?",
+    answer: "Most jumbo cookies are approximately 16 inches in diameter. Check the specific listing for exact dimensions.",
+  },
+  {
+    question: "Do you ship internationally?",
+    answer: "Currently we ship free within the United States. For international orders, please contact us through the custom order form for a shipping quote.",
+  },
+  {
+    question: "Can I order a custom version?",
+    answer: "Absolutely! Visit our custom orders page to request a cookie in specific colors, sizes, or flavors. Erynn loves creating one-of-a-kind pieces.",
+  },
+];
 
 export const products: Product[] = [
   {
@@ -42,6 +71,13 @@ export const products: Product[] = [
       "Perfect for kitchens, cafés, bakeries, dessert rooms, and content studios",
     ],
     materials: "Wood, clay, acrylic paint",
+    faqs: [
+      ...defaultFAQs,
+      {
+        question: "What makes this different from commercial food props?",
+        answer: "Unlike heavy fiberglass commercial props that cost $350+, this is a lightweight (~2 lb) handmade art piece that's easy to hang. Each cookie is individually sculpted with unique texture and character.",
+      },
+    ],
   },
   {
     slug: "oversized-mini-cookie-pair",
@@ -66,6 +102,7 @@ export const products: Product[] = [
       "One of a kind",
     ],
     materials: "Wood, clay, acrylic paint",
+    faqs: defaultFAQs,
   },
   {
     slug: "jumbo-mm-cookie-set",
@@ -90,6 +127,7 @@ export const products: Product[] = [
       "Perfect for large walls, kitchens, cafés, and studios",
     ],
     materials: "Wood, clay, acrylic paint",
+    faqs: defaultFAQs,
   },
   {
     slug: "jumbo-white-chocolate-chip-cookie",
@@ -112,6 +150,7 @@ export const products: Product[] = [
       "Pop-art dessert decor",
     ],
     materials: "Wood, clay, acrylic paint",
+    faqs: defaultFAQs,
   },
   {
     slug: "rainbow-candy-cookie",
@@ -135,6 +174,7 @@ export const products: Product[] = [
       "Built-in wall hanger",
     ],
     materials: "Wood, clay, acrylic paint",
+    faqs: defaultFAQs,
   },
   {
     slug: "mini-jumbo-chocolate-chip-cookie",
@@ -157,6 +197,7 @@ export const products: Product[] = [
       "Dessert-themed wall decor",
     ],
     materials: "Wood, clay, acrylic paint",
+    faqs: defaultFAQs,
   },
   {
     slug: "jumbo-pastel-mm-cookie",
@@ -179,6 +220,7 @@ export const products: Product[] = [
       "Built-in wall hanger",
     ],
     materials: "Wood, clay, acrylic paint",
+    faqs: defaultFAQs,
   },
   {
     slug: "jumbo-christmas-cookie",
@@ -201,6 +243,7 @@ export const products: Product[] = [
       "Built-in wall hanger",
     ],
     materials: "Wood, clay, acrylic paint",
+    faqs: defaultFAQs,
   },
   {
     slug: "giant-peanut-butter-cookie",
@@ -223,6 +266,7 @@ export const products: Product[] = [
       "Built-in wall hanger",
     ],
     materials: "Wood, clay, acrylic paint",
+    faqs: defaultFAQs,
   },
   {
     slug: "giant-double-chocolate-cookie",
@@ -245,10 +289,11 @@ export const products: Product[] = [
       "Built-in wall hanger",
     ],
     materials: "Wood, clay, acrylic paint",
+    faqs: defaultFAQs,
   },
   {
     slug: "cookie-ice-cream-sandwich",
-    name: "Jumbo Cookie Ice Cream Sandwich Art",
+    name: "Jumbo Cookie Ice Cream Sandwich Wall Art",
     shortName: "Ice Cream Sandwich",
     price: 220,
     compareAtPrice: 315,
@@ -268,6 +313,13 @@ export const products: Product[] = [
       "Dessert wall decor",
     ],
     materials: "Wood, clay, acrylic paint",
+    faqs: [
+      ...defaultFAQs,
+      {
+        question: "How heavy is the ice cream sandwich?",
+        answer: "Despite its size, the ice cream sandwich is lightweight at around 4-5 lbs. It's designed to hang securely on standard picture hooks.",
+      },
+    ],
   },
   {
     slug: "jumbo-mm-cookie",
@@ -290,10 +342,11 @@ export const products: Product[] = [
       "Built-in wall hanger",
     ],
     materials: "Wood, clay, acrylic paint",
+    faqs: defaultFAQs,
   },
   {
     slug: "hot-pink-mm-cookie",
-    name: "Hot Pink Jumbo M&M Cookie",
+    name: "Hot Pink Jumbo M&M Cookie Wall Art",
     shortName: "Hot Pink M&M Cookie",
     price: 115,
     compareAtPrice: 165,
@@ -313,6 +366,7 @@ export const products: Product[] = [
       "Built-in wall hanger",
     ],
     materials: "Wood, clay, acrylic paint",
+    faqs: defaultFAQs,
   },
 ];
 

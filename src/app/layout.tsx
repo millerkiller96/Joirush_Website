@@ -3,6 +3,7 @@ import { Fraunces, Outfit } from "next/font/google";
 import { SiteFooter } from "@/components/SiteFooter";
 import { SiteHeader } from "@/components/SiteHeader";
 import { site } from "@/data/site";
+import { siteUrl, getImageUrl } from "@/lib/seo";
 import "./globals.css";
 
 const fraunces = Fraunces({
@@ -16,8 +17,6 @@ const outfit = Outfit({
   variable: "--font-sans",
   display: "swap",
 });
-
-const siteUrl = "https://joirush.com";
 
 export const metadata: Metadata = {
   title: {
@@ -52,7 +51,7 @@ export const metadata: Metadata = {
     locale: "en_US",
     images: [
       {
-        url: `${siteUrl}/images/products/choc-chip.jpg`,
+        url: getImageUrl("/images/products/choc-chip.jpg"),
         width: 1200,
         height: 630,
         alt: "Jumbo chocolate chip cookie wall art by JOIRUSH",
@@ -64,7 +63,7 @@ export const metadata: Metadata = {
     title: `Jumbo Cookie Wall Art | ${site.name}`,
     description:
       "Handmade oversized cookie sculptures for walls — realistic dessert decor that ships free in the U.S.",
-    images: [`${siteUrl}/images/products/choc-chip.jpg`],
+    images: [getImageUrl("/images/products/choc-chip.jpg")],
   },
   robots: {
     index: true,
@@ -86,7 +85,7 @@ function OrganizationSchema() {
     name: site.name,
     alternateName: "Joi Rush by EBABYxo",
     url: siteUrl,
-    logo: `${siteUrl}/images/brand/avatar.jpg`,
+    logo: getImageUrl("/images/brand/avatar.jpg"),
     description:
       "Handmade jumbo cookie wall art and oversized dessert sculptures by artist Erynn in Orlando, Florida.",
     foundingLocation: {
@@ -103,6 +102,13 @@ function OrganizationSchema() {
       "@type": "ContactPoint",
       contactType: "customer service",
       url: site.etsy,
+    },
+    aggregateRating: {
+      "@type": "AggregateRating",
+      ratingValue: site.stats.rating,
+      reviewCount: site.stats.reviews,
+      bestRating: "5",
+      worstRating: "1",
     },
   };
 

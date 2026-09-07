@@ -1,56 +1,96 @@
 import type { MetadataRoute } from "next";
 import { products } from "@/data/products";
+import { getAbsoluteUrl } from "@/lib/seo";
 
 export const dynamic = "force-static";
 
-const baseUrl = "https://joirush.com";
-
 export default function sitemap(): MetadataRoute.Sitemap {
+  const now = new Date();
+
   const staticPages: MetadataRoute.Sitemap = [
     {
-      url: baseUrl,
-      lastModified: new Date(),
+      url: getAbsoluteUrl("/"),
+      lastModified: now,
       changeFrequency: "weekly",
-      priority: 1,
+      priority: 1.0,
     },
     {
-      url: `${baseUrl}/catalogue`,
-      lastModified: new Date(),
-      changeFrequency: "weekly",
-      priority: 0.9,
-    },
-    {
-      url: `${baseUrl}/wall-art`,
-      lastModified: new Date(),
+      url: getAbsoluteUrl("/wall-art/"),
+      lastModified: now,
       changeFrequency: "weekly",
       priority: 0.9,
     },
     {
-      url: `${baseUrl}/custom`,
-      lastModified: new Date(),
-      changeFrequency: "monthly",
+      url: getAbsoluteUrl("/catalogue/"),
+      lastModified: now,
+      changeFrequency: "weekly",
       priority: 0.8,
     },
     {
-      url: `${baseUrl}/jewelry`,
-      lastModified: new Date(),
+      url: getAbsoluteUrl("/custom/"),
+      lastModified: now,
+      changeFrequency: "monthly",
+      priority: 0.7,
+    },
+    {
+      url: getAbsoluteUrl("/about/"),
+      lastModified: now,
       changeFrequency: "monthly",
       priority: 0.6,
     },
     {
-      url: `${baseUrl}/about`,
-      lastModified: new Date(),
+      url: getAbsoluteUrl("/jewelry/"),
+      lastModified: now,
       changeFrequency: "monthly",
       priority: 0.5,
+    },
+    {
+      url: getAbsoluteUrl("/for/bakeries-cafes/"),
+      lastModified: now,
+      changeFrequency: "monthly",
+      priority: 0.7,
+    },
+    {
+      url: getAbsoluteUrl("/blog/"),
+      lastModified: now,
+      changeFrequency: "weekly",
+      priority: 0.7,
     },
   ];
 
   const productPages: MetadataRoute.Sitemap = products.map((product) => ({
-    url: `${baseUrl}/product/${product.slug}`,
-    lastModified: new Date(),
-    changeFrequency: "weekly" as const,
+    url: getAbsoluteUrl(`/product/${product.slug}/`),
+    lastModified: now,
+    changeFrequency: "monthly" as const,
     priority: 0.8,
   }));
 
-  return [...staticPages, ...productPages];
+  const blogPosts: MetadataRoute.Sitemap = [
+    {
+      url: getAbsoluteUrl("/blog/how-to-hang-jumbo-cookie-wall-art/"),
+      lastModified: now,
+      changeFrequency: "yearly" as const,
+      priority: 0.7,
+    },
+    {
+      url: getAbsoluteUrl("/blog/kitchen-dopamine-decor-dessert-gallery-wall/"),
+      lastModified: now,
+      changeFrequency: "yearly" as const,
+      priority: 0.7,
+    },
+    {
+      url: getAbsoluteUrl("/blog/foodie-gift-guide-jumbo-cookie-sculptures/"),
+      lastModified: now,
+      changeFrequency: "yearly" as const,
+      priority: 0.7,
+    },
+    {
+      url: getAbsoluteUrl("/blog/chocolate-chip-cookie-wall-art-joirush-classic/"),
+      lastModified: now,
+      changeFrequency: "yearly" as const,
+      priority: 0.7,
+    },
+  ];
+
+  return [...staticPages, ...productPages, ...blogPosts];
 }

@@ -277,7 +277,7 @@ export function ChocolateChipStoryContent() {
       <h3>Where is JOIRUSH located?</h3>
       <p>
         JOIRUSH is based in Orlando, Florida, with pieces shipping from Daytona Beach, FL. 
-        All orders include free shipping within the United States.
+        All orders include free shipping within the United States — each piece ships in 14 days because true handcraft artistry takes time.
       </p>
 
       <h2>Start Your Collection</h2>
@@ -287,7 +287,7 @@ export function ChocolateChipStoryContent() {
         adding to an existing gallery, the classic chocolate chip cookie is the perfect 
         starting point. Browse the full <Link href="/wall-art/">cookie wall art collection</Link>, or 
         <Link href="/custom/"> request a custom piece</Link> in your ideal size, color, or flavor. 
-        Every sculpture ships free within the US, ready to hang and ready to spark conversations.
+        Every sculpture ships free within the US in 14 days, ready to hang and ready to spark conversations.
       </p>
     </>
   );

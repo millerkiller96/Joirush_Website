@@ -4,6 +4,8 @@ export const site = {
   studioLine: "Joi Rush by EBABYxo",
   location: "Orlando, Florida",
   shipsFrom: "Daytona Beach, FL",
+  shippingTime: "14 days",
+  shippingNote: "14-day handmade production & shipping",
   artist: "Erynn",
   artistRole: "Owner and creative designer",
   instagram: "https://www.instagram.com/joirushshop",

@@ -335,7 +335,7 @@ export function HowToHangContent() {
         the perfect piece. Browse the full <Link href="/wall-art/">cookie wall art collection</Link> to 
         find your flavor, or <Link href="/custom/">request a custom piece</Link> in your favorite 
         colors, your favorite candy combinations, or a one-of-a-kind design. Every cookie ships 
-        free within the US, ready to hang with the built-in hanger.
+        free within the US in 14 days — true handcraft artistry takes time. Ready to hang with the built-in hanger.
       </p>
     </>
   );

@@ -54,6 +54,7 @@ export default function CustomPage() {
         <ul className="mt-8 space-y-3 text-chocolate-mid">
           <li>Custom jumbo cookie wall art in any color or flavor</li>
           <li>Oversized fake cookie sculptures for kitchens, homes, and studios</li>
+          <li>14-day handmade production & shipping — true artistry takes time</li>
           <li>Typically replies within a few hours</li>
           <li>Handmade in Florida, free U.S. shipping</li>
           <li>Because each piece is made to order, returns are not accepted</li>

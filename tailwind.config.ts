@@ -22,6 +22,11 @@ const config: Config = {
           blush: "#FFD6E5",
         },
         mint: "#6FDBB8",
+        success: {
+          DEFAULT: "#16A34A",
+          dark: "#15803D",
+          light: "#22C55E",
+        },
       },
       fontFamily: {
         display: ["var(--font-display)", "Georgia", "serif"],

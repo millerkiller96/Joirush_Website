@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import { CustomForm } from "@/components/CustomForm";
 import { EtsyReviewsHub } from "@/components/EtsyReviewsHub";
+import { StudioVideoCarousel } from "@/components/StudioVideoCarousel";
 import { site } from "@/data/site";
 
 const siteUrl = "https://joirush.com";
@@ -74,6 +75,7 @@ export default function CustomPage() {
         </div>
         <CustomForm />
       </div>
+      <StudioVideoCarousel />
       <EtsyReviewsHub />
     </>
   );

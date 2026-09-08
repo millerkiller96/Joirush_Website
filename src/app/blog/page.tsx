@@ -3,6 +3,7 @@ import { Image } from "@/components/Image";
 import Link from "next/link";
 import { EtsyReviewsHub } from "@/components/EtsyReviewsHub";
 import { SectionHeading } from "@/components/SectionHeading";
+import { StudioVideoCarousel } from "@/components/StudioVideoCarousel";
 import { blogPosts } from "@/data/blog/posts";
 import { site } from "@/data/site";
 import { getAbsoluteUrl, getImageUrl } from "@/lib/seo";
@@ -97,6 +98,10 @@ export default function BlogPage() {
             From how to hang your jumbo cookies to creating the perfect dopamine decor kitchen,
             explore ideas and stories from the studio.
           </p>
+        </div>
+
+        <div className="mt-12">
+          <StudioVideoCarousel />
         </div>
 
         <div className="mt-16 grid gap-8 md:grid-cols-2 lg:grid-cols-2">

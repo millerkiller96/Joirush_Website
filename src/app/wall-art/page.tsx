@@ -4,6 +4,7 @@ import Link from "next/link";
 import { EtsyReviewsHub } from "@/components/EtsyReviewsHub";
 import { ProductCard } from "@/components/ProductCard";
 import { SectionHeading } from "@/components/SectionHeading";
+import { StudioVideoCarousel } from "@/components/StudioVideoCarousel";
 import { products } from "@/data/products";
 import { site } from "@/data/site";
 import { getAbsoluteUrl, getImageUrl, siteUrl } from "@/lib/seo";
@@ -162,6 +163,8 @@ export default function WallArtPage() {
             priority
           />
         </section>
+
+        <StudioVideoCarousel />
 
         <section className="bg-white">
           <div className="mx-auto max-w-7xl px-5 py-16 md:px-8">

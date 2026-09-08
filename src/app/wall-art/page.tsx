@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import { Image } from "@/components/Image";
 import Link from "next/link";
+import { EtsyReviewsHub } from "@/components/EtsyReviewsHub";
 import { ProductCard } from "@/components/ProductCard";
 import { SectionHeading } from "@/components/SectionHeading";
 import { products } from "@/data/products";
@@ -109,7 +110,7 @@ export default function WallArtPage() {
       <div>
         <section className="mx-auto grid max-w-7xl items-center gap-10 px-5 py-16 md:grid-cols-2 md:px-8 md:py-20">
           <div>
-            <p className="text-xs font-semibold uppercase tracking-[0.22em] text-pink">
+            <p className="text-sm font-semibold uppercase tracking-[0.22em] text-pink">
               All the craving. Zero calories.
             </p>
             <h1 className="mt-3 font-display text-5xl leading-tight text-chocolate md:text-6xl">
@@ -282,6 +283,8 @@ export default function WallArtPage() {
             </div>
           </div>
         </section>
+
+        <EtsyReviewsHub />
       </div>
     </>
   );

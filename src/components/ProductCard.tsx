@@ -16,7 +16,7 @@ export function ProductCard({ product }: { product: Product }) {
             height={1066}
             className="aspect-[3/4] w-full object-cover transition duration-500 group-hover:scale-[1.03]"
           />
-          <span className="absolute left-3 top-3 rounded-full bg-success px-2.5 py-1 text-xs font-bold text-white">
+          <span className="absolute left-3 top-3 rounded-full bg-success px-2.5 py-1 text-sm font-bold text-white">
             {percent}% off
           </span>
         </div>
@@ -34,7 +34,7 @@ export function ProductCard({ product }: { product: Product }) {
             <p className="rounded-full bg-success/10 px-3 py-1 text-sm font-bold text-success-dark">
               {formatPrice(product.price)}
             </p>
-            <p className="mt-1 text-xs text-chocolate-soft line-through">
+            <p className="mt-1 text-sm text-chocolate-soft line-through">
               {formatPrice(product.compareAtPrice)}
             </p>
           </div>

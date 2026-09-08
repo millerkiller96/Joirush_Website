@@ -4,6 +4,7 @@ import { SiteFooter } from "@/components/SiteFooter";
 import { SiteHeader } from "@/components/SiteHeader";
 import { site } from "@/data/site";
 import { siteUrl, getImageUrl } from "@/lib/seo";
+import { asset } from "@/lib/paths";
 import "./globals.css";
 
 const fraunces = Fraunces({
@@ -22,6 +23,16 @@ export const metadata: Metadata = {
   title: {
     default: `Jumbo Cookie Wall Art | Handmade Oversized Cookie Sculptures | ${site.name}`,
     template: `%s | ${site.name}`,
+  },
+  icons: {
+    icon: [
+      { url: asset("/favicon.ico"), sizes: "32x32" },
+      { url: asset("/icon.png"), type: "image/png", sizes: "32x32" },
+      { url: asset("/icon-48.png"), type: "image/png", sizes: "48x48" },
+    ],
+    apple: [
+      { url: asset("/apple-touch-icon.png"), type: "image/png", sizes: "180x180" },
+    ],
   },
   description:
     "Shop handmade jumbo cookie wall art and oversized fake cookie sculptures by JOIRUSH. Realistic dessert decor for kitchens, homes, and creative spaces. Free U.S. shipping from Florida.",
@@ -97,7 +108,7 @@ function OrganizationSchema() {
         addressCountry: "US",
       },
     },
-    sameAs: [site.instagram, site.instagramAlt, site.etsy],
+    sameAs: [site.instagram, site.etsy],
     contactPoint: {
       "@type": "ContactPoint",
       contactType: "customer service",

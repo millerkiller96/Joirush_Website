@@ -1,7 +1,8 @@
 import type { Metadata } from "next";
 import { Image } from "@/components/Image";
 import Link from "next/link";
-import { reviews, site } from "@/data/site";
+import { EtsyReviewsHub } from "@/components/EtsyReviewsHub";
+import { site } from "@/data/site";
 
 const siteUrl = "https://joirush.com";
 
@@ -33,7 +34,7 @@ export default function AboutPage() {
   return (
     <div>
       <section className="mx-auto max-w-7xl px-5 py-16 md:px-8 md:py-20">
-        <p className="text-xs font-semibold uppercase tracking-[0.22em] text-pink">{site.studioLine}</p>
+        <p className="text-sm font-semibold uppercase tracking-[0.22em] text-pink">{site.studioLine}</p>
         <h1 className="mt-3 max-w-3xl font-display text-5xl text-chocolate md:text-6xl">
           Sweet, nostalgic, over-the-top. That&apos;s the whole vibe.
         </h1>
@@ -82,8 +83,8 @@ export default function AboutPage() {
               statement gift, the work is made to turn heads and spark smiles.
             </p>
             <p className="mt-4 text-chocolate-mid">
-              Custom orders are always open. Follow {site.instagramHandle} and{" "}
-              {site.instagramAltHandle} for sneak peeks, behind-the-scenes, and exclusive drops.
+              Custom orders are always open. Follow {site.instagramHandle} for sneak peeks,
+              behind-the-scenes, and exclusive drops.
             </p>
           </div>
           <dl className="grid grid-cols-2 gap-4">
@@ -96,7 +97,7 @@ export default function AboutPage() {
               ["Based in", site.location],
             ].map(([label, value]) => (
               <div key={label} className="rounded-[1.6rem] bg-cream p-5">
-                <dt className="text-xs uppercase tracking-widest text-chocolate-soft">{label}</dt>
+                <dt className="text-sm uppercase tracking-widest text-chocolate-soft">{label}</dt>
                 <dd className="mt-2 font-display text-3xl text-chocolate">{value}</dd>
               </div>
             ))}
@@ -122,21 +123,12 @@ export default function AboutPage() {
         </div>
       </section>
 
+      <EtsyReviewsHub />
+
       <section className="mx-auto max-w-7xl px-5 pb-20 md:px-8">
-        <h2 className="font-display text-4xl text-chocolate">What collectors say</h2>
-        <div className="mt-8 grid gap-5 md:grid-cols-2">
-          {reviews.map((review) => (
-            <blockquote key={review.name + review.piece} className="rounded-[1.8rem] bg-white p-6 shadow-card">
-              <p className="text-chocolate-mid">&ldquo;{review.quote}&rdquo;</p>
-              <p className="mt-4 text-sm font-medium">
-                {review.name} · {review.piece}
-              </p>
-            </blockquote>
-          ))}
-        </div>
         <Link
           href="/catalogue"
-          className="mt-10 inline-flex rounded-full bg-chocolate px-6 py-3 text-sm font-medium text-cream"
+          className="inline-flex rounded-full bg-chocolate px-6 py-3 text-sm font-medium text-cream"
         >
           Find your perfect cookie
         </Link>

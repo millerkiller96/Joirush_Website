@@ -66,6 +66,8 @@ export type Product = {
   image: string;
   etsyUrl: string;
   stripeUrl: string;
+  stripeUpsellUrl: string;
+  upsellPairPrice: number;
   tagline: string;
   description: string;
   details: string[];
@@ -113,6 +115,8 @@ export const products: Product[] = [
     image: "/images/products/choc-chip.jpg",
     etsyUrl: "https://www.etsy.com/listing/1831819997/jumbo-chocolate-chip-cookie-wall-art",
     stripeUrl: "https://buy.stripe.com/7sY14f8gr3287kmb9I2Nq00",
+    stripeUpsellUrl: "https://buy.stripe.com/cNi9AL9kv9qw9su5Po2Nq0d",
+    upsellPairPrice: 190,
     tagline: "The one that started it all. Golden crumble. Glossy chips. Zero guilt.",
     description:
       "Golden-brown edges. Thick, craggy dough. Chocolate chips catching the light like they just came out of the oven. This is the classic that makes guests reach out before their brain catches up — then laugh when they realize it's art. Comfort food for your wall, forever.",
@@ -144,6 +148,8 @@ export const products: Product[] = [
     image: "/images/products/mini-set.jpg",
     etsyUrl: "https://www.etsy.com/listing/4452655428/oversized-mini-cookie-wall-decor-set",
     stripeUrl: "https://buy.stripe.com/cNi7sD2W79qwgUWgu22Nq01",
+    stripeUpsellUrl: "https://buy.stripe.com/6oUfZ968j6ek8oq91A2Nq0i",
+    upsellPairPrice: 332,
     tagline: "Two cookies. Double the dopamine. Half the decision-making.",
     description:
       "Can't pick just one? Don't. This pair was made to hang side by side — twice the golden crumble, twice the conversation. Thick sculptural texture on each cookie means they pop from across the room. Your wall's about to have a personality.",
@@ -169,6 +175,8 @@ export const products: Product[] = [
     image: "/images/products/mm-set.jpg",
     etsyUrl: "https://www.etsy.com/listing/4452651114/jumbo-mm-cookie-wall-art-set-fake-cookie",
     stripeUrl: "https://buy.stripe.com/eVq5kvcwH5ag7km6Ts2Nq02",
+    stripeUpsellUrl: "https://buy.stripe.com/aFabIT54f8msbACa5E2Nq0e",
+    upsellPairPrice: 428,
     tagline: "Two jumbo candy cookies. Maximum color. Maximum chaos.",
     description:
       "Candy pops of red, yellow, blue, and green. Golden dough. Two 16-inch cookies that turn any wall into a statement. Together they're louder than furniture — hang them side by side and watch people's jaws drop. This is the set for rooms that already know who they are.",
@@ -193,6 +201,8 @@ export const products: Product[] = [
     image: "/images/products/white-choc.jpg",
     etsyUrl: "https://www.etsy.com/listing/4452647836/jumbo-white-chocolate-chip-cookie-wall",
     stripeUrl: "https://buy.stripe.com/fZucMXfIT46c5cedhQ2Nq03",
+    stripeUpsellUrl: "https://buy.stripe.com/7sY14f8grfOUcEGgu22Nq0g",
+    upsellPairPrice: 218,
     tagline: "Soft vanilla vibes. Creamy white chips. Dreamy energy.",
     description:
       "The same golden crumble as the classic, with a softer palette — creamy white chips on warm golden dough. It's the white chocolate lover's fantasy, frozen in sculpture. Craggy edges. That just-baked glow. Perfect for kitchens that lean light, bright, and sweet.",
@@ -217,6 +227,8 @@ export const products: Product[] = [
     image: "/images/products/rainbow.jpg",
     etsyUrl: "https://www.etsy.com/listing/4452645632/colorful-candy-cookie-wall-decor",
     stripeUrl: "https://buy.stripe.com/cNi6oz40b0U0awy3Hg2Nq04",
+    stripeUpsellUrl: "https://buy.stripe.com/00w8wH54f46ceMO5Po2Nq0h",
+    upsellPairPrice: 171,
     tagline: "Jewel-bright candy pops. Pure dopamine. $90.",
     description:
       "Orange. Purple. Yellow. Red. Blue. Green. Jewel-bright candy chips scattered across golden dough like confetti at a party. This is the cookie that turns boring walls into Candyland — playrooms, kitchens, anywhere that needs pure, unfiltered joy. At $90, it's the most fun per square inch you can hang.",
@@ -240,6 +252,8 @@ export const products: Product[] = [
     image: "/images/products/mini-choc.jpg",
     etsyUrl: "https://www.etsy.com/listing/4452643820/mini-jumbo-chocolate-chip-cookie-wall",
     stripeUrl: "https://buy.stripe.com/3cI14f0NZ46ceMOelU2Nq05",
+    stripeUpsellUrl: "https://buy.stripe.com/aFabIT2W7fOU6gi7Xw2Nq0f",
+    upsellPairPrice: 171,
     tagline: "Big impact. Smaller footprint. Same irresistible crumble.",
     description:
       "All the golden-brown goodness of the jumbo classic, sized for cozier spaces. Glossy chips. Thick, craggy texture. Still makes people reach out. Still makes them laugh when they realize it's not real. The entry point to cookie wall art addiction.",
@@ -263,6 +277,8 @@ export const products: Product[] = [
     image: "/images/products/pastel-mm.jpg",
     etsyUrl: "https://www.etsy.com/listing/4452635945/jumbo-pastel-mm-cookie-wall-art",
     stripeUrl: "https://buy.stripe.com/7sY6oz68jcCIcEGcdM2Nq06",
+    stripeUpsellUrl: "https://buy.stripe.com/28E00bgMXfOU48a2Dc2Nq0j",
+    upsellPairPrice: 218,
     tagline: "Candy vibes. Softer palette. Still stops the room.",
     description:
       "Lavender. Baby blue. Blush. Mint. Pastel candy pops on golden sculpted dough — all the fun of Candyland with a gentler, dreamier aesthetic. Perfect for nurseries, soft-maximalist kitchens, or anyone who wants bold art in a softer color story. Loud texture, quiet palette.",
@@ -286,6 +302,8 @@ export const products: Product[] = [
     image: "/images/products/christmas.jpg",
     etsyUrl: "https://www.etsy.com/listing/4438064219/jumbo-christmas-chocolate-chip-cookie",
     stripeUrl: "https://buy.stripe.com/7sY5kv9kveKQ48a3Hg2Nq07",
+    stripeUpsellUrl: "https://buy.stripe.com/bJecMX40beKQawydhQ2Nq0m",
+    upsellPairPrice: 190,
     tagline: "Festive. Forever fresh. No crumbs under the tree.",
     description:
       "Holiday candy colors on golden dough — the seasonal statement piece that never goes stale. Hang it in November, keep it through New Year's (or all year, we won't judge). No crumbs. No calories. Just pure holiday dopamine that lasts forever.",
@@ -309,6 +327,8 @@ export const products: Product[] = [
     image: "/images/products/peanut-butter.jpg",
     etsyUrl: "https://www.etsy.com/listing/1817504830/giant-peanut-butter-cookie-wall-art",
     stripeUrl: "https://buy.stripe.com/fZufZ954fcCIeMOgu22Nq08",
+    stripeUpsellUrl: "https://buy.stripe.com/8x2fZ90NZbyE8oqa5E2Nq0l",
+    upsellPairPrice: 190,
     tagline: "Rich peanut butter dough. Candy pops. Pure nostalgia.",
     description:
       "Warm, nutty peanut butter tones with candy confetti on top — like grandma's kitchen, but cooler. Craggy handmade texture that begs to be touched. This is comfort food as wall art, for anyone who grew up sneaking cookies from the cooling rack.",
@@ -332,6 +352,8 @@ export const products: Product[] = [
     image: "/images/products/double-choc.jpg",
     etsyUrl: "https://www.etsy.com/listing/1817632262/giant-faux-double-chocolate-chip-cookie",
     stripeUrl: "https://buy.stripe.com/3cI6oz0NZ8msdIKfpY2Nq09",
+    stripeUpsellUrl: "https://buy.stripe.com/eVq4gr40b328202a5E2Nq0k",
+    upsellPairPrice: 209,
     tagline: "Twice the chocolate. Twice the temptation. Zero regrets.",
     description:
       "Dark cocoa dough. Glossy chocolate chips. This is for the people who look at a regular chocolate chip cookie and think 'needs more chocolate.' Moody, decadent, and absolutely show-stopping — the darkest piece in the collection.",
@@ -356,6 +378,8 @@ export const products: Product[] = [
     image: "/images/products/ice-cream.jpg",
     etsyUrl: "https://www.etsy.com/listing/1892110346/jumbo-chocolate-chip-cookie-ice-cream",
     stripeUrl: "https://buy.stripe.com/14A3cnfITgSYgUW7Xw2Nq0a",
+    stripeUpsellUrl: "https://buy.stripe.com/cNi28jdAL3280VYdhQ2Nq0n",
+    upsellPairPrice: 418,
     tagline: "The showstopper. Two cookies. Vanilla slab. Zero melt.",
     description:
       "Two golden cookies hugging a thick vanilla ice cream layer — frozen in time, permanently delicious, zero mess. This is the piece that stops conversations and starts new ones. The ultimate childhood treat as adult wall art. Warning: it will become the most photographed thing in your home.",
@@ -385,6 +409,8 @@ export const products: Product[] = [
     image: "/images/products/mm-classic.jpg",
     etsyUrl: "https://www.etsy.com/listing/1831839675/jumbo-mm-cookie-wall-art-candyland",
     stripeUrl: "https://buy.stripe.com/3cIbITcwHdGM3462Dc2Nq0b",
+    stripeUpsellUrl: "https://buy.stripe.com/4gM4gr0NZ9qwawyfpY2Nq0o",
+    upsellPairPrice: 218,
     tagline: "Golden dough. Candy confetti. Instant serotonin.",
     description:
       "Classic M&M cookie energy — golden sculpted dough scattered with glossy candy pieces and chocolate chunks. Reads as pop art from across the room. The kind of piece that makes people smile before they even realize they're smiling.",
@@ -409,6 +435,8 @@ export const products: Product[] = [
     image: "/images/products/hot-pink-mm.jpg",
     etsyUrl: "https://www.etsy.com/listing/1831836105/hot-pink-jumbo-mm-cookie-candyland-wall",
     stripeUrl: "https://buy.stripe.com/9B65kv0NZ1Y448a0v42Nq0c",
+    stripeUpsellUrl: "https://buy.stripe.com/14AcMX7cn7io8oqdhQ2Nq0p",
+    upsellPairPrice: 218,
     tagline: "Loud. Pink. Unapologetic. The main character cookie.",
     description:
       "Hot pink dough. Candy confetti. Dark chocolate chunks. This is the cookie that screams 'I have a personality' — maximal, playful, and completely unapologetic. For rooms that are already bold and people who don't do subtle. The main character of the collection.",

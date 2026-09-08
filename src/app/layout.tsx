@@ -108,7 +108,7 @@ function OrganizationSchema() {
         addressCountry: "US",
       },
     },
-    sameAs: [site.instagram, site.instagramAlt, site.etsy],
+    sameAs: [site.instagram, site.etsy],
     contactPoint: {
       "@type": "ContactPoint",
       contactType: "customer service",

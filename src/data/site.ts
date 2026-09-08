@@ -10,8 +10,6 @@ export const site = {
   artistRole: "Owner and creative designer",
   instagram: "https://www.instagram.com/joirushshop",
   instagramHandle: "@joirushshop",
-  instagramAlt: "https://www.instagram.com/shopcustomebaby",
-  instagramAltHandle: "@shopcustomebaby",
   etsy: "https://www.etsy.com/shop/JOIRUSH",
   etsyReviews: "https://www.etsy.com/shop/JOIRUSH#reviews",
   stats: {

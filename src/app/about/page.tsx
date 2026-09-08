@@ -83,8 +83,8 @@ export default function AboutPage() {
               statement gift, the work is made to turn heads and spark smiles.
             </p>
             <p className="mt-4 text-chocolate-mid">
-              Custom orders are always open. Follow {site.instagramHandle} and{" "}
-              {site.instagramAltHandle} for sneak peeks, behind-the-scenes, and exclusive drops.
+              Custom orders are always open. Follow {site.instagramHandle} for sneak peeks,
+              behind-the-scenes, and exclusive drops.
             </p>
           </div>
           <dl className="grid grid-cols-2 gap-4">

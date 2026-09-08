@@ -79,15 +79,6 @@ export function SiteHeader() {
           >
             <InstagramIcon className="h-5 w-5" />
           </a>
-          <a
-            href={site.instagramAlt}
-            target="_blank"
-            rel="noreferrer"
-            aria-label={`Follow ${site.instagramAltHandle} on Instagram`}
-            className="rounded-full p-2 text-chocolate-mid transition hover:bg-pink/10 hover:text-pink"
-          >
-            <InstagramIcon className="h-5 w-5" />
-          </a>
         </div>
 
         <button
@@ -127,15 +118,6 @@ export function SiteHeader() {
                 target="_blank"
                 rel="noreferrer"
                 aria-label={`Follow ${site.instagramHandle} on Instagram`}
-                className="rounded-full p-2 text-chocolate-mid transition hover:text-pink"
-              >
-                <InstagramIcon className="h-6 w-6" />
-              </a>
-              <a
-                href={site.instagramAlt}
-                target="_blank"
-                rel="noreferrer"
-                aria-label={`Follow ${site.instagramAltHandle} on Instagram`}
                 className="rounded-full p-2 text-chocolate-mid transition hover:text-pink"
               >
                 <InstagramIcon className="h-6 w-6" />

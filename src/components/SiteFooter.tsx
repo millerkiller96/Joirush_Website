@@ -74,15 +74,6 @@ export function SiteFooter() {
             >
               <InstagramIcon className="h-5 w-5" />
             </a>
-            <a
-              href={site.instagramAlt}
-              target="_blank"
-              rel="noreferrer"
-              aria-label={`Follow ${site.instagramAltHandle} on Instagram`}
-              className="rounded-full p-2 text-cream/70 transition hover:bg-white/10 hover:text-cream"
-            >
-              <InstagramIcon className="h-5 w-5" />
-            </a>
           </div>
           <p className="text-center text-sm text-cream/55">
             Handmade everything with love · Ships in 14 days · Free U.S. shipping from Florida · {site.name} © 2026

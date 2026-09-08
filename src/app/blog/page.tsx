@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import { Image } from "@/components/Image";
 import Link from "next/link";
+import { EtsyReviewsHub } from "@/components/EtsyReviewsHub";
 import { SectionHeading } from "@/components/SectionHeading";
 import { blogPosts } from "@/data/blog/posts";
 import { site } from "@/data/site";
@@ -86,7 +87,7 @@ export default function BlogPage() {
       <BlogJsonLd />
       <div className="mx-auto max-w-7xl px-5 py-16 md:px-8">
         <div className="text-center">
-          <p className="text-xs font-semibold uppercase tracking-[0.22em] text-pink">
+          <p className="text-sm font-semibold uppercase tracking-[0.22em] text-pink">
             The JOIRUSH Blog
           </p>
           <h1 className="mt-3 font-display text-5xl text-chocolate md:text-6xl">
@@ -122,7 +123,7 @@ export default function BlogPage() {
                     />
                   </div>
                   <div className={`p-6 ${index === 0 ? "md:w-1/2 md:p-10" : ""}`}>
-                    <div className="flex items-center gap-3 text-xs">
+                    <div className="flex items-center gap-3 text-sm">
                       <span className="rounded-full bg-pink/10 px-3 py-1 font-medium text-pink">
                         {categoryLabels[post.category]}
                       </span>
@@ -171,6 +172,8 @@ export default function BlogPage() {
             </Link>
           </div>
         </section>
+
+        <EtsyReviewsHub />
       </div>
     </>
   );

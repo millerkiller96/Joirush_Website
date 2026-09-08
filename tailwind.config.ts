@@ -27,6 +27,10 @@ const config: Config = {
           dark: "#15803D",
           light: "#22C55E",
         },
+        etsy: {
+          DEFAULT: "#F1641E",
+          dark: "#D95A1A",
+        },
       },
       fontFamily: {
         display: ["var(--font-display)", "Georgia", "serif"],

@@ -9,24 +9,28 @@ import { site } from "@/data/site";
 const siteUrl = "https://joirush.com";
 
 export const metadata: Metadata = {
-  title: "Shop Jumbo Cookie Wall Art | Full Catalogue of Oversized Cookie Sculptures",
+  title: "Shop Cookie Art | Sugar Cookie Wall Sculptures & Art Cookies Catalogue",
   description:
-    "Browse all handmade jumbo cookie wall art — classic chocolate chip, M&M, peanut butter, and more oversized fake cookie sculptures. Starting at $90 with free U.S. shipping.",
+    "Browse all handmade cookie art by cookie artist Erynn. Sugar cookie wall sculptures, art cookies, and faux food wall art in classic chocolate chip, M&M, and custom flavors. Giant cookie canvas pieces from $90, free U.S. shipping.",
   keywords: [
+    "cookie art",
+    "sugar cookie art",
+    "cookie artist",
+    "art cookies",
+    "cookie canvas",
     "jumbo cookie wall art",
     "oversized cookie sculptures",
-    "fake cookie wall decor",
-    "handmade dessert art",
-    "cookie wall art catalogue",
-    "buy cookie wall art",
+    "faux food wall art",
+    "handmade cookie wall art Orlando",
+    "buy cookie art",
   ],
   alternates: {
     canonical: `${siteUrl}/catalogue`,
   },
   openGraph: {
-    title: "Shop Jumbo Cookie Wall Art | JOIRUSH Catalogue",
+    title: "Shop Cookie Art | Sugar Cookie Wall Sculptures Catalogue",
     description:
-      "Browse all handmade jumbo cookie wall art — oversized fake cookie sculptures starting at $90 with free U.S. shipping.",
+      "Browse handmade cookie art and sugar cookie wall sculptures by cookie artist Erynn. Art cookies starting at $90 with free U.S. shipping.",
     type: "website",
     url: `${siteUrl}/catalogue`,
     images: [
@@ -34,14 +38,14 @@ export const metadata: Metadata = {
         url: `${siteUrl}/images/products/choc-chip.jpg`,
         width: 1200,
         height: 630,
-        alt: "Jumbo chocolate chip cookie wall art by JOIRUSH",
+        alt: "Cookie art catalogue - handmade sugar cookie wall sculptures by JOIRUSH",
       },
     ],
   },
   twitter: {
     card: "summary_large_image",
-    title: "Shop Jumbo Cookie Wall Art | JOIRUSH",
-    description: "All handmade oversized cookie sculptures. Starting at $90, free U.S. shipping.",
+    title: "Shop Cookie Art | Sugar Cookie Wall Sculptures",
+    description: "Handmade cookie art and sugar cookie wall sculptures. Starting at $90, free U.S. shipping.",
     images: [`${siteUrl}/images/products/choc-chip.jpg`],
   },
 };
@@ -50,13 +54,13 @@ function CatalogueSchema() {
   const schema = {
     "@context": "https://schema.org",
     "@type": "CollectionPage",
-    name: "Jumbo Cookie Wall Art Catalogue",
+    name: "Cookie Art Catalogue - Sugar Cookie Wall Sculptures",
     description:
-      "Full catalogue of handmade jumbo cookie wall art — oversized fake cookie sculptures for walls.",
+      "Full catalogue of handmade cookie art — sugar cookie wall sculptures and art cookies by cookie artist Erynn.",
     url: `${siteUrl}/catalogue`,
     mainEntity: {
       "@type": "ItemList",
-      name: "Jumbo Cookie Wall Art Collection",
+      name: "Cookie Art Collection",
       numberOfItems: products.length,
       itemListElement: products.map((product, index) => ({
         "@type": "ListItem",
@@ -141,7 +145,7 @@ export default function CataloguePage() {
             <li aria-hidden="true">/</li>
             <li>
               <Link href="/wall-art" className="hover:text-pink">
-                Cookie Wall Art
+                Cookie Art
               </Link>
             </li>
             <li aria-hidden="true">/</li>
@@ -151,17 +155,17 @@ export default function CataloguePage() {
           </ol>
         </nav>
         <p className="text-sm font-semibold uppercase tracking-[0.22em] text-pink">
-          Every flavor. Every craving.
+          Cookie Art by Cookie Artist Erynn
         </p>
         <h1 className="mt-3 font-display text-5xl text-chocolate md:text-6xl">
-          Pick Your Poison
+          Sugar Cookie Art — Pick Your Flavor
         </h1>
         <p className="mt-4 max-w-2xl text-lg text-chocolate-mid">
-          Golden chocolate chip. Candy-loaded M&Ms. Peanut butter comfort. Ice cream sandwiches 
-          that stop conversations. Scroll until one makes your heart skip — then tap to bring it home.
+          Golden chocolate chip cookie art. Candy-loaded M&M sugar cookie sculptures. Peanut butter comfort. Ice cream sandwiches 
+          that stop conversations. Every art cookie is a handmade cookie canvas — scroll until one makes your heart skip.
         </p>
         <ul className="mt-4 flex flex-wrap gap-x-4 gap-y-1 text-sm text-chocolate-soft">
-          <li>✓ {products.length} handmade pieces</li>
+          <li>✓ {products.length} handmade cookie art pieces</li>
           <li>✓ Starting at $90</li>
           <li>✓ Ships in 14 days</li>
           <li>✓ Free U.S. shipping</li>

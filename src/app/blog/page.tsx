@@ -9,27 +9,30 @@ import { site } from "@/data/site";
 import { getAbsoluteUrl, getImageUrl } from "@/lib/seo";
 
 export const metadata: Metadata = {
-  title: "Blog | Jumbo Cookie Wall Art Tips, Ideas & Inspiration",
+  title: "Cookie Art Blog | Sugar Cookie Wall Sculpture Tips, Ideas & Inspiration",
   description:
-    "Explore tips for hanging faux food wall art, dopamine decor inspiration, foodie gift guides, and stories behind handmade cookie sculptures. Your guide to kitschy kitchen style.",
+    "Explore cookie art tips, sugar cookie wall sculpture inspiration, and stories from cookie artist Erynn. Your guide to art cookies, cookie canvas decor, faux food wall art, and kitschy kitchen style.",
   keywords: [
-    "jumbo cookie wall art blog",
+    "cookie art blog",
+    "sugar cookie art tips",
+    "cookie artist inspiration",
+    "art cookies ideas",
+    "cookie canvas decor",
     "faux food wall art tips",
     "dopamine decor ideas",
     "kitschy kitchen inspiration",
-    "kitchen wall decor guide",
   ],
   openGraph: {
-    title: "Blog | Jumbo Cookie Wall Art Tips & Inspiration",
+    title: "Cookie Art Blog | Sugar Cookie Wall Sculpture Tips & Inspiration",
     description:
-      "Tips for hanging faux food wall art, dopamine decor inspiration, and stories behind handmade cookie sculptures.",
+      "Tips from cookie artist Erynn on sugar cookie art, faux food wall sculptures, and building the perfect cookie canvas gallery wall.",
     type: "website",
     images: [
       {
         url: getImageUrl("/images/products/mm-set.jpg"),
         width: 1200,
         height: 630,
-        alt: "JOIRUSH blog - Jumbo cookie wall art inspiration",
+        alt: "Cookie art blog - sugar cookie wall sculpture inspiration by JOIRUSH",
       },
     ],
   },
@@ -42,8 +45,8 @@ function BlogJsonLd() {
   const schema = {
     "@context": "https://schema.org",
     "@type": "Blog",
-    name: `${site.name} Blog`,
-    description: "Tips, inspiration, and stories about handmade jumbo cookie wall art and faux food sculptures.",
+    name: `${site.name} Cookie Art Blog`,
+    description: "Tips, inspiration, and stories about cookie art, sugar cookie wall sculptures, and faux food wall art from cookie artist Erynn.",
     url: getAbsoluteUrl("/blog/"),
     publisher: {
       "@type": "Organization",
@@ -89,14 +92,14 @@ export default function BlogPage() {
       <div className="mx-auto max-w-7xl px-5 py-16 md:px-8">
         <div className="text-center">
           <p className="text-sm font-semibold uppercase tracking-[0.22em] text-pink">
-            The JOIRUSH Blog
+            Cookie Art Blog by Cookie Artist Erynn
           </p>
           <h1 className="mt-3 font-display text-5xl text-chocolate md:text-6xl">
-            Cookie Wall Art Tips & Inspiration
+            Cookie Art Tips & Sugar Cookie Sculpture Inspiration
           </h1>
           <p className="mx-auto mt-5 max-w-2xl text-lg text-chocolate-mid">
-            From how to hang your jumbo cookies to creating the perfect dopamine decor kitchen,
-            explore ideas and stories from the studio.
+            From how to hang your cookie art to creating the perfect dopamine decor kitchen with art cookies,
+            explore sugar cookie wall sculpture ideas and stories from the cookie artist's studio.
           </p>
         </div>
 
@@ -157,23 +160,23 @@ export default function BlogPage() {
         </div>
 
         <section className="mt-20 rounded-[2rem] bg-pink/10 p-8 text-center md:p-12">
-          <h2 className="font-display text-3xl text-chocolate">Looking for Something Specific?</h2>
+          <h2 className="font-display text-3xl text-chocolate">Looking for Cookie Art?</h2>
           <p className="mx-auto mt-4 max-w-xl text-chocolate-mid">
-            Browse our full collection of handmade jumbo cookie sculptures, or request a custom piece
-            in your favorite flavor.
+            Browse our full collection of handmade sugar cookie wall sculptures and art cookies, or commission custom cookie art
+            in your favorite flavor from the cookie artist.
           </p>
           <div className="mt-8 flex flex-wrap justify-center gap-4">
             <Link
               href="/wall-art/"
               className="rounded-full bg-pink px-6 py-3 text-sm font-medium text-white hover:bg-pink-hot"
             >
-              Shop Cookie Wall Art
+              Shop Cookie Art
             </Link>
             <Link
               href="/custom/"
               className="rounded-full border border-chocolate/15 bg-white px-6 py-3 text-sm font-medium text-chocolate"
             >
-              Request Custom Piece
+              Commission Custom Cookie Art
             </Link>
           </div>
         </section>

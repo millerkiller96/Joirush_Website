@@ -61,6 +61,12 @@ export default function sitemap(): MetadataRoute.Sitemap {
 
   const blogPosts: MetadataRoute.Sitemap = [
     {
+      url: getAbsoluteUrl("/blog/what-is-cookie-art-sugar-cookie-wall-sculptures-explained/"),
+      lastModified: now,
+      changeFrequency: "monthly" as const,
+      priority: 0.8,
+    },
+    {
       url: getAbsoluteUrl("/blog/how-to-hang-jumbo-cookie-wall-art/"),
       lastModified: now,
       changeFrequency: "yearly" as const,

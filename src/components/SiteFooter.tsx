@@ -18,7 +18,7 @@ export function SiteFooter() {
           <div className="flex items-center gap-3">
             <Image
               src="/images/brand/avatar.jpg"
-              alt="JOIRUSH"
+              alt="JOIRUSH - Cookie Art Studio by Cookie Artist Erynn"
               width={48}
               height={48}
               className="rounded-full object-cover"
@@ -26,22 +26,22 @@ export function SiteFooter() {
             <p className="font-display text-3xl">JOIRUSH</p>
           </div>
           <p className="mt-4 max-w-md text-cream/75">
-            {site.tagline}. Handmade jumbo cookies, Y2K accessories, and custom pieces by {site.artist} in{" "}
-            {site.location}. Dessert dreams, retro vibes, and zero calories.
+            Cookie art studio by cookie artist {site.artist}. Handmade sugar cookie wall sculptures, art cookies, 
+            faux food wall art, and custom pieces in {site.location}. Dessert dreams, retro vibes, and zero calories.
           </p>
         </div>
 
         <div>
-          <p className="text-sm uppercase tracking-[0.2em] text-pink-blush">Shop</p>
+          <p className="text-sm uppercase tracking-[0.2em] text-pink-blush">Shop Cookie Art</p>
           <div className="mt-4 flex flex-col gap-2 text-sm">
             <Link href="/wall-art/" className="hover:text-pink-blush">
-              Cookie Wall Art
+              Cookie Art Collection
             </Link>
             <Link href="/catalogue/" className="hover:text-pink-blush">
               Full Catalogue
             </Link>
             <Link href="/custom/" className="hover:text-pink-blush">
-              Custom Orders
+              Custom Cookie Art
             </Link>
           </div>
         </div>
@@ -50,10 +50,10 @@ export function SiteFooter() {
           <p className="text-sm uppercase tracking-[0.2em] text-pink-blush">Explore</p>
           <div className="mt-4 flex flex-col gap-2 text-sm">
             <Link href="/blog/" className="hover:text-pink-blush">
-              Blog
+              Cookie Art Blog
             </Link>
             <Link href="/about/" className="hover:text-pink-blush">
-              About Erynn
+              Meet Cookie Artist Erynn
             </Link>
             <a href={site.etsy} target="_blank" rel="noreferrer" className="hover:text-pink-blush">
               Etsy Shop
@@ -76,7 +76,7 @@ export function SiteFooter() {
             </a>
           </div>
           <p className="text-center text-sm text-cream/55">
-            Handmade everything with love · Ships in 14 days · Free U.S. shipping from Florida · {site.name} © 2026
+            Handmade cookie art with love · Sugar cookie wall sculptures ship in 14 days · Free U.S. shipping from Orlando, Florida · {site.name} © 2026
           </p>
         </div>
       </div>

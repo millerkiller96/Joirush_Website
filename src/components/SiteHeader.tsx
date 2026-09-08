@@ -16,11 +16,11 @@ function InstagramIcon({ className }: { className?: string }) {
 
 const links = [
   { href: "/", label: "Home" },
-  { href: "/wall-art/", label: "Cookie Wall Art" },
+  { href: "/wall-art/", label: "Cookie Art" },
   { href: "/catalogue/", label: "Catalogue" },
   { href: "/blog/", label: "Blog" },
   { href: "/custom/", label: "Custom" },
-  { href: "/about/", label: "About" },
+  { href: "/about/", label: "Cookie Artist" },
 ];
 
 export function SiteHeader() {
@@ -33,7 +33,7 @@ export function SiteHeader() {
         <Link href="/" className="flex items-center gap-3" onClick={() => setOpen(false)}>
           <Image
             src="/images/brand/avatar.jpg"
-            alt="JOIRUSH"
+            alt="JOIRUSH - Cookie Art Studio by Cookie Artist Erynn"
             width={44}
             height={44}
             className="rounded-full border-2 border-pink object-cover"

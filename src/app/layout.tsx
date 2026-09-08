@@ -21,7 +21,7 @@ const outfit = Outfit({
 
 export const metadata: Metadata = {
   title: {
-    default: `Jumbo Cookie Wall Art | Handmade Oversized Cookie Sculptures | ${site.name}`,
+    default: `Cookie Art & Sugar Cookie Wall Sculptures | Handmade by Cookie Artist | ${site.name}`,
     template: `%s | ${site.name}`,
   },
   icons: {
@@ -35,27 +35,29 @@ export const metadata: Metadata = {
     ],
   },
   description:
-    "Shop handmade jumbo cookie wall art and oversized fake cookie sculptures by JOIRUSH. Realistic dessert decor for kitchens, homes, and creative spaces. Free U.S. shipping from Florida.",
+    "Shop handmade cookie art and sugar cookie wall sculptures by cookie artist Erynn. Jumbo faux food wall art, oversized cookie decor, and giant cookie canvas pieces. Free U.S. shipping from Orlando, Florida.",
   keywords: [
+    "cookie art",
+    "sugar cookie art",
+    "cookie artist",
+    "art cookies",
+    "cookie canvas",
     "jumbo cookie wall art",
     "oversized cookie wall decor",
+    "faux food wall art",
+    "giant cookie sculpture",
+    "handmade cookie wall art Orlando",
     "fake cookie wall sculpture",
-    "giant cookie art",
     "dessert wall decor",
-    "handmade cookie sculptures",
-    "dessert wall art",
-    "kitchen wall decor",
-    "faux cookie art",
-    "realistic food art",
   ],
   metadataBase: new URL(siteUrl),
   alternates: {
     canonical: siteUrl,
   },
   openGraph: {
-    title: `Jumbo Cookie Wall Art | Handmade Oversized Cookie Sculptures | ${site.name}`,
+    title: `Cookie Art & Sugar Cookie Wall Sculptures | Handmade by Cookie Artist | ${site.name}`,
     description:
-      "Shop handmade jumbo cookie wall art — realistic oversized cookie sculptures for kitchens, homes, and creative spaces. Free U.S. shipping.",
+      "Shop handmade cookie art and sugar cookie wall sculptures by cookie artist Erynn. Jumbo faux food wall art for kitchens and homes. Free U.S. shipping.",
     type: "website",
     url: siteUrl,
     siteName: site.name,
@@ -65,15 +67,15 @@ export const metadata: Metadata = {
         url: getImageUrl("/images/products/choc-chip.jpg"),
         width: 1200,
         height: 630,
-        alt: "Jumbo chocolate chip cookie wall art by JOIRUSH",
+        alt: "Cookie art - handmade sugar cookie wall sculpture by cookie artist Erynn at JOIRUSH",
       },
     ],
   },
   twitter: {
     card: "summary_large_image",
-    title: `Jumbo Cookie Wall Art | ${site.name}`,
+    title: `Cookie Art & Sugar Cookie Wall Sculptures | ${site.name}`,
     description:
-      "Handmade oversized cookie sculptures for walls — realistic dessert decor that ships free in the U.S.",
+      "Handmade cookie art and sugar cookie wall sculptures by cookie artist Erynn. Giant faux food wall decor that ships free in the U.S.",
     images: [getImageUrl("/images/products/choc-chip.jpg")],
   },
   robots: {
@@ -98,7 +100,7 @@ function OrganizationSchema() {
     url: siteUrl,
     logo: getImageUrl("/images/brand/avatar.jpg"),
     description:
-      "Handmade jumbo cookie wall art and oversized dessert sculptures by artist Erynn in Orlando, Florida.",
+      "Cookie art studio creating handmade sugar cookie wall sculptures and faux food wall art. Cookie artist Erynn crafts giant cookie canvas pieces and oversized dessert decor in Orlando, Florida.",
     foundingLocation: {
       "@type": "Place",
       address: {
@@ -120,6 +122,13 @@ function OrganizationSchema() {
       reviewCount: site.stats.reviews,
       bestRating: "5",
       worstRating: "1",
+    },
+    founder: {
+      "@type": "Person",
+      name: site.artist,
+      jobTitle: "Cookie Artist",
+      description: "Handmade cookie art sculptor creating sugar cookie wall sculptures and faux food wall art",
+      knowsAbout: ["cookie art", "sugar cookie art", "faux food sculpture", "wall art"],
     },
   };
 

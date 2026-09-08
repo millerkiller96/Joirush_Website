@@ -25,23 +25,25 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
   const imageUrl = getImageUrl(product.image);
 
   return {
-    title: `${product.name} | Handmade Cookie Wall Art`,
-    description: `${product.tagline} ${product.size}. Handmade oversized cookie sculpture with built-in wall hanger. ${formatPrice(product.price)} with free U.S. shipping from Florida.`,
+    title: `${product.name} | Cookie Art by Cookie Artist Erynn`,
+    description: `${product.tagline} ${product.size}. Handmade sugar cookie wall sculpture by cookie artist Erynn. Art cookie with built-in wall hanger. ${formatPrice(product.price)} with free U.S. shipping from Orlando.`,
     keywords: [
+      "cookie art",
+      "sugar cookie art",
+      "cookie artist",
+      "art cookies",
+      "cookie canvas",
       product.name.toLowerCase(),
-      "jumbo cookie wall art",
-      "oversized cookie decor",
-      "fake cookie sculpture",
-      "handmade wall art",
-      "dessert decor",
+      "faux food wall art",
+      "handmade cookie wall art Orlando",
       product.category === "candy" ? "candy cookie art" : "chocolate chip cookie art",
     ],
     alternates: {
       canonical: productUrl,
     },
     openGraph: {
-      title: `${product.name} | ${site.name}`,
-      description: `${product.tagline} Handmade ${product.size} cookie sculpture. ${formatPrice(product.price)} with free U.S. shipping.`,
+      title: `${product.name} | Cookie Art by ${site.name}`,
+      description: `${product.tagline} Handmade ${product.size} sugar cookie wall sculpture by cookie artist Erynn. ${formatPrice(product.price)} with free U.S. shipping.`,
       type: "website",
       url: productUrl,
       images: [
@@ -49,13 +51,13 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
           url: imageUrl,
           width: 1200,
           height: 630,
-          alt: product.name,
+          alt: `Cookie art - ${product.shortName} sugar cookie wall sculpture by cookie artist Erynn`,
         },
       ],
     },
     twitter: {
       card: "summary_large_image",
-      title: `${product.name} | ${site.name}`,
+      title: `${product.name} | Cookie Art by ${site.name}`,
       description: `${product.tagline} ${formatPrice(product.price)} with free U.S. shipping.`,
       images: [imageUrl],
     },
@@ -73,6 +75,12 @@ function ProductJsonLd({ product }: { product: NonNullable<ReturnType<typeof get
       "@type": "Brand",
       name: site.name,
     },
+    category: "Cookie Art",
+    additionalProperty: [
+      { "@type": "PropertyValue", name: "Art Type", value: "Sugar Cookie Wall Sculpture" },
+      { "@type": "PropertyValue", name: "Artist", value: "Erynn" },
+      { "@type": "PropertyValue", name: "Style", value: "Faux Food Wall Art" },
+    ],
     offers: {
       "@type": "Offer",
       url: product.stripeUrl || product.etsyUrl,

@@ -11,7 +11,7 @@ export function ProductCard({ product }: { product: Product }) {
         <div className="relative overflow-hidden rounded-[1.6rem] bg-cream-deep shadow-card">
           <Image
             src={product.image}
-            alt={`${product.name} — handmade oversized cookie wall art sculpture`}
+            alt={`Cookie art - ${product.shortName} sugar cookie wall sculpture by cookie artist Erynn`}
             width={800}
             height={1066}
             className="aspect-[3/4] w-full object-cover transition duration-500 group-hover:scale-[1.03]"

@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import Link from "next/link";
 import { CatalogueGrid } from "@/components/CatalogueGrid";
+import { EtsyReviewsHub } from "@/components/EtsyReviewsHub";
 import { products } from "@/data/products";
 import { site } from "@/data/site";
 
@@ -148,7 +149,7 @@ export default function CataloguePage() {
             </li>
           </ol>
         </nav>
-        <p className="text-xs font-semibold uppercase tracking-[0.22em] text-pink">
+        <p className="text-sm font-semibold uppercase tracking-[0.22em] text-pink">
           Every flavor. Every craving.
         </p>
         <h1 className="mt-3 font-display text-5xl text-chocolate md:text-6xl">
@@ -167,6 +168,7 @@ export default function CataloguePage() {
         <div className="mt-10">
           <CatalogueGrid />
         </div>
+        <EtsyReviewsHub />
       </div>
     </>
   );

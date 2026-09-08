@@ -3,6 +3,7 @@ import { Image } from "@/components/Image";
 import Link from "next/link";
 import { ProductCard } from "@/components/ProductCard";
 import { SectionHeading } from "@/components/SectionHeading";
+import { InstagramCarousel } from "@/components/InstagramCarousel";
 import { getFeaturedProducts } from "@/data/products";
 import { reviews, site } from "@/data/site";
 import { getAbsoluteUrl, getImageUrl, siteUrl } from "@/lib/seo";
@@ -173,6 +174,8 @@ export default function HomePage() {
             </div>
           </div>
         </section>
+
+        <InstagramCarousel />
 
         <section className="mx-auto max-w-7xl px-5 py-8 md:px-8">
           <div className="grid gap-4 md:grid-cols-3">

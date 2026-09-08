@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import { Image } from "@/components/Image";
 import Link from "next/link";
+import { EtsyReviewsHub } from "@/components/EtsyReviewsHub";
 import { ProductCard } from "@/components/ProductCard";
 import { SectionHeading } from "@/components/SectionHeading";
 import { getFeaturedProducts } from "@/data/products";
@@ -114,7 +115,7 @@ export default function HomePage() {
         <section className="relative overflow-hidden grain">
           <div className="mx-auto grid max-w-7xl items-center gap-10 px-5 py-16 md:grid-cols-2 md:px-8 md:py-24">
             <div>
-              <p className="text-xs font-semibold uppercase tracking-[0.24em] text-pink">
+              <p className="text-sm font-semibold uppercase tracking-[0.24em] text-pink">
                 All the craving. Zero calories.
               </p>
               <h1 className="mt-4 font-display text-5xl leading-[0.95] text-chocolate md:text-7xl">
@@ -146,15 +147,15 @@ export default function HomePage() {
               </div>
               <dl className="mt-10 grid max-w-md grid-cols-3 gap-4 text-center">
                 <div>
-                  <dt className="text-xs uppercase tracking-widest text-chocolate-soft">Rating</dt>
+                  <dt className="text-sm uppercase tracking-widest text-chocolate-soft">Rating</dt>
                   <dd className="mt-1 font-display text-3xl">{site.stats.rating}</dd>
                 </div>
                 <div>
-                  <dt className="text-xs uppercase tracking-widest text-chocolate-soft">Happy Homes</dt>
+                  <dt className="text-sm uppercase tracking-widest text-chocolate-soft">Happy Homes</dt>
                   <dd className="mt-1 font-display text-3xl">{site.stats.sales}+</dd>
                 </div>
                 <div>
-                  <dt className="text-xs uppercase tracking-widest text-chocolate-soft">Years</dt>
+                  <dt className="text-sm uppercase tracking-widest text-chocolate-soft">Years</dt>
                   <dd className="mt-1 font-display text-3xl">{site.stats.years}</dd>
                 </div>
               </dl>
@@ -305,26 +306,7 @@ export default function HomePage() {
           </div>
         </section>
 
-        <section className="mx-auto max-w-7xl px-5 py-20 md:px-8">
-          <SectionHeading
-            eyebrow={`${site.stats.rating} stars from ${site.stats.reviews} happy collectors`}
-            title="People Really, Really Love These"
-          />
-          <div className="mt-10 grid gap-5 md:grid-cols-3">
-            {reviews.slice(0, 3).map((review) => (
-              <blockquote
-                key={review.name + review.piece}
-                className="rounded-[1.8rem] bg-white p-6 shadow-card"
-              >
-                <p className="text-chocolate-mid">&ldquo;{review.quote}&rdquo;</p>
-                <p className="mt-5 text-sm">
-                  <span className="block font-medium text-chocolate">{review.name}</span>
-                  <span className="text-chocolate-soft">{review.piece}</span>
-                </p>
-              </blockquote>
-            ))}
-          </div>
-        </section>
+        <EtsyReviewsHub />
 
         <section className="mx-auto max-w-7xl px-5 py-12 md:px-8">
           <div className="rounded-[2rem] bg-cream p-8 md:p-12">
@@ -340,7 +322,7 @@ export default function HomePage() {
                 href="/blog/how-to-hang-jumbo-cookie-wall-art/"
                 className="group rounded-xl bg-white p-5 shadow-card hover:shadow-lift"
               >
-                <p className="text-xs font-medium uppercase tracking-wider text-pink">5-Minute Guide</p>
+                <p className="text-sm font-medium uppercase tracking-wider text-pink">5-Minute Guide</p>
                 <h3 className="mt-2 font-display text-xl text-chocolate group-hover:text-pink">
                   How to Hang Your Jumbo Cookie
                 </h3>
@@ -349,7 +331,7 @@ export default function HomePage() {
                 href="/blog/kitchen-dopamine-decor-dessert-gallery-wall/"
                 className="group rounded-xl bg-white p-5 shadow-card hover:shadow-lift"
               >
-                <p className="text-xs font-medium uppercase tracking-wider text-pink">Gallery Inspo</p>
+                <p className="text-sm font-medium uppercase tracking-wider text-pink">Gallery Inspo</p>
                 <h3 className="mt-2 font-display text-xl text-chocolate group-hover:text-pink">
                   Build a Dessert Gallery Wall That Slaps
                 </h3>
@@ -363,7 +345,7 @@ export default function HomePage() {
 
         <section className="mx-auto max-w-7xl px-5 pb-20 md:px-8">
           <div className="overflow-hidden rounded-[2.4rem] bg-emerald-600 px-8 py-14 text-white md:px-14">
-            <p className="text-xs uppercase tracking-[0.22em] text-white/70">Make it yours</p>
+            <p className="text-sm uppercase tracking-[0.22em] text-white/70">Make it yours</p>
             <h2 className="mt-3 max-w-2xl font-display text-4xl md:text-6xl">
               Have a flavor fantasy? Let's make it real.
             </h2>

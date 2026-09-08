@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import { Image } from "@/components/Image";
 import Link from "next/link";
 import { EtsyReviewsHub } from "@/components/EtsyReviewsHub";
+import { StudioVideoCarousel } from "@/components/StudioVideoCarousel";
 import { site } from "@/data/site";
 
 const siteUrl = "https://joirush.com";
@@ -71,6 +72,8 @@ export default function AboutPage() {
           />
         </div>
       </section>
+
+      <StudioVideoCarousel />
 
       <section className="bg-white">
         <div className="mx-auto grid max-w-7xl gap-12 px-5 py-16 md:grid-cols-2 md:px-8">

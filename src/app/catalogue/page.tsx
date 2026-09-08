@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import Link from "next/link";
 import { CatalogueGrid } from "@/components/CatalogueGrid";
 import { EtsyReviewsHub } from "@/components/EtsyReviewsHub";
+import { StudioVideoCarousel } from "@/components/StudioVideoCarousel";
 import { products } from "@/data/products";
 import { site } from "@/data/site";
 
@@ -165,6 +166,9 @@ export default function CataloguePage() {
           <li>✓ Ships in 14 days</li>
           <li>✓ Free U.S. shipping</li>
         </ul>
+
+        <StudioVideoCarousel />
+
         <div className="mt-10">
           <CatalogueGrid />
         </div>

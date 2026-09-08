@@ -3,6 +3,7 @@ import { Image } from "@/components/Image";
 import Link from "next/link";
 import { notFound } from "next/navigation";
 import { EtsyReviewsHub } from "@/components/EtsyReviewsHub";
+import { StudioVideoCarousel } from "@/components/StudioVideoCarousel";
 import { ProductCard } from "@/components/ProductCard";
 import { ProductBuyButtons } from "@/components/ProductBuyButtons";
 import {
@@ -380,7 +381,11 @@ export default async function ProductPage({ params }: Props) {
             </div>
           </div>
         </div>
+      </div>
 
+      <StudioVideoCarousel />
+
+      <div className="mx-auto max-w-7xl px-5 md:px-8">
         <FAQAccordion faqs={product.faqs} />
 
         <section className="mt-20">

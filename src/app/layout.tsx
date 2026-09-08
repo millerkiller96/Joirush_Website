@@ -4,6 +4,7 @@ import { SiteFooter } from "@/components/SiteFooter";
 import { SiteHeader } from "@/components/SiteHeader";
 import { site } from "@/data/site";
 import { siteUrl, getImageUrl } from "@/lib/seo";
+import { asset } from "@/lib/paths";
 import "./globals.css";
 
 const fraunces = Fraunces({
@@ -25,10 +26,12 @@ export const metadata: Metadata = {
   },
   icons: {
     icon: [
-      { url: "/images/brand/avatar.jpg", type: "image/jpeg" },
+      { url: asset("/favicon.ico"), sizes: "32x32" },
+      { url: asset("/icon.png"), type: "image/png", sizes: "32x32" },
+      { url: asset("/icon-48.png"), type: "image/png", sizes: "48x48" },
     ],
     apple: [
-      { url: "/images/brand/avatar.jpg", type: "image/jpeg" },
+      { url: asset("/apple-touch-icon.png"), type: "image/png", sizes: "180x180" },
     ],
   },
   description:

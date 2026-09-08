@@ -124,13 +124,13 @@ export function EtsyReviewsHub() {
           </button>
         )}
         <a
-          href={site.etsy}
+          href={site.etsyReviews}
           target="_blank"
           rel="noreferrer"
           className="inline-flex items-center gap-2 rounded-full bg-etsy px-6 py-3 text-sm font-medium text-white transition hover:bg-etsy-dark"
         >
           <EtsyIcon className="h-4 w-4" />
-          View all reviews on Etsy
+          See all reviews on Etsy
         </a>
       </div>
     </section>

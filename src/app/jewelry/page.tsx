@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import { Image } from "@/components/Image";
 import Link from "next/link";
 import { SectionHeading } from "@/components/SectionHeading";
+import { StudioVideoCarousel } from "@/components/StudioVideoCarousel";
 import { site } from "@/data/site";
 
 export const metadata: Metadata = {
@@ -65,6 +66,8 @@ export default function JewelryPage() {
           </div>
         </div>
       </section>
+
+      <StudioVideoCarousel />
 
       <section className="bg-white">
         <div className="mx-auto max-w-7xl px-5 py-16 md:px-8">

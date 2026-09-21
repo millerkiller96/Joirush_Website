@@ -14,6 +14,28 @@ export type BlogPost = {
 
 export const blogPosts: BlogPost[] = [
   {
+    slug: "cookie-wall-art-for-home-collectors",
+    title: "Cookie Wall Art for Home Collectors: Faux Sugar Cookie Sculptures That Last Forever",
+    excerpt:
+      "A collector's guide to cookie wall art — faux sugar cookie wall sculptures that look real but aren't edible. Learn what makes these spray-foam cookie sculptures different from royal icing cookies and how to choose the perfect piece for your home.",
+    publishedAt: "2026-09-21",
+    author: "Erynn",
+    image: "/images/products/mm-set.jpg",
+    imageAlt: "Cookie wall art - handmade faux sugar cookie wall sculptures for home collectors by JOIRUSH",
+    keywords: [
+      "cookie wall art",
+      "sugar cookie wall sculpture",
+      "faux cookie decor",
+      "cookie wall art for home",
+      "decorative cookie sculptures",
+      "faux food wall art",
+      "cookie art collectors",
+      "spray foam cookie sculpture",
+    ],
+    readingTime: "10 min read",
+    category: "how-to",
+  },
+  {
     slug: "what-is-cookie-art-sugar-cookie-wall-sculptures-explained",
     title: "What is Cookie Art? A Guide to Sugar Cookie Wall Sculptures & Art Cookies",
     excerpt:

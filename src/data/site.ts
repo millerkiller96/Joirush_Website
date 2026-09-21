@@ -24,27 +24,9 @@ export const site = {
 export const reviews = [
   {
     quote:
-      "I can’t recommend this seller enough!!! she included a cute ring in the package :) Thank you so much for your awesome customer service! You are incredible!",
-    name: "Derek",
-    piece: "Custom Tamagotchi charm choker",
-  },
-  {
-    quote:
-      "Absolutely gorgeous choker, can definitely tell how well made it is. The seller was so nice and answered all my questions. Bought this one as a gift but might get one for myself too!",
-    name: "Dasie",
-    piece: "Purple Tamagotchi charm choker",
-  },
-  {
-    quote:
       "A wonderful gift for my niece! I wanted something for her new play room that she could enjoy, and this cookie was perfect. It's well crafted, and you can tell it was made by hand.",
     name: "Beau",
     piece: "Jumbo chocolate chip cookie",
-  },
-  {
-    quote:
-      "I'm very happy with this incredible original design. It is truly unique such as myself. Extraordinary designer!!",
-    name: "Joella",
-    piece: "Handmade charm choker",
   },
   {
     quote: "Love it, shipped quick, amazing quality, looks great!! A+++ seller, highly recommended.",

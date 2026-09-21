@@ -360,7 +360,16 @@ export default function HomePage() {
               How to hang your sugar cookie wall sculpture. How to build a dessert gallery wall with art cookies that sparks joy. 
               Tips from the cookie artist's studio to make your space unforgettable.
             </p>
-            <div className="mt-8 grid gap-4 md:grid-cols-2">
+            <div className="mt-8 grid gap-4 md:grid-cols-3">
+              <Link
+                href="/blog/cookie-wall-art-for-home-collectors/"
+                className="group rounded-xl bg-white p-5 shadow-card hover:shadow-lift"
+              >
+                <p className="text-sm font-medium uppercase tracking-wider text-pink">Collector's Guide</p>
+                <h3 className="mt-2 font-display text-xl text-chocolate group-hover:text-pink">
+                  Cookie Wall Art for Home Collectors
+                </h3>
+              </Link>
               <Link
                 href="/blog/how-to-hang-jumbo-cookie-wall-art/"
                 className="group rounded-xl bg-white p-5 shadow-card hover:shadow-lift"

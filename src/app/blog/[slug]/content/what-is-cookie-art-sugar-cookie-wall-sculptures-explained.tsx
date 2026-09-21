@@ -312,6 +312,12 @@ export function WhatIsCookieArtContent() {
       </p>
 
       <p>
+        New to collecting? Read our <Link href="/blog/cookie-wall-art-for-home-collectors/">complete guide 
+        to cookie wall art for home collectors</Link> — including pricing, placement tips, and how faux sugar 
+        cookie sculptures differ from edible royal icing cookies.
+      </p>
+
+      <p>
         Browse the full <Link href="/wall-art/">cookie art collection</Link> to find your flavor, or learn more 
         about <Link href="/about/">cookie artist Erynn</Link> and the JOIRUSH studio. Every piece ships free 
         within the U.S. in 14 days — because handmade cookie art worth waiting for.

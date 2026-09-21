@@ -11,10 +11,12 @@ import { DopamineDecorContent, DopamineDecorSchema } from "./content/kitchen-dop
 import { FoodieGiftGuideContent, FoodieGiftGuideSchema } from "./content/foodie-gift-guide-jumbo-cookie-sculptures";
 import { ChocolateChipStoryContent, ChocolateChipStorySchema } from "./content/chocolate-chip-cookie-wall-art-joirush-classic";
 import { WhatIsCookieArtContent, WhatIsCookieArtSchema } from "./content/what-is-cookie-art-sugar-cookie-wall-sculptures-explained";
+import { CookieWallArtCollectorsContent, CookieWallArtCollectorsSchema } from "./content/cookie-wall-art-for-home-collectors";
 
 type Props = { params: Promise<{ slug: string }> };
 
 const contentMap: Record<string, { Content: () => React.ReactNode; Schema: () => React.ReactNode }> = {
+  "cookie-wall-art-for-home-collectors": { Content: CookieWallArtCollectorsContent, Schema: CookieWallArtCollectorsSchema },
   "what-is-cookie-art-sugar-cookie-wall-sculptures-explained": { Content: WhatIsCookieArtContent, Schema: WhatIsCookieArtSchema },
   "how-to-hang-jumbo-cookie-wall-art": { Content: HowToHangContent, Schema: HowToHangSchema },
   "kitchen-dopamine-decor-dessert-gallery-wall": { Content: DopamineDecorContent, Schema: DopamineDecorSchema },

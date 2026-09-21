@@ -5,7 +5,7 @@
   "scripts": {
     "dev": "next dev",
     "build": "next build",
-    "build:pages": "GITHUB_PAGES=true next build && rm -rf docs && mkdir docs && cp -R out/. docs/ && touch docs/.nojekyll",
+    "build:pages": "next build && rm -rf docs && mkdir docs && cp -R out/. docs/ && touch docs/.nojekyll && echo 'joirush.com' > docs/CNAME",
     "start": "next start",
     "sync:etsy": "node scripts/sync-etsy.mjs",
     "build:pages:synced": "npm run sync:etsy && npm run build:pages"

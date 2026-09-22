@@ -35,7 +35,7 @@ export function CookieWallArtCollectorsSchema() {
         name: "Where should I hang cookie wall art?",
         acceptedAnswer: {
           "@type": "Answer",
-          text: "Cookie wall art looks great in kitchens, dining rooms, breakfast nooks, playrooms, bakeries, cafes, and creative studio spaces. They work as single statement pieces or grouped into gallery walls for maximalist dopamine decor.",
+          text: "Cookie wall art looks great in kitchens, dining rooms, breakfast nooks, playrooms, home offices, and creative spaces. They work as single statement pieces or grouped into gallery walls for maximalist dopamine decor.",
         },
       },
       {
@@ -239,8 +239,8 @@ export function CookieWallArtCollectorsContent() {
         <li><strong>Breakfast nook:</strong> Perfect for morning vibes</li>
         <li><strong>Home office:</strong> Adds personality and sparks joy during work hours</li>
         <li><strong>Playroom:</strong> Kid-friendly decor that won't get eaten</li>
-        <li><strong>Bakeries & cafes:</strong> Professional food businesses love realistic cookie decor</li>
-        <li><strong>Content creator backdrops:</strong> Eye-catching and on-brand for food content</li>
+        <li><strong>Photo walls at home:</strong> Eye-catching backdrop for family photos and entertaining</li>
+        <li><strong>Content creator backdrops:</strong> Perfect for food, lifestyle, and dopamine decor content from home</li>
       </ul>
 
       <p>

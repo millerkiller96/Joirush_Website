@@ -145,10 +145,10 @@ export default function HomePage() {
     <>
       <HomeJsonLd />
       <div>
-        <div className="border-b border-chocolate/10 bg-chocolate text-center text-[13px] text-cream">
-          <p className="px-4 py-2.5">
-            Handmade in {site.location} · Ships in {site.shippingTime} · Free U.S. shipping · {site.stats.rating} stars from{" "}
-            {site.stats.reviews} collectors
+        <div className="border-b border-chocolate/10 bg-chocolate text-center text-[13px] leading-snug text-cream">
+          <p className="px-3 py-2.5 sm:px-4">
+            <span className="hidden sm:inline">Handmade in {site.location} · Ships in {site.shippingTime} · Free U.S. shipping · {site.stats.rating} stars from {site.stats.reviews} collectors</span>
+            <span className="sm:hidden">Free U.S. shipping · {site.stats.rating}★ from {site.stats.reviews} collectors</span>
           </p>
         </div>
 
@@ -172,32 +172,32 @@ export default function HomePage() {
                 <li>✓ Ships in {site.shippingTime}</li>
                 <li>✓ Free U.S. shipping</li>
               </ul>
-              <div className="mt-8 flex flex-wrap gap-3">
+              <div className="mt-8 flex flex-wrap gap-4">
                 <Link
                   href="/wall-art/"
-                  className="rounded-full bg-emerald-600 px-6 py-3 text-sm font-medium text-white hover:bg-emerald-700"
+                  className="cta-glow rounded-full bg-emerald-600 px-8 py-4 text-base font-bold text-white transition-all hover:bg-emerald-700 md:px-10 md:py-5 md:text-lg"
                 >
                   Shop Cookie Art
                 </Link>
                 <Link
                   href="/custom/"
-                  className="rounded-full border border-chocolate/15 px-6 py-3 text-sm font-medium text-chocolate hover:bg-white"
+                  className="rounded-full border-2 border-chocolate/20 bg-white/80 px-7 py-4 text-base font-semibold text-chocolate transition-all hover:border-chocolate/40 hover:bg-white md:px-8 md:py-5 md:text-lg"
                 >
                   Request Custom Piece
                 </Link>
               </div>
-              <dl className="mt-10 grid max-w-md grid-cols-3 gap-4 text-center">
+              <dl className="mt-10 grid max-w-md grid-cols-3 gap-2 text-center sm:gap-4">
                 <div>
-                  <dt className="text-sm uppercase tracking-widest text-chocolate-soft">Rating</dt>
-                  <dd className="mt-1 font-display text-3xl">{site.stats.rating}</dd>
+                  <dt className="text-xs uppercase tracking-widest text-chocolate-soft sm:text-sm">Rating</dt>
+                  <dd className="mt-1 font-display text-2xl sm:text-3xl">{site.stats.rating}</dd>
                 </div>
                 <div>
-                  <dt className="text-sm uppercase tracking-widest text-chocolate-soft">Happy Homes</dt>
-                  <dd className="mt-1 font-display text-3xl">{site.stats.sales}+</dd>
+                  <dt className="text-xs uppercase tracking-widest text-chocolate-soft sm:text-sm">Happy Homes</dt>
+                  <dd className="mt-1 font-display text-2xl sm:text-3xl">{site.stats.sales}+</dd>
                 </div>
                 <div>
-                  <dt className="text-sm uppercase tracking-widest text-chocolate-soft">Years</dt>
-                  <dd className="mt-1 font-display text-3xl">{site.stats.years}</dd>
+                  <dt className="text-xs uppercase tracking-widest text-chocolate-soft sm:text-sm">Years</dt>
+                  <dd className="mt-1 font-display text-2xl sm:text-3xl">{site.stats.years}</dd>
                 </div>
               </dl>
             </div>
@@ -217,6 +217,24 @@ export default function HomePage() {
         </section>
 
         <StudioVideoCarousel />
+
+        <section className="mx-auto max-w-7xl px-5 py-20 md:px-8">
+          <div className="flex flex-col justify-between gap-6 md:flex-row md:items-end">
+            <SectionHeading
+              eyebrow="Bestselling cookie art"
+              title="The Ones Collectors Can't Stop Buying"
+              copy="Golden chips. Candy pops. That just-baked texture you can practically smell. These sugar cookie wall sculptures are the art cookies that sell out first."
+            />
+            <Link href="/wall-art/" className="text-sm font-medium text-pink hover:underline">
+              See the full cookie art collection →
+            </Link>
+          </div>
+          <div className="mt-10 grid gap-8 sm:grid-cols-2 lg:grid-cols-3">
+            {featured.map((product) => (
+              <ProductCard key={product.slug} product={product} />
+            ))}
+          </div>
+        </section>
 
         <section className="mx-auto max-w-7xl px-5 py-8 md:px-8">
           <div className="grid gap-4 md:grid-cols-3">
@@ -258,24 +276,6 @@ export default function HomePage() {
                   <p className="mt-2 text-sm text-cream/80">{card.copy}</p>
                 </div>
               </Link>
-            ))}
-          </div>
-        </section>
-
-        <section className="mx-auto max-w-7xl px-5 py-20 md:px-8">
-          <div className="flex flex-col justify-between gap-6 md:flex-row md:items-end">
-            <SectionHeading
-              eyebrow="Bestselling cookie art"
-              title="The Ones Collectors Can't Stop Buying"
-              copy="Golden chips. Candy pops. That just-baked texture you can practically smell. These sugar cookie wall sculptures are the art cookies that sell out first."
-            />
-            <Link href="/wall-art/" className="text-sm font-medium text-pink hover:underline">
-              See the full cookie art collection →
-            </Link>
-          </div>
-          <div className="mt-10 grid gap-8 sm:grid-cols-2 lg:grid-cols-3">
-            {featured.map((product) => (
-              <ProductCard key={product.slug} product={product} />
             ))}
           </div>
         </section>

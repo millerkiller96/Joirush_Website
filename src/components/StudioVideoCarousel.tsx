@@ -166,7 +166,7 @@ export function StudioVideoCarousel() {
                 className={`relative flex-shrink-0 snap-center cursor-pointer overflow-hidden rounded-2xl transition-all duration-300 ${
                   index === currentIndex
                     ? "ring-4 ring-pink ring-offset-2 ring-offset-cream-deep"
-                    : "opacity-70 hover:opacity-100"
+                    : "md:opacity-70 md:hover:opacity-100"
                 }`}
                 style={{ width: "200px" }}
                 onClick={() => handleVideoClick(index)}
@@ -219,7 +219,7 @@ export function StudioVideoCarousel() {
           </button>
         </div>
 
-        <div className="mt-6 flex justify-center gap-1.5">
+        <div className="mt-6 flex justify-center gap-1">
           {studioVideos.map((_, index) => (
             <button
               key={index}
@@ -228,13 +228,17 @@ export function StudioVideoCarousel() {
                 setCurrentIndex(index);
                 if (isInView) playVideo(index);
               }}
-              className={`h-2 rounded-full transition-all ${
-                index === currentIndex
-                  ? "w-6 bg-pink"
-                  : "w-2 bg-chocolate/20 hover:bg-chocolate/40"
-              }`}
+              className="flex h-8 w-8 items-center justify-center"
               aria-label={`Go to video ${index + 1}`}
-            />
+            >
+              <span
+                className={`block rounded-full transition-all ${
+                  index === currentIndex
+                    ? "h-2.5 w-6 bg-pink"
+                    : "h-2 w-2 bg-chocolate/20 hover:bg-chocolate/40"
+                }`}
+              />
+            </button>
           ))}
         </div>
       </div>

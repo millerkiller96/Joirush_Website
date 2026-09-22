@@ -13,6 +13,7 @@ html {
 body {
   background: #fff6eb;
   color: #2a1810;
+  overflow-x: hidden;
 }
 
 ::selection {
@@ -48,4 +49,22 @@ body {
 
 .scrollbar-hide::-webkit-scrollbar {
   display: none;
+}
+
+@keyframes glow-pulse {
+  0%, 100% {
+    box-shadow: 0 0 20px rgba(22, 163, 74, 0.5);
+  }
+  50% {
+    box-shadow: 0 0 28px rgba(22, 163, 74, 0.7);
+  }
+}
+
+.cta-glow {
+  animation: glow-pulse 2.5s ease-in-out infinite;
+}
+
+.cta-glow:hover {
+  animation: none;
+  box-shadow: 0 0 30px rgba(22, 163, 74, 0.7);
 }

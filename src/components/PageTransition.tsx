@@ -20,9 +20,10 @@ export function PageTransition({ children }: { children: React.ReactNode }) {
       {children}
       <div
         aria-hidden="true"
-        className={`pointer-events-none fixed inset-0 z-[9999] bg-white transition-opacity duration-500 ease-out ${
+        className={`pointer-events-none fixed inset-0 z-[9999] bg-white transition-opacity ease-out ${
           showOverlay ? "opacity-100" : "opacity-0"
         }`}
+        style={{ transitionDuration: "1500ms" }}
       />
     </>
   );

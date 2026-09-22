@@ -5,23 +5,25 @@ import { useEffect, useState } from "react";
 
 export function PageTransition({ children }: { children: React.ReactNode }) {
   const pathname = usePathname();
-  const [isVisible, setIsVisible] = useState(false);
+  const [showOverlay, setShowOverlay] = useState(true);
 
   useEffect(() => {
-    setIsVisible(false);
-    const timer = requestAnimationFrame(() => {
-      setIsVisible(true);
-    });
-    return () => cancelAnimationFrame(timer);
+    setShowOverlay(true);
+    const timer = setTimeout(() => {
+      setShowOverlay(false);
+    }, 50);
+    return () => clearTimeout(timer);
   }, [pathname]);
 
   return (
-    <div
-      className={`transition-opacity duration-500 ease-out ${
-        isVisible ? "opacity-100" : "opacity-0"
-      }`}
-    >
+    <>
       {children}
-    </div>
+      <div
+        aria-hidden="true"
+        className={`pointer-events-none fixed inset-0 z-[9999] bg-white transition-opacity duration-500 ease-out ${
+          showOverlay ? "opacity-100" : "opacity-0"
+        }`}
+      />
+    </>
   );
 }

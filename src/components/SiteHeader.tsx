@@ -83,7 +83,7 @@ export function SiteHeader() {
 
         <button
           type="button"
-          className="rounded-full border border-chocolate/15 px-3 py-1.5 text-sm font-medium lg:hidden"
+          className="min-h-[44px] min-w-[44px] rounded-full border border-chocolate/15 px-4 py-2 text-sm font-medium lg:hidden"
           onClick={() => setOpen((value) => !value)}
           aria-expanded={open}
         >
@@ -93,13 +93,13 @@ export function SiteHeader() {
 
       {open ? (
         <div className="border-t border-chocolate/10 bg-cream px-5 py-4 lg:hidden">
-          <nav className="flex flex-col gap-3">
+          <nav className="flex flex-col gap-1">
             {links.map((link) => (
               <Link
                 key={link.href}
                 href={link.href}
                 onClick={() => setOpen(false)}
-                className="text-lg font-medium text-chocolate"
+                className="min-h-[44px] flex items-center text-lg font-medium text-chocolate"
               >
                 {link.label}
               </Link>
@@ -108,7 +108,7 @@ export function SiteHeader() {
               href={site.etsy}
               target="_blank"
               rel="noreferrer"
-              className="mt-2 rounded-full bg-etsy px-4 py-2 text-center text-sm font-medium text-white"
+              className="mt-3 min-h-[44px] flex items-center justify-center rounded-full bg-etsy px-4 py-2.5 text-center text-sm font-medium text-white"
             >
               Shop Etsy
             </a>
@@ -118,7 +118,7 @@ export function SiteHeader() {
                 target="_blank"
                 rel="noreferrer"
                 aria-label={`Follow ${site.instagramHandle} on Instagram`}
-                className="rounded-full p-2 text-chocolate-mid transition hover:text-pink"
+                className="min-h-[44px] min-w-[44px] flex items-center justify-center rounded-full p-2 text-chocolate-mid transition hover:text-pink"
               >
                 <InstagramIcon className="h-6 w-6" />
               </a>

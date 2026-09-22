@@ -47,7 +47,10 @@ export function StickyBuyBar({ product, mainBuyButtonRef }: StickyBuyBarProps) {
       role="region"
       aria-label="Quick purchase"
     >
-      <div className="border-t border-chocolate/10 bg-cream/95 px-4 py-3 backdrop-blur-lg sm:px-6">
+      <div 
+        className="border-t border-chocolate/10 bg-cream/95 px-4 py-3 backdrop-blur-lg sm:px-6"
+        style={{ paddingBottom: "max(0.75rem, env(safe-area-inset-bottom, 0px))" }}
+      >
         <div className="mx-auto flex max-w-7xl items-center justify-between gap-4">
           <div className="hidden min-w-0 flex-1 sm:block">
             <p className="truncate font-medium text-chocolate">

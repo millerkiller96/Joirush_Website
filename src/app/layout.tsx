@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import { Fraunces, Outfit } from "next/font/google";
 import { SiteFooter } from "@/components/SiteFooter";
 import { SiteHeader } from "@/components/SiteHeader";
+import { PageTransition } from "@/components/PageTransition";
 import { site } from "@/data/site";
 import { siteUrl, getImageUrl } from "@/lib/seo";
 import { asset } from "@/lib/paths";
@@ -148,7 +149,9 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
       </head>
       <body className="font-sans antialiased">
         <SiteHeader />
-        <main>{children}</main>
+        <PageTransition>
+          <main>{children}</main>
+        </PageTransition>
         <SiteFooter />
       </body>
     </html>

@@ -14,6 +14,28 @@ export type BlogPost = {
 
 export const blogPosts: BlogPost[] = [
   {
+    slug: "cookie-canvas-vs-3d-cookie-wall-sculptures",
+    title: "Cookie Canvas Prints vs Handmade 3D Cookie Wall Sculptures: What Collectors Actually Hang",
+    excerpt:
+      "Flat cookie canvas prints vs 3D spray-foam cookie wall sculptures — what's the difference and which do collectors actually hang? Learn why handmade sugar cookie wall sculptures from JOIRUSH offer the depth, texture, and statement-piece impact that flat prints can't match.",
+    publishedAt: "2026-09-22",
+    author: "Erynn",
+    image: "/images/products/choc-chip.jpg",
+    imageAlt: "3D cookie wall sculpture vs flat cookie canvas print - handmade sugar cookie wall art by JOIRUSH",
+    keywords: [
+      "cookie canvas",
+      "cookie wall art",
+      "sugar cookie wall sculpture",
+      "art cookies",
+      "3d cookie wall art",
+      "cookie art",
+      "faux food wall art",
+      "cookie canvas print",
+    ],
+    readingTime: "8 min read",
+    category: "how-to",
+  },
+  {
     slug: "cookie-wall-art-for-home-collectors",
     title: "Cookie Wall Art for Home Collectors: Faux Sugar Cookie Sculptures That Last Forever",
     excerpt:

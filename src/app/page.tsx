@@ -34,10 +34,10 @@ export const metadata: Metadata = {
     type: "website",
     images: [
       {
-        url: getImageUrl("/images/products/choc-chip.jpg"),
-        width: 1200,
-        height: 630,
-        alt: "Cookie art - handmade sugar cookie wall sculpture by cookie artist Erynn",
+        url: getImageUrl("/images/brand/homepage-hero.jpg"),
+        width: 1800,
+        height: 2400,
+        alt: "JOIRUSH jumbo cookie wall art display with oversized chocolate chip cookie sculptures",
       },
     ],
   },
@@ -205,8 +205,8 @@ export default function HomePage() {
               <div className="absolute -left-6 top-8 hidden h-24 w-24 rounded-full bg-mint/70 md:block" />
               <div className="absolute -right-4 bottom-10 hidden h-16 w-16 rounded-full bg-pink/70 md:block" />
               <Image
-                src="/images/products/choc-chip.jpg"
-                alt="Cookie art - handmade sugar cookie wall sculpture by cookie artist Erynn - jumbo chocolate chip faux food wall art"
+                src="/images/brand/homepage-hero.jpg"
+                alt="JOIRUSH jumbo cookie wall art display featuring oversized chocolate chip cookie sculptures mounted on a living room wall"
                 width={900}
                 height={1200}
                 priority

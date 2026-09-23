@@ -35,9 +35,9 @@ export const metadata: Metadata = {
     images: [
       {
         url: getImageUrl("/images/brand/homepage-hero.jpg"),
-        width: 1800,
-        height: 2400,
-        alt: "JOIRUSH jumbo cookie wall art display with oversized chocolate chip cookie sculptures",
+        width: 1242,
+        height: 1656,
+        alt: "JOIRUSH jumbo cookie wall art props with the brand model in a pink top holding an oversized cookie sandwich, surrounded by giant cookie sculptures",
       },
     ],
   },
@@ -206,7 +206,7 @@ export default function HomePage() {
               <div className="absolute -right-4 bottom-10 hidden h-16 w-16 rounded-full bg-pink/70 md:block" />
               <Image
                 src="/images/brand/homepage-hero.jpg"
-                alt="JOIRUSH jumbo cookie wall art display featuring oversized chocolate chip cookie sculptures mounted on a living room wall"
+                alt="JOIRUSH jumbo cookie wall art props with the brand model in a pink top holding an oversized cookie sandwich, surrounded by giant cookie sculptures"
                 width={900}
                 height={1200}
                 priority

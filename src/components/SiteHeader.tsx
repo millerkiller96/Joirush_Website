@@ -21,6 +21,7 @@ const links = [
   { href: "/blog/", label: "Blog" },
   { href: "/custom/", label: "Custom" },
   { href: "/about/", label: "Cookie Artist" },
+  { href: "/contact/", label: "Contact" },
 ];
 
 export function SiteHeader() {

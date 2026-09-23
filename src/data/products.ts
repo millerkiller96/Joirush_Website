@@ -119,7 +119,7 @@ export const products: Product[] = [
     image: "/images/products/choc-chip.jpg",
     etsyUrl: "https://www.etsy.com/listing/1831819997/jumbo-chocolate-chip-cookie-wall-art",
     stripeUrl: "https://buy.stripe.com/bJe9AN6B5eQ66DW1z69fW00",
-    stripeUpsellUrl: "https://buy.stripe.com/fZu14h7F99vM4vO7Xu9fW01",
+    stripeUpsellUrl: "https://buy.stripe.com/00wbIV4sX0Zg3rK91y9fW0r",
     upsellPairPrice: 190,
     tagline: "The cookie art that started it all. Golden crumble. Glossy chips. Zero guilt.",
     description:
@@ -152,7 +152,7 @@ export const products: Product[] = [
     image: "/images/products/mini-set.jpg",
     etsyUrl: "https://www.etsy.com/listing/4452655428/oversized-mini-cookie-wall-decor-set",
     stripeUrl: "https://buy.stripe.com/9B66oB3oT9vMaUc0v29fW02",
-    stripeUpsellUrl: "https://buy.stripe.com/7sY3cpgbF23kaUc7Xu9fW03",
+    stripeUpsellUrl: "https://buy.stripe.com/bJe7sF9Nh0ZgbYga5C9fW0y",
     upsellPairPrice: 332,
     tagline: "Two cookies. Double the dopamine. Half the decision-making.",
     description:
@@ -179,7 +179,7 @@ export const products: Product[] = [
     image: "/images/products/mm-set.jpg",
     etsyUrl: "https://www.etsy.com/listing/4452651114/jumbo-mm-cookie-wall-art-set-fake-cookie",
     stripeUrl: "https://buy.stripe.com/fZu6oBgbFcHY5zSdhO9fW04",
-    stripeUpsellUrl: "https://buy.stripe.com/eVqfZbgbFdM27I03He9fW05",
+    stripeUpsellUrl: "https://buy.stripe.com/eVq6oB1gLfUagewb9G9fW0z",
     upsellPairPrice: 428,
     tagline: "Two jumbo art cookies. Maximum color. Maximum cookie art chaos.",
     description:
@@ -205,7 +205,7 @@ export const products: Product[] = [
     image: "/images/products/white-choc.jpg",
     etsyUrl: "https://www.etsy.com/listing/4452647836/jumbo-white-chocolate-chip-cookie-wall",
     stripeUrl: "https://buy.stripe.com/fZu7sF1gLdM22nGfpW9fW06",
-    stripeUpsellUrl: "https://buy.stripe.com/fZu3cpf7BbDU9Q87Xu9fW07",
+    stripeUpsellUrl: "https://buy.stripe.com/cNibIV8JdfUaaUc51y9fW0B",
     upsellPairPrice: 218,
     tagline: "Soft vanilla vibes. Creamy white chips. Dreamy energy.",
     description:
@@ -231,7 +231,7 @@ export const products: Product[] = [
     image: "/images/products/rainbow.jpg",
     etsyUrl: "https://www.etsy.com/listing/4452645632/colorful-candy-cookie-wall-decor",
     stripeUrl: "https://buy.stripe.com/28EdR3gbF6jA5zSelS9fW08",
-    stripeUpsellUrl: "https://buy.stripe.com/5kQ7sF2kP6jA7I04Li9fW09",
+    stripeUpsellUrl: "https://buy.stripe.com/6oU3cpe3x23kgewelS9fW0D",
     upsellPairPrice: 171,
     tagline: "Jewel-bright cookie art. Pure dopamine. $90.",
     description:
@@ -256,7 +256,7 @@ export const products: Product[] = [
     image: "/images/products/mini-choc.jpg",
     etsyUrl: "https://www.etsy.com/listing/4452643820/mini-jumbo-chocolate-chip-cookie-wall",
     stripeUrl: "https://buy.stripe.com/3cIbIVcZtgYe5zS91y9fW0a",
-    stripeUpsellUrl: "https://buy.stripe.com/3cI6oB2kP23kd2kfpW9fW0b",
+    stripeUpsellUrl: "https://buy.stripe.com/5kQdR34sX37o3rK6Tq9fW0F",
     upsellPairPrice: 171,
     tagline: "Big impact. Smaller footprint. Same irresistible crumble.",
     description:
@@ -281,7 +281,7 @@ export const products: Product[] = [
     image: "/images/products/pastel-mm.jpg",
     etsyUrl: "https://www.etsy.com/listing/4452635945/jumbo-pastel-mm-cookie-wall-art",
     stripeUrl: "https://buy.stripe.com/bJefZbe3x9vM9Q8dhO9fW0c",
-    stripeUpsellUrl: "https://buy.stripe.com/00w6oBbVp23k7I0elS9fW0d",
+    stripeUpsellUrl: "https://buy.stripe.com/eVqbIV9NhdM20fyfpW9fW0G",
     upsellPairPrice: 218,
     tagline: "Candy vibes. Softer palette. Still stops the room.",
     description:
@@ -306,7 +306,7 @@ export const products: Product[] = [
     image: "/images/products/christmas.jpg",
     etsyUrl: "https://www.etsy.com/listing/4438064219/jumbo-christmas-chocolate-chip-cookie",
     stripeUrl: "https://buy.stripe.com/00waERe3xazQ8M41z69fW0e",
-    stripeUpsellUrl: "https://buy.stripe.com/5kQ6oBcZtgYeaUcb9G9fW0f",
+    stripeUpsellUrl: "https://buy.stripe.com/7sYdR3f7BdM28M42Da9fW0L",
     upsellPairPrice: 190,
     tagline: "Festive. Forever fresh. No crumbs under the tree.",
     description:
@@ -331,7 +331,7 @@ export const products: Product[] = [
     image: "/images/products/peanut-butter.jpg",
     etsyUrl: "https://www.etsy.com/listing/1817504830/giant-peanut-butter-cookie-wall-art",
     stripeUrl: "https://buy.stripe.com/6oU7sFgbFbDU6DW91y9fW0g",
-    stripeUpsellUrl: "https://buy.stripe.com/4gM8wJ2kPazQbYggu09fW0h",
+    stripeUpsellUrl: "https://buy.stripe.com/9B64gtbVp37ofas7Xu9fW0M",
     upsellPairPrice: 190,
     tagline: "Rich peanut butter dough. Candy pops. Pure nostalgia.",
     description:
@@ -356,7 +356,7 @@ export const products: Product[] = [
     image: "/images/products/double-choc.jpg",
     etsyUrl: "https://www.etsy.com/listing/1817632262/giant-faux-double-chocolate-chip-cookie",
     stripeUrl: "https://buy.stripe.com/3cIeV7f7B37o2nG91y9fW0i",
-    stripeUpsellUrl: "https://buy.stripe.com/28EaER7F97nE2nGgu09fW0j",
+    stripeUpsellUrl: "https://buy.stripe.com/9B628lgbF0Zgd2kcdK9fW0N",
     upsellPairPrice: 209,
     tagline: "Twice the chocolate. Twice the temptation. Zero regrets.",
     description:
@@ -382,7 +382,7 @@ export const products: Product[] = [
     image: "/images/products/ice-cream.jpg",
     etsyUrl: "https://www.etsy.com/listing/1892110346/jumbo-chocolate-chip-cookie-ice-cream",
     stripeUrl: "https://buy.stripe.com/00wcMZ1gL6jA1jC5Pm9fW0k",
-    stripeUpsellUrl: "https://buy.stripe.com/6oUaERbVpdM22nGdhO9fW0l",
+    stripeUpsellUrl: "https://buy.stripe.com/9B614h6B50Zg7I01z69fW0O",
     upsellPairPrice: 418,
     tagline: "The showstopper cookie art. Two cookies. Vanilla slab. Zero melt.",
     description:
@@ -413,7 +413,7 @@ export const products: Product[] = [
     image: "/images/products/mm-classic.jpg",
     etsyUrl: "https://www.etsy.com/listing/1831839675/jumbo-mm-cookie-wall-art-candyland",
     stripeUrl: "https://buy.stripe.com/cNidR3cZt5fwbYg0v29fW0m",
-    stripeUpsellUrl: "https://buy.stripe.com/fZufZb0cH0Zg5zSfpW9fW0n",
+    stripeUpsellUrl: "https://buy.stripe.com/aFa6oBe3xfUa5zS51y9fW0P",
     upsellPairPrice: 218,
     tagline: "Golden dough. Candy confetti. Instant serotonin.",
     description:
@@ -439,7 +439,7 @@ export const products: Product[] = [
     image: "/images/products/hot-pink-mm.jpg",
     etsyUrl: "https://www.etsy.com/listing/1831836105/hot-pink-jumbo-mm-cookie-candyland-wall",
     stripeUrl: "https://buy.stripe.com/4gMfZb2kPgYefas4Li9fW0o",
-    stripeUpsellUrl: "https://buy.stripe.com/4gMeV78Jd5fwbYgcdK9fW0p",
+    stripeUpsellUrl: "https://buy.stripe.com/3cI9AN7F98rIbYg0v29fW0Q",
     upsellPairPrice: 218,
     tagline: "Loud. Pink. Unapologetic. The main character cookie art.",
     description:

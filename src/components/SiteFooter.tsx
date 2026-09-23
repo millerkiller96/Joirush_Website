@@ -55,6 +55,9 @@ export function SiteFooter() {
             <Link href="/about/" className="hover:text-pink-blush">
               Meet Cookie Artist Erynn
             </Link>
+            <Link href="/contact/" className="hover:text-pink-blush">
+              Contact Us
+            </Link>
             <a href={site.etsy} target="_blank" rel="noreferrer" className="hover:text-pink-blush">
               Etsy Shop
             </a>

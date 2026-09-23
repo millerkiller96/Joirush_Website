@@ -76,7 +76,7 @@ export function SiteFooter() {
             </a>
           </div>
           <p className="text-center text-sm text-cream/55">
-            Handmade cookie art with love · Sugar cookie wall sculptures ship in 14 days · Free U.S. shipping from Orlando, Florida · {site.name} © 2026
+            Handmade cookie art with love · Sugar cookie wall sculptures ship in 14 days · Free U.S. shipping from Daytona Beach, FL · {site.name} © 2026
           </p>
         </div>
       </div>

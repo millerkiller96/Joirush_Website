@@ -13,10 +13,12 @@ import { ChocolateChipStoryContent, ChocolateChipStorySchema } from "./content/c
 import { WhatIsCookieArtContent, WhatIsCookieArtSchema } from "./content/what-is-cookie-art-sugar-cookie-wall-sculptures-explained";
 import { CookieWallArtCollectorsContent, CookieWallArtCollectorsSchema } from "./content/cookie-wall-art-for-home-collectors";
 import { CookieCanvasVs3DContent, CookieCanvasVs3DSchema } from "./content/cookie-canvas-vs-3d-cookie-wall-sculptures";
+import { FauxCookieWallDecorContent, FauxCookieWallDecorSchema } from "./content/faux-cookie-wall-decor-ready-made-vs-diy";
 
 type Props = { params: Promise<{ slug: string }> };
 
 const contentMap: Record<string, { Content: () => React.ReactNode; Schema: () => React.ReactNode }> = {
+  "faux-cookie-wall-decor-ready-made-vs-diy": { Content: FauxCookieWallDecorContent, Schema: FauxCookieWallDecorSchema },
   "cookie-canvas-vs-3d-cookie-wall-sculptures": { Content: CookieCanvasVs3DContent, Schema: CookieCanvasVs3DSchema },
   "cookie-wall-art-for-home-collectors": { Content: CookieWallArtCollectorsContent, Schema: CookieWallArtCollectorsSchema },
   "what-is-cookie-art-sugar-cookie-wall-sculptures-explained": { Content: WhatIsCookieArtContent, Schema: WhatIsCookieArtSchema },

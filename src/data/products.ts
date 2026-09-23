@@ -205,7 +205,7 @@ export const products: Product[] = [
     image: "/images/products/white-choc.jpg",
     etsyUrl: "https://www.etsy.com/listing/4452647836/jumbo-white-chocolate-chip-cookie-wall",
     stripeUrl: "https://buy.stripe.com/fZu7sF1gLdM22nGfpW9fW06",
-    stripeUpsellUrl: "https://buy.stripe.com/cNibIV8JdfUaaUc51y9fW0B",
+    stripeUpsellUrl: "https://buy.stripe.com/cNibIV8JdfUaaUc91y9fW0B",
     upsellPairPrice: 218,
     tagline: "Soft vanilla vibes. Creamy white chips. Dreamy energy.",
     description:

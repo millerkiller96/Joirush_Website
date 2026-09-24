@@ -14,6 +14,28 @@ export type BlogPost = {
 
 export const blogPosts: BlogPost[] = [
   {
+    slug: "faux-cookie-wall-decor-ready-made-vs-diy",
+    title: "Faux Cookie Wall Decor: Ready-Made Sculptures vs DIY Giant Cookies",
+    excerpt:
+      "Comparing DIY faux cookie projects (foam board, salt dough tutorials) to buying handmade spray-foam sugar cookie wall sculptures. Weight, texture, durability, and why collectors who want it done right choose ready-made cookie art.",
+    publishedAt: "2026-09-23",
+    author: "Erynn",
+    image: "/images/products/choc-chip.jpg",
+    imageAlt: "Faux cookie wall decor - handmade spray-foam sugar cookie wall sculpture vs DIY giant cookie",
+    keywords: [
+      "faux cookie wall decor",
+      "giant faux cookie",
+      "oversized cookie wall art",
+      "DIY cookie wall art",
+      "faux food wall art",
+      "spray foam cookie sculpture",
+      "sugar cookie wall sculpture",
+      "cookie art",
+    ],
+    readingTime: "9 min read",
+    category: "how-to",
+  },
+  {
     slug: "cookie-canvas-vs-3d-cookie-wall-sculptures",
     title: "Cookie Canvas Prints vs Handmade 3D Cookie Wall Sculptures: What Collectors Actually Hang",
     excerpt:

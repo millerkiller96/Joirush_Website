@@ -12,7 +12,7 @@ import { getAbsoluteUrl, getImageUrl, siteUrl } from "@/lib/seo";
 export const metadata: Metadata = {
   title: "JOIRUSH — Cookie Art & Sugar Cookie Wall Sculptures by Cookie Artist Erynn",
   description:
-    "Shop handmade cookie art by cookie artist Erynn. Sugar cookie wall sculptures, jumbo cookie canvas pieces, and faux food wall art. Decorative art cookies that look real but last forever. Starting at $90, free US shipping from Orlando.",
+    "Shop handmade cookie art by cookie artist Erynn. Sugar cookie wall sculptures, jumbo cookie canvas pieces, and faux food wall art. Decorative art cookies that look real but last forever. Starting at $90, free US shipping from Daytona Beach, FL.",
   keywords: [
     "cookie art",
     "sugar cookie art",
@@ -45,6 +45,39 @@ export const metadata: Metadata = {
     canonical: siteUrl,
   },
 };
+
+const homepageFaqs = [
+  {
+    question: "What is cookie art?",
+    answer:
+      "Cookie art refers to decorative sugar cookie wall sculptures — handmade faux food wall art that looks like oversized, realistic cookies. Unlike edible royal icing sugar cookies, these pieces are crafted from spray foam and acrylic paint by a cookie artist and designed to hang permanently on your wall.",
+  },
+  {
+    question: "Are these cookies edible?",
+    answer:
+      "No. JOIRUSH cookie sculptures are decorative wall art made from spray foam and acrylic paint. They look like real cookies but are designed for permanent display, not eating. They'll look just as delicious years from now.",
+  },
+  {
+    question: "What are cookie wall sculptures made of?",
+    answer:
+      "Each piece is handmade from spray foam that's sculpted to look like a real baked cookie, then painted with acrylics to achieve realistic colors and textures. They're lightweight (2-4 lbs), durable, and come with built-in wall hangers.",
+  },
+  {
+    question: "How long does shipping take?",
+    answer:
+      "Every cookie sculpture is handmade to order and ships within 14 days from Daytona Beach, FL. U.S. shipping is always free.",
+  },
+  {
+    question: "How do I hang cookie wall art?",
+    answer:
+      "Every piece includes a built-in wall hanger. Because they're lightweight (2-4 lbs), they hang easily on a single nail or picture hook — no special hardware needed.",
+  },
+  {
+    question: "How heavy are the sculptures?",
+    answer:
+      "Cookie wall sculptures weigh 2-4 lbs depending on size. That's light enough to hang on a single nail — no anchors or heavy-duty mounting required.",
+  },
+];
 
 function HomeJsonLd() {
   const organizationSchema = {
@@ -120,6 +153,19 @@ function HomeJsonLd() {
     },
   };
 
+  const faqSchema = {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    mainEntity: homepageFaqs.map((faq) => ({
+      "@type": "Question",
+      name: faq.question,
+      acceptedAnswer: {
+        "@type": "Answer",
+        text: faq.answer,
+      },
+    })),
+  };
+
   return (
     <>
       <script
@@ -133,6 +179,10 @@ function HomeJsonLd() {
       <script
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(artistSchema) }}
+      />
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(faqSchema) }}
       />
     </>
   );
@@ -349,6 +399,24 @@ export default function HomePage() {
           </div>
         </section>
 
+        <section className="bg-cream-deep">
+          <div className="mx-auto max-w-7xl px-5 py-16 md:px-8">
+            <SectionHeading
+              eyebrow="Common questions"
+              title="Cookie Art FAQ"
+              copy="Everything you need to know about sugar cookie wall sculptures, from what they're made of to how they hang."
+            />
+            <dl className="mt-10 grid gap-4 md:grid-cols-2">
+              {homepageFaqs.map((faq) => (
+                <div key={faq.question} className="rounded-[1.5rem] bg-white p-5">
+                  <dt className="font-display text-lg text-chocolate">{faq.question}</dt>
+                  <dd className="mt-2 text-sm leading-relaxed text-chocolate-mid">{faq.answer}</dd>
+                </div>
+              ))}
+            </dl>
+          </div>
+        </section>
+
         <EtsyReviewsHub />
 
         <section className="mx-auto max-w-7xl px-5 py-12 md:px-8">
@@ -403,8 +471,8 @@ export default function HomePage() {
             </h2>
             <p className="mt-4 max-w-xl text-white/85">
               Hot pink. Pastel rainbow. Your kitchen's exact shade of teal. Tell me the vibe, 
-              and I'll sculpt a one-of-one sugar cookie wall sculpture that's yours forever. Handmade cookie art 
-              from Orlando, ships in 14 days, free U.S. shipping.
+              and I'll sculpt a one-of-one sugar cookie wall sculpture that's yours forever. Handmade in Orlando, 
+              ships from Daytona Beach in 14 days, free U.S. shipping.
             </p>
             <Link
               href="/custom/"

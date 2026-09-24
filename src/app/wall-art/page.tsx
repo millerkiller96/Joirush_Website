@@ -132,7 +132,7 @@ export default function WallArtPage() {
             <ul className="mt-5 flex flex-wrap gap-x-4 gap-y-1 text-sm text-chocolate-mid">
               <li>✓ Ships in {site.shippingTime}</li>
               <li>✓ Free U.S. shipping</li>
-              <li>✓ 2-4 lbs — hangs on a nail</li>
+              <li>✓ Lightweight — most pieces hang on a nail</li>
             </ul>
             <div className="mt-8 flex flex-wrap gap-3">
               <Link
@@ -187,7 +187,7 @@ export default function WallArtPage() {
                 },
                 {
                   title: "Lightweight Faux Cookies for Display",
-                  copy: "Built-in wall hanger. 2-4 lbs. Unlike heavy commercial props, these hang on a single nail. Free U.S. shipping.",
+                  copy: "Built-in wall hanger. Lightweight, and most pieces hang on a single nail. Free U.S. shipping.",
                 },
               ].map((item) => (
                 <div key={item.title} className="rounded-[1.8rem] bg-cream p-6">
@@ -222,8 +222,8 @@ export default function WallArtPage() {
             <div className="mt-10 grid items-center gap-10 md:grid-cols-2">
               <div className="space-y-6 text-chocolate-mid">
                 <p>
-                  Factory <strong>fake cookie decor</strong> costs $350+ and weighs 10+ pounds. This <strong>giant cookie wall art</strong>? <strong>$90-$225, 2-4 lbs</strong>, 
-                  and you can actually hang it on a single nail. Plus it looks better because 
+                  Factory <strong>fake cookie decor</strong> costs $350+. This <strong>giant cookie wall art</strong>? <strong>$90-$225</strong>, lightweight, 
+                  and most pieces hang on a single nail. Plus it looks better because 
                   a real cookie artist made it.
                 </p>
                 <p>

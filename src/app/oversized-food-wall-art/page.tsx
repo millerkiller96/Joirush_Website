@@ -47,22 +47,22 @@ const foodWallArtFaqs = [
   {
     question: "What is oversized food wall art?",
     answer:
-      "Oversized food wall art refers to large-scale 3D sculptures that look like food but are designed as permanent wall decor. Unlike prints or canvas art, these are dimensional pieces — typically 14-16 inches — that create visual impact and spark conversations in kitchens, dining rooms, and playrooms.",
+      "Oversized food wall art refers to large-scale 3D sculptures that look like food but are designed as permanent wall decor. Unlike prints or canvas art, these are dimensional pieces that create visual impact and spark conversations in kitchens, dining rooms, and playrooms.",
   },
   {
     question: "What makes 3D food wall art different from food prints?",
     answer:
-      "3D food wall art has actual depth and texture — you can see it from the side, and guests will want to touch it. Flat food prints or canvas art sit flush against the wall. These handmade sculptures are 1-2 inches thick with realistic details like craggy cookie edges and glossy chocolate chips.",
+      "3D food wall art has actual depth and texture — you can see it from the side, and guests will want to touch it. Flat food prints or canvas art sit flush against the wall. These handmade sculptures have real dimensionality with realistic details like craggy cookie edges and glossy chocolate chips.",
   },
   {
     question: "Is oversized food wall art heavy to hang?",
     answer:
-      "No. Despite their size, JOIRUSH food wall art pieces weigh just 2-4 lbs because they're made from spray foam. They hang on a single nail or picture hook — no anchors, studs, or special hardware needed.",
+      "No. Despite their size, JOIRUSH food wall art pieces are lightweight because they're made from spray foam — most pieces are under 3 lbs. They hang easily on a single nail or picture hook.",
   },
   {
     question: "Where should I hang large food wall art for kitchen spaces?",
     answer:
-      "Popular spots include above the dining table, on the kitchen accent wall, in a breakfast nook, or as part of a gallery wall. These pieces also work great in playrooms, cafes, and content creator studios. Avoid direct sunlight to preserve the acrylic finish.",
+      "Popular spots include above the dining table, on the kitchen accent wall, in a breakfast nook, or as part of a gallery wall. These pieces also work great in playrooms. Avoid direct sunlight to preserve the acrylic finish.",
   },
   {
     question: "Are these food sculptures edible?",
@@ -175,14 +175,14 @@ export default function OversizedFoodWallArtPage() {
             </p>
             <p className="mt-4 text-chocolate-mid">
               Each piece of <strong>oversized food wall art</strong> is hand-sculpted from spray foam and 
-              acrylic paint by cookie artist Erynn in Orlando. Lightweight (2-4 lbs), ready to hang, 
+              acrylic paint by cookie artist Erynn in Orlando. Lightweight, ready to hang, 
               and designed to spark conversations — whether it's above your dining table, in the breakfast nook, 
               or anchoring a playroom gallery wall.
             </p>
             <ul className="mt-5 flex flex-wrap gap-x-4 gap-y-1 text-sm text-chocolate-mid">
               <li>✓ Ships in {site.shippingTime}</li>
               <li>✓ Free U.S. shipping</li>
-              <li>✓ 2-4 lbs — hangs on a nail</li>
+              <li>✓ Lightweight — most pieces hang on a nail</li>
               <li>✓ Handmade in Orlando, FL</li>
             </ul>
             <div className="mt-8 flex flex-wrap gap-3">
@@ -230,7 +230,7 @@ export default function OversizedFoodWallArtPage() {
               {[
                 {
                   title: "Real 3D Depth & Texture",
-                  copy: "1-2 inches thick with craggy edges, glossy chips, and that golden-brown finish. Oversized food wall art you can see from every angle.",
+                  copy: "Thick, sculptural depth with craggy edges, glossy chips, and that golden-brown finish. Oversized food wall art you can see from every angle.",
                 },
                 {
                   title: "Handmade by an Artist",
@@ -238,7 +238,7 @@ export default function OversizedFoodWallArtPage() {
                 },
                 {
                   title: "Lightweight & Easy to Hang",
-                  copy: "Despite the large size, these pieces weigh 2-4 lbs. Built-in hanger — hang your food wall art with a single nail.",
+                  copy: "Despite the large size, these pieces are lightweight. Built-in hanger — most pieces hang on a single nail.",
                 },
               ].map((item) => (
                 <div key={item.title} className="rounded-[1.8rem] bg-cream p-6">
@@ -254,7 +254,7 @@ export default function OversizedFoodWallArtPage() {
           <SectionHeading
             eyebrow="Large food wall art for kitchen & dining"
             title="3D Food Wall Art Collection"
-            copy="Cookie sculptures that work as oversized food wall art — perfect for kitchens, dining rooms, breakfast nooks, cafes, and playrooms. Pick your flavor."
+            copy="Cookie sculptures that work as oversized food wall art — perfect for kitchens, dining rooms, breakfast nooks, and playrooms. Pick your flavor."
           />
           <div className="mt-10 grid gap-8 sm:grid-cols-2 lg:grid-cols-3">
             {featuredForKitchens.slice(0, 6).map((product) => (

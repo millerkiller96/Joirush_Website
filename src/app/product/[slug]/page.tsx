@@ -26,7 +26,7 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
 
   return {
     title: `${product.name} | Cookie Art by Cookie Artist Erynn`,
-    description: `${product.tagline} ${product.size}. Handmade sugar cookie wall sculpture by cookie artist Erynn. Art cookie with built-in wall hanger. ${formatPrice(product.price)} with free U.S. shipping from Orlando.`,
+    description: `${product.tagline} ${product.size}. Handmade sugar cookie wall sculpture by cookie artist Erynn. Art cookie with built-in wall hanger. ${formatPrice(product.price)} with free U.S. shipping from Daytona Beach, FL.`,
     keywords: [
       "cookie art",
       "sugar cookie art",

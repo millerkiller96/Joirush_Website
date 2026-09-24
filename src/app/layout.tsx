@@ -36,7 +36,7 @@ export const metadata: Metadata = {
     ],
   },
   description:
-    "Shop handmade cookie art and sugar cookie wall sculptures by cookie artist Erynn. Jumbo faux food wall art, oversized cookie decor, and giant cookie canvas pieces. Free U.S. shipping from Orlando, Florida.",
+    "Shop handmade cookie art and sugar cookie wall sculptures by cookie artist Erynn. Jumbo faux food wall art, oversized cookie decor, and giant cookie canvas pieces. Free U.S. shipping from Daytona Beach, FL.",
   keywords: [
     "cookie art",
     "sugar cookie art",

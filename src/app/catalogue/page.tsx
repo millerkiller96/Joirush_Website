@@ -9,28 +9,27 @@ import { site } from "@/data/site";
 const siteUrl = "https://joirush.com";
 
 export const metadata: Metadata = {
-  title: "Shop Cookie Art | Sugar Cookie Wall Sculptures & Art Cookies Catalogue",
+  title: "Oversized Cookie Wall Decor | Full Catalogue of Handmade Cookie Art — JOIRUSH",
   description:
-    "Browse all handmade cookie art by cookie artist Erynn. Sugar cookie wall sculptures, art cookies, and faux food wall art in classic chocolate chip, M&M, and custom flavors. Giant cookie canvas pieces from $90, free U.S. shipping.",
+    "Browse all oversized cookie wall decor by cookie artist Erynn. Handmade sugar cookie wall sculptures in classic chocolate chip, M&M, and custom flavors. Oversized cookie wall decor from $90 with free U.S. shipping from Daytona Beach, FL.",
   keywords: [
+    "oversized cookie wall decor",
     "cookie art",
     "sugar cookie art",
     "cookie artist",
     "art cookies",
-    "cookie canvas",
     "jumbo cookie wall art",
-    "oversized cookie sculptures",
     "faux food wall art",
-    "handmade cookie wall art Orlando",
+    "handmade cookie wall art",
     "buy cookie art",
   ],
   alternates: {
     canonical: `${siteUrl}/catalogue`,
   },
   openGraph: {
-    title: "Shop Cookie Art | Sugar Cookie Wall Sculptures Catalogue",
+    title: "Oversized Cookie Wall Decor | Full Catalogue — JOIRUSH",
     description:
-      "Browse handmade cookie art and sugar cookie wall sculptures by cookie artist Erynn. Art cookies starting at $90 with free U.S. shipping.",
+      "Browse all oversized cookie wall decor by cookie artist Erynn. Handmade sugar cookie wall sculptures starting at $90 with free U.S. shipping.",
     type: "website",
     url: `${siteUrl}/catalogue`,
     images: [
@@ -38,14 +37,14 @@ export const metadata: Metadata = {
         url: `${siteUrl}/images/products/choc-chip.jpg`,
         width: 1200,
         height: 630,
-        alt: "Cookie art catalogue - handmade sugar cookie wall sculptures by JOIRUSH",
+        alt: "Oversized cookie wall decor catalogue — handmade sugar cookie wall sculptures by JOIRUSH",
       },
     ],
   },
   twitter: {
     card: "summary_large_image",
-    title: "Shop Cookie Art | Sugar Cookie Wall Sculptures",
-    description: "Handmade cookie art and sugar cookie wall sculptures. Starting at $90, free U.S. shipping.",
+    title: "Oversized Cookie Wall Decor | Full Catalogue — JOIRUSH",
+    description: "Handmade oversized cookie wall decor by cookie artist Erynn. Starting at $90, free U.S. shipping.",
     images: [`${siteUrl}/images/products/choc-chip.jpg`],
   },
 };
@@ -54,9 +53,9 @@ function CatalogueSchema() {
   const schema = {
     "@context": "https://schema.org",
     "@type": "CollectionPage",
-    name: "Cookie Art Catalogue - Sugar Cookie Wall Sculptures",
+    name: "Oversized Cookie Wall Decor — Full Catalogue",
     description:
-      "Full catalogue of handmade cookie art — sugar cookie wall sculptures and art cookies by cookie artist Erynn.",
+      "Full catalogue of handmade oversized cookie wall decor — sugar cookie wall sculptures and art cookies by cookie artist Erynn.",
     url: `${siteUrl}/catalogue`,
     mainEntity: {
       "@type": "ItemList",
@@ -155,17 +154,21 @@ export default function CataloguePage() {
           </ol>
         </nav>
         <p className="text-sm font-semibold uppercase tracking-[0.22em] text-pink">
-          Cookie Art by Cookie Artist Erynn
+          Oversized Cookie Wall Decor by Cookie Artist Erynn
         </p>
         <h1 className="mt-3 font-display text-5xl text-chocolate md:text-6xl">
-          Sugar Cookie Art — Pick Your Flavor
+          Oversized Cookie Wall Decor — Pick Your Flavor
         </h1>
         <p className="mt-4 max-w-2xl text-lg text-chocolate-mid">
-          Golden chocolate chip cookie art. Candy-loaded M&M sugar cookie sculptures. Peanut butter comfort. Ice cream sandwiches 
-          that stop conversations. Every art cookie is a handmade cookie canvas — scroll until one makes your heart skip.
+          Golden chocolate chip <strong>oversized cookie wall decor</strong>. Candy-loaded M&M sugar cookie sculptures. Peanut butter comfort. Ice cream sandwiches 
+          that stop conversations. Every art cookie is handmade — scroll until one makes your heart skip.
+        </p>
+        <p className="mt-3 text-chocolate-mid">
+          Looking for <Link href="/wall-art/" className="text-pink hover:underline">giant cookie wall art</Link>? Check our main collection. 
+          Want something unique? Explore our <Link href="/oversized-food-wall-art/" className="text-pink hover:underline">oversized food wall art</Link> for kitchens and dining rooms.
         </p>
         <ul className="mt-4 flex flex-wrap gap-x-4 gap-y-1 text-sm text-chocolate-soft">
-          <li>✓ {products.length} handmade cookie art pieces</li>
+          <li>✓ {products.length} handmade oversized cookie wall decor pieces</li>
           <li>✓ Starting at $90</li>
           <li>✓ Ships in 14 days</li>
           <li>✓ Free U.S. shipping</li>

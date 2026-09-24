@@ -10,34 +10,34 @@ import { reviews, site } from "@/data/site";
 import { getAbsoluteUrl, getImageUrl, siteUrl } from "@/lib/seo";
 
 export const metadata: Metadata = {
-  title: "JOIRUSH — Cookie Art & Sugar Cookie Wall Sculptures by Cookie Artist Erynn",
+  title: "Jumbo Cookie Wall Art | Handmade Sugar Cookie Wall Sculptures by Cookie Artist Erynn — JOIRUSH",
   description:
-    "Shop handmade cookie art by cookie artist Erynn. Sugar cookie wall sculptures, jumbo cookie canvas pieces, and faux food wall art. Decorative art cookies that look real but last forever. Starting at $90, free US shipping from Daytona Beach, FL.",
+    "Shop jumbo cookie wall art by cookie artist Erynn. Handmade sugar cookie wall sculptures, art cookies wall sculpture pieces, and faux food wall art that look real but last forever. Giant cookie decor from $90 with free U.S. shipping from Daytona Beach, FL.",
   keywords: [
+    "jumbo cookie wall art",
     "cookie art",
     "sugar cookie art",
     "cookie artist",
     "art cookies",
+    "art cookies wall sculpture",
     "cookie canvas",
-    "jumbo cookie wall art",
     "oversized cookie wall decor",
     "faux food wall art",
     "giant cookie sculpture",
-    "handmade cookie wall art Orlando",
+    "handmade cookie wall art",
     "chocolate chip cookie wall art",
-    "kitschy kitchen wall art",
   ],
   openGraph: {
-    title: "JOIRUSH — Cookie Art & Sugar Cookie Wall Sculptures by Cookie Artist Erynn",
+    title: "Jumbo Cookie Wall Art | Handmade Sugar Cookie Wall Sculptures — JOIRUSH",
     description:
-      "Handmade cookie art and sugar cookie wall sculptures by Orlando cookie artist. Art cookies that look real but last forever — faux food wall art for kitchens and homes.",
+      "Handmade jumbo cookie wall art and sugar cookie wall sculptures by cookie artist Erynn. Art cookies wall sculpture pieces that look real but last forever — faux food wall art for kitchens and homes.",
     type: "website",
     images: [
       {
         url: getImageUrl("/images/brand/homepage-hero.jpg"),
         width: 1242,
         height: 1656,
-        alt: "JOIRUSH jumbo cookie wall art props with the brand model in a pink top holding an oversized cookie sandwich, surrounded by giant cookie sculptures",
+        alt: "JOIRUSH jumbo cookie wall art — brand model in a pink top holding an oversized cookie sandwich, surrounded by giant cookie wall sculptures",
       },
     ],
   },
@@ -87,13 +87,13 @@ function HomeJsonLd() {
     url: siteUrl,
     logo: getImageUrl("/images/brand/avatar.jpg"),
     description:
-      "Cookie art studio creating handmade sugar cookie wall sculptures and faux food wall art by cookie artist Erynn in Orlando, Florida.",
+      "Jumbo cookie wall art studio creating handmade sugar cookie wall sculptures, art cookies wall sculpture pieces, and faux food wall art by cookie artist Erynn in Orlando, Florida.",
     founder: {
       "@type": "Person",
       name: site.artist,
       jobTitle: "Cookie Artist",
       description: "Cookie artist creating handmade sugar cookie art and faux food wall sculptures",
-      knowsAbout: ["cookie art", "sugar cookie art", "faux food sculpture", "art cookies"],
+      knowsAbout: ["jumbo cookie wall art", "sugar cookie art", "faux food sculpture", "art cookies wall sculpture"],
     },
     address: {
       "@type": "PostalAddress",
@@ -116,7 +116,7 @@ function HomeJsonLd() {
     "@type": "WebSite",
     name: site.name,
     url: siteUrl,
-    description: "Cookie art and sugar cookie wall sculptures by cookie artist Erynn. Handmade faux food wall art and art cookies.",
+    description: "Jumbo cookie wall art and sugar cookie wall sculptures by cookie artist Erynn. Handmade art cookies wall sculpture pieces and faux food wall art.",
     publisher: {
       "@type": "Organization",
       name: site.name,
@@ -128,18 +128,17 @@ function HomeJsonLd() {
     "@type": "Person",
     name: site.artist,
     jobTitle: "Cookie Artist",
-    description: "Orlando-based cookie artist creating handmade sugar cookie wall sculptures, cookie art, and faux food wall decor",
+    description: "Orlando-based cookie artist creating handmade jumbo cookie wall art, sugar cookie wall sculptures, and faux food wall decor",
     url: getAbsoluteUrl("/about/"),
     worksFor: {
       "@type": "Organization",
       name: site.name,
     },
     knowsAbout: [
-      "cookie art",
+      "jumbo cookie wall art",
       "sugar cookie art",
       "faux food wall art",
-      "cookie canvas",
-      "art cookies",
+      "art cookies wall sculpture",
       "giant cookie sculpture",
     ],
     workLocation: {
@@ -209,13 +208,13 @@ export default function HomePage() {
                 Cookie Art by Cookie Artist Erynn
               </p>
               <h1 className="mt-4 font-display text-5xl leading-[0.95] text-chocolate md:text-7xl">
-                Sugar Cookie Wall Art That Stops People Mid-Sentence
+                Jumbo Cookie Wall Art That Stops People Mid-Sentence
               </h1>
               <p className="mt-6 max-w-lg text-lg leading-relaxed text-chocolate-mid">
                 Golden-brown crumble. Glossy melty chips. Thick, craggy edges begging for a bite. 
-                These <strong>handmade cookie art sculptures</strong> look so real, guests will reach out 
-                before their brain catches up. Each <strong>sugar cookie wall sculpture</strong> is crafted 
-                by cookie artist Erynn — decorative art cookies that are wall-ready, lightweight, and permanently satisfying.
+                These <strong>jumbo cookie wall art</strong> pieces look so real, guests reach out 
+                before their brain catches up. Each <strong>art cookies wall sculpture</strong> is crafted 
+                by cookie artist Erynn — handmade sugar cookie wall sculptures that are wall-ready, lightweight, and permanently satisfying.
               </p>
               <ul className="mt-5 flex flex-wrap gap-x-4 gap-y-1 text-sm text-chocolate-mid">
                 <li>✓ Handmade to order</li>
@@ -271,12 +270,12 @@ export default function HomePage() {
         <section className="mx-auto max-w-7xl px-5 py-20 md:px-8">
           <div className="flex flex-col justify-between gap-6 md:flex-row md:items-end">
             <SectionHeading
-              eyebrow="Bestselling cookie art"
+              eyebrow="Bestselling jumbo cookie wall art"
               title="The Ones Collectors Can't Stop Buying"
-              copy="Golden chips. Candy pops. That just-baked texture you can practically smell. These sugar cookie wall sculptures are the art cookies that sell out first."
+              copy="Golden chips. Candy pops. That just-baked texture you can practically smell. These jumbo cookie wall art pieces are the art cookies wall sculptures that sell out first."
             />
             <Link href="/wall-art/" className="text-sm font-medium text-pink hover:underline">
-              See the full cookie art collection →
+              See the full giant cookie wall art collection →
             </Link>
           </div>
           <div className="mt-10 grid gap-8 sm:grid-cols-2 lg:grid-cols-3">
@@ -287,18 +286,24 @@ export default function HomePage() {
         </section>
 
         <section className="mx-auto max-w-7xl px-5 py-8 md:px-8">
-          <div className="grid gap-4 md:grid-cols-3">
+          <div className="grid gap-4 md:grid-cols-2 lg:grid-cols-4">
             {[
               {
                 href: "/wall-art/",
-                title: "Cookie Art Collection",
-                copy: "Sugar cookie wall sculptures — the conversation starter your kitchen didn't know it needed.",
+                title: "Giant Cookie Wall Art",
+                copy: "Giant cookie wall decor and faux cookies for display — the conversation starter your kitchen needs.",
                 image: "/images/products/rainbow.jpg",
               },
               {
+                href: "/oversized-food-wall-art/",
+                title: "Oversized Food Wall Art",
+                copy: "3D food wall art for kitchens and dining rooms. Large food wall art that looks real.",
+                image: "/images/products/ice-cream.jpg",
+              },
+              {
                 href: "/catalogue/",
-                title: "All Art Cookies",
-                copy: "Every flavor, every size. Find the cookie canvas that makes your heart skip.",
+                title: "Oversized Cookie Wall Decor",
+                copy: "Every flavor, every size. Find the oversized cookie wall decor that makes your heart skip.",
                 image: "/images/products/mm-set.jpg",
               },
               {
@@ -333,9 +338,9 @@ export default function HomePage() {
         <section className="bg-cream-deep">
           <div className="mx-auto max-w-7xl px-5 py-16 md:px-8">
             <SectionHeading
-              eyebrow="Real cookie art, not mass-produced props"
+              eyebrow="Real jumbo cookie wall art, not mass-produced props"
               title="Handmade Sugar Cookie Wall Sculptures"
-              copy="Forget those $350+ fiberglass blobs. These are real cookie artist sculptures — faux food wall art light enough to hang anywhere, detailed enough to fool everyone."
+              copy="Forget those $350+ fiberglass blobs. These are real art cookies wall sculptures — jumbo cookie wall art light enough to hang anywhere, detailed enough to fool everyone."
             />
             <div className="mt-10 grid gap-5 md:grid-cols-4">
               {[
@@ -374,7 +379,7 @@ export default function HomePage() {
           <div className="mx-auto grid max-w-7xl items-center gap-12 px-5 py-20 md:grid-cols-2 md:px-8">
             <Image
               src="/images/brand/about-1.jpg"
-              alt="Erynn - cookie artist and owner of JOIRUSH - creating handmade sugar cookie art and faux food wall sculptures in Orlando"
+              alt="Erynn — cookie artist and owner of JOIRUSH — creating handmade jumbo cookie wall art, art cookies wall sculptures, and faux food wall art in Orlando"
               width={900}
               height={1200}
               className="rounded-[2.2rem] object-cover"
@@ -422,13 +427,22 @@ export default function HomePage() {
         <section className="mx-auto max-w-7xl px-5 py-12 md:px-8">
           <div className="rounded-[2rem] bg-cream p-8 md:p-12">
             <h2 className="font-display text-3xl text-chocolate">
-              Cookie Art Tips & Inspiration
+              Jumbo Cookie Wall Art Tips & Inspiration
             </h2>
             <p className="mt-3 max-w-2xl text-chocolate-mid">
-              How to hang your sugar cookie wall sculpture. How to build a dessert gallery wall with art cookies that sparks joy. 
+              How to hang your jumbo cookie wall art. How to build a dessert gallery wall with art cookies wall sculptures that sparks joy. 
               Tips from the cookie artist's studio to make your space unforgettable.
             </p>
-            <div className="mt-8 grid gap-4 md:grid-cols-3">
+            <div className="mt-8 grid gap-4 md:grid-cols-2 lg:grid-cols-4">
+              <Link
+                href="/blog/faux-cookie-wall-decor-ready-made-vs-diy/"
+                className="group rounded-xl bg-white p-5 shadow-card hover:shadow-lift"
+              >
+                <p className="text-sm font-medium uppercase tracking-wider text-pink">DIY vs Ready-Made</p>
+                <h3 className="mt-2 font-display text-xl text-chocolate group-hover:text-pink">
+                  Faux Cookie Wall Decor Guide
+                </h3>
+              </Link>
               <Link
                 href="/blog/cookie-wall-art-for-home-collectors/"
                 className="group rounded-xl bg-white p-5 shadow-card hover:shadow-lift"
@@ -444,7 +458,7 @@ export default function HomePage() {
               >
                 <p className="text-sm font-medium uppercase tracking-wider text-pink">5-Minute Guide</p>
                 <h3 className="mt-2 font-display text-xl text-chocolate group-hover:text-pink">
-                  How to Hang Your Cookie Art Sculpture
+                  How to Hang Your Jumbo Cookie Wall Art
                 </h3>
               </Link>
               <Link
@@ -453,7 +467,7 @@ export default function HomePage() {
               >
                 <p className="text-sm font-medium uppercase tracking-wider text-pink">Gallery Inspo</p>
                 <h3 className="mt-2 font-display text-xl text-chocolate group-hover:text-pink">
-                  Build a Sugar Cookie Art Gallery Wall
+                  Build a Cookie Art Gallery Wall
                 </h3>
               </Link>
             </div>

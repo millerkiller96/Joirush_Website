@@ -52,6 +52,12 @@ export default function sitemap(): MetadataRoute.Sitemap {
       priority: 0.7,
     },
     {
+      url: getAbsoluteUrl("/oversized-food-wall-art/"),
+      lastModified: now,
+      changeFrequency: "weekly",
+      priority: 0.85,
+    },
+    {
       url: getAbsoluteUrl("/contact/"),
       lastModified: now,
       changeFrequency: "monthly",

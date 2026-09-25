@@ -11,12 +11,12 @@ const siteUrl = "https://joirush.com";
 export const metadata: Metadata = {
   title: "Meet Cookie Artist Erynn | Handmade Sugar Cookie Art & Faux Food Wall Sculptures",
   description:
-    "Meet Erynn, the Orlando cookie artist behind JOIRUSH. Creating handmade cookie art, sugar cookie wall sculptures, and faux food wall art since 2021. Each art cookie is hand-sculpted in her Florida studio.",
+    "Meet Erynn, the Daytona Beach cookie artist behind JOIRUSH. Creating handmade cookie art, sugar cookie wall sculptures, and faux food wall art since 2021. Each art cookie is hand-sculpted in her Florida studio.",
   keywords: [
     "cookie artist",
     "cookie art",
     "sugar cookie art",
-    "handmade cookie wall art Orlando",
+    "handmade cookie wall art Daytona Beach",
     "faux food wall art",
     "art cookies",
   ],
@@ -26,7 +26,7 @@ export const metadata: Metadata = {
   openGraph: {
     title: "Meet Cookie Artist Erynn | Handmade Sugar Cookie Art",
     description:
-      "Meet Erynn, the Orlando cookie artist creating handmade sugar cookie wall sculptures and faux food wall art.",
+      "Meet Erynn, the Daytona Beach cookie artist creating handmade sugar cookie wall sculptures and faux food wall art.",
     type: "website",
     url: `${siteUrl}/about`,
     images: [
@@ -46,7 +46,7 @@ function CookieArtistSchema() {
     "@type": "Person",
     name: site.artist,
     jobTitle: "Cookie Artist",
-    description: "Orlando-based cookie artist creating handmade sugar cookie wall sculptures, cookie art, and faux food wall decor. Each art cookie is hand-sculpted using spray foam and acrylic paint.",
+    description: "Daytona Beach-based cookie artist creating handmade sugar cookie wall sculptures, cookie art, and faux food wall decor. Each art cookie is hand-sculpted using spray foam and acrylic paint.",
     url: getAbsoluteUrl("/about/"),
     image: getImageUrl("/images/brand/about-1.jpg"),
     worksFor: {
@@ -69,7 +69,7 @@ function CookieArtistSchema() {
       name: "JOIRUSH Studio",
       address: {
         "@type": "PostalAddress",
-        addressLocality: "Orlando",
+        addressLocality: "Daytona Beach",
         addressRegion: "FL",
         addressCountry: "US",
       },
@@ -97,7 +97,7 @@ export default function AboutPage() {
           </h1>
           <p className="mt-6 max-w-2xl text-lg text-chocolate-mid">
             {site.artist} is the cookie artist behind every sugar cookie wall sculpture, every art cookie, every custom
-            piece that makes people do a double-take. Working out of her Orlando studio, she creates
+            piece that makes people do a double-take. Working out of her Daytona Beach studio, she creates
             handmade cookie art that sparks joy, starts conversations, and looks good enough to eat. Each cookie canvas ships
             in 14 days — because real artistry takes time.
           </p>

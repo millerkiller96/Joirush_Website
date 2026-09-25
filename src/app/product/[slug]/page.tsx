@@ -35,7 +35,7 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
       "cookie canvas",
       product.name.toLowerCase(),
       "faux food wall art",
-      "handmade cookie wall art Orlando",
+      "handmade cookie wall art Daytona Beach",
       product.category === "candy" ? "candy cookie art" : "chocolate chip cookie art",
     ],
     alternates: {
@@ -117,7 +117,7 @@ function ProductJsonLd({ product }: { product: NonNullable<ReturnType<typeof get
       name: site.name,
       address: {
         "@type": "PostalAddress",
-        addressLocality: "Orlando",
+        addressLocality: "Daytona Beach",
         addressRegion: "FL",
         addressCountry: "US",
       },

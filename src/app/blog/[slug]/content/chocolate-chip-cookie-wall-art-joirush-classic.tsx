@@ -11,7 +11,7 @@ export function ChocolateChipStorySchema() {
         name: "Who makes JOIRUSH cookie wall art?",
         acceptedAnswer: {
           "@type": "Answer",
-          text: "JOIRUSH cookie wall art is handmade by Erynn, a mixed media artist based in Orlando, Florida. Each piece is individually sculpted, painted, and finished by hand in her studio.",
+          text: "JOIRUSH cookie wall art is handmade by Erynn, a mixed media artist based in Daytona Beach, Florida. Each piece is individually sculpted, painted, and finished by hand in her studio.",
         },
       },
       {
@@ -55,7 +55,7 @@ export function ChocolateChipStoryContent() {
       </p>
 
       <p>
-        This is how a mixed media artist in Orlando turned a love of nostalgia into 
+        This is how a mixed media artist in Daytona Beach turned a love of nostalgia into 
         <strong>chocolate chip cookie wall art</strong> that hangs in kitchens, homes, and 
         content studios across the country.
       </p>
@@ -192,7 +192,7 @@ export function ChocolateChipStoryContent() {
       <h2>The Process Today</h2>
 
       <p>
-        Five years and 80+ sales later, Erynn still makes every piece by hand in Orlando, 
+        Five years and 80+ sales later, Erynn still makes every piece by hand in Daytona Beach, 
         Florida. The process hasn't changed much:
       </p>
 
@@ -253,7 +253,7 @@ export function ChocolateChipStoryContent() {
       <h3>Who makes JOIRUSH cookie wall art?</h3>
       <p>
         JOIRUSH <strong>cookie wall art</strong> is handmade by Erynn, a mixed media artist 
-        based in Orlando, Florida. Each piece is individually sculpted, painted, and finished 
+        based in Daytona Beach, Florida. Each piece is individually sculpted, painted, and finished 
         by hand in her studio. With over 80 sales and 31 five-star reviews on Etsy, she's 
         built a reputation for realistic, high-quality <strong>faux food sculptures</strong>.
       </p>
@@ -276,7 +276,7 @@ export function ChocolateChipStoryContent() {
 
       <h3>Where is JOIRUSH located?</h3>
       <p>
-        JOIRUSH is based in Orlando, Florida, with pieces shipping from Daytona Beach, FL. 
+        JOIRUSH is based in Daytona Beach, Florida. 
         All orders include free shipping within the United States — each piece ships in 14 days because true handcraft artistry takes time.
       </p>
 

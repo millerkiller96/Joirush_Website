@@ -87,7 +87,7 @@ function HomeJsonLd() {
     url: siteUrl,
     logo: getImageUrl("/images/brand/avatar.jpg"),
     description:
-      "Jumbo cookie wall art studio creating handmade sugar cookie wall sculptures, art cookies wall sculpture pieces, and faux food wall art by cookie artist Erynn in Orlando, Florida.",
+      "Jumbo cookie wall art studio creating handmade sugar cookie wall sculptures, art cookies wall sculpture pieces, and faux food wall art by cookie artist Erynn in Daytona Beach, Florida.",
     founder: {
       "@type": "Person",
       name: site.artist,
@@ -97,7 +97,7 @@ function HomeJsonLd() {
     },
     address: {
       "@type": "PostalAddress",
-      addressLocality: "Orlando",
+      addressLocality: "Daytona Beach",
       addressRegion: "FL",
       addressCountry: "US",
     },
@@ -128,7 +128,7 @@ function HomeJsonLd() {
     "@type": "Person",
     name: site.artist,
     jobTitle: "Cookie Artist",
-    description: "Orlando-based cookie artist creating handmade jumbo cookie wall art, sugar cookie wall sculptures, and faux food wall decor",
+    description: "Daytona Beach-based cookie artist creating handmade jumbo cookie wall art, sugar cookie wall sculptures, and faux food wall decor",
     url: getAbsoluteUrl("/about/"),
     worksFor: {
       "@type": "Organization",
@@ -145,7 +145,7 @@ function HomeJsonLd() {
       "@type": "Place",
       address: {
         "@type": "PostalAddress",
-        addressLocality: "Orlando",
+        addressLocality: "Daytona Beach",
         addressRegion: "FL",
         addressCountry: "US",
       },
@@ -379,7 +379,7 @@ export default function HomePage() {
           <div className="mx-auto grid max-w-7xl items-center gap-12 px-5 py-20 md:grid-cols-2 md:px-8">
             <Image
               src="/images/brand/about-1.jpg"
-              alt="Erynn — cookie artist and owner of JOIRUSH — creating handmade jumbo cookie wall art, art cookies wall sculptures, and faux food wall art in Orlando"
+              alt="Erynn — cookie artist and owner of JOIRUSH — creating handmade jumbo cookie wall art, art cookies wall sculptures, and faux food wall art in Daytona Beach"
               width={900}
               height={1200}
               className="rounded-[2.2rem] object-cover"
@@ -388,7 +388,7 @@ export default function HomePage() {
               <SectionHeading
                 eyebrow="Meet the cookie artist"
                 title="Every Sugar Cookie Sculpture Has Her Fingerprints On It"
-                copy="Cookie artist Erynn sculpts each piece by hand in her Orlando studio — obsessed with nostalgic sweetness, maximalist color, and cookie art that makes you feel something."
+                copy="Cookie artist Erynn sculpts each piece by hand in her Daytona Beach studio — obsessed with nostalgic sweetness, maximalist color, and cookie art that makes you feel something."
               />
               <p className="mt-5 text-chocolate-mid">
                 Dream up a custom flavor. Match your kitchen palette. Go completely wild. 
@@ -485,8 +485,8 @@ export default function HomePage() {
             </h2>
             <p className="mt-4 max-w-xl text-white/85">
               Hot pink. Pastel rainbow. Your kitchen's exact shade of teal. Tell me the vibe, 
-              and I'll sculpt a one-of-one sugar cookie wall sculpture that's yours forever. Handmade in Orlando, 
-              ships from Daytona Beach in 14 days, free U.S. shipping.
+              and I'll sculpt a one-of-one sugar cookie wall sculpture that's yours forever. Handmade in Daytona Beach, 
+              ships in 14 days, free U.S. shipping.
             </p>
             <Link
               href="/custom/"

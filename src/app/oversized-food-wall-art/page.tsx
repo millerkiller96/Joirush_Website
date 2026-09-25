@@ -175,7 +175,7 @@ export default function OversizedFoodWallArtPage() {
             </p>
             <p className="mt-4 text-chocolate-mid">
               Each piece of <strong>oversized food wall art</strong> is hand-sculpted from spray foam and 
-              acrylic paint by cookie artist Erynn in Orlando. Lightweight, ready to hang, 
+              acrylic paint by cookie artist Erynn in Daytona Beach. Lightweight, ready to hang, 
               and designed to spark conversations — whether it's above your dining table, in the breakfast nook, 
               or anchoring a playroom gallery wall.
             </p>
@@ -183,7 +183,7 @@ export default function OversizedFoodWallArtPage() {
               <li>✓ Ships in {site.shippingTime}</li>
               <li>✓ Free U.S. shipping</li>
               <li>✓ Lightweight — most pieces hang on a nail</li>
-              <li>✓ Handmade in Orlando, FL</li>
+              <li>✓ Handmade in Daytona Beach, FL</li>
             </ul>
             <div className="mt-8 flex flex-wrap gap-3">
               <Link
@@ -390,7 +390,7 @@ export default function OversizedFoodWallArtPage() {
             <p className="mt-4 max-w-xl text-white/85">
               Custom colors. Custom sizes. Cookie flavors no one else has. Tell cookie artist Erynn your vision,
               and she'll sculpt 3D food wall art made just for your kitchen, dining room, or playroom. 
-              Handmade in Orlando, ships from Daytona Beach in 14 days, free U.S. shipping.
+              Handmade in Daytona Beach, ships in 14 days, free U.S. shipping.
             </p>
             <Link
               href="/custom/"

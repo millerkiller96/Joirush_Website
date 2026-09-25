@@ -1,0 +1,60 @@
+{
+  "_note": "Old /b/{code} short URLs from the pre-Next.js storefront. Each maps to the best current destination.",
+  "redirects": [
+    {
+      "code": "dAcER",
+      "oldTitle": "Jumbo Realistic Chocolate Chip Cookie Wall Art",
+      "destination": "/product/jumbo-chocolate-chip-cookie/"
+    },
+    {
+      "code": "5b6yq",
+      "oldTitle": "Jumbo Double Chocolate Chip Cookie Wall Art",
+      "destination": "/product/giant-double-chocolate-cookie/"
+    },
+    {
+      "code": "go4jz",
+      "oldTitle": "Jumbo Giant Chocolate Cookie Wall Art with Colorful Candy Accents",
+      "destination": "/product/rainbow-candy-cookie/"
+    },
+    {
+      "code": "0LEIU",
+      "oldTitle": "Jumbo M&M Chocolate Chip Cookie Wall Art",
+      "destination": "/product/jumbo-mm-cookie/"
+    },
+    {
+      "code": "ZBzD3",
+      "oldTitle": "Realistic Giant Peanut Butter M&M Chocolate Cookie Wall Art",
+      "destination": "/product/giant-peanut-butter-cookie/"
+    },
+    {
+      "code": "7RKwx",
+      "oldTitle": "JUMBO HOT PINK M&M COOKIE",
+      "destination": "/product/hot-pink-mm-cookie/"
+    },
+    {
+      "code": "nA365",
+      "oldTitle": "Jumbo Chocolate Chip Cookie Ice Cream Sandwich",
+      "destination": "/product/cookie-ice-cream-sandwich/"
+    },
+    {
+      "code": "ufN4A",
+      "oldTitle": "Clear Tamagotchi Choker Necklace – Retro Virtual Pet Y2K Jewelry",
+      "destination": "/jewelry/"
+    },
+    {
+      "code": "2oFUs",
+      "oldTitle": "Kawaii Tamagotchi Choker Necklace – Y2K Candy & Charm Statement Jewelry",
+      "destination": "/jewelry/"
+    },
+    {
+      "code": "LlobT",
+      "oldTitle": "Jumbo Fake Strawberry Cheesecake Slice",
+      "destination": "/catalogue/"
+    },
+    {
+      "code": "91v2i",
+      "oldTitle": "Jumbo Fake Zebra Cake - Dessert Art",
+      "destination": "/catalogue/"
+    }
+  ]
+}

@@ -332,7 +332,7 @@ export function CookieWallArtCollectorsContent() {
 
       <p>
         Want something one-of-a-kind? <Link href="/custom/">Commission a custom sugar cookie wall sculpture</Link> 
-        in any color or design you can imagine. Every piece is handmade in Orlando, ships in 14 days, 
+        in any color or design you can imagine. Every piece is handmade in Daytona Beach, ships in 14 days, 
         with free U.S. shipping.
       </p>
 

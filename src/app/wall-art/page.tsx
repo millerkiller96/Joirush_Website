@@ -126,7 +126,7 @@ export default function WallArtPage() {
             <p className="mt-4 text-chocolate-mid">
               Not cheap plastic <strong>fake cookie decor</strong> — these are handmade by a real artist. 
               Classic chocolate chip. Candyland M&Ms. Peanut butter comfort. Ice cream sandwiches. 
-              Each <strong>giant cookie wall art</strong> piece is hand-sculpted in Orlando using spray foam and acrylic — 
+              Each <strong>giant cookie wall art</strong> piece is hand-sculpted in Daytona Beach using spray foam and acrylic — 
               lightweight cookie sculptures that hang easily and last forever.
             </p>
             <ul className="mt-5 flex flex-wrap gap-x-4 gap-y-1 text-sm text-chocolate-mid">
@@ -217,7 +217,7 @@ export default function WallArtPage() {
             <SectionHeading
               eyebrow="Handmade giant cookie wall art in 14 days"
               title="Why This Giant Cookie Wall Decor Hits Different"
-              copy="No factory. No cheap plastic fake cookie decor. Each piece is hand-sculpted by cookie artist Erynn in Orlando — real faux cookies for display, one at a time, made for your wall."
+              copy="No factory. No cheap plastic fake cookie decor. Each piece is hand-sculpted by cookie artist Erynn in Daytona Beach — real faux cookies for display, one at a time, made for your wall."
             />
             <div className="mt-10 grid items-center gap-10 md:grid-cols-2">
               <div className="space-y-6 text-chocolate-mid">

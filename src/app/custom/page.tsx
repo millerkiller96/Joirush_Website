@@ -9,7 +9,7 @@ const siteUrl = "https://joirush.com";
 export const metadata: Metadata = {
   title: "Custom Cookie Art | Commission Sugar Cookie Wall Sculptures by Cookie Artist",
   description:
-    "Commission custom cookie art from cookie artist Erynn — sugar cookie wall sculptures in your favorite colors, custom flavors, or any cookie canvas design you dream up. Handmade art cookies in Orlando, Florida with free U.S. shipping.",
+    "Commission custom cookie art from cookie artist Erynn — sugar cookie wall sculptures in your favorite colors, custom flavors, or any cookie canvas design you dream up. Handmade art cookies in Daytona Beach, Florida with free U.S. shipping.",
   keywords: [
     "custom cookie art",
     "commission cookie artist",
@@ -18,7 +18,7 @@ export const metadata: Metadata = {
     "custom cookie canvas",
     "custom faux food wall art",
     "custom cookie wall art",
-    "handmade cookie wall art Orlando",
+    "handmade cookie wall art Daytona Beach",
   ],
   alternates: {
     canonical: `${siteUrl}/custom`,
@@ -26,7 +26,7 @@ export const metadata: Metadata = {
   openGraph: {
     title: "Custom Cookie Art | Commission Sugar Cookie Wall Sculptures | JOIRUSH",
     description:
-      "Commission custom cookie art from cookie artist Erynn — sugar cookie wall sculptures in any design. Handmade in Orlando.",
+      "Commission custom cookie art from cookie artist Erynn — sugar cookie wall sculptures in any design. Handmade in Daytona Beach.",
     type: "website",
     url: `${siteUrl}/custom`,
     images: [
@@ -61,7 +61,7 @@ export default function CustomPage() {
             <li>✓ Any flavor combo — the weirder the better for custom art cookies</li>
             <li>✓ Ships in 14 days — free U.S. shipping</li>
             <li>✓ Cookie artist usually replies within a few hours</li>
-            <li>✓ Handmade cookie art in Orlando with spray foam + acrylic paint</li>
+            <li>✓ Handmade cookie art in Daytona Beach with spray foam + acrylic paint</li>
           </ul>
           <p className="mt-6 text-sm text-chocolate-soft">
             Because each piece is sculpted just for you, returns are not accepted — but that&apos;s 

@@ -47,7 +47,7 @@ export const metadata: Metadata = {
     "oversized cookie wall decor",
     "faux food wall art",
     "giant cookie sculpture",
-    "handmade cookie wall art Orlando",
+    "handmade cookie wall art Daytona Beach",
     "fake cookie wall sculpture",
     "dessert wall decor",
   ],
@@ -101,12 +101,12 @@ function OrganizationSchema() {
     url: siteUrl,
     logo: getImageUrl("/images/brand/avatar.jpg"),
     description:
-      "Cookie art studio creating handmade sugar cookie wall sculptures and faux food wall art. Cookie artist Erynn crafts giant cookie canvas pieces and oversized dessert decor in Orlando, Florida.",
+      "Cookie art studio creating handmade sugar cookie wall sculptures and faux food wall art. Cookie artist Erynn crafts giant cookie canvas pieces and oversized dessert decor in Daytona Beach, Florida.",
     foundingLocation: {
       "@type": "Place",
       address: {
         "@type": "PostalAddress",
-        addressLocality: "Orlando",
+        addressLocality: "Daytona Beach",
         addressRegion: "FL",
         addressCountry: "US",
       },

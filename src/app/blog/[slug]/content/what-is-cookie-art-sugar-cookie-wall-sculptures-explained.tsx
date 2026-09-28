@@ -314,7 +314,9 @@ export function WhatIsCookieArtContent() {
       <p>
         New to collecting? Read our <Link href="/blog/cookie-wall-art-for-home-collectors/">complete guide 
         to cookie wall art for home collectors</Link> — including pricing, placement tips, and how faux sugar 
-        cookie sculptures differ from edible royal icing cookies.
+        cookie sculptures differ from edible royal icing cookies. If you're debating DIY versus buying ready-made, 
+        our <Link href="/blog/faux-cookie-wall-decor-ready-made-vs-diy/">faux cookie wall decor guide</Link> compares 
+        your options.
       </p>
 
       <p>

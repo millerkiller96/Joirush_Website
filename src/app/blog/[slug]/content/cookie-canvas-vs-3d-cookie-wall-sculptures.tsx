@@ -133,7 +133,7 @@ export function CookieCanvasVs3DContent() {
 
       <p>
         At <Link href="/">JOIRUSH</Link>, every <strong>sugar cookie wall sculpture</strong> is handmade 
-        by <Link href="/about/">cookie artist Erynn</Link> in Orlando, Florida. Each piece features:
+        by <Link href="/about/">cookie artist Erynn</Link> in Daytona Beach, Florida. Each piece features:
       </p>
 
       <ul>
@@ -355,7 +355,7 @@ export function CookieCanvasVs3DContent() {
       </ul>
 
       <p>
-        Every piece is handmade in Orlando by <Link href="/about/">cookie artist Erynn</Link>, ships 
+        Every piece is handmade in Daytona Beach by <Link href="/about/">cookie artist Erynn</Link>, ships 
         free in the U.S., and arrives ready to hang. The only question: which cookie will you pick first?
       </p>
     </>

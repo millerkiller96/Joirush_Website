@@ -327,12 +327,13 @@ export function CookieWallArtCollectorsContent() {
       <p>
         Ready to add faux cookie decor to your home? Browse the full <Link href="/wall-art/">cookie wall 
         art collection</Link> or explore the <Link href="/catalogue/">complete catalogue</Link> to find 
-        your first (or next) piece.
+        your first (or next) piece. Wondering whether to DIY or buy ready-made? Our <Link href="/blog/faux-cookie-wall-decor-ready-made-vs-diy/">faux 
+        cookie wall decor guide</Link> breaks it down.
       </p>
 
       <p>
         Want something one-of-a-kind? <Link href="/custom/">Commission a custom sugar cookie wall sculpture</Link> 
-        in any color or design you can imagine. Every piece is handmade in Orlando, ships in 14 days, 
+        in any color or design you can imagine. Every piece is handmade in Daytona Beach, ships in 14 days, 
         with free U.S. shipping.
       </p>
 

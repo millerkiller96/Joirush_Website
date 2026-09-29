@@ -14,6 +14,27 @@ export type BlogPost = {
 
 export const blogPosts: BlogPost[] = [
   {
+    slug: "spray-foam-cookie-wall-art-how-theyre-made",
+    title: "Spray Foam Cookie Wall Art: How Collectors' Sculptures Are Made",
+    excerpt:
+      "Learn how spray foam cookie wall art is sculpted, painted, and sealed. Discover why this lightweight material creates realistic jumbo cookie sculptures that weigh just 2-4 lbs and hang on a single nail.",
+    publishedAt: "2026-09-29",
+    author: "Erynn",
+    image: "/images/products/choc-chip.jpg",
+    imageAlt: "Spray foam jumbo cookie wall sculpture - handmade faux cookie wall art by JOIRUSH",
+    keywords: [
+      "spray foam cookie wall art",
+      "spray foam cookie sculpture",
+      "jumbo cookie wall art",
+      "faux cookie wall decor",
+      "sugar cookie wall sculpture",
+      "3d cookie wall sculpture",
+      "cookie art",
+    ],
+    readingTime: "9 min read",
+    category: "how-to",
+  },
+  {
     slug: "faux-cookie-wall-decor-ready-made-vs-diy",
     title: "Faux Cookie Wall Decor: Ready-Made Sculptures vs DIY Giant Cookies",
     excerpt:
@@ -53,6 +74,7 @@ export const blogPosts: BlogPost[] = [
       "cookie art",
       "faux food wall art",
       "cookie canvas print",
+      "spray foam cookie wall art",
     ],
     readingTime: "8 min read",
     category: "how-to",

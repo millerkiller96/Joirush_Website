@@ -161,7 +161,8 @@ export function FauxCookieWallDecorContent() {
 
       <ul>
         <li><strong>Spray foam construction:</strong> Creates realistic 1-2 inch depth with the thick, organic shape 
-        of a real baked cookie</li>
+        of a real baked cookie — learn more about <Link href="/blog/spray-foam-cookie-wall-art-how-theyre-made/">how 
+        spray foam cookie wall art is made</Link></li>
         <li><strong>Carved texture:</strong> Each piece is hand-sculpted to replicate the craggy edges, bubbles, 
         and natural spread of homemade cookies</li>
         <li><strong>Acrylic paint finish:</strong> Multiple layers of professional paint create realistic 

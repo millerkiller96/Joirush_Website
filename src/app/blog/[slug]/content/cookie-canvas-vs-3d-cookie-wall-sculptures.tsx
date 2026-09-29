@@ -127,8 +127,8 @@ export function CookieCanvasVs3DContent() {
       <p>
         A <strong>3D cookie wall sculpture</strong> (also called <Link href="/blog/what-is-cookie-art-sugar-cookie-wall-sculptures-explained/">sugar cookie wall art</Link> or 
         faux food wall decor) is a handmade, three-dimensional piece that looks like an oversized, 
-        hyper-realistic cookie. These sculptures are carved from spray foam, painted with acrylics, and 
-        designed to hang as permanent wall art.
+        hyper-realistic cookie. These sculptures are carved from <Link href="/blog/spray-foam-cookie-wall-art-how-theyre-made/">spray 
+        foam</Link>, painted with acrylics, and designed to hang as permanent wall art.
       </p>
 
       <p>

@@ -86,16 +86,16 @@ export function FauxCookieWallDecorContent() {
   return (
     <>
       <p>
-        If you've been searching for <strong>faux cookie wall decor</strong> or <strong>giant faux cookie</strong> ideas, 
-        you've probably found two paths: DIY tutorials showing how to make your own oversized cookie from foam board 
-        or salt dough, and ready-made <strong>sugar cookie wall sculptures</strong> from artists who specialize in 
-        realistic faux food wall art.
+        For collectors who want <strong>ready-made faux cookie wall decor</strong> that looks convincingly 
+        real and hangs easily on a single nail, professional spray-foam sculptures are the clear choice over 
+        DIY salt-dough projects. But if you're still weighing your options, this guide compares both paths — 
+        so you can decide whether to craft your own giant cookie or shop the <Link href="/product/jumbo-chocolate-chip-cookie/">
+        bestselling chocolate chip sculpture</Link> that collectors keep reaching for.
       </p>
 
       <p>
-        Both options can put a jumbo cookie on your wall. But the results — in terms of realism, durability, weight, 
-        and that all-important "is that real?" reaction — are very different. This guide breaks down DIY vs ready-made
-        <strong> faux cookie wall decor</strong> so you can decide which route is right for your home.
+        Both approaches can put a jumbo cookie on your wall. But the results — in terms of realism, durability, 
+        weight, and that all-important "is that real?" reaction — are very different.
       </p>
 
       <h2>What is Faux Cookie Wall Decor?</h2>

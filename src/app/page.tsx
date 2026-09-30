@@ -433,7 +433,25 @@ export default function HomePage() {
               How to hang your jumbo cookie wall art. How to build a dessert gallery wall with art cookies wall sculptures that sparks joy. 
               Tips from the cookie artist's studio to make your space unforgettable.
             </p>
-            <div className="mt-8 grid gap-4 md:grid-cols-2 lg:grid-cols-4">
+            <div className="mt-8 grid gap-4 md:grid-cols-2 lg:grid-cols-3">
+              <Link
+                href="/blog/spray-foam-cookie-wall-art-how-theyre-made/"
+                className="group rounded-xl bg-white p-5 shadow-card hover:shadow-lift"
+              >
+                <p className="text-sm font-medium uppercase tracking-wider text-pink">How They're Made</p>
+                <h3 className="mt-2 font-display text-xl text-chocolate group-hover:text-pink">
+                  Spray Foam Cookie Wall Art Process
+                </h3>
+              </Link>
+              <Link
+                href="/blog/cookie-canvas-vs-3d-cookie-wall-sculptures/"
+                className="group rounded-xl bg-white p-5 shadow-card hover:shadow-lift"
+              >
+                <p className="text-sm font-medium uppercase tracking-wider text-pink">3D vs Flat Prints</p>
+                <h3 className="mt-2 font-display text-xl text-chocolate group-hover:text-pink">
+                  Cookie Canvas vs 3D Sculptures
+                </h3>
+              </Link>
               <Link
                 href="/blog/faux-cookie-wall-decor-ready-made-vs-diy/"
                 className="group rounded-xl bg-white p-5 shadow-card hover:shadow-lift"

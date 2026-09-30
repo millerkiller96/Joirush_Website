@@ -347,8 +347,9 @@ export function SprayFoamCookieWallArtContent() {
 
       <p>
         A 16-inch <Link href="/product/jumbo-chocolate-chip-cookie/">jumbo chocolate chip 
-        cookie sculpture</Link> weighs just 2-3 lbs — light enough to hang on a single nail, 
-        substantial enough to feel like real art. Commercial fiberglass food props at this 
+        cookie sculpture</Link> weighs just 2-4 lbs — light enough to hang on a single nail, 
+        substantial enough to feel like real art. This lightweight construction is made possible 
+        by spray foam: mostly air once cured, so the pieces stay easy to hang on a single nail. Commercial fiberglass food props at this 
         size would weigh 10+ lbs and require professional installation.
       </p>
 

@@ -90,7 +90,7 @@ export const defaultFAQs: ProductFAQ[] = [
   },
   {
     question: "How do I hang this cookie canvas on my wall?",
-    answer: "Each cookie art piece comes with a built-in wall hanger on the back. Simply use a nail or picture hook rated for the weight (most pieces are under 3 lbs). These sugar cookie wall sculptures are lightweight and easy to hang.",
+    answer: "Each cookie art piece comes with a built-in wall hanger on the back. Simply use a nail or picture hook rated for the weight (most pieces weigh 2-4 lbs). These sugar cookie wall sculptures are lightweight and easy to hang.",
   },
   {
     question: "How big is this art cookie?",

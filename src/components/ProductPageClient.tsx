@@ -219,6 +219,22 @@ export function ProductPageClient({ product, related }: ProductPageClientProps) 
                 ))}
               </ul>
             </div>
+
+            <div className="mt-6 rounded-xl border border-chocolate/10 bg-cream/30 p-4">
+              <h3 className="font-semibold text-chocolate">Learn More</h3>
+              <ul className="mt-3 space-y-2 text-sm">
+                <li>
+                  <Link href="/blog/spray-foam-cookie-wall-art-how-theyre-made/" className="text-pink hover:underline">
+                    How spray foam cookie sculptures are made →
+                  </Link>
+                </li>
+                <li>
+                  <Link href="/blog/cookie-canvas-vs-3d-cookie-wall-sculptures/" className="text-pink hover:underline">
+                    Cookie canvas vs 3D wall sculptures →
+                  </Link>
+                </li>
+              </ul>
+            </div>
           </div>
         </div>
       </div>

@@ -179,7 +179,7 @@ export function HowToHangContent() {
       <p>
         One of the biggest advantages of handmade <strong>cookie wall art</strong> over commercial 
         fiberglass props is the weight difference. A typical JOIRUSH jumbo cookie weighs around 
-        2-3 pounds — light enough for a standard picture hook, sturdy enough to stay put.
+        2-4 lbs — light enough for a standard picture hook, sturdy enough to stay put.
       </p>
 
       <p>

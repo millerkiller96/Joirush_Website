@@ -57,7 +57,7 @@ const foodWallArtFaqs = [
   {
     question: "Is oversized food wall art heavy to hang?",
     answer:
-      "No. Despite their size, JOIRUSH food wall art pieces are lightweight because they're made from spray foam — most pieces are under 3 lbs. They hang easily on a single nail or picture hook.",
+      "No. Despite their size, JOIRUSH food wall art pieces are lightweight because they're made from spray foam — most pieces weigh 2-4 lbs. They hang easily on a single nail or picture hook.",
   },
   {
     question: "Where should I hang large food wall art for kitchen spaces?",

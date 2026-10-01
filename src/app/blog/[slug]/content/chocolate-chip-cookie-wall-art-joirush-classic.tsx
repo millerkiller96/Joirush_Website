@@ -119,7 +119,7 @@ export function ChocolateChipStoryContent() {
       <h3>Spray Foam</h3>
       <p>
         The foundation and texture layer. Hand-sculpted spray foam keeps the piece lightweight 
-        (most jumbo cookies weigh just 2-3 pounds) while providing stability. The foam is 
+        (most jumbo cookies weigh just 2-4 lbs) while providing stability. The foam is 
         carved and shaped to create the distinctive surface — the bubbles, the ridges, the 
         craggy edges that make each cookie unique. This is where the "handmade" part really 
         shows. No two cookies are identical because no two sculpting sessions are identical.

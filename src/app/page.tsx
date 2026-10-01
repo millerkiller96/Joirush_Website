@@ -435,21 +435,21 @@ export default function HomePage() {
             </p>
             <div className="mt-8 grid gap-4 md:grid-cols-2 lg:grid-cols-4">
               <Link
-                href="/blog/faux-cookie-wall-decor-ready-made-vs-diy/"
+                href="/blog/spray-foam-cookie-wall-art-how-theyre-made/"
                 className="group rounded-xl bg-white p-5 shadow-card hover:shadow-lift"
               >
-                <p className="text-sm font-medium uppercase tracking-wider text-pink">DIY vs Ready-Made</p>
+                <p className="text-sm font-medium uppercase tracking-wider text-pink">How It's Made</p>
                 <h3 className="mt-2 font-display text-xl text-chocolate group-hover:text-pink">
-                  Faux Cookie Wall Decor Guide
+                  Spray Foam Cookie Art Process
                 </h3>
               </Link>
               <Link
-                href="/blog/cookie-wall-art-for-home-collectors/"
+                href="/blog/cookie-canvas-vs-3d-cookie-wall-sculptures/"
                 className="group rounded-xl bg-white p-5 shadow-card hover:shadow-lift"
               >
-                <p className="text-sm font-medium uppercase tracking-wider text-pink">Collector's Guide</p>
+                <p className="text-sm font-medium uppercase tracking-wider text-pink">Canvas vs 3D</p>
                 <h3 className="mt-2 font-display text-xl text-chocolate group-hover:text-pink">
-                  Cookie Wall Art for Home Collectors
+                  Cookie Canvas vs 3D Sculptures
                 </h3>
               </Link>
               <Link

@@ -9,7 +9,7 @@ import { site } from "@/data/site";
 const siteUrl = "https://joirush.com";
 
 export const metadata: Metadata = {
-  title: "Oversized Cookie Wall Decor | Full Catalogue of Handmade Cookie Art — JOIRUSH",
+  title: "Oversized Cookie Wall Decor | Full Catalogue of Handmade Cookie Art",
   description:
     "Browse all oversized cookie wall decor by cookie artist Erynn. Handmade sugar cookie wall sculptures in classic chocolate chip, M&M, and custom flavors. Oversized cookie wall decor from $90 with free U.S. shipping from Daytona Beach, FL.",
   keywords: [

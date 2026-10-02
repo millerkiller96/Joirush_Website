@@ -233,6 +233,11 @@ export function ProductPageClient({ product, related }: ProductPageClientProps) 
                     Cookie canvas vs 3D wall sculptures →
                   </Link>
                 </li>
+                <li>
+                  <Link href="/blog/faux-cookie-wall-decor-ready-made-vs-diy/" className="text-pink hover:underline">
+                    Faux cookie wall decor: ready-made vs DIY →
+                  </Link>
+                </li>
               </ul>
             </div>
           </div>

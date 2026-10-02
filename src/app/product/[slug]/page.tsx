@@ -80,6 +80,7 @@ function ProductJsonLd({ product }: { product: NonNullable<ReturnType<typeof get
       { "@type": "PropertyValue", name: "Art Type", value: "Sugar Cookie Wall Sculpture" },
       { "@type": "PropertyValue", name: "Artist", value: "Erynn" },
       { "@type": "PropertyValue", name: "Style", value: "Faux Food Wall Art" },
+      { "@type": "PropertyValue", name: "Weight", value: "2-4 lbs" },
     ],
     offers: {
       "@type": "Offer",

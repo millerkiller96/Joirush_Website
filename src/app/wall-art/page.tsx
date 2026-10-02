@@ -10,7 +10,7 @@ import { site } from "@/data/site";
 import { getAbsoluteUrl, getImageUrl, siteUrl } from "@/lib/seo";
 
 export const metadata: Metadata = {
-  title: "Giant Cookie Wall Art | Cookie Wall Decor & Faux Cookies for Display — JOIRUSH",
+  title: "Giant Cookie Wall Art | Cookie Wall Decor & Faux Cookies for Display",
   description:
     "Shop giant cookie wall art — handmade sugar cookie wall sculptures and faux cookies for display by cookie artist Erynn. Not cheap plastic fake cookie decor: real handmade giant cookie wall decor in chocolate chip, M&M, and custom designs. $90-$225, free U.S. shipping.",
   keywords: [

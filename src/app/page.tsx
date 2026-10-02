@@ -293,24 +293,28 @@ export default function HomePage() {
                 title: "Giant Cookie Wall Art",
                 copy: "Giant cookie wall decor and faux cookies for display — the conversation starter your kitchen needs.",
                 image: "/images/products/rainbow.jpg",
+                alt: "Giant cookie wall art — rainbow sprinkle cookie sculpture by JOIRUSH",
               },
               {
                 href: "/oversized-food-wall-art/",
                 title: "Oversized Food Wall Art",
                 copy: "3D food wall art for kitchens and dining rooms. Large food wall art that looks real.",
                 image: "/images/products/ice-cream.jpg",
+                alt: "Oversized food wall art — ice cream sandwich sculpture by JOIRUSH",
               },
               {
                 href: "/catalogue/",
                 title: "Oversized Cookie Wall Decor",
                 copy: "Every flavor, every size. Find the oversized cookie wall decor that makes your heart skip.",
                 image: "/images/products/mm-set.jpg",
+                alt: "Oversized cookie wall decor — M&M candy cookie sculpture set by JOIRUSH",
               },
               {
                 href: "/custom/",
                 title: "Custom Cookie Art",
                 copy: "Your colors. Your vibe. A one-of-one piece made just for you by the cookie artist.",
                 image: "/images/products/hot-pink-mm.jpg",
+                alt: "Custom cookie art — hot pink M&M cookie sculpture by JOIRUSH",
               },
             ].map((card) => (
               <Link
@@ -320,7 +324,7 @@ export default function HomePage() {
               >
                 <Image
                   src={card.image}
-                  alt=""
+                  alt={card.alt}
                   width={800}
                   height={600}
                   className="h-72 w-full object-cover opacity-80 transition duration-500 group-hover:scale-105"
@@ -433,7 +437,7 @@ export default function HomePage() {
               How to hang your jumbo cookie wall art. How to build a dessert gallery wall with art cookies wall sculptures that sparks joy. 
               Tips from the cookie artist's studio to make your space unforgettable.
             </p>
-            <div className="mt-8 grid gap-4 md:grid-cols-2 lg:grid-cols-4">
+            <div className="mt-8 grid gap-4 md:grid-cols-2 lg:grid-cols-5">
               <Link
                 href="/blog/spray-foam-cookie-wall-art-how-theyre-made/"
                 className="group rounded-xl bg-white p-5 shadow-card hover:shadow-lift"
@@ -468,6 +472,15 @@ export default function HomePage() {
                 <p className="text-sm font-medium uppercase tracking-wider text-pink">Gallery Inspo</p>
                 <h3 className="mt-2 font-display text-xl text-chocolate group-hover:text-pink">
                   Build a Cookie Art Gallery Wall
+                </h3>
+              </Link>
+              <Link
+                href="/blog/faux-cookie-wall-decor-ready-made-vs-diy/"
+                className="group rounded-xl bg-white p-5 shadow-card hover:shadow-lift"
+              >
+                <p className="text-sm font-medium uppercase tracking-wider text-pink">Ready-Made vs DIY</p>
+                <h3 className="mt-2 font-display text-xl text-chocolate group-hover:text-pink">
+                  Faux Cookie Wall Decor Guide
                 </h3>
               </Link>
             </div>

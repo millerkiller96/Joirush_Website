@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import { Fraunces, Outfit } from "next/font/google";
+import Script from "next/script";
 import { SiteFooter } from "@/components/SiteFooter";
 import { SiteHeader } from "@/components/SiteHeader";
 import { PageTransition } from "@/components/PageTransition";
@@ -7,6 +8,8 @@ import { site } from "@/data/site";
 import { siteUrl, getImageUrl } from "@/lib/seo";
 import { asset } from "@/lib/paths";
 import "./globals.css";
+
+const GA_MEASUREMENT_ID = "G-J91N6HMQ2J";
 
 const fraunces = Fraunces({
   subsets: ["latin"],
@@ -153,6 +156,18 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
           <main>{children}</main>
         </PageTransition>
         <SiteFooter />
+        <Script
+          src={`https://www.googletagmanager.com/gtag/js?id=${GA_MEASUREMENT_ID}`}
+          strategy="afterInteractive"
+        />
+        <Script id="ga4-gtag-config" strategy="afterInteractive">
+          {`
+            window.dataLayer = window.dataLayer || [];
+            function gtag(){dataLayer.push(arguments);}
+            gtag('js', new Date());
+            gtag('config', '${GA_MEASUREMENT_ID}');
+          `}
+        </Script>
       </body>
     </html>
   );

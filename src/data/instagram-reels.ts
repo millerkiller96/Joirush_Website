@@ -6,6 +6,11 @@ export interface InstagramReel {
 
 export const instagramReels: InstagramReel[] = [
   {
+    id: "Dd_5dkWMBvK",
+    url: "https://www.instagram.com/ebabyofficial/reel/Dd_5dkWMBvK/",
+    owner: "ebabyofficial",
+  },
+  {
     id: "DZVfDw9thJd",
     url: "https://www.instagram.com/joirushshop/reel/DZVfDw9thJd/",
     owner: "joirushshop",

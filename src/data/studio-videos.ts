@@ -7,6 +7,12 @@ export interface StudioVideo {
 
 export const studioVideos: StudioVideo[] = [
   {
+    id: "Dd_5dkWMBvK",
+    src: "/videos/Dd_5dkWMBvK.mp4",
+    instagramUrl: "https://www.instagram.com/ebabyofficial/reel/Dd_5dkWMBvK/",
+    account: "ebabyofficial",
+  },
+  {
     id: "DZVfDw9thJd",
     src: "/videos/DZVfDw9thJd.mp4",
     instagramUrl: "https://www.instagram.com/joirushshop/reel/DZVfDw9thJd/",

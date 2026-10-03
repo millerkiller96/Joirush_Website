@@ -220,8 +220,10 @@ export function SmartStickyBuy() {
         ? "Buy Now — jump to the cookie art you can buy on this page"
         : "Buy Now — shop the full cookie art catalogue";
 
+  // `sticky-buy-attention` (globals.css) adds the desktop-only (>=768px, same as `md:`)
+  // pulsing glow + periodic wiggle; it is a no-op on the mobile full-width bar.
   const buttonClass =
-    "group flex w-full items-center justify-center gap-2 rounded-full bg-success px-6 py-3.5 text-lg font-bold text-white shadow-lg ring-1 ring-white/20 transition hover:bg-success-dark hover:shadow-xl focus:outline-none focus-visible:ring-4 focus-visible:ring-pink focus-visible:ring-offset-2 focus-visible:ring-offset-cream md:w-auto md:px-8 md:py-4 md:shadow-lift";
+    "sticky-buy-attention group flex w-full items-center justify-center gap-2 rounded-full bg-success px-6 py-3.5 text-lg font-bold text-white shadow-lg ring-1 ring-white/20 transition hover:bg-success-dark hover:shadow-xl focus:outline-none focus-visible:ring-4 focus-visible:ring-pink focus-visible:ring-offset-2 focus-visible:ring-offset-cream md:w-auto md:px-8 md:py-4 md:shadow-lift";
 
   const content = (
     <>

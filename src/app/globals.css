@@ -79,3 +79,94 @@ body {
     padding-bottom: 0;
   }
 }
+
+/*
+ * Smart sticky Buy Now — desktop attention effects (pill only).
+ * Everything lives inside min-width: 768px (Tailwind `md:`, the same breakpoint
+ * the component uses to switch bar -> pill), so the mobile bar is untouched.
+ * - Glow: a soft green halo on ::before (so the button's own box-shadow, incl.
+ *   the focus-visible ring, is untouched) pulsing opacity every 2s.
+ * - Wiggle: ~0.7s rotate shake 0.35s after the pill slides in, repeating every
+ *   4.5s while visible. Transform only, so no layout shift.
+ * - Hover/focus: wiggle + pulse stop; the glow holds at full strength.
+ * - prefers-reduced-motion: no wiggle, no pulse — static stronger glow only.
+ */
+@keyframes sticky-buy-glow {
+  0%,
+  100% {
+    opacity: 0.45;
+  }
+  50% {
+    opacity: 1;
+  }
+}
+
+@keyframes sticky-buy-wiggle {
+  0%,
+  15.5%,
+  100% {
+    transform: rotate(0deg) scale(1);
+  }
+  2.5% {
+    transform: rotate(-5deg) scale(1.04);
+  }
+  5% {
+    transform: rotate(4.5deg) scale(1.04);
+  }
+  7.5% {
+    transform: rotate(-3.5deg) scale(1.03);
+  }
+  10% {
+    transform: rotate(2.5deg) scale(1.02);
+  }
+  12.5% {
+    transform: rotate(-1deg) scale(1.01);
+  }
+}
+
+@media (min-width: 768px) {
+  .sticky-buy-attention {
+    position: relative;
+    transform-origin: 50% 50%;
+  }
+
+  .sticky-buy-attention::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    border-radius: inherit;
+    pointer-events: none;
+    box-shadow:
+      0 0 0 3px rgba(34, 197, 94, 0.35),
+      0 0 18px 4px rgba(22, 163, 74, 0.6),
+      0 0 42px 12px rgba(34, 197, 94, 0.35);
+    opacity: 0.85;
+  }
+
+  [data-smart-sticky-buy] .sticky-buy-attention:hover::before,
+  [data-smart-sticky-buy] .sticky-buy-attention:focus-visible::before {
+    opacity: 1;
+  }
+
+  /* Push the halo outside the 2px offset + 4px pink focus ring so the ring stays crisp. */
+  [data-smart-sticky-buy] .sticky-buy-attention:focus-visible::before {
+    inset: -6px;
+  }
+}
+
+@media (min-width: 768px) and (prefers-reduced-motion: no-preference) {
+  [data-smart-sticky-buy][data-state="visible"] .sticky-buy-attention {
+    animation: sticky-buy-wiggle 4.5s ease-in-out 0.35s infinite;
+  }
+
+  [data-smart-sticky-buy][data-state="visible"] .sticky-buy-attention::before {
+    animation: sticky-buy-glow 2s ease-in-out infinite;
+  }
+
+  [data-smart-sticky-buy][data-state="visible"] .sticky-buy-attention:hover,
+  [data-smart-sticky-buy][data-state="visible"] .sticky-buy-attention:focus-visible,
+  [data-smart-sticky-buy][data-state="visible"] .sticky-buy-attention:hover::before,
+  [data-smart-sticky-buy][data-state="visible"] .sticky-buy-attention:focus-visible::before {
+    animation: none;
+  }
+}

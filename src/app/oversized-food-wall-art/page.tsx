@@ -188,6 +188,7 @@ export default function OversizedFoodWallArtPage() {
             <div className="mt-8 flex flex-wrap gap-3">
               <Link
                 href="/catalogue/"
+                data-buy-cta="shop"
                 className="rounded-full bg-emerald-600 px-6 py-3 text-sm font-medium text-white hover:bg-emerald-700"
               >
                 Shop All Food Wall Art
@@ -250,7 +251,11 @@ export default function OversizedFoodWallArtPage() {
           </div>
         </section>
 
-        <section className="mx-auto max-w-7xl px-5 py-16 md:px-8">
+        <section
+          id="shop-collection"
+          data-buy-target=""
+          className="mx-auto max-w-7xl scroll-mt-24 px-5 py-16 outline-none md:px-8"
+        >
           <SectionHeading
             eyebrow="Large food wall art for kitchen & dining"
             title="3D Food Wall Art Collection"
@@ -264,6 +269,7 @@ export default function OversizedFoodWallArtPage() {
           <div className="mt-10 text-center">
             <Link
               href="/catalogue/"
+              data-buy-cta="shop"
               className="inline-flex rounded-full bg-chocolate px-8 py-4 text-sm font-medium text-cream hover:bg-pink"
             >
               See All Oversized Food Wall Art →

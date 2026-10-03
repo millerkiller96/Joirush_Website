@@ -31,6 +31,7 @@ export function BuyNowButton({ product, className, children, showPrice = true }:
     <>
       <button
         type="button"
+        data-buy-cta="buy-now"
         onClick={() => setIsModalOpen(true)}
         className={
           className ||

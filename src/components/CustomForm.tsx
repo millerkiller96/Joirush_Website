@@ -83,6 +83,7 @@ export function CustomForm() {
       </label>
       <button
         type="submit"
+        data-sticky-buy-avoid=""
         className="mt-6 w-full rounded-full bg-pink px-6 py-3 font-medium text-white transition hover:bg-pink-hot"
       >
         Copy brief and open Etsy

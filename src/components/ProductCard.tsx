@@ -7,7 +7,7 @@ export function ProductCard({ product }: { product: Product }) {
 
   return (
     <article className="group" itemScope itemType="https://schema.org/Product">
-      <Link href={`/product/${product.slug}`} className="block">
+      <Link href={`/product/${product.slug}`} className="block" data-buy-cta="product-card">
         <div className="relative overflow-hidden rounded-[1.6rem] bg-cream-deep shadow-card">
           <Image
             src={product.image}

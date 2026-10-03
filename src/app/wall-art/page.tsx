@@ -137,6 +137,7 @@ export default function WallArtPage() {
             <div className="mt-8 flex flex-wrap gap-3">
               <Link
                 href="/catalogue/"
+                data-buy-cta="shop"
                 className="rounded-full bg-emerald-600 px-6 py-3 text-sm font-medium text-white hover:bg-emerald-700"
               >
                 Shop All Cookie Art
@@ -199,7 +200,11 @@ export default function WallArtPage() {
           </div>
         </section>
 
-        <section className="mx-auto max-w-7xl px-5 py-16 md:px-8">
+        <section
+          id="shop-collection"
+          data-buy-target=""
+          className="mx-auto max-w-7xl scroll-mt-24 px-5 py-16 outline-none md:px-8"
+        >
           <SectionHeading 
             eyebrow="The full giant cookie wall art collection" 
             title="Find Your Flavor"

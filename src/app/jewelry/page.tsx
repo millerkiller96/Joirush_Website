@@ -28,7 +28,8 @@ const commissions = [
 
 export default function JewelryPage() {
   return (
-    <div>
+    // Jewelry is commission-only (nothing to "Buy Now"), so the sticky cookie Buy Now is off here.
+    <div data-sticky-buy="off">
       <section className="mx-auto grid max-w-7xl items-center gap-10 px-5 py-16 md:grid-cols-2 md:px-8 md:py-20">
         <Image
           src="/images/brand/about-1.jpg"

@@ -1,10 +1,8 @@
 "use client";
 
-import { useRef } from "react";
 import Link from "next/link";
 import { Image } from "@/components/Image";
 import { ProductBuyButtons } from "@/components/ProductBuyButtons";
-import { StickyBuyBar } from "@/components/StickyBuyBar";
 import { EtsyReviewsHub } from "@/components/EtsyReviewsHub";
 import { ProductCard } from "@/components/ProductCard";
 import { StudioVideoCarousel } from "@/components/StudioVideoCarousel";
@@ -61,7 +59,6 @@ function FAQAccordion({ faqs }: { faqs: { question: string; answer: string }[] }
 }
 
 export function ProductPageClient({ product, related }: ProductPageClientProps) {
-  const mainBuyRef = useRef<HTMLDivElement>(null);
   const { savings, percent } = calculateSavings(product.price, product.compareAtPrice);
   const relevantReviews = getRelevantReviews().slice(0, 2);
 
@@ -198,9 +195,7 @@ export function ProductPageClient({ product, related }: ProductPageClientProps) 
               )}
             </div>
 
-            <div ref={mainBuyRef}>
-              <ProductBuyButtons product={upsellProduct} />
-            </div>
+            <ProductBuyButtons product={upsellProduct} />
 
             <div className="mt-8">
               <p className="text-lg leading-relaxed text-chocolate-mid">{product.description}</p>
@@ -260,8 +255,6 @@ export function ProductPageClient({ product, related }: ProductPageClientProps) 
 
         <FAQAccordion faqs={product.faqs} />
       </div>
-
-      <StickyBuyBar product={upsellProduct} mainBuyButtonRef={mainBuyRef} />
     </>
   );
 }

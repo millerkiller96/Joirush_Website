@@ -4,6 +4,7 @@ import Script from "next/script";
 import { SiteFooter } from "@/components/SiteFooter";
 import { SiteHeader } from "@/components/SiteHeader";
 import { PageTransition } from "@/components/PageTransition";
+import { SmartStickyBuy } from "@/components/SmartStickyBuy";
 import { site } from "@/data/site";
 import { siteUrl, getImageUrl } from "@/lib/seo";
 import { asset } from "@/lib/paths";
@@ -156,6 +157,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
           <main>{children}</main>
         </PageTransition>
         <SiteFooter />
+        <SmartStickyBuy />
         <Script
           src={`https://www.googletagmanager.com/gtag/js?id=${GA_MEASUREMENT_ID}`}
           strategy="afterInteractive"

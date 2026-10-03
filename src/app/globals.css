@@ -68,3 +68,14 @@ body {
   animation: none;
   box-shadow: 0 0 30px rgba(22, 163, 74, 0.7);
 }
+
+/* Smart sticky Buy Now: respect the iPhone home indicator on the mobile bar. */
+.sticky-buy-safe-area {
+  padding-bottom: max(0.75rem, env(safe-area-inset-bottom, 0px));
+}
+
+@media (min-width: 768px) {
+  .sticky-buy-safe-area {
+    padding-bottom: 0;
+  }
+}

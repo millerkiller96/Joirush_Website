@@ -173,6 +173,7 @@ export function ContactForm() {
 
       <button
         type="submit"
+        data-sticky-buy-avoid=""
         disabled={status === "submitting"}
         className="mt-6 w-full rounded-full bg-pink px-6 py-3 font-medium text-white transition hover:bg-pink-hot disabled:cursor-not-allowed disabled:opacity-60"
       >

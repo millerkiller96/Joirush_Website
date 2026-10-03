@@ -168,6 +168,7 @@ export default function BlogPage() {
           <div className="mt-8 flex flex-wrap justify-center gap-4">
             <Link
               href="/wall-art/"
+              data-buy-cta="shop"
               className="rounded-full bg-pink px-6 py-3 text-sm font-medium text-white hover:bg-pink-hot"
             >
               Shop Cookie Art

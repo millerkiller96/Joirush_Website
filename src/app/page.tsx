@@ -224,6 +224,7 @@ export default function HomePage() {
               <div className="mt-8 flex flex-wrap gap-4">
                 <Link
                   href="/wall-art/"
+                  data-buy-cta="shop"
                   className="cta-glow rounded-full bg-emerald-600 px-8 py-4 text-base font-bold text-white transition-all hover:bg-emerald-700 md:px-10 md:py-5 md:text-lg"
                 >
                   Shop Cookie Art
@@ -267,14 +268,18 @@ export default function HomePage() {
 
         <StudioVideoCarousel />
 
-        <section className="mx-auto max-w-7xl px-5 py-20 md:px-8">
+        <section
+          id="bestsellers"
+          data-buy-target=""
+          className="mx-auto max-w-7xl scroll-mt-24 px-5 py-20 outline-none md:px-8"
+        >
           <div className="flex flex-col justify-between gap-6 md:flex-row md:items-end">
             <SectionHeading
               eyebrow="Bestselling jumbo cookie wall art"
               title="The Ones Collectors Can't Stop Buying"
               copy="Golden chips. Candy pops. That just-baked texture you can practically smell. These jumbo cookie wall art pieces are the art cookies wall sculptures that sell out first."
             />
-            <Link href="/wall-art/" className="text-sm font-medium text-pink hover:underline">
+            <Link href="/wall-art/" data-buy-cta="shop" className="text-sm font-medium text-pink hover:underline">
               See the full giant cookie wall art collection →
             </Link>
           </div>
@@ -320,6 +325,7 @@ export default function HomePage() {
               <Link
                 key={card.href}
                 href={card.href}
+                data-buy-cta={card.href === "/custom/" ? undefined : "shop"}
                 className="group relative overflow-hidden rounded-[2rem] bg-chocolate"
               >
                 <Image

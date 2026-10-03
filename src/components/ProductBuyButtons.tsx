@@ -17,6 +17,7 @@ export function ProductBuyButtons({ product }: ProductBuyButtonsProps) {
       <div className="mt-8 space-y-3">
         <button
           type="button"
+          data-buy-cta="primary"
           onClick={() => setIsModalOpen(true)}
           className="flex w-full items-center justify-center gap-2 rounded-full bg-success px-8 py-4 text-lg font-bold text-white shadow-lg transition hover:bg-success-dark hover:shadow-xl"
         >
@@ -30,6 +31,7 @@ export function ProductBuyButtons({ product }: ProductBuyButtonsProps) {
           Buy Now — {formatPrice(product.price)}
         </button>
         <a
+          data-buy-cta="etsy"
           href={product.etsyUrl}
           target="_blank"
           rel="noreferrer"

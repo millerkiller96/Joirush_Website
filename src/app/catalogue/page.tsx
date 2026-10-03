@@ -176,7 +176,7 @@ export default function CataloguePage() {
 
         <StudioVideoCarousel />
 
-        <div className="mt-10">
+        <div id="catalogue-grid" data-buy-target="" className="mt-10 scroll-mt-24 outline-none">
           <CatalogueGrid />
         </div>
         <EtsyReviewsHub />

@@ -187,6 +187,7 @@ export default function AboutPage() {
       <section className="mx-auto max-w-7xl px-5 pb-20 md:px-8">
         <Link
           href="/catalogue"
+          data-buy-cta="shop"
           className="inline-flex rounded-full bg-chocolate px-6 py-3 text-sm font-medium text-cream"
         >
           Find Your Perfect Cookie Art

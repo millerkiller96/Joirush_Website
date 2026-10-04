@@ -124,16 +124,19 @@ export const blogPosts: BlogPost[] = [
   },
   {
     slug: "how-to-hang-jumbo-cookie-wall-art",
-    title: "How to Hang Cookie Art: A Complete Guide to Sugar Cookie Wall Sculptures",
+    title: "How to Hang Jumbo Cookie Wall Art: Sugar Cookie Sculpture Display Guide",
     excerpt:
-      "Learn the best techniques for hanging cookie art safely and beautifully. From choosing the right hardware to creating gallery wall arrangements with sugar cookie wall sculptures and art cookies.",
+      "Learn how to hang jumbo cookie wall art safely and beautifully. Hardware tips, gallery-wall layouts, and care for lightweight sugar cookie wall sculptures (2–4 lbs) made for home collectors.",
     publishedAt: "2024-09-01",
+    updatedAt: "2026-10-04",
     author: "Erynn",
     image: "/images/products/choc-chip.jpg",
     imageAlt: "Cookie art - sugar cookie wall sculpture hanging in a bright kitchen by cookie artist Erynn",
     keywords: [
+      "how to hang jumbo cookie wall art",
+      "jumbo cookie wall art",
       "how to hang cookie art",
-      "sugar cookie art installation",
+      "sugar cookie wall sculpture hanging",
       "hanging cookie canvas",
       "faux food wall art mounting",
       "cookie artist tips",

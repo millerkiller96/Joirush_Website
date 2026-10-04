@@ -109,7 +109,7 @@ export const defaultFAQs: ProductFAQ[] = [
 export const products: Product[] = [
   {
     slug: "jumbo-chocolate-chip-cookie",
-    name: "Classic Cookie Art - Chocolate Chip Sugar Cookie Wall Sculpture",
+    name: "Jumbo Chocolate Chip Cookie Wall Art | Classic Sugar Cookie Sculpture",
     shortName: "Classic Chocolate Chip",
     price: 100,
     compareAtPrice: 149,
@@ -142,7 +142,7 @@ export const products: Product[] = [
   },
   {
     slug: "oversized-mini-cookie-pair",
-    name: "Oversized Mini Cookie Wall Decor Set",
+    name: "Oversized Mini Cookie Wall Art Set | Jumbo Cookie Pair",
     shortName: "Mini Cookie Pair",
     price: 175,
     compareAtPrice: 249,
@@ -169,7 +169,7 @@ export const products: Product[] = [
   },
   {
     slug: "jumbo-mm-cookie-set",
-    name: "Cookie Art Set - M&M Sugar Cookie Wall Sculptures (Pair)",
+    name: "Jumbo M&M Cookie Wall Art Set | Pair of Sugar Cookie Sculptures",
     shortName: "M&M Cookie Set",
     price: 225,
     compareAtPrice: 325,
@@ -221,7 +221,7 @@ export const products: Product[] = [
   },
   {
     slug: "rainbow-candy-cookie",
-    name: "Rainbow Cookie Art - Colorful Sugar Cookie Wall Sculpture",
+    name: "Rainbow Jumbo Cookie Wall Art | Colorful Sugar Cookie Sculpture",
     shortName: "Rainbow Candy Cookie",
     price: 90,
     compareAtPrice: 129,
@@ -347,7 +347,7 @@ export const products: Product[] = [
   },
   {
     slug: "giant-double-chocolate-cookie",
-    name: "Giant Faux Double Chocolate Chip Cookie",
+    name: "Giant Double Chocolate Cookie Wall Art | Jumbo Faux Cookie",
     shortName: "Double Chocolate",
     price: 110,
     compareAtPrice: 159,
@@ -372,7 +372,7 @@ export const products: Product[] = [
   },
   {
     slug: "cookie-ice-cream-sandwich",
-    name: "Cookie Art Statement - Ice Cream Sandwich Sugar Cookie Wall Sculpture",
+    name: "Jumbo Ice Cream Sandwich Cookie Wall Art | Statement Sculpture",
     shortName: "Ice Cream Sandwich",
     price: 220,
     compareAtPrice: 315,
@@ -429,7 +429,7 @@ export const products: Product[] = [
   },
   {
     slug: "hot-pink-mm-cookie",
-    name: "Hot Pink Cookie Art - M&M Sugar Cookie Wall Sculpture",
+    name: "Hot Pink M&M Cookie Wall Art | Jumbo Sugar Cookie Sculpture",
     shortName: "Hot Pink M&M Cookie",
     price: 115,
     compareAtPrice: 165,

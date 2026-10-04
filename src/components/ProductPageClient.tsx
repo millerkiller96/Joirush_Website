@@ -219,6 +219,11 @@ export function ProductPageClient({ product, related }: ProductPageClientProps) 
               <h3 className="font-semibold text-chocolate">Learn More</h3>
               <ul className="mt-3 space-y-2 text-sm">
                 <li>
+                  <Link href="/blog/what-is-cookie-art-sugar-cookie-wall-sculptures-explained/" className="text-pink hover:underline">
+                    What is cookie art? Sugar cookie wall sculptures explained →
+                  </Link>
+                </li>
+                <li>
                   <Link href="/blog/spray-foam-cookie-wall-art-how-theyre-made/" className="text-pink hover:underline">
                     How spray foam cookie sculptures are made →
                   </Link>

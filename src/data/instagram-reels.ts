@@ -65,11 +65,6 @@ export const instagramReels: InstagramReel[] = [
     url: "https://www.instagram.com/ebabyofficial/reel/DUI4J8ODbAD/",
     owner: "ebabyofficial",
   },
-  {
-    id: "DUG61SPEiiv",
-    url: "https://www.instagram.com/ebabyofficial/reel/DUG61SPEiiv/",
-    owner: "ebabyofficial",
-  },
 ];
 
 export const instagramHandle = "@joirushshop";

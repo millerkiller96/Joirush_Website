@@ -78,10 +78,4 @@ export const studioVideos: StudioVideo[] = [
     instagramUrl: "https://www.instagram.com/ebabyofficial/reel/DUI4J8ODbAD/",
     account: "ebabyofficial",
   },
-  {
-    id: "DUG61SPEiiv",
-    src: "/videos/DUG61SPEiiv.mp4",
-    instagramUrl: "https://www.instagram.com/ebabyofficial/reel/DUG61SPEiiv/",
-    account: "ebabyofficial",
-  },
 ];

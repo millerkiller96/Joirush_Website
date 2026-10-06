@@ -1,6 +1,7 @@
 "use client";
 
 import { useState } from "react";
+import { submitWeb3Form } from "@/lib/forms";
 
 type FormStatus = "idle" | "submitting" | "success" | "error";
 
@@ -18,47 +19,25 @@ export function ContactForm() {
     setStatus("submitting");
     setErrorMessage("");
 
-    const accessKey = process.env.NEXT_PUBLIC_WEB3FORMS_ACCESS_KEY;
-    if (!accessKey) {
+    const result = await submitWeb3Form("contact", {
+      name,
+      email,
+      phone,
+      subject: subject || "New Contact Form Submission",
+      message,
+      from_name: "JOIRUSH Contact Form",
+    });
+
+    if (result.ok) {
+      setStatus("success");
+      setName("");
+      setEmail("");
+      setPhone("");
+      setSubject("");
+      setMessage("");
+    } else {
       setStatus("error");
-      setErrorMessage("Contact form is not configured. Please try again later.");
-      return;
-    }
-
-    try {
-      const response = await fetch("https://api.web3forms.com/submit", {
-        method: "POST",
-        headers: {
-          "Content-Type": "application/json",
-          Accept: "application/json",
-        },
-        body: JSON.stringify({
-          access_key: accessKey,
-          name,
-          email,
-          phone: phone || undefined,
-          subject: subject || "New Contact Form Submission",
-          message,
-          from_name: "JOIRUSH Contact Form",
-        }),
-      });
-
-      const result = await response.json();
-
-      if (result.success) {
-        setStatus("success");
-        setName("");
-        setEmail("");
-        setPhone("");
-        setSubject("");
-        setMessage("");
-      } else {
-        setStatus("error");
-        setErrorMessage(result.message || "Something went wrong. Please try again.");
-      }
-    } catch {
-      setStatus("error");
-      setErrorMessage("Network error. Please check your connection and try again.");
+      setErrorMessage(result.message);
     }
   }
 
@@ -181,7 +160,7 @@ export function ContactForm() {
       </button>
 
       <p className="mt-3 text-center text-sm text-chocolate-soft">
-        I typically reply within 24-48 hours.
+        I typically reply within 24 to 48 hours.
       </p>
     </form>
   );

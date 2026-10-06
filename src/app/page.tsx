@@ -1,12 +1,12 @@
 import type { Metadata } from "next";
 import { Image } from "@/components/Image";
 import Link from "next/link";
-import { EtsyReviewsHub } from "@/components/EtsyReviewsHub";
+import { HomeReviews } from "@/components/HomeReviews";
 import { ProductCard } from "@/components/ProductCard";
 import { SectionHeading } from "@/components/SectionHeading";
 import { StudioVideoCarousel } from "@/components/StudioVideoCarousel";
 import { getFeaturedProducts } from "@/data/products";
-import { reviews, site } from "@/data/site";
+import { site } from "@/data/site";
 import { getAbsoluteUrl, getImageUrl, siteUrl } from "@/lib/seo";
 
 export const metadata: Metadata = {
@@ -432,7 +432,7 @@ export default function HomePage() {
           </div>
         </section>
 
-        <EtsyReviewsHub />
+        <HomeReviews />
 
         <section className="mx-auto max-w-7xl px-5 py-12 md:px-8">
           <div className="rounded-[2rem] bg-cream p-8 md:p-12">

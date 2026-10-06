@@ -170,3 +170,139 @@ body {
     animation: none;
   }
 }
+
+/*
+ * Blog article typography (on top of @tailwindcss/typography `prose`).
+ * Readable line length, warm brand colors, roomy rhythm, plus helper blocks
+ * used inside posts: .key-takeaways, .pull-quote, .callout.
+ */
+.article-body {
+  line-height: 1.75;
+}
+
+.article-body :where(h2):not(:where([class~="not-prose"] *)) {
+  font-family: var(--font-display), Georgia, serif;
+  font-weight: 600;
+  letter-spacing: -0.01em;
+  margin-top: 2.6em;
+  padding-top: 1.1em;
+  border-top: 1px solid rgba(42, 24, 16, 0.08);
+}
+
+.article-body :where(h2:first-child):not(:where([class~="not-prose"] *)) {
+  margin-top: 0;
+  padding-top: 0;
+  border-top: 0;
+}
+
+.article-body :where(h3):not(:where([class~="not-prose"] *)) {
+  font-family: var(--font-display), Georgia, serif;
+  font-weight: 600;
+  margin-top: 1.9em;
+}
+
+.article-body :where(a):not(:where([class~="not-prose"] *)) {
+  font-weight: 500;
+  text-decoration-color: rgba(255, 75, 139, 0.45);
+  text-decoration-thickness: 2px;
+  text-underline-offset: 3px;
+  transition: color 0.15s ease, text-decoration-color 0.15s ease;
+}
+
+.article-body :where(a):not(:where([class~="not-prose"] *)):hover {
+  color: #2a1810;
+  text-decoration-color: #ff4b8b;
+}
+
+.article-body :where(li):not(:where([class~="not-prose"] *)) {
+  margin-top: 0.45em;
+  margin-bottom: 0.45em;
+}
+
+.article-body :where(blockquote):not(:where([class~="not-prose"] *)) {
+  font-family: var(--font-display), Georgia, serif;
+  font-style: normal;
+  font-weight: 500;
+  background: #fff;
+  border-radius: 0 1.25rem 1.25rem 0;
+  padding: 1em 1.4em;
+}
+
+.article-body :where(blockquote p:first-of-type):not(:where([class~="not-prose"] *))::before,
+.article-body :where(blockquote p:last-of-type):not(:where([class~="not-prose"] *))::after {
+  content: none;
+}
+
+/* Tables scroll sideways on small screens instead of squashing. */
+.article-body :where(table):not(:where([class~="not-prose"] *)) {
+  display: block;
+  overflow-x: auto;
+  white-space: nowrap;
+  background: #fff;
+  border-radius: 1rem;
+  font-size: 0.9em;
+}
+
+.article-body :where(thead th):not(:where([class~="not-prose"] *)) {
+  background: #f3e0c8;
+  padding: 0.75em 1em;
+}
+
+.article-body :where(tbody td):not(:where([class~="not-prose"] *)) {
+  padding: 0.65em 1em;
+}
+
+@media (min-width: 768px) {
+  .article-body :where(table):not(:where([class~="not-prose"] *)) {
+    display: table;
+    white-space: normal;
+  }
+}
+
+.article-body .key-takeaways {
+  background: #fff;
+  border: 2px solid rgba(255, 75, 139, 0.25);
+  border-radius: 1.5rem;
+  padding: 1.25em 1.5em;
+  margin: 2em 0;
+}
+
+.article-body .key-takeaways > :first-child {
+  margin-top: 0;
+  padding-top: 0;
+  border-top: 0;
+  font-size: 0.8em;
+  font-family: var(--font-sans), system-ui, sans-serif;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  color: #ff4b8b;
+}
+
+.article-body .key-takeaways ul {
+  margin-bottom: 0;
+}
+
+.article-body .pull-quote {
+  margin: 2.2em 0;
+  padding: 0.2em 0 0.2em 1.2em;
+  border-left: 4px solid #ff4b8b;
+  font-family: var(--font-display), Georgia, serif;
+  font-size: 1.35em;
+  line-height: 1.4;
+  color: #2a1810;
+}
+
+.article-body .callout {
+  background: #f3e0c8;
+  border-radius: 1.25rem;
+  padding: 1em 1.4em;
+  margin: 1.8em 0;
+}
+
+.article-body .callout > :first-child {
+  margin-top: 0;
+}
+
+.article-body .callout > :last-child {
+  margin-bottom: 0;
+}

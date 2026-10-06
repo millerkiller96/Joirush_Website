@@ -218,7 +218,7 @@ export default async function BlogPostPage({ params }: Props) {
           className="mt-10 rounded-[2rem] object-cover shadow-card"
         />
 
-        <div className="prose prose-lg mt-12 max-w-none prose-headings:font-display prose-headings:text-chocolate prose-p:text-chocolate-mid prose-a:text-pink prose-a:no-underline hover:prose-a:underline prose-strong:text-chocolate prose-li:text-chocolate-mid">
+        <div className="article-body prose prose-joirush mx-auto mt-12 max-w-[40rem] md:prose-lg md:max-w-[40rem]">
           <Content />
         </div>
 

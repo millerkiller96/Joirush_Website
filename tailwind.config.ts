@@ -1,4 +1,5 @@
 import type { Config } from "tailwindcss";
+import typography from "@tailwindcss/typography";
 
 const config: Config = {
   content: ["./src/**/*.{ts,tsx}"],
@@ -36,13 +37,32 @@ const config: Config = {
         display: ["var(--font-display)", "Georgia", "serif"],
         sans: ["var(--font-sans)", "system-ui", "sans-serif"],
       },
+      typography: {
+        joirush: {
+          css: {
+            "--tw-prose-body": "#5A3824",
+            "--tw-prose-headings": "#2A1810",
+            "--tw-prose-lead": "#5A3824",
+            "--tw-prose-links": "#D6246A",
+            "--tw-prose-bold": "#2A1810",
+            "--tw-prose-counters": "#C4783A",
+            "--tw-prose-bullets": "#FF4B8B",
+            "--tw-prose-hr": "rgba(42, 24, 16, 0.12)",
+            "--tw-prose-quotes": "#2A1810",
+            "--tw-prose-quote-borders": "#FF4B8B",
+            "--tw-prose-captions": "#8A5A38",
+            "--tw-prose-th-borders": "rgba(42, 24, 16, 0.2)",
+            "--tw-prose-td-borders": "rgba(42, 24, 16, 0.1)",
+          },
+        },
+      },
       boxShadow: {
         card: "0 18px 50px -24px rgba(42, 24, 16, 0.35)",
         lift: "0 28px 60px -28px rgba(255, 75, 139, 0.35)",
       },
     },
   },
-  plugins: [],
+  plugins: [typography],
 };
 
 export default config;

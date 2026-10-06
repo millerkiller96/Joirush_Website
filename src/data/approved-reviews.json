@@ -1,0 +1,4 @@
+{
+  "_note": "Website reviews approved by the owner. Approved entries with rating 5 automatically join the homepage and catalogue review pools. Shape: { id, name, rating, quote, piece?, date (YYYY/MM/DD or ISO), source: 'website' }",
+  "reviews": []
+}

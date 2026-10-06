@@ -19,7 +19,7 @@ export function CookieWallArtCollectorsSchema() {
         name: "Is cookie wall art the same as edible decorated cookies?",
         acceptedAnswer: {
           "@type": "Answer",
-          text: "No. Cookie wall art is faux food decor made from spray foam and acrylic paint — it's purely decorative and not edible. Edible decorated cookies use royal icing on real sugar cookies and are meant to be eaten. Cookie wall art lasts for years; edible cookies last days.",
+          text: "No. Cookie wall art is faux food decor made from spray foam and acrylic paint. It's purely decorative and not edible. Edible decorated cookies use royal icing on real sugar cookies and are meant to be eaten. Cookie wall art lasts for years; edible cookies last days.",
         },
       },
       {
@@ -27,7 +27,7 @@ export function CookieWallArtCollectorsSchema() {
         name: "What are sugar cookie wall sculptures made of?",
         acceptedAnswer: {
           "@type": "Answer",
-          text: "Sugar cookie wall sculptures are typically handmade from spray foam that's carved and shaped to look like a real cookie, then painted with acrylic paints to achieve realistic colors and textures. They're lightweight (2-4 lbs), durable, and come with built-in wall hangers.",
+          text: "Sugar cookie wall sculptures are typically handmade from spray foam that's carved and shaped to look like a real cookie, then painted with acrylic paints to achieve realistic colors and textures. They're lightweight (2 to 4 lbs), durable, and come with attached wall hangers.",
         },
       },
       {
@@ -53,7 +53,7 @@ export function CookieWallArtCollectorsSchema() {
     "@context": "https://schema.org",
     "@type": "Article",
     headline: "Cookie Wall Art for Home Collectors: Faux Sugar Cookie Sculptures That Last Forever",
-    description: "A collector's guide to cookie wall art — faux sugar cookie wall sculptures that look real but aren't edible. Learn what makes these spray-foam cookie sculptures different from royal icing cookies.",
+    description: "A collector's guide to cookie wall art: faux sugar cookie wall sculptures that look real but aren't edible. Learn what makes these spray foam cookie sculptures different from royal icing cookies.",
     author: {
       "@type": "Person",
       name: "Erynn",
@@ -88,29 +88,39 @@ export function CookieWallArtCollectorsContent() {
       <p>
         If you've searched for <strong>cookie wall art</strong> hoping to find decorative oversized cookies 
         for your kitchen or home, you've probably encountered a confusing mix of results: edible cookies with 
-        intricate royal icing designs, canvas prints of cookies, and — what you're actually looking for — 
-        <strong>faux sugar cookie wall sculptures</strong> that look real but are designed to hang on your wall forever.
+        intricate royal icing designs, canvas prints of cookies, and (what you're actually looking for) <strong>faux sugar cookie wall sculptures</strong> that look real but are designed to hang on your wall forever.
       </p>
 
       <p>
         This guide is for collectors who want the <em>real</em> cookie wall art: handmade sculptures that 
         capture the irresistible texture of a freshly baked chocolate chip cookie, the colorful pop of M&M 
-        candies, or the nostalgic warmth of homemade treats — without any of the crumbs, calories, or 
+        candies, or the nostalgic warmth of homemade treats, without any of the crumbs, calories, or 
         expiration dates.
-      </p>
+      </p>      <div className="key-takeaways">
+        <p>Key takeaways</p>
+        <ul>
+          <li>Cookie wall art is faux food decor: realistic cookie sculptures made to hang, not to eat.</li>
+          <li>The best pieces are handmade from spray foam and acrylic paint and weigh 2 to 4 lbs.</li>
+          <li>Start with a classic chocolate chip cookie, then grow a collection with candy and seasonal flavors.</li>
+          <li>Handmade means every piece has its own character.</li>
+        </ul>
+      </div>
 
       <h2>What is Cookie Wall Art? (Not Royal Icing Cookies)</h2>
 
       <p>
         Let's clear up the confusion right away. When most people search "cookie art," they get results 
-        about <em>edible</em> decorated cookies — the beautiful sugar cookies decorated with royal icing 
+        about <em>edible</em> decorated cookies: the beautiful sugar cookies decorated with royal icing 
         that you see at weddings, baby showers, and on baking Instagram accounts.
       </p>
 
       <p>
-        <strong>Cookie wall art is different.</strong> It's a category of <strong>faux food decor</strong> — 
-        three-dimensional wall sculptures that look like giant, realistic cookies but are made from durable 
-        materials designed to hang on your wall as permanent art. Think of it like the difference between 
+        <strong>Cookie wall art is different.</strong> It's a category of <strong>faux food decor</strong>: three dimensional wall sculptures that look like giant, realistic cookies but are made from durable 
+        materials designed to hang on your wall as permanent art.
+      </p>
+
+      <p>
+        Think of it like the difference between 
         a real apple and a ceramic apple sculpture: both look like apples, but one is for eating and one 
         is for decoration.
       </p>
@@ -143,8 +153,8 @@ export function CookieWallArtCollectorsContent() {
           </tr>
           <tr>
             <td>Size</td>
-            <td>14-16+ inches (jumbo statement pieces)</td>
-            <td>3-6 inches typical</td>
+            <td>14 to 16+ inches (jumbo statement pieces)</td>
+            <td>3 to 6 inches typical</td>
           </tr>
           <tr>
             <td>Edible?</td>
@@ -153,7 +163,7 @@ export function CookieWallArtCollectorsContent() {
           </tr>
           <tr>
             <td>Hanging hardware</td>
-            <td>Built-in wall hanger</td>
+            <td>Attached wall hanger</td>
             <td>N/A (meant to be eaten)</td>
           </tr>
         </tbody>
@@ -162,7 +172,7 @@ export function CookieWallArtCollectorsContent() {
       <h2>What Are Sugar Cookie Wall Sculptures Made Of?</h2>
 
       <p>
-        The best cookie wall art is handmade from <strong>spray foam</strong> — a lightweight, sculptable 
+        The best cookie wall art is handmade from <strong>spray foam</strong>, a lightweight, sculptable 
         material that allows artists to create the thick, craggy texture of a real baked cookie. Here's how 
         a <Link href="/about/">cookie artist</Link> like me creates a single piece:
       </p>
@@ -171,16 +181,16 @@ export function CookieWallArtCollectorsContent() {
         <li><strong>Foam base:</strong> Layers of spray foam are built up to create the thick cookie shape</li>
         <li><strong>Sculpting:</strong> The foam is carved to create realistic ridges, bubbles, and that 
         organic "spread" of a real cookie</li>
-        <li><strong>Acrylic painting:</strong> Multiple layers of paint create the golden-brown base, darker 
+        <li><strong>Acrylic painting:</strong> Multiple layers of paint create the golden brown base, darker 
         edges, and realistic color variations</li>
         <li><strong>Detailing:</strong> Chocolate chips, candy pieces, or other toppings are individually 
         positioned and painted for depth</li>
         <li><strong>Sealing:</strong> A protective finish ensures durability</li>
-        <li><strong>Wall hardware:</strong> A built-in hanger makes it ready to hang</li>
+        <li><strong>Wall hardware:</strong> An attached hanger makes it ready to hang</li>
       </ol>
 
       <p>
-        The result is a <strong>2-4 pound sculpture</strong> that hangs on a single nail — much lighter than 
+        The result is a <strong>2 to 4 pound sculpture</strong> that hangs on a single nail, much lighter than 
         commercial fiberglass food props (which can weigh 10+ pounds and cost $350+).
       </p>
 
@@ -196,8 +206,7 @@ export function CookieWallArtCollectorsContent() {
 
       <p>
         The <Link href="/product/jumbo-chocolate-chip-cookie/">jumbo chocolate chip cookie</Link> is the 
-        quintessential cookie wall sculpture. Golden dough with glossy, melty-looking chocolate chips — 
-        it's the ultimate comfort-food nostalgia on your wall. These work beautifully as solo statement 
+        quintessential cookie wall sculpture. Golden dough with glossy, melty looking chocolate chips, it's the ultimate comfort food nostalgia on your wall. These work beautifully as solo statement 
         pieces or as the centerpiece of a cookie art collection.
       </p>
 
@@ -224,7 +233,7 @@ export function CookieWallArtCollectorsContent() {
       <p>
         For the collector who wants something extra, the <Link href="/product/cookie-ice-cream-sandwich/">cookie 
         ice cream sandwich sculpture</Link> combines two chocolate chip cookies with creamy "ice cream" filling. 
-        It's a conversation starter that stops people mid-sentence.
+        It's a conversation starter that stops people mid sentence.
       </p>
 
       <h2>Where to Display Cookie Wall Art</h2>
@@ -234,12 +243,12 @@ export function CookieWallArtCollectorsContent() {
       </p>
 
       <ul>
-        <li><strong>Kitchen:</strong> Above the stove, near the pantry, or as the focal point of an eat-in area</li>
-        <li><strong>Dining room:</strong> Creates a whimsical, food-themed atmosphere</li>
+        <li><strong>Kitchen:</strong> Above the stove, near the pantry, or as the focal point of an eat in area</li>
+        <li><strong>Dining room:</strong> Creates a whimsical, food themed atmosphere</li>
         <li><strong>Breakfast nook:</strong> Perfect for morning vibes</li>
         <li><strong>Home office:</strong> Adds personality and sparks joy during work hours</li>
-        <li><strong>Playroom:</strong> Kid-friendly decor that won't get eaten</li>
-        <li><strong>Photo walls at home:</strong> Eye-catching backdrop for family photos and entertaining</li>
+        <li><strong>Playroom:</strong> Kid friendly decor that won't get eaten</li>
+        <li><strong>Photo walls at home:</strong> Eye catching backdrop for family photos and entertaining</li>
         <li><strong>Content creator backdrops:</strong> Perfect for food, lifestyle, and dopamine decor content from home</li>
       </ul>
 
@@ -255,15 +264,15 @@ export function CookieWallArtCollectorsContent() {
       </p>
 
       <ul>
-        <li><strong>Single 14-inch cookies:</strong> $90-$115</li>
-        <li><strong>Jumbo 16-inch cookies:</strong> $100-$115</li>
-        <li><strong>Cookie pairs and sets:</strong> $175-$225</li>
+        <li><strong>Single 14 inch cookies:</strong> $90 to $115</li>
+        <li><strong>Jumbo 16 inch cookies:</strong> $100 to $115</li>
+        <li><strong>Cookie pairs and sets:</strong> $175 to $225</li>
         <li><strong>Statement pieces (ice cream sandwiches):</strong> $220</li>
       </ul>
 
       <p>
         Compare this to commercial fiberglass food props used in restaurants and displays, which run 
-        <strong>$350-$500+</strong> and are much heavier. Handmade cookie wall art offers better value, 
+        <strong>$350 to $500+</strong> and are much heavier. Handmade cookie wall art offers better value, 
         lighter weight, and the unique character of being made by an individual artist.
       </p>
 
@@ -274,15 +283,15 @@ export function CookieWallArtCollectorsContent() {
       <h2>Why Collectors Choose Handmade Cookie Wall Art</h2>
 
       <p>
-        What makes handmade sugar cookie wall sculptures different from mass-produced food props?
+        What makes handmade sugar cookie wall sculptures different from mass produced food props?
       </p>
 
       <ul>
-        <li><strong>Artistic character:</strong> Each piece has subtle variations — no two are identical</li>
-        <li><strong>Lightweight:</strong> 2-4 lbs vs. 10+ lbs for fiberglass props</li>
-        <li><strong>Affordable:</strong> $90-$225 vs. $350+ for commercial props</li>
+        <li><strong>Artistic character:</strong> Each piece has subtle variations, and no two are identical</li>
+        <li><strong>Lightweight:</strong> 2 to 4 lbs vs. 10+ lbs for fiberglass props</li>
+        <li><strong>Affordable:</strong> $90 to $225 vs. $350+ for commercial props</li>
         <li><strong>Custom options:</strong> <Link href="/custom/">Commission custom colors and designs</Link></li>
-        <li><strong>Made-to-order:</strong> Your piece is made fresh for you, not pulled from warehouse stock</li>
+        <li><strong>Made to order:</strong> Your piece is made fresh for you, not pulled from warehouse stock</li>
         <li><strong>Supporting artists:</strong> You're supporting an independent creator, not a factory</li>
       </ul>
 
@@ -290,15 +299,15 @@ export function CookieWallArtCollectorsContent() {
 
       <h3>Is cookie wall art edible?</h3>
       <p>
-        No. Cookie wall art is made from spray foam and acrylic paint — it's purely decorative. The term 
+        No. Cookie wall art is made from spray foam and acrylic paint, so it's purely decorative. The term 
         "cookie art" can also refer to edible decorated cookies, so context matters. If it's designed to 
         hang on your wall, it's not edible.
       </p>
 
       <h3>How do I hang cookie wall art?</h3>
       <p>
-        Most handmade cookie wall art comes with a <strong>built-in wall hanger</strong>. Because they're 
-        lightweight (2-4 lbs), they hang easily on a standard picture hook or nail. See our complete guide: 
+        Most handmade cookie wall art comes with a <strong>attached wall hanger</strong>. Because they're 
+        lightweight (2 to 4 lbs), they hang easily on a standard picture hook or nail. See our complete guide: 
         <Link href="/blog/how-to-hang-jumbo-cookie-wall-art/">How to Hang Cookie Art</Link>.
       </p>
 
@@ -327,12 +336,12 @@ export function CookieWallArtCollectorsContent() {
       <p>
         Ready to add faux cookie decor to your home? Browse the full <Link href="/wall-art/">cookie wall 
         art collection</Link> or explore the <Link href="/catalogue/">complete catalogue</Link> to find 
-        your first (or next) piece. Wondering whether to DIY or buy ready-made? Our <Link href="/blog/faux-cookie-wall-decor-ready-made-vs-diy/">faux 
+        your first (or next) piece. Wondering whether to DIY or buy ready made? Our <Link href="/blog/faux-cookie-wall-decor-ready-made-vs-diy/">faux 
         cookie wall decor guide</Link> breaks it down.
       </p>
 
       <p>
-        Want something one-of-a-kind? <Link href="/custom/">Commission a custom sugar cookie wall sculpture</Link> 
+        Want something one of a kind? <Link href="/custom/">Commission a custom sugar cookie wall sculpture</Link> 
         in any color or design you can imagine. Every piece is handmade in Daytona Beach, ships in 14 days, 
         with free U.S. shipping.
       </p>

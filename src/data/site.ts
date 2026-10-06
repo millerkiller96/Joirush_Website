@@ -1,11 +1,11 @@
 export const site = {
   name: "JOIRUSH",
-  tagline: "Cookie art by cookie artist Erynn — sugar cookie wall sculptures & faux food wall art",
+  tagline: "Cookie art by cookie artist Erynn: sugar cookie wall sculptures & faux food wall art",
   studioLine: "Joi Rush by EBABYxo",
   location: "Daytona Beach, Florida",
   shipsFrom: "Daytona Beach, FL",
   shippingTime: "14 days",
-  shippingNote: "14-day handmade production & shipping",
+  shippingNote: "14 day handmade production & shipping",
   artist: "Erynn",
   artistRole: "Cookie Artist",
   instagram: "https://www.instagram.com/joirushshop",

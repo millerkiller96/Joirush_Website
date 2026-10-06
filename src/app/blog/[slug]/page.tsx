@@ -140,7 +140,7 @@ function ArticleJsonLd({ post }: { post: NonNullable<ReturnType<typeof getBlogPo
 }
 
 const categoryLabels: Record<string, string> = {
-  "how-to": "How-To Guide",
+  "how-to": "How To Guide",
   inspiration: "Inspiration",
   "gift-guide": "Gift Guide",
   "product-story": "Product Story",

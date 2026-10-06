@@ -19,15 +19,15 @@ export function FauxCookieWallDecorSchema() {
         name: "Can I make a DIY giant faux cookie at home?",
         acceptedAnswer: {
           "@type": "Answer",
-          text: "Yes, DIY tutorials exist using foam board, paper mache, or salt dough. However, DIY versions typically lack the realistic depth, texture, and durability of professional spray-foam sculptures. DIY projects work for temporary crafts but often don't achieve the 'is that real?' effect of handmade cookie art.",
+          text: "Yes, DIY tutorials exist using foam board, paper mache, or salt dough. However, DIY versions typically lack the realistic depth, texture, and durability of professional spray foam sculptures. DIY projects work for temporary crafts but often don't achieve the 'is that real?' effect of handmade cookie art.",
         },
       },
       {
         "@type": "Question",
-        name: "What's the difference between DIY and ready-made faux cookie wall art?",
+        name: "What's the difference between DIY and ready made faux cookie wall art?",
         acceptedAnswer: {
           "@type": "Answer",
-          text: "DIY faux cookies use flat materials like foam board or salt dough, resulting in thinner pieces with less realistic texture. Ready-made spray-foam cookie sculptures from artists like JOIRUSH have 3D depth (1-2 inches thick), realistic baked-cookie texture, professional acrylic finish, and built-in wall hangers — all weighing just 2-4 lbs.",
+          text: "DIY faux cookies use flat materials like foam board or salt dough, resulting in thinner pieces with less realistic texture. Ready made spray foam cookie sculptures from artists like JOIRUSH have 3D depth (1 to 2 inches thick), realistic baked cookie texture, professional acrylic finish, and attached wall hangers, all weighing just 2 to 4 lbs.",
         },
       },
       {
@@ -35,15 +35,15 @@ export function FauxCookieWallDecorSchema() {
         name: "How heavy is a faux cookie wall sculpture?",
         acceptedAnswer: {
           "@type": "Answer",
-          text: "Handmade spray-foam cookie sculptures weigh 2-4 lbs, making them lightweight enough to hang on a single nail. DIY versions using salt dough or heavy materials can weigh significantly more and may require special mounting hardware.",
+          text: "Handmade spray foam cookie sculptures weigh 2 to 4 lbs, making them lightweight enough to hang on a single nail. DIY versions using salt dough or heavy materials can weigh significantly more and may require special mounting hardware.",
         },
       },
       {
         "@type": "Question",
-        name: "Where can I buy ready-made faux cookie wall decor?",
+        name: "Where can I buy ready made faux cookie wall decor?",
         acceptedAnswer: {
           "@type": "Answer",
-          text: "JOIRUSH offers handmade faux cookie wall sculptures created by cookie artist Erynn. Each piece is crafted from spray foam and acrylic paint, ships from Daytona Beach, FL within 14 days, and includes free U.S. shipping. Prices range from $90-$225.",
+          text: "JOIRUSH offers handmade faux cookie wall sculptures created by cookie artist Erynn. Each piece is crafted from spray foam and acrylic paint, ships from Daytona Beach, FL within 14 days, and includes free U.S. shipping. Prices range from $90 to $225.",
         },
       },
     ],
@@ -52,8 +52,8 @@ export function FauxCookieWallDecorSchema() {
   const articleSchema = {
     "@context": "https://schema.org",
     "@type": "Article",
-    headline: "Faux Cookie Wall Decor: Ready-Made Sculptures vs DIY Giant Cookies",
-    description: "Comparing DIY faux cookie projects to handmade spray-foam sugar cookie wall sculptures. Learn about weight, texture, durability, and why collectors choose ready-made cookie art.",
+    headline: "Faux Cookie Wall Decor: Ready Made Sculptures vs DIY Giant Cookies",
+    description: "Comparing DIY faux cookie projects to handmade spray foam sugar cookie wall sculptures. Learn about weight, texture, durability, and why collectors choose ready made cookie art.",
     author: {
       "@type": "Person",
       name: "Erynn",
@@ -88,27 +88,34 @@ export function FauxCookieWallDecorContent() {
       <p>
         If you've been searching for <strong>faux cookie wall decor</strong> or <strong>giant faux cookie</strong> ideas, 
         you've probably found two paths: DIY tutorials showing how to make your own oversized cookie from foam board 
-        or salt dough, and ready-made <strong>sugar cookie wall sculptures</strong> from artists who specialize in 
+        or salt dough, and ready made <strong>sugar cookie wall sculptures</strong> from artists who specialize in 
         realistic faux food wall art.
       </p>
 
       <p>
-        Both options can put a jumbo cookie on your wall. But the results — in terms of realism, durability, weight, 
-        and that all-important "is that real?" reaction — are very different. This guide breaks down DIY vs ready-made
+        Both options can put a jumbo cookie on your wall. But the results are very different in realism, durability, weight, and that all important "is that real?" reaction. This guide breaks down DIY vs ready made
         <strong> faux cookie wall decor</strong> so you can decide which route is right for your home.
-      </p>
+      </p>      <div className="key-takeaways">
+        <p>Key takeaways</p>
+        <ul>
+          <li>DIY faux cookies are cheap and fun, but usually look flat and read as crafts.</li>
+          <li>Ready made spray foam sculptures have 1 to 2 inches of real depth and baked cookie texture.</li>
+          <li>Professional pieces weigh 2 to 4 lbs and arrive with a hanger, ready for one nail.</li>
+          <li>If you want guests to ask "is that real?", ready made is the path.</li>
+        </ul>
+      </div>
 
       <h2>What is Faux Cookie Wall Decor?</h2>
 
       <p>
         <strong>Faux cookie wall decor</strong> is any decorative piece designed to look like an oversized, realistic 
         cookie but isn't edible. Unlike decorated sugar cookies with royal icing (which are meant to be eaten), faux 
-        cookie decor is permanent wall art — the kind of statement piece that makes guests stop mid-conversation.
+        cookie decor is permanent wall art, the kind of statement piece that makes guests stop mid conversation.
       </p>
 
       <p>
         The category includes everything from DIY craft projects to professional <Link href="/blog/what-is-cookie-art-sugar-cookie-wall-sculptures-explained/">cookie 
-        art sculptures</Link> made by artists. What separates hobby crafts from collector-quality pieces usually comes 
+        art sculptures</Link> made by artists. What separates hobby crafts from collector quality pieces usually comes 
         down to materials, technique, and the level of realism achieved.
       </p>
 
@@ -128,7 +135,7 @@ export function FauxCookieWallDecorContent() {
 
       <p>
         These methods work for temporary party decor, photo backdrops, or kids' craft projects. The materials are 
-        inexpensive — often under $20 total — and the projects can be fun weekend activities.
+        inexpensive (often under $20 total), and the projects can be fun weekend activities.
       </p>
 
       <h3>Where DIY Faux Cookies Fall Short</h3>
@@ -139,73 +146,73 @@ export function FauxCookieWallDecorContent() {
       </p>
 
       <ul>
-        <li><strong>Flat appearance:</strong> Foam board and paper mache produce thin, 2D-looking results — missing 
+        <li><strong>Flat appearance:</strong> Foam board and paper mache produce thin, flat looking results, missing 
         the thick, craggy texture of a real baked cookie</li>
         <li><strong>Weight issues:</strong> Salt dough cookies can be surprisingly heavy (5+ lbs), requiring special 
         mounting hardware</li>
         <li><strong>Durability concerns:</strong> Salt dough is brittle and can crack; paper mache dents easily; 
         foam board warps over time</li>
-        <li><strong>Paint limitations:</strong> Achieving realistic golden-brown gradients, glossy chocolate chips, 
+        <li><strong>Paint limitations:</strong> Achieving realistic golden brown gradients, glossy chocolate chips, 
         and the organic variations of a real cookie is difficult without professional techniques</li>
-        <li><strong>No hanging hardware:</strong> DIY projects rarely include built-in wall hangers, adding another 
+        <li><strong>No hanging hardware:</strong> DIY projects rarely include attached wall hangers, adding another 
         step and potential weak point</li>
       </ul>
 
-      <h2>Ready-Made Faux Cookie Wall Sculptures: The Professional Option</h2>
+      <h2>Ready Made Faux Cookie Wall Sculptures: The Professional Option</h2>
 
       <p>
-        <Link href="/wall-art/">Ready-made cookie wall sculptures</Link> from artists who specialize in <strong>faux 
+        <Link href="/wall-art/">Ready made cookie wall sculptures</Link> from artists who specialize in <strong>faux 
         food wall art</strong> take a completely different approach. At JOIRUSH, every <strong>sugar cookie wall 
         sculpture</strong> is handmade using professional materials and techniques:
       </p>
 
       <ul>
-        <li><strong>Spray foam construction:</strong> Creates realistic 1-2 inch depth with the thick, organic shape 
-        of a real baked cookie — learn more about <Link href="/blog/spray-foam-cookie-wall-art-how-theyre-made/">how 
+        <li><strong>Spray foam construction:</strong> Creates realistic 1 to 2 inch depth with the thick, organic shape 
+        of a real baked cookie. Learn more about <Link href="/blog/spray-foam-cookie-wall-art-how-theyre-made/">how 
         spray foam cookie wall art is made</Link></li>
-        <li><strong>Carved texture:</strong> Each piece is hand-sculpted to replicate the craggy edges, bubbles, 
+        <li><strong>Carved texture:</strong> Each piece is hand sculpted to replicate the craggy edges, bubbles, 
         and natural spread of homemade cookies</li>
         <li><strong>Acrylic paint finish:</strong> Multiple layers of professional paint create realistic 
-        golden-brown tones, darker edges, and glossy chocolate chip details</li>
-        <li><strong>Lightweight design:</strong> 2-4 lbs total — hangs on a single nail or picture hook</li>
-        <li><strong>Built-in wall hanger:</strong> Ready to hang immediately</li>
+        golden brown tones, darker edges, and glossy chocolate chip details</li>
+        <li><strong>Lightweight design:</strong> 2 to 4 lbs total, so it hangs on a single nail or picture hook</li>
+        <li><strong>Attached wall hanger:</strong> Ready to hang immediately</li>
         <li><strong>Sealed for durability:</strong> Protected against dust, moisture, and UV fading</li>
       </ul>
 
-      <h2>DIY vs Ready-Made: Side-by-Side Comparison</h2>
+      <h2>DIY vs Ready Made: Side by Side Comparison</h2>
 
       <table>
         <thead>
           <tr>
             <th>Feature</th>
             <th>DIY Faux Cookie</th>
-            <th>Ready-Made Cookie Sculpture</th>
+            <th>Ready Made Cookie Sculpture</th>
           </tr>
         </thead>
         <tbody>
           <tr>
             <td>Cost</td>
-            <td>$10-$30 materials</td>
-            <td>$90-$225</td>
+            <td>$10 to $30 materials</td>
+            <td>$90 to $225</td>
           </tr>
           <tr>
             <td>Time investment</td>
-            <td>4-8+ hours (plus drying time)</td>
+            <td>4 to 8+ hours (plus drying time)</td>
             <td>Ships in 14 days</td>
           </tr>
           <tr>
             <td>Depth/dimension</td>
             <td>Flat to 0.5 inches</td>
-            <td>1-2 inches (realistic thickness)</td>
+            <td>1 to 2 inches (realistic thickness)</td>
           </tr>
           <tr>
             <td>Weight</td>
             <td>Varies widely (salt dough: 5+ lbs)</td>
-            <td>2-4 lbs (spray foam)</td>
+            <td>2 to 4 lbs (spray foam)</td>
           </tr>
           <tr>
             <td>Realism</td>
-            <td>Craft-project quality</td>
+            <td>Craft project quality</td>
             <td>"Is that real?" quality</td>
           </tr>
           <tr>
@@ -216,28 +223,30 @@ export function FauxCookieWallDecorContent() {
           <tr>
             <td>Hanging hardware</td>
             <td>DIY solution needed</td>
-            <td>Built-in wall hanger</td>
+            <td>Attached wall hanger</td>
           </tr>
           <tr>
             <td>Skill required</td>
             <td>Moderate to high for good results</td>
-            <td>None — arrives ready to hang</td>
+            <td>None, arrives ready to hang</td>
           </tr>
         </tbody>
-      </table>
+      </table>      <aside className="pull-quote">
+        DIY projects, even good ones, usually read as crafts. A professional sculpture gets the "wait, is that real?" reaction.
+      </aside>
 
-      <h2>Why Collectors Choose Ready-Made Cookie Art</h2>
+      <h2>Why Collectors Choose Ready Made Cookie Art</h2>
 
       <p>
         For <Link href="/blog/cookie-wall-art-for-home-collectors/">home collectors</Link> who want <strong>faux 
-        cookie wall decor</strong> as a permanent part of their space, the ready-made option offers clear advantages:
+        cookie wall decor</strong> as a permanent part of their space, the ready made option offers clear advantages:
       </p>
 
       <h3>1. The "Is That Real?" Factor</h3>
 
       <p>
-        The whole point of <strong>oversized cookie wall art</strong> is to make people do a double-take. DIY 
-        projects — even good ones — usually read as "crafts." Professional cookie sculptures trigger genuine 
+        The whole point of <strong>oversized cookie wall art</strong> is to make people do a double take. DIY 
+        projects, even good ones, usually read as "crafts." Professional cookie sculptures trigger genuine 
         confusion: "Wait, is that an actual giant cookie?" That moment of delighted bewilderment is what makes 
         the piece a conversation starter.
       </p>
@@ -246,16 +255,20 @@ export function FauxCookieWallDecorContent() {
 
       <p>
         A real chocolate chip cookie isn't flat. It has thickness, craggy edges, melty chips that catch the light. 
-        Spray-foam sculptures capture this dimensionality in a way that foam board cutouts simply can't. When you 
+        Spray foam sculptures capture this dimensionality in a way that foam board cutouts simply can't.
+      </p>
+
+      <p>
+        When you 
         look at a <Link href="/product/jumbo-chocolate-chip-cookie/">jumbo chocolate chip cookie sculpture</Link> 
-        from the side, you see the same thick profile as a homemade cookie — not a painted board.
+        from the side, you see the same thick profile as a homemade cookie, not a painted board.
       </p>
 
       <h3>3. Lightweight for Easy Hanging</h3>
 
       <p>
-        DIY salt dough cookies get heavy fast — 5+ pounds is common for a 14-inch piece. That requires anchors, 
-        studs, or special mounting hardware. Professional spray-foam sculptures weigh just 2-4 lbs, hanging 
+        DIY salt dough cookies get heavy fast. 5+ pounds is common for a 14 inch piece. That requires anchors, 
+        studs, or special mounting hardware. Professional spray foam sculptures weigh just 2 to 4 lbs, hanging 
         easily on a single nail. See our complete guide: <Link href="/blog/how-to-hang-jumbo-cookie-wall-art/">How 
         to Hang Cookie Wall Art</Link>.
       </p>
@@ -263,7 +276,7 @@ export function FauxCookieWallDecorContent() {
       <h3>4. Built for Years of Display</h3>
 
       <p>
-        Craft projects are often "good enough for now." Collector-quality cookie sculptures are sealed and 
+        Craft projects are often "good enough for now." Collector quality cookie sculptures are sealed and 
         finished to last for years without cracking, warping, or fading. The acrylic paint is protected; the 
         spray foam is stable; the piece is designed for permanent display.
       </p>
@@ -271,9 +284,9 @@ export function FauxCookieWallDecorContent() {
       <h3>5. Time Value</h3>
 
       <p>
-        A DIY giant cookie might save $70-$150 compared to a professional piece — but it costs 4-8+ hours of 
+        A DIY giant cookie might save $70 to $150 compared to a professional piece, but it costs 4 to 8+ hours of 
         work, plus waiting for paint and sealant to dry. For collectors who want the result more than the 
-        project, ordering a ready-made sculpture is the obvious choice.
+        project, ordering a ready made sculpture is the obvious choice.
       </p>
 
       <h2>When DIY Faux Cookies Make Sense</h2>
@@ -292,10 +305,10 @@ export function FauxCookieWallDecorContent() {
 
       <p>
         But if you want <strong>faux cookie wall decor</strong> that looks real, lasts for years, and creates 
-        genuine reactions from guests — ready-made is the path.
+        genuine reactions from guests, ready made is the path.
       </p>
 
-      <h2>Popular Ready-Made Faux Cookie Styles</h2>
+      <h2>Popular Ready Made Faux Cookie Styles</h2>
 
       <p>
         Looking for <strong>oversized cookie wall art</strong> that's ready to hang? Here are the most popular 
@@ -303,13 +316,13 @@ export function FauxCookieWallDecorContent() {
       </p>
 
       <ul>
-        <li><Link href="/product/jumbo-chocolate-chip-cookie/">Jumbo Chocolate Chip Cookie</Link> — The classic, 
-        best-selling cookie sculpture with realistic golden dough and glossy chips</li>
-        <li><Link href="/product/jumbo-mm-cookie-set/">M&M Cookie Wall Art</Link> — Colorful candy pieces add 
+        <li><Link href="/product/jumbo-chocolate-chip-cookie/">Jumbo Chocolate Chip Cookie</Link>: the classic, 
+        bestselling cookie sculpture with realistic golden dough and glossy chips</li>
+        <li><Link href="/product/jumbo-mm-cookie-set/">M&M Cookie Wall Art</Link>: colorful candy pieces add 
         rainbow pop to any space</li>
-        <li><Link href="/product/jumbo-pastel-mm-cookie/">Pastel M&M Cookie</Link> — Soft colors perfect for 
+        <li><Link href="/product/jumbo-pastel-mm-cookie/">Pastel M&M Cookie</Link>: soft colors perfect for 
         nurseries and softer aesthetics</li>
-        <li><Link href="/product/cookie-ice-cream-sandwich/">Cookie Ice Cream Sandwich</Link> — The ultimate 
+        <li><Link href="/product/cookie-ice-cream-sandwich/">Cookie Ice Cream Sandwich</Link>: the ultimate 
         statement piece for maximalist collectors</li>
       </ul>
 
@@ -322,14 +335,14 @@ export function FauxCookieWallDecorContent() {
 
       <h3>Is faux cookie wall decor edible?</h3>
       <p>
-        No. Faux cookie wall decor is made from spray foam and acrylic paint — it's purely decorative. The term 
+        No. Faux cookie wall decor is made from spray foam and acrylic paint, so it's purely decorative. The term 
         "faux" specifically indicates that these are imitation cookies designed for display, not consumption.
       </p>
 
       <h3>How do I hang a faux cookie sculpture?</h3>
       <p>
-        Ready-made cookie sculptures from JOIRUSH include built-in wall hangers. Because they're lightweight 
-        (2-4 lbs), they hang on a single nail or picture hook — no anchors or special hardware needed.
+        Ready made cookie sculptures from JOIRUSH include attached wall hangers. Because they're lightweight 
+        (2 to 4 lbs), they hang on a single nail or picture hook, no anchors or special hardware needed.
       </p>
 
       <h3>Will a faux cookie sculpture fade over time?</h3>
@@ -349,7 +362,7 @@ export function FauxCookieWallDecorContent() {
 
       <p>
         If you've been considering a DIY <strong>giant faux cookie</strong> but want professional results without 
-        the craft project, explore the ready-made option:
+        the craft project, explore the ready made option:
       </p>
 
       <ul>
@@ -361,7 +374,7 @@ export function FauxCookieWallDecorContent() {
 
       <p>
         Every piece is handmade, ships free in the U.S., and arrives ready to hang. The only question: which 
-        cookie will stop your guests mid-sentence first?
+        cookie will stop your guests mid sentence first?
       </p>
     </>
   );

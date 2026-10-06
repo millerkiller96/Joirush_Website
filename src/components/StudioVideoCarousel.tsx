@@ -128,7 +128,7 @@ export function StudioVideoCarousel() {
               See the Magic in Motion
             </h2>
             <p className="mt-4 text-lg text-chocolate-mid">
-              Behind-the-scenes sculpting, finished pieces, and happy collectors.
+              Behind the scenes sculpting, finished pieces, and happy collectors.
             </p>
           </div>
           <a

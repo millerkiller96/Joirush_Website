@@ -30,7 +30,7 @@ export function DopamineDecorSchema() {
         name: "How do I create a dopamine decor kitchen?",
         acceptedAnswer: {
           "@type": "Answer",
-          text: "Start with one statement piece that makes you happy — like jumbo cookie wall art — and build around it. Add colorful accents, playful kitchen gadgets, and don't be afraid of bold colors. The key is choosing things that bring YOU joy, not what's trendy.",
+          text: "Start with one statement piece that makes you happy, like jumbo cookie wall art, and build around it. Add colorful accents, playful kitchen gadgets, and don't be afraid of bold colors. The key is choosing things that bring YOU joy, not what's trendy.",
         },
       },
       {
@@ -38,7 +38,7 @@ export function DopamineDecorSchema() {
         name: "What is kitschy kitchen style?",
         acceptedAnswer: {
           "@type": "Answer",
-          text: "Kitschy kitchen style embraces fun, whimsical, and sometimes over-the-top decor that doesn't take itself too seriously. Think vintage diner vibes, faux food art, colorful appliances, and playful wall decor. It's about personality over perfection.",
+          text: "Kitschy kitchen style embraces fun, whimsical, and sometimes over the top decor that doesn't take itself too seriously. Think vintage diner vibes, faux food art, colorful appliances, and playful wall decor. It's about personality over perfection.",
         },
       },
     ],
@@ -60,7 +60,7 @@ export function DopamineDecorContent() {
       <p>
         There's a reason the <strong>dopamine decor</strong> trend has taken over TikTok and 
         Pinterest feeds everywhere: we're tired of sterile, minimalist spaces that look like 
-        stock photos. We want homes — and especially kitchens — that make us <em>feel</em> something. 
+        stock photos. We want homes (and especially kitchens) that make us <em>feel</em> something. 
         Something warm. Something nostalgic. Something that makes us smile before we've even had 
         our morning coffee.
       </p>
@@ -69,8 +69,16 @@ export function DopamineDecorContent() {
         Enter the <strong>dessert gallery wall</strong>: a curated collection of faux food art, 
         particularly <Link href="/wall-art/">jumbo cookie sculptures</Link>, arranged to create 
         maximum visual impact and emotional response. It's <strong>kitschy kitchen wall art</strong> done 
-        right — playful but intentional, colorful but cohesive.
-      </p>
+        right: playful but intentional, colorful but cohesive.
+      </p>      <div className="key-takeaways">
+        <p>Key takeaways</p>
+        <ul>
+          <li>Dopamine decor means filling your home with things that genuinely make you happy.</li>
+          <li>Kitchens are the perfect place for a dessert gallery wall.</li>
+          <li>Start with one statement piece, like a jumbo cookie, and build around it.</li>
+          <li>Mix sizes, flavors, and colors so the wall feels playful but intentional.</li>
+        </ul>
+      </div>
 
       <h2>What Is Dopamine Decor, Really?</h2>
 
@@ -82,7 +90,7 @@ export function DopamineDecorContent() {
       </p>
 
       <p>
-        For many of us, that means nostalgia — the visual language of childhood treats, Saturday 
+        For many of us, that means nostalgia, the visual language of childhood treats, Saturday 
         morning cartoons, and the bakery case at your favorite grocery store. It's why oversized 
         cookie sculptures and faux food art have become unlikely stars of the <strong>dopamine 
         decor kitchen</strong> movement.
@@ -105,7 +113,11 @@ export function DopamineDecorContent() {
 
       <p>
         A <strong>dopamine decor kitchen</strong> flips that script. It says: yes, this is where 
-        I cook and eat, but it's also where I want to feel creative, energized, and happy. The 
+        I cook and eat, but it's also where I want to feel creative, energized, and happy.
+      </p>
+
+      <p>
+        The 
         kitchen is where we gather, where we host, where we start and end our days. It deserves 
         to be decorated with as much intention as the living room.
       </p>
@@ -126,8 +138,8 @@ export function DopamineDecorContent() {
       <h3>Start With a Statement Piece</h3>
 
       <p>
-        Every great gallery wall has a focal point — one piece that anchors the whole arrangement. 
-        For a dessert theme, that's usually your largest or most eye-catching piece. The 
+        Every great gallery wall has a focal point: one piece that anchors the whole arrangement. 
+        For a dessert theme, that's usually your largest or most eye catching piece. The 
         <Link href="/product/cookie-ice-cream-sandwich/"> jumbo cookie ice cream sandwich</Link> is 
         a natural showstopper, or try the 
         <Link href="/product/hot-pink-mm-cookie/"> hot pink M&M cookie</Link> for maximum 
@@ -141,9 +153,9 @@ export function DopamineDecorContent() {
       </p>
 
       <ul>
-        <li>Mix sizes — pair a 16-inch jumbo cookie with smaller pieces</li>
-        <li>Vary the "flavors" — chocolate chip next to candy-studded next to seasonal</li>
-        <li>Consider color flow — pastel pieces next to bold ones creates visual rhythm</li>
+        <li>Mix sizes: pair a 16 inch jumbo cookie with smaller pieces</li>
+        <li>Vary the "flavors": chocolate chip next to candy studded next to seasonal</li>
+        <li>Consider color flow: pastel pieces next to bold ones creates visual rhythm</li>
         <li>The <Link href="/product/jumbo-mm-cookie-set/">M&M cookie set</Link> gives you two 
         matched pieces designed to display together</li>
       </ul>
@@ -155,7 +167,7 @@ export function DopamineDecorContent() {
       </p>
 
       <p>
-        <strong>Symmetrical:</strong> Evenly spaced, mirror-image arrangement. Works beautifully 
+        <strong>Symmetrical:</strong> Evenly spaced, mirror image arrangement. Works beautifully 
         with cookie sets or pairs. Creates a more formal, intentional look.
       </p>
 
@@ -181,16 +193,16 @@ export function DopamineDecorContent() {
 
       <h3>The Classic Palette</h3>
       <p>
-        Stick to warm neutrals and browns — the natural colors of baked goods. 
+        Stick to warm neutrals and browns, the natural colors of baked goods. 
         <Link href="/product/jumbo-chocolate-chip-cookie/">Chocolate chip</Link>, 
         <Link href="/product/giant-peanut-butter-cookie/"> peanut butter</Link>, and 
         <Link href="/product/giant-double-chocolate-cookie/"> double chocolate</Link> cookies 
-        create a cohesive, bakery-case effect. Works in both modern and traditional kitchens.
+        create a cohesive, bakery case effect. Works in both modern and traditional kitchens.
       </p>
 
       <h3>The Candy Pop</h3>
       <p>
-        Go full dopamine with candy-colored pieces. The 
+        Go full dopamine with candy colored pieces. The 
         <Link href="/product/rainbow-candy-cookie/"> rainbow candy cookie</Link>, 
         <Link href="/product/jumbo-pastel-mm-cookie/"> pastel M&M</Link>, and 
         <Link href="/product/hot-pink-mm-cookie/"> hot pink versions</Link> bring 
@@ -215,12 +227,12 @@ export function DopamineDecorContent() {
         One oversized piece on an otherwise blank wall creates a focal point without commitment 
         to a full gallery. The 
         <Link href="/product/cookie-ice-cream-sandwich/"> ice cream sandwich</Link> is perfect 
-        for this — it's substantial enough to stand alone.
+        for this. It's substantial enough to stand alone.
       </p>
 
       <h3>The Surprise Spot</h3>
       <p>
-        Hang a cookie where people don't expect it — inside a pantry, at the end of a hallway 
+        Hang a cookie where people don't expect it: inside a pantry, at the end of a hallway 
         visible from the kitchen, or in a breakfast nook. The unexpected placement multiplies 
         the delight factor.
       </p>
@@ -252,13 +264,13 @@ export function DopamineDecorContent() {
 
       <h3>Eclectic/Maximalist</h3>
       <p>
-        You're already committed to more-is-more. Cookie sculptures fit right into collections 
+        You're already committed to more is more. Cookie sculptures fit right into collections 
         of vintage signs, botanical prints, and colorful dishware.
       </p>
 
-      <h3>Mid-Century Modern</h3>
+      <h3>Midcentury Modern</h3>
       <p>
-        The playful, pop-art quality of candy cookies complements mid-century's love of bold 
+        The playful, pop art quality of candy cookies complements midcentury's love of bold 
         colors and organic shapes.
       </p>
 
@@ -266,7 +278,7 @@ export function DopamineDecorContent() {
 
       <p>
         There's something deeper happening when we hang faux cookies on our walls. Food imagery 
-        — especially desserts — triggers powerful associations:
+        (especially desserts) triggers powerful associations:
       </p>
 
       <ul>
@@ -277,7 +289,7 @@ export function DopamineDecorContent() {
       </ul>
 
       <p>
-        A <strong>dopamine decor</strong> space doesn't just look good — it makes you feel 
+        A <strong>dopamine decor</strong> space doesn't just look good. It makes you feel 
         something every time you enter. That's the real goal.
       </p>
 
@@ -288,21 +300,20 @@ export function DopamineDecorContent() {
         <strong>Dopamine decor</strong> is an interior design trend focused on surrounding yourself 
         with objects that spark joy and trigger positive emotional responses. It embraces bold 
         colors, playful shapes, nostalgic objects, and maximalist arrangements that make you smile 
-        every time you see them. It's the opposite of sterile minimalism — intentional maximalism 
+        every time you see them. It's the opposite of sterile minimalism: intentional maximalism 
         that prioritizes happiness over trend.
       </p>
 
       <h3>How do I create a dopamine decor kitchen?</h3>
       <p>
-        Start with one statement piece that makes you genuinely happy — like 
-        <Link href="/wall-art/"> jumbo cookie wall art</Link> — and build around it. Add colorful 
+        Start with one statement piece that makes you genuinely happy, like <Link href="/wall-art/"> jumbo cookie wall art</Link>, and build around it. Add colorful 
         accents, playful kitchen gadgets, and don't be afraid of bold colors. The key is choosing 
         things that bring <em>you</em> joy, not what Instagram says you should like.
       </p>
 
       <h3>What is kitschy kitchen style?</h3>
       <p>
-        <strong>Kitschy kitchen style</strong> embraces fun, whimsical, and sometimes over-the-top 
+        <strong>Kitschy kitchen style</strong> embraces fun, whimsical, and sometimes over the top 
         decor that doesn't take itself too seriously. Think vintage diner vibes, <strong>faux food 
         art</strong>, colorful appliances, and playful wall decor. It's about personality over 
         perfection, joy over sophistication.
@@ -314,8 +325,12 @@ export function DopamineDecorContent() {
         Creating a <strong>dopamine decor kitchen</strong> starts with one piece that makes your 
         heart happy. Browse the full collection of <Link href="/wall-art/">handmade jumbo cookie 
         wall art</Link> to find your starting point, or <Link href="/custom/">request a custom 
-        piece</Link> in colors that match your existing decor. Every sculpture ships free within 
-        the US in 14 days — true handcraft artistry takes time. Ready to hang and ready to spark joy.
+        piece</Link> in colors that match your existing decor.
+      </p>
+
+      <p>
+        Every sculpture ships free within 
+        the US in 14 days, because true handcraft artistry takes time. Ready to hang and ready to spark joy.
       </p>
     </>
   );

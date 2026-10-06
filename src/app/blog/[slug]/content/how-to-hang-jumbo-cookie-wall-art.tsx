@@ -33,7 +33,7 @@ export function HowToHangSchema() {
       {
         "@type": "HowToStep",
         name: "Check the Weight",
-        text: "Most jumbo cookies weigh 2-4 lbs. Use a picture hook rated for at least double the weight of your piece for security.",
+        text: "Most jumbo cookies weigh 2 to 4 lbs. Use a picture hook rated for at least double the weight of your piece for security.",
         position: 2,
       },
       {
@@ -45,7 +45,7 @@ export function HowToHangSchema() {
       {
         "@type": "HowToStep",
         name: "Find the Hanger Height",
-        text: "Measure from the top of the cookie to where the built-in hanger sits on the back. Subtract this distance from your mark.",
+        text: "Measure from the top of the cookie to where the attached hanger sits on the back. Subtract this distance from your mark.",
         position: 4,
       },
       {
@@ -72,7 +72,7 @@ export function HowToHangSchema() {
         name: "How heavy is jumbo cookie wall art?",
         acceptedAnswer: {
           "@type": "Answer",
-          text: "Most handmade jumbo cookie sculptures weigh between 2-4 pounds, making them lightweight compared to commercial fiberglass props that can weigh 10+ pounds. This makes them easy to hang with standard picture hooks.",
+          text: "Most handmade jumbo cookie sculptures weigh between 2 and 4 pounds, making them lightweight compared to commercial fiberglass props that can weigh 10+ pounds. This makes them easy to hang with standard picture hooks.",
         },
       },
       {
@@ -80,7 +80,7 @@ export function HowToHangSchema() {
         name: "What type of hook do I need for faux food wall art?",
         acceptedAnswer: {
           "@type": "Answer",
-          text: "A standard picture hanging hook rated for 10-20 lbs works perfectly for most jumbo cookie wall art. For drywall without studs, use a hook with an anchor for extra security.",
+          text: "A standard picture hanging hook rated for 10 to 20 lbs works perfectly for most jumbo cookie wall art. For drywall without studs, use a hook with an anchor for extra security.",
         },
       },
       {
@@ -96,7 +96,7 @@ export function HowToHangSchema() {
         name: "How do I create a gallery wall with multiple cookie sculptures?",
         acceptedAnswer: {
           "@type": "Answer",
-          text: "Start by laying out your pieces on the floor to find an arrangement you love. Use painter's tape to mark positions on the wall before committing. Space cookies 3-6 inches apart for visual cohesion.",
+          text: "Start by laying out your pieces on the floor to find an arrangement you love. Use painter's tape to mark positions on the wall before committing. Space cookies 3 to 6 inches apart for visual cohesion.",
         },
       },
     ],
@@ -120,8 +120,12 @@ export function HowToHangContent() {
   return (
     <>
       <p>
-        So you've fallen in love with a piece of <strong>jumbo cookie wall art</strong> — a handmade, 
-        oversized faux food sculpture that looks good enough to eat. Now comes the fun part: getting 
+        So you've fallen in love with a piece of <strong>jumbo cookie wall art</strong>: a handmade, 
+        oversized faux food sculpture that looks good enough to eat.
+      </p>
+
+      <p>
+        Now comes the fun part: getting 
         it on your wall where everyone can admire it. Whether you're hanging a single statement piece 
         or creating an entire <strong>faux food wall art</strong> gallery, this guide has everything 
         you need.
@@ -130,9 +134,17 @@ export function HowToHangContent() {
       <p>
         Unlike heavy commercial food props that can weigh 10+ pounds and require serious hardware, 
         handmade cookie sculptures from artists like those at <Link href="/wall-art/">JOIRUSH</Link> are 
-        specifically designed to be lightweight and hangable — typically just 2-4 pounds. That means 
+        specifically designed to be lightweight and hangable, typically just 2 to 4 pounds. That means 
         no special anchors, no contractor visits, and no stress.
-      </p>
+      </p>      <div className="key-takeaways">
+        <p>Key takeaways</p>
+        <ul>
+          <li>Jumbo cookie sculptures weigh only 2 to 4 lbs, so one nail or picture hook is enough.</li>
+          <li>Hang the center at about 57 to 60 inches from the floor, a little higher in kitchens.</li>
+          <li>Use painter's tape to plan a gallery wall before you make any holes.</li>
+          <li>Keep pieces away from direct stove heat, grease, and harsh sunlight.</li>
+        </ul>
+      </div>
 
       <h2>Before You Start: What You'll Need</h2>
       
@@ -142,12 +154,12 @@ export function HowToHangContent() {
       </p>
 
       <ul>
-        <li><strong>Picture hanging hook or nail</strong> — rated for at least 10-20 lbs</li>
-        <li><strong>Hammer</strong> — for driving in the hook</li>
-        <li><strong>Level</strong> — nobody wants a crooked cookie</li>
-        <li><strong>Pencil</strong> — for marking your spot</li>
-        <li><strong>Measuring tape</strong> — for precise placement</li>
-        <li><strong>Stud finder</strong> (optional) — if you want extra security</li>
+        <li><strong>Picture hanging hook or nail:</strong> Rated for at least 10 to 20 lbs</li>
+        <li><strong>Hammer:</strong> For driving in the hook</li>
+        <li><strong>Level:</strong> Nobody wants a crooked cookie</li>
+        <li><strong>Pencil:</strong> For marking your spot</li>
+        <li><strong>Measuring tape:</strong> For precise placement</li>
+        <li><strong>Stud finder</strong> (optional), if you want extra security</li>
       </ul>
 
       <h2>Step 1: Choose the Perfect Location</h2>
@@ -160,8 +172,7 @@ export function HowToHangContent() {
       <ul>
         <li><strong>Lighting:</strong> Natural light brings out the realistic texture and paint details. 
         Avoid direct sunlight that could fade colors over time.</li>
-        <li><strong>Visibility:</strong> Think about where you and your guests will see it most — 
-        above a breakfast nook, in a hallway, or as a kitchen focal point.</li>
+        <li><strong>Visibility:</strong> Think about where you and your guests will see it most: above a breakfast nook, in a hallway, or as a kitchen focal point.</li>
         <li><strong>Conversation factor:</strong> These pieces are meant to spark joy and start 
         conversations. Put them somewhere people will naturally gather.</li>
       </ul>
@@ -170,7 +181,7 @@ export function HowToHangContent() {
         Popular spots for <strong>faux cookie sculptures</strong> include kitchens (of course), 
         dining rooms, breakfast nooks, content creator studios, and playrooms. 
         The <Link href="/product/jumbo-chocolate-chip-cookie/">classic chocolate chip cookie</Link> looks 
-        stunning against white or light-colored walls, while colorful 
+        stunning against white or light colored walls, while colorful 
         <Link href="/product/hot-pink-mm-cookie/"> M&M cookie versions</Link> pop against neutral backgrounds.
       </p>
 
@@ -179,12 +190,12 @@ export function HowToHangContent() {
       <p>
         One of the biggest advantages of handmade <strong>cookie wall art</strong> over commercial 
         fiberglass props is the weight difference. A typical JOIRUSH jumbo cookie weighs around 
-        2-4 lbs — light enough for a standard picture hook, sturdy enough to stay put.
+        2 to 4 lbs, light enough for a standard picture hook, sturdy enough to stay put.
       </p>
 
       <p>
         As a rule of thumb, use hardware rated for at least <strong>double</strong> the actual 
-        weight of your piece. So for a 3-pound cookie, a 10-lb rated hook gives you plenty of 
+        weight of your piece. So for a 3 pound cookie, a 10 lb rated hook gives you plenty of 
         margin for safety.
       </p>
 
@@ -204,21 +215,21 @@ export function HowToHangContent() {
 
       <p>
         <strong>Pro tip:</strong> For the most natural look, hang the center of your artwork at 
-        eye level — about 57-60 inches from the floor. In kitchens, you might go slightly higher 
+        eye level, about 57 to 60 inches from the floor. In kitchens, you might go slightly higher 
         to account for counters and cabinets.
       </p>
 
       <h2>Step 4: Find the Hanger Height</h2>
 
       <p>
-        Every JOIRUSH cookie comes with a <strong>built-in wall hanger</strong> on the back. You 
+        Every JOIRUSH cookie comes with a <strong>attached wall hanger</strong> on the back. You 
         need to know how far down from the top of the piece that hanger sits:
       </p>
 
       <ol>
-        <li>Turn your cookie over and find the hanger (usually a sawtooth hanger or D-ring)</li>
+        <li>Turn your cookie over and find the hanger (usually a sawtooth hanger or D ring)</li>
         <li>Measure from the very top of the cookie down to the hanger point</li>
-        <li>Subtract that distance from your wall mark — that's where your hook goes</li>
+        <li>Subtract that distance from your wall mark. That's where your hook goes</li>
       </ol>
 
       <p>
@@ -229,7 +240,7 @@ export function HowToHangContent() {
       <h2>Step 5: Install the Hook</h2>
 
       <p>
-        Now for the satisfying part — putting that hook in place:
+        Now for the satisfying part: putting that hook in place:
       </p>
 
       <ol>
@@ -244,14 +255,13 @@ export function HowToHangContent() {
       <p>
         The moment of truth! Carefully lift your <strong>jumbo cookie sculpture</strong> and hang it 
         on the hook. Use your level one more time to check the positioning. Step back, take a 
-        photo, and enjoy watching everyone do a double-take when they see it.
+        photo, and enjoy watching everyone do a double take when they see it.
       </p>
 
       <h2>Creating a Gallery Wall with Multiple Cookies</h2>
 
       <p>
-        One cookie is a statement. Multiple cookies? That's a <strong>dessert gallery wall</strong> — 
-        and it's one of the most impactful ways to display your collection.
+        One cookie is a statement. Multiple cookies? That's a <strong>dessert gallery wall</strong>, and it's one of the most impactful ways to display your collection.
       </p>
 
       <p>
@@ -264,8 +274,8 @@ export function HowToHangContent() {
         specifically designed to be displayed as a pair.</li>
         <li><strong>Consider color flow:</strong> Mix classic cookies with colorful candy versions 
         for visual interest, or stick to a monochromatic theme.</li>
-        <li><strong>Space them evenly:</strong> 3-6 inches between pieces creates cohesion without 
-        crowding. Larger gaps (8-12 inches) work for a more relaxed, organic feel.</li>
+        <li><strong>Space them evenly:</strong> 3 to 6 inches between pieces creates cohesion without 
+        crowding. Larger gaps (8 to 12 inches) work for a more relaxed, organic feel.</li>
         <li><strong>Use painter's tape:</strong> Cut out paper templates the size of each cookie and 
         tape them to the wall before committing to holes.</li>
       </ol>
@@ -278,7 +288,7 @@ export function HowToHangContent() {
         in mind:
       </p>
       <ul>
-        <li>Avoid hanging directly above the stove — heat and grease can affect the finish</li>
+        <li>Avoid hanging directly above the stove, since heat and grease can affect the finish</li>
         <li>Great spots: above the breakfast bar, beside the fridge, or on a blank wall visible 
         from the dining area</li>
         <li>The <Link href="/product/rainbow-candy-cookie/">rainbow candy cookie</Link> adds 
@@ -300,16 +310,16 @@ export function HowToHangContent() {
 
       <h3>How heavy is jumbo cookie wall art?</h3>
       <p>
-        Most handmade <strong>jumbo cookie sculptures</strong> weigh between 2-4 pounds, making 
+        Most handmade <strong>jumbo cookie sculptures</strong> weigh between 2 and 4 pounds, making 
         them lightweight compared to commercial fiberglass props that can weigh 10+ pounds. This 
-        makes them easy to hang with standard picture hooks — no professional installation needed.
+        makes them easy to hang with standard picture hooks, no professional installation needed.
       </p>
 
       <h3>What type of hook do I need for faux food wall art?</h3>
       <p>
-        A standard picture hanging hook rated for 10-20 lbs works perfectly for most 
+        A standard picture hanging hook rated for 10 to 20 lbs works perfectly for most 
         <strong>jumbo cookie wall art</strong>. For drywall without studs, use a hook with a 
-        built-in anchor for extra security. Command strips are not recommended for pieces over 
+        attached anchor for extra security. Command strips are not recommended for pieces over 
         2 pounds.
       </p>
 
@@ -324,7 +334,7 @@ export function HowToHangContent() {
       <p>
         Start by laying out your pieces on the floor to find an arrangement you love. Use painter's 
         tape or paper templates to mark positions on the wall before committing. Space 
-        <strong>faux cookie sculptures</strong> 3-6 inches apart for visual cohesion, and use a 
+        <strong>faux cookie sculptures</strong> 3 to 6 inches apart for visual cohesion, and use a 
         level to keep everything straight.
       </p>
 
@@ -334,8 +344,12 @@ export function HowToHangContent() {
         Now that you know exactly how to hang <strong>faux food wall art</strong>, all you need is 
         the perfect piece. Browse the full <Link href="/wall-art/">cookie wall art collection</Link> to 
         find your flavor, or <Link href="/custom/">request a custom piece</Link> in your favorite 
-        colors, your favorite candy combinations, or a one-of-a-kind design. Every cookie ships 
-        free within the US in 14 days — true handcraft artistry takes time. Ready to hang with the built-in hanger.
+        colors, your favorite candy combinations, or a one of a kind design.
+      </p>
+
+      <p>
+        Every cookie ships 
+        free within the US in 14 days, because true handcraft artistry takes time. Ready to hang with the attached hanger.
       </p>
     </>
   );

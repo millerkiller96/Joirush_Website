@@ -12,6 +12,8 @@ import { getShopReviews } from "./products";
  *     talk about a cookie (synced reviews carry no listing info).
  *  3. Website reviews approved by the owner (src/data/approved-reviews.json).
  *     Approved 5 star entries join the pool automatically on the next build.
+ *  4. At runtime, reviews approved in the Google Sheet are fetched by
+ *     src/lib/sheetReviews.ts and merged in with mergeReviews().
  */
 export type PoolReview = {
   id: string;
@@ -73,4 +75,19 @@ export function getAllReviews(): PoolReview[] {
 /** Only 5 star reviews: what the homepage and catalogue highlight show. */
 export function getFiveStarReviews(): PoolReview[] {
   return getAllReviews().filter((review) => review.rating >= 5);
+}
+
+/** Adds extra reviews (for example approved ones from the Google Sheet) to a pool, skipping repeats. */
+export function mergeReviews(base: PoolReview[], extra: PoolReview[]): PoolReview[] {
+  const seen = new Set(base.map((review) => normalize(review.quote)));
+  const ids = new Set(base.map((review) => review.id));
+  const merged = [...base];
+  for (const review of extra) {
+    const key = normalize(review.quote);
+    if (!key || seen.has(key) || ids.has(review.id)) continue;
+    seen.add(key);
+    ids.add(review.id);
+    merged.push(review);
+  }
+  return merged;
 }

@@ -1,11 +1,12 @@
 "use client";
 
 import Link from "next/link";
-import { Image } from "@/components/Image";
 import { ProductBuyButtons } from "@/components/ProductBuyButtons";
 import { EtsyReviewsHub } from "@/components/EtsyReviewsHub";
 import { ProductCard } from "@/components/ProductCard";
 import { StudioVideoCarousel } from "@/components/StudioVideoCarousel";
+import { ProductGallery } from "@/components/ProductGallery";
+import { getProductGallery } from "@/data/product-galleries";
 import {
   formatPrice,
   calculateSavings,
@@ -61,6 +62,9 @@ function FAQAccordion({ faqs }: { faqs: { question: string; answer: string }[] }
 export function ProductPageClient({ product, related }: ProductPageClientProps) {
   const { savings, percent } = calculateSavings(product.price, product.compareAtPrice);
   const relevantReviews = getRelevantReviews().slice(0, 2);
+  const galleryImages = getProductGallery(product.slug, product.image);
+  // Alt text uses the name before any " | " qualifier, e.g. "Jumbo M&M Cookie Wall Art".
+  const galleryName = product.name.split("|")[0].trim();
 
   const upsellProduct = {
     name: product.name,
@@ -95,14 +99,7 @@ export function ProductPageClient({ product, related }: ProductPageClientProps) 
         </nav>
 
         <div className="mt-6 grid items-start gap-10 md:grid-cols-2">
-          <Image
-            src={product.image}
-            alt={product.name}
-            width={1200}
-            height={1600}
-            priority
-            className="rounded-[2.2rem] object-cover shadow-card"
-          />
+          <ProductGallery images={galleryImages} name={galleryName} />
 
           <div>
             <p className="text-sm font-semibold uppercase tracking-[0.22em] text-pink">

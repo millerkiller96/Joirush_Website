@@ -19,7 +19,7 @@ export function FoodieGiftGuideSchema() {
         name: "How much do jumbo cookie sculptures cost?",
         acceptedAnswer: {
           "@type": "Answer",
-          text: "Handmade jumbo cookie wall art from JOIRUSH ranges from $90-$225, with single cookies starting at $90 and sets or statement pieces at the higher end. All pieces include free US shipping with 14-day handmade production and delivery.",
+          text: "Handmade jumbo cookie wall art from JOIRUSH ranges from $90 to $225, with single cookies starting at $90 and sets or statement pieces at the higher end. All pieces include free US shipping with 14 day handmade production and delivery.",
         },
       },
       {
@@ -47,7 +47,7 @@ export function FoodieGiftGuideContent() {
   return (
     <>
       <p>
-        We all have that person in our lives — the one who photographs every meal, who has 
+        We all have that person in our lives: the one who photographs every meal, who has 
         opinions about the best local bakery, who watches food documentaries like other people 
         watch crime dramas. Finding gifts for them isn't hard; finding <em>memorable</em> gifts 
         is the challenge. Another cookbook? They have seventeen. A fancy ingredient? Used once 
@@ -64,7 +64,15 @@ export function FoodieGiftGuideContent() {
       <p>
         This guide breaks down the best cookie sculptures for every type of foodie in your life, 
         from the minimalist to the maximalist, from the baker to the business owner.
-      </p>
+      </p>      <div className="key-takeaways">
+        <p>Key takeaways</p>
+        <ul>
+          <li>A jumbo cookie wall sculpture is a foodie gift they will see and smile at every day.</li>
+          <li>Match the cookie to the person: classic chocolate chip, colorful candy, pastel, or a statement ice cream sandwich.</li>
+          <li>Each piece is handmade, ships free in the U.S., and takes about 14 days, so order early for holidays.</li>
+          <li>Custom colors and flavors are available for a one of a kind gift.</li>
+        </ul>
+      </div>
 
       <h2>Why Cookie Sculptures Make Perfect Foodie Gifts</h2>
 
@@ -77,13 +85,13 @@ export function FoodieGiftGuideContent() {
         <li><strong>Permanent:</strong> Unlike actual food gifts, these last forever</li>
         <li><strong>Surprising:</strong> Nobody expects to unwrap a giant cookie</li>
         <li><strong>Personal:</strong> You can match the piece to their personality and space</li>
-        <li><strong>Conversation-starting:</strong> Every guest will ask about it</li>
+        <li><strong>Conversation starting:</strong> Every guest will ask about it</li>
         <li><strong>Zero calories:</strong> All the dessert vibes, none of the guilt</li>
       </ul>
 
       <p>
         Plus, handmade pieces from artists like those at <Link href="/wall-art/">JOIRUSH</Link> aren't 
-        mass-produced. Each sculpture is individually crafted, which makes the gift feel even more 
+        mass produced. Each sculpture is individually crafted, which makes the gift feel even more 
         special.
       </p>
 
@@ -97,15 +105,15 @@ export function FoodieGiftGuideContent() {
       </p>
 
       <p>
-        Some people don't need the latest food trend — they want the classics done perfectly. 
-        For the foodie who appreciates a well-made grilled cheese, who still thinks their 
+        Some people don't need the latest food trend. They want the classics done perfectly. 
+        For the foodie who appreciates a well made grilled cheese, who still thinks their 
         grandmother's recipes are unbeatable, the <strong>chocolate chip cookie wall art</strong> is 
         the right choice.
       </p>
 
       <p>
         This is the piece that started JOIRUSH, and it remains the most popular for good reason. 
-        Golden brown base, glossy chips, realistic texture that makes people do a double-take. 
+        Golden brown base, glossy chips, realistic texture that makes people do a double take. 
         It's nostalgia incarnate.
       </p>
 
@@ -117,7 +125,7 @@ export function FoodieGiftGuideContent() {
 
       <p>
         For the friend whose kitchen is already a riot of color, whose Instagram is a parade 
-        of rainbow lattes and unicorn toast, who believes more is more — go bold. The 
+        of rainbow lattes and unicorn toast, who believes more is more, go bold. The 
         <strong>hot pink jumbo cookie</strong> with candy pieces and dark chocolate chunks is 
         unapologetically extra.
       </p>
@@ -135,7 +143,7 @@ export function FoodieGiftGuideContent() {
       </p>
 
       <p>
-        Two 16-inch cookies designed to be displayed together — perfect for gifting to a couple 
+        Two 16 inch cookies designed to be displayed together, perfect for gifting to a couple 
         who love to cook together, roommates decorating a shared space, or best friends who 
         want matching apartment energy.
       </p>
@@ -145,7 +153,7 @@ export function FoodieGiftGuideContent() {
         one cookie; together they have a matching set.
       </p>
 
-      <h3>For the Budget-Conscious Gift Giver</h3>
+      <h3>For the Budget Conscious Gift Giver</h3>
 
       <p>
         <strong>The pick:</strong> <Link href="/product/rainbow-candy-cookie/">Rainbow Candy 
@@ -153,8 +161,8 @@ export function FoodieGiftGuideContent() {
       </p>
 
       <p>
-        Big impact, smaller price tag. This 14-inch candy cookie brings all the dopamine decor 
-        energy at an entry-level price point. The jewel-bright chips against the beige dough 
+        Big impact, smaller price tag. This 14 inch candy cookie brings all the dopamine decor 
+        energy at an entry level price point. The jewel bright chips against the beige dough 
         make it pop on any wall.
       </p>
 
@@ -171,14 +179,13 @@ export function FoodieGiftGuideContent() {
       </p>
 
       <p>
-        Go big or go home. For the foodie who takes dessert seriously — who has opinions about 
-        ice cream textures and brownie density — the <strong>ice cream sandwich wall art</strong> is 
+        Go big or go home. For the foodie who takes dessert seriously (who has opinions about ice cream textures and brownie density), the <strong>ice cream sandwich wall art</strong> is 
         the ultimate statement piece.
       </p>
 
       <p>
         Two realistic cookie layers hugging a thick vanilla middle. It's bigger, bolder, and 
-        makes people stop mid-sentence when they see it. This is the "wow" gift.
+        makes people stop mid sentence when they see it. This is the "wow" gift.
       </p>
 
       <h3>For the Subtle Sophisticate</h3>
@@ -190,12 +197,12 @@ export function FoodieGiftGuideContent() {
 
       <p>
         Not everyone wants bright colors and candy pieces. For the foodie with a more refined 
-        aesthetic — think neutral kitchens, linen textures, quiet luxury vibes — the white 
+        aesthetic (think neutral kitchens, linen textures, quiet luxury vibes), the white 
         chocolate chip version offers the same playful concept in a softer palette.
       </p>
 
       <p>
-        Golden dough, creamy white chips, that characteristic just-baked glow. It's whimsical 
+        Golden dough, creamy white chips, that characteristic just baked glow. It's whimsical 
         without being loud.
       </p>
 
@@ -209,7 +216,7 @@ export function FoodieGiftGuideContent() {
       <p>
         We all know someone who orders the chocolate option every time. Who thinks there's no 
         such thing as too much chocolate. The <strong>double chocolate cookie sculpture</strong> was 
-        made for them — darker dough, glossy chips, extra-rich everything.
+        made for them: darker dough, glossy chips, extra rich everything.
       </p>
 
       <h3>For the Home Baker or Food Enthusiast</h3>
@@ -231,11 +238,11 @@ export function FoodieGiftGuideContent() {
       </p>
 
       <ul>
-        <li>Built-in wall hanger — no additional hardware needed</li>
-        <li>14-day handmade production & shipping — true artistry takes time</li>
+        <li>Attached wall hanger, no additional hardware needed</li>
+        <li>14 day handmade production & shipping, because true artistry takes time</li>
         <li>Free shipping within the United States</li>
         <li>Careful packaging designed for safe delivery</li>
-        <li>Lightweight construction (2-4 lbs typically)</li>
+        <li>Lightweight construction (2 to 4 lbs typically)</li>
         <li>Durable materials built to last: spray foam and acrylic paint</li>
       </ul>
 
@@ -248,7 +255,7 @@ export function FoodieGiftGuideContent() {
       <ul>
         <li><strong>Already hung:</strong> If you have access to their space, hang it before they 
         arrive. Let them discover it.</li>
-        <li><strong>Video unwrap:</strong> Have them film themselves opening it. The double-take 
+        <li><strong>Video unwrap:</strong> Have them film themselves opening it. The double take 
         reaction is priceless.</li>
         <li><strong>Pair with actual cookies:</strong> Include a box of their favorite cookies. 
         "Here's a snack for now, and one that lasts forever."</li>
@@ -269,11 +276,11 @@ export function FoodieGiftGuideContent() {
 
       <h3>How much do jumbo cookie sculptures cost?</h3>
       <p>
-        Handmade <strong>jumbo cookie wall art</strong> from JOIRUSH ranges from $90-$225:
+        Handmade <strong>jumbo cookie wall art</strong> from JOIRUSH ranges from $90 to $225:
       </p>
       <ul>
-        <li>Single cookies: $90-$115</li>
-        <li>Cookie sets: $175-$225</li>
+        <li>Single cookies: $90 to $115</li>
+        <li>Cookie sets: $175 to $225</li>
         <li>Statement pieces (ice cream sandwich): $220</li>
       </ul>
       <p>
@@ -285,7 +292,7 @@ export function FoodieGiftGuideContent() {
       <p>
         Yes! Each <strong>cookie sculpture</strong> is carefully packaged to arrive safely within 14 days. 
         They're made from durable materials (spray foam and acrylic paint) designed to withstand 
-        shipping and last for years on display. JOIRUSH ships from Florida with free US shipping — the 14-day timeline includes handmade production and delivery.
+        shipping and last for years on display. JOIRUSH ships from Florida with free US shipping. The 14 day timeline includes handmade production and delivery.
       </p>
 
       <h3>Can I get a custom cookie made?</h3>
@@ -302,9 +309,9 @@ export function FoodieGiftGuideContent() {
       </p>
 
       <ul>
-        <li><strong>Holiday gifts:</strong> Order at least 2-3 weeks before the date</li>
-        <li><strong>Standard pieces:</strong> 14-day handmade production & shipping</li>
-        <li><strong>Custom pieces:</strong> Allow 3-4 weeks for creation and shipping</li>
+        <li><strong>Holiday gifts:</strong> Order at least 2 to 3 weeks before the date</li>
+        <li><strong>Standard pieces:</strong> 14 day handmade production & shipping</li>
+        <li><strong>Custom pieces:</strong> Allow 3 to 4 weeks for creation and shipping</li>
       </ul>
 
       <p>
@@ -317,9 +324,9 @@ export function FoodieGiftGuideContent() {
       <p>
         Browse the full collection of <Link href="/wall-art/">handmade jumbo cookie wall 
         art</Link> to find the right piece for your favorite foodie. Or 
-        <Link href="/custom/"> request something custom</Link> — a specific flavor, color palette, 
+        <Link href="/custom/"> request something custom</Link>: a specific flavor, color palette, 
         or size that's perfectly matched to who they are. Every sculpture ships free within the 
-        US in 14 days — gift-ready and built to last.
+        US in 14 days, gift ready and built to last.
       </p>
     </>
   );

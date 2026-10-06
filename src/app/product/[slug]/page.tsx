@@ -26,7 +26,7 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
 
   return {
     title: `${product.name} | Cookie Art by Cookie Artist Erynn`,
-    description: `${product.tagline} ${product.size}. Jumbo cookie wall art — handmade sugar cookie wall sculpture by cookie artist Erynn. Art cookie with built-in wall hanger. ${formatPrice(product.price)} with free U.S. shipping from Daytona Beach, FL.`,
+    description: `${product.tagline} ${product.size}. Jumbo cookie wall art: a handmade sugar cookie wall sculpture by cookie artist Erynn. Art cookie with attached wall hanger. ${formatPrice(product.price)} with free U.S. shipping from Daytona Beach, FL.`,
     keywords: [
       "jumbo cookie wall art",
       "cookie art",
@@ -52,7 +52,7 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
           url: imageUrl,
           width: 1200,
           height: 630,
-          alt: `Cookie art - ${product.shortName} sugar cookie wall sculpture by cookie artist Erynn`,
+          alt: `Cookie art: ${product.shortName} sugar cookie wall sculpture by cookie artist Erynn`,
         },
       ],
     },
@@ -81,7 +81,7 @@ function ProductJsonLd({ product }: { product: NonNullable<ReturnType<typeof get
       { "@type": "PropertyValue", name: "Art Type", value: "Sugar Cookie Wall Sculpture" },
       { "@type": "PropertyValue", name: "Artist", value: "Erynn" },
       { "@type": "PropertyValue", name: "Style", value: "Faux Food Wall Art" },
-      { "@type": "PropertyValue", name: "Weight", value: "2-4 lbs" },
+      { "@type": "PropertyValue", name: "Weight", value: "2 to 4 lbs" },
     ],
     offers: {
       "@type": "Offer",

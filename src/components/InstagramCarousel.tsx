@@ -87,7 +87,7 @@ export function InstagramCarousel() {
             See the Magic in Motion
           </h2>
           <p className="mt-3 text-chocolate-mid">
-            Sculpting, painting, and the satisfying details — follow along on Instagram!
+            Sculpting, painting, and the satisfying details. Follow along on Instagram!
           </p>
         </div>
         <a

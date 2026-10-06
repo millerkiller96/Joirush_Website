@@ -2,7 +2,7 @@
 
 import { useCallback, useEffect, useRef, useState } from "react";
 import { usePathname } from "next/navigation";
-import { submitGiveawayEntry, trackEvent } from "@/lib/forms";
+import { GIVEAWAY_CONSENT_TEXT, submitGiveawayEntry, trackEvent } from "@/lib/forms";
 
 /**
  * Monthly giveaway popup for new visitors.
@@ -250,7 +250,7 @@ export function GiveawayModal() {
                 {status === "submitting" ? "Entering..." : "Enter the giveaway"}
               </button>
               <p className="mt-3 text-center text-xs text-chocolate-soft">
-                One entry per email. We only use it for the giveaway. No spam.
+                One entry per email. {GIVEAWAY_CONSENT_TEXT}
               </p>
             </form>
             <button

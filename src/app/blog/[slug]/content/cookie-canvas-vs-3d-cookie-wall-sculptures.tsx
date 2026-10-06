@@ -11,7 +11,7 @@ export function CookieCanvasVs3DSchema() {
         name: "What is a cookie canvas?",
         acceptedAnswer: {
           "@type": "Answer",
-          text: "A cookie canvas typically refers to a flat, 2D printed image of a cookie on fabric or paper stretched over a frame — similar to a photo print. It's a budget-friendly decor option but lacks the depth and texture of 3D cookie wall sculptures.",
+          text: "A cookie canvas typically refers to a flat, 2D printed image of a cookie on fabric or paper stretched over a frame, similar to a photo print. It's a budget friendly decor option but lacks the depth and texture of 3D cookie wall sculptures.",
         },
       },
       {
@@ -19,7 +19,7 @@ export function CookieCanvasVs3DSchema() {
         name: "What is a 3D cookie wall sculpture?",
         acceptedAnswer: {
           "@type": "Answer",
-          text: "A 3D cookie wall sculpture is a handmade decorative piece carved from spray foam and painted with acrylics to look like an oversized, realistic cookie. These sculptures are lightweight (2-4 lbs), hang on a single nail, and create a statement-piece effect that flat prints cannot achieve.",
+          text: "A 3D cookie wall sculpture is a handmade decorative piece carved from spray foam and painted with acrylics to look like an oversized, realistic cookie. These sculptures are lightweight (2 to 4 lbs), hang on a single nail, and create a statement piece effect that flat prints cannot achieve.",
         },
       },
       {
@@ -27,7 +27,7 @@ export function CookieCanvasVs3DSchema() {
         name: "What's the difference between cookie canvas prints and 3D cookie sculptures?",
         acceptedAnswer: {
           "@type": "Answer",
-          text: "Cookie canvas prints are flat 2D images, typically mass-produced and inexpensive ($20-$60). 3D cookie wall sculptures are handmade, three-dimensional art pieces ($90-$225) with realistic texture, depth, and that 'is it real?' conversation-starter quality.",
+          text: "Cookie canvas prints are flat 2D images, typically mass produced and inexpensive ($20 to $60). 3D cookie wall sculptures are handmade, three dimensional art pieces ($90 to $225) with realistic texture, depth, and that 'is it real?' conversation starter quality.",
         },
       },
       {
@@ -35,7 +35,7 @@ export function CookieCanvasVs3DSchema() {
         name: "Which is better for home decor: cookie canvas or 3D sculpture?",
         acceptedAnswer: {
           "@type": "Answer",
-          text: "For collectors seeking statement pieces with visual impact, handmade 3D cookie sculptures are the better choice. They offer depth, texture, and artistic character that flat prints can't match. Canvas prints work for casual, budget-conscious decor.",
+          text: "For collectors seeking statement pieces with visual impact, handmade 3D cookie sculptures are the better choice. They offer depth, texture, and artistic character that flat prints can't match. Canvas prints work for casual, budget conscious decor.",
         },
       },
       {
@@ -43,7 +43,7 @@ export function CookieCanvasVs3DSchema() {
         name: "Are cookie wall sculptures heavy?",
         acceptedAnswer: {
           "@type": "Answer",
-          text: "No. Handmade cookie wall sculptures from JOIRUSH are lightweight — typically 2-4 lbs — because they're made from spray foam rather than heavy fiberglass. They hang easily on a single picture hook or nail.",
+          text: "No. Handmade cookie wall sculptures from JOIRUSH are lightweight (typically 2 to 4 lbs) because they're made from spray foam rather than heavy fiberglass. They hang easily on a single picture hook or nail.",
         },
       },
     ],
@@ -53,7 +53,7 @@ export function CookieCanvasVs3DSchema() {
     "@context": "https://schema.org",
     "@type": "Article",
     headline: "Cookie Canvas Prints vs Handmade 3D Cookie Wall Sculptures: What Collectors Actually Hang",
-    description: "Compare flat cookie canvas prints to 3D spray-foam cookie wall sculptures. Learn why collectors choose handmade sugar cookie sculptures for the depth, texture, and statement-piece impact that flat prints can't deliver.",
+    description: "Compare flat cookie canvas prints to 3D spray foam cookie wall sculptures. Learn why collectors choose handmade sugar cookie sculptures for the depth, texture, and statement piece impact that flat prints can't deliver.",
     author: {
       "@type": "Person",
       name: "Erynn",
@@ -87,21 +87,32 @@ export function CookieCanvasVs3DContent() {
     <>
       <p>
         Search for <strong>cookie canvas</strong> or <strong>cookie wall art</strong>, and you'll find two 
-        very different things: flat printed canvas images of cookies, and three-dimensional handmade 
-        sculptures that look like giant, realistic cookies ready to hang on your wall. If you're a 
-        collector looking for statement-piece decor — the kind that makes guests stop mid-sentence and 
-        ask "wait, is that real?" — understanding the difference matters.
+        very different things: flat printed canvas images of cookies, and three dimensional handmade 
+        sculptures that look like giant, realistic cookies ready to hang on your wall.
+      </p>
+
+      <p>
+        If you're a 
+        collector looking for statement piece decor (the kind that makes guests stop mid sentence and ask "wait, is that real?"), understanding the difference matters.
       </p>
 
       <p>
         This guide breaks down <strong>cookie canvas prints vs 3D cookie wall sculptures</strong> so you 
-        can choose the right piece for your home, kitchen, playroom, or content-creator backdrop.
-      </p>
+        can choose the right piece for your home, kitchen, playroom, or content creator backdrop.
+      </p>      <div className="key-takeaways">
+        <p>Key takeaways</p>
+        <ul>
+          <li>A <strong>cookie canvas</strong> print is a flat picture of a cookie. A 3D cookie wall sculpture is shaped like the real thing.</li>
+          <li>3D sculptures have real depth, texture, and shadows, so guests ask "is that real?"</li>
+          <li>Handmade JOIRUSH sculptures weigh 2 to 4 lbs and hang on one nail.</li>
+          <li>Prints cost less; sculptures are original art that becomes a conversation piece.</li>
+        </ul>
+      </div>
 
       <h2>What is a Cookie Canvas Print?</h2>
 
       <p>
-        A <strong>cookie canvas</strong> in the traditional sense is a flat, 2D image — a photograph or 
+        A <strong>cookie canvas</strong> in the traditional sense is a flat, 2D image: a photograph or 
         illustration of a cookie printed on fabric or paper and stretched over a wooden frame. You'll 
         find these on sites like iCanvas, Amazon, and other home decor retailers.
       </p>
@@ -109,16 +120,16 @@ export function CookieCanvasVs3DContent() {
       <p>Cookie canvas prints typically:</p>
 
       <ul>
-        <li>Range from <strong>$20-$60</strong> depending on size</li>
+        <li>Range from <strong>$20 to $60</strong> depending on size</li>
         <li>Come in standard rectangular or square shapes</li>
-        <li>Are mass-produced and ship quickly</li>
+        <li>Are mass produced and ship quickly</li>
         <li>Hang flat against the wall like any framed print</li>
         <li>Look like what they are: a picture of a cookie</li>
       </ul>
 
       <p>
         Canvas prints are fine for casual decor on a budget. But for collectors who want their wall art 
-        to create a real impression — the kind that stops people in their tracks — there's a different 
+        to create a real impression (the kind that stops people in their tracks), there's a different 
         option.
       </p>
 
@@ -126,8 +137,8 @@ export function CookieCanvasVs3DContent() {
 
       <p>
         A <strong>3D cookie wall sculpture</strong> (also called <Link href="/blog/what-is-cookie-art-sugar-cookie-wall-sculptures-explained/">sugar cookie wall art</Link> or 
-        faux food wall decor) is a handmade, three-dimensional piece that looks like an oversized, 
-        hyper-realistic cookie. These sculptures are carved from <Link href="/blog/spray-foam-cookie-wall-art-how-theyre-made/">spray 
+        faux food wall decor) is a handmade, three dimensional piece that looks like an oversized, 
+        hyperrealistic cookie. These sculptures are carved from <Link href="/blog/spray-foam-cookie-wall-art-how-theyre-made/">spray 
         foam</Link>, painted with acrylics, and designed to hang as permanent wall art.
       </p>
 
@@ -138,13 +149,13 @@ export function CookieCanvasVs3DContent() {
 
       <ul>
         <li><strong>Realistic 3D texture:</strong> Craggy edges, glossy chocolate chips, the organic "spread" of a real baked cookie</li>
-        <li><strong>Jumbo size:</strong> 14-16+ inches for real statement impact</li>
-        <li><strong>Lightweight construction:</strong> 2-4 lbs (spray foam, not heavy fiberglass)</li>
-        <li><strong>Built-in wall hanger:</strong> Hangs on a single nail or picture hook</li>
-        <li><strong>Handmade character:</strong> Each piece is unique — no two are identical</li>
+        <li><strong>Jumbo size:</strong> 14 to 16+ inches for real statement impact</li>
+        <li><strong>Lightweight construction:</strong> 2 to 4 lbs (spray foam, not heavy fiberglass)</li>
+        <li><strong>Attached wall hanger:</strong> Hangs on a single nail or picture hook</li>
+        <li><strong>Handmade character:</strong> Each piece is unique, and no two are identical</li>
       </ul>
 
-      <h2>Cookie Canvas vs 3D Cookie Sculpture: Side-by-Side Comparison</h2>
+      <h2>Cookie Canvas vs 3D Cookie Sculpture: Side by Side Comparison</h2>
 
       <table>
         <thead>
@@ -158,7 +169,7 @@ export function CookieCanvasVs3DContent() {
           <tr>
             <td>Dimension</td>
             <td>Flat (2D)</td>
-            <td>Three-dimensional (3D)</td>
+            <td>Three dimensional (3D)</td>
           </tr>
           <tr>
             <td>Material</td>
@@ -167,28 +178,28 @@ export function CookieCanvasVs3DContent() {
           </tr>
           <tr>
             <td>Price range</td>
-            <td>$20-$60</td>
-            <td>$90-$225</td>
+            <td>$20 to $60</td>
+            <td>$90 to $225</td>
           </tr>
           <tr>
             <td>Production</td>
-            <td>Mass-produced</td>
+            <td>Mass produced</td>
             <td>Handmade by artist</td>
           </tr>
           <tr>
             <td>Shape</td>
             <td>Rectangular/square frame</td>
-            <td>Cookie-shaped silhouette</td>
+            <td>Cookie shaped silhouette</td>
           </tr>
           <tr>
             <td>Weight</td>
             <td>Light (frame + fabric)</td>
-            <td>Light (2-4 lbs spray foam)</td>
+            <td>Light (2 to 4 lbs spray foam)</td>
           </tr>
           <tr>
             <td>Visual impact</td>
             <td>Decorative print</td>
-            <td>Conversation-starter statement piece</td>
+            <td>Conversation starter statement piece</td>
           </tr>
           <tr>
             <td>Texture</td>
@@ -198,10 +209,12 @@ export function CookieCanvasVs3DContent() {
           <tr>
             <td>Reaction from guests</td>
             <td>"Nice print"</td>
-            <td>"Wait — is that real?"</td>
+            <td>"Wait, is that real?"</td>
           </tr>
         </tbody>
-      </table>
+      </table>      <aside className="pull-quote">
+        A cookie canvas print is a picture. A 3D cookie sculpture <em>is</em> the cookie.
+      </aside>
 
       <h2>Why Collectors Choose 3D Cookie Sculptures Over Canvas Prints</h2>
 
@@ -213,7 +226,7 @@ export function CookieCanvasVs3DContent() {
       <h3>1. Depth and Dimension That Flat Prints Can't Match</h3>
 
       <p>
-        A cookie canvas print is a picture. A 3D cookie sculpture <em>is</em> the cookie — or at least 
+        A cookie canvas print is a picture. A 3D cookie sculpture <em>is</em> the cookie, or at least 
         looks enough like one to fool your eyes. The sculptural depth creates visual interest from every 
         angle, casting real shadows and catching light in ways that flat prints simply can't.
       </p>
@@ -227,20 +240,19 @@ export function CookieCanvasVs3DContent() {
         confusion is the whole point.
       </p>
 
-      <h3>3. Cookie-Shaped Silhouette</h3>
+      <h3>3. Cookie Shaped Silhouette</h3>
 
       <p>
-        Canvas prints come in rectangles and squares. 3D cookie sculptures are shaped <em>like cookies</em> — 
-        organic, round, imperfect edges that replicate the way real cookies spread when baked. The 
+        Canvas prints come in rectangles and squares. 3D cookie sculptures are shaped <em>like cookies</em>: organic, round, imperfect edges that replicate the way real cookies spread when baked. The 
         silhouette itself becomes part of the art.
       </p>
 
       <h3>4. Handmade Artistic Character</h3>
 
       <p>
-        Mass-produced prints are identical. Handmade sculptures have subtle variations that make each 
+        Mass produced prints are identical. Handmade sculptures have subtle variations that make each 
         piece unique. When you buy a <Link href="/product/jumbo-mm-cookie-set/">sugar cookie wall sculpture</Link>, 
-        you're getting original art from a real <Link href="/about/">cookie artist</Link> — not a factory print.
+        you're getting original art from a real <Link href="/about/">cookie artist</Link>, not a factory print.
       </p>
 
       <h3>5. Built for Statement Walls and Gallery Arrangements</h3>
@@ -254,17 +266,17 @@ export function CookieCanvasVs3DContent() {
       <h2>Where to Hang 3D Cookie Wall Sculptures</h2>
 
       <p>
-        <strong>Cookie wall art</strong> — especially the 3D sculptural kind — works in any space where 
+        <strong>Cookie wall art:</strong> Especially the 3D sculptural kind, it works in any space where 
         you want to spark joy and conversation:
       </p>
 
       <ul>
-        <li><strong>Kitchen:</strong> The natural home for cookie art — above the stove, near the pantry, 
-        or as the centerpiece of an eat-in area</li>
-        <li><strong>Dining room:</strong> Creates a playful, food-themed atmosphere for meals</li>
-        <li><strong>Playroom:</strong> Kid-friendly decor that won't get eaten (or broken)</li>
+        <li><strong>Kitchen:</strong> The natural home for cookie art: above the stove, near the pantry, 
+        or as the centerpiece of an eat in area</li>
+        <li><strong>Dining room:</strong> Creates a playful, food themed atmosphere for meals</li>
+        <li><strong>Playroom:</strong> Kid friendly decor that won't get eaten (or broken)</li>
         <li><strong>Home office:</strong> Adds personality and a dose of whimsy to workspaces</li>
-        <li><strong>Content creator backdrops:</strong> Eye-catching, on-brand for food, lifestyle, and 
+        <li><strong>Content creator backdrops:</strong> Eye catching, on brand for food, lifestyle, and 
         dopamine decor content</li>
         <li><strong>Photo walls at home:</strong> Perfect backdrop for family photos and entertaining</li>
       </ul>
@@ -278,13 +290,13 @@ export function CookieCanvasVs3DContent() {
 
       <p>
         If you've searched for <strong>art cookies</strong> or <strong>cookie art</strong>, you may have 
-        also encountered results about decorated edible sugar cookies — the kind with intricate royal 
+        also encountered results about decorated edible sugar cookies, the kind with intricate royal 
         icing designs made for events and weddings. Those are beautiful but temporary (they're meant to 
         be eaten within days).
       </p>
 
       <p>
-        JOIRUSH cookie sculptures are faux food decor — made from spray foam and acrylic paint. They're 
+        JOIRUSH cookie sculptures are faux food decor, made from spray foam and acrylic paint. They're 
         not edible, but they'll look just as delicious ten years from now as they do today. Learn more 
         about <Link href="/blog/what-is-cookie-art-sugar-cookie-wall-sculptures-explained/">what cookie 
         art is</Link> and the difference between edible and decorative versions.
@@ -293,19 +305,19 @@ export function CookieCanvasVs3DContent() {
       <h2>Cookie Sculpture Pricing: Is Handmade Worth It?</h2>
 
       <p>
-        Yes, handmade <strong>sugar cookie wall sculptures</strong> cost more than canvas prints — but 
+        Yes, handmade <strong>sugar cookie wall sculptures</strong> cost more than canvas prints, but 
         they deliver fundamentally different value:
       </p>
 
       <ul>
-        <li><strong>Single 14-inch cookies:</strong> $90-$115</li>
-        <li><strong>Jumbo 16-inch cookies:</strong> $100-$115</li>
-        <li><strong>Cookie pairs and sets:</strong> $175-$225</li>
+        <li><strong>Single 14 inch cookies:</strong> $90 to $115</li>
+        <li><strong>Jumbo 16 inch cookies:</strong> $100 to $115</li>
+        <li><strong>Cookie pairs and sets:</strong> $175 to $225</li>
         <li><strong>Statement pieces (ice cream sandwiches):</strong> $220</li>
       </ul>
 
       <p>
-        Compare that to commercial fiberglass food props used in restaurants, which run <strong>$350-$500+</strong> 
+        Compare that to commercial fiberglass food props used in restaurants, which run <strong>$350 to $500+</strong> 
         and weigh 10+ pounds. Handmade cookie art from JOIRUSH is lighter, more affordable, and includes 
         <strong>free U.S. shipping</strong>. Every piece is made to order and ships within 14 days.
       </p>
@@ -314,8 +326,8 @@ export function CookieCanvasVs3DContent() {
 
       <h3>Can I hang a 3D cookie sculpture like a canvas?</h3>
       <p>
-        Yes — even easier. Every JOIRUSH sculpture comes with a <strong>built-in wall hanger</strong>. 
-        Because they're lightweight (2-4 lbs), they hang on a single nail or picture hook. No special 
+        Yes, and it's even easier. Every JOIRUSH sculpture comes with an <strong>attached wall hanger</strong>. 
+        Because they're lightweight (2 to 4 lbs), they hang on a single nail or picture hook. No special 
         hardware required.
       </p>
 
@@ -328,13 +340,13 @@ export function CookieCanvasVs3DContent() {
       <h3>Do cookie sculptures work for gallery walls?</h3>
       <p>
         Absolutely. Many collectors mix <Link href="/wall-art/">cookie sculptures</Link> with other art, 
-        or group multiple cookies together for a dessert-themed gallery. The 3D depth adds visual interest 
+        or group multiple cookies together for a dessert themed gallery. The 3D depth adds visual interest 
         that flat prints can't contribute.
       </p>
 
       <h3>Can I commission a custom cookie sculpture?</h3>
       <p>
-        Yes! <Link href="/custom/">Custom commissions</Link> are available — request specific colors, 
+        Yes! <Link href="/custom/">Custom commissions</Link> are available. Request specific colors, 
         sizes, or "flavor" designs. Want a hot pink cookie? A pastel set for a nursery? A custom 
         "flavor" that matches your kitchen decor? It's all possible.
       </p>

@@ -34,7 +34,7 @@ export function SiteHeader() {
         <Link href="/" className="flex items-center gap-3" onClick={() => setOpen(false)}>
           <Image
             src="/images/brand/avatar.jpg"
-            alt="JOIRUSH - Cookie Art Studio by Cookie Artist Erynn"
+            alt="JOIRUSH: Cookie Art Studio by Cookie Artist Erynn"
             width={44}
             height={44}
             className="rounded-full border-2 border-pink object-cover"

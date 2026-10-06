@@ -23,6 +23,18 @@ export const FORM_KEYS = {
 
 export type FormName = keyof typeof FORM_KEYS;
 
+/**
+ * Google Sheet logging for giveaway emails (optional).
+ * Paste the Google Apps Script web app URL (ends in /exec) here once it is
+ * deployed. While empty, giveaway entries only go to Web3Forms.
+ * Script source: joirush-giveaway-apps-script.gs (see the deploy steps inside).
+ */
+export const GIVEAWAY_SHEET_WEBHOOK_URL = "";
+
+/** Consent text shown under the giveaway email field and saved with each entry. */
+export const GIVEAWAY_CONSENT_TEXT =
+  "By entering, you agree to get emails from JOIRUSH about the giveaway and occasional cookie news. Unsubscribe anytime.";
+
 export const WEB3FORMS_ENDPOINT = "https://api.web3forms.com/submit";
 
 export type SubmitResult = { ok: true } | { ok: false; message: string };
@@ -84,12 +96,40 @@ export function submitReviewForApproval(review: ReviewSubmission): Promise<Submi
   });
 }
 
+/**
+ * Send a copy of a giveaway entry to the Google Sheet web app.
+ * Fire and forget: `no-cors` + text/plain avoids a CORS preflight, the
+ * response is opaque, and any failure is swallowed so it can never block or
+ * break the visitor's submission.
+ */
+function logGiveawayToSheet(email: string) {
+  if (!GIVEAWAY_SHEET_WEBHOOK_URL || typeof window === "undefined") return;
+  try {
+    fetch(GIVEAWAY_SHEET_WEBHOOK_URL, {
+      method: "POST",
+      mode: "no-cors",
+      keepalive: true,
+      headers: { "Content-Type": "text/plain;charset=utf-8" },
+      body: JSON.stringify({
+        email,
+        sourcePage: window.location.href,
+        consent: GIVEAWAY_CONSENT_TEXT,
+        source: "joirush.com giveaway popup",
+      }),
+    }).catch(() => {});
+  } catch {
+    // Never let sheet logging affect the entry.
+  }
+}
+
 export function submitGiveawayEntry(email: string): Promise<SubmitResult> {
+  logGiveawayToSheet(email);
   return submitWeb3Form("giveaway", {
     subject: "Giveaway entry",
     from_name: "JOIRUSH Monthly Giveaway",
     email,
     message: `Monthly free cookie giveaway entry from ${email}. Winners are drawn on the 30th of every month.`,
+    consent: GIVEAWAY_CONSENT_TEXT,
     page: typeof window !== "undefined" ? window.location.href : undefined,
   });
 }

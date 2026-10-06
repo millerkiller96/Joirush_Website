@@ -31,7 +31,7 @@ export const metadata: Metadata = {
         url: getImageUrl("/images/brand/avatar.jpg"),
         width: 1200,
         height: 630,
-        alt: "Contact JOIRUSH - cookie artist Erynn",
+        alt: "Contact JOIRUSH: cookie artist Erynn",
       },
     ],
   },
@@ -120,7 +120,7 @@ export default function ContactPage() {
             <div>
               <h2 className="font-display text-xl text-chocolate">Response Time</h2>
               <p className="mt-2 text-chocolate-mid">
-                I typically respond within 24-48 hours. For custom orders or urgent inquiries,
+                I typically respond within 24 to 48 hours. For custom orders or urgent inquiries,
                 Etsy messages often get the fastest response.
               </p>
             </div>
@@ -128,7 +128,7 @@ export default function ContactPage() {
             <div>
               <h2 className="font-display text-xl text-chocolate">Based In</h2>
               <p className="mt-2 text-chocolate-mid">
-                {site.location} — All cookie art ships from Daytona Beach, FL with free U.S. shipping.
+                {site.location}. All cookie art ships from Daytona Beach, FL with free U.S. shipping.
               </p>
             </div>
           </div>

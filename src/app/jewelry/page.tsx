@@ -8,17 +8,17 @@ import { site } from "@/data/site";
 export const metadata: Metadata = {
   title: "Y2K Jewelry",
   description:
-    "Handmade Y2K charm chokers and statement jewelry by JoiRush — Tamagotchi energy, gamer-girl custom pieces, and one-of-one accessories.",
+    "Handmade Y2K charm chokers and statement jewelry by JoiRush: Tamagotchi energy, gamer girl custom pieces, and one of one accessories.",
 };
 
 const commissions = [
   {
     title: "Tamagotchi charm chokers",
-    copy: "Layered Y2K necklaces with virtual-pet energy — collectors have loved the pink and purple versions.",
+    copy: "Layered Y2K necklaces with virtual pet energy. Collectors have loved the pink and purple versions.",
   },
   {
     title: "Gamer girl customs",
-    copy: "Cosplay-ready, kawaii, and one-of-one. Retro games, keys, and hardware charms on faux leather.",
+    copy: "Cosplay ready, kawaii, and one of one. Retro games, keys, and hardware charms on faux leather.",
   },
   {
     title: "Statement layers",
@@ -28,7 +28,7 @@ const commissions = [
 
 export default function JewelryPage() {
   return (
-    // Jewelry is commission-only (nothing to "Buy Now"), so the sticky cookie Buy Now is off here.
+    // Jewelry is commission only (nothing to "Buy Now"), so the sticky cookie Buy Now is off here.
     <div data-sticky-buy="off">
       <section className="mx-auto grid max-w-7xl items-center gap-10 px-5 py-16 md:grid-cols-2 md:px-8 md:py-20">
         <Image
@@ -45,9 +45,9 @@ export default function JewelryPage() {
             Y2K jewelry, made to be a main character
           </h1>
           <p className="mt-5 text-lg text-chocolate-mid">
-            JoiRush isn&apos;t only cookies. Erynn also builds custom chokers and statement jewelry —
-            Tamagotchi charms, gamer-girl pieces, vintage keys, and layered Y2K stacks. The current
-            Etsy shelf is cookie-heavy. Jewelry lives here as custom work, made for you.
+            JoiRush isn&apos;t only cookies. Erynn also builds custom chokers and statement jewelry:
+            Tamagotchi charms, gamer girl pieces, vintage keys, and layered Y2K stacks. The current
+            Etsy shelf is cookie heavy. Jewelry lives here as custom work, made for you.
           </p>
           <div className="mt-8 flex flex-wrap gap-3">
             <Link
@@ -74,8 +74,8 @@ export default function JewelryPage() {
         <div className="mx-auto max-w-7xl px-5 py-16 md:px-8">
           <SectionHeading
             eyebrow="What people order"
-            title="Charm chokers with a sugar-rush attitude"
-            copy="Past collectors asked for Tamagotchi chokers, yellow faux-leather gamer pieces, and one-of-one stacks. Erynn still makes them — just tell her the palette."
+            title="Charm chokers with a sugar rush attitude"
+            copy="Past collectors asked for Tamagotchi chokers, yellow faux leather gamer pieces, and one of one stacks. Erynn still makes them. Just tell her the palette."
           />
           <div className="mt-10 grid gap-5 md:grid-cols-3">
             {commissions.map((item) => (

@@ -187,7 +187,7 @@ export function ProductPageClient({ product, related }: ProductPageClientProps) 
                     <blockquote key={idx} className="border-l-2 border-caramel/30 pl-3 text-sm italic text-chocolate-mid">
                       "{review.quote.length > 120 ? review.quote.slice(0, 120) + "..." : review.quote}"
                       <footer className="mt-1 text-sm font-medium not-italic text-chocolate-soft">
-                        — {review.name}
+                        {review.name}
                       </footer>
                     </blockquote>
                   ))}
@@ -235,7 +235,7 @@ export function ProductPageClient({ product, related }: ProductPageClientProps) 
                 </li>
                 <li>
                   <Link href="/blog/faux-cookie-wall-decor-ready-made-vs-diy/" className="text-pink hover:underline">
-                    Faux cookie wall decor: ready-made vs DIY →
+                    Faux cookie wall decor: ready made vs DIY →
                   </Link>
                 </li>
               </ul>

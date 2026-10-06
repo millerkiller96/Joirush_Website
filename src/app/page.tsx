@@ -10,7 +10,7 @@ import { site } from "@/data/site";
 import { getAbsoluteUrl, getImageUrl, siteUrl } from "@/lib/seo";
 
 export const metadata: Metadata = {
-  title: "Jumbo Cookie Wall Art | Handmade Sugar Cookie Wall Sculptures by Cookie Artist Erynn — JOIRUSH",
+  title: "Jumbo Cookie Wall Art | Handmade Sugar Cookie Wall Sculptures by Cookie Artist Erynn | JOIRUSH",
   description:
     "Shop jumbo cookie wall art by cookie artist Erynn. Handmade sugar cookie wall sculptures, art cookies wall sculpture pieces, and faux food wall art that look real but last forever. Giant cookie decor from $90 with free U.S. shipping from Daytona Beach, FL.",
   keywords: [
@@ -28,16 +28,16 @@ export const metadata: Metadata = {
     "chocolate chip cookie wall art",
   ],
   openGraph: {
-    title: "Jumbo Cookie Wall Art | Handmade Sugar Cookie Wall Sculptures — JOIRUSH",
+    title: "Jumbo Cookie Wall Art | Handmade Sugar Cookie Wall Sculptures | JOIRUSH",
     description:
-      "Handmade jumbo cookie wall art and sugar cookie wall sculptures by cookie artist Erynn. Art cookies wall sculpture pieces that look real but last forever — faux food wall art for kitchens and homes.",
+      "Handmade jumbo cookie wall art and sugar cookie wall sculptures by cookie artist Erynn. Art cookies wall sculpture pieces that look real but last forever. Faux food wall art for kitchens and homes.",
     type: "website",
     images: [
       {
         url: getImageUrl("/images/brand/homepage-hero.jpg"),
         width: 1242,
         height: 1656,
-        alt: "JOIRUSH jumbo cookie wall art — brand model in a pink top holding an oversized cookie sandwich, surrounded by giant cookie wall sculptures",
+        alt: "JOIRUSH jumbo cookie wall art: brand model in a pink top holding an oversized cookie sandwich, surrounded by giant cookie wall sculptures",
       },
     ],
   },
@@ -50,7 +50,7 @@ const homepageFaqs = [
   {
     question: "What is cookie art?",
     answer:
-      "Cookie art refers to decorative sugar cookie wall sculptures — handmade faux food wall art that looks like oversized, realistic cookies. Unlike edible royal icing sugar cookies, these pieces are crafted from spray foam and acrylic paint by a cookie artist and designed to hang permanently on your wall.",
+      "Cookie art refers to decorative sugar cookie wall sculptures: handmade faux food wall art that looks like oversized, realistic cookies. Unlike edible royal icing sugar cookies, these pieces are crafted from spray foam and acrylic paint by a cookie artist and designed to hang permanently on your wall.",
   },
   {
     question: "Are these cookies edible?",
@@ -60,7 +60,7 @@ const homepageFaqs = [
   {
     question: "What are cookie wall sculptures made of?",
     answer:
-      "Each piece is handmade from spray foam that's sculpted to look like a real baked cookie, then painted with acrylics to achieve realistic colors and textures. They're lightweight (2-4 lbs), durable, and come with built-in wall hangers.",
+      "Each piece is handmade from spray foam that's sculpted to look like a real baked cookie, then painted with acrylics to achieve realistic colors and textures. They're lightweight (2 to 4 lbs), durable, and come with attached wall hangers.",
   },
   {
     question: "How long does shipping take?",
@@ -70,12 +70,12 @@ const homepageFaqs = [
   {
     question: "How do I hang cookie wall art?",
     answer:
-      "Every piece includes a built-in wall hanger. Because they're lightweight (2-4 lbs), they hang easily on a single nail or picture hook — no special hardware needed.",
+      "Every piece includes an attached wall hanger. Because they're lightweight (2 to 4 lbs), they hang easily on a single nail or picture hook, no special hardware needed.",
   },
   {
     question: "How heavy are the sculptures?",
     answer:
-      "Cookie wall sculptures weigh 2-4 lbs depending on size. That's light enough to hang on a single nail — no anchors or heavy-duty mounting required.",
+      "Cookie wall sculptures weigh 2 to 4 lbs depending on size. That's light enough to hang on a single nail. No anchors or heavy duty mounting required.",
   },
 ];
 
@@ -208,13 +208,13 @@ export default function HomePage() {
                 Cookie Art by Cookie Artist Erynn
               </p>
               <h1 className="mt-4 font-display text-5xl leading-[0.95] text-chocolate md:text-7xl">
-                Jumbo Cookie Wall Art That Stops People Mid-Sentence
+                Jumbo Cookie Wall Art That Stops People Mid Sentence
               </h1>
               <p className="mt-6 max-w-lg text-lg leading-relaxed text-chocolate-mid">
-                Golden-brown crumble. Glossy melty chips. Thick, craggy edges begging for a bite. 
+                Golden brown crumble. Glossy melty chips. Thick, craggy edges begging for a bite. 
                 These <strong>jumbo cookie wall art</strong> pieces look so real, guests reach out 
                 before their brain catches up. Each <strong>art cookies wall sculpture</strong> is crafted 
-                by cookie artist Erynn — handmade sugar cookie wall sculptures that are wall-ready, lightweight, and permanently satisfying.
+                by cookie artist Erynn: handmade sugar cookie wall sculptures that are wall ready, lightweight, and permanently satisfying.
               </p>
               <ul className="mt-5 flex flex-wrap gap-x-4 gap-y-1 text-sm text-chocolate-mid">
                 <li>✓ Handmade to order</li>
@@ -277,7 +277,7 @@ export default function HomePage() {
             <SectionHeading
               eyebrow="Bestselling jumbo cookie wall art"
               title="The Ones Collectors Can't Stop Buying"
-              copy="Golden chips. Candy pops. That just-baked texture you can practically smell. These jumbo cookie wall art pieces are the art cookies wall sculptures that sell out first."
+              copy="Golden chips. Candy pops. That just baked texture you can practically smell. These jumbo cookie wall art pieces are the art cookies wall sculptures that sell out first."
             />
             <Link href="/wall-art/" data-buy-cta="shop" className="text-sm font-medium text-pink hover:underline">
               See the full giant cookie wall art collection →
@@ -296,30 +296,30 @@ export default function HomePage() {
               {
                 href: "/wall-art/",
                 title: "Giant Cookie Wall Art",
-                copy: "Giant cookie wall decor and faux cookies for display — the conversation starter your kitchen needs.",
+                copy: "Giant cookie wall decor and faux cookies for display. The conversation starter your kitchen needs.",
                 image: "/images/products/rainbow.jpg",
-                alt: "Giant cookie wall art — rainbow sprinkle cookie sculpture by JOIRUSH",
+                alt: "Giant cookie wall art: rainbow sprinkle cookie sculpture by JOIRUSH",
               },
               {
                 href: "/oversized-food-wall-art/",
                 title: "Oversized Food Wall Art",
                 copy: "3D food wall art for kitchens and dining rooms. Large food wall art that looks real.",
                 image: "/images/products/ice-cream.jpg",
-                alt: "Oversized food wall art — ice cream sandwich sculpture by JOIRUSH",
+                alt: "Oversized food wall art: ice cream sandwich sculpture by JOIRUSH",
               },
               {
                 href: "/catalogue/",
                 title: "Oversized Cookie Wall Decor",
                 copy: "Every flavor, every size. Find the oversized cookie wall decor that makes your heart skip.",
                 image: "/images/products/mm-set.jpg",
-                alt: "Oversized cookie wall decor — M&M candy cookie sculpture set by JOIRUSH",
+                alt: "Oversized cookie wall decor: M&M candy cookie sculpture set by JOIRUSH",
               },
               {
                 href: "/custom/",
                 title: "Custom Cookie Art",
-                copy: "Your colors. Your vibe. A one-of-one piece made just for you by the cookie artist.",
+                copy: "Your colors. Your vibe. A one of one piece made just for you by the cookie artist.",
                 image: "/images/products/hot-pink-mm.jpg",
-                alt: "Custom cookie art — hot pink M&M cookie sculpture by JOIRUSH",
+                alt: "Custom cookie art: hot pink M&M cookie sculpture by JOIRUSH",
               },
             ].map((card) => (
               <Link
@@ -348,19 +348,19 @@ export default function HomePage() {
         <section className="bg-cream-deep">
           <div className="mx-auto max-w-7xl px-5 py-16 md:px-8">
             <SectionHeading
-              eyebrow="Real jumbo cookie wall art, not mass-produced props"
+              eyebrow="Real jumbo cookie wall art, not mass produced props"
               title="Handmade Sugar Cookie Wall Sculptures"
-              copy="Forget those $350+ fiberglass blobs. These are real art cookies wall sculptures — jumbo cookie wall art light enough to hang anywhere, detailed enough to fool everyone."
+              copy="Forget those $350+ fiberglass blobs. These are real art cookies wall sculptures: jumbo cookie wall art light enough to hang anywhere, detailed enough to fool everyone."
             />
             <div className="mt-10 grid gap-5 md:grid-cols-4">
               {[
                 {
-                  stat: "2-4 lbs",
+                  stat: "2 to 4 lbs",
                   label: "Featherweight",
                   copy: "Hangs on a single nail. No contractor needed.",
                 },
                 {
-                  stat: "$90–$225",
+                  stat: "$90 to $225",
                   label: "Real Art Pricing",
                   copy: "Not $350+ for factory fiberglass.",
                 },
@@ -389,7 +389,7 @@ export default function HomePage() {
           <div className="mx-auto grid max-w-7xl items-center gap-12 px-5 py-20 md:grid-cols-2 md:px-8">
             <Image
               src="/images/brand/about-1.jpg"
-              alt="Erynn — cookie artist and owner of JOIRUSH — creating handmade jumbo cookie wall art, art cookies wall sculptures, and faux food wall art in Daytona Beach"
+              alt="Erynn: cookie artist and owner of JOIRUSH, creating handmade jumbo cookie wall art, art cookies wall sculptures, and faux food wall art in Daytona Beach"
               width={900}
               height={1200}
               className="rounded-[2.2rem] object-cover"
@@ -398,7 +398,7 @@ export default function HomePage() {
               <SectionHeading
                 eyebrow="Meet the cookie artist"
                 title="Every Sugar Cookie Sculpture Has Her Fingerprints On It"
-                copy="Cookie artist Erynn sculpts each piece by hand in her Florida studio — obsessed with nostalgic sweetness, maximalist color, and cookie art that makes you feel something."
+                copy="Cookie artist Erynn sculpts each piece by hand in her Florida studio, obsessed with nostalgic sweetness, maximalist color, and cookie art that makes you feel something."
               />
               <p className="mt-5 text-chocolate-mid">
                 Dream up a custom flavor. Match your kitchen palette. Go completely wild. 
@@ -441,7 +441,7 @@ export default function HomePage() {
             </h2>
             <p className="mt-3 max-w-2xl text-chocolate-mid">
               What cookie art is (and isn&apos;t). How to hang jumbo cookie wall art. Cookie canvas vs 3D sculptures.
-              Tips from the cookie artist&apos;s studio for home collectors of spray-foam sugar cookie wall sculptures.
+              Tips from the cookie artist&apos;s studio for home collectors of spray foam sugar cookie wall sculptures.
             </p>
             <div className="mt-8 grid gap-4 md:grid-cols-2 lg:grid-cols-5">
               <Link
@@ -466,7 +466,7 @@ export default function HomePage() {
                 href="/blog/how-to-hang-jumbo-cookie-wall-art/"
                 className="group rounded-xl bg-white p-5 shadow-card hover:shadow-lift"
               >
-                <p className="text-sm font-medium uppercase tracking-wider text-pink">5-Minute Guide</p>
+                <p className="text-sm font-medium uppercase tracking-wider text-pink">5 Minute Guide</p>
                 <h3 className="mt-2 font-display text-xl text-chocolate group-hover:text-pink">
                   How to Hang Your Jumbo Cookie Wall Art
                 </h3>
@@ -484,7 +484,7 @@ export default function HomePage() {
                 href="/blog/faux-cookie-wall-decor-ready-made-vs-diy/"
                 className="group rounded-xl bg-white p-5 shadow-card hover:shadow-lift"
               >
-                <p className="text-sm font-medium uppercase tracking-wider text-pink">Ready-Made vs DIY</p>
+                <p className="text-sm font-medium uppercase tracking-wider text-pink">Ready Made vs DIY</p>
                 <h3 className="mt-2 font-display text-xl text-chocolate group-hover:text-pink">
                   Faux Cookie Wall Decor Guide
                 </h3>
@@ -504,7 +504,7 @@ export default function HomePage() {
             </h2>
             <p className="mt-4 max-w-xl text-white/85">
               Hot pink. Pastel rainbow. Your kitchen's exact shade of teal. Tell me the vibe, 
-              and I'll sculpt a one-of-one sugar cookie wall sculpture that's yours forever. Handmade in Daytona Beach, 
+              and I'll sculpt a one of one sugar cookie wall sculpture that's yours forever. Handmade in Daytona Beach, 
               ships in 14 days with free U.S. shipping.
             </p>
             <Link

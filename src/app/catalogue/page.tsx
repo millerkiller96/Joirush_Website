@@ -27,7 +27,7 @@ export const metadata: Metadata = {
     canonical: `${siteUrl}/catalogue`,
   },
   openGraph: {
-    title: "Oversized Cookie Wall Decor | Full Catalogue — JOIRUSH",
+    title: "Oversized Cookie Wall Decor | Full Catalogue | JOIRUSH",
     description:
       "Browse all oversized cookie wall decor by cookie artist Erynn. Handmade sugar cookie wall sculptures starting at $90 with free U.S. shipping.",
     type: "website",
@@ -37,13 +37,13 @@ export const metadata: Metadata = {
         url: `${siteUrl}/images/products/choc-chip.jpg`,
         width: 1200,
         height: 630,
-        alt: "Oversized cookie wall decor catalogue — handmade sugar cookie wall sculptures by JOIRUSH",
+        alt: "Oversized cookie wall decor catalogue: handmade sugar cookie wall sculptures by JOIRUSH",
       },
     ],
   },
   twitter: {
     card: "summary_large_image",
-    title: "Oversized Cookie Wall Decor | Full Catalogue — JOIRUSH",
+    title: "Oversized Cookie Wall Decor | Full Catalogue | JOIRUSH",
     description: "Handmade oversized cookie wall decor by cookie artist Erynn. Starting at $90, free U.S. shipping.",
     images: [`${siteUrl}/images/products/choc-chip.jpg`],
   },
@@ -53,9 +53,9 @@ function CatalogueSchema() {
   const schema = {
     "@context": "https://schema.org",
     "@type": "CollectionPage",
-    name: "Oversized Cookie Wall Decor — Full Catalogue",
+    name: "Oversized Cookie Wall Decor: Full Catalogue",
     description:
-      "Full catalogue of handmade oversized cookie wall decor — sugar cookie wall sculptures and art cookies by cookie artist Erynn.",
+      "Full catalogue of handmade oversized cookie wall decor: sugar cookie wall sculptures and art cookies by cookie artist Erynn.",
     url: `${siteUrl}/catalogue`,
     mainEntity: {
       "@type": "ItemList",
@@ -157,11 +157,11 @@ export default function CataloguePage() {
           Oversized Cookie Wall Decor by Cookie Artist Erynn
         </p>
         <h1 className="mt-3 font-display text-5xl text-chocolate md:text-6xl">
-          Oversized Cookie Wall Decor — Pick Your Flavor
+          Oversized Cookie Wall Decor: Pick Your Flavor
         </h1>
         <p className="mt-4 max-w-2xl text-lg text-chocolate-mid">
-          Golden chocolate chip <strong>oversized cookie wall decor</strong>. Candy-loaded M&M sugar cookie sculptures. Peanut butter comfort. Ice cream sandwiches 
-          that stop conversations. Every art cookie is handmade — scroll until one makes your heart skip.
+          Golden chocolate chip <strong>oversized cookie wall decor</strong>. Candy loaded M&M sugar cookie sculptures. Peanut butter comfort. Ice cream sandwiches 
+          that stop conversations. Every art cookie is handmade, so scroll until one makes your heart skip.
         </p>
         <p className="mt-3 text-chocolate-mid">
           Looking for <Link href="/wall-art/" className="text-pink hover:underline">giant cookie wall art</Link>? Check our main collection. 

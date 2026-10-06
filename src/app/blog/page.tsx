@@ -32,7 +32,7 @@ export const metadata: Metadata = {
         url: getImageUrl("/images/products/mm-set.jpg"),
         width: 1200,
         height: 630,
-        alt: "Cookie art blog - sugar cookie wall sculpture inspiration by JOIRUSH",
+        alt: "Cookie art blog: sugar cookie wall sculpture inspiration by JOIRUSH",
       },
     ],
   },
@@ -79,7 +79,7 @@ function BlogJsonLd() {
 }
 
 const categoryLabels: Record<string, string> = {
-  "how-to": "How-To Guide",
+  "how-to": "How To Guide",
   inspiration: "Inspiration",
   "gift-guide": "Gift Guide",
   "product-story": "Product Story",

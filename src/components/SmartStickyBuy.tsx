@@ -36,9 +36,9 @@ const DISABLE_SELECTOR = '[data-sticky-buy="off"]';
 const FOOTER_SELECTOR = "[data-site-footer]";
 const HIDDEN_PATH_PREFIXES = ["/b/", "/jewelry"];
 const FIELD_SELECTOR = "input, textarea, select, [contenteditable='true']";
-/** Keep the bar hidden briefly after load so it never flashes over an above-the-fold CTA. */
+/** Keep the bar hidden briefly after load so it never flashes over an above the fold CTA. */
 const SETTLE_MS = 700;
-/** Sticky site header height — CTAs tucked under it don't count as visible. */
+/** Sticky site header height. CTAs tucked under it don't count as visible. */
 const TOP_INSET_PX = 80;
 const THRESHOLDS = [0, 0.1, 0.2, 0.3, 0.4, 0.5, 0.6, 0.7, 0.8, 0.9, 1];
 
@@ -200,7 +200,7 @@ export function SmartStickyBuy() {
   const handleProductClick = () => {
     track("product", pathname);
     const primary = document.querySelector<HTMLElement>(PRIMARY_SELECTOR);
-    // Re-use the page's own Buy Now so the pair-upsell modal + Stripe links stay identical.
+    // Reuse the page's own Buy Now so the pair-upsell modal + Stripe links stay identical.
     primary?.click();
   };
 
@@ -215,13 +215,13 @@ export function SmartStickyBuy() {
 
   const ariaLabel =
     mode === "product"
-      ? "Buy Now — open checkout options for this piece"
+      ? "Buy Now: open checkout options for this piece"
       : mode === "scroll"
-        ? "Buy Now — jump to the cookie art you can buy on this page"
-        : "Buy Now — shop the full cookie art catalogue";
+        ? "Buy Now: jump to the cookie art you can buy on this page"
+        : "Buy Now: shop the full cookie art catalogue";
 
   // `sticky-buy-attention` (globals.css) adds the desktop-only (>=768px, same as `md:`)
-  // pulsing glow + periodic wiggle; it is a no-op on the mobile full-width bar.
+  // pulsing glow + periodic wiggle; it is a no-op on the mobile full width bar.
   const buttonClass =
     "sticky-buy-attention group flex w-full items-center justify-center gap-2 rounded-full bg-success px-6 py-3.5 text-lg font-bold text-white shadow-lg ring-1 ring-white/20 transition hover:bg-success-dark hover:shadow-xl focus:outline-none focus-visible:ring-4 focus-visible:ring-pink focus-visible:ring-offset-2 focus-visible:ring-offset-cream md:w-auto md:px-8 md:py-4 md:shadow-lift";
 

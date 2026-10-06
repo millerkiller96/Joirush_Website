@@ -73,7 +73,7 @@ export const metadata: Metadata = {
         url: getImageUrl("/images/products/choc-chip.jpg"),
         width: 1200,
         height: 630,
-        alt: "Cookie art - handmade sugar cookie wall sculpture by cookie artist Erynn at JOIRUSH",
+        alt: "Cookie art: handmade sugar cookie wall sculpture by cookie artist Erynn at JOIRUSH",
       },
     ],
   },

@@ -10,9 +10,9 @@ import { site } from "@/data/site";
 import { getAbsoluteUrl, getImageUrl, siteUrl } from "@/lib/seo";
 
 export const metadata: Metadata = {
-  title: "Oversized Food Wall Art | 3D Food Wall Art for Kitchens & Dining Rooms — JOIRUSH",
+  title: "Oversized Food Wall Art | 3D Food Wall Art for Kitchens & Dining Rooms",
   description:
-    "Shop oversized food wall art — handmade 3D food wall art for kitchens, dining rooms, and playrooms. Large food wall art for kitchen spaces that looks real but lasts forever. Cookie sculptures from $90, free U.S. shipping from Daytona Beach, FL.",
+    "Shop oversized food wall art: handmade 3D food wall art for kitchens, dining rooms, and playrooms. Large food wall art for kitchen spaces that looks real but lasts forever. Cookie sculptures from $90, free U.S. shipping from Daytona Beach, FL.",
   keywords: [
     "oversized food wall art",
     "3d food wall art",
@@ -25,7 +25,7 @@ export const metadata: Metadata = {
     "dining room wall art",
   ],
   openGraph: {
-    title: "Oversized Food Wall Art | 3D Food Wall Art for Kitchens — JOIRUSH",
+    title: "Oversized Food Wall Art | 3D Food Wall Art for Kitchens | JOIRUSH",
     description:
       "Handmade oversized food wall art and 3D food wall art for kitchens by cookie artist Erynn. Large food wall art for kitchen spaces that looks real but lasts forever.",
     type: "website",
@@ -34,7 +34,7 @@ export const metadata: Metadata = {
         url: getImageUrl("/images/products/ice-cream.jpg"),
         width: 1200,
         height: 630,
-        alt: "Oversized food wall art — 3D cookie ice cream sandwich sculpture for kitchens by JOIRUSH",
+        alt: "Oversized food wall art: 3D cookie ice cream sandwich sculpture for kitchens by JOIRUSH",
       },
     ],
   },
@@ -47,17 +47,17 @@ const foodWallArtFaqs = [
   {
     question: "What is oversized food wall art?",
     answer:
-      "Oversized food wall art refers to large-scale 3D sculptures that look like food but are designed as permanent wall decor. Unlike prints or canvas art, these are dimensional pieces that create visual impact and spark conversations in kitchens, dining rooms, and playrooms.",
+      "Oversized food wall art refers to large scale 3D sculptures that look like food but are designed as permanent wall decor. Unlike prints or canvas art, these are dimensional pieces that create visual impact and spark conversations in kitchens, dining rooms, and playrooms.",
   },
   {
     question: "What makes 3D food wall art different from food prints?",
     answer:
-      "3D food wall art has actual depth and texture — you can see it from the side, and guests will want to touch it. Flat food prints or canvas art sit flush against the wall. These handmade sculptures have real dimensionality with realistic details like craggy cookie edges and glossy chocolate chips.",
+      "3D food wall art has actual depth and texture. You can see it from the side, and guests will want to touch it. Flat food prints or canvas art sit flush against the wall. These handmade sculptures have real dimensionality with realistic details like craggy cookie edges and glossy chocolate chips.",
   },
   {
     question: "Is oversized food wall art heavy to hang?",
     answer:
-      "No. Despite their size, JOIRUSH food wall art pieces are lightweight because they're made from spray foam — most pieces weigh 2-4 lbs. They hang easily on a single nail or picture hook.",
+      "No. Despite their size, JOIRUSH food wall art pieces are lightweight because they're made from spray foam. Most pieces weigh 2 to 4 lbs. They hang easily on a single nail or picture hook.",
   },
   {
     question: "Where should I hang large food wall art for kitchen spaces?",
@@ -67,7 +67,7 @@ const foodWallArtFaqs = [
   {
     question: "Are these food sculptures edible?",
     answer:
-      "No. JOIRUSH oversized food wall art is made from spray foam and acrylic paint — it's purely decorative. The pieces are designed to look real but are crafted for permanent display, not eating.",
+      "No. JOIRUSH oversized food wall art is made from spray foam and acrylic paint, so it's purely decorative. The pieces are designed to look real but are crafted for permanent display, not eating.",
   },
   {
     question: "How long does shipping take?",
@@ -80,7 +80,7 @@ function FoodWallArtJsonLd() {
   const collectionSchema = {
     "@context": "https://schema.org",
     "@type": "CollectionPage",
-    name: "Oversized Food Wall Art — 3D Food Wall Art for Kitchens",
+    name: "Oversized Food Wall Art: 3D Food Wall Art for Kitchens",
     description:
       "Handmade oversized food wall art and 3D food wall art for kitchens, dining rooms, and playrooms by cookie artist Erynn. Large food wall art that looks real but lasts forever.",
     url: getAbsoluteUrl("/oversized-food-wall-art/"),
@@ -170,19 +170,19 @@ export default function OversizedFoodWallArtPage() {
             </h1>
             <p className="mt-5 text-lg text-chocolate-mid">
               Looking for <strong>large food wall art for kitchen</strong> spaces that actually makes an impact? 
-              Forget flat prints — this is <strong>3D food wall art</strong> that guests will want to touch. 
-              Handmade cookie sculptures with realistic depth, texture, and that just-baked look.
+              Forget flat prints. This is <strong>3D food wall art</strong> that guests will want to touch. 
+              Handmade cookie sculptures with realistic depth, texture, and that just baked look.
             </p>
             <p className="mt-4 text-chocolate-mid">
-              Each piece of <strong>oversized food wall art</strong> is hand-sculpted from spray foam and 
+              Each piece of <strong>oversized food wall art</strong> is hand sculpted from spray foam and 
               acrylic paint by cookie artist Erynn in Florida. Lightweight, ready to hang, 
-              and designed to spark conversations — whether it's above your dining table, in the breakfast nook, 
+              and designed to spark conversations, whether it's above your dining table, in the breakfast nook, 
               or anchoring a playroom gallery wall.
             </p>
             <ul className="mt-5 flex flex-wrap gap-x-4 gap-y-1 text-sm text-chocolate-mid">
               <li>✓ Ships in {site.shippingTime}</li>
               <li>✓ Free U.S. shipping</li>
-              <li>✓ Lightweight — most pieces hang on a nail</li>
+              <li>✓ Lightweight, so most pieces hang on a nail</li>
               <li>✓ Handmade in Daytona Beach, FL</li>
             </ul>
             <div className="mt-8 flex flex-wrap gap-3">
@@ -210,7 +210,7 @@ export default function OversizedFoodWallArtPage() {
           </div>
           <Image
             src="/images/products/ice-cream.jpg"
-            alt="Oversized food wall art — 3D cookie ice cream sandwich sculpture for kitchens and dining rooms by JOIRUSH"
+            alt="Oversized food wall art: 3D cookie ice cream sandwich sculpture for kitchens and dining rooms by JOIRUSH"
             width={1000}
             height={1333}
             className="rounded-[2.2rem] object-cover shadow-card"
@@ -225,21 +225,21 @@ export default function OversizedFoodWallArtPage() {
             <SectionHeading
               eyebrow="Why 3D food wall art hits different"
               title="Not a Print. Real Sculptural Art."
-              copy="Flat canvas food prints are everywhere. This is 3D food wall art — dimensional, textured, and detailed enough to fool your guests. Large food wall art for kitchen spaces that actually makes a statement."
+              copy="Flat canvas food prints are everywhere. This is 3D food wall art: dimensional, textured, and detailed enough to fool your guests. Large food wall art for kitchen spaces that actually makes a statement."
             />
             <div className="mt-10 grid gap-5 md:grid-cols-3">
               {[
                 {
                   title: "Real 3D Depth & Texture",
-                  copy: "Thick, sculptural depth with craggy edges, glossy chips, and that golden-brown finish. Oversized food wall art you can see from every angle.",
+                  copy: "Thick, sculptural depth with craggy edges, glossy chips, and that golden brown finish. Oversized food wall art you can see from every angle.",
                 },
                 {
                   title: "Handmade by an Artist",
-                  copy: "Each 3D food sculpture is hand-sculpted by cookie artist Erynn — not mass-produced. Real artistry, 14 days from order to your wall.",
+                  copy: "Each 3D food sculpture is hand sculpted by cookie artist Erynn, not mass produced. Real artistry, 14 days from order to your wall.",
                 },
                 {
                   title: "Lightweight & Easy to Hang",
-                  copy: "Despite the large size, these pieces are lightweight. Built-in hanger — most pieces hang on a single nail.",
+                  copy: "Despite the large size, these pieces are lightweight. With the attached hanger, most pieces hang on a single nail.",
                 },
               ].map((item) => (
                 <div key={item.title} className="rounded-[1.8rem] bg-cream p-6">
@@ -259,7 +259,7 @@ export default function OversizedFoodWallArtPage() {
           <SectionHeading
             eyebrow="Large food wall art for kitchen & dining"
             title="3D Food Wall Art Collection"
-            copy="Cookie sculptures that work as oversized food wall art — perfect for kitchens, dining rooms, breakfast nooks, and playrooms. Pick your flavor."
+            copy="Cookie sculptures that work as oversized food wall art, perfect for kitchens, dining rooms, breakfast nooks, and playrooms. Pick your flavor."
           />
           <div className="mt-10 grid gap-8 sm:grid-cols-2 lg:grid-cols-3">
             {featuredForKitchens.slice(0, 6).map((product) => (
@@ -300,7 +300,7 @@ export default function OversizedFoodWallArtPage() {
                 },
                 {
                   title: "Playroom Gallery",
-                  copy: "Kids love food art. Create a whimsical gallery wall with candy-colored cookie sculptures — dopamine decor they'll never outgrow.",
+                  copy: "Kids love food art. Create a whimsical gallery wall with candy colored cookie sculptures: dopamine decor they'll never outgrow.",
                 },
               ].map((item) => (
                 <div key={item.title} className="rounded-[1.5rem] bg-white p-5">
@@ -325,7 +325,7 @@ export default function OversizedFoodWallArtPage() {
               <SectionHeading
                 eyebrow="Handmade oversized food wall art"
                 title="Why Not Just Buy a Food Print?"
-                copy="You could hang a $40 canvas print of a cookie. Or you could hang 3D food wall art that makes people do a double-take — then reach out to touch it."
+                copy="You could hang a $40 canvas print of a cookie. Or you could hang 3D food wall art that makes people do a double take, then reach out to touch it."
               />
               <div className="mt-6 space-y-4 text-chocolate-mid">
                 <p>
@@ -333,9 +333,9 @@ export default function OversizedFoodWallArtPage() {
                   dimension, and that "is that real?" effect? That's the conversation starter your kitchen deserves.
                 </p>
                 <p>
-                  Each piece is hand-sculpted from spray foam, then painted with layers of acrylic to capture 
-                  realistic golden-brown tones, glossy chips, and those craggy cookie edges. The result is{" "}
-                  <strong>large food wall art for kitchen</strong> spaces that looks good enough to eat — forever.
+                  Each piece is hand sculpted from spray foam, then painted with layers of acrylic to capture 
+                  realistic golden brown tones, glossy chips, and those craggy cookie edges. The result is{" "}
+                  <strong>large food wall art for kitchen</strong> spaces that looks good enough to eat, forever.
                 </p>
                 <p>
                   Explore the full collection:{" "}

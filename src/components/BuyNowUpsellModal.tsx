@@ -124,7 +124,7 @@ export function BuyNowUpsellModal({ product, isOpen, onClose }: BuyNowUpsellModa
 
         <p className="text-sm text-chocolate-mid sm:text-base">
           Add a second <span className="font-semibold text-chocolate">{product.shortName}</span> and
-          save <span className="font-bold text-success-dark">{formatPrice(savings)}</span> — that&apos;s{" "}
+          save <span className="font-bold text-success-dark">{formatPrice(savings)}</span>. That&apos;s{" "}
           <span className="font-bold text-success-dark">10% off</span> the second one!
         </p>
 

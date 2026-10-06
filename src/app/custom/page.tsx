@@ -9,7 +9,7 @@ const siteUrl = "https://joirush.com";
 export const metadata: Metadata = {
   title: "Custom Cookie Art | Commission Sugar Cookie Wall Sculptures by Cookie Artist",
   description:
-    "Commission custom cookie art from cookie artist Erynn — sugar cookie wall sculptures in your favorite colors, custom flavors, or any cookie canvas design you dream up. Handmade art cookies in Daytona Beach, Florida with free U.S. shipping.",
+    "Commission custom cookie art from cookie artist Erynn: sugar cookie wall sculptures in your favorite colors, custom flavors, or any cookie canvas design you dream up. Handmade art cookies in Daytona Beach, Florida with free U.S. shipping.",
   keywords: [
     "custom cookie art",
     "commission cookie artist",
@@ -26,7 +26,7 @@ export const metadata: Metadata = {
   openGraph: {
     title: "Custom Cookie Art | Commission Sugar Cookie Wall Sculptures | JOIRUSH",
     description:
-      "Commission custom cookie art from cookie artist Erynn — sugar cookie wall sculptures in any design. Handmade in Daytona Beach, Florida.",
+      "Commission custom cookie art from cookie artist Erynn: sugar cookie wall sculptures in any design. Handmade in Daytona Beach, Florida.",
     type: "website",
     url: `${siteUrl}/custom`,
     images: [
@@ -34,7 +34,7 @@ export const metadata: Metadata = {
         url: `${siteUrl}/images/products/hot-pink-mm.jpg`,
         width: 1200,
         height: 630,
-        alt: "Custom cookie art - hot pink M&M sugar cookie wall sculpture by JOIRUSH",
+        alt: "Custom cookie art: hot pink M&M sugar cookie wall sculpture by JOIRUSH",
       },
     ],
   },
@@ -53,18 +53,18 @@ export default function CustomPage() {
           </h1>
           <p className="mt-5 text-lg text-chocolate-mid">
             Hot pink candy cookie art. Your kitchen&apos;s exact shade of sage. A peanut butter monster 
-            with rainbow sprinkles. <strong>Tell the cookie artist your wildest craving</strong> — she&apos;ll 
-            sculpt it into a sugar cookie wall sculpture that stops people mid-sentence.
+            with rainbow sprinkles. <strong>Tell the cookie artist your wildest craving</strong> and she&apos;ll 
+            sculpt it into a sugar cookie wall sculpture that stops people mid sentence.
           </p>
           <ul className="mt-8 space-y-3 text-chocolate-mid">
-            <li>✓ Any color palette — match your cookie canvas to your vibe exactly</li>
-            <li>✓ Any flavor combo — the weirder the better for custom art cookies</li>
-            <li>✓ Ships in 14 days — free U.S. shipping</li>
+            <li>✓ Any color palette, matched to your vibe exactly</li>
+            <li>✓ Any flavor combo (the weirder the better for custom art cookies)</li>
+            <li>✓ Ships in 14 days with free U.S. shipping</li>
             <li>✓ Cookie artist usually replies within a few hours</li>
             <li>✓ Handmade cookie art in Daytona Beach with spray foam + acrylic paint</li>
           </ul>
           <p className="mt-6 text-sm text-chocolate-soft">
-            Because each piece is sculpted just for you, returns are not accepted — but that&apos;s 
+            Because each piece is sculpted just for you, returns are not accepted. But that&apos;s 
             also what makes it special.
           </p>
           <p className="mt-4 text-sm text-chocolate-soft">

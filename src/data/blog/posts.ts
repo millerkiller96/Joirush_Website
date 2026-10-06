@@ -17,11 +17,11 @@ export const blogPosts: BlogPost[] = [
     slug: "spray-foam-cookie-wall-art-how-theyre-made",
     title: "Spray Foam Cookie Wall Art: How Collectors' Sculptures Are Made",
     excerpt:
-      "Learn how spray foam cookie wall art is sculpted, painted, and sealed. Discover why this lightweight material creates realistic jumbo cookie sculptures that weigh just 2-4 lbs and hang on a single nail.",
+      "Learn how spray foam cookie wall art is sculpted, painted, and sealed. Discover why this lightweight material creates realistic jumbo cookie sculptures that weigh just 2 to 4 lbs and hang on a single nail.",
     publishedAt: "2026-09-29",
     author: "Erynn",
     image: "/images/products/choc-chip.jpg",
-    imageAlt: "Spray foam jumbo cookie wall sculpture - handmade faux cookie wall art by JOIRUSH",
+    imageAlt: "Spray foam jumbo cookie wall sculpture: handmade faux cookie wall art by JOIRUSH",
     keywords: [
       "spray foam cookie wall art",
       "spray foam cookie sculpture",
@@ -36,13 +36,13 @@ export const blogPosts: BlogPost[] = [
   },
   {
     slug: "faux-cookie-wall-decor-ready-made-vs-diy",
-    title: "Faux Cookie Wall Decor: Ready-Made Sculptures vs DIY Giant Cookies",
+    title: "Faux Cookie Wall Decor: Ready Made Sculptures vs DIY Giant Cookies",
     excerpt:
-      "Comparing DIY faux cookie projects (foam board, salt dough tutorials) to buying handmade spray-foam sugar cookie wall sculptures. Weight, texture, durability, and why collectors who want it done right choose ready-made cookie art.",
+      "Comparing DIY faux cookie projects (foam board, salt dough tutorials) to buying handmade spray foam sugar cookie wall sculptures. Weight, texture, durability, and why collectors who want it done right choose ready made cookie art.",
     publishedAt: "2026-09-23",
     author: "Erynn",
     image: "/images/products/choc-chip.jpg",
-    imageAlt: "Faux cookie wall decor - handmade spray-foam sugar cookie wall sculpture vs DIY giant cookie",
+    imageAlt: "Faux cookie wall decor: handmade spray foam sugar cookie wall sculpture vs DIY giant cookie",
     keywords: [
       "faux cookie wall decor",
       "giant faux cookie",
@@ -60,11 +60,11 @@ export const blogPosts: BlogPost[] = [
     slug: "cookie-canvas-vs-3d-cookie-wall-sculptures",
     title: "Cookie Canvas Prints vs Handmade 3D Cookie Wall Sculptures: What Collectors Actually Hang",
     excerpt:
-      "Flat cookie canvas prints vs 3D spray-foam cookie wall sculptures — what's the difference and which do collectors actually hang? Learn why handmade sugar cookie wall sculptures from JOIRUSH offer the depth, texture, and statement-piece impact that flat prints can't match.",
+      "Flat cookie canvas prints vs 3D spray foam cookie wall sculptures: what's the difference and which do collectors actually hang? Learn why handmade sugar cookie wall sculptures from JOIRUSH offer the depth, texture, and statement piece impact that flat prints can't match.",
     publishedAt: "2026-09-22",
     author: "Erynn",
     image: "/images/products/choc-chip.jpg",
-    imageAlt: "3D cookie wall sculpture vs flat cookie canvas print - handmade sugar cookie wall art by JOIRUSH",
+    imageAlt: "3D cookie wall sculpture vs flat cookie canvas print: handmade sugar cookie wall art by JOIRUSH",
     keywords: [
       "cookie canvas",
       "cookie wall art",
@@ -83,11 +83,11 @@ export const blogPosts: BlogPost[] = [
     slug: "cookie-wall-art-for-home-collectors",
     title: "Cookie Wall Art for Home Collectors: Faux Sugar Cookie Sculptures That Last Forever",
     excerpt:
-      "A collector's guide to cookie wall art — faux sugar cookie wall sculptures that look real but aren't edible. Learn what makes these spray-foam cookie sculptures different from royal icing cookies and how to choose the perfect piece for your home.",
+      "A collector's guide to cookie wall art: faux sugar cookie wall sculptures that look real but aren't edible. Learn what makes these spray foam cookie sculptures different from royal icing cookies and how to choose the perfect piece for your home.",
     publishedAt: "2026-09-21",
     author: "Erynn",
     image: "/images/products/mm-set.jpg",
-    imageAlt: "Cookie wall art - handmade faux sugar cookie wall sculptures for home collectors by JOIRUSH",
+    imageAlt: "Cookie wall art: handmade faux sugar cookie wall sculptures for home collectors by JOIRUSH",
     keywords: [
       "cookie wall art",
       "sugar cookie wall sculpture",
@@ -105,11 +105,11 @@ export const blogPosts: BlogPost[] = [
     slug: "what-is-cookie-art-sugar-cookie-wall-sculptures-explained",
     title: "What is Cookie Art? A Guide to Sugar Cookie Wall Sculptures & Art Cookies",
     excerpt:
-      "Discover cookie art — the emerging trend of decorative sugar cookie wall sculptures that look real but last forever. Learn what makes art cookies different from edible sugar cookies and why cookie artists are creating faux food wall art for homes and kitchens.",
+      "Discover cookie art, the emerging trend of decorative sugar cookie wall sculptures that look real but last forever. Learn what makes art cookies different from edible sugar cookies and why cookie artists are creating faux food wall art for homes and kitchens.",
     publishedAt: "2024-09-20",
     author: "Erynn",
     image: "/images/products/choc-chip.jpg",
-    imageAlt: "Cookie art - handmade sugar cookie wall sculpture that looks real by cookie artist Erynn",
+    imageAlt: "Cookie art: handmade sugar cookie wall sculpture that looks real by cookie artist Erynn",
     keywords: [
       "cookie art",
       "sugar cookie art",
@@ -126,12 +126,12 @@ export const blogPosts: BlogPost[] = [
     slug: "how-to-hang-jumbo-cookie-wall-art",
     title: "How to Hang Jumbo Cookie Wall Art: Sugar Cookie Sculpture Display Guide",
     excerpt:
-      "Learn how to hang jumbo cookie wall art safely and beautifully. Hardware tips, gallery-wall layouts, and care for lightweight sugar cookie wall sculptures (2–4 lbs) made for home collectors.",
+      "Learn how to hang jumbo cookie wall art safely and beautifully. Hardware tips, gallery wall layouts, and care for lightweight sugar cookie wall sculptures (2 to 4 lbs) made for home collectors.",
     publishedAt: "2024-09-01",
     updatedAt: "2026-10-04",
     author: "Erynn",
     image: "/images/products/choc-chip.jpg",
-    imageAlt: "Cookie art - sugar cookie wall sculpture hanging in a bright kitchen by cookie artist Erynn",
+    imageAlt: "Cookie art: sugar cookie wall sculpture hanging in a bright kitchen by cookie artist Erynn",
     keywords: [
       "how to hang jumbo cookie wall art",
       "jumbo cookie wall art",
@@ -152,7 +152,7 @@ export const blogPosts: BlogPost[] = [
     publishedAt: "2024-09-05",
     author: "Erynn",
     image: "/images/products/rainbow.jpg",
-    imageAlt: "Cookie art gallery wall - colorful sugar cookie wall sculptures creating dopamine decor",
+    imageAlt: "Cookie art gallery wall: colorful sugar cookie wall sculptures creating dopamine decor",
     keywords: [
       "cookie art gallery wall",
       "sugar cookie art decor",
@@ -167,11 +167,11 @@ export const blogPosts: BlogPost[] = [
     slug: "foodie-gift-guide-jumbo-cookie-sculptures",
     title: "The Ultimate Foodie Gift Guide: Cookie Art They'll Never Forget",
     excerpt:
-      "Looking for a unique gift for the food lover in your life? These handmade sugar cookie wall sculptures and art cookies are conversation starters that last forever — unlike real cookies.",
+      "Looking for a unique gift for the food lover in your life? These handmade sugar cookie wall sculptures and art cookies are conversation starters that last forever, unlike real cookies.",
     publishedAt: "2024-09-10",
     author: "Erynn",
     image: "/images/products/mm-set.jpg",
-    imageAlt: "Cookie art gift idea - sugar cookie wall sculpture set by cookie artist Erynn",
+    imageAlt: "Cookie art gift idea: sugar cookie wall sculpture set by cookie artist Erynn",
     keywords: [
       "cookie art gifts",
       "sugar cookie art gift guide",
@@ -190,7 +190,7 @@ export const blogPosts: BlogPost[] = [
     publishedAt: "2024-09-15",
     author: "Erynn",
     image: "/images/products/choc-chip.jpg",
-    imageAlt: "Cookie art - classic chocolate chip sugar cookie wall sculpture by cookie artist Erynn",
+    imageAlt: "Cookie art: classic chocolate chip sugar cookie wall sculpture by cookie artist Erynn",
     keywords: [
       "cookie art story",
       "cookie artist Erynn",

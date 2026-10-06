@@ -78,19 +78,19 @@ export type Product = {
 export const defaultFAQs: ProductFAQ[] = [
   {
     question: "Is this cookie art edible?",
-    answer: "No, this is decorative cookie art — a wall sculpture made from spray foam and acrylic paint. These art cookies are designed to look like real sugar cookies but are not food. They're faux food wall art meant to last forever on your wall.",
+    answer: "No, this is decorative cookie art: a wall sculpture made from spray foam and acrylic paint. These art cookies are designed to look like real sugar cookies but are not food. They're faux food wall art meant to last forever on your wall.",
   },
   {
     question: "What is cookie art?",
-    answer: "Cookie art refers to decorative sugar cookie wall sculptures — handmade faux food wall art that looks like real cookies. Unlike edible sugar cookie art, these pieces are crafted from durable materials by a cookie artist and designed to hang on your wall permanently.",
+    answer: "Cookie art refers to decorative sugar cookie wall sculptures, handmade faux food wall art that looks like real cookies. Unlike edible sugar cookie art, these pieces are crafted from durable materials by a cookie artist and designed to hang on your wall permanently.",
   },
   {
     question: "How long does shipping take?",
-    answer: "Each cookie art piece ships in 14 days. Every sugar cookie wall sculpture is handcrafted to order by cookie artist Erynn — the 14-day timeline includes handmade production and shipping. True artistry takes time.",
+    answer: "Each cookie art piece ships in 14 days. Every sugar cookie wall sculpture is handcrafted to order by cookie artist Erynn. The 14 day timeline includes handmade production and shipping. True artistry takes time.",
   },
   {
     question: "How do I hang this cookie canvas on my wall?",
-    answer: "Each cookie art piece comes with a built-in wall hanger on the back. Simply use a nail or picture hook rated for the weight (most pieces weigh 2-4 lbs). These sugar cookie wall sculptures are lightweight and easy to hang.",
+    answer: "Each cookie art piece comes with an attached wall hanger on the back. Simply use a nail or picture hook rated for the weight (most pieces weigh 2 to 4 lbs). These sugar cookie wall sculptures are lightweight and easy to hang.",
   },
   {
     question: "How big is this art cookie?",
@@ -98,11 +98,11 @@ export const defaultFAQs: ProductFAQ[] = [
   },
   {
     question: "Do you ship cookie art internationally?",
-    answer: "Currently we offer free U.S. shipping with 14-day handmade production and delivery. For international cookie art orders, please contact us through the custom order form for a shipping quote.",
+    answer: "Currently we offer free U.S. shipping with 14 day handmade production and delivery. For international cookie art orders, please contact us through the custom order form for a shipping quote.",
   },
   {
     question: "Can I commission custom cookie art?",
-    answer: "Absolutely! Visit our custom orders page to commission sugar cookie wall sculptures in specific colors, sizes, or flavors. Cookie artist Erynn loves creating one-of-a-kind art cookies.",
+    answer: "Absolutely! Visit our custom orders page to commission sugar cookie wall sculptures in specific colors, sizes, or flavors. Cookie artist Erynn loves creating one of a kind art cookies.",
   },
 ];
 
@@ -123,11 +123,11 @@ export const products: Product[] = [
     upsellPairPrice: 190,
     tagline: "The cookie art that started it all. Golden crumble. Glossy chips. Zero guilt.",
     description:
-      "Golden-brown edges. Thick, craggy dough. Chocolate chips catching the light like they just came out of the oven. This cookie art classic is a sugar cookie wall sculpture that makes guests reach out before their brain catches up — then laugh when they realize it's faux food wall art. Cookie canvas comfort for your wall, forever.",
+      "Golden brown edges. Thick, craggy dough. Chocolate chips catching the light like they just came out of the oven. This cookie art classic is a sugar cookie wall sculpture that makes guests reach out before their brain catches up, then laugh when they realize it's faux food wall art. Cookie canvas comfort for your wall, forever.",
     details: [
-      "16 × 16 inches — statement cookie art size",
+      "16 × 16 inches, a statement cookie art size",
       "Handmade by cookie artist Erynn",
-      "Built-in hanger — hang this cookie canvas tonight",
+      "Attached hanger, so you can hang this cookie canvas tonight",
       "Sculptural sugar cookie art texture you can see from across the room",
       "Perfect for kitchens, playrooms, and spaces that need joy",
     ],
@@ -154,14 +154,14 @@ export const products: Product[] = [
     stripeUrl: "https://buy.stripe.com/9B66oB3oT9vMaUc0v29fW02",
     stripeUpsellUrl: "https://buy.stripe.com/bJe7sF9Nh0ZgbYga5C9fW0y",
     upsellPairPrice: 332,
-    tagline: "Two cookies. Double the dopamine. Half the decision-making.",
+    tagline: "Two cookies. Double the dopamine. Half the decision making.",
     description:
-      "Can't pick just one? Don't. This pair was made to hang side by side — twice the golden crumble, twice the conversation. Thick sculptural texture on each cookie means they pop from across the room. Your wall's about to have a personality.",
+      "Can't pick just one? Don't. This pair was made to hang side by side: twice the golden crumble, twice the conversation. Thick sculptural texture on each cookie means they pop from across the room. Your wall's about to have a personality.",
     details: [
-      "Two 14-inch handmade cookies",
-      "Designed to hang together (or split — you do you)",
+      "Two 14 inch handmade cookies",
+      "Designed to hang together (or apart, you do you)",
       "Spray foam + acrylic paint",
-      "Lightweight — each hangs on a single nail",
+      "Lightweight, so each hangs on a single nail",
       "One of a kind set",
     ],
     materials: "Spray foam, acrylic paint",
@@ -183,11 +183,11 @@ export const products: Product[] = [
     upsellPairPrice: 428,
     tagline: "Two jumbo art cookies. Maximum color. Maximum cookie art chaos.",
     description:
-      "Candy pops of red, yellow, blue, and green. Golden dough. Two 16-inch sugar cookie wall sculptures that turn any wall into a statement. Together these art cookies are louder than furniture — hang them side by side and watch people's jaws drop. This cookie art set is for rooms that already know who they are.",
+      "Candy pops of red, yellow, blue, and green. Golden dough. Two 16 inch sugar cookie wall sculptures that turn any wall into a statement. Together these art cookies are louder than furniture. Hang them side by side and watch people's jaws drop. This cookie art set is for rooms that already know who they are.",
     details: [
-      "Two 16-inch cookie art pieces",
-      "Handmade by cookie artist Erynn — no two sets are identical",
-      "Lightweight faux food wall art — hangs on standard picture nails",
+      "Two 16 inch cookie art pieces",
+      "Handmade by cookie artist Erynn, so no two sets are identical",
+      "Lightweight faux food wall art that hangs on standard picture nails",
       "Display together or separate (your call)",
       "Perfect for big walls, kitchens, studios, or anywhere that needs cookie canvas color",
     ],
@@ -209,11 +209,11 @@ export const products: Product[] = [
     upsellPairPrice: 218,
     tagline: "Soft vanilla vibes. Creamy white chips. Dreamy energy.",
     description:
-      "The same golden crumble as the classic, with a softer palette — creamy white chips on warm golden dough. It's the white chocolate lover's fantasy, frozen in sculpture. Craggy edges. That just-baked glow. Perfect for kitchens that lean light, bright, and sweet.",
+      "The same golden crumble as the classic, with a softer palette: creamy white chips on warm golden dough. It's the white chocolate lover's fantasy, frozen in sculpture. Craggy edges. That just baked glow. Perfect for kitchens that lean light, bright, and sweet.",
     details: [
       "Approximately 16 inches",
       "Spray foam + acrylic paint",
-      "Built-in hanger — up in minutes",
+      "Attached hanger, up in minutes",
       "Dreamy dessert decor energy",
     ],
     materials: "Spray foam, acrylic paint",
@@ -233,14 +233,14 @@ export const products: Product[] = [
     stripeUrl: "https://buy.stripe.com/28EdR3gbF6jA5zSelS9fW08",
     stripeUpsellUrl: "https://buy.stripe.com/6oU3cpe3x23kgewelS9fW0D",
     upsellPairPrice: 171,
-    tagline: "Jewel-bright cookie art. Pure dopamine. $90.",
+    tagline: "Jewel bright cookie art. Pure dopamine. $90.",
     description:
-      "Orange. Purple. Yellow. Red. Blue. Green. Jewel-bright candy chips scattered across golden dough like confetti at a party. This cookie art turns boring walls into Candyland — playrooms, kitchens, anywhere that needs pure, unfiltered joy. At $90, it's the most colorful sugar cookie wall sculpture you can hang.",
+      "Orange. Purple. Yellow. Red. Blue. Green. Jewel bright candy chips scattered across golden dough like confetti at a party. This cookie art turns boring walls into Candyland: playrooms, kitchens, anywhere that needs pure, unfiltered joy. At $90, it's the most colorful sugar cookie wall sculpture you can hang.",
     details: [
-      "14-inch handmade cookie art",
-      "Rainbow candy chips — every color of art cookies",
+      "14 inch handmade cookie art",
+      "Rainbow candy chips in every color of art cookies",
       "Crafted by cookie artist Erynn",
-      "Built-in hanger — hang this cookie canvas with no tools",
+      "Attached hanger, so this cookie canvas goes up with no tools",
     ],
     materials: "Spray foam, acrylic paint",
     faqs: defaultFAQs,
@@ -260,11 +260,11 @@ export const products: Product[] = [
     upsellPairPrice: 171,
     tagline: "Big impact. Smaller footprint. Same irresistible crumble.",
     description:
-      "All the golden-brown goodness of the jumbo classic, sized for cozier spaces. Glossy chips. Thick, craggy texture. Still makes people reach out. Still makes them laugh when they realize it's not real. The entry point to cookie wall art addiction.",
+      "All the golden brown goodness of the jumbo classic, sized for cozier spaces. Glossy chips. Thick, craggy texture. Still makes people reach out. Still makes them laugh when they realize it's not real. The entry point to cookie wall art addiction.",
     details: [
-      "Mini jumbo format — perfect for smaller walls",
+      "Mini jumbo format, perfect for smaller walls",
       "Spray foam + acrylic paint",
-      "Built-in hanger — hang it tonight",
+      "Attached hanger, so you can hang it tonight",
       "The gateway cookie",
     ],
     materials: "Spray foam, acrylic paint",
@@ -285,12 +285,12 @@ export const products: Product[] = [
     upsellPairPrice: 218,
     tagline: "Candy vibes. Softer palette. Still stops the room.",
     description:
-      "Lavender. Baby blue. Blush. Mint. Pastel candy pops on golden sculpted dough — all the fun of Candyland with a gentler, dreamier aesthetic. Perfect for nurseries, soft-maximalist kitchens, or anyone who wants bold art in a softer color story. Loud texture, quiet palette.",
+      "Lavender. Baby blue. Blush. Mint. Pastel candy pops on golden sculpted dough. All the fun of Candyland with a gentler, dreamier aesthetic. Perfect for nurseries, soft maximalist kitchens, or anyone who wants bold art in a softer color story. Loud texture, quiet palette.",
     details: [
-      "Jumbo 16-inch format",
+      "Jumbo 16 inch format",
       "Pastel candy detailing",
       "Spray foam + acrylic paint",
-      "Built-in hanger — ready to display",
+      "Attached hanger, ready to display",
     ],
     materials: "Spray foam, acrylic paint",
     faqs: defaultFAQs,
@@ -310,12 +310,12 @@ export const products: Product[] = [
     upsellPairPrice: 190,
     tagline: "Festive. Forever fresh. No crumbs under the tree.",
     description:
-      "Holiday candy colors on golden dough — the seasonal statement piece that never goes stale. Hang it in November, keep it through New Year's (or all year, we won't judge). No crumbs. No calories. Just pure holiday dopamine that lasts forever.",
+      "Holiday candy colors on golden dough: the seasonal statement piece that never goes stale. Hang it in November, keep it through New Year's (or all year, we won't judge). No crumbs. No calories. Just pure holiday dopamine that lasts forever.",
     details: [
-      "Jumbo 16-inch holiday sculpture",
+      "Jumbo 16 inch holiday sculpture",
       "Festive candy color palette",
       "Spray foam + acrylic paint",
-      "Built-in hanger — perfect for holiday decor swaps",
+      "Attached hanger, perfect for holiday decor swaps",
     ],
     materials: "Spray foam, acrylic paint",
     faqs: defaultFAQs,
@@ -335,12 +335,12 @@ export const products: Product[] = [
     upsellPairPrice: 190,
     tagline: "Rich peanut butter dough. Candy pops. Pure nostalgia.",
     description:
-      "Warm, nutty peanut butter tones with candy confetti on top — like grandma's kitchen, but cooler. Craggy handmade texture that begs to be touched. This is comfort food as wall art, for anyone who grew up sneaking cookies from the cooling rack.",
+      "Warm, nutty peanut butter tones with candy confetti on top, like grandma's kitchen, but cooler. Craggy handmade texture that begs to be touched. This is comfort food as wall art, for anyone who grew up sneaking cookies from the cooling rack.",
     details: [
-      "Giant 16-inch format",
+      "Giant 16 inch format",
       "Colorful candy accents on PB dough",
       "Spray foam + acrylic paint",
-      "Built-in hanger — hang it today",
+      "Attached hanger, so you can hang it today",
     ],
     materials: "Spray foam, acrylic paint",
     faqs: defaultFAQs,
@@ -360,12 +360,12 @@ export const products: Product[] = [
     upsellPairPrice: 209,
     tagline: "Twice the chocolate. Twice the temptation. Zero regrets.",
     description:
-      "Dark cocoa dough. Glossy chocolate chips. This is for the people who look at a regular chocolate chip cookie and think 'needs more chocolate.' Moody, decadent, and absolutely show-stopping — the darkest piece in the collection.",
+      "Dark cocoa dough. Glossy chocolate chips. This is for the people who look at a regular chocolate chip cookie and think 'needs more chocolate.' Moody, decadent, and absolutely showstopping. It's the darkest piece in the collection.",
     details: [
-      "Giant 16-inch format",
-      "Double chocolate finish — deep and dramatic",
+      "Giant 16 inch format",
+      "Double chocolate finish, deep and dramatic",
       "Spray foam + acrylic paint",
-      "Built-in hanger — moody decor, easy install",
+      "Attached hanger: moody decor, easy install",
     ],
     materials: "Spray foam, acrylic paint",
     faqs: defaultFAQs,
@@ -386,19 +386,19 @@ export const products: Product[] = [
     upsellPairPrice: 418,
     tagline: "The showstopper cookie art. Two cookies. Vanilla slab. Zero melt.",
     description:
-      "Two golden sugar cookie wall sculptures hugging a thick vanilla ice cream layer — frozen in time, permanently delicious, zero mess. This cookie art statement piece stops conversations and starts new ones. The ultimate childhood treat as adult faux food wall art. Warning: this art cookie will become the most photographed thing in your home.",
+      "Two golden sugar cookie wall sculptures hugging a thick vanilla ice cream layer, frozen in time, permanently delicious, zero mess. This cookie art statement piece stops conversations and starts new ones. The ultimate childhood treat as adult faux food wall art. Warning: this art cookie will become the most photographed thing in your home.",
     details: [
-      "Statement cookie canvas — the biggest flex",
+      "Statement cookie canvas, the biggest flex",
       "Cookie art + faux ice cream construction",
       "Handmade by cookie artist Erynn",
-      "Still only ~4-5 lbs — hangs on standard hooks",
+      "Still only about 4 to 5 lbs, so it hangs on standard hooks",
     ],
     materials: "Spray foam, acrylic paint",
     faqs: [
       ...defaultFAQs,
       {
         question: "How heavy is this cookie art statement piece?",
-        answer: "Despite its size, this sugar cookie wall sculpture is lightweight at around 4-5 lbs. It's designed to hang securely on standard picture hooks.",
+        answer: "Despite its size, this sugar cookie wall sculpture is lightweight at around 4 to 5 lbs. It's designed to hang securely on standard picture hooks.",
       },
     ],
   },
@@ -417,12 +417,12 @@ export const products: Product[] = [
     upsellPairPrice: 218,
     tagline: "Golden dough. Candy confetti. Instant serotonin.",
     description:
-      "Classic M&M cookie energy — golden sculpted dough scattered with glossy candy pieces and chocolate chunks. Reads as pop art from across the room. The kind of piece that makes people smile before they even realize they're smiling.",
+      "Classic M&M cookie energy: golden sculpted dough scattered with glossy candy pieces and chocolate chunks. Reads as pop art from across the room. The kind of piece that makes people smile before they even realize they're smiling.",
     details: [
-      "Jumbo 16-inch format",
+      "Jumbo 16 inch format",
       "Candy + chocolate detailing",
       "Spray foam + acrylic paint",
-      "Built-in hanger — ready to display",
+      "Attached hanger, ready to display",
     ],
     materials: "Spray foam, acrylic paint",
     faqs: defaultFAQs,
@@ -443,12 +443,12 @@ export const products: Product[] = [
     upsellPairPrice: 218,
     tagline: "Loud. Pink. Unapologetic. The main character cookie art.",
     description:
-      "Hot pink dough. Candy confetti. Dark chocolate chunks. This sugar cookie wall sculpture screams 'I have a personality' — maximal, playful, and completely unapologetic cookie art. For rooms that are already bold and people who don't do subtle. The main character art cookie of the collection.",
+      "Hot pink dough. Candy confetti. Dark chocolate chunks. This sugar cookie wall sculpture screams 'I have a personality.' Maximal, playful, and completely unapologetic cookie art. For rooms that are already bold and people who don't do subtle. The main character art cookie of the collection.",
     details: [
-      "Hot pink cookie canvas finish — impossible to ignore",
+      "Hot pink cookie canvas finish that is impossible to ignore",
       "Candy and chocolate accents",
       "Handmade by cookie artist Erynn",
-      "Built-in hanger — command attention with this faux food wall art immediately",
+      "Attached hanger, so this faux food wall art commands attention right away",
     ],
     materials: "Spray foam, acrylic paint",
     faqs: defaultFAQs,

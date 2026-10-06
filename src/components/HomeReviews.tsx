@@ -2,15 +2,32 @@
 
 import { useEffect, useRef, useState } from "react";
 import { site } from "@/data/site";
-import { getFiveStarReviews } from "@/data/reviews";
+import { getFiveStarReviews, mergeReviews, type PoolReview } from "@/data/reviews";
+import { fetchApprovedReviews } from "@/lib/sheetReviews";
 import { ReviewForm } from "@/components/ReviewForm";
 import { ReviewStars, StarIcon } from "@/components/ReviewStars";
 
-const reviews = getFiveStarReviews();
+const staticReviews = getFiveStarReviews();
+/** Most cards the grid shows (built in reviews first, then the newest sheet reviews). */
+const MAX_CARDS = 9;
 
 export function HomeReviews() {
   const [formOpen, setFormOpen] = useState(false);
   const formRef = useRef<HTMLDivElement>(null);
+  const [sheetReviews, setSheetReviews] = useState<PoolReview[]>([]);
+  // Homepage shows 5 star reviews only, from every source.
+  const reviews = mergeReviews(staticReviews, sheetReviews).slice(0, MAX_CARDS);
+
+  // Approved reviews from the Google Sheet (no op until GOOGLE_SCRIPT_URL is set).
+  useEffect(() => {
+    let active = true;
+    fetchApprovedReviews().then((list) => {
+      if (active) setSheetReviews(list.filter((review) => review.rating === 5));
+    });
+    return () => {
+      active = false;
+    };
+  }, []);
 
   // Deep link: /#leave-a-review opens the form.
   useEffect(() => {
@@ -49,10 +66,10 @@ export function HomeReviews() {
 
         <ul className="mt-10 grid gap-5 md:grid-cols-2 lg:grid-cols-3">
           {reviews.map((review) => (
-            <li key={review.id}>
+            <li key={review.id} data-review-id={review.id} data-review-source={review.source}>
               <figure className="flex h-full flex-col rounded-[1.8rem] bg-cream p-6 shadow-card">
                 <ReviewStars rating={review.rating} />
-                <blockquote className="mt-4 flex-1 font-display text-xl leading-snug text-chocolate">
+                <blockquote className="mt-4 flex-1 whitespace-pre-line font-display text-xl leading-snug text-chocolate">
                   &ldquo;{review.quote}&rdquo;
                 </blockquote>
                 <figcaption className="mt-5 text-sm">

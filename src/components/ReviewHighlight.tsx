@@ -3,32 +3,66 @@
 import { useEffect, useState } from "react";
 import Link from "next/link";
 import { site } from "@/data/site";
-import { getFiveStarReviews, type PoolReview } from "@/data/reviews";
+import { getFiveStarReviews, mergeReviews, type PoolReview } from "@/data/reviews";
+import { fetchApprovedReviews } from "@/lib/sheetReviews";
 import { ReviewStars } from "@/components/ReviewStars";
 
 const pool = getFiveStarReviews();
 const LAST_KEY = "joirush_last_highlight_review";
 
-/** Pick a random 5 star review on each page load, avoiding a repeat of the last one shown. */
-function pickReview(): PoolReview {
-  if (pool.length <= 1) return pool[0];
-  let last: string | null = null;
+function readLast(): string | null {
   try {
-    last = window.localStorage.getItem(LAST_KEY);
-  } catch {}
-  const choices = pool.filter((review) => review.id !== last);
-  const choice = choices[Math.floor(Math.random() * choices.length)];
+    return window.localStorage.getItem(LAST_KEY);
+  } catch {
+    return null;
+  }
+}
+
+function remember(review: PoolReview) {
   try {
-    window.localStorage.setItem(LAST_KEY, choice.id);
+    window.localStorage.setItem(LAST_KEY, review.id);
   } catch {}
-  return choice;
+}
+
+/** Pick a random review from a pool, avoiding the one shown last time. */
+function pickFrom(choices: PoolReview[], avoid: string | null): PoolReview {
+  const options = choices.length > 1 ? choices.filter((review) => review.id !== avoid) : choices;
+  return options[Math.floor(Math.random() * options.length)];
 }
 
 export function ReviewHighlight() {
   const [review, setReview] = useState<PoolReview | null>(null);
+  const [visible, setVisible] = useState(false);
 
   useEffect(() => {
-    setReview(pickReview());
+    if (pool.length === 0) return;
+    let active = true;
+    const previous = readLast();
+    // Show a built in review right away so the card never waits on the network.
+    const first = pickFrom(pool, previous);
+    remember(first);
+    setReview(first);
+    setVisible(true);
+
+    // Then fold in 5 star reviews approved in the Google Sheet. Re-roll across the full pool;
+    // only swap (with a fade) when the new pick is a sheet review, so the card rarely changes.
+    fetchApprovedReviews().then((list) => {
+      const fresh = list.filter((item) => item.rating === 5);
+      if (!active || fresh.length === 0) return;
+      const full = mergeReviews(pool, fresh);
+      const next = pickFrom(full, previous);
+      if (next.source !== "website" || pool.some((item) => item.id === next.id)) return;
+      setVisible(false);
+      window.setTimeout(() => {
+        if (!active) return;
+        remember(next);
+        setReview(next);
+        setVisible(true);
+      }, 450);
+    });
+    return () => {
+      active = false;
+    };
   }, []);
 
   if (pool.length === 0) return null;
@@ -49,19 +83,23 @@ export function ReviewHighlight() {
         </div>
         <figure
           data-review-id={shown.id}
-          className={`relative rounded-[2rem] bg-white p-8 shadow-card transition-opacity duration-500 md:p-10 ${review ? "opacity-100" : "opacity-0"}`}
+          data-review-source={shown.source}
+          className={`relative rounded-[2rem] bg-white p-8 shadow-card transition-opacity duration-500 md:p-10 ${review && visible ? "opacity-100" : "opacity-0"}`}
         >
           <span aria-hidden="true" className="absolute -top-6 left-8 font-display text-8xl leading-none text-pink/30">
             &ldquo;
           </span>
           <ReviewStars rating={shown.rating} className="h-5 w-5" />
-          <blockquote className="mt-4 font-display text-2xl leading-snug text-chocolate md:text-3xl">
+          <blockquote className="mt-4 whitespace-pre-line font-display text-2xl leading-snug text-chocolate md:text-3xl">
             {shown.quote}
           </blockquote>
           <figcaption className="mt-6 flex flex-wrap items-center justify-between gap-3 text-sm">
             <span>
               <span className="font-semibold text-chocolate">{shown.name}</span>
               {shown.piece && <span className="text-chocolate-soft"> · {shown.piece}</span>}
+              <span className="mt-1 block text-xs uppercase tracking-widest text-chocolate-soft">
+                {shown.source === "website" ? "Review on joirush.com" : "Review on Etsy"}
+              </span>
             </span>
             <Link href="/#reviews" className="font-medium text-pink hover:underline">
               Read more reviews

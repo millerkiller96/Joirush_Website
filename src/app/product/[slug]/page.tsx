@@ -9,6 +9,7 @@ import {
 } from "@/data/products";
 import { site } from "@/data/site";
 import { siteUrl, getAbsoluteUrl, getImageUrl } from "@/lib/seo";
+import { getProductGallery } from "@/data/product-galleries";
 
 type Props = { params: Promise<{ slug: string }> };
 
@@ -71,7 +72,7 @@ function ProductJsonLd({ product }: { product: NonNullable<ReturnType<typeof get
     "@type": "Product",
     name: product.name,
     description: product.description,
-    image: getImageUrl(product.image),
+    image: getProductGallery(product.slug, product.image).map((image) => getImageUrl(image.src)),
     brand: {
       "@type": "Brand",
       name: site.name,

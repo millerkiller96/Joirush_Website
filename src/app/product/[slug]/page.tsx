@@ -25,9 +25,15 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
   const productUrl = getAbsoluteUrl(`/product/${product.slug}/`);
   const imageUrl = getImageUrl(product.image);
 
+  // Keep titles short enough to show in full on search results: names that already
+  // carry a subtitle stand alone, shorter names get a brief handmade cookie art suffix.
+  const seoTitle = product.name.includes("|")
+    ? product.name
+    : `${product.name} | Handmade Cookie Art`;
+
   return {
-    title: `${product.name} | Cookie Art by Cookie Artist Erynn`,
-    description: `${product.tagline} ${product.size}. Jumbo cookie wall art: a handmade sugar cookie wall sculpture by cookie artist Erynn. Art cookie with attached wall hanger. ${formatPrice(product.price)} with free U.S. shipping from Daytona Beach, FL.`,
+    title: seoTitle,
+    description: `${product.tagline} Handmade spray foam cookie wall art by cookie artist Erynn. ${formatPrice(product.price)} with free U.S. shipping.`,
     keywords: [
       "jumbo cookie wall art",
       "cookie art",

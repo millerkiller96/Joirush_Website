@@ -4,11 +4,24 @@ import Link from "next/link";
 import { SectionHeading } from "@/components/SectionHeading";
 import { StudioVideoCarousel } from "@/components/StudioVideoCarousel";
 import { site } from "@/data/site";
+import { getImageUrl } from "@/lib/seo";
 
 export const metadata: Metadata = {
-  title: "Y2K Jewelry",
+  title: "Handmade Y2K Jewelry & Charm Chokers",
   description:
     "Handmade Y2K charm chokers and statement jewelry by JoiRush: Tamagotchi energy, gamer girl custom pieces, and one of one accessories.",
+  alternates: {
+    canonical: "https://joirush.com/jewelry/",
+  },
+  openGraph: {
+    title: "Handmade Y2K Jewelry & Charm Chokers | JOIRUSH",
+    description:
+      "Handmade Y2K charm chokers and statement jewelry by JoiRush: Tamagotchi energy, gamer girl custom pieces, and one of one accessories.",
+    url: "https://joirush.com/jewelry/",
+    type: "website",
+    siteName: "JOIRUSH",
+    images: [{ url: getImageUrl("/images/brand/about-1.jpg"), alt: "Handmade JOIRUSH charm jewelry" }],
+  },
 };
 
 const commissions = [

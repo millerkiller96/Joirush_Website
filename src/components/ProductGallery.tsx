@@ -154,7 +154,7 @@ function Lightbox({
             <div key={image.src} className="flex h-full w-full flex-shrink-0 snap-center items-center justify-center p-2 md:p-6">
               <img
                 src={asset(image.src)}
-                alt={`${name} photo ${i + 1} of ${total}`}
+                alt={`${name}, handmade spray foam cookie wall sculpture, photo ${i + 1} of ${total}`}
                 width={image.width}
                 height={image.height}
                 loading={Math.abs(i - startIndex) <= 1 ? "eager" : "lazy"}
@@ -262,7 +262,7 @@ export function ProductGallery({ images, name }: ProductGalleryProps) {
                   src={asset(image.md)}
                   srcSet={srcSet(image)}
                   sizes={MAIN_SIZES}
-                  alt={`${name} photo ${i + 1} of ${total}`}
+                  alt={`${name}, handmade spray foam cookie wall sculpture, photo ${i + 1} of ${total}`}
                   width={image.width}
                   height={image.height}
                   loading={i === 0 ? "eager" : "lazy"}

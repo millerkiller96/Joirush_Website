@@ -121,7 +121,7 @@ export function ProductPageClient({ product, related }: ProductPageClientProps) 
           </ol>
         </nav>
 
-        <div className="mt-6 grid items-start gap-10 md:grid-cols-2">
+        <div className="product-layout mt-6 grid items-start gap-10">
           <ProductGallery images={galleryImages} name={galleryName} />
 
           <div>

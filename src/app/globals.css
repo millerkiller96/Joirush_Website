@@ -308,21 +308,30 @@ body {
 }
 
 /*
- * Product page photo gallery: cap the main photo height so the whole photo and
- * the thumbnails fit on screen. Photos are 3:4, so the frame width is the
- * height cap times 0.75. On desktop the cap also leaves room for the sticky
- * header, breadcrumb and thumbnail strip (about 20rem in total).
+ * Product page photo gallery: photos are cropped to a square (object-fit:
+ * cover) so the frame never shows empty bands beside a portrait photo. The
+ * square is as wide as the gallery column, capped so the whole photo and the
+ * thumbnail strip fit on screen. On desktop the cap also leaves room for the
+ * sticky header, breadcrumb and thumbnail strip (about 20rem in total), and
+ * the gallery column shrinks to the square so the text column takes the rest
+ * of the width and nothing sits empty beside the photo.
  */
 .product-gallery-frame {
   width: 100%;
-  max-width: calc(75vh * 0.75);
-  max-width: calc(75svh * 0.75);
+  max-width: 75vh;
+  max-width: 75svh;
   margin-inline: auto;
 }
 
 @media (min-width: 768px) {
+  .product-layout {
+    grid-template-columns: min(50% - 1.25rem, max(20rem, min(75vh, 100vh - 20rem))) minmax(0, 1fr);
+    grid-template-columns: min(50% - 1.25rem, max(20rem, min(75svh, 100svh - 20rem))) minmax(0, 1fr);
+  }
+
   .product-gallery-frame {
-    max-width: calc(max(20rem, min(75vh, 100vh - 20rem)) * 0.75);
-    max-width: calc(max(20rem, min(75svh, 100svh - 20rem)) * 0.75);
+    max-width: none;
+    margin-inline: 0;
   }
 }
+

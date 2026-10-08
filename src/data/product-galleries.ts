@@ -13,9 +13,19 @@ export type GalleryImage = {
   thumb: string;
   width: number;
   height: number;
+  /**
+   * CSS object-position for the square crop on the product page, when the
+   * cookie sits off center in the photo. Defaults to centered.
+   */
+  position?: string;
 };
 
-type GallerySource = { listingId: string; sizes: [number, number][] };
+type GallerySource = {
+  listingId: string;
+  sizes: [number, number][];
+  /** Square crop focus per photo number (1 based), e.g. { 2: "50% 100%" }. */
+  focus?: Record<number, string>;
+};
 
 const sources: Record<string, GallerySource> = {
   "jumbo-chocolate-chip-cookie": { listingId: "1831819997", sizes: [[1200, 1600], [1200, 1600], [1200, 1600], [1200, 1600], [1200, 1600], [1200, 1600], [1200, 1600], [1200, 1600], [1200, 1600]] },
@@ -28,7 +38,7 @@ const sources: Record<string, GallerySource> = {
   "jumbo-christmas-cookie": { listingId: "4438064219", sizes: [[1200, 1600], [1200, 1600], [1200, 1600], [1200, 1600], [1200, 1600], [1200, 1600], [1200, 1600], [1200, 1600], [1200, 1600]] },
   "giant-peanut-butter-cookie": { listingId: "1817504830", sizes: [[1200, 1600], [1200, 1600], [1200, 1600], [1200, 1600]] },
   "giant-double-chocolate-cookie": { listingId: "1817632262", sizes: [[1200, 1600], [1200, 1600], [1200, 1600], [1200, 1600], [1200, 1600], [1200, 1600]] },
-  "cookie-ice-cream-sandwich": { listingId: "1892110346", sizes: [[1200, 1600], [1200, 1600], [1200, 1600], [1200, 1600], [1200, 1600], [1200, 1600], [1200, 1600], [1200, 1600], [1200, 1600], [1200, 1600]] },
+  "cookie-ice-cream-sandwich": { listingId: "1892110346", sizes: [[1200, 1600], [1200, 1600], [1200, 1600], [1200, 1600], [1200, 1600], [1200, 1600], [1200, 1600], [1200, 1600], [1200, 1600], [1200, 1600]], focus: { 2: "50% 100%", 5: "50% 100%", 6: "50% 100%" } },
   "jumbo-mm-cookie": { listingId: "1831839675", sizes: [[1200, 1600], [1200, 1600], [1200, 1600], [1200, 1600], [1200, 1600], [1200, 1600], [1154, 1600]] },
   "hot-pink-mm-cookie": { listingId: "1831836105", sizes: [[1200, 1600], [1200, 1600], [1200, 1600], [1200, 1600], [1200, 1600]] },
 };
@@ -42,7 +52,8 @@ export function getGalleryImages(slug: string): GalleryImage[] {
   if (!source) return [];
   return source.sizes.map(([width, height], index) => {
     const base = `/products/${slug}/${pad(index + 1)}`;
-    return { src: `${base}.webp`, md: `${base}-md.webp`, thumb: `${base}-th.webp`, width, height };
+    const position = source.focus?.[index + 1];
+    return { src: `${base}.webp`, md: `${base}-md.webp`, thumb: `${base}-th.webp`, width, height, ...(position ? { position } : {}) };
   });
 }
 /** Gallery for a product, falling back to its single main image when no Etsy photos exist. */

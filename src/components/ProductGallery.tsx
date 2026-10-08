@@ -10,7 +10,7 @@ type ProductGalleryProps = {
   name: string;
 };
 
-const MAIN_SIZES = "(min-width: 768px) 520px, 100vw";
+const MAIN_SIZES = "(min-width: 768px) 600px, 100vw";
 
 function prefersReducedMotion() {
   return typeof window !== "undefined" && window.matchMedia("(prefers-reduced-motion: reduce)").matches;
@@ -242,7 +242,7 @@ export function ProductGallery({ images, name }: ProductGalleryProps) {
         <div
           ref={trackRef}
           onScroll={onScroll}
-          className="scrollbar-hide flex aspect-[3/4] snap-x snap-mandatory overflow-x-auto overscroll-x-contain"
+          className="scrollbar-hide flex aspect-square snap-x snap-mandatory overflow-x-auto overscroll-x-contain"
         >
           {images.map((image, i) => (
             <div
@@ -270,7 +270,8 @@ export function ProductGallery({ images, name }: ProductGalleryProps) {
                   fetchPriority={i === 0 ? "high" : "auto"}
                   decoding={i === 0 ? "sync" : "async"}
                   draggable={false}
-                  className="h-full w-full select-none object-contain"
+                  style={image.position ? { objectPosition: image.position } : undefined}
+                  className="h-full w-full select-none object-cover object-center"
                 />
               </button>
             </div>
@@ -332,7 +333,7 @@ export function ProductGallery({ images, name }: ProductGalleryProps) {
           {/* Thumbnails on desktop */}
           <div
             ref={thumbsRef}
-            className="scrollbar-hide mt-4 hidden gap-3 overflow-x-auto p-1 md:flex"
+            className="scrollbar-hide -mx-1 mt-4 hidden gap-3 overflow-x-auto p-1 md:flex"
           >
             {images.map((image, i) => (
               <button
@@ -355,7 +356,8 @@ export function ProductGallery({ images, name }: ProductGalleryProps) {
                   height={240}
                   loading="lazy"
                   decoding="async"
-                  className="aspect-[3/4] w-full object-cover"
+                  style={image.position ? { objectPosition: image.position } : undefined}
+                  className="aspect-square w-full object-cover object-center"
                 />
               </button>
             ))}

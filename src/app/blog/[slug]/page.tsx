@@ -18,6 +18,12 @@ import { SprayFoamCookieWallArtContent, SprayFoamCookieWallArtSchema } from "./c
 import { DopamineDecorIdeasContent, DopamineDecorIdeasSchema } from "./content/dopamine-decor-ideas";
 import { MaximalistDecorContent, MaximalistDecorSchema } from "./content/maximalist-decor-ideas";
 import { WhimsicalKitschDecorContent, WhimsicalKitschDecorSchema } from "./content/whimsical-kitsch-decor-ideas";
+import { EclecticDecorContent, EclecticDecorSchema } from "./content/eclectic-decor-ideas-mix-styles";
+import { KitchenWallDecorSpotsContent, KitchenWallDecorSpotsSchema } from "./content/kitchen-wall-decor-ideas-coffee-bar-small-kitchens";
+import { DopaminePlayroomContent, DopaminePlayroomSchema } from "./content/dopamine-decor-playroom-kids-room";
+import { RetroKitchenContent, RetroKitchenSchema } from "./content/retro-kitschy-kitchen-decor-ideas";
+import { NeutralHomeColorContent, NeutralHomeColorSchema } from "./content/add-color-to-neutral-home-without-painting";
+import { ThreeDWallArtContent, ThreeDWallArtSchema } from "./content/3d-wall-art-vs-flat-prints";
 
 type Props = { params: Promise<{ slug: string }> };
 
@@ -25,6 +31,12 @@ const contentMap: Record<string, { Content: () => React.ReactNode; Schema: () =>
   "dopamine-decor-ideas": { Content: DopamineDecorIdeasContent, Schema: DopamineDecorIdeasSchema },
   "maximalist-decor-ideas": { Content: MaximalistDecorContent, Schema: MaximalistDecorSchema },
   "whimsical-kitsch-decor-ideas": { Content: WhimsicalKitschDecorContent, Schema: WhimsicalKitschDecorSchema },
+  "eclectic-decor-ideas-mix-styles": { Content: EclecticDecorContent, Schema: EclecticDecorSchema },
+  "kitchen-wall-decor-ideas-coffee-bar-small-kitchens": { Content: KitchenWallDecorSpotsContent, Schema: KitchenWallDecorSpotsSchema },
+  "dopamine-decor-playroom-kids-room": { Content: DopaminePlayroomContent, Schema: DopaminePlayroomSchema },
+  "retro-kitschy-kitchen-decor-ideas": { Content: RetroKitchenContent, Schema: RetroKitchenSchema },
+  "add-color-to-neutral-home-without-painting": { Content: NeutralHomeColorContent, Schema: NeutralHomeColorSchema },
+  "3d-wall-art-vs-flat-prints": { Content: ThreeDWallArtContent, Schema: ThreeDWallArtSchema },
   "spray-foam-cookie-wall-art-how-theyre-made": { Content: SprayFoamCookieWallArtContent, Schema: SprayFoamCookieWallArtSchema },
   "faux-cookie-wall-decor-ready-made-vs-diy": { Content: FauxCookieWallDecorContent, Schema: FauxCookieWallDecorSchema },
   "cookie-canvas-vs-3d-cookie-wall-sculptures": { Content: CookieCanvasVs3DContent, Schema: CookieCanvasVs3DSchema },

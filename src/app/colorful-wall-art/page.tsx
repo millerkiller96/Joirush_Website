@@ -291,7 +291,11 @@ export default function ColorfulWallArtPage() {
             <Link href="/blog/dopamine-decor-ideas/" className="text-pink hover:underline">
               dopamine decor ideas
             </Link>{" "}
-            for a room by room guide, or see how bright pieces fit into{" "}
+            for a room by room guide, learn{" "}
+            <Link href="/blog/add-color-to-neutral-home-without-painting/" className="text-pink hover:underline">
+              how to add color to a neutral home without painting
+            </Link>
+            , or see how bright pieces fit into{" "}
             <Link href="/blog/maximalist-decor-ideas/" className="text-pink hover:underline">
               maximalist decor
             </Link>

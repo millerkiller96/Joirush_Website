@@ -284,7 +284,12 @@ export default function KitchenWallArtPage() {
             <p className="mt-8 max-w-3xl text-chocolate-mid">
               <strong>Skip:</strong> right above the stove, the splash zone around the sink, and
               anywhere a cabinet door could bump it. Steer clear of strong direct sun too, to keep
-              the acrylic colors bright.
+              the acrylic colors bright. For coffee bars, skinny walls, rentals, and the space above
+              the cabinets, see our{" "}
+              <Link href="/blog/kitchen-wall-decor-ideas-coffee-bar-small-kitchens/" className="text-pink hover:underline">
+                kitchen wall decor ideas by spot
+              </Link>
+              .
             </p>
           </div>
         </section>

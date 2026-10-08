@@ -4,7 +4,6 @@ import Link from "next/link";
 import { ProductBuyButtons } from "@/components/ProductBuyButtons";
 import { EtsyReviewsHub } from "@/components/EtsyReviewsHub";
 import { ProductCard } from "@/components/ProductCard";
-import { StudioVideoCarousel } from "@/components/StudioVideoCarousel";
 import { ProductGallery } from "@/components/ProductGallery";
 import { getProductGallery } from "@/data/product-galleries";
 import {
@@ -271,8 +270,6 @@ export function ProductPageClient({ product, related }: ProductPageClientProps) 
           </div>
         </div>
       </div>
-
-      <StudioVideoCarousel />
 
       <div className="mx-auto max-w-7xl px-5 pb-28 md:px-8 md:pb-32">
         <EtsyReviewsHub />

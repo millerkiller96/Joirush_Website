@@ -56,8 +56,22 @@ type Web3FormsPayload = {
   [field: string]: string | number | boolean | undefined;
 };
 
+/** Optional file sent with a Web3Forms submission (Web3Forms reads one file named "attachment"). */
+export type Web3FormsAttachment = { blob: Blob; filename: string };
+
+type SendOutcome = SubmitResult & { network?: boolean };
+
 /** Low level Web3Forms POST used by every form helper below. */
-export async function submitWeb3Form(form: FormName, payload: Web3FormsPayload): Promise<SubmitResult> {
+export async function submitWeb3Form(
+  form: FormName,
+  payload: Web3FormsPayload,
+  attachment?: Web3FormsAttachment,
+): Promise<SubmitResult> {
+  const result = await sendWeb3Form(form, payload, attachment);
+  return result.ok ? { ok: true } : { ok: false, message: result.message };
+}
+
+async function sendWeb3Form(form: FormName, payload: Web3FormsPayload, attachment?: Web3FormsAttachment): Promise<SendOutcome> {
   // Drop empty optional fields so the email stays tidy.
   const body: Record<string, string | number | boolean> = { access_key: FORM_KEYS[form] };
   for (const [key, value] of Object.entries(payload)) {
@@ -65,17 +79,28 @@ export async function submitWeb3Form(form: FormName, payload: Web3FormsPayload):
     body[key] = value;
   }
 
-  try {
-    const response = await fetch(WEB3FORMS_ENDPOINT, {
+  let init: RequestInit;
+  if (attachment) {
+    // Attachments must go as multipart/form-data. Do not set Content-Type; the browser adds the boundary.
+    const data = new FormData();
+    for (const [key, value] of Object.entries(body)) data.append(key, String(value));
+    data.append("attachment", attachment.blob, attachment.filename);
+    init = { method: "POST", headers: { Accept: "application/json" }, body: data };
+  } else {
+    init = {
       method: "POST",
       headers: { "Content-Type": "application/json", Accept: "application/json" },
       body: JSON.stringify(body),
-    });
+    };
+  }
+
+  try {
+    const response = await fetch(WEB3FORMS_ENDPOINT, init);
     const result = await response.json().catch(() => ({}));
     if (response.ok && result.success) return { ok: true };
     return { ok: false, message: result.message || "Something went wrong. Please try again." };
   } catch {
-    return { ok: false, message: "Network error. Please check your connection and try again." };
+    return { ok: false, network: true, message: "Network error. Please check your connection and try again." };
   }
 }
 
@@ -89,6 +114,8 @@ export type ReviewSubmission = {
   rating: number;
   review: string;
   product?: string;
+  /** Optional photo, already shrunk to a small JPEG by src/lib/reviewPhoto.ts. */
+  photo?: { blob: Blob; dataUrl: string };
 };
 
 /**
@@ -99,19 +126,22 @@ export type ReviewSubmission = {
 export function postToGoogleScript(payload: Record<string, unknown>) {
   if (!GOOGLE_SCRIPT_URL || typeof window === "undefined") return;
   try {
+    const body = JSON.stringify({ ...payload, sourcePage: window.location.href });
     fetch(GOOGLE_SCRIPT_URL, {
       method: "POST",
       mode: "no-cors",
-      keepalive: true,
+      // Browsers cap keepalive bodies at 64 KB, so a review with a photo is sent without it.
+      keepalive: body.length < 60000,
       headers: { "Content-Type": "text/plain;charset=utf-8" },
-      body: JSON.stringify({ ...payload, sourcePage: window.location.href }),
+      body,
     }).catch(() => {});
   } catch {
     // Never let the sheet call affect the form.
   }
 }
 
-export function submitReviewForApproval(review: ReviewSubmission): Promise<SubmitResult> {
+export async function submitReviewForApproval(review: ReviewSubmission): Promise<SubmitResult> {
+  const hasPhoto = Boolean(review.photo);
   postToGoogleScript({
     type: "review",
     name: review.name,
@@ -120,19 +150,37 @@ export function submitReviewForApproval(review: ReviewSubmission): Promise<Submi
     rating: review.rating,
     review: review.review,
     product: review.product ?? "",
+    hasPhoto,
+    // Base64 JPEG data URL. The sheet script saves it to Google Drive and links it in the Photo column.
+    photo: review.photo?.dataUrl ?? "",
   });
-  return submitWeb3Form("review", {
-    subject: `New ${review.rating} star review waiting for approval`,
+
+  const fields: Web3FormsPayload = {
+    subject: `New ${review.rating} star review waiting for approval${hasPhoto ? " (with photo)" : ""}`,
     from_name: "JOIRUSH Reviews",
     name: review.name,
     email: review.email,
     rating: `${review.rating} out of 5 stars`,
     product: review.product,
     review: review.review,
+    photo: hasPhoto
+      ? "Yes. The photo is attached to this email and is also saved in the Photo column of the Reviews tab."
+      : undefined,
     how_to_approve: GOOGLE_SCRIPT_URL
       ? `Open the Reviews tab and tick Approved to publish it: ${REVIEWS_SHEET_URL}`
       : "Add it to src/data/approved-reviews.json to publish it.",
     page: typeof window !== "undefined" ? window.location.href : undefined,
+  };
+
+  if (!review.photo) return submitWeb3Form("review", fields);
+
+  const withFile = await sendWeb3Form("review", fields, { blob: review.photo.blob, filename: "review-photo.jpg" });
+  if (withFile.ok) return { ok: true };
+  // Attachments need a Web3Forms paid plan. If the file was refused, still deliver the review text.
+  return submitWeb3Form("review", {
+    ...fields,
+    photo:
+      "Yes, but it could not be attached to this email. It is saved in the Photo column of the Reviews tab (needs the updated sheet script).",
   });
 }
 

@@ -1,6 +1,7 @@
 import approvedData from "./approved-reviews.json";
 import { reviews as curatedEtsyReviews } from "./site";
 import { getShopReviews } from "./products";
+import { safeReviewPhotoUrl } from "@/lib/reviewPhoto";
 
 /**
  * One shared pool of customer reviews used by the homepage review section and
@@ -22,6 +23,8 @@ export type PoolReview = {
   piece?: string;
   rating: number;
   source: "etsy" | "website";
+  /** Customer photo (approved website reviews only). Shown as a thumbnail that opens larger. */
+  photo?: string;
 };
 
 type ApprovedReview = {
@@ -31,6 +34,7 @@ type ApprovedReview = {
   quote: string;
   piece?: string;
   source?: string;
+  photo?: string;
 };
 
 const COOKIE_WORDS = /cookie|m&m|chocolate chip|sculpture|wall art/i;
@@ -66,6 +70,7 @@ export function getAllReviews(): PoolReview[] {
       piece: review.piece,
       rating: review.rating,
       source: "website",
+      photo: safeReviewPhotoUrl(review.photo),
     }),
   );
 

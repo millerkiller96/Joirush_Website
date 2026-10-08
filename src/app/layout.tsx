@@ -6,6 +6,7 @@ import { SiteHeader } from "@/components/SiteHeader";
 import { PageTransition } from "@/components/PageTransition";
 import { SmartStickyBuy } from "@/components/SmartStickyBuy";
 import { GiveawayModal } from "@/components/GiveawayModal";
+import { ReviewModal } from "@/components/ReviewModal";
 import { site } from "@/data/site";
 import { siteUrl, getImageUrl } from "@/lib/seo";
 import { asset } from "@/lib/paths";
@@ -160,6 +161,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
         <SiteFooter />
         <SmartStickyBuy />
         <GiveawayModal />
+        <ReviewModal />
         <Script
           src={`https://www.googletagmanager.com/gtag/js?id=${GA_MEASUREMENT_ID}`}
           strategy="afterInteractive"

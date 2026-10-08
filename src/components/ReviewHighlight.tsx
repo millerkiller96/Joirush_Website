@@ -6,6 +6,7 @@ import { site } from "@/data/site";
 import { getFiveStarReviews, mergeReviews, type PoolReview } from "@/data/reviews";
 import { fetchApprovedReviews } from "@/lib/sheetReviews";
 import { ReviewStars } from "@/components/ReviewStars";
+import { ReviewPhoto } from "@/components/ReviewPhoto";
 
 const pool = getFiveStarReviews();
 const LAST_KEY = "joirush_last_highlight_review";
@@ -93,6 +94,7 @@ export function ReviewHighlight() {
           <blockquote className="mt-4 whitespace-pre-line font-display text-2xl leading-snug text-chocolate md:text-3xl">
             {shown.quote}
           </blockquote>
+          <ReviewPhoto src={shown.photo} name={shown.name} piece={shown.piece} size="lg" className="mt-6" />
           <figcaption className="mt-6 flex flex-wrap items-center justify-between gap-3 text-sm">
             <span>
               <span className="font-semibold text-chocolate">{shown.name}</span>

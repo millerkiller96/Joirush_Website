@@ -1,19 +1,18 @@
 "use client";
 
-import { useEffect, useRef, useState } from "react";
+import { useEffect, useState } from "react";
 import { site } from "@/data/site";
 import { getFiveStarReviews, mergeReviews, type PoolReview } from "@/data/reviews";
 import { fetchApprovedReviews } from "@/lib/sheetReviews";
-import { ReviewForm } from "@/components/ReviewForm";
+import { LeaveReviewButton } from "@/components/ReviewModal";
 import { ReviewStars, StarIcon } from "@/components/ReviewStars";
+import { ReviewPhoto } from "@/components/ReviewPhoto";
 
 const staticReviews = getFiveStarReviews();
 /** Most cards the grid shows (built in reviews first, then the newest sheet reviews). */
 const MAX_CARDS = 9;
 
 export function HomeReviews() {
-  const [formOpen, setFormOpen] = useState(false);
-  const formRef = useRef<HTMLDivElement>(null);
   const [sheetReviews, setSheetReviews] = useState<PoolReview[]>([]);
   // Homepage shows 5 star reviews only, from every source.
   const reviews = mergeReviews(staticReviews, sheetReviews).slice(0, MAX_CARDS);
@@ -28,15 +27,6 @@ export function HomeReviews() {
       active = false;
     };
   }, []);
-
-  // Deep link: /#leave-a-review opens the form.
-  useEffect(() => {
-    if (window.location.hash === "#leave-a-review") setFormOpen(true);
-  }, []);
-
-  useEffect(() => {
-    if (formOpen) formRef.current?.scrollIntoView({ behavior: "smooth", block: "start" });
-  }, [formOpen]);
 
   return (
     <section id="reviews" aria-labelledby="home-reviews-title" className="scroll-mt-24 bg-white">
@@ -62,6 +52,9 @@ export function HomeReviews() {
           <p className="mx-auto mt-4 max-w-xl text-lg text-chocolate-mid">
             Five star words from people who hung a JOIRUSH cookie on their wall.
           </p>
+          <div className="mt-6">
+            <LeaveReviewButton />
+          </div>
         </div>
 
         <ul className="mt-10 grid gap-5 md:grid-cols-2 lg:grid-cols-3">
@@ -72,6 +65,7 @@ export function HomeReviews() {
                 <blockquote className="mt-4 flex-1 whitespace-pre-line font-display text-xl leading-snug text-chocolate">
                   &ldquo;{review.quote}&rdquo;
                 </blockquote>
+                <ReviewPhoto src={review.photo} name={review.name} piece={review.piece} className="mt-4" />
                 <figcaption className="mt-5 text-sm">
                   <span className="font-semibold text-chocolate">{review.name}</span>
                   {review.piece && <span className="text-chocolate-soft"> · {review.piece}</span>}
@@ -85,15 +79,7 @@ export function HomeReviews() {
         </ul>
 
         <div className="mt-10 flex flex-wrap items-center justify-center gap-4">
-          <button
-            type="button"
-            onClick={() => setFormOpen((open) => !open)}
-            aria-expanded={formOpen}
-            aria-controls="leave-a-review"
-            className="rounded-full bg-pink px-6 py-3 text-sm font-medium text-white transition hover:bg-pink-hot"
-          >
-            {formOpen ? "Hide review form" : "Leave a review"}
-          </button>
+          <LeaveReviewButton />
           <a
             href={site.etsyReviews}
             target="_blank"
@@ -104,9 +90,8 @@ export function HomeReviews() {
           </a>
         </div>
 
-        <div id="leave-a-review" ref={formRef} className="mx-auto mt-10 max-w-2xl scroll-mt-24" hidden={!formOpen}>
-          {formOpen && <ReviewForm onDone={() => setFormOpen(false)} />}
-        </div>
+        {/* Old links to /#leave-a-review land here and the shared review popup opens (see ReviewModal). */}
+        <span id="leave-a-review" className="block scroll-mt-24" aria-hidden="true" />
       </div>
     </section>
   );

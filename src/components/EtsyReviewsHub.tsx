@@ -1,14 +1,22 @@
 "use client";
 
-import { useState } from "react";
+import { useEffect, useState } from "react";
+import { LeaveReviewButton } from "@/components/ReviewModal";
+import { ReviewPhoto } from "@/components/ReviewPhoto";
 import { reviews as siteReviews, site } from "@/data/site";
 import { getShopReviews, type EtsySyncReview } from "@/data/products";
+import { getFiveStarReviews, type PoolReview } from "@/data/reviews";
+import { fetchApprovedReviews } from "@/lib/sheetReviews";
+
+/** Approved 5 star website reviews baked into the build (src/data/approved-reviews.json). */
+const builtWebsiteReviews = getFiveStarReviews().filter((review) => review.source === "website");
 
 type DisplayReview = {
   quote: string;
   name: string;
   piece?: string;
   rating: number;
+  photo?: string;
 };
 
 function StarIcon({ className, filled }: { className?: string; filled?: boolean }) {
@@ -47,6 +55,7 @@ function ReviewCard({ review }: { review: DisplayReview }) {
         ))}
       </div>
       <p className="mt-3 text-chocolate-mid">&ldquo;{review.quote}&rdquo;</p>
+      <ReviewPhoto src={review.photo} name={review.name} piece={review.piece} className="mt-4" />
       <p className="mt-4 text-sm">
         <span className="font-medium text-chocolate">{review.name}</span>
         {review.piece && <span className="text-chocolate-soft"> · {review.piece}</span>}
@@ -57,10 +66,32 @@ function ReviewCard({ review }: { review: DisplayReview }) {
 
 export function EtsyReviewsHub() {
   const [expanded, setExpanded] = useState(false);
+  const [sheetReviews, setSheetReviews] = useState<PoolReview[]>([]);
+
+  // Approved 5 star reviews from the Google Sheet (same moderated feed the homepage uses).
+  useEffect(() => {
+    let active = true;
+    fetchApprovedReviews().then((list) => {
+      if (active) setSheetReviews(list.filter((review) => review.rating === 5));
+    });
+    return () => {
+      active = false;
+    };
+  }, []);
 
   const syncedReviews = getShopReviews();
 
   const allReviews: DisplayReview[] = [];
+  const seenQuotes = new Set<string>();
+  const quoteKey = (text: string) => text.trim().toLowerCase().replace(/\s+/g, " ");
+
+  // Website reviews first (newest from the sheet, then ones baked into the build).
+  [...sheetReviews, ...builtWebsiteReviews].forEach((r) => {
+    const key = quoteKey(r.quote);
+    if (!key || seenQuotes.has(key)) return;
+    seenQuotes.add(key);
+    allReviews.push({ quote: r.quote, name: r.name, piece: r.piece, rating: 5, photo: r.photo });
+  });
 
   siteReviews.forEach((r) => {
     allReviews.push({
@@ -105,6 +136,9 @@ export function EtsyReviewsHub() {
         <p className="mx-auto mt-4 max-w-xl text-lg text-chocolate-mid">
           Real reviews from happy homes. {site.stats.years} years of handmade goodness and counting.
         </p>
+        <div className="mt-6">
+          <LeaveReviewButton />
+        </div>
       </div>
 
       <div className="mt-10 grid gap-5 md:grid-cols-2 lg:grid-cols-3">

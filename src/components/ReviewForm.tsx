@@ -1,8 +1,9 @@
 "use client";
 
-import { useState } from "react";
+import { useId, useRef, useState } from "react";
 import { products } from "@/data/products";
 import { submitReviewForApproval, trackEvent } from "@/lib/forms";
+import { REVIEW_PHOTO_ACCEPT, checkReviewPhoto, prepareReviewPhoto, type PreparedPhoto } from "@/lib/reviewPhoto";
 import { StarIcon } from "@/components/ReviewStars";
 
 type FormStatus = "idle" | "submitting" | "success" | "error";
@@ -17,7 +18,11 @@ const productOptions = Array.from(new Set(products.map((product) => product.shor
   "Something else",
 ]);
 
-export function ReviewForm({ onDone }: { onDone?: () => void }) {
+export function ReviewForm({ onDone, autoFocusTitle = false }: { onDone?: () => void; autoFocusTitle?: boolean }) {
+  const uid = useId();
+  const titleId = `${uid}-title`;
+  const photoInputId = `${uid}-photo`;
+  const photoInputRef = useRef<HTMLInputElement>(null);
   const [name, setName] = useState("");
   const [email, setEmail] = useState("");
   const [rating, setRating] = useState(0);
@@ -27,6 +32,38 @@ export function ReviewForm({ onDone }: { onDone?: () => void }) {
   const [botcheck, setBotcheck] = useState(false);
   const [status, setStatus] = useState<FormStatus>("idle");
   const [errorMessage, setErrorMessage] = useState("");
+  const [photo, setPhoto] = useState<PreparedPhoto | null>(null);
+  const [photoBusy, setPhotoBusy] = useState(false);
+  const [photoError, setPhotoError] = useState("");
+
+  function clearPhoto() {
+    setPhoto(null);
+    setPhotoError("");
+    if (photoInputRef.current) photoInputRef.current.value = "";
+  }
+
+  async function handlePhotoChange(event: React.ChangeEvent<HTMLInputElement>) {
+    const file = event.target.files?.[0];
+    setPhotoError("");
+    if (!file) return;
+    const check = checkReviewPhoto(file);
+    if (!check.ok) {
+      setPhoto(null);
+      setPhotoError(check.message);
+      event.target.value = "";
+      return;
+    }
+    setPhotoBusy(true);
+    try {
+      setPhoto(await prepareReviewPhoto(file));
+    } catch {
+      setPhoto(null);
+      setPhotoError("We could not read that photo. Please try a different JPG, PNG or WEBP.");
+      event.target.value = "";
+    } finally {
+      setPhotoBusy(false);
+    }
+  }
 
   async function handleSubmit(event: React.FormEvent<HTMLFormElement>) {
     event.preventDefault();
@@ -38,15 +75,23 @@ export function ReviewForm({ onDone }: { onDone?: () => void }) {
     }
     setStatus("submitting");
     setErrorMessage("");
-    const result = await submitReviewForApproval({ name, email, rating, review, product });
+    const result = await submitReviewForApproval({
+      name,
+      email,
+      rating,
+      review,
+      product,
+      photo: photo ? { blob: photo.blob, dataUrl: photo.dataUrl } : undefined,
+    });
     if (result.ok) {
-      trackEvent("review_submit", { rating });
+      trackEvent("review_submit", { rating, has_photo: Boolean(photo) });
       setStatus("success");
       setName("");
       setEmail("");
       setRating(0);
       setProduct("");
       setReview("");
+      clearPhoto();
     } else {
       setStatus("error");
       setErrorMessage(result.message);
@@ -81,8 +126,8 @@ export function ReviewForm({ onDone }: { onDone?: () => void }) {
   const shown = hover || rating;
 
   return (
-    <form onSubmit={handleSubmit} className="rounded-[2rem] bg-white p-6 text-left shadow-card md:p-8" aria-labelledby="leave-review-title">
-      <h3 id="leave-review-title" className="font-display text-2xl text-chocolate">
+    <form onSubmit={handleSubmit} className="rounded-[2rem] bg-white p-6 text-left shadow-card md:p-8" aria-labelledby={titleId}>
+      <h3 id={titleId} tabIndex={autoFocusTitle ? -1 : undefined} data-review-form-title="" className="font-display text-2xl text-chocolate outline-none">
         Leave a review
       </h3>
       <p className="mt-1 text-sm text-chocolate-soft">
@@ -118,7 +163,7 @@ export function ReviewForm({ onDone }: { onDone?: () => void }) {
             >
               <input
                 type="radio"
-                name="review-rating"
+                name={`${uid}-rating`}
                 value={value}
                 checked={rating === value}
                 onChange={() => setRating(value)}
@@ -189,10 +234,66 @@ export function ReviewForm({ onDone }: { onDone?: () => void }) {
         />
       </label>
 
+      <div className="mt-4 text-sm" data-review-photo-field="">
+        <span className="mb-2 block font-medium">Add a photo of your cookie on the wall (optional)</span>
+        {photo ? (
+          <div className="flex items-center gap-4 rounded-2xl border border-chocolate/10 bg-cream p-3">
+            {/* eslint-disable-next-line @next/next/no-img-element */}
+            <img
+              src={photo.dataUrl}
+              alt="Preview of the photo you chose"
+              className="h-20 w-20 flex-none rounded-xl object-cover shadow-card"
+            />
+            <div className="min-w-0 flex-1">
+              <p className="font-medium text-chocolate">Photo ready to send</p>
+              <p className="text-xs text-chocolate-soft">It is only shown on the site after we approve your review.</p>
+            </div>
+            <button
+              type="button"
+              onClick={clearPhoto}
+              className="flex-none rounded-full border border-chocolate/15 bg-white px-4 py-2 text-xs font-medium text-chocolate transition hover:bg-cream-deep"
+            >
+              Remove photo
+            </button>
+          </div>
+        ) : (
+          <label
+            htmlFor={photoInputId}
+            className="flex cursor-pointer items-center gap-3 rounded-2xl border border-dashed border-chocolate/25 bg-cream px-4 py-4 transition hover:border-pink has-[:focus-visible]:ring-2 has-[:focus-visible]:ring-pink"
+          >
+            <span className="flex h-10 w-10 flex-none items-center justify-center rounded-full bg-pink/10 text-pink" aria-hidden="true">
+              <svg className="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={1.8}>
+                <path strokeLinecap="round" strokeLinejoin="round" d="M4 8a2 2 0 012-2h1.4l1.1-1.6A1 1 0 019.4 4h5.2a1 1 0 01.9.4L16.6 6H18a2 2 0 012 2v9a2 2 0 01-2 2H6a2 2 0 01-2-2V8z" />
+                <circle cx="12" cy="12.5" r="3.5" />
+              </svg>
+            </span>
+            <span className="min-w-0">
+              <span className="block font-medium text-chocolate">{photoBusy ? "Getting your photo ready..." : "Choose a photo"}</span>
+              <span className="block text-xs text-chocolate-soft">JPG, PNG or WEBP, up to 4 MB. Show us where it hangs!</span>
+            </span>
+            <input
+              ref={photoInputRef}
+              id={photoInputId}
+              type="file"
+              name="photo"
+              accept={REVIEW_PHOTO_ACCEPT}
+              onChange={handlePhotoChange}
+              disabled={photoBusy}
+              className="sr-only"
+            />
+          </label>
+        )}
+        {photoError && (
+          <p className="mt-2 text-sm text-red-700" role="alert">
+            {photoError}
+          </p>
+        )}
+      </div>
+
       <button
         type="submit"
         data-sticky-buy-avoid=""
-        disabled={status === "submitting"}
+        disabled={status === "submitting" || photoBusy}
         className="mt-6 w-full rounded-full bg-pink px-6 py-3 font-medium text-white transition hover:bg-pink-hot disabled:cursor-not-allowed disabled:opacity-60"
       >
         {status === "submitting" ? "Sending..." : "Submit review"}

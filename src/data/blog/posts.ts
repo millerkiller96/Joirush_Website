@@ -14,6 +14,66 @@ export type BlogPost = {
 
 export const blogPosts: BlogPost[] = [
   {
+    slug: "dopamine-decor-ideas",
+    title: "Dopamine Decor Ideas: How to Make Your Home Feel Happy",
+    excerpt:
+      "Dopamine decor ideas for every room: color, pattern, texture, and dopamine art that makes you smile. Practical tips to keep a joyful home from tipping into chaos.",
+    publishedAt: "2026-10-08",
+    author: "Erynn",
+    image: "/images/products/rainbow.jpg",
+    imageAlt: "Dopamine decor idea: rainbow candy jumbo cookie wall art by JOIRUSH on a bright wall",
+    keywords: [
+      "dopamine decor",
+      "dopamine decor ideas",
+      "dopamine art",
+      "dopamine decor kitchen",
+      "colorful home decor",
+      "jumbo cookie wall art",
+    ],
+    readingTime: "9 min read",
+    category: "inspiration",
+  },
+  {
+    slug: "maximalist-decor-ideas",
+    title: "Maximalist Decor Ideas (and How Eclectic Decor Fits In)",
+    excerpt:
+      "Maximalist decor ideas that feel collected, not cluttered: how to pick an anchor piece, build a palette, mix patterns, and where eclectic decor fits in.",
+    publishedAt: "2026-10-08",
+    author: "Erynn",
+    image: "/images/products/hot-pink-mm.jpg",
+    imageAlt: "Maximalist decor statement piece: hot pink M&M jumbo cookie wall art by JOIRUSH",
+    keywords: [
+      "maximalist decor",
+      "maximalist decor ideas",
+      "eclectic decor",
+      "maximalist vs eclectic",
+      "statement wall art",
+      "sculptural decor",
+    ],
+    readingTime: "9 min read",
+    category: "inspiration",
+  },
+  {
+    slug: "whimsical-kitsch-decor-ideas",
+    title: "Whimsical Decor & Kitsch Decor Ideas for a Playful Home",
+    excerpt:
+      "Whimsical decor and kitsch decor ideas that look styled instead of silly: food as art, playful scale, retro kitchens, and how to keep collections tidy.",
+    publishedAt: "2026-10-08",
+    author: "Erynn",
+    image: "/images/products/pastel-mm.jpg",
+    imageAlt: "Whimsical decor idea: pastel M&M jumbo cookie wall art by JOIRUSH",
+    keywords: [
+      "whimsical decor",
+      "kitsch decor",
+      "whimsical home decor",
+      "kitschy kitchen",
+      "playful wall decor",
+      "faux food decor",
+    ],
+    readingTime: "8 min read",
+    category: "inspiration",
+  },
+  {
     slug: "spray-foam-cookie-wall-art-how-theyre-made",
     title: "Spray Foam Cookie Wall Art: How Collectors' Sculptures Are Made",
     excerpt:
@@ -146,10 +206,11 @@ export const blogPosts: BlogPost[] = [
   },
   {
     slug: "kitchen-dopamine-decor-dessert-gallery-wall",
-    title: "Dopamine Decor: Creating a Cookie Art Gallery Wall in Your Kitchen",
+    title: "Kitchen Dopamine Decor: How to Build a Dessert Gallery Wall",
     excerpt:
-      "Embrace the dopamine decor trend with a curated gallery wall of cookie art. From sugar cookie wall sculptures to candy cookie art, learn how to create a space with art cookies that sparks joy.",
+      "Bring dopamine decor into the kitchen with a dessert gallery wall. How to pick a statement cookie, plan the layout, and choose colors that feel joyful and intentional.",
     publishedAt: "2024-09-05",
+    updatedAt: "2026-10-08",
     author: "Erynn",
     image: "/images/products/rainbow.jpg",
     imageAlt: "Cookie art gallery wall: colorful sugar cookie wall sculptures creating dopamine decor",

@@ -70,7 +70,15 @@ export function DopamineDecorContent() {
         particularly <Link href="/wall-art/">jumbo cookie sculptures</Link>, arranged to create 
         maximum visual impact and emotional response. It's <strong>kitschy kitchen wall art</strong> done 
         right: playful but intentional, colorful but cohesive.
-      </p>      <div className="key-takeaways">
+      </p>
+
+      <p>
+        New to the style? Start with our room by room{" "}
+        <Link href="/blog/dopamine-decor-ideas/">dopamine decor ideas</Link>, then come back here
+        to plan the kitchen.
+      </p>
+
+      <div className="key-takeaways">
         <p>Key takeaways</p>
         <ul>
           <li>Dopamine decor means filling your home with things that genuinely make you happy.</li>
@@ -265,7 +273,8 @@ export function DopamineDecorContent() {
       <h3>Eclectic/Maximalist</h3>
       <p>
         You're already committed to more is more. Cookie sculptures fit right into collections 
-        of vintage signs, botanical prints, and colorful dishware.
+        of vintage signs, botanical prints, and colorful dishware. Our{" "}
+        <Link href="/blog/maximalist-decor-ideas/">maximalist decor guide</Link> has more on layering.
       </p>
 
       <h3>Midcentury Modern</h3>
@@ -306,7 +315,7 @@ export function DopamineDecorContent() {
 
       <h3>How do I create a dopamine decor kitchen?</h3>
       <p>
-        Start with one statement piece that makes you genuinely happy, like <Link href="/wall-art/"> jumbo cookie wall art</Link>, and build around it. Add colorful 
+        Start with one statement piece that makes you genuinely happy, like <Link href="/kitchen-wall-art/">jumbo cookie kitchen wall art</Link>, and build around it. Add colorful 
         accents, playful kitchen gadgets, and don't be afraid of bold colors. The key is choosing 
         things that bring <em>you</em> joy, not what Instagram says you should like.
       </p>

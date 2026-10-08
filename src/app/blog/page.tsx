@@ -20,6 +20,8 @@ export const metadata: Metadata = {
     "cookie canvas decor",
     "faux food wall art tips",
     "dopamine decor ideas",
+    "maximalist decor ideas",
+    "whimsical decor ideas",
     "kitschy kitchen inspiration",
   ],
   openGraph: {
@@ -98,8 +100,11 @@ export default function BlogPage() {
             Cookie Art Tips & Sugar Cookie Sculpture Inspiration
           </h1>
           <p className="mx-auto mt-5 max-w-2xl text-lg text-chocolate-mid">
-            From how to hang your cookie art to creating the perfect dopamine decor kitchen with art cookies,
-            explore sugar cookie wall sculpture ideas and stories from the cookie artist's studio.
+            From how to hang your cookie art to{" "}
+            <Link href="/blog/dopamine-decor-ideas/" className="text-pink hover:underline">dopamine decor</Link>,{" "}
+            <Link href="/blog/maximalist-decor-ideas/" className="text-pink hover:underline">maximalist</Link>, and{" "}
+            <Link href="/blog/whimsical-kitsch-decor-ideas/" className="text-pink hover:underline">whimsical decor</Link>{" "}
+            ideas, explore sugar cookie wall sculpture tips and stories from the cookie artist&apos;s studio.
           </p>
         </div>
 
@@ -150,6 +155,7 @@ export default function BlogPage() {
                         month: "long",
                         day: "numeric",
                         year: "numeric",
+                        timeZone: "UTC",
                       })}
                     </p>
                   </div>

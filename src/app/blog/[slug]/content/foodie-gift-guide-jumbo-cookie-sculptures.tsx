@@ -284,7 +284,7 @@ export function FoodieGiftGuideContent() {
         <li>Statement pieces (ice cream sandwich): $220</li>
       </ul>
       <p>
-        All pieces include free US shipping with 14-day handmade production and delivery. <Link href="/custom/">Custom pieces</Link> are priced 
+        All pieces include free US shipping with 14 day handmade production and delivery. <Link href="/custom/">Custom pieces</Link> are priced 
         based on size and complexity.
       </p>
 

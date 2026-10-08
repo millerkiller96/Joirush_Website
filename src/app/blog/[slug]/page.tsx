@@ -15,10 +15,16 @@ import { CookieWallArtCollectorsContent, CookieWallArtCollectorsSchema } from ".
 import { CookieCanvasVs3DContent, CookieCanvasVs3DSchema } from "./content/cookie-canvas-vs-3d-cookie-wall-sculptures";
 import { FauxCookieWallDecorContent, FauxCookieWallDecorSchema } from "./content/faux-cookie-wall-decor-ready-made-vs-diy";
 import { SprayFoamCookieWallArtContent, SprayFoamCookieWallArtSchema } from "./content/spray-foam-cookie-wall-art-how-theyre-made";
+import { DopamineDecorIdeasContent, DopamineDecorIdeasSchema } from "./content/dopamine-decor-ideas";
+import { MaximalistDecorContent, MaximalistDecorSchema } from "./content/maximalist-decor-ideas";
+import { WhimsicalKitschDecorContent, WhimsicalKitschDecorSchema } from "./content/whimsical-kitsch-decor-ideas";
 
 type Props = { params: Promise<{ slug: string }> };
 
 const contentMap: Record<string, { Content: () => React.ReactNode; Schema: () => React.ReactNode }> = {
+  "dopamine-decor-ideas": { Content: DopamineDecorIdeasContent, Schema: DopamineDecorIdeasSchema },
+  "maximalist-decor-ideas": { Content: MaximalistDecorContent, Schema: MaximalistDecorSchema },
+  "whimsical-kitsch-decor-ideas": { Content: WhimsicalKitschDecorContent, Schema: WhimsicalKitschDecorSchema },
   "spray-foam-cookie-wall-art-how-theyre-made": { Content: SprayFoamCookieWallArtContent, Schema: SprayFoamCookieWallArtSchema },
   "faux-cookie-wall-decor-ready-made-vs-diy": { Content: FauxCookieWallDecorContent, Schema: FauxCookieWallDecorSchema },
   "cookie-canvas-vs-3d-cookie-wall-sculptures": { Content: CookieCanvasVs3DContent, Schema: CookieCanvasVs3DSchema },
@@ -203,6 +209,7 @@ export default async function BlogPostPage({ params }: Props) {
                   month: "long",
                   day: "numeric",
                   year: "numeric",
+                  timeZone: "UTC",
                 })}
               </p>
             </div>

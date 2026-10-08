@@ -1,10 +1,10 @@
 "use client";
 
 import { useId, useRef, useState } from "react";
-import { products } from "@/data/products";
 import { submitReviewForApproval, trackEvent } from "@/lib/forms";
 import { PHOTO_ACCEPT, prepareReviewPhoto } from "@/lib/reviewPhoto";
 import { StarIcon } from "@/components/ReviewStars";
+import { CookiePicker, cookieOptions } from "@/components/CookiePicker";
 
 type FormStatus = "idle" | "submitting" | "success" | "error";
 
@@ -14,7 +14,7 @@ const fieldClass =
 const ratingWords = ["", "Not for me", "It was okay", "Good", "Great", "Love it!"];
 
 /** The real product names (one per product in src/data/products.ts). */
-export const reviewProductOptions = Array.from(new Set(products.map((product) => product.shortName)));
+export const reviewProductOptions = cookieOptions.map((option) => option.name);
 
 type ReviewFormProps = {
   onDone?: () => void;
@@ -28,6 +28,7 @@ export function ReviewForm({ onDone, defaultProduct = "", autoFocus = false }: R
   const uid = useId();
   const titleId = `${uid}title`;
   const photoInputId = `${uid}photo`;
+  const productLabelId = `${uid}product`;
   const initialProduct = reviewProductOptions.includes(defaultProduct) ? defaultProduct : "";
   const [name, setName] = useState("");
   const [email, setEmail] = useState("");
@@ -199,23 +200,13 @@ export function ReviewForm({ onDone, defaultProduct = "", autoFocus = false }: R
         </label>
       </div>
 
-      <label className="mt-4 block text-sm">
-        <span className="mb-2 block font-medium">Which cookie did you buy?</span>
-        <select
-          name="product"
-          value={product}
-          onChange={(event) => setProduct(event.target.value)}
-          className={fieldClass}
-          data-review-product=""
-        >
-          <option value="">Choose a cookie (optional)</option>
-          {reviewProductOptions.map((option) => (
-            <option key={option} value={option}>
-              {option}
-            </option>
-          ))}
-        </select>
-      </label>
+      <div className="mt-4 block text-sm">
+        <span id={productLabelId} className="mb-2 block font-medium">
+          Which cookie did you buy?
+        </span>
+        <CookiePicker value={product} onChange={setProduct} labelId={productLabelId} />
+        <input type="hidden" name="product" value={product} data-review-product="" />
+      </div>
 
       <label className="mt-4 block text-sm">
         <span className="mb-2 block font-medium">

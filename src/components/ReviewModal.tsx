@@ -21,6 +21,8 @@ export function ReviewModal({ open, onClose, defaultProduct }: ReviewModalProps)
   const handleKeyDown = useCallback(
     (event: KeyboardEvent) => {
       if (event.key === "Escape") {
+        // The cookie picker handles Escape itself to close just its list.
+        if (event.defaultPrevented) return;
         onClose();
         return;
       }

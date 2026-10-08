@@ -306,3 +306,23 @@ body {
 .article-body .callout > :last-child {
   margin-bottom: 0;
 }
+
+/*
+ * Product page photo gallery: cap the main photo height so the whole photo and
+ * the thumbnails fit on screen. Photos are 3:4, so the frame width is the
+ * height cap times 0.75. On desktop the cap also leaves room for the sticky
+ * header, breadcrumb and thumbnail strip (about 20rem in total).
+ */
+.product-gallery-frame {
+  width: 100%;
+  max-width: calc(75vh * 0.75);
+  max-width: calc(75svh * 0.75);
+  margin-inline: auto;
+}
+
+@media (min-width: 768px) {
+  .product-gallery-frame {
+    max-width: calc(max(20rem, min(75vh, 100vh - 20rem)) * 0.75);
+    max-width: calc(max(20rem, min(75svh, 100svh - 20rem)) * 0.75);
+  }
+}

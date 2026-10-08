@@ -272,7 +272,7 @@ export function ProductPageClient({ product, related }: ProductPageClientProps) 
       </div>
 
       <div className="mx-auto max-w-7xl px-5 pb-28 md:px-8 md:pb-32">
-        <EtsyReviewsHub />
+        <EtsyReviewsHub product={product.shortName} />
 
         <section className="mt-16">
           <h2 className="font-display text-3xl text-chocolate">Can&apos;t stop at just one?</h2>

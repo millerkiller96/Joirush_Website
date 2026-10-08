@@ -6,6 +6,8 @@ import { getFiveStarReviews, mergeReviews, type PoolReview } from "@/data/review
 import { fetchApprovedReviews } from "@/lib/sheetReviews";
 import { ReviewForm } from "@/components/ReviewForm";
 import { ReviewStars, StarIcon } from "@/components/ReviewStars";
+import { LeaveReviewButton } from "@/components/ReviewModal";
+import { ReviewPhoto } from "@/components/ReviewPhoto";
 
 const staticReviews = getFiveStarReviews();
 /** Most cards the grid shows (built in reviews first, then the newest sheet reviews). */
@@ -62,6 +64,9 @@ export function HomeReviews() {
           <p className="mx-auto mt-4 max-w-xl text-lg text-chocolate-mid">
             Five star words from people who hung a JOIRUSH cookie on their wall.
           </p>
+          <div className="mt-6 flex justify-center">
+            <LeaveReviewButton />
+          </div>
         </div>
 
         <ul className="mt-10 grid gap-5 md:grid-cols-2 lg:grid-cols-3">
@@ -72,6 +77,7 @@ export function HomeReviews() {
                 <blockquote className="mt-4 flex-1 whitespace-pre-line font-display text-xl leading-snug text-chocolate">
                   &ldquo;{review.quote}&rdquo;
                 </blockquote>
+                {review.photo && <ReviewPhoto src={review.photo} name={review.name} className="mt-5 h-40 w-full" />}
                 <figcaption className="mt-5 text-sm">
                   <span className="font-semibold text-chocolate">{review.name}</span>
                   {review.piece && <span className="text-chocolate-soft"> · {review.piece}</span>}

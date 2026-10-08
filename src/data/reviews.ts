@@ -22,6 +22,8 @@ export type PoolReview = {
   piece?: string;
   rating: number;
   source: "etsy" | "website";
+  /** Customer photo (https URL), only on approved website reviews that have one. */
+  photo?: string;
 };
 
 type ApprovedReview = {
@@ -31,6 +33,7 @@ type ApprovedReview = {
   quote: string;
   piece?: string;
   source?: string;
+  photo?: string;
 };
 
 const COOKIE_WORDS = /cookie|m&m|chocolate chip|sculpture|wall art/i;
@@ -66,6 +69,7 @@ export function getAllReviews(): PoolReview[] {
       piece: review.piece,
       rating: review.rating,
       source: "website",
+      photo: typeof review.photo === "string" && review.photo.startsWith("https://") ? review.photo : undefined,
     }),
   );
 

@@ -1,8 +1,9 @@
 "use client";
 
-import { useState } from "react";
+import { useId, useRef, useState } from "react";
 import { products } from "@/data/products";
 import { submitReviewForApproval, trackEvent } from "@/lib/forms";
+import { PHOTO_ACCEPT, prepareReviewPhoto } from "@/lib/reviewPhoto";
 import { StarIcon } from "@/components/ReviewStars";
 
 type FormStatus = "idle" | "submitting" | "success" | "error";
@@ -12,25 +13,58 @@ const fieldClass =
 
 const ratingWords = ["", "Not for me", "It was okay", "Good", "Great", "Love it!"];
 
-const productOptions = Array.from(new Set(products.map((product) => product.shortName))).concat([
-  "Custom piece",
-  "Something else",
-]);
+/** The real product names (one per product in src/data/products.ts). */
+export const reviewProductOptions = Array.from(new Set(products.map((product) => product.shortName)));
 
-export function ReviewForm({ onDone }: { onDone?: () => void }) {
+type ReviewFormProps = {
+  onDone?: () => void;
+  /** Product to preselect (for example on a product page). The reviewer can change or clear it. */
+  defaultProduct?: string;
+  /** Focus the first field when the form mounts (used by the popup). */
+  autoFocus?: boolean;
+};
+
+export function ReviewForm({ onDone, defaultProduct = "", autoFocus = false }: ReviewFormProps) {
+  const uid = useId();
+  const titleId = `${uid}title`;
+  const photoInputId = `${uid}photo`;
+  const initialProduct = reviewProductOptions.includes(defaultProduct) ? defaultProduct : "";
   const [name, setName] = useState("");
   const [email, setEmail] = useState("");
   const [rating, setRating] = useState(0);
   const [hover, setHover] = useState(0);
-  const [product, setProduct] = useState("");
+  const [product, setProduct] = useState(initialProduct);
   const [review, setReview] = useState("");
   const [botcheck, setBotcheck] = useState(false);
   const [status, setStatus] = useState<FormStatus>("idle");
   const [errorMessage, setErrorMessage] = useState("");
+  const [photo, setPhoto] = useState("");
+  const [photoBusy, setPhotoBusy] = useState(false);
+  const [photoError, setPhotoError] = useState("");
+  const photoInputRef = useRef<HTMLInputElement>(null);
+
+  async function handlePhotoChange(event: React.ChangeEvent<HTMLInputElement>) {
+    const file = event.target.files?.[0];
+    event.target.value = "";
+    if (!file) return;
+    setPhotoError("");
+    setPhotoBusy(true);
+    const result = await prepareReviewPhoto(file);
+    setPhotoBusy(false);
+    if (result.ok) setPhoto(result.dataUrl);
+    else setPhotoError(result.message);
+  }
+
+  function removePhoto() {
+    setPhoto("");
+    setPhotoError("");
+    photoInputRef.current?.focus();
+  }
 
   async function handleSubmit(event: React.FormEvent<HTMLFormElement>) {
     event.preventDefault();
     if (botcheck) return;
+    if (photoBusy) return;
     if (!rating) {
       setStatus("error");
       setErrorMessage("Please choose a star rating.");
@@ -38,15 +72,16 @@ export function ReviewForm({ onDone }: { onDone?: () => void }) {
     }
     setStatus("submitting");
     setErrorMessage("");
-    const result = await submitReviewForApproval({ name, email, rating, review, product });
+    const result = await submitReviewForApproval({ name, email, rating, review, product, photo: photo || undefined });
     if (result.ok) {
-      trackEvent("review_submit", { rating });
+      trackEvent("review_submit", { rating, has_photo: Boolean(photo), has_product: Boolean(product) });
       setStatus("success");
       setName("");
       setEmail("");
       setRating(0);
-      setProduct("");
+      setProduct(initialProduct);
       setReview("");
+      setPhoto("");
     } else {
       setStatus("error");
       setErrorMessage(result.message);
@@ -81,8 +116,8 @@ export function ReviewForm({ onDone }: { onDone?: () => void }) {
   const shown = hover || rating;
 
   return (
-    <form onSubmit={handleSubmit} className="rounded-[2rem] bg-white p-6 text-left shadow-card md:p-8" aria-labelledby="leave-review-title">
-      <h3 id="leave-review-title" className="font-display text-2xl text-chocolate">
+    <form onSubmit={handleSubmit} className="rounded-[2rem] bg-white p-6 text-left shadow-card md:p-8" aria-labelledby={titleId}>
+      <h3 id={titleId} className="font-display text-2xl text-chocolate">
         Leave a review
       </h3>
       <p className="mt-1 text-sm text-chocolate-soft">
@@ -141,6 +176,7 @@ export function ReviewForm({ onDone }: { onDone?: () => void }) {
           </span>
           <input
             type="text"
+            autoFocus={autoFocus}
             value={name}
             onChange={(event) => setName(event.target.value)}
             required
@@ -164,11 +200,19 @@ export function ReviewForm({ onDone }: { onDone?: () => void }) {
       </div>
 
       <label className="mt-4 block text-sm">
-        <span className="mb-2 block font-medium">Which piece? (optional)</span>
-        <select value={product} onChange={(event) => setProduct(event.target.value)} className={fieldClass}>
-          <option value="">Choose a cookie</option>
-          {productOptions.map((option) => (
-            <option key={option}>{option}</option>
+        <span className="mb-2 block font-medium">Which cookie did you buy?</span>
+        <select
+          name="product"
+          value={product}
+          onChange={(event) => setProduct(event.target.value)}
+          className={fieldClass}
+          data-review-product=""
+        >
+          <option value="">Choose a cookie (optional)</option>
+          {reviewProductOptions.map((option) => (
+            <option key={option} value={option}>
+              {option}
+            </option>
           ))}
         </select>
       </label>
@@ -189,10 +233,59 @@ export function ReviewForm({ onDone }: { onDone?: () => void }) {
         />
       </label>
 
+      <div className="mt-4 text-sm">
+        <span className="mb-2 block font-medium">Add a photo (optional)</span>
+        <p className="mb-3 text-chocolate-soft">Show us your cookie on the wall. JPG, PNG or WEBP, up to 4 MB.</p>
+        <input
+          id={photoInputId}
+          ref={photoInputRef}
+          type="file"
+          name="photo"
+          accept={PHOTO_ACCEPT}
+          onChange={handlePhotoChange}
+          disabled={photoBusy}
+          aria-label="Add a photo (optional)"
+          className="peer sr-only"
+          data-review-photo-input=""
+        />
+        {photo ? (
+          <div className="flex items-center gap-4 rounded-2xl border border-chocolate/10 bg-cream p-3" data-review-photo-preview="">
+            {/* eslint-disable-next-line @next/next/no-img-element */}
+            <img src={photo} alt="Your photo preview" className="h-20 w-20 rounded-xl object-cover" />
+            <div className="flex flex-1 flex-wrap items-center gap-3">
+              <span className="text-chocolate-mid">Photo added</span>
+              <button
+                type="button"
+                onClick={removePhoto}
+                className="rounded-full border border-chocolate/15 bg-white px-4 py-2 text-sm font-medium text-chocolate transition hover:bg-cream-deep"
+              >
+                Remove photo
+              </button>
+            </div>
+          </div>
+        ) : (
+          <label
+            htmlFor={photoInputId}
+            className="flex cursor-pointer items-center justify-center gap-2 rounded-2xl border-2 border-dashed border-chocolate/15 bg-cream px-4 py-5 text-chocolate-mid transition hover:border-pink hover:text-chocolate peer-focus-visible:ring-2 peer-focus-visible:ring-pink"
+          >
+            <svg className="h-5 w-5 text-pink" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true">
+              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M3 9a2 2 0 012-2h1.5l1.5-2h8l1.5 2H19a2 2 0 012 2v9a2 2 0 01-2 2H5a2 2 0 01-2-2V9z" />
+              <circle cx="12" cy="13" r="3.5" strokeWidth={2} />
+            </svg>
+            <span className="font-medium">{photoBusy ? "Getting your photo ready..." : "Choose a photo"}</span>
+          </label>
+        )}
+        {photoError && (
+          <p className="mt-2 text-sm text-red-700" role="alert">
+            {photoError}
+          </p>
+        )}
+      </div>
+
       <button
         type="submit"
         data-sticky-buy-avoid=""
-        disabled={status === "submitting"}
+        disabled={status === "submitting" || photoBusy}
         className="mt-6 w-full rounded-full bg-pink px-6 py-3 font-medium text-white transition hover:bg-pink-hot disabled:cursor-not-allowed disabled:opacity-60"
       >
         {status === "submitting" ? "Sending..." : "Submit review"}

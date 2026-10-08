@@ -10,7 +10,7 @@ type ProductGalleryProps = {
   name: string;
 };
 
-const MAIN_SIZES = "(min-width: 1280px) 600px, (min-width: 768px) 50vw, 100vw";
+const MAIN_SIZES = "(min-width: 768px) 520px, 100vw";
 
 function prefersReducedMotion() {
   return typeof window !== "undefined" && window.matchMedia("(prefers-reduced-motion: reduce)").matches;
@@ -230,6 +230,7 @@ export function ProductGallery({ images, name }: ProductGalleryProps) {
 
   return (
     <div className="min-w-0 md:sticky md:top-24" data-product-gallery>
+      <div className="product-gallery-frame" data-product-gallery-frame>
       <div
         role="region"
         aria-roledescription="carousel"
@@ -269,7 +270,7 @@ export function ProductGallery({ images, name }: ProductGalleryProps) {
                   fetchPriority={i === 0 ? "high" : "auto"}
                   decoding={i === 0 ? "sync" : "async"}
                   draggable={false}
-                  className="h-full w-full select-none object-cover"
+                  className="h-full w-full select-none object-contain"
                 />
               </button>
             </div>
@@ -361,6 +362,8 @@ export function ProductGallery({ images, name }: ProductGalleryProps) {
           </div>
         </>
       )}
+
+      </div>
 
       {lightboxIndex !== null && (
         <Lightbox images={images} name={name} startIndex={lightboxIndex} onClose={closeLightbox} />

@@ -1,15 +1,27 @@
 "use client";
 
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import { reviews as siteReviews, site } from "@/data/site";
 import { getShopReviews, type EtsySyncReview } from "@/data/products";
+import { getAllReviews, type PoolReview } from "@/data/reviews";
+import { fetchApprovedReviews } from "@/lib/sheetReviews";
+import { LeaveReviewButton } from "@/components/ReviewModal";
+import { ReviewPhoto } from "@/components/ReviewPhoto";
 
 type DisplayReview = {
   quote: string;
   name: string;
   piece?: string;
   rating: number;
+  photo?: string;
 };
+
+/** Approved 5 star website reviews baked into the build (src/data/approved-reviews.json). */
+const builtInWebsiteReviews = getAllReviews().filter((review) => review.source === "website" && review.rating === 5);
+
+function normalizeQuote(text: string) {
+  return text.trim().toLowerCase().replace(/\s+/g, " ");
+}
 
 function StarIcon({ className, filled }: { className?: string; filled?: boolean }) {
   return (
@@ -47,6 +59,7 @@ function ReviewCard({ review }: { review: DisplayReview }) {
         ))}
       </div>
       <p className="mt-3 text-chocolate-mid">&ldquo;{review.quote}&rdquo;</p>
+      {review.photo && <ReviewPhoto src={review.photo} name={review.name} className="mt-4 h-40 w-full" />}
       <p className="mt-4 text-sm">
         <span className="font-medium text-chocolate">{review.name}</span>
         {review.piece && <span className="text-chocolate-soft"> · {review.piece}</span>}
@@ -55,12 +68,38 @@ function ReviewCard({ review }: { review: DisplayReview }) {
   );
 }
 
-export function EtsyReviewsHub() {
+type EtsyReviewsHubProps = {
+  /** Product name to preselect in the review popup (product pages). */
+  product?: string;
+};
+
+export function EtsyReviewsHub({ product }: EtsyReviewsHubProps = {}) {
   const [expanded, setExpanded] = useState(false);
+  const [sheetReviews, setSheetReviews] = useState<PoolReview[]>([]);
+
+  // Approved 5 star reviews from the Google Sheet (same moderation as the homepage).
+  useEffect(() => {
+    let active = true;
+    fetchApprovedReviews().then((list) => {
+      if (active) setSheetReviews(list.filter((review) => review.rating === 5));
+    });
+    return () => {
+      active = false;
+    };
+  }, []);
 
   const syncedReviews = getShopReviews();
 
   const allReviews: DisplayReview[] = [];
+  const seenQuotes = new Set<string>();
+
+  // Approved website reviews first (newest from the sheet, then built in ones).
+  [...sheetReviews, ...builtInWebsiteReviews].forEach((r) => {
+    const key = normalizeQuote(r.quote);
+    if (!key || seenQuotes.has(key)) return;
+    seenQuotes.add(key);
+    allReviews.push({ quote: r.quote, name: r.name, piece: r.piece, rating: 5, photo: r.photo });
+  });
 
   siteReviews.forEach((r) => {
     allReviews.push({
@@ -105,6 +144,9 @@ export function EtsyReviewsHub() {
         <p className="mx-auto mt-4 max-w-xl text-lg text-chocolate-mid">
           Real reviews from happy homes. {site.stats.years} years of handmade goodness and counting.
         </p>
+        <div className="mt-6 flex justify-center">
+          <LeaveReviewButton defaultProduct={product} />
+        </div>
       </div>
 
       <div className="mt-10 grid gap-5 md:grid-cols-2 lg:grid-cols-3">

@@ -1,4 +1,19 @@
 /**
+ * WHAT CHANGED (Oct 8 2026): review photos
+ *  - Reviews can now include one customer photo. The script saves it in a Google Drive
+ *    folder named "JOIRUSH review photos" (created automatically) and puts the Drive link
+ *    in a new "Photo" column on the Reviews tab (added automatically after the ID column).
+ *  - ?action=approved now includes a "photo" image link for approved reviews that have one.
+ *    Photos only show on the website after you tick Approved, same as the text.
+ *  - If the website could not attach the photo to the Web3Forms email, this script emails
+ *    the photo to OWNER_EMAIL so it still reaches the inbox.
+ *  - Everything else works exactly as before (giveaway entries, reviews, Approve checkbox,
+ *    spam and flood limits, 5 minute cache, private reviewer email, Product column).
+ *  TO UPDATE: paste this whole file over the old code and Save. Pick "setup" and click Run,
+ *  then approve the new Google Drive and email permissions. Then click Deploy, Manage
+ *  deployments, the pencil icon, Version: New version, keep "Who has access: Anyone", and
+ *  click Deploy. The web app URL stays the same, so the website needs no change.
+ *
  * JOIRUSH website helper (one Google Apps Script web app for joirush.com)
  * ======================================================================
  * Bound to the "joirush email list" spreadsheet. It does two jobs:
@@ -6,16 +21,20 @@
  *   1. Giveaway entries go to the "Giveaway" tab:
  *        Timestamp | Email | Source Page | Consent | Source
  *   2. Customer reviews go to the "Reviews" tab:
- *        Submitted At | Approved | Name | Rating | Review | Product | Email (private) | Source Page | ID
+ *        Submitted At | Approved | Name | Rating | Review | Product | Email (private) | Source Page | ID | Photo
  *      Tick the Approved checkbox and the review shows on joirush.com within about 5 minutes.
  *      Untick it to hide the review again. Emails are never shown on the website.
+ *      Product is optional (empty when the reviewer did not pick a cookie).
+ *      Photo holds a Google Drive link when the reviewer added a photo. The photo shows on
+ *      the website only after the review is approved.
  *
  * DEPLOY STEPS (about 5 minutes, done once by the sheet owner)
  *  1. Open the sheet:
  *     https://docs.google.com/spreadsheets/d/1edgaV7qX4pnE680bSXJeOLW0QM64Ky9xI0lWayfj8cc/edit
  *  2. Click Extensions, then Apps Script. Delete any code in Code.gs, paste ALL of this file, click Save.
  *  3. In the toolbar, pick the function "setup" and click Run. Approve the permission prompt
- *     (it only asks for this spreadsheet). The Giveaway and Reviews tabs appear with their headers.
+ *     (it asks for this spreadsheet, Google Drive for review photos, and sending email
+ *     to you when a photo needs to reach your inbox). The Giveaway and Reviews tabs appear with their headers.
  *  4. Click Deploy, then New deployment. Click the gear next to "Select type" and pick Web app.
  *       Description:      JOIRUSH website
  *       Execute as:       Me
@@ -42,13 +61,19 @@ var SKIP_DUPLICATE_EMAILS = true; // one giveaway row per email address
 var MAX_GIVEAWAY_PER_HOUR = 300; // whole site, stops floods
 
 var REVIEWS_TAB = "Reviews";
-var REVIEW_HEADERS = ["Submitted At", "Approved", "Name", "Rating", "Review", "Product", "Email (private)", "Source Page", "ID"];
+var REVIEW_HEADERS = ["Submitted At", "Approved", "Name", "Rating", "Review", "Product", "Email (private)", "Source Page", "ID", "Photo"];
+var BASE_REVIEW_COLUMNS = 9; // Submitted At through ID; Photo is found by its header name
+var PHOTO_HEADER = "Photo";
+var PHOTO_FOLDER_NAME = "JOIRUSH review photos";
+var PHOTO_TYPES = { "image/jpeg": "jpg", "image/png": "png", "image/webp": "webp" };
+var MAX_PHOTO_BYTES = 5 * 1024 * 1024; // the site sends a resized JPEG, usually well under 1 MB
+var OWNER_EMAIL = "joirushshop@gmail.com"; // gets the photo when the website email could not carry it
 var LIMITS = { name: 60, reviewMin: 10, reviewMax: 1200, product: 80, email: 254, page: 500, consent: 500, source: 100 };
 var MAX_REVIEWS_PER_HOUR = 30; // whole site, stops floods
 var MAX_REVIEWS_PER_PERSON_PER_DAY = 3; // same email (or same name when no email)
 var DUPLICATE_SCAN_ROWS = 500; // how many recent rows to check for repeats
 
-var APPROVED_CACHE_KEY = "approved_reviews_v1";
+var APPROVED_CACHE_KEY = "approved_reviews_v2";
 var APPROVED_CACHE_SECONDS = 300; // about 5 minutes
 var MAX_PUBLIC_REVIEWS = 200;
 
@@ -103,9 +128,13 @@ function onEdit(e) {
 function setup() {
   var ss = getSpreadsheet_();
   formatGiveaway_(getGiveawaySheet_(ss));
-  formatReviews_(getReviewsSheet_(ss));
+  var reviews = getReviewsSheet_(ss);
+  formatReviews_(reviews);
+  ensurePhotoColumn_(reviews);
+  getPhotoFolder_(); // creates the Drive folder and asks for the Drive permission
+  if (MailApp.getRemainingDailyQuota() < 1) Logger.log("Email quota is used up for today.");
   CacheService.getScriptCache().remove(APPROVED_CACHE_KEY);
-  Logger.log("Setup done. Tabs ready: " + GIVEAWAY_TAB + " and " + REVIEWS_TAB + ".");
+  Logger.log("Setup done. Tabs ready: " + GIVEAWAY_TAB + " and " + REVIEWS_TAB + ". Photos go to the Drive folder " + PHOTO_FOLDER_NAME + ".");
 }
 
 /* ================================================================== */
@@ -168,7 +197,7 @@ function handleReview_(data) {
   // Duplicate and flood protection on recent rows.
   if (last > 1) {
     var start = Math.max(2, last - DUPLICATE_SCAN_ROWS + 1);
-    var rows = sheet.getRange(start, 1, last - start + 1, REVIEW_HEADERS.length).getValues();
+    var rows = sheet.getRange(start, 1, last - start + 1, BASE_REVIEW_COLUMNS).getValues();
     var textKey = normalize_(review);
     var personKey = email || normalize_(name);
     var dayAgo = Date.now() - 24 * 60 * 60 * 1000;
@@ -183,8 +212,19 @@ function handleReview_(data) {
   }
 
   var id = makeId_();
+
+  // Optional photo: saved to Drive after the checks above, so spam and repeats never create files.
+  var photo = null;
+  if (data.photo) {
+    try {
+      photo = savePhoto_(data.photo, id, name);
+    } catch (err) {
+      Logger.log("Photo not saved: " + err);
+    }
+  }
+
   var row = last + 1;
-  sheet.getRange(row, 1, 1, REVIEW_HEADERS.length).setValues([[
+  sheet.getRange(row, 1, 1, BASE_REVIEW_COLUMNS).setValues([[
     new Date(),
     false,
     guard_(name),
@@ -196,8 +236,12 @@ function handleReview_(data) {
     id,
   ]]);
   sheet.getRange(row, 2).setDataValidation(checkboxRule_());
+  if (photo) {
+    sheet.getRange(row, ensurePhotoColumn_(sheet)).setValue(photo.url);
+    if (data.photoInInbox !== true && String(data.photoInInbox) !== "true") emailPhoto_(photo, name, rating, review, product);
+  }
   countHourly_("review");
-  return { ok: true, id: id };
+  return { ok: true, id: id, photo: !!photo };
 }
 
 /** JSON string of approved reviews with public fields only. Cached for about 5 minutes. */
@@ -210,7 +254,7 @@ function getApprovedJson_() {
   var reviews = [];
   var last = sheet ? lastDataRow_(sheet) : 0;
   if (last > 1) {
-    var width = Math.max(sheet.getLastColumn(), REVIEW_HEADERS.length);
+    var width = Math.max(sheet.getLastColumn(), BASE_REVIEW_COLUMNS);
     var values = sheet.getRange(1, 1, last, width).getValues();
     var col = columnMap_(values[0]);
     for (var r = 1; r < values.length; r++) {
@@ -220,6 +264,7 @@ function getApprovedJson_() {
       var rating = Number(row[col.rating]);
       if (!text || !(rating >= 1 && rating <= 5)) continue;
       var submitted = row[col.submitted];
+      var photoUrl = col.photo >= 0 ? publicPhotoUrl_(row[col.photo]) : "";
       reviews.push({
         id: String(row[col.id] || "row" + (r + 1)),
         name: unguard_(clean_(row[col.name], LIMITS.name)) || "JOIRUSH customer",
@@ -229,6 +274,7 @@ function getApprovedJson_() {
         date: submitted instanceof Date ? Utilities.formatDate(submitted, TIME_ZONE, "yyyy-MM-dd") : "",
         _t: submitted instanceof Date ? submitted.getTime() : 0,
       });
+      if (photoUrl) reviews[reviews.length - 1].photo = photoUrl;
     }
   }
   reviews.sort(function (a, b) {
@@ -248,8 +294,8 @@ function getApprovedJson_() {
 
 /** Finds columns by header name so the owner can reorder or add columns safely. */
 function columnMap_(headerRow) {
-  var map = { submitted: 0, approved: 1, name: 2, rating: 3, review: 4, product: 5, id: 8 };
-  var names = { "submitted at": "submitted", approved: "approved", name: "name", rating: "rating", review: "review", product: "product", id: "id" };
+  var map = { submitted: 0, approved: 1, name: 2, rating: 3, review: 4, product: 5, id: 8, photo: -1 };
+  var names = { "submitted at": "submitted", approved: "approved", name: "name", rating: "rating", review: "review", product: "product", id: "id", photo: "photo" };
   for (var c = 0; c < headerRow.length; c++) {
     var key = names[String(headerRow[c]).trim().toLowerCase()];
     if (key) map[key] = c;
@@ -305,7 +351,7 @@ function formatReviews_(sheet) {
   var rows = Math.max(sheet.getMaxRows() - 1, 1);
   sheet.getRange(2, 2, rows, 1).setDataValidation(checkboxRule_()).setHorizontalAlignment("center");
   sheet.getRange(2, 5, rows, 1).setWrap(true);
-  var widths = [160, 90, 140, 70, 420, 200, 220, 220, 120];
+  var widths = [160, 90, 140, 70, 420, 200, 220, 220, 120, 260];
   for (var c = 0; c < widths.length; c++) sheet.setColumnWidth(c + 1, widths[c]);
 }
 
@@ -338,6 +384,81 @@ function lastDataRow_(sheet) {
 
 function checkboxRule_() {
   return SpreadsheetApp.newDataValidation().requireCheckbox().setAllowInvalid(false).build();
+}
+
+/* ================================================================== */
+/* Review photos                                                      */
+/* ================================================================== */
+
+/** Column number (1 based) of the Photo column. Adds the header after the last header if missing. */
+function ensurePhotoColumn_(sheet) {
+  var lastCol = Math.max(sheet.getLastColumn(), 1);
+  var header = sheet.getRange(1, 1, 1, lastCol).getValues()[0];
+  var lastHeader = 0;
+  for (var c = 0; c < header.length; c++) {
+    var text = String(header[c]).trim();
+    if (text.toLowerCase() === PHOTO_HEADER.toLowerCase()) return c + 1;
+    if (text) lastHeader = c + 1;
+  }
+  var col = Math.max(lastHeader + 1, BASE_REVIEW_COLUMNS + 1);
+  if (col > sheet.getMaxColumns()) sheet.insertColumnsAfter(sheet.getMaxColumns(), col - sheet.getMaxColumns());
+  sheet.getRange(1, col).setValue(PHOTO_HEADER).setFontWeight("bold").setBackground("#fde7ef");
+  sheet.setColumnWidth(col, 260);
+  return col;
+}
+
+function getPhotoFolder_() {
+  var folders = DriveApp.getFoldersByName(PHOTO_FOLDER_NAME);
+  return folders.hasNext() ? folders.next() : DriveApp.createFolder(PHOTO_FOLDER_NAME);
+}
+
+/** Saves a base64 data URL image to Drive. Returns { url, id, blob } or null when it is not a valid image. */
+function savePhoto_(dataUrl, reviewId, name) {
+  var match = /^data:(image\/(?:jpeg|jpg|png|webp));base64,([A-Za-z0-9+\/=\s]+)$/.exec(String(dataUrl));
+  if (!match) return null;
+  var mime = match[1] === "image/jpg" ? "image/jpeg" : match[1];
+  var bytes = Utilities.base64Decode(match[2].replace(/\s+/g, ""));
+  if (!bytes.length || bytes.length > MAX_PHOTO_BYTES) return null;
+  var safeName = normalize_(name).replace(/ /g, "_").slice(0, 30) || "customer";
+  var blob = Utilities.newBlob(bytes, mime, reviewId + "_" + safeName + "." + PHOTO_TYPES[mime]);
+  var file = getPhotoFolder_().createFile(blob);
+  file.setDescription("JOIRUSH review " + reviewId + " from " + name);
+  try {
+    // Link sharing lets the website show the photo once the review is approved. The link is
+    // only published by ?action=approved after you tick Approved.
+    file.setSharing(DriveApp.Access.ANYONE_WITH_LINK, DriveApp.Permission.VIEW);
+  } catch (err) {
+    Logger.log("Could not turn on link sharing for the photo: " + err);
+  }
+  return { url: file.getUrl(), id: file.getId(), blob: blob };
+}
+
+/** Emails the photo to the shop inbox (used when the website email could not attach it). */
+function emailPhoto_(photo, name, rating, review, product) {
+  try {
+    if (!OWNER_EMAIL || MailApp.getRemainingDailyQuota() < 1) return;
+    MailApp.sendEmail({
+      to: OWNER_EMAIL,
+      subject: "Photo for the new " + rating + " star review from " + name,
+      body:
+        "A customer added a photo to their review. It is attached and saved in Google Drive:\n" + photo.url +
+        "\n\nName: " + name + "\nRating: " + rating + " out of 5\nProduct: " + (product || "Not chosen") +
+        "\nReview: " + review + "\n\nTick Approved on the Reviews tab to publish it on joirush.com.",
+      attachments: [photo.blob],
+      name: "JOIRUSH Reviews",
+    });
+  } catch (err) {
+    Logger.log("Photo email not sent: " + err);
+  }
+}
+
+/** Public image link for the website: Drive links become a direct image URL; other https links pass through. */
+function publicPhotoUrl_(value) {
+  var text = String(value == null ? "" : value).trim();
+  if (!text) return "";
+  var id = /\/d\/([A-Za-z0-9_-]{10,})/.exec(text) || /[?&]id=([A-Za-z0-9_-]{10,})/.exec(text);
+  if (id && /google\.com/.test(text)) return "https://drive.google.com/thumbnail?id=" + id[1] + "&sz=w1600";
+  return /^https:\/\/[^\s"'<>]+$/.test(text) ? text : "";
 }
 
 /* ================================================================== */

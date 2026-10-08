@@ -33,7 +33,9 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
 
   return {
     title: seoTitle,
-    description: `${product.tagline} Handmade spray foam cookie wall art by cookie artist Erynn. ${formatPrice(product.price)} with free U.S. shipping.`,
+    description: product.metaDescription
+      ? `${product.metaDescription} ${formatPrice(product.price)} with free U.S. shipping.`
+      : `${product.tagline} Handmade spray foam cookie wall art by cookie artist Erynn. ${formatPrice(product.price)} with free U.S. shipping.`,
     keywords: [
       "jumbo cookie wall art",
       "cookie art",

@@ -40,6 +40,12 @@ export function SiteFooter() {
             <Link href="/oversized-food-wall-art/" className="hover:text-pink-blush">
               Oversized Food Wall Art
             </Link>
+            <Link href="/kitchen-wall-art/" className="hover:text-pink-blush">
+              Kitchen Wall Art
+            </Link>
+            <Link href="/colorful-wall-art/" className="hover:text-pink-blush">
+              Colorful Wall Art
+            </Link>
             <Link href="/catalogue/" className="hover:text-pink-blush">
               Full Catalogue
             </Link>

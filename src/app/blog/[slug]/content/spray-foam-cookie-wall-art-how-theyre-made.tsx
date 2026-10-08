@@ -372,7 +372,7 @@ export function SprayFoamCookieWallArtContent() {
       <h3>1. The Perfect Weight to Size Ratio</h3>
 
       <p>
-        A 16-inch <Link href="/product/jumbo-chocolate-chip-cookie/">jumbo chocolate chip 
+        A 16 inch <Link href="/product/jumbo-chocolate-chip-cookie/">jumbo chocolate chip 
         cookie sculpture</Link> weighs just 2 to 4 lbs, light enough to hang on a single nail, 
         substantial enough to feel like real art. Commercial fiberglass food props at this 
         size would weigh 10+ lbs and require professional installation.

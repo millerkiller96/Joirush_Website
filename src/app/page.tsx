@@ -10,9 +10,9 @@ import { site } from "@/data/site";
 import { getAbsoluteUrl, getImageUrl, siteUrl } from "@/lib/seo";
 
 export const metadata: Metadata = {
-  title: "Jumbo Cookie Wall Art | Handmade Sugar Cookie Wall Sculptures by Cookie Artist Erynn | JOIRUSH",
+  title: "Jumbo Cookie Wall Art | Handmade Sugar Cookie Sculptures | JOIRUSH",
   description:
-    "Shop jumbo cookie wall art by cookie artist Erynn. Handmade sugar cookie wall sculptures, art cookies wall sculpture pieces, and faux food wall art that look real but last forever. Giant cookie decor from $90 with free U.S. shipping from Daytona Beach, FL.",
+    "Handmade jumbo cookie wall art by cookie artist Erynn. Colorful, playful cookie sculptures for kitchens and happy homes, from $90 with free U.S. shipping.",
   keywords: [
     "jumbo cookie wall art",
     "cookie art",
@@ -26,6 +26,8 @@ export const metadata: Metadata = {
     "giant cookie sculpture",
     "handmade cookie wall art",
     "chocolate chip cookie wall art",
+    "kitchen wall art",
+    "dopamine decor",
   ],
   openGraph: {
     title: "Jumbo Cookie Wall Art | Handmade Sugar Cookie Wall Sculptures | JOIRUSH",
@@ -71,6 +73,11 @@ const homepageFaqs = [
     question: "How do I hang cookie wall art?",
     answer:
       "Every piece includes an attached wall hanger. Because they're lightweight (2 to 4 lbs), they hang easily on a single nail or picture hook, no special hardware needed.",
+  },
+  {
+    question: "Where does cookie wall art look best?",
+    answer:
+      "Most people hang theirs in the kitchen, a breakfast nook, a coffee bar, or a playroom. A single classic cookie makes playful kitchen wall art, and the candy colored pieces fit right into dopamine decor, maximalist, and whimsical rooms.",
   },
   {
     question: "How heavy are the sculptures?",
@@ -291,7 +298,7 @@ export default function HomePage() {
         </section>
 
         <section className="mx-auto max-w-7xl px-5 py-8 md:px-8">
-          <div className="grid gap-4 md:grid-cols-2 lg:grid-cols-4">
+          <div className="grid gap-4 md:grid-cols-2 lg:grid-cols-3">
             {[
               {
                 href: "/wall-art/",
@@ -306,6 +313,20 @@ export default function HomePage() {
                 copy: "3D food wall art for kitchens and dining rooms. Large food wall art that looks real.",
                 image: "/images/products/ice-cream.jpg",
                 alt: "Oversized food wall art: ice cream sandwich sculpture by JOIRUSH",
+              },
+              {
+                href: "/kitchen-wall-art/",
+                title: "Kitchen Wall Art",
+                copy: "Warm classics and candy brights, sorted by kitchen style, plus where to hang them.",
+                image: "/images/products/white-choc.jpg",
+                alt: "Kitchen wall art: white chocolate chip jumbo cookie sculpture by JOIRUSH",
+              },
+              {
+                href: "/colorful-wall-art/",
+                title: "Colorful Wall Art",
+                copy: "Candy brights, hot pink, and soft pastels for walls that need a little joy.",
+                image: "/images/products/pastel-mm.jpg",
+                alt: "Colorful wall art: pastel M&M jumbo cookie sculpture by JOIRUSH",
               },
               {
                 href: "/catalogue/",
@@ -490,7 +511,22 @@ export default function HomePage() {
                 </h3>
               </Link>
             </div>
-            <Link href="/blog/" className="mt-6 inline-flex text-pink hover:underline">
+            <p className="mt-6 text-chocolate-mid">
+              Decorating ideas:{" "}
+              <Link href="/blog/dopamine-decor-ideas/" className="text-pink hover:underline">
+                dopamine decor
+              </Link>
+              ,{" "}
+              <Link href="/blog/maximalist-decor-ideas/" className="text-pink hover:underline">
+                maximalist rooms
+              </Link>
+              , and{" "}
+              <Link href="/blog/whimsical-kitsch-decor-ideas/" className="text-pink hover:underline">
+                whimsical and kitsch decor
+              </Link>
+              .
+            </p>
+            <Link href="/blog/" className="mt-4 inline-flex text-pink hover:underline">
               More ideas on the blog →
             </Link>
           </div>

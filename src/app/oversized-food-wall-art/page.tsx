@@ -10,22 +10,23 @@ import { site } from "@/data/site";
 import { getAbsoluteUrl, getImageUrl, siteUrl } from "@/lib/seo";
 
 export const metadata: Metadata = {
-  title: "Oversized Food Wall Art | 3D Food Wall Art for Kitchens & Dining Rooms",
+  title: "Oversized Food Wall Art | 3D Sculptural Decor for Kitchens",
   description:
-    "Shop oversized food wall art: handmade 3D food wall art for kitchens, dining rooms, and playrooms. Large food wall art for kitchen spaces that looks real but lasts forever. Cookie sculptures from $90, free U.S. shipping from Daytona Beach, FL.",
+    "Oversized food wall art and sculptural decor: handmade 3D cookie sculptures for kitchens, dining rooms, and playrooms. Lightweight, from $90, free U.S. shipping.",
   keywords: [
     "oversized food wall art",
     "3d food wall art",
     "large food wall art for kitchen",
     "food wall art",
-    "kitchen wall art",
+    "sculptural decor",
+    "sculptural wall decor",
     "3d wall art",
     "faux food wall art",
     "cookie wall art",
     "dining room wall art",
   ],
   openGraph: {
-    title: "Oversized Food Wall Art | 3D Food Wall Art for Kitchens | JOIRUSH",
+    title: "Oversized Food Wall Art | 3D Sculptural Decor for Kitchens | JOIRUSH",
     description:
       "Handmade oversized food wall art and 3D food wall art for kitchens by cookie artist Erynn. Large food wall art for kitchen spaces that looks real but lasts forever.",
     type: "website",
@@ -225,7 +226,7 @@ export default function OversizedFoodWallArtPage() {
             <SectionHeading
               eyebrow="Why 3D food wall art hits different"
               title="Not a Print. Real Sculptural Art."
-              copy="Flat canvas food prints are everywhere. This is 3D food wall art: dimensional, textured, and detailed enough to fool your guests. Large food wall art for kitchen spaces that actually makes a statement."
+              copy="Flat canvas food prints are everywhere. This is 3D food wall art: sculptural decor with real depth and texture, detailed enough to fool your guests. Large food wall art for kitchen spaces that actually makes a statement."
             />
             <div className="mt-10 grid gap-5 md:grid-cols-3">
               {[
@@ -338,7 +339,20 @@ export default function OversizedFoodWallArtPage() {
                   <strong>large food wall art for kitchen</strong> spaces that looks good enough to eat, forever.
                 </p>
                 <p>
-                  Explore the full collection:{" "}
+                  Sculptural decor changes how a wall feels. Light moves across the craggy
+                  edges through the day, and the piece looks different from every angle, which is
+                  something a print can never do.
+                </p>
+                <p>
+                  Shopping for a specific room? See{" "}
+                  <Link href="/kitchen-wall-art/" className="text-pink hover:underline">
+                    kitchen wall art
+                  </Link>{" "}
+                  by style or{" "}
+                  <Link href="/colorful-wall-art/" className="text-pink hover:underline">
+                    colorful wall art
+                  </Link>{" "}
+                  by palette, or explore the full collection:{" "}
                   <Link href="/wall-art/" className="text-pink hover:underline">
                     giant cookie wall art
                   </Link>

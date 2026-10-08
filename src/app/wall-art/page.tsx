@@ -243,7 +243,10 @@ export default function WallArtPage() {
                   <Link href="/blog/kitchen-dopamine-decor-dessert-gallery-wall/" className="text-pink hover:underline">dopamine decor kitchen</Link>,{" "}
                   a <Link href="/blog/foodie-gift-guide-jumbo-cookie-sculptures/" className="text-pink hover:underline">foodie gift</Link>{" "}
                   they'll never forget, or that blank wall that needs something joyful. Also check out our{" "}
-                  <Link href="/oversized-food-wall-art/" className="text-pink hover:underline">oversized food wall art</Link> collection.
+                  <Link href="/oversized-food-wall-art/" className="text-pink hover:underline">oversized food wall art</Link> collection,
+                  or shop by room and color with{" "}
+                  <Link href="/kitchen-wall-art/" className="text-pink hover:underline">kitchen wall art</Link> and{" "}
+                  <Link href="/colorful-wall-art/" className="text-pink hover:underline">colorful wall art</Link>.
                 </p>
                 <Link
                   href="/about/"

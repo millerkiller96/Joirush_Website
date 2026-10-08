@@ -27,6 +27,30 @@ function getRelevantReviews() {
   );
 }
 
+// Two decorating guides per product, matched to the piece's style.
+const styleGuideLinks: Record<Product["category"], { href: string; label: string }[]> = {
+  classic: [
+    { href: "/kitchen-wall-art/", label: "Kitchen wall art ideas: where to hang it" },
+    { href: "/blog/dopamine-decor-ideas/", label: "Dopamine decor ideas for every room" },
+  ],
+  candy: [
+    { href: "/colorful-wall-art/", label: "Colorful wall art and how to style it" },
+    { href: "/blog/dopamine-decor-ideas/", label: "Dopamine decor ideas for every room" },
+  ],
+  set: [
+    { href: "/blog/maximalist-decor-ideas/", label: "Maximalist decor ideas for big walls" },
+    { href: "/kitchen-wall-art/", label: "Kitchen wall art ideas: where to hang it" },
+  ],
+  statement: [
+    { href: "/blog/maximalist-decor-ideas/", label: "Maximalist decor ideas for big walls" },
+    { href: "/blog/whimsical-kitsch-decor-ideas/", label: "Whimsical and kitsch decor ideas" },
+  ],
+  seasonal: [
+    { href: "/blog/whimsical-kitsch-decor-ideas/", label: "Whimsical and kitsch decor ideas" },
+    { href: "/colorful-wall-art/", label: "Colorful wall art and how to style it" },
+  ],
+};
+
 function FAQAccordion({ faqs }: { faqs: { question: string; answer: string }[] }) {
   return (
     <div className="mt-16 border-t border-chocolate/10 pt-12">
@@ -235,6 +259,13 @@ export function ProductPageClient({ product, related }: ProductPageClientProps) 
                     Faux cookie wall decor: ready made vs DIY →
                   </Link>
                 </li>
+                {styleGuideLinks[product.category].map((link) => (
+                  <li key={link.href}>
+                    <Link href={link.href} className="text-pink hover:underline">
+                      {link.label} →
+                    </Link>
+                  </li>
+                ))}
               </ul>
             </div>
           </div>

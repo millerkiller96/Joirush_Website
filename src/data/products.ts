@@ -69,6 +69,8 @@ export type Product = {
   stripeUpsellUrl: string;
   upsellPairPrice: number;
   tagline: string;
+  /** Optional search snippet lead (no price; the page appends price + shipping). */
+  metaDescription?: string;
   description: string;
   details: string[];
   materials: string;
@@ -123,7 +125,9 @@ export const products: Product[] = [
     upsellPairPrice: 190,
     tagline: "The cookie art that started it all. Golden crumble. Glossy chips. Zero guilt.",
     description:
-      "Golden brown edges. Thick, craggy dough. Chocolate chips catching the light like they just came out of the oven. This cookie art classic is a sugar cookie wall sculpture that makes guests reach out before their brain catches up, then laugh when they realize it's faux food wall art. Cookie canvas comfort for your wall, forever.",
+      "Golden brown edges. Thick, craggy dough. Chocolate chips catching the light like they just came out of the oven. This cookie art classic is a sugar cookie wall sculpture that makes guests reach out before their brain catches up, then laugh when they realize it's faux food wall art. Cookie canvas comfort for your wall, forever, and the easiest piece of kitchen wall art to love.",
+    metaDescription:
+      "The classic 16 inch jumbo chocolate chip cookie wall art, handmade from spray foam and acrylic. Cozy, fun kitchen wall art.",
     details: [
       "16 × 16 inches, a statement cookie art size",
       "Handmade by cookie artist Erynn",
@@ -183,7 +187,9 @@ export const products: Product[] = [
     upsellPairPrice: 428,
     tagline: "Two jumbo art cookies. Maximum color. Maximum cookie art chaos.",
     description:
-      "Candy pops of red, yellow, blue, and green. Golden dough. Two 16 inch sugar cookie wall sculptures that turn any wall into a statement. Together these art cookies are louder than furniture. Hang them side by side and watch people's jaws drop. This cookie art set is for rooms that already know who they are.",
+      "Candy pops of red, yellow, blue, and green. Golden dough. Two 16 inch sugar cookie wall sculptures that turn any wall into a statement. Together these art cookies are louder than furniture. Hang them side by side and watch people's jaws drop. This cookie art set is for maximalist rooms that already know who they are.",
+    metaDescription:
+      "A pair of 16 inch jumbo M&M cookie sculptures, handmade to hang side by side. Bold, colorful wall art for big walls.",
     details: [
       "Two 16 inch cookie art pieces",
       "Handmade by cookie artist Erynn, so no two sets are identical",
@@ -235,7 +241,9 @@ export const products: Product[] = [
     upsellPairPrice: 171,
     tagline: "Jewel bright cookie art. Pure dopamine. $90.",
     description:
-      "Orange. Purple. Yellow. Red. Blue. Green. Jewel bright candy chips scattered across golden dough like confetti at a party. This cookie art turns boring walls into Candyland: playrooms, kitchens, anywhere that needs pure, unfiltered joy. At $90, it's the most colorful sugar cookie wall sculpture you can hang.",
+      "Orange. Purple. Yellow. Red. Blue. Green. Jewel bright candy chips scattered across golden dough like confetti at a party. This cookie art turns boring walls into Candyland: playrooms, kitchens, anywhere that needs pure, unfiltered joy. At $90, it's the most colorful sugar cookie wall sculpture you can hang, and an easy first step into dopamine decor.",
+    metaDescription:
+      "Rainbow candy jumbo cookie wall art, handmade from spray foam and acrylic. Colorful wall art for kitchens and playrooms.",
     details: [
       "14 inch handmade cookie art",
       "Rainbow candy chips in every color of art cookies",
@@ -285,7 +293,7 @@ export const products: Product[] = [
     upsellPairPrice: 218,
     tagline: "Candy vibes. Softer palette. Still stops the room.",
     description:
-      "Lavender. Baby blue. Blush. Mint. Pastel candy pops on golden sculpted dough. All the fun of Candyland with a gentler, dreamier aesthetic. Perfect for nurseries, soft maximalist kitchens, or anyone who wants bold art in a softer color story. Loud texture, quiet palette.",
+      "Lavender. Baby blue. Blush. Mint. Pastel candy pops on golden sculpted dough. All the fun of Candyland with a gentler, dreamier aesthetic. Perfect for nurseries, whimsical playrooms, soft maximalist kitchens, or anyone who wants bold art in a softer color story. Loud texture, quiet palette.",
     details: [
       "Jumbo 16 inch format",
       "Pastel candy detailing",
@@ -335,7 +343,7 @@ export const products: Product[] = [
     upsellPairPrice: 190,
     tagline: "Rich peanut butter dough. Candy pops. Pure nostalgia.",
     description:
-      "Warm, nutty peanut butter tones with candy confetti on top, like grandma's kitchen, but cooler. Craggy handmade texture that begs to be touched. This is comfort food as wall art, for anyone who grew up sneaking cookies from the cooling rack.",
+      "Warm, nutty peanut butter tones with candy confetti on top, like grandma's kitchen, but cooler. Craggy handmade texture that begs to be touched. This is comfort food as kitchen wall art, for anyone who grew up sneaking cookies from the cooling rack.",
     details: [
       "Giant 16 inch format",
       "Colorful candy accents on PB dough",
@@ -386,7 +394,9 @@ export const products: Product[] = [
     upsellPairPrice: 418,
     tagline: "The showstopper cookie art. Two cookies. Vanilla slab. Zero melt.",
     description:
-      "Two golden sugar cookie wall sculptures hugging a thick vanilla ice cream layer, frozen in time, permanently delicious, zero mess. This cookie art statement piece stops conversations and starts new ones. The ultimate childhood treat as adult faux food wall art. Warning: this art cookie will become the most photographed thing in your home.",
+      "Two golden sugar cookie wall sculptures hugging a thick vanilla ice cream layer, frozen in time, permanently delicious, zero mess. It's sculptural decor with a sense of humor: a statement piece that stops conversations and starts new ones. The ultimate childhood treat as adult faux food wall art. Warning: this art cookie will become the most photographed thing in your home.",
+    metaDescription:
+      "Jumbo cookie ice cream sandwich wall sculpture, handmade from spray foam and acrylic. Playful sculptural decor and our biggest statement piece.",
     details: [
       "Statement cookie canvas, the biggest flex",
       "Cookie art + faux ice cream construction",
@@ -417,7 +427,7 @@ export const products: Product[] = [
     upsellPairPrice: 218,
     tagline: "Golden dough. Candy confetti. Instant serotonin.",
     description:
-      "Classic M&M cookie energy: golden sculpted dough scattered with glossy candy pieces and chocolate chunks. Reads as pop art from across the room. The kind of piece that makes people smile before they even realize they're smiling.",
+      "Classic M&M cookie energy: golden sculpted dough scattered with glossy candy pieces and chocolate chunks. Reads as pop art from across the room, with just the right amount of kitsch. The kind of piece that makes people smile before they even realize they're smiling.",
     details: [
       "Jumbo 16 inch format",
       "Candy + chocolate detailing",
@@ -443,7 +453,9 @@ export const products: Product[] = [
     upsellPairPrice: 218,
     tagline: "Loud. Pink. Unapologetic. The main character cookie art.",
     description:
-      "Hot pink dough. Candy confetti. Dark chocolate chunks. This sugar cookie wall sculpture screams 'I have a personality.' Maximal, playful, and completely unapologetic cookie art. For rooms that are already bold and people who don't do subtle. The main character art cookie of the collection.",
+      "Hot pink dough. Candy confetti. Dark chocolate chunks. This sugar cookie wall sculpture screams 'I have a personality.' Maximalist, playful, and completely unapologetic cookie art. For rooms that are already bold and people who don't do subtle. The main character art cookie of the collection.",
+    metaDescription:
+      "Hot pink M&M jumbo cookie wall art, handmade from spray foam and acrylic. A bold statement piece for maximalist rooms.",
     details: [
       "Hot pink cookie canvas finish that is impossible to ignore",
       "Candy and chocolate accents",

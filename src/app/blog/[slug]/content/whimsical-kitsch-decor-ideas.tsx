@@ -128,6 +128,11 @@ export function WhimsicalKitschDecorContent() {
         </li>
       </ul>
 
+      <p>
+        Want the full makeover? Here are more{" "}
+        <Link href="/blog/retro-kitschy-kitchen-decor-ideas/">retro kitchen decor ideas</Link>.
+      </p>
+
       <h2>4. Choose Soft Color for Whimsy</h2>
 
       <p>

@@ -117,7 +117,8 @@ export function MaximalistDecorContent() {
 
       <p>
         Many of the happiest rooms are both: an eclectic mix of finds, layered with maximalist
-        confidence.
+        confidence. For a step by step take on mixing styles, see our{" "}
+        <Link href="/blog/eclectic-decor-ideas-mix-styles/">eclectic decor ideas</Link>.
       </p>
 
       <h2>1. Start With an Anchor Piece</h2>

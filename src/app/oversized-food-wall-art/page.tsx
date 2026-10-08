@@ -341,7 +341,11 @@ export default function OversizedFoodWallArtPage() {
                 <p>
                   Sculptural decor changes how a wall feels. Light moves across the craggy
                   edges through the day, and the piece looks different from every angle, which is
-                  something a print can never do.
+                  something a print can never do. More on that in{" "}
+                  <Link href="/blog/3d-wall-art-vs-flat-prints/" className="text-pink hover:underline">
+                    3D wall art vs flat prints
+                  </Link>
+                  .
                 </p>
                 <p>
                   Shopping for a specific room? See{" "}

@@ -147,7 +147,8 @@ export function DopamineDecorIdeasContent() {
         Kids tend to love food and candy colors. A{" "}
         <Link href="/product/jumbo-pastel-mm-cookie/">pastel M&amp;M cookie</Link> or a{" "}
         <Link href="/product/jumbo-chocolate-chip-cookie/">classic chocolate chip</Link> is
-        playful, and it is decorative only (not edible), so it stays on the wall.
+        playful, and it is decorative only (not edible), so it stays on the wall. More ideas in our{" "}
+        <Link href="/blog/dopamine-decor-playroom-kids-room/">dopamine decor playroom guide</Link>.
       </p>
 
       <h3>Bedroom</h3>

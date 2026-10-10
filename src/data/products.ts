@@ -396,7 +396,7 @@ export const products: Product[] = [
     description:
       "Two golden sugar cookie wall sculptures hugging a thick vanilla ice cream layer, frozen in time, permanently delicious, zero mess. It's sculptural decor with a sense of humor: a statement piece that stops conversations and starts new ones. The ultimate childhood treat as adult faux food wall art. Warning: this art cookie will become the most photographed thing in your home.",
     metaDescription:
-      "Jumbo cookie ice cream sandwich wall sculpture, handmade from spray foam and acrylic. Playful sculptural decor and our biggest statement piece.",
+      "Jumbo cookie ice cream sandwich wall sculpture, handmade from spray foam and acrylic. Our biggest statement piece.",
     details: [
       "Statement cookie canvas, the biggest flex",
       "Cookie art + faux ice cream construction",
@@ -475,6 +475,11 @@ export const categoryLabels: Record<ProductCategory | "all", string> = {
   seasonal: "Seasonal",
   statement: "Statement",
 };
+
+/** Display name without the " | " search qualifier, used for headings and schema names. */
+export function getDisplayName(product: { name: string }) {
+  return product.name.split("|")[0].trim();
+}
 
 export function getProduct(slug: string) {
   return products.find((product) => product.slug === slug);

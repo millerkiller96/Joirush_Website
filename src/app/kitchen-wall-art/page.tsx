@@ -4,7 +4,7 @@ import Link from "next/link";
 import { EtsyReviewsHub } from "@/components/EtsyReviewsHub";
 import { ProductCard } from "@/components/ProductCard";
 import { SectionHeading } from "@/components/SectionHeading";
-import { getProduct, type Product } from "@/data/products";
+import { getDisplayName, getProduct, type Product } from "@/data/products";
 import { site } from "@/data/site";
 import { getAbsoluteUrl, getImageUrl, siteUrl } from "@/lib/seo";
 
@@ -124,7 +124,7 @@ function KitchenWallArtJsonLd() {
         "@type": "ListItem",
         position: index + 1,
         url: getAbsoluteUrl(`/product/${product.slug}/`),
-        name: product.name,
+        name: getDisplayName(product),
       })),
     },
   };

@@ -2,16 +2,6 @@ import Link from "next/link";
 import { getAbsoluteUrl, getImageUrl } from "@/lib/seo";
 
 export function DopamineDecorSchema() {
-  const articleSchema = {
-    "@context": "https://schema.org",
-    "@type": "Article",
-    articleSection: "Interior Design",
-    about: [
-      { "@type": "Thing", name: "Dopamine Decor" },
-      { "@type": "Thing", name: "Kitchen Design" },
-      { "@type": "Thing", name: "Gallery Wall Ideas" },
-    ],
-  };
 
   const faqSchema = {
     "@context": "https://schema.org",

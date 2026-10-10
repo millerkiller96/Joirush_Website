@@ -49,34 +49,12 @@ export function FauxCookieWallDecorSchema() {
     ],
   };
 
-  const articleSchema = {
-    "@context": "https://schema.org",
-    "@type": "Article",
-    headline: "Faux Cookie Wall Decor: Ready Made Sculptures vs DIY Giant Cookies",
-    description: "Comparing DIY faux cookie projects to handmade spray foam sugar cookie wall sculptures. Learn about weight, texture, durability, and why collectors choose ready made cookie art.",
-    author: {
-      "@type": "Person",
-      name: "Erynn",
-      jobTitle: "Cookie Artist",
-      url: getAbsoluteUrl("/about/"),
-    },
-    about: [
-      { "@type": "Thing", name: "faux cookie wall decor" },
-      { "@type": "Thing", name: "giant faux cookie" },
-      { "@type": "Thing", name: "oversized cookie wall art" },
-      { "@type": "Thing", name: "DIY cookie art" },
-    ],
-  };
 
   return (
     <>
       <script
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(faqSchema) }}
-      />
-      <script
-        type="application/ld+json"
-        dangerouslySetInnerHTML={{ __html: JSON.stringify(articleSchema) }}
       />
     </>
   );

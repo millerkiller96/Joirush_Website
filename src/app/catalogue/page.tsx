@@ -3,15 +3,15 @@ import Link from "next/link";
 import { CatalogueGrid } from "@/components/CatalogueGrid";
 import { EtsyReviewsHub } from "@/components/EtsyReviewsHub";
 import { ReviewHighlight } from "@/components/ReviewHighlight";
-import { products } from "@/data/products";
+import { getDisplayName, products } from "@/data/products";
 import { site } from "@/data/site";
 
 const siteUrl = "https://joirush.com";
 
 export const metadata: Metadata = {
-  title: "Oversized Cookie Wall Decor | Full Catalogue of Handmade Cookie Art",
+  title: "Oversized Cookie Wall Decor: Full Catalogue",
   description:
-    "Browse all oversized cookie wall decor by cookie artist Erynn. Handmade sugar cookie wall sculptures in classic chocolate chip, M&M, and custom flavors. Oversized cookie wall decor from $90 with free U.S. shipping from Daytona Beach, FL.",
+    "Browse every oversized cookie wall decor piece by cookie artist Erynn: handmade sugar cookie sculptures from $90, with free U.S. shipping from Daytona Beach.",
   keywords: [
     "oversized cookie wall decor",
     "cookie art",
@@ -24,14 +24,14 @@ export const metadata: Metadata = {
     "buy cookie art",
   ],
   alternates: {
-    canonical: `${siteUrl}/catalogue`,
+    canonical: `${siteUrl}/catalogue/`,
   },
   openGraph: {
     title: "Oversized Cookie Wall Decor | Full Catalogue | JOIRUSH",
     description:
       "Browse all oversized cookie wall decor by cookie artist Erynn. Handmade sugar cookie wall sculptures starting at $90 with free U.S. shipping.",
     type: "website",
-    url: `${siteUrl}/catalogue`,
+    url: `${siteUrl}/catalogue/`,
     images: [
       {
         url: `${siteUrl}/images/products/choc-chip.jpg`,
@@ -56,7 +56,7 @@ function CatalogueSchema() {
     name: "Oversized Cookie Wall Decor: Full Catalogue",
     description:
       "Full catalogue of handmade oversized cookie wall decor: sugar cookie wall sculptures and art cookies by cookie artist Erynn.",
-    url: `${siteUrl}/catalogue`,
+    url: `${siteUrl}/catalogue/`,
     mainEntity: {
       "@type": "ItemList",
       name: "Cookie Art Collection",
@@ -66,10 +66,10 @@ function CatalogueSchema() {
         position: index + 1,
         item: {
           "@type": "Product",
-          name: product.name,
+          name: getDisplayName(product),
           description: product.tagline,
           image: `${siteUrl}${product.image}`,
-          url: `${siteUrl}/product/${product.slug}`,
+          url: `${siteUrl}/product/${product.slug}/`,
           offers: {
             "@type": "Offer",
             price: product.price,
@@ -109,13 +109,13 @@ function BreadcrumbSchema() {
         "@type": "ListItem",
         position: 2,
         name: "Cookie Wall Art",
-        item: `${siteUrl}/wall-art`,
+        item: `${siteUrl}/wall-art/`,
       },
       {
         "@type": "ListItem",
         position: 3,
         name: "Catalogue",
-        item: `${siteUrl}/catalogue`,
+        item: `${siteUrl}/catalogue/`,
       },
     ],
   };

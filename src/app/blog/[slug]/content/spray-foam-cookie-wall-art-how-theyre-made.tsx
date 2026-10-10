@@ -49,34 +49,12 @@ export function SprayFoamCookieWallArtSchema() {
     ],
   };
 
-  const articleSchema = {
-    "@context": "https://schema.org",
-    "@type": "Article",
-    headline: "Spray Foam Cookie Wall Art: How Collectors' Sculptures Are Made",
-    description: "Learn how spray foam cookie wall art is sculpted, painted, and sealed to create lightweight, realistic jumbo cookie sculptures that collectors hang in their homes.",
-    author: {
-      "@type": "Person",
-      name: "Erynn",
-      jobTitle: "Cookie Artist",
-      url: getAbsoluteUrl("/about/"),
-    },
-    about: [
-      { "@type": "Thing", name: "spray foam cookie wall art" },
-      { "@type": "Thing", name: "spray foam cookie sculpture" },
-      { "@type": "Thing", name: "faux cookie wall decor" },
-      { "@type": "Thing", name: "jumbo cookie wall art" },
-    ],
-  };
 
   return (
     <>
       <script
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(faqSchema) }}
-      />
-      <script
-        type="application/ld+json"
-        dangerouslySetInnerHTML={{ __html: JSON.stringify(articleSchema) }}
       />
     </>
   );

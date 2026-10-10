@@ -7,9 +7,9 @@ import { site } from "@/data/site";
 const siteUrl = "https://joirush.com";
 
 export const metadata: Metadata = {
-  title: "Custom Cookie Art | Commission Sugar Cookie Wall Sculptures by Cookie Artist",
+  title: "Custom Cookie Art: Commission a Cookie Sculpture",
   description:
-    "Commission custom cookie art from cookie artist Erynn: sugar cookie wall sculptures in your favorite colors, custom flavors, or any cookie canvas design you dream up. Handmade art cookies in Daytona Beach, Florida with free U.S. shipping.",
+    "Commission custom cookie art from cookie artist Erynn: a sugar cookie sculpture in your colors, flavor, or design. Handmade in Daytona Beach, free U.S. shipping.",
   keywords: [
     "custom cookie art",
     "commission cookie artist",
@@ -21,14 +21,14 @@ export const metadata: Metadata = {
     "handmade cookie wall art Florida",
   ],
   alternates: {
-    canonical: `${siteUrl}/custom`,
+    canonical: `${siteUrl}/custom/`,
   },
   openGraph: {
     title: "Custom Cookie Art | Commission Sugar Cookie Wall Sculptures | JOIRUSH",
     description:
       "Commission custom cookie art from cookie artist Erynn: sugar cookie wall sculptures in any design. Handmade in Daytona Beach, Florida.",
     type: "website",
-    url: `${siteUrl}/custom`,
+    url: `${siteUrl}/custom/`,
     images: [
       {
         url: `${siteUrl}/images/products/hot-pink-mm.jpg`,

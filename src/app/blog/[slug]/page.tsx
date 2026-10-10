@@ -57,14 +57,17 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
   const post = getBlogPost(slug);
   if (!post) return { title: "Article not found" };
 
+  const metaTitle = post.seoTitle || post.title;
+  const metaDescription = post.metaDescription || post.excerpt;
+
   return {
-    title: post.title,
-    description: post.excerpt,
+    title: metaTitle,
+    description: metaDescription,
     keywords: post.keywords,
     authors: [{ name: post.author }],
     openGraph: {
-      title: post.title,
-      description: post.excerpt,
+      title: metaTitle,
+      description: metaDescription,
       type: "article",
       publishedTime: post.publishedAt,
       modifiedTime: post.updatedAt || post.publishedAt,
@@ -80,8 +83,8 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
     },
     twitter: {
       card: "summary_large_image",
-      title: post.title,
-      description: post.excerpt,
+      title: metaTitle,
+      description: metaDescription,
       images: [getImageUrl(post.image)],
     },
     alternates: {
@@ -95,7 +98,7 @@ function ArticleJsonLd({ post }: { post: NonNullable<ReturnType<typeof getBlogPo
     "@context": "https://schema.org",
     "@type": "Article",
     headline: post.title,
-    description: post.excerpt,
+    description: post.metaDescription || post.excerpt,
     image: getImageUrl(post.image),
     datePublished: post.publishedAt,
     dateModified: post.updatedAt || post.publishedAt,

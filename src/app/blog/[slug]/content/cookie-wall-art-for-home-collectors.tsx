@@ -49,34 +49,12 @@ export function CookieWallArtCollectorsSchema() {
     ],
   };
 
-  const articleSchema = {
-    "@context": "https://schema.org",
-    "@type": "Article",
-    headline: "Cookie Wall Art for Home Collectors: Faux Sugar Cookie Sculptures That Last Forever",
-    description: "A collector's guide to cookie wall art: faux sugar cookie wall sculptures that look real but aren't edible. Learn what makes these spray foam cookie sculptures different from royal icing cookies.",
-    author: {
-      "@type": "Person",
-      name: "Erynn",
-      jobTitle: "Cookie Artist",
-      url: getAbsoluteUrl("/about/"),
-    },
-    about: [
-      { "@type": "Thing", name: "cookie wall art" },
-      { "@type": "Thing", name: "sugar cookie wall sculpture" },
-      { "@type": "Thing", name: "faux food decor" },
-      { "@type": "Thing", name: "cookie art for collectors" },
-    ],
-  };
 
   return (
     <>
       <script
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(faqSchema) }}
-      />
-      <script
-        type="application/ld+json"
-        dangerouslySetInnerHTML={{ __html: JSON.stringify(articleSchema) }}
       />
     </>
   );

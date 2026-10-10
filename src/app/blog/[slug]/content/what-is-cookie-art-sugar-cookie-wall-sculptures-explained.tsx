@@ -57,34 +57,12 @@ export function WhatIsCookieArtSchema() {
     ],
   };
 
-  const articleSchema = {
-    "@context": "https://schema.org",
-    "@type": "Article",
-    headline: "What is Cookie Art? A Guide to Sugar Cookie Wall Sculptures & Art Cookies",
-    description: "A comprehensive guide to cookie art, sugar cookie wall sculptures, and the cookie artists who create faux food wall art.",
-    author: {
-      "@type": "Person",
-      name: "Erynn",
-      jobTitle: "Cookie Artist",
-      url: getAbsoluteUrl("/about/"),
-    },
-    about: [
-      { "@type": "Thing", name: "cookie art" },
-      { "@type": "Thing", name: "sugar cookie art" },
-      { "@type": "Thing", name: "cookie artist" },
-      { "@type": "Thing", name: "faux food wall art" },
-    ],
-  };
 
   return (
     <>
       <script
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(faqSchema) }}
-      />
-      <script
-        type="application/ld+json"
-        dangerouslySetInnerHTML={{ __html: JSON.stringify(articleSchema) }}
       />
     </>
   );

@@ -7,6 +7,7 @@ import { ProductCard } from "@/components/ProductCard";
 import { ProductGallery } from "@/components/ProductGallery";
 import { getProductGallery } from "@/data/product-galleries";
 import {
+  getDisplayName,
   formatPrice,
   calculateSavings,
   type Product,
@@ -87,7 +88,7 @@ export function ProductPageClient({ product, related }: ProductPageClientProps) 
   const relevantReviews = getRelevantReviews().slice(0, 2);
   const galleryImages = getProductGallery(product.slug, product.image);
   // Alt text uses the name before any " | " qualifier, e.g. "Jumbo M&M Cookie Wall Art".
-  const galleryName = product.name.split("|")[0].trim();
+  const galleryName = getDisplayName(product);
 
   const upsellProduct = {
     name: product.name,
@@ -130,7 +131,7 @@ export function ProductPageClient({ product, related }: ProductPageClientProps) 
             </p>
 
             <h1 className="mt-3 font-display text-4xl text-chocolate md:text-5xl">
-              {product.name}
+              {galleryName}
             </h1>
 
             <div className="mt-5">

@@ -9,9 +9,9 @@ import { site } from "@/data/site";
 import { getAbsoluteUrl, getImageUrl } from "@/lib/seo";
 
 export const metadata: Metadata = {
-  title: "Cookie Art Blog | Sugar Cookie Wall Sculpture Tips, Ideas & Inspiration",
+  title: "Cookie Art Blog | Decor Ideas & Sugar Cookie Art Tips",
   description:
-    "Explore cookie art tips, sugar cookie wall sculpture inspiration, and stories from cookie artist Erynn. Your guide to art cookies, cookie canvas decor, faux food wall art, and kitschy kitchen style.",
+    "Decor ideas and cookie art tips from cookie artist Erynn: dopamine decor, kitschy kitchens, cookie canvas comparisons, and how to hang sugar cookie art.",
   keywords: [
     "cookie art blog",
     "sugar cookie art tips",

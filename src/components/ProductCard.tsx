@@ -1,6 +1,6 @@
 import { Image } from "@/components/Image";
 import Link from "next/link";
-import { formatPrice, type Product, calculateSavings } from "@/data/products";
+import { formatPrice, type Product, calculateSavings, getDisplayName } from "@/data/products";
 
 export function ProductCard({ product }: { product: Product }) {
   const { percent } = calculateSavings(product.price, product.compareAtPrice);
@@ -26,7 +26,7 @@ export function ProductCard({ product }: { product: Product }) {
               className="font-display text-xl leading-tight text-chocolate"
               itemProp="name"
             >
-              {product.name}
+              {getDisplayName(product)}
             </h3>
             <p className="mt-1 text-sm text-chocolate-soft">{product.size}</p>
           </div>

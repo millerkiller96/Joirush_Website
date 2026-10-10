@@ -49,34 +49,12 @@ export function CookieCanvasVs3DSchema() {
     ],
   };
 
-  const articleSchema = {
-    "@context": "https://schema.org",
-    "@type": "Article",
-    headline: "Cookie Canvas Prints vs Handmade 3D Cookie Wall Sculptures: What Collectors Actually Hang",
-    description: "Compare flat cookie canvas prints to 3D spray foam cookie wall sculptures. Learn why collectors choose handmade sugar cookie sculptures for the depth, texture, and statement piece impact that flat prints can't deliver.",
-    author: {
-      "@type": "Person",
-      name: "Erynn",
-      jobTitle: "Cookie Artist",
-      url: getAbsoluteUrl("/about/"),
-    },
-    about: [
-      { "@type": "Thing", name: "cookie canvas" },
-      { "@type": "Thing", name: "cookie wall art" },
-      { "@type": "Thing", name: "sugar cookie wall sculpture" },
-      { "@type": "Thing", name: "3D cookie art" },
-    ],
-  };
 
   return (
     <>
       <script
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(faqSchema) }}
-      />
-      <script
-        type="application/ld+json"
-        dangerouslySetInnerHTML={{ __html: JSON.stringify(articleSchema) }}
       />
     </>
   );

@@ -5,7 +5,7 @@ import { EtsyReviewsHub } from "@/components/EtsyReviewsHub";
 import { ProductCard } from "@/components/ProductCard";
 import { SectionHeading } from "@/components/SectionHeading";
 import { StudioVideoCarousel } from "@/components/StudioVideoCarousel";
-import { products } from "@/data/products";
+import { getDisplayName, products } from "@/data/products";
 import { site } from "@/data/site";
 import { getAbsoluteUrl, getImageUrl, siteUrl } from "@/lib/seo";
 
@@ -93,7 +93,7 @@ function FoodWallArtJsonLd() {
         position: index + 1,
         item: {
           "@type": "Product",
-          name: product.name,
+          name: getDisplayName(product),
           description: product.tagline,
           image: getImageUrl(product.image),
           url: getAbsoluteUrl(`/product/${product.slug}/`),

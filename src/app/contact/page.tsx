@@ -9,7 +9,7 @@ const siteUrl = "https://joirush.com";
 export const metadata: Metadata = {
   title: "Contact Us | Get in Touch with Cookie Artist Erynn",
   description:
-    "Contact JOIRUSH cookie artist Erynn for questions about sugar cookie wall sculptures, custom cookie art commissions, wholesale inquiries, or just to say hi. Based in Daytona Beach, Florida.",
+    "Questions about a sugar cookie wall sculpture or a custom cookie art commission? Contact cookie artist Erynn at JOIRUSH in Daytona Beach, Florida.",
   keywords: [
     "contact joirush",
     "cookie artist contact",
@@ -18,14 +18,14 @@ export const metadata: Metadata = {
     "joirush email",
   ],
   alternates: {
-    canonical: `${siteUrl}/contact`,
+    canonical: `${siteUrl}/contact/`,
   },
   openGraph: {
     title: "Contact Us | Get in Touch with Cookie Artist Erynn | JOIRUSH",
     description:
       "Contact JOIRUSH cookie artist Erynn for questions about sugar cookie wall sculptures, custom cookie art, or wholesale inquiries.",
     type: "website",
-    url: `${siteUrl}/contact`,
+    url: `${siteUrl}/contact/`,
     images: [
       {
         url: getImageUrl("/images/brand/avatar.jpg"),

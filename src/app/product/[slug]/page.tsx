@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import { notFound } from "next/navigation";
 import { ProductPageClient } from "@/components/ProductPageClient";
 import {
+  getDisplayName,
   formatPrice,
   getProduct,
   getRelatedProducts,
@@ -78,7 +79,7 @@ function ProductJsonLd({ product }: { product: NonNullable<ReturnType<typeof get
   const productSchema = {
     "@context": "https://schema.org",
     "@type": "Product",
-    name: product.name,
+    name: getDisplayName(product),
     description: product.description,
     image: getProductGallery(product.slug, product.image).map((image) => getImageUrl(image.src)),
     brand: {

@@ -5,14 +5,14 @@ import { EtsyReviewsHub } from "@/components/EtsyReviewsHub";
 import { ProductCard } from "@/components/ProductCard";
 import { SectionHeading } from "@/components/SectionHeading";
 import { StudioVideoCarousel } from "@/components/StudioVideoCarousel";
-import { products } from "@/data/products";
+import { getDisplayName, products } from "@/data/products";
 import { site } from "@/data/site";
 import { getAbsoluteUrl, getImageUrl, siteUrl } from "@/lib/seo";
 
 export const metadata: Metadata = {
-  title: "Giant Cookie Wall Art | Cookie Wall Decor & Faux Cookies for Display",
+  title: "Giant Cookie Wall Art & Faux Cookie Wall Decor",
   description:
-    "Shop giant cookie wall art: handmade sugar cookie wall sculptures and faux cookies for display by cookie artist Erynn. Not cheap plastic fake cookie decor: real handmade giant cookie wall decor in chocolate chip, M&M, and custom designs. $90 to $225, free U.S. shipping.",
+    "Handmade giant cookie wall art by cookie artist Erynn: realistic faux cookie wall decor in chocolate chip, M&M, and more. $90 to $225, free U.S. shipping.",
   keywords: [
     "giant cookie wall art",
     "giant cookie wall decor",
@@ -27,7 +27,7 @@ export const metadata: Metadata = {
     "chocolate chip cookie wall art",
   ],
   openGraph: {
-    title: "Giant Cookie Wall Art | Cookie Wall Decor & Faux Cookies for Display",
+    title: "Giant Cookie Wall Art & Faux Cookie Wall Decor | JOIRUSH",
     description:
       "Handmade giant cookie wall art by cookie artist Erynn. Not cheap plastic fake cookie decor. Real handmade giant cookie wall decor and faux cookies for display, from $90 to $225.",
     type: "website",
@@ -51,7 +51,7 @@ function CollectionJsonLd() {
     "@type": "CollectionPage",
     name: "Giant Cookie Wall Art: Cookie Wall Decor & Faux Cookies for Display",
     description:
-      "Handmade giant cookie wall art and giant cookie wall decor by cookie artist Erynn. Faux cookies for display, not cheap plastic fake cookie decor. Real art cookies and faux food wall art for kitchens, homes, and content studios.",
+      "Handmade giant cookie wall art and giant cookie wall decor by cookie artist Erynn. Faux cookies for display, not cheap plastic fake cookie decor. Real art cookies and faux food wall art for kitchens and homes.",
     url: getAbsoluteUrl("/wall-art/"),
     mainEntity: {
       "@type": "ItemList",
@@ -61,7 +61,7 @@ function CollectionJsonLd() {
         position: index + 1,
         item: {
           "@type": "Product",
-          name: product.name,
+          name: getDisplayName(product),
           description: product.tagline,
           image: getImageUrl(product.image),
           url: getAbsoluteUrl(`/product/${product.slug}/`),

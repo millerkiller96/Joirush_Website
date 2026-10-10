@@ -9,9 +9,9 @@ import { getAbsoluteUrl, getImageUrl } from "@/lib/seo";
 const siteUrl = "https://joirush.com";
 
 export const metadata: Metadata = {
-  title: "Meet Cookie Artist Erynn | Handmade Sugar Cookie Art & Faux Food Wall Sculptures",
+  title: "Meet Cookie Artist Erynn | Handmade Sugar Cookie Art",
   description:
-    "Meet Erynn, the cookie artist behind JOIRUSH in Daytona Beach, Florida. Creating handmade cookie art, sugar cookie wall sculptures, and faux food wall art since 2021. Each art cookie is hand sculpted in her Florida studio.",
+    "Meet Erynn, the cookie artist behind JOIRUSH in Daytona Beach, Florida, hand sculpting sugar cookie wall sculptures and faux food wall art since 2021.",
   keywords: [
     "cookie artist",
     "cookie art",
@@ -21,14 +21,14 @@ export const metadata: Metadata = {
     "art cookies",
   ],
   alternates: {
-    canonical: `${siteUrl}/about`,
+    canonical: `${siteUrl}/about/`,
   },
   openGraph: {
     title: "Meet Cookie Artist Erynn | Handmade Sugar Cookie Art",
     description:
       "Meet Erynn, the Florida cookie artist creating handmade sugar cookie wall sculptures and faux food wall art in Daytona Beach.",
     type: "website",
-    url: `${siteUrl}/about`,
+    url: `${siteUrl}/about/`,
     images: [
       {
         url: `${siteUrl}/images/brand/about-1.jpg`,
@@ -167,12 +167,16 @@ export default function AboutPage() {
       <section className="mx-auto max-w-7xl px-5 py-16 md:px-8">
         <h2 className="font-display text-4xl text-chocolate">From the Cookie Artist's Studio Wall</h2>
         <div className="mt-8 grid gap-4 md:grid-cols-3">
-          {["/images/brand/about-2.jpg", "/images/brand/about-3.jpg", "/images/brand/about-4.jpg"].map(
-            (src) => (
+          {[
+            { src: "/images/brand/about-2.jpg", alt: "Giant faux strawberry cheesecake slice sculpture with whipped cream and dripping red glaze, handmade by Erynn" },
+            { src: "/images/brand/about-3.jpg", alt: "Oversized JOIRUSH Crunch snack bag sculpture leaning beside jumbo cookie wall art in the studio" },
+            { src: "/images/brand/about-4.jpg", alt: "Handmade Y2K charm choker with virtual pet keychains on a display bust" },
+          ].map(
+            ({ src, alt }) => (
               <Image
                 key={src}
                 src={src}
-                alt=""
+                alt={alt}
                 width={700}
                 height={900}
                 className="h-80 w-full rounded-[1.8rem] object-cover"

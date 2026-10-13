@@ -2,76 +2,101 @@ import type { MetadataRoute } from "next";
 import { products } from "@/data/products";
 import { blogPosts } from "@/data/blog/posts";
 import { getAbsoluteUrl } from "@/lib/seo";
+import { getGitLastModified } from "@/lib/gitLastModified";
 
 export const dynamic = "force-static";
 
-export default function sitemap(): MetadataRoute.Sitemap {
-  const now = new Date();
+// Source and data files behind each page. lastmod is the last git commit that touched
+// any of them, so it only moves when that page's content actually changed. Automated
+// rebuild commits only touch docs/, so they do not bump these dates.
+const PRODUCTS = "src/data/products.ts";
+const SITE = "src/data/site.ts";
+const POSTS = "src/data/blog/posts.ts";
 
+const pageSources: Record<string, string[]> = {
+  "/": ["src/app/page.tsx", PRODUCTS, SITE],
+  "/wall-art/": ["src/app/wall-art/page.tsx", PRODUCTS, SITE],
+  "/catalogue/": ["src/app/catalogue/page.tsx", "src/components/CatalogueGrid.tsx", PRODUCTS, SITE],
+  "/custom/": ["src/app/custom/page.tsx", "src/components/CustomForm.tsx", SITE],
+  "/about/": ["src/app/about/page.tsx", SITE],
+  "/jewelry/": ["src/app/jewelry/page.tsx", SITE],
+  "/blog/": ["src/app/blog/page.tsx", POSTS, SITE],
+  "/oversized-food-wall-art/": ["src/app/oversized-food-wall-art/page.tsx", PRODUCTS, SITE],
+  "/kitchen-wall-art/": ["src/app/kitchen-wall-art/page.tsx", PRODUCTS, SITE],
+  "/colorful-wall-art/": ["src/app/colorful-wall-art/page.tsx", PRODUCTS, SITE],
+  "/contact/": ["src/app/contact/page.tsx", "src/components/ContactForm.tsx", SITE],
+};
+
+const productPageSources = [
+  "src/app/product/[slug]/page.tsx",
+  "src/components/ProductPageClient.tsx",
+  "src/data/product-galleries.ts",
+  PRODUCTS,
+];
+
+function lastModifiedFor(paths: string[]): { lastModified?: Date } {
+  const date = getGitLastModified(paths);
+  return date ? { lastModified: date } : {};
+}
+
+function staticPage(path: string): { url: string; lastModified?: Date } {
+  return { url: getAbsoluteUrl(path), ...lastModifiedFor(pageSources[path] ?? []) };
+}
+
+export default function sitemap(): MetadataRoute.Sitemap {
   const staticPages: MetadataRoute.Sitemap = [
     {
-      url: getAbsoluteUrl("/"),
-      lastModified: now,
+      ...staticPage("/"),
       changeFrequency: "weekly",
       priority: 1.0,
     },
     {
-      url: getAbsoluteUrl("/wall-art/"),
-      lastModified: now,
+      ...staticPage("/wall-art/"),
       changeFrequency: "weekly",
       priority: 0.9,
     },
     {
-      url: getAbsoluteUrl("/catalogue/"),
-      lastModified: now,
+      ...staticPage("/catalogue/"),
       changeFrequency: "weekly",
       priority: 0.8,
     },
     {
-      url: getAbsoluteUrl("/custom/"),
-      lastModified: now,
+      ...staticPage("/custom/"),
       changeFrequency: "monthly",
       priority: 0.7,
     },
     {
-      url: getAbsoluteUrl("/about/"),
-      lastModified: now,
+      ...staticPage("/about/"),
       changeFrequency: "monthly",
       priority: 0.6,
     },
     {
-      url: getAbsoluteUrl("/jewelry/"),
-      lastModified: now,
+      ...staticPage("/jewelry/"),
       changeFrequency: "monthly",
       priority: 0.5,
     },
     {
-      url: getAbsoluteUrl("/blog/"),
-      lastModified: now,
+      ...staticPage("/blog/"),
       changeFrequency: "weekly",
       priority: 0.7,
     },
     {
-      url: getAbsoluteUrl("/oversized-food-wall-art/"),
-      lastModified: now,
+      ...staticPage("/oversized-food-wall-art/"),
       changeFrequency: "weekly",
       priority: 0.85,
     },
     {
-      url: getAbsoluteUrl("/kitchen-wall-art/"),
-      lastModified: now,
+      ...staticPage("/kitchen-wall-art/"),
       changeFrequency: "weekly",
       priority: 0.85,
     },
     {
-      url: getAbsoluteUrl("/colorful-wall-art/"),
-      lastModified: now,
+      ...staticPage("/colorful-wall-art/"),
       changeFrequency: "weekly",
       priority: 0.85,
     },
     {
-      url: getAbsoluteUrl("/contact/"),
-      lastModified: now,
+      ...staticPage("/contact/"),
       changeFrequency: "monthly",
       priority: 0.6,
     },
@@ -79,7 +104,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
 
   const productPages: MetadataRoute.Sitemap = products.map((product) => ({
     url: getAbsoluteUrl(`/product/${product.slug}/`),
-    lastModified: now,
+    ...lastModifiedFor([...productPageSources, `public/products/${product.slug}`]),
     changeFrequency: "monthly" as const,
     priority: 0.8,
   }));

@@ -80,7 +80,8 @@ function ProductJsonLd({ product }: { product: NonNullable<ReturnType<typeof get
     "@context": "https://schema.org",
     "@type": "Product",
     name: getDisplayName(product),
-    description: product.description,
+    description: product.description || product.metaDescription || product.tagline,
+    sku: product.slug,
     image: getProductGallery(product.slug, product.image).map((image) => getImageUrl(image.src)),
     brand: {
       "@type": "Brand",
@@ -95,7 +96,8 @@ function ProductJsonLd({ product }: { product: NonNullable<ReturnType<typeof get
     ],
     offers: {
       "@type": "Offer",
-      url: product.stripeUrl || product.etsyUrl,
+      // The offer points at the canonical product page; checkout links stay on the buttons.
+      url: getAbsoluteUrl(`/product/${product.slug}/`),
       priceCurrency: "USD",
       price: product.price,
       priceValidUntil: new Date(Date.now() + 30 * 24 * 60 * 60 * 1000).toISOString().split("T")[0],

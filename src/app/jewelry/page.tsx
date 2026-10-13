@@ -115,14 +115,14 @@ export default function JewelryPage() {
         <div className="grid grid-cols-2 gap-4">
           <Image
             src="/images/brand/about-2.jpg"
-            alt=""
+            alt="Oversized faux strawberry cheesecake slice sculpture with whipped cream, strawberries, and dripping red glaze"
             width={600}
             height={800}
             className="h-64 w-full rounded-[1.6rem] object-cover"
           />
           <Image
             src="/images/brand/about-3.jpg"
-            alt=""
+            alt="Giant JoiRush Crunch snack bag sculpture leaning on a wall beside jumbo cookie wall art"
             width={600}
             height={800}
             className="h-64 w-full rounded-[1.6rem] object-cover"

@@ -10,6 +10,16 @@ export const metadata: Metadata = {
   title: "Handmade Y2K Jewelry & Charm Chokers",
   description:
     "Handmade Y2K charm chokers and statement jewelry by JoiRush: Tamagotchi energy, gamer girl custom pieces, and one of one accessories.",
+  keywords: [
+    "Y2K jewelry",
+    "charm chokers",
+    "handmade jewelry",
+    "Y2K charm necklace",
+    "custom statement jewelry",
+    "Tamagotchi choker",
+    "gamer girl jewelry",
+    "handmade JOIRUSH jewelry",
+  ],
   alternates: {
     canonical: "https://joirush.com/jewelry/",
   },
@@ -21,6 +31,13 @@ export const metadata: Metadata = {
     type: "website",
     siteName: "JOIRUSH",
     images: [{ url: getImageUrl("/images/brand/about-1.jpg"), alt: "Handmade JOIRUSH charm jewelry" }],
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "Handmade Y2K Jewelry & Charm Chokers | JOIRUSH",
+    description:
+      "Handmade Y2K charm chokers and statement jewelry by JoiRush: Tamagotchi energy, gamer girl custom pieces, and one of one accessories.",
+    images: [getImageUrl("/images/brand/about-1.jpg")],
   },
 };
 

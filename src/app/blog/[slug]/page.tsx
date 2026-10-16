@@ -24,6 +24,7 @@ import { DopaminePlayroomContent, DopaminePlayroomSchema } from "./content/dopam
 import { RetroKitchenContent, RetroKitchenSchema } from "./content/retro-kitschy-kitchen-decor-ideas";
 import { NeutralHomeColorContent, NeutralHomeColorSchema } from "./content/add-color-to-neutral-home-without-painting";
 import { ThreeDWallArtContent, ThreeDWallArtSchema } from "./content/3d-wall-art-vs-flat-prints";
+import { ChristmasCookieWallArtContent, ChristmasCookieWallArtSchema } from "./content/christmas-cookie-wall-art-vs-prints";
 
 type Props = { params: Promise<{ slug: string }> };
 
@@ -37,6 +38,7 @@ const contentMap: Record<string, { Content: () => React.ReactNode; Schema: () =>
   "retro-kitschy-kitchen-decor-ideas": { Content: RetroKitchenContent, Schema: RetroKitchenSchema },
   "add-color-to-neutral-home-without-painting": { Content: NeutralHomeColorContent, Schema: NeutralHomeColorSchema },
   "3d-wall-art-vs-flat-prints": { Content: ThreeDWallArtContent, Schema: ThreeDWallArtSchema },
+  "christmas-cookie-wall-art-vs-prints": { Content: ChristmasCookieWallArtContent, Schema: ChristmasCookieWallArtSchema },
   "spray-foam-cookie-wall-art-how-theyre-made": { Content: SprayFoamCookieWallArtContent, Schema: SprayFoamCookieWallArtSchema },
   "faux-cookie-wall-decor-ready-made-vs-diy": { Content: FauxCookieWallDecorContent, Schema: FauxCookieWallDecorSchema },
   "cookie-canvas-vs-3d-cookie-wall-sculptures": { Content: CookieCanvasVs3DContent, Schema: CookieCanvasVs3DSchema },

@@ -341,6 +341,7 @@ export function CookieCanvasVs3DContent() {
         <li>Start with the classic: <Link href="/product/jumbo-chocolate-chip-cookie/">Jumbo Chocolate 
         Chip Cookie</Link></li>
         <li>Add color with <Link href="/product/jumbo-mm-cookie-set/">M&M Cookie Sculptures</Link></li>
+        <li>For the holidays, compare <Link href="/blog/christmas-cookie-wall-art-vs-prints/">Christmas cookie wall art vs prints</Link></li>
         <li>Read the <Link href="/blog/cookie-wall-art-for-home-collectors/">complete collector's guide</Link></li>
       </ul>
 

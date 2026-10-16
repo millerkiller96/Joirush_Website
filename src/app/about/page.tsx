@@ -38,6 +38,13 @@ export const metadata: Metadata = {
       },
     ],
   },
+  twitter: {
+    card: "summary_large_image",
+    title: "Meet Cookie Artist Erynn | Handmade Sugar Cookie Art",
+    description:
+      "Meet Erynn, the Florida cookie artist creating handmade sugar cookie wall sculptures and faux food wall art in Daytona Beach.",
+    images: [`${siteUrl}/images/brand/about-1.jpg`],
+  },
 };
 
 function CookieArtistSchema() {

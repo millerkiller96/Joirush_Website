@@ -231,6 +231,28 @@ export function FoodieGiftGuideContent() {
         a design that matches their aesthetic makes for an unforgettable gift.
       </p>
 
+      <h3>For Holiday and Christmas Gift Lists</h3>
+
+      <p>
+        <strong>The pick:</strong>{" "}
+        <Link href="/product/jumbo-christmas-cookie/">Jumbo Christmas Cookie Wall Art</Link> ($100)
+      </p>
+
+      <p>
+        When the foodie on your list also loves festive decor, Christmas cookie wall art hits both
+        notes. Holiday candy colors on golden dough make a seasonal statement that still feels like
+        dessert, not a generic ornament print.
+      </p>
+
+      <p>
+        Order with the 14 day handmade lead time in mind so it arrives before parties and tree
+        nights. For a deeper comparison of sculptural holiday cookies versus flat printables, read{" "}
+        <Link href="/blog/christmas-cookie-wall-art-vs-prints/">
+          Christmas cookie wall art vs prints
+        </Link>
+        .
+      </p>
+
       <h2>What's Included With Each Cookie</h2>
 
       <p>
@@ -323,10 +345,15 @@ export function FoodieGiftGuideContent() {
 
       <p>
         Browse the full collection of <Link href="/wall-art/">handmade jumbo cookie wall 
-        art</Link> to find the right piece for your favorite foodie. Or 
-        <Link href="/custom/"> request something custom</Link>: a specific flavor, color palette, 
-        or size that's perfectly matched to who they are. Every sculpture ships free within the 
-        US in 14 days, gift ready and built to last.
+        art</Link> to find the right piece for your favorite foodie. For holiday shoppers, start
+        with the <Link href="/product/jumbo-christmas-cookie/">Jumbo Christmas Cookie</Link> or
+        the guide to{" "}
+        <Link href="/blog/christmas-cookie-wall-art-vs-prints/">
+          Christmas cookie wall art vs flat prints
+        </Link>
+        . Or <Link href="/custom/"> request something custom</Link>: a specific flavor, color
+        palette, or size that&apos;s perfectly matched to who they are. Every sculpture ships free
+        within the US in 14 days, gift ready and built to last.
       </p>
     </>
   );

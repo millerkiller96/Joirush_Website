@@ -38,6 +38,13 @@ export const metadata: Metadata = {
       },
     ],
   },
+  twitter: {
+    card: "summary_large_image",
+    title: "Custom Cookie Art | Commission Sugar Cookie Wall Sculptures | JOIRUSH",
+    description:
+      "Commission custom cookie art from cookie artist Erynn: sugar cookie wall sculptures in any design. Handmade in Daytona Beach, Florida.",
+    images: [`${siteUrl}/images/products/hot-pink-mm.jpg`],
+  },
 };
 
 export default function CustomPage() {

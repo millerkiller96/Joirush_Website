@@ -35,6 +35,13 @@ export const metadata: Metadata = {
       },
     ],
   },
+  twitter: {
+    card: "summary_large_image",
+    title: "Contact Us | Get in Touch with Cookie Artist Erynn | JOIRUSH",
+    description:
+      "Contact JOIRUSH cookie artist Erynn for questions about sugar cookie wall sculptures, custom cookie art, or wholesale inquiries.",
+    images: [getImageUrl("/images/brand/avatar.jpg")],
+  },
 };
 
 function ContactPageSchema() {

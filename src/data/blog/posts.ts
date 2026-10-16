@@ -18,6 +18,31 @@ export type BlogPost = {
 
 export const blogPosts: BlogPost[] = [
   {
+    slug: "christmas-cookie-wall-art-vs-prints",
+    title: "Christmas Cookie Wall Art vs Flat Prints: What Collectors Hang for the Holidays",
+    seoTitle: "Christmas Cookie Wall Art vs Flat Holiday Prints",
+    metaDescription:
+      "Christmas cookie wall art vs flat prints and printables: why collectors choose 3D holiday cookie sculptures for festive wall decor that lasts all season.",
+    excerpt:
+      "Amazon is full of flat Christmas cookie printables. Collectors hang something else: handmade 3D Christmas cookie wall art with real depth, holiday color, and no crumbs under the tree.",
+    publishedAt: "2026-10-16",
+    updatedAt: "2026-10-16",
+    author: "Erynn",
+    image: "/images/products/christmas.jpg",
+    imageAlt: "Christmas cookie wall art: handmade festive jumbo cookie wall sculpture by JOIRUSH",
+    keywords: [
+      "christmas cookie wall art",
+      "holiday cookie wall decor",
+      "festive faux cookie sculpture",
+      "christmas cookie sculpture",
+      "holiday wall decor",
+      "3d christmas cookie art",
+      "jumbo christmas cookie",
+    ],
+    readingTime: "8 min read",
+    category: "how-to",
+  },
+  {
     slug: "dopamine-decor-ideas",
     title: "Dopamine Decor Ideas: How to Make Your Home Feel Happy",
     excerpt:
@@ -326,21 +351,24 @@ export const blogPosts: BlogPost[] = [
     slug: "foodie-gift-guide-jumbo-cookie-sculptures",
     title: "The Ultimate Foodie Gift Guide: Cookie Art They'll Never Forget",
     seoTitle: "Foodie Gift Guide: Cookie Art They'll Never Forget",
-    metaDescription: "A unique gift for the food lover in your life: handmade sugar cookie wall sculptures that start conversations and last forever, unlike real cookies.",
+    metaDescription:
+      "Holiday and year round foodie gift ideas: handmade jumbo cookie wall art, including Christmas cookie wall sculptures with free U.S. shipping and a 14 day lead time.",
     excerpt:
       "Looking for a unique gift for the food lover in your life? These handmade sugar cookie wall sculptures and art cookies are conversation starters that last forever, unlike real cookies.",
     publishedAt: "2024-09-10",
+    updatedAt: "2026-10-16",
     author: "Erynn",
     image: "/images/products/mm-set.jpg",
     imageAlt: "Cookie art gift idea: sugar cookie wall sculpture set by cookie artist Erynn",
     keywords: [
       "cookie art gifts",
+      "holiday foodie gifts",
+      "christmas cookie wall art gift",
       "sugar cookie art gift guide",
       "unique art cookies",
-      "cookie canvas gift ideas",
       "handmade cookie artist gifts",
     ],
-    readingTime: "7 min read",
+    readingTime: "8 min read",
     category: "gift-guide",
   },
   {

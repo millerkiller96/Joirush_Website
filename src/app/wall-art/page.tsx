@@ -237,6 +237,8 @@ export default function WallArtPage() {
                   <strong> giant cookie wall decor</strong> that makes people <strong>reach out to touch it</strong>.
                 </p>
                 <p>
+                  Not sure what size fits your wall? Check the{" "}
+                  <Link href="/blog/jumbo-cookie-wall-art-size-guide/" className="text-pink hover:underline">jumbo cookie wall art size guide</Link>.{" "}
                   Wondering whether to DIY or buy ready made? Read our{" "}
                   <Link href="/blog/faux-cookie-wall-decor-ready-made-vs-diy/" className="text-pink hover:underline">faux cookie wall decor guide</Link>.{" "}
                   Perfect for a{" "}

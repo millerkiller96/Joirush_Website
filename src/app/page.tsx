@@ -80,6 +80,11 @@ const homepageFaqs = [
       "Most people hang theirs in the kitchen, a breakfast nook, a coffee bar, or a playroom. A single classic cookie makes playful kitchen wall art, and the candy colored pieces fit right into dopamine decor, maximalist, and whimsical rooms.",
   },
   {
+    question: "How big is jumbo cookie wall art?",
+    answer:
+      "Most pieces are about 16 inches across, roughly the size of a large dinner platter. A few designs are 14 inches, the sets come as two matching cookies, and the ice cream sandwich is a larger statement piece. Our size guide lists every cookie.",
+  },
+  {
     question: "How heavy are the sculptures?",
     answer:
       "Cookie wall sculptures weigh 2 to 4 lbs depending on size. That's light enough to hang on a single nail. No anchors or heavy duty mounting required.",
@@ -523,6 +528,10 @@ export default function HomePage() {
               , and{" "}
               <Link href="/blog/whimsical-kitsch-decor-ideas/" className="text-pink hover:underline">
                 whimsical and kitsch decor
+              </Link>
+              . Not sure what size fits your wall? See the{" "}
+              <Link href="/blog/jumbo-cookie-wall-art-size-guide/" className="text-pink hover:underline">
+                jumbo cookie wall art size guide
               </Link>
               .
             </p>

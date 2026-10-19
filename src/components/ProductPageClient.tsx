@@ -245,6 +245,11 @@ export function ProductPageClient({ product, related }: ProductPageClientProps) 
                   </Link>
                 </li>
                 <li>
+                  <Link href="/blog/jumbo-cookie-wall-art-size-guide/" className="text-pink hover:underline">
+                    Size guide: how big is each cookie? →
+                  </Link>
+                </li>
+                <li>
                   <Link href="/blog/spray-foam-cookie-wall-art-how-theyre-made/" className="text-pink hover:underline">
                     How spray foam cookie sculptures are made →
                   </Link>

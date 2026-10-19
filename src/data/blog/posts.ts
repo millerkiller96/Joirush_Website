@@ -18,6 +18,30 @@ export type BlogPost = {
 
 export const blogPosts: BlogPost[] = [
   {
+    slug: "jumbo-cookie-wall-art-size-guide",
+    title: "Jumbo Cookie Wall Art Size Guide: How Big Is a Giant Cookie on Your Wall?",
+    seoTitle: "Jumbo Cookie Wall Art Size Guide: Real Sizes and Weights",
+    metaDescription:
+      "How big is jumbo cookie wall art? Real sizes and weights for every JOIRUSH cookie sculpture, plus how to pick a size for your kitchen, nook, or gallery wall.",
+    excerpt:
+      "Real sizes for every JOIRUSH cookie, how a 16 inch piece reads on a wall, when a 14 inch or a pair fits better, and how giant cookie sculptures compare to props and resin statues.",
+    publishedAt: "2026-10-19",
+    updatedAt: "2026-10-19",
+    author: "Erynn",
+    image: "/images/products/choc-chip.jpg",
+    imageAlt: "Jumbo cookie wall art size guide: 16 inch handmade chocolate chip cookie sculpture by JOIRUSH",
+    keywords: [
+      "jumbo cookie wall art size",
+      "giant cookie wall art",
+      "giant cookie prop",
+      "how big is a giant cookie",
+      "oversized cookie wall decor",
+      "cookie wall sculpture size",
+    ],
+    readingTime: "6 min read",
+    category: "how-to",
+  },
+  {
     slug: "christmas-cookie-wall-art-vs-prints",
     title: "Christmas Cookie Wall Art vs Flat Prints: What Collectors Hang for the Holidays",
     seoTitle: "Christmas Cookie Wall Art vs Flat Holiday Prints",

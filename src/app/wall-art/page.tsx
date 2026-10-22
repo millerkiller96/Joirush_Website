@@ -241,6 +241,8 @@ export default function WallArtPage() {
                   <Link href="/blog/jumbo-cookie-wall-art-size-guide/" className="text-pink hover:underline">jumbo cookie wall art size guide</Link>.{" "}
                   Wondering whether to DIY or buy ready made? Read our{" "}
                   <Link href="/blog/faux-cookie-wall-decor-ready-made-vs-diy/" className="text-pink hover:underline">faux cookie wall decor guide</Link>.{" "}
+                  Shopping for a giant cookie prop? See how{" "}
+                  <Link href="/blog/giant-cookie-prop-vs-cookie-wall-art/" className="text-pink hover:underline">giant cookie props compare to cookie wall art</Link>.{" "}
                   Perfect for a{" "}
                   <Link href="/blog/kitchen-dopamine-decor-dessert-gallery-wall/" className="text-pink hover:underline">dopamine decor kitchen</Link>,{" "}
                   a <Link href="/blog/foodie-gift-guide-jumbo-cookie-sculptures/" className="text-pink hover:underline">foodie gift</Link>{" "}

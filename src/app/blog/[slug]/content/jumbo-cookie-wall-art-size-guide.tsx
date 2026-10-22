@@ -140,7 +140,12 @@ export function CookieSizeGuideContent() {
         see a wide range: small foam cookies around 8 to 12 inches, party props from 10 to 18
         inches, and resin or fiberglass statues that can reach 28 inches and weigh 10 to 20 lbs.
         JOIRUSH sits in the sweet spot for a home wall: large enough to be the first thing people
-        notice, light enough that you never need anchors.
+        notice, light enough that you never need anchors. For a deeper look at party props versus
+        pieces made to stay up, read{" "}
+        <Link href="/blog/giant-cookie-prop-vs-cookie-wall-art/">
+          giant cookie prop vs cookie wall art
+        </Link>
+        .
       </p>
 
       <table>

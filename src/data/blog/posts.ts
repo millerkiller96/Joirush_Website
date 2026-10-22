@@ -18,6 +18,30 @@ export type BlogPost = {
 
 export const blogPosts: BlogPost[] = [
   {
+    slug: "giant-cookie-prop-vs-cookie-wall-art",
+    title: "Giant Cookie Prop vs Cookie Wall Art: Which Giant Cookie Should You Buy?",
+    seoTitle: "Giant Cookie Prop vs Cookie Wall Art: Which to Buy",
+    metaDescription:
+      "Giant cookie prop or cookie wall art? How party props and handmade wall sculptures differ in size, finish, and hanging, and which fits your home or event.",
+    excerpt:
+      "Party props are built for one event. Cookie wall art is built to live on your wall. Here is how they compare and how to pick the right giant cookie.",
+    publishedAt: "2026-10-22",
+    updatedAt: "2026-10-22",
+    author: "Erynn",
+    image: "/images/products/ice-cream.jpg",
+    imageAlt: "Giant cookie wall art: handmade jumbo ice cream sandwich cookie sculpture by JOIRUSH",
+    keywords: [
+      "giant cookie prop",
+      "giant cookie wall art",
+      "giant cookie decor",
+      "big cookie prop",
+      "cookie party prop",
+      "oversized cookie decor",
+    ],
+    readingTime: "5 min read",
+    category: "how-to",
+  },
+  {
     slug: "jumbo-cookie-wall-art-size-guide",
     title: "Jumbo Cookie Wall Art Size Guide: How Big Is a Giant Cookie on Your Wall?",
     seoTitle: "Jumbo Cookie Wall Art Size Guide: Real Sizes and Weights",

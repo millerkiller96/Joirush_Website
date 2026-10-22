@@ -37,10 +37,6 @@ const styleGuideLinks: Record<Product["category"], { href: string; label: string
     { href: "/colorful-wall-art/", label: "Colorful wall art and how to style it" },
     { href: "/blog/dopamine-decor-ideas/", label: "Dopamine decor ideas for every room" },
   ],
-  set: [
-    { href: "/blog/maximalist-decor-ideas/", label: "Maximalist decor ideas for big walls" },
-    { href: "/kitchen-wall-art/", label: "Kitchen wall art ideas: where to hang it" },
-  ],
   statement: [
     { href: "/blog/maximalist-decor-ideas/", label: "Maximalist decor ideas for big walls" },
     { href: "/blog/whimsical-kitsch-decor-ideas/", label: "Whimsical and kitsch decor ideas" },
@@ -91,6 +87,7 @@ export function ProductPageClient({ product, related }: ProductPageClientProps) 
   const galleryName = getDisplayName(product);
 
   const upsellProduct = {
+    slug: product.slug,
     name: product.name,
     shortName: product.shortName,
     image: product.image,
@@ -99,6 +96,7 @@ export function ProductPageClient({ product, related }: ProductPageClientProps) 
     stripeUrl: product.stripeUrl,
     stripeUpsellUrl: product.stripeUpsellUrl,
     upsellPairPrice: product.upsellPairPrice,
+    stripePairUrls: product.stripePairUrls,
   };
 
   return (
@@ -113,8 +111,8 @@ export function ProductPageClient({ product, related }: ProductPageClientProps) 
             </li>
             <li>/</li>
             <li>
-              <Link href="/wall-art/" className="hover:text-pink">
-                Cookie Wall Art
+              <Link href="/catalogue/" className="hover:text-pink">
+                Cookies
               </Link>
             </li>
             <li>/</li>

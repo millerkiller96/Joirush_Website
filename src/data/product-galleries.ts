@@ -29,8 +29,6 @@ type GallerySource = {
 
 const sources: Record<string, GallerySource> = {
   "jumbo-chocolate-chip-cookie": { listingId: "1831819997", sizes: [[1200, 1600], [1200, 1600], [1200, 1600], [1200, 1600], [1200, 1600], [1200, 1600], [1200, 1600], [1200, 1600], [1200, 1600]] },
-  "oversized-mini-cookie-pair": { listingId: "4452655428", sizes: [[1200, 1600], [1200, 1600], [1200, 1600], [1200, 1600]] },
-  "jumbo-mm-cookie-set": { listingId: "4452651114", sizes: [[1200, 1600], [1200, 1600], [1200, 1600]] },
   "jumbo-white-chocolate-chip-cookie": { listingId: "4452647836", sizes: [[1200, 1600], [1200, 1600], [1200, 1600], [1200, 1600], [1200, 1600]] },
   "rainbow-candy-cookie": { listingId: "4452645632", sizes: [[1200, 1600], [1200, 1600], [1200, 1600], [1200, 1600], [1200, 1600]] },
   "mini-jumbo-chocolate-chip-cookie": { listingId: "4452643820", sizes: [[1200, 1600], [1200, 1600], [1200, 1600], [1200, 1600], [1200, 1600]] },

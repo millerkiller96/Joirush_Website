@@ -8,7 +8,6 @@ const filters: Array<ProductCategory | "all"> = [
   "all",
   "classic",
   "candy",
-  "set",
   "seasonal",
   "statement",
 ];
@@ -39,7 +38,7 @@ export function CatalogueGrid() {
           </button>
         ))}
       </div>
-      <p className="mt-6 text-sm text-chocolate-soft">{visible.length} handmade pieces</p>
+      <p className="mt-6 text-sm text-chocolate-soft">{visible.length} handmade cookies</p>
       <div className="mt-6 grid gap-8 sm:grid-cols-2 lg:grid-cols-3">
         {visible.map((product) => (
           <ProductCard key={product.slug} product={product} />

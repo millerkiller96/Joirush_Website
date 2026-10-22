@@ -164,8 +164,8 @@ function ProductJsonLd({ product }: { product: NonNullable<ReturnType<typeof get
       {
         "@type": "ListItem",
         position: 2,
-        name: "Cookie Wall Art",
-        item: getAbsoluteUrl("/wall-art/"),
+        name: "Cookies",
+        item: getAbsoluteUrl("/catalogue/"),
       },
       {
         "@type": "ListItem",

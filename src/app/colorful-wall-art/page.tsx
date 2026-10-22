@@ -52,7 +52,6 @@ const colorfulSlugs = [
   "hot-pink-mm-cookie",
   "jumbo-pastel-mm-cookie",
   "jumbo-mm-cookie",
-  "jumbo-mm-cookie-set",
   "giant-peanut-butter-cookie",
   "jumbo-christmas-cookie",
 ];
@@ -66,7 +65,7 @@ const palettes = [
     name: "Candy brights",
     copy: "Every color at once, on warm golden dough. Looks best on white, cream, or a soft neutral wall.",
     href: "/product/rainbow-candy-cookie/",
-    pieces: "Rainbow candy cookie, classic M&M cookie, M&M cookie set",
+    pieces: "Rainbow candy cookie, classic M&M cookie",
   },
   {
     name: "Hot pink",

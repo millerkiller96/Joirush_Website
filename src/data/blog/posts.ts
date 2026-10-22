@@ -38,7 +38,7 @@ export const blogPosts: BlogPost[] = [
       "cookie party prop",
       "oversized cookie decor",
     ],
-    readingTime: "5 min read",
+    readingTime: "2 min read",
     category: "how-to",
   },
   {
@@ -62,7 +62,7 @@ export const blogPosts: BlogPost[] = [
       "oversized cookie wall decor",
       "cookie wall sculpture size",
     ],
-    readingTime: "6 min read",
+    readingTime: "2 min read",
     category: "how-to",
   },
   {
@@ -87,7 +87,7 @@ export const blogPosts: BlogPost[] = [
       "3d christmas cookie art",
       "jumbo christmas cookie",
     ],
-    readingTime: "8 min read",
+    readingTime: "2 min read",
     category: "how-to",
   },
   {
@@ -107,7 +107,7 @@ export const blogPosts: BlogPost[] = [
       "colorful home decor",
       "jumbo cookie wall art",
     ],
-    readingTime: "9 min read",
+    readingTime: "2 min read",
     category: "inspiration",
   },
   {
@@ -127,7 +127,7 @@ export const blogPosts: BlogPost[] = [
       "statement wall art",
       "sculptural decor",
     ],
-    readingTime: "9 min read",
+    readingTime: "2 min read",
     category: "inspiration",
   },
   {
@@ -147,7 +147,7 @@ export const blogPosts: BlogPost[] = [
       "playful wall decor",
       "faux food decor",
     ],
-    readingTime: "8 min read",
+    readingTime: "2 min read",
     category: "inspiration",
   },
   {
@@ -160,7 +160,7 @@ export const blogPosts: BlogPost[] = [
     image: "/images/products/mm-classic.jpg",
     imageAlt: "Eclectic decor idea: classic M&M jumbo cookie wall art by JOIRUSH",
     keywords: ["eclectic decor ideas", "eclectic decor", "how to mix decor styles", "eclectic living room", "eclectic gallery wall"],
-    readingTime: "4 min read",
+    readingTime: "2 min read",
     category: "inspiration",
   },
   {
@@ -174,7 +174,7 @@ export const blogPosts: BlogPost[] = [
     image: "/images/products/mini-choc.jpg",
     imageAlt: "Kitchen wall decor idea: mini jumbo chocolate chip cookie wall art by JOIRUSH",
     keywords: ["kitchen wall decor ideas", "coffee bar wall decor", "small kitchen wall decor", "above kitchen cabinet decor", "kitchen wall art ideas"],
-    readingTime: "5 min read",
+    readingTime: "2 min read",
     category: "how-to",
   },
   {
@@ -187,7 +187,7 @@ export const blogPosts: BlogPost[] = [
     image: "/images/products/peanut-butter.jpg",
     imageAlt: "Dopamine decor playroom idea: peanut butter candy jumbo cookie wall art by JOIRUSH",
     keywords: ["dopamine decor playroom", "dopamine decor kids room", "colorful playroom ideas", "playroom wall decor", "fun kids room decor"],
-    readingTime: "4 min read",
+    readingTime: "2 min read",
     category: "inspiration",
   },
   {
@@ -201,7 +201,7 @@ export const blogPosts: BlogPost[] = [
     image: "/images/products/ice-cream.jpg",
     imageAlt: "Retro kitchen decor idea: jumbo cookie ice cream sandwich wall sculpture by JOIRUSH",
     keywords: ["retro kitchen decor ideas", "kitschy kitchen decor", "kitsch kitchen", "retro kitchen wall decor", "diner kitchen decor"],
-    readingTime: "4 min read",
+    readingTime: "2 min read",
     category: "inspiration",
   },
   {
@@ -214,7 +214,7 @@ export const blogPosts: BlogPost[] = [
     image: "/images/products/white-choc.jpg",
     imageAlt: "Adding color to a neutral home: white chocolate chip jumbo cookie wall art by JOIRUSH",
     keywords: ["add color to neutral room", "add color without painting", "colorful home decor for neutral homes", "renter friendly color ideas", "colorful home decor"],
-    readingTime: "4 min read",
+    readingTime: "2 min read",
     category: "how-to",
   },
   {
@@ -227,7 +227,7 @@ export const blogPosts: BlogPost[] = [
     image: "/images/products/double-choc.jpg",
     imageAlt: "3D wall art: giant double chocolate cookie wall sculpture by JOIRUSH",
     keywords: ["3d wall art", "3d wall art vs prints", "sculptural wall decor", "3d wall art ideas", "dimensional wall art"],
-    readingTime: "4 min read",
+    readingTime: "2 min read",
     category: "how-to",
   },
   {
@@ -250,7 +250,7 @@ export const blogPosts: BlogPost[] = [
       "3d cookie wall sculpture",
       "cookie art",
     ],
-    readingTime: "9 min read",
+    readingTime: "2 min read",
     category: "how-to",
   },
   {
@@ -274,7 +274,7 @@ export const blogPosts: BlogPost[] = [
       "sugar cookie wall sculpture",
       "cookie art",
     ],
-    readingTime: "9 min read",
+    readingTime: "2 min read",
     category: "how-to",
   },
   {
@@ -299,7 +299,7 @@ export const blogPosts: BlogPost[] = [
       "cookie canvas print",
       "spray foam cookie wall art",
     ],
-    readingTime: "8 min read",
+    readingTime: "2 min read",
     category: "how-to",
   },
   {
@@ -311,7 +311,7 @@ export const blogPosts: BlogPost[] = [
       "A collector's guide to cookie wall art: faux sugar cookie wall sculptures that look real but aren't edible. Learn what makes these spray foam cookie sculptures different from royal icing cookies and how to choose the perfect piece for your home.",
     publishedAt: "2026-09-21",
     author: "Erynn",
-    image: "/images/products/mm-set.jpg",
+    image: "/images/products/mm-classic.jpg",
     imageAlt: "Cookie wall art: handmade faux sugar cookie wall sculptures for home collectors by JOIRUSH",
     keywords: [
       "cookie wall art",
@@ -323,7 +323,7 @@ export const blogPosts: BlogPost[] = [
       "cookie art collectors",
       "spray foam cookie sculpture",
     ],
-    readingTime: "10 min read",
+    readingTime: "2 min read",
     category: "how-to",
   },
   {
@@ -346,7 +346,7 @@ export const blogPosts: BlogPost[] = [
       "faux food wall art",
       "decorative cookie sculptures",
     ],
-    readingTime: "12 min read",
+    readingTime: "2 min read",
     category: "how-to",
   },
   {
@@ -370,7 +370,7 @@ export const blogPosts: BlogPost[] = [
       "faux food wall art mounting",
       "cookie artist tips",
     ],
-    readingTime: "8 min read",
+    readingTime: "2 min read",
     category: "how-to",
   },
   {
@@ -392,7 +392,7 @@ export const blogPosts: BlogPost[] = [
       "art cookies display",
       "cookie canvas gallery",
     ],
-    readingTime: "10 min read",
+    readingTime: "2 min read",
     category: "inspiration",
   },
   {
@@ -406,8 +406,8 @@ export const blogPosts: BlogPost[] = [
     publishedAt: "2024-09-10",
     updatedAt: "2026-10-16",
     author: "Erynn",
-    image: "/images/products/mm-set.jpg",
-    imageAlt: "Cookie art gift idea: sugar cookie wall sculpture set by cookie artist Erynn",
+    image: "/images/products/christmas.jpg",
+    imageAlt: "Cookie art gift idea: festive jumbo cookie wall sculpture by cookie artist Erynn",
     keywords: [
       "cookie art gifts",
       "holiday foodie gifts",
@@ -416,7 +416,7 @@ export const blogPosts: BlogPost[] = [
       "unique art cookies",
       "handmade cookie artist gifts",
     ],
-    readingTime: "8 min read",
+    readingTime: "2 min read",
     category: "gift-guide",
   },
   {
@@ -437,7 +437,7 @@ export const blogPosts: BlogPost[] = [
       "handmade cookie canvas",
       "faux cookie sculpture artist",
     ],
-    readingTime: "9 min read",
+    readingTime: "2 min read",
     category: "product-story",
   },
 ];

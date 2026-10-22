@@ -235,7 +235,7 @@ export default function HomePage() {
               </ul>
               <div className="mt-8 flex flex-wrap gap-4">
                 <Link
-                  href="/wall-art/"
+                  href="/catalogue/"
                   data-buy-cta="shop"
                   className="cta-glow rounded-full bg-emerald-600 px-8 py-4 text-base font-bold text-white transition-all hover:bg-emerald-700 md:px-10 md:py-5 md:text-lg"
                 >
@@ -291,8 +291,8 @@ export default function HomePage() {
               title="The Ones Collectors Can't Stop Buying"
               copy="Golden chips. Candy pops. That just baked texture you can practically smell. These jumbo cookie wall art pieces are the art cookies wall sculptures that sell out first."
             />
-            <Link href="/wall-art/" data-buy-cta="shop" className="text-sm font-medium text-pink hover:underline">
-              See the full giant cookie wall art collection →
+            <Link href="/catalogue/" data-buy-cta="shop" className="text-sm font-medium text-pink hover:underline">
+              See all cookies →
             </Link>
           </div>
           <div className="mt-10 grid gap-8 sm:grid-cols-2 lg:grid-cols-3">
@@ -306,11 +306,11 @@ export default function HomePage() {
           <div className="grid gap-4 md:grid-cols-2 lg:grid-cols-3">
             {[
               {
-                href: "/wall-art/",
-                title: "Giant Cookie Wall Art",
-                copy: "Giant cookie wall decor and faux cookies for display. The conversation starter your kitchen needs.",
+                href: "/catalogue/",
+                title: "All Cookies",
+                copy: "Every flavor and size of giant cookie wall decor. Pick one or pair any two in checkout for 10% off the second cookie.",
                 image: "/images/products/rainbow.jpg",
-                alt: "Giant cookie wall art: rainbow sprinkle cookie sculpture by JOIRUSH",
+                alt: "All cookies: rainbow sprinkle cookie sculpture by JOIRUSH",
               },
               {
                 href: "/oversized-food-wall-art/",
@@ -334,11 +334,11 @@ export default function HomePage() {
                 alt: "Colorful wall art: pastel M&M jumbo cookie sculpture by JOIRUSH",
               },
               {
-                href: "/catalogue/",
-                title: "Oversized Cookie Wall Decor",
-                copy: "Every flavor, every size. Find the oversized cookie wall decor that makes your heart skip.",
-                image: "/images/products/mm-set.jpg",
-                alt: "Oversized cookie wall decor: M&M candy cookie sculpture set by JOIRUSH",
+                href: "/blog/",
+                title: "Cookie Art Guides",
+                copy: "Quick, helpful guides on sizing, hanging, and styling your jumbo cookie wall art in any room.",
+                image: "/images/products/mm-classic.jpg",
+                alt: "Cookie art guides: jumbo M&M candy cookie sculpture by JOIRUSH",
               },
               {
                 href: "/custom/",
@@ -386,7 +386,7 @@ export default function HomePage() {
                   copy: "Hangs on a single nail. No contractor needed.",
                 },
                 {
-                  stat: "$90 to $225",
+                  stat: "$90 to $220",
                   label: "Real Art Pricing",
                   copy: "Not $350+ for factory fiberglass.",
                 },

@@ -356,15 +356,11 @@ export default function OversizedFoodWallArtPage() {
                   <Link href="/colorful-wall-art/" className="text-pink hover:underline">
                     colorful wall art
                   </Link>{" "}
-                  by palette, or explore the full collection:{" "}
-                  <Link href="/wall-art/" className="text-pink hover:underline">
-                    giant cookie wall art
-                  </Link>
-                  ,{" "}
+                  by palette, or explore all{" "}
                   <Link href="/catalogue/" className="text-pink hover:underline">
-                    oversized cookie wall decor
-                  </Link>
-                  , and{" "}
+                    cookies
+                  </Link>{" "}
+                  and{" "}
                   <Link href="/blog/faux-cookie-wall-decor-ready-made-vs-diy/" className="text-pink hover:underline">
                     faux cookie wall decor
                   </Link>

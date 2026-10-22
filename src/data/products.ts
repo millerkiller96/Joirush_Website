@@ -1,6 +1,6 @@
 import etsySyncData from "./etsy-sync.json";
 
-export type ProductCategory = "classic" | "candy" | "set" | "seasonal" | "statement";
+export type ProductCategory = "classic" | "candy" | "seasonal" | "statement";
 
 export type ProductFAQ = {
   question: string;
@@ -67,6 +67,7 @@ export type Product = {
   etsyUrl: string;
   stripeUrl: string;
   stripeUpsellUrl: string;
+  stripePairUrls?: Record<string, string>;
   upsellPairPrice: number;
   tagline: string;
   /** Optional search snippet lead (no price; the page appends price + shipping). */
@@ -145,62 +146,6 @@ export const products: Product[] = [
     ],
   },
   {
-    slug: "oversized-mini-cookie-pair",
-    name: "Oversized Mini Cookie Wall Art Set | Jumbo Cookie Pair",
-    shortName: "Mini Cookie Pair",
-    price: 175,
-    compareAtPrice: 249,
-    size: "14 in pair",
-    category: "set",
-    featured: true,
-    image: "/images/products/mini-set.jpg",
-    etsyUrl: "https://www.etsy.com/listing/4452655428/oversized-mini-cookie-wall-decor-set",
-    stripeUrl: "https://buy.stripe.com/9B66oB3oT9vMaUc0v29fW02",
-    stripeUpsellUrl: "https://buy.stripe.com/bJe7sF9Nh0ZgbYga5C9fW0y",
-    upsellPairPrice: 332,
-    tagline: "Two cookies. Double the dopamine. Half the decision making.",
-    description:
-      "Can't pick just one? Don't. This pair was made to hang side by side: twice the golden crumble, twice the conversation. Thick sculptural texture on each cookie means they pop from across the room. Your wall's about to have a personality.",
-    details: [
-      "Two 14 inch handmade cookies",
-      "Designed to hang together (or apart, you do you)",
-      "Spray foam + acrylic paint",
-      "Lightweight, so each hangs on a single nail",
-      "One of a kind set",
-    ],
-    materials: "Spray foam, acrylic paint",
-    faqs: defaultFAQs,
-  },
-  {
-    slug: "jumbo-mm-cookie-set",
-    name: "Jumbo M&M Cookie Wall Art Set | Pair of Sugar Cookie Sculptures",
-    shortName: "M&M Cookie Set",
-    price: 225,
-    compareAtPrice: 325,
-    size: "16 in pair",
-    category: "set",
-    featured: true,
-    image: "/images/products/mm-set.jpg",
-    etsyUrl: "https://www.etsy.com/listing/4452651114/jumbo-mm-cookie-wall-art-set-fake-cookie",
-    stripeUrl: "https://buy.stripe.com/fZu6oBgbFcHY5zSdhO9fW04",
-    stripeUpsellUrl: "https://buy.stripe.com/eVq6oB1gLfUagewb9G9fW0z",
-    upsellPairPrice: 428,
-    tagline: "Two jumbo art cookies. Maximum color. Maximum cookie art chaos.",
-    description:
-      "Candy pops of red, yellow, blue, and green. Golden dough. Two 16 inch sugar cookie wall sculptures that turn any wall into a statement. Together these art cookies are louder than furniture. Hang them side by side and watch people's jaws drop. This cookie art set is for maximalist rooms that already know who they are.",
-    metaDescription:
-      "A pair of 16 inch jumbo M&M cookie sculptures, handmade to hang side by side. Bold, colorful wall art for big walls.",
-    details: [
-      "Two 16 inch cookie art pieces",
-      "Handmade by cookie artist Erynn, so no two sets are identical",
-      "Lightweight faux food wall art that hangs on standard picture nails",
-      "Display together or separate (your call)",
-      "Perfect for big walls, kitchens, studios, or anywhere that needs cookie canvas color",
-    ],
-    materials: "Spray foam, acrylic paint",
-    faqs: defaultFAQs,
-  },
-  {
     slug: "jumbo-white-chocolate-chip-cookie",
     name: "Jumbo White Chocolate Chip Cookie Wall Art",
     shortName: "White Chocolate Chip",
@@ -208,6 +153,7 @@ export const products: Product[] = [
     compareAtPrice: 165,
     size: "16 in",
     category: "classic",
+    featured: true,
     image: "/images/products/white-choc.jpg",
     etsyUrl: "https://www.etsy.com/listing/4452647836/jumbo-white-chocolate-chip-cookie-wall",
     stripeUrl: "https://buy.stripe.com/fZu7sF1gLdM22nGfpW9fW06",
@@ -420,6 +366,7 @@ export const products: Product[] = [
     compareAtPrice: 165,
     size: "16 in",
     category: "candy",
+    featured: true,
     image: "/images/products/mm-classic.jpg",
     etsyUrl: "https://www.etsy.com/listing/1831839675/jumbo-mm-cookie-wall-art-candyland",
     stripeUrl: "https://buy.stripe.com/cNidR3cZt5fwbYg0v29fW0m",
@@ -471,7 +418,6 @@ export const categoryLabels: Record<ProductCategory | "all", string> = {
   all: "All pieces",
   classic: "Classic cookies",
   candy: "Candy & color",
-  set: "Sets",
   seasonal: "Seasonal",
   statement: "Statement",
 };

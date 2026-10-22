@@ -67,7 +67,7 @@ const groups: { title: string; copy: string; slugs: string[] }[] = [
   {
     title: "Statement pieces and pairs",
     copy: "For a big wall over a dining table or banquette, or a breakfast nook that deserves a showstopper.",
-    slugs: ["cookie-ice-cream-sandwich", "jumbo-mm-cookie-set", "oversized-mini-cookie-pair"],
+    slugs: ["cookie-ice-cream-sandwich", "jumbo-christmas-cookie"],
   },
 ];
 
@@ -319,8 +319,8 @@ export default function KitchenWallArtPage() {
                 </li>
                 <li>
                   <strong>Over a table or banquette:</strong> a pair, like the{" "}
-                  <Link href="/product/jumbo-mm-cookie-set/" className="text-pink hover:underline">
-                    M&amp;M cookie set
+                  <Link href="/product/jumbo-mm-cookie/" className="text-pink hover:underline">
+                    jumbo M&amp;M cookie
                   </Link>
                   , or the{" "}
                   <Link href="/product/cookie-ice-cream-sandwich/" className="text-pink hover:underline">

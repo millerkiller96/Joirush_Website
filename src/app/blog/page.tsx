@@ -31,7 +31,7 @@ export const metadata: Metadata = {
     type: "website",
     images: [
       {
-        url: getImageUrl("/images/products/mm-set.jpg"),
+        url: getImageUrl("/images/products/mm-classic.jpg"),
         width: 1200,
         height: 630,
         alt: "Cookie art blog: sugar cookie wall sculpture inspiration by JOIRUSH",
@@ -173,11 +173,11 @@ export default function BlogPage() {
           </p>
           <div className="mt-8 flex flex-wrap justify-center gap-4">
             <Link
-              href="/wall-art/"
+              href="/catalogue/"
               data-buy-cta="shop"
               className="rounded-full bg-pink px-6 py-3 text-sm font-medium text-white hover:bg-pink-hot"
             >
-              Shop Cookie Art
+              Shop Cookies
             </Link>
             <Link
               href="/custom/"

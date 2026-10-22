@@ -1,311 +1,84 @@
-import Link from "next/link";
-import { getAbsoluteUrl, getImageUrl } from "@/lib/seo";
+import {
+  renderBlogContent,
+  renderBlogSchema,
+  type BlogPostStructuredData,
+} from "@/components/BlogPostTemplate";
+
+const data: BlogPostStructuredData = {
+  "lead": "Every artist has one piece that started it all. For cookie artist Erynn, that piece is the 16 inch Jumbo Chocolate Chip Cookie.",
+  "quickFactsTitle": "The First Classic",
+  "quickFacts": [
+    "Size & Weight: 16 inches wide, 2 to 4 lbs.",
+    "Price: $100 with free U.S. shipping (or $90 for the 14 inch Mini size).",
+    "Made from: Hand shaped spray foam and acrylic paint.",
+    "Made in: Daytona Beach, FL, and ships in 14 days."
+  ],
+  "section1": {
+    "heading": "Why Chocolate Chip Came First",
+    "paragraphs": [
+      "We all love the smell of warm chocolate chip cookies fresh from the oven. Erynn wanted to turn that cozy, happy feeling into wall art that makes you smile every day.",
+      "She tested ways to get real baked cracks and shiny chips without heavy clay. That is how she found her spray foam method."
+    ],
+    "links": [
+      {
+        "href": "/product/jumbo-chocolate-chip-cookie/",
+        "label": "16 Inch Jumbo Chocolate Chip ($100)"
+      },
+      {
+        "href": "/product/mini-jumbo-chocolate-chip-cookie/",
+        "label": "14 Inch Mini Chocolate Chip ($90)"
+      }
+    ]
+  },
+  "image1": {
+    "src": "/images/products/choc-chip.jpg",
+    "alt": "16 inch jumbo chocolate chip cookie wall art by JOIRUSH",
+    "caption": "The cookie that started JOIRUSH: 16 inches of golden dough and dark chips."
+  },
+  "section2": {
+    "heading": "How Erynn Paints the Baked Glow",
+    "paragraphs": [
+      "A real cookie is not just one flat brown shade. It has light golden spots, toasted brown edges, and dark chocolate chips.",
+      "Erynn paints soft layers of acrylic paint onto the dry foam so the cookie looks fresh from the oven."
+    ]
+  },
+  "image2": {
+    "src": "/images/brand/erynn.jpg",
+    "alt": "Cookie artist Erynn in her studio with handmade cookie wall art",
+    "caption": "Over 138 happy homes hang Erynn's handmade cookies."
+  },
+  "section3": {
+    "heading": "Still Our #1 Bestseller",
+    "paragraphs": [
+      "Hung solo over a coffee bar or paired with a bright M&M cookie in a dining nook, the Classic Chocolate Chip fits right in."
+    ],
+    "links": [
+      {
+        "href": "/catalogue/",
+        "label": "See All Cookies"
+      },
+      {
+        "href": "/about/",
+        "label": "More About Erynn"
+      }
+    ]
+  },
+  "faqs": [
+    {
+      "question": "Should I get the 16 inch or 14 inch chocolate chip cookie?",
+      "answer": "Pick the 16 inch ($100) for open walls and dining tables. Pick the 14 inch ($90) for skinny walls or small coffee bars."
+    },
+    {
+      "question": "Can I pair the 16 inch and 14 inch together?",
+      "answer": "Yes! Tap Buy Now on the 16 inch cookie and pick the 14 inch Mini Chocolate Chip in the menu for 10% off."
+    }
+  ]
+};
 
 export function ChocolateChipStorySchema() {
-  const faqSchema = {
-    "@context": "https://schema.org",
-    "@type": "FAQPage",
-    mainEntity: [
-      {
-        "@type": "Question",
-        name: "Who makes JOIRUSH cookie wall art?",
-        acceptedAnswer: {
-          "@type": "Answer",
-          text: "JOIRUSH cookie wall art is handmade by Erynn, a mixed media artist based in Daytona Beach, Florida. Each piece is individually sculpted, painted, and finished by hand in her studio.",
-        },
-      },
-      {
-        "@type": "Question",
-        name: "What are JOIRUSH cookies made of?",
-        acceptedAnswer: {
-          "@type": "Answer",
-          text: "JOIRUSH cookie sculptures are made from spray foam and acrylic paint. The spray foam provides a lightweight, sculpted base with realistic texture, and acrylic paint adds the lifelike coloring and glossy chip details.",
-        },
-      },
-      {
-        "@type": "Question",
-        name: "How long does it take to make a jumbo cookie sculpture?",
-        acceptedAnswer: {
-          "@type": "Answer",
-          text: "Each handmade cookie sculpture takes several days to complete, including building the base, sculpting the texture, multiple layers of painting, and finish work. The process can't be rushed because each layer needs to dry properly.",
-        },
-      },
-    ],
-  };
-
-  return (
-    <>
-      <script
-        type="application/ld+json"
-        dangerouslySetInnerHTML={{ __html: JSON.stringify(faqSchema) }}
-      />
-    </>
-  );
+  return renderBlogSchema(data);
 }
 
 export function ChocolateChipStoryContent() {
-  return (
-    <>
-      <p>
-        Every cookie tells a story. Not just the ones fresh from the oven, but the ones that 
-        hang on walls as permanent reminders of comfort, creativity, and the universal language 
-        of dessert. The <Link href="/product/jumbo-chocolate-chip-cookie/">JOIRUSH Jumbo 
-        Chocolate Chip Cookie</Link> has its own origin story, and it's the one that launched 
-        an entire line of <strong>handmade cookie wall art</strong>.
-      </p>
-
-      <p>
-        This is how a mixed media artist in Florida turned a love of nostalgia into 
-        <strong>chocolate chip cookie wall art</strong> that hangs in kitchens, homes, and 
-        content studios across the country.
-      </p>      <div className="key-takeaways">
-        <p>Key takeaways</p>
-        <ul>
-          <li>The jumbo chocolate chip cookie is the original JOIRUSH piece and still the bestseller.</li>
-          <li>Each one is sculpted from spray foam, painted in layers of acrylic, and sealed.</li>
-          <li>Making one takes several careful steps, from shaping the base to attaching the hanger.</li>
-          <li>Collectors love it for its realism, nostalgia, and how easily it fits any kitchen.</li>
-        </ul>
-      </div>
-
-      <h2>Where It Started</h2>
-
-      <p>
-        Erynn didn't set out to become a <strong>faux cookie sculpture</strong> artist. Like 
-        many creative journeys, JOIRUSH started somewhere adjacent, with Y2K inspired jewelry, 
-        Tamagotchi chokers, and custom accessories that celebrated all things nostalgic and fun.
-      </p>
-
-      <p>
-        The leap to oversized dessert sculptures came from a question: what if that same playful, 
-        nostalgia drenched energy could live on a wall? What if you could capture the feeling of 
-        walking into a bakery (that hit of warmth and sweetness) in a piece of permanent art?
-      </p>
-
-      <p>
-        The first attempt was a chocolate chip cookie. Of course it was. The chocolate chip 
-        cookie is the default, the classic, the one everyone pictures when someone says "cookie." 
-        Getting it right would prove the concept.
-      </p>
-
-      <h2>The Challenge of Realism</h2>
-
-      <p>
-        Making a cookie <em>look</em> like a cookie is harder than it sounds. Real cookies have 
-        texture: bubbles, cracks, craggy edges where the dough spread unevenly.
-      </p>
-
-      <p>
-        They have 
-        variation in color from the golden centers to the slightly darker rims. The chips aren't 
-        uniform; they're scattered, some buried, some proudly on top, some cracked to show the 
-        chocolate inside.
-      </p>
-
-      <p>
-        Early experiments focused on capturing these details:
-      </p>
-
-      <ul>
-        <li><strong>The base and texture:</strong> Spray foam is sculpted by hand to create a lightweight 
-        foundation with realistic organic texture that mimics the uneven surface of real baked dough</li>
-        <li><strong>The color:</strong> Multiple layers of acrylic paint, building up the 
-        golden brown gradients that make cookies look freshly baked</li>
-        <li><strong>The chips:</strong> Each one placed and painted individually, with varying 
-        degrees of "melt" and gloss</li>
-      </ul>
-
-      <p>
-        The goal was never hyperrealism for its own sake. It was to trigger that emotional 
-        response. The double take. The "wait, is that real?" moment followed by a smile. 
-        <strong>Faux food wall art</strong> that makes you feel something.
-      </p>
-
-      <h2>The Materials Behind the Magic</h2>
-
-      <p>
-        Every JOIRUSH <strong>cookie sculpture</strong> uses the same core materials, chosen 
-        for both aesthetics and durability:
-      </p>
-
-      <h3>Spray Foam</h3>
-      <p>
-        The foundation and texture layer. Hand sculpted spray foam keeps the piece lightweight 
-        (most jumbo cookies weigh just 2 to 4 lbs) while providing stability.
-      </p>
-
-      <p>
-        The foam is 
-        carved and shaped to create the distinctive surface: the bubbles, the ridges, the 
-        craggy edges that make each cookie unique. This is where the "handmade" part really 
-        shows. No two cookies are identical because no two sculpting sessions are identical.
-      </p>
-
-      <h3>Acrylic Paint</h3>
-      <p>
-        The color and finish. Acrylics allow for layered applications that build depth, starting with base tones and gradually adding the highlights and shadows that make 
-        the cookie read as three dimensional. The chips get special attention: a base layer, 
-        color variation, then a gloss coat to mimic melted chocolate.
-      </p>
-
-      <h2>Why the Classic Chocolate Chip?</h2>
-
-      <p>
-        Of all the cookies in the world, why lead with chocolate chip? A few reasons:
-      </p>
-
-      <p>
-        <strong>Universal appeal.</strong> Everyone knows this cookie. It transcends age, 
-        background, and dietary preferences (as wall art, at least). When someone sees a 
-        <strong>chocolate chip cookie wall art</strong> piece, they immediately know what 
-        it is. No explanation needed.
-      </p>
-
-      <p>
-        <strong>Emotional resonance.</strong> Chocolate chip cookies carry associations: childhood, home, comfort, celebration. They're the cookie your mom made, the cookie 
-        at the school bake sale, the cookie warm from the oven on a Sunday afternoon. That 
-        emotional weight transfers to the art.
-      </p>
-
-      <p>
-        <strong>Visual interest.</strong> The contrast between golden dough and dark chips 
-        creates natural visual appeal. The scattered chip placement adds organic variety. 
-        It's inherently interesting to look at.
-      </p>
-
-      <h2>From One to Many</h2>
-
-      <p>
-        The success of that first chocolate chip cookie opened doors. Once the technique was 
-        proven, the question became: what else?
-      </p>
-
-      <p>
-        Candy cookies came next: the <Link href="/product/jumbo-mm-cookie/">M&M cookie</Link>, 
-        the <Link href="/product/rainbow-candy-cookie/">rainbow candy version</Link>, eventually 
-        the <Link href="/product/hot-pink-mm-cookie/">hot pink statement piece</Link>. Each 
-        required adapting the technique for new challenges: smooth candy surfaces versus 
-        glossy chips, bright colors versus warm browns.
-      </p>
-
-      <p>
-        Sets emerged from customer requests. People wanted pairs for symmetry, for gallery 
-        walls, for gifting as couples. The 
-        <Link href="/product/jumbo-mm-cookie-set/"> M&M cookie set</Link> and 
-        <Link href="/product/oversized-mini-cookie-pair/"> mini cookie pair</Link> became 
-        bestsellers.
-      </p>
-
-      <p>
-        And then the ice cream sandwich happened. The 
-        <Link href="/product/cookie-ice-cream-sandwich/"> jumbo cookie ice cream sandwich</Link> was 
-        the most ambitious piece yet: two cookie layers, a thick vanilla middle, all the 
-        texture challenges doubled. It became the ultimate statement piece in the collection.
-      </p>
-
-      <h2>The Process Today</h2>
-
-      <p>
-        Five years and 80+ sales later, Erynn still makes every piece by hand in Daytona Beach, 
-        Florida. The process hasn't changed much:
-      </p>
-
-      <ol>
-        <li><strong>Shape and sculpt the spray foam base:</strong> Sized and textured for the specific cookie design, this is the most time intensive step</li>
-        <li><strong>Base coat painting:</strong> Establishing the primary color</li>
-        <li><strong>Detail painting:</strong> Building up the gradients and variations</li>
-        <li><strong>Chip or candy placement:</strong> Each one positioned and painted individually</li>
-        <li><strong>Finish and seal:</strong> Protecting the surface for longevity</li>
-        <li><strong>Attach hanger:</strong> Secured to the back for easy wall mounting</li>
-      </ol>
-
-      <p>
-        The whole process takes several days. There's no way to rush it; each layer needs to 
-        dry properly before the next. That's why these pieces are handmade to order rather 
-        than mass produced.
-      </p>
-
-      <h2>Who Buys Cookie Wall Art?</h2>
-
-      <p>
-        Over 80 sales and 31 five star reviews reveal some patterns. The people hanging 
-        <strong>jumbo cookie wall art</strong> in their spaces include:
-      </p>
-
-      <ul>
-        <li><strong>Kitchen maximalists:</strong> People who want their kitchen to be as 
-        personality filled as the rest of their home</li>
-        <li><strong>Home bakers and foodies:</strong> Celebrating their love of desserts 
-        with unique wall decor</li>
-        <li><strong>Content creators:</strong> Building distinctive backdrops for photos 
-        and videos</li>
-        <li><strong>Gift givers:</strong> Searching for unforgettable 
-        <Link href="/blog/foodie-gift-guide-jumbo-cookie-sculptures/"> gifts for food lovers</Link></li>
-        <li><strong>Dopamine decor enthusiasts:</strong> Embracing the 
-        <Link href="/blog/kitchen-dopamine-decor-dessert-gallery-wall/"> gallery wall trend</Link> with 
-        pieces that spark genuine joy</li>
-      </ul>
-
-      <h2>The Classic Lives On</h2>
-
-      <p>
-        Despite all the variations that followed (the candy cookies, the seasonal pieces, the statement sculptures), the original 
-        <Link href="/product/jumbo-chocolate-chip-cookie/"> Jumbo Chocolate Chip Cookie</Link> remains 
-        the heart of JOIRUSH. It's still the bestseller. Still the first piece many collectors 
-        buy. Still the one that makes people stop and stare.
-      </p>
-
-      <p>
-        There's something about that golden brown classic that just works. Maybe it's the 
-        nostalgia. Maybe it's the universal appeal. Or maybe it's just that chocolate chip 
-        cookies, real or sculpted, are simply perfect.
-      </p>
-
-      <h2>Frequently Asked Questions</h2>
-
-      <h3>Who makes JOIRUSH cookie wall art?</h3>
-      <p>
-        JOIRUSH <strong>cookie wall art</strong> is handmade by Erynn, a mixed media artist 
-        based in Daytona Beach, Florida. Each piece is individually sculpted, painted, and finished 
-        by hand in her studio. With over 80 sales and 31 five star reviews on Etsy, she's 
-        built a reputation for realistic, high quality <strong>faux food sculptures</strong>.
-      </p>
-
-      <h3>What are JOIRUSH cookies made of?</h3>
-      <p>
-        JOIRUSH <strong>cookie sculptures</strong> are made from spray foam and acrylic paint. 
-        The spray foam provides a lightweight, sculpted base with realistic texture. 
-        Acrylic paint adds the lifelike coloring, gradients, and glossy chip details 
-        that make each piece look good enough to eat.
-      </p>
-
-      <h3>How long does it take to make a jumbo cookie sculpture?</h3>
-      <p>
-        Each <strong>handmade cookie sculpture</strong> takes several days to complete. The 
-        process includes shaping and sculpting the spray foam base, applying multiple 
-        layers of paint, adding individual chips, and finishing with protective sealant. The 
-        process can't be rushed because each layer needs to dry properly before the next.
-      </p>
-
-      <h3>Where is JOIRUSH located?</h3>
-      <p>
-        JOIRUSH is based in Daytona Beach, Florida. 
-        All orders include free shipping within the United States. Each piece ships in 14 days because true handcraft artistry takes time.
-      </p>
-
-      <h2>Start Your Collection</h2>
-
-      <p>
-        Whether you're looking for your first piece of <strong>faux food wall art</strong> or 
-        adding to an existing gallery, the classic chocolate chip cookie is the perfect 
-        starting point.
-      </p>
-
-      <p>
-        Browse the full <Link href="/wall-art/">cookie wall art collection</Link>, or 
-        <Link href="/custom/"> request a custom piece</Link> in your ideal size, color, or flavor. 
-        Every sculpture ships free within the US in 14 days, ready to hang and ready to spark conversations.
-      </p>
-    </>
-  );
+  return renderBlogContent(data);
 }

@@ -218,7 +218,7 @@ export function SmartStickyBuy() {
       ? "Buy Now: open checkout options for this piece"
       : mode === "scroll"
         ? "Buy Now: jump to the cookie art you can buy on this page"
-        : "Buy Now: shop the full cookie art catalogue";
+        : "Buy Now: shop all cookies";
 
   // `sticky-buy-attention` (globals.css) adds the desktop-only (>=768px, same as `md:`)
   // pulsing glow + periodic wiggle; it is a no-op on the mobile full width bar.

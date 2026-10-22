@@ -15,7 +15,6 @@ const POSTS = "src/data/blog/posts.ts";
 
 const pageSources: Record<string, string[]> = {
   "/": ["src/app/page.tsx", PRODUCTS, SITE],
-  "/wall-art/": ["src/app/wall-art/page.tsx", PRODUCTS, SITE],
   "/catalogue/": ["src/app/catalogue/page.tsx", "src/components/CatalogueGrid.tsx", PRODUCTS, SITE],
   "/custom/": ["src/app/custom/page.tsx", "src/components/CustomForm.tsx", SITE],
   "/about/": ["src/app/about/page.tsx", SITE],
@@ -51,14 +50,9 @@ export default function sitemap(): MetadataRoute.Sitemap {
       priority: 1.0,
     },
     {
-      ...staticPage("/wall-art/"),
-      changeFrequency: "weekly",
-      priority: 0.9,
-    },
-    {
       ...staticPage("/catalogue/"),
       changeFrequency: "weekly",
-      priority: 0.8,
+      priority: 0.9,
     },
     {
       ...staticPage("/custom/"),

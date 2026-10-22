@@ -32,10 +32,10 @@ export function SiteFooter() {
         </div>
 
         <div>
-          <p className="text-sm uppercase tracking-[0.2em] text-pink-blush">Shop Cookie Art</p>
+          <p className="text-sm uppercase tracking-[0.2em] text-pink-blush">Shop Cookies</p>
           <div className="mt-4 flex flex-col gap-2 text-sm">
-            <Link href="/wall-art/" className="hover:text-pink-blush">
-              Giant Cookie Wall Art
+            <Link href="/catalogue/" className="hover:text-pink-blush">
+              Cookies
             </Link>
             <Link href="/oversized-food-wall-art/" className="hover:text-pink-blush">
               Oversized Food Wall Art
@@ -45,9 +45,6 @@ export function SiteFooter() {
             </Link>
             <Link href="/colorful-wall-art/" className="hover:text-pink-blush">
               Colorful Wall Art
-            </Link>
-            <Link href="/catalogue/" className="hover:text-pink-blush">
-              Full Catalogue
             </Link>
             <Link href="/custom/" className="hover:text-pink-blush">
               Custom Cookie Art

@@ -261,11 +261,11 @@ export default async function BlogPostPage({ params }: Props) {
             </p>
             <div className="mt-6 flex flex-wrap gap-4">
               <Link
-                href="/wall-art/"
+                href="/catalogue/"
                 data-buy-cta="shop"
                 className="rounded-full bg-pink px-6 py-3 text-sm font-medium text-white hover:bg-pink-hot"
               >
-                Shop Cookie Wall Art
+                Shop Cookies
               </Link>
               <Link
                 href="/custom/"

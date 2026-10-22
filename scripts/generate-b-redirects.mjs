@@ -66,6 +66,22 @@ function main() {
   }
   
   console.log(`\nGenerated ${created} redirect pages in public/b/`);
+
+  const extraRedirects = [
+    { path: ["wall-art"], destination: "/catalogue/", title: "Cookies" },
+    { path: ["product", "oversized-mini-cookie-pair"], destination: "/catalogue/", title: "Cookies" },
+    { path: ["product", "jumbo-mm-cookie-set"], destination: "/catalogue/", title: "Cookies" },
+  ];
+
+  for (const item of extraRedirects) {
+    const dir = join(PUBLIC_DIR, ...item.path);
+    const file = join(dir, "index.html");
+    if (!existsSync(dir)) {
+      mkdirSync(dir, { recursive: true });
+    }
+    writeFileSync(file, generateRedirectHTML(item.destination, item.title), "utf8");
+    console.log(`  Created: /${item.path.join("/")}/ -> ${item.destination}`);
+  }
 }
 
 main();

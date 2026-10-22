@@ -1,182 +1,84 @@
-import Link from "next/link";
-import { FaqJsonLd, FaqList, type Faq } from "./faq-helpers";
+import {
+  renderBlogContent,
+  renderBlogSchema,
+  type BlogPostStructuredData,
+} from "@/components/BlogPostTemplate";
 
-const faqs: Faq[] = [
-  {
-    question: "What is 3D wall art?",
-    answer:
-      "3D wall art is any piece that projects off the wall instead of lying flat: relief carvings, metal or clay sculptures, textured paintings, and dimensional objects like faux food sculpture. Its depth creates shadows that change with the light.",
+const data: BlogPostStructuredData = {
+  "lead": "Why do some walls still feel flat after you hang a poster? Flat prints only give you color. 3D wall art gives your room real depth and shadow.",
+  "quickFactsTitle": "3D Cookie vs Flat Print",
+  "quickFacts": [
+    "Depth: JOIRUSH cookies stand 2 to 5 inches off the wall.",
+    "Light: Real shadows change from morning sun to night lamp light.",
+    "Shape: A round cookie breaks up boxy frames and cabinets.",
+    "Weight: Still only 2 to 4 lbs (4 to 5 lbs for the ice cream sandwich)."
+  ],
+  "section1": {
+    "heading": "How Real Depth Changes a Room",
+    "paragraphs": [
+      "When you walk past a flat poster from the side, it hides in the frame. When you walk past a 3D cookie, you see thick baked edges, raised chips, and real shadows.",
+      "It feels like a real piece of art living in the room with you."
+    ],
+    "links": [
+      {
+        "href": "/product/giant-double-chocolate-cookie/",
+        "label": "Giant Double Chocolate Cookie"
+      },
+      {
+        "href": "/product/jumbo-chocolate-chip-cookie/",
+        "label": "Jumbo Chocolate Chip Cookie"
+      }
+    ]
   },
-  {
-    question: "Is 3D wall art better than a print?",
-    answer:
-      "Neither is better; they do different jobs. Prints are great for detailed images, matching sets, and tight budgets. 3D wall art adds texture, shadow, and presence, especially on a wall that needs a focal point.",
+  "image1": {
+    "src": "/images/products/double-choc.jpg",
+    "alt": "Giant double chocolate 3D cookie wall art by JOIRUSH",
+    "caption": "Thick baked edges and raised chocolate chunks catch the light all day."
   },
-  {
-    question: "Where does sculptural wall decor look best?",
-    answer:
-      "On a wall that gets light from the side, such as next to a window, and where people can see it from more than one angle. Entryways, kitchens, breakfast nooks, and the middle of a gallery wall are all good spots.",
+  "section2": {
+    "heading": "How to Mix 3D Art With Flat Frames",
+    "paragraphs": [
+      "You can keep your framed prints! Hang one 16 inch cookie in the middle of your wall, and put 2 or 3 flat frames around it.",
+      "The round 3D cookie makes the whole wall pop."
+    ]
   },
-  {
-    question: "Is 3D wall art heavy?",
-    answer:
-      "It depends on the material. Stone and metal can be heavy, while foam pieces are light. JOIRUSH cookies are spray foam and acrylic, and most weigh 2 to 4 lbs with a built in hanger.",
+  "image2": {
+    "src": "/images/products/ice-cream.jpg",
+    "alt": "3D cookie ice cream sandwich wall art by JOIRUSH",
+    "caption": "At 5 inches thick, the Cookie Ice Cream Sandwich brings bold 3D depth."
   },
-];
+  "section3": {
+    "heading": "Hangs Just Like a Picture Frame",
+    "paragraphs": [
+      "Some people think 3D art needs big bolts. Because Erynn uses light spray foam, each cookie hangs on one regular picture hook."
+    ],
+    "links": [
+      {
+        "href": "/oversized-food-wall-art/",
+        "label": "Oversized Food Wall Art"
+      },
+      {
+        "href": "/catalogue/",
+        "label": "Shop All Cookies"
+      }
+    ]
+  },
+  "faqs": [
+    {
+      "question": "How thick is a JOIRUSH cookie?",
+      "answer": "Single cookies are about 2 to 3 inches thick. The Cookie Ice Cream Sandwich is about 5 inches thick."
+    },
+    {
+      "question": "Do I need special tools to hang 3D cookie art?",
+      "answer": "No. Every cookie has a hanger on the back that fits a regular picture hook or nail."
+    }
+  ]
+};
 
 export function ThreeDWallArtSchema() {
-  return <FaqJsonLd faqs={faqs} />;
+  return renderBlogSchema(data);
 }
 
 export function ThreeDWallArtContent() {
-  return (
-    <>
-      <p>
-        Hang a print and a sculpture side by side and you will notice something within a day. The
-        print looks the same at breakfast and at dinner. The sculpture keeps changing.
-      </p>
-
-      <p>
-        That is the real difference between 3D wall art and flat art. Here is when each one shines,
-        and how to use both on the same wall.
-      </p>
-
-      <div className="key-takeaways">
-        <p>Key takeaways</p>
-        <ul>
-          <li>3D wall art adds shadow and texture that shift with the light.</li>
-          <li>Prints win for detail, matching sets, and tight budgets.</li>
-          <li>Sculptural pieces look best with side light and room to be seen from an angle.</li>
-          <li>One dimensional piece in a gallery wall breaks up all those rectangles.</li>
-        </ul>
-      </div>
-
-      <h2>What Counts as 3D Wall Art?</h2>
-
-      <p>
-        Anything that comes off the wall with intent. Carved wood, metal and clay relief, heavily
-        textured paintings, woven hangings, and dimensional objects like faux food sculpture all
-        fit.
-      </p>
-
-      <p>
-        What they share is depth. Depth means shadow, and shadow means the piece looks a little
-        different every hour.
-      </p>
-
-      <h2>Side by Side</h2>
-
-      <table>
-        <thead>
-          <tr>
-            <th></th>
-            <th>Flat print</th>
-            <th>3D wall art</th>
-          </tr>
-        </thead>
-        <tbody>
-          <tr>
-            <td>Looks like</td>
-            <td>The same all day</td>
-            <td>Changes as light moves</td>
-          </tr>
-          <tr>
-            <td>Best at</td>
-            <td>Detailed images, color fields</td>
-            <td>Texture, presence, surprise</td>
-          </tr>
-          <tr>
-            <td>From the side</td>
-            <td>Disappears</td>
-            <td>Still reads clearly</td>
-          </tr>
-          <tr>
-            <td>Good for</td>
-            <td>Sets, hallways, tight budgets</td>
-            <td>Focal walls, gallery walls, nooks</td>
-          </tr>
-        </tbody>
-      </table>
-
-      <h2>When a Print Is the Right Call</h2>
-
-      <ul>
-        <li>You want a detailed image, like a photo or an illustration.</li>
-        <li>You are hanging a matching set in a row.</li>
-        <li>The wall is in a tight hallway where people brush past.</li>
-        <li>You want to cover a big area for less.</li>
-      </ul>
-
-      <h2>When Sculptural Decor Wins</h2>
-
-      <ul>
-        <li>A blank wall needs a focal point, not just a picture.</li>
-        <li>People see the wall from an angle, like down a hallway or across a kitchen.</li>
-        <li>The room gets nice side light from a window.</li>
-        <li>You want guests to stop and look twice.</li>
-      </ul>
-
-      <aside className="pull-quote">
-        A print looks the same at breakfast and at dinner. A sculpture keeps changing.
-      </aside>
-
-      <h2>How to Light 3D Art</h2>
-
-      <p>
-        Side light is your best friend. Light skimming across a textured surface makes every ridge
-        cast a tiny shadow. Straight on light flattens it.
-      </p>
-
-      <p>
-        A spot near a window, or a picture light angled from above, shows off texture beautifully.
-        Our cookies are a good example: the craggy edges and glossy chips come alive when light
-        hits them from the side.
-      </p>
-
-      <h2>Mixing 3D and Flat on One Wall</h2>
-
-      <p>
-        You do not have to choose. A gallery wall of prints with one dimensional piece in the
-        middle feels richer than either alone.
-      </p>
-
-      <ul>
-        <li>Put the 3D piece near the center so it anchors the group.</li>
-        <li>Keep gaps between pieces even, so the mix still looks tidy.</li>
-        <li>Repeat one color from the sculpture in a nearby print.</li>
-      </ul>
-
-      <p>
-        The <Link href="/product/giant-double-chocolate-cookie/">double chocolate cookie</Link>{" "}
-        is moody enough to sit with black and white photos. For a true statement, the{" "}
-        <Link href="/product/cookie-ice-cream-sandwich/">ice cream sandwich</Link> can hold a wall
-        on its own.
-      </p>
-
-      <div className="callout">
-        <p>
-          <strong>Good to know:</strong> every JOIRUSH piece is sculpted by hand from spray foam
-          and painted with acrylics. Most weigh 2 to 4 lbs and have a built in hanger, so they go up
-          as easily as a framed print. Curious how they are made? Read{" "}
-          <Link href="/blog/spray-foam-cookie-wall-art-how-theyre-made/">the studio process</Link>.
-        </p>
-      </div>
-
-      <h2>Caring for Dimensional Art</h2>
-
-      <p>
-        Dust is the main enemy. A soft, dry brush gets into the crevices without scratching
-        anything. Keep pieces out of strong direct sun to protect painted
-        colors.
-      </p>
-
-      <p>
-        Want to see more dimensional pieces for the wall? Browse our{" "}
-        <Link href="/oversized-food-wall-art/">sculptural decor and oversized food wall art</Link>{" "}
-        collection.
-      </p>
-
-      <FaqList faqs={faqs} />
-    </>
-  );
+  return renderBlogContent(data);
 }

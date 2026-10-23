@@ -40,17 +40,86 @@ export type BuiltCheckoutOrder = {
   totalSavingsUsd: number;
   discountSummaryLabel: string;
   clientReferenceId: string;
+  couponCode?: string;
   lineItems: CheckoutLineItem[];
-  directStripeUrl: string | null;
+  directStripeUrl: string;
   fallbackStripeUrl: string;
 };
 
+const COMPACT_COOKIE_CODE: Record<string, string> = {
+  "chocolate-chip-cookie": "cc",
+  "pink-sugar-cookie": "ps",
+  "double-chocolate-cookie": "dc",
+  "white-macadamia-cookie": "wm",
+  "peaches-and-cream-cookie": "pc",
+  "red-velvet-cheesecake-cookie": "rv",
+  "key-lime-pie-cookie": "kl",
+  "lemon-poppy-seed-cookie": "lp",
+  "dubai-chocolate-cookie": "db",
+  "birthday-cake-cookie": "bc",
+  "strawberry-shortcake-cookie": "ss",
+};
+
+function sanitizeClientRef(raw: string): string {
+  return raw.replace(/[^a-zA-Z0-9_-]/g, "_").slice(0, 200);
+}
+
+export function buildBulkClientReferenceId(
+  discountPercent: number,
+  lineItems: CheckoutLineItem[]
+): string {
+  const prefix = `bulk${discountPercent}_`;
+  const fullMix = lineItems.map((item) => `${item.quantity}x_${item.slug}`).join("__");
+  if ((prefix + fullMix).length <= 200) {
+    return sanitizeClientRef(prefix + fullMix);
+  }
+
+  const trimmedMix = lineItems
+    .map((item) => `${item.quantity}x_${item.slug.replace(/-cookie$/, "")}`)
+    .join("__");
+  if ((prefix + trimmedMix).length <= 200) {
+    return sanitizeClientRef(prefix + trimmedMix);
+  }
+
+  const shortMix = lineItems
+    .map((item) => `${item.quantity}x_${COMPACT_COOKIE_CODE[item.slug] ?? item.slug.slice(0, 4)}`)
+    .join("__");
+  return sanitizeClientRef(prefix + shortMix);
+}
+
 export function appendClientRef(url: string, clientReferenceId: string): string {
+  const safeRef = sanitizeClientRef(clientReferenceId);
   const sep = url.includes("?") ? "&" : "?";
-  return `${url}${sep}client_reference_id=${encodeURIComponent(clientReferenceId.slice(0, 200))}`;
+  return `${url}${sep}client_reference_id=${encodeURIComponent(safeRef)}`;
 }
 
 export const withStripeClientRef = appendClientRef;
+
+export function buildStripePaymentLinkUrl(
+  baseUrl: string,
+  params: {
+    clientReferenceId: string;
+    promoCode?: string;
+    utmCampaign?: string;
+    utmContent?: string;
+  }
+): string {
+  const safeRef = sanitizeClientRef(params.clientReferenceId);
+  const query: string[] = [`client_reference_id=${encodeURIComponent(safeRef)}`];
+  if (params.promoCode) {
+    query.push(`prefilled_promo_code=${encodeURIComponent(params.promoCode)}`);
+  }
+  if (params.utmCampaign) {
+    query.push(`utm_source=joirush_web`);
+    query.push(`utm_medium=bundle_checkout`);
+    query.push(`utm_campaign=${encodeURIComponent(params.utmCampaign)}`);
+  }
+  if (params.utmContent) {
+    query.push(`utm_content=${encodeURIComponent(params.utmContent.slice(0, 200))}`);
+  }
+  const sep = baseUrl.includes("?") ? "&" : "?";
+  return `${baseUrl}${sep}${query.join("&")}`;
+}
 
 /**
  * Build a 1-cookie order (standard price).
@@ -137,13 +206,9 @@ export function buildPairCookieOrder(firstProduct: Product, secondProduct: Produ
   const isSameCookie = firstProduct.slug === secondProduct.slug;
   const mappedPairUrl = isSameCookie
     ? firstProduct.stripeUpsellUrl
-    : firstProduct.stripePairUrls?.[secondProduct.slug] ?? null;
+    : firstProduct.stripePairUrls?.[secondProduct.slug] ?? firstProduct.stripeUpsellUrl;
 
-  const directStripeUrl = mappedPairUrl ? appendClientRef(mappedPairUrl, clientReferenceId) : null;
-  const fallbackStripeUrl = appendClientRef(
-    mappedPairUrl ?? firstProduct.stripeUpsellUrl,
-    clientReferenceId
-  );
+  const directStripeUrl = appendClientRef(mappedPairUrl, clientReferenceId);
 
   return {
     mode: "pair_bogo10",
@@ -153,9 +218,10 @@ export function buildPairCookieOrder(firstProduct: Product, secondProduct: Produ
     totalSavingsUsd: secondSavingsUsd,
     discountSummaryLabel: "Buy 1, get 1 10% off",
     clientReferenceId,
+    couponCode: "JOIRUSH10",
     lineItems,
     directStripeUrl,
-    fallbackStripeUrl,
+    fallbackStripeUrl: directStripeUrl,
   };
 }
 
@@ -176,6 +242,7 @@ export function buildTrioCookieOrder(
   const finalTotalUsd = firstProduct.price + secondDiscountedUsd + thirdDiscountedUsd;
   const totalSavingsUsd = originalTotalUsd - finalTotalUsd;
   const clientReferenceId = `trio_${firstProduct.slug}__${secondProduct.slug}__${thirdProduct.slug}`;
+  const couponCode = "JOIRUSH15";
 
   const lineItems: CheckoutLineItem[] = [
     {
@@ -229,6 +296,18 @@ export function buildTrioCookieOrder(
     },
   ];
 
+  const isSamePair = firstProduct.slug === secondProduct.slug;
+  const basePairUrl = isSamePair
+    ? firstProduct.stripeUpsellUrl
+    : firstProduct.stripePairUrls?.[secondProduct.slug] ?? firstProduct.stripeUpsellUrl;
+
+  const directStripeUrl = buildStripePaymentLinkUrl(basePairUrl, {
+    clientReferenceId,
+    promoCode: couponCode,
+    utmCampaign: "trio_15off_3cookies",
+    utmContent: `${firstProduct.slug}_${secondProduct.slug}_${thirdProduct.slug}_${finalTotalUsd}usd`,
+  });
+
   return {
     mode: "trio_third15",
     totalCookies: 3,
@@ -237,9 +316,10 @@ export function buildTrioCookieOrder(
     totalSavingsUsd,
     discountSummaryLabel: "2nd cookie 10% off + 3rd cookie 15% off",
     clientReferenceId,
+    couponCode,
     lineItems,
-    directStripeUrl: null,
-    fallbackStripeUrl: appendClientRef(firstProduct.stripeUpsellUrl, clientReferenceId),
+    directStripeUrl,
+    fallbackStripeUrl: directStripeUrl,
   };
 }
 
@@ -299,6 +379,13 @@ export function buildBulkCookieOrder(
         ? "bulk25Off"
         : "bulk20Off";
 
+  const couponCode =
+    discountPercent === 30
+      ? "JOIRUSH30"
+      : discountPercent === 25
+        ? "JOIRUSH25"
+        : "JOIRUSH20";
+
   const tierRangeLabel =
     discountPercent === 30
       ? "10 to 20 cookies (30% off each)"
@@ -335,11 +422,28 @@ export function buildBulkCookieOrder(
   const finalTotalUsd = lineItems.reduce((sum, item) => sum + item.lineTotalUsd, 0);
   const totalSavingsUsd = originalTotalUsd - finalTotalUsd;
 
-  const compactMix = lineItems.map((item) => `${item.quantity}x_${item.slug}`).join("__");
-  const clientReferenceId = `bulk${discountPercent}_${compactMix}`.slice(0, 200);
+  const clientReferenceId = buildBulkClientReferenceId(discountPercent, lineItems);
 
   const singleFlavorBulkUrl =
     lineItems.length === 1 ? entries[0].product.stripeBulkTierUrls?.[tierKey] : undefined;
+
+  const baseCheckoutUrl =
+    singleFlavorBulkUrl ??
+    (entries.length >= 2
+      ? entries[0].product.stripePairUrls?.[entries[1].product.slug] ??
+        dominantProduct.stripeUpsellUrl
+      : dominantProduct.stripeUpsellUrl);
+
+  const compactSummary = lineItems
+    .map((item) => `${item.quantity}x_${item.slug.replace(/-cookie$/, "")}`)
+    .join("__");
+
+  const directStripeUrl = buildStripePaymentLinkUrl(baseCheckoutUrl, {
+    clientReferenceId,
+    promoCode: couponCode,
+    utmCampaign: `bulk_${discountPercent}off_${totalCookies}cookies`,
+    utmContent: `${compactSummary}_${finalTotalUsd}usd`,
+  });
 
   return {
     mode: "bulk_tier",
@@ -349,36 +453,75 @@ export function buildBulkCookieOrder(
     totalSavingsUsd,
     discountSummaryLabel: tierRangeLabel,
     clientReferenceId,
+    couponCode,
     lineItems,
-    directStripeUrl: singleFlavorBulkUrl
-      ? appendClientRef(singleFlavorBulkUrl, clientReferenceId)
-      : null,
-    fallbackStripeUrl: appendClientRef(
-      singleFlavorBulkUrl ?? dominantProduct.stripeUpsellUrl,
-      clientReferenceId
-    ),
+    directStripeUrl,
+    fallbackStripeUrl: directStripeUrl,
   };
 }
 
-export type CheckoutRedirectResult =
-  | { ok: true; url: string }
-  | { ok: false; reason: "endpoint_unavailable"; order: BuiltCheckoutOrder };
+/**
+ * Return the unified Stripe Checkout URL for any order combination.
+ */
+export function getDirectStripeCheckoutUrl(order: BuiltCheckoutOrder): string {
+  return order.directStripeUrl || order.fallbackStripeUrl;
+}
 
 /**
- * Request a dynamic Stripe Checkout Session for multi-cookie / mixed-flavor / bulk orders,
- * or return the direct Stripe Payment Link when a static link already matches the exact items.
+ * Record the exact multi-cookie combination in the background before opening Stripe Checkout.
+ */
+export function logCheckoutOrder(order: BuiltCheckoutOrder): void {
+  const itemizedLines = order.lineItems
+    .map(
+      (item, idx) =>
+        `${idx + 1}. ${item.quantity}x ${item.shortName} (${item.name}) [${item.stripeProductId}${item.stripePriceId ? ` / ${item.stripePriceId}` : ""}] @ ${formatPrice(item.discountedUnitUsd)} each (${item.tierLabel}) = ${formatPrice(item.lineTotalUsd)}`
+    )
+    .join("\n");
+
+  postToGoogleScript({
+    type: "checkout_click",
+    stripeAccountId: JOIRUSH_STRIPE_ACCOUNT_ID,
+    shippingRateId: JOIRUSH_FREE_SHIPPING_RATE_ID,
+    mode: order.mode,
+    totalCookies: order.totalCookies,
+    originalTotalUsd: order.originalTotalUsd,
+    finalTotalUsd: order.finalTotalUsd,
+    totalSavingsUsd: order.totalSavingsUsd,
+    discountSummaryLabel: order.discountSummaryLabel,
+    clientReferenceId: order.clientReferenceId,
+    couponCode: order.couponCode ?? "",
+    items: itemizedLines,
+    directStripeUrl: order.directStripeUrl,
+  });
+}
+
+/**
+ * Synchronously open the single unified Stripe Checkout page for any order combination.
+ */
+export function openStripeCheckoutOrder(order: BuiltCheckoutOrder): string {
+  const url = getDirectStripeCheckoutUrl(order);
+  logCheckoutOrder(order);
+  if (typeof window !== "undefined") {
+    window.open(url, "_blank", "noopener,noreferrer");
+  }
+  return url;
+}
+
+export type CheckoutRedirectResult = { ok: true; url: string };
+
+/**
+ * Resolve a Stripe Checkout URL for multi-cookie / mixed-flavor / bulk orders.
+ * Always resolves to a single unified Stripe Checkout URL without showing a fallback form.
  */
 export async function resolveStripeCheckoutUrl(
   order: BuiltCheckoutOrder
 ): Promise<CheckoutRedirectResult> {
-  if (order.directStripeUrl) {
-    return { ok: true, url: order.directStripeUrl };
-  }
+  const fallbackUrl = getDirectStripeCheckoutUrl(order);
 
   if (typeof window !== "undefined" && GOOGLE_SCRIPT_URL) {
     try {
       const controller = new AbortController();
-      const timeout = window.setTimeout(() => controller.abort(), 2500);
+      const timeout = window.setTimeout(() => controller.abort(), 2000);
       const payload = {
         type: "checkout",
         action: "create_checkout",
@@ -391,6 +534,7 @@ export async function resolveStripeCheckoutUrl(
         totalSavingsUsd: order.totalSavingsUsd,
         discountSummaryLabel: order.discountSummaryLabel,
         clientReferenceId: order.clientReferenceId,
+        couponCode: order.couponCode ?? "",
         successUrl: `${window.location.origin}/catalogue/?checkout=success`,
         cancelUrl: window.location.href,
         lineItems: order.lineItems.map((item) => ({
@@ -425,16 +569,15 @@ export async function resolveStripeCheckoutUrl(
         return { ok: true, url: resolvedUrl };
       }
     } catch {
-      // Fall through to fallback handling
+      // Fall back to direct unified Stripe Payment Link URL
     }
   }
 
-  return { ok: false, reason: "endpoint_unavailable", order };
+  return { ok: true, url: fallbackUrl };
 }
 
 /**
- * Submits a multi-cookie / bulk order invoice request when live Checkout Session creation
- * is awaiting Stripe key setup, so no customer order or cookie selection is ever lost.
+ * Legacy helper kept for compatibility.
  */
 export async function submitMultiCookieOrderRequest(params: {
   order: BuiltCheckoutOrder;

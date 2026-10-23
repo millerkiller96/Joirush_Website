@@ -63,6 +63,10 @@ const data: BlogPostStructuredData = {
         "label": "Browse All Cookies"
       },
       {
+        "href": "/blog/maximalist-kitchen-decor-ideas/",
+        "label": "Maximalist Kitchen Ideas"
+      },
+      {
         "href": "/colorful-wall-art/",
         "label": "See Colorful Wall Art"
       }

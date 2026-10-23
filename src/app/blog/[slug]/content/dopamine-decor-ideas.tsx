@@ -53,8 +53,12 @@ const data: BlogPostStructuredData = {
     ],
     "links": [
       {
-        "href": "/colorful-wall-art/",
-        "label": "Explore Colorful Wall Art"
+        "href": "/dopamine-decor-wall-art/",
+        "label": "Shop Dopamine Decor Wall Art"
+      },
+      {
+        "href": "/pink-wall-art/",
+        "label": "Explore Pink Wall Art"
       },
       {
         "href": "/catalogue/",

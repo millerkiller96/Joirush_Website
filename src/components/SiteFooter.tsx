@@ -48,6 +48,15 @@ export function SiteFooter() {
             <Link href="/colorful-wall-art/" className="hover:text-pink-blush">
               Colorful Wall Art
             </Link>
+            <Link href="/dopamine-decor-wall-art/" className="hover:text-pink-blush">
+              Dopamine Decor Wall Art
+            </Link>
+            <Link href="/pink-wall-art/" className="hover:text-pink-blush">
+              Pink Wall Art
+            </Link>
+            <Link href="/faux-food-wall-art/" className="hover:text-pink-blush">
+              Faux Food Wall Art
+            </Link>
             <Link href="/custom/" className="hover:text-pink-blush">
               Custom Cookie Art
             </Link>

@@ -5,76 +5,81 @@ import {
 } from "@/components/BlogPostTemplate";
 
 const data: BlogPostStructuredData = {
-  "lead": "Shopping for a baker, food lover, or friend who already has every kitchen tool? A handmade giant cookie for their wall is a gift they will love for years.",
-  "quickFactsTitle": "Gift Buyer Guide",
+  "lead": "Shopping for foodie gifts is hard when your friend already owns every pan and mixer. A handmade 3D cookie sculpture is a sweet cookie gift that never goes stale.",
+  "quickFactsTitle": "Why Food Lovers Adore Cookie Wall Art",
   "quickFacts": [
-    "Prices: $90 to $220 with free U.S. shipping.",
-    "Shipping time: Made to order and ships in 14 days from Daytona Beach, FL.",
-    "Pair deal: Buy one for them and add a second cookie for 10% off in checkout.",
-    "Ready to hang: Weighs 2 to 4 lbs with a hanger on the back."
+    "Hand sculpted in Queens, NY by artist Erynn from light spray foam.",
+    "Hangs on one nail or hook right out of the box.",
+    "Ships free across the U.S. in safe, padded gift packaging."
   ],
   "section1": {
-    "heading": "Best Cookie Gifts for Every Friend",
+    "heading": "Top Cookie Gifts by Sweet Tooth Style",
     "paragraphs": [
-      "Not sure which flavor to pick? Match the cookie to their style:"
-    ],
-    "bullets": [
-      "For the baker: 16 inch Jumbo Chocolate Chip Cookie ($100) or 14 inch Mini Chocolate Chip ($90).",
-      "For the color lover: Rainbow Candy Cookie ($90) or Hot Pink M&M Cookie ($115).",
-      "For the holiday host: Jumbo Christmas Cookie ($100).",
-      "For the big statement fan: Cookie Ice Cream Sandwich ($220)."
+      "For the classic home baker, the 16 inch Jumbo Chocolate Chip Cookie or Giant Peanut Butter Cookie brings warm golden tones above a coffee bar. It is our top cookie lover gift.",
+      "For a fun friend who loves bright rooms, pick the 16 inch Hot Pink M&M Cookie or 14 inch Rainbow Candy Cookie."
     ],
     "links": [
       {
         "href": "/product/jumbo-chocolate-chip-cookie/",
-        "label": "Jumbo Chocolate Chip ($100)"
+        "label": "Jumbo Chocolate Chip Cookie"
       },
       {
-        "href": "/product/jumbo-christmas-cookie/",
-        "label": "Jumbo Christmas Cookie ($100)"
+        "href": "/product/hot-pink-mm-cookie/",
+        "label": "Hot Pink M&M Cookie"
+      },
+      {
+        "href": "/product/rainbow-candy-cookie/",
+        "label": "Rainbow Candy Cookie"
       }
     ]
   },
   "image1": {
-    "src": "/images/products/christmas.jpg",
-    "alt": "Jumbo Christmas cookie wall art gift by JOIRUSH",
-    "caption": "The Jumbo Christmas Cookie makes a fun holiday gift."
+    "src": "/images/products/choc-chip.jpg",
+    "alt": "Jumbo chocolate chip cookie wall art gift by JOIRUSH",
+    "caption": "Our 16 inch Chocolate Chip Cookie is our number one foodie gift for bakers."
   },
   "section2": {
-    "heading": "Why It Beats a Snack Basket",
+    "heading": "The Ultimate Showstopper Gift",
     "paragraphs": [
-      "Real cookies are gone in two days. A spray foam and acrylic cookie hangs in their kitchen for years. They will think of you every time a guest smiles at it."
+      "Want one of the most memorable gifts for foodies? The Cookie Ice Cream Sandwich pairs two chocolate chip cookies with a thick scoop of faux ice cream in the middle.",
+      "At checkout, you can also add a second cookie at 10% off to build a two piece gift set."
+    ],
+    "links": [
+      {
+        "href": "/product/cookie-ice-cream-sandwich/",
+        "label": "Cookie Ice Cream Sandwich"
+      },
+      {
+        "href": "/blog/gifts-for-bakers-who-have-everything-cookie-wall-art/",
+        "label": "Gifts for Bakers Guide"
+      }
     ]
   },
   "image2": {
-    "src": "/images/products/choc-chip.jpg",
-    "alt": "Classic chocolate chip jumbo cookie wall art by JOIRUSH",
-    "caption": "Our #1 gift pick for new homes, birthdays, and bakers."
+    "src": "/images/products/ice-cream.jpg",
+    "alt": "Cookie ice cream sandwich 3D wall art gift by JOIRUSH",
+    "caption": "A sweet statement gift for birthdays, holidays, and new homes."
   },
   "section3": {
-    "heading": "Order 2 Weeks Ahead",
+    "heading": "Ready to Gift With Free U.S. Shipping",
     "paragraphs": [
-      "Cookie artist Erynn shapes and paints every piece by hand to order, so allow 14 days for shipping. U.S. shipping is always free!"
+      "Every JOIRUSH cookie is signed on the back, packed with care, and shipped free in the U.S. so your gift arrives ready to hang."
     ],
     "links": [
       {
         "href": "/catalogue/",
-        "label": "Shop All Cookies"
-      },
-      {
-        "href": "/custom/",
-        "label": "Ask for a Custom Gift"
+        "label": "Shop All Cookie Gifts"
       }
     ]
   },
   "faqs": [
     {
-      "question": "Will my friend need special tools to hang it?",
-      "answer": "No! Every cookie has a hanger on the back and hangs on one regular picture hook or nail."
+      "question": "Does JOIRUSH charge for shipping on gifts?",
+      "answer": "No. Every U.S. order ships free from our Queens, NY studio."
     },
     {
-      "question": "Can I get one for a friend and one for me?",
-      "answer": "Yes! When you tap Buy Now, pick your second cookie in the dropdown menu to save 10% on the second piece."
+      "question": "Which cookie is the safest gift choice?",
+      "answer": "The 16 inch Jumbo Chocolate Chip Cookie ($100) fits almost any kitchen or coffee bar."
     }
   ]
 };

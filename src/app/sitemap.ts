@@ -1,114 +1,161 @@
 import type { MetadataRoute } from "next";
+import { statSync } from "fs";
+import { join } from "path";
 import { products } from "@/data/products";
 import { blogPosts } from "@/data/blog/posts";
-import { getAbsoluteUrl } from "@/lib/seo";
-import { getGitLastModified } from "@/lib/gitLastModified";
+import { siteUrl } from "@/lib/seo";
 
 export const dynamic = "force-static";
 
-// Source and data files behind each page. lastmod is the last git commit that touched
-// any of them, so it only moves when that page's content actually changed. Automated
-// rebuild commits only touch docs/, so they do not bump these dates.
-const PRODUCTS = "src/data/products.ts";
-const SITE = "src/data/site.ts";
-const POSTS = "src/data/blog/posts.ts";
-
-const pageSources: Record<string, string[]> = {
-  "/": ["src/app/page.tsx", PRODUCTS, SITE],
-  "/catalogue/": ["src/app/catalogue/page.tsx", "src/components/CatalogueGrid.tsx", PRODUCTS, SITE],
-  "/custom/": ["src/app/custom/page.tsx", "src/components/CustomForm.tsx", SITE],
-  "/about/": ["src/app/about/page.tsx", SITE],
-  "/jewelry/": ["src/app/jewelry/page.tsx", SITE],
-  "/blog/": ["src/app/blog/page.tsx", POSTS, SITE],
-  "/oversized-food-wall-art/": ["src/app/oversized-food-wall-art/page.tsx", PRODUCTS, SITE],
-  "/kitchen-wall-art/": ["src/app/kitchen-wall-art/page.tsx", PRODUCTS, SITE],
-  "/colorful-wall-art/": ["src/app/colorful-wall-art/page.tsx", PRODUCTS, SITE],
-  "/contact/": ["src/app/contact/page.tsx", "src/components/ContactForm.tsx", SITE],
-};
-
-const productPageSources = [
-  "src/app/product/[slug]/page.tsx",
-  "src/components/ProductPageClient.tsx",
-  "src/data/product-galleries.ts",
-  PRODUCTS,
-];
-
-function lastModifiedFor(paths: string[]): { lastModified?: Date } {
-  const date = getGitLastModified(paths);
-  return date ? { lastModified: date } : {};
-}
-
-function staticPage(path: string): { url: string; lastModified?: Date } {
-  return { url: getAbsoluteUrl(path), ...lastModifiedFor(pageSources[path] ?? []) };
+function getLatestMtime(relativePaths: string[]): Date {
+  let latest = 0;
+  for (const rel of relativePaths) {
+    try {
+      const mtime = statSync(join(process.cwd(), rel)).mtimeMs;
+      if (mtime > latest) latest = mtime;
+    } catch {
+      // Fallback if file does not exist
+    }
+  }
+  return latest > 0 ? new Date(latest) : new Date();
 }
 
 export default function sitemap(): MetadataRoute.Sitemap {
+  const pageSources: Record<string, string[]> = {
+    "/": ["src/app/page.tsx", "src/data/products.ts"],
+    "/catalogue/": ["src/app/catalogue/page.tsx", "src/data/products.ts"],
+    "/oversized-food-wall-art/": ["src/app/oversized-food-wall-art/page.tsx", "src/data/products.ts"],
+    "/kitchen-wall-art/": ["src/app/kitchen-wall-art/page.tsx", "src/data/products.ts"],
+    "/colorful-wall-art/": ["src/app/colorful-wall-art/page.tsx", "src/data/products.ts"],
+    "/dopamine-decor-wall-art/": ["src/app/dopamine-decor-wall-art/page.tsx", "src/data/products.ts"],
+    "/pink-wall-art/": ["src/app/pink-wall-art/page.tsx", "src/data/products.ts"],
+    "/faux-food-wall-art/": ["src/app/faux-food-wall-art/page.tsx", "src/data/products.ts"],
+    "/jewelry/": ["src/app/jewelry/page.tsx", "src/data/jewelry.ts"],
+    "/custom/": ["src/app/custom/page.tsx"],
+    "/about/": ["src/app/about/page.tsx", "src/data/site.ts"],
+    "/faq/": ["src/app/faq/page.tsx", "src/data/faqs.ts"],
+    "/shipping-returns/": ["src/app/shipping-returns/page.tsx"],
+    "/blog/": ["src/app/blog/page.tsx", "src/data/blog/posts.ts"],
+    "/contact/": ["src/app/contact/page.tsx"],
+    "/privacy/": ["src/app/privacy/page.tsx"],
+  };
+
   const staticPages: MetadataRoute.Sitemap = [
     {
-      ...staticPage("/"),
+      url: `${siteUrl}/`,
+      lastModified: getLatestMtime(pageSources["/"]),
       changeFrequency: "weekly",
       priority: 1.0,
     },
     {
-      ...staticPage("/catalogue/"),
+      url: `${siteUrl}/catalogue/`,
+      lastModified: getLatestMtime(pageSources["/catalogue/"]),
       changeFrequency: "weekly",
       priority: 0.9,
     },
     {
-      ...staticPage("/custom/"),
+      url: `${siteUrl}/oversized-food-wall-art/`,
+      lastModified: getLatestMtime(pageSources["/oversized-food-wall-art/"]),
+      changeFrequency: "weekly",
+      priority: 0.9,
+    },
+    {
+      url: `${siteUrl}/kitchen-wall-art/`,
+      lastModified: getLatestMtime(pageSources["/kitchen-wall-art/"]),
+      changeFrequency: "weekly",
+      priority: 0.9,
+    },
+    {
+      url: `${siteUrl}/colorful-wall-art/`,
+      lastModified: getLatestMtime(pageSources["/colorful-wall-art/"]),
+      changeFrequency: "weekly",
+      priority: 0.9,
+    },
+    {
+      url: `${siteUrl}/dopamine-decor-wall-art/`,
+      lastModified: getLatestMtime(pageSources["/dopamine-decor-wall-art/"]),
+      changeFrequency: "weekly",
+      priority: 0.9,
+    },
+    {
+      url: `${siteUrl}/pink-wall-art/`,
+      lastModified: getLatestMtime(pageSources["/pink-wall-art/"]),
+      changeFrequency: "weekly",
+      priority: 0.9,
+    },
+    {
+      url: `${siteUrl}/faux-food-wall-art/`,
+      lastModified: getLatestMtime(pageSources["/faux-food-wall-art/"]),
+      changeFrequency: "weekly",
+      priority: 0.9,
+    },
+    {
+      url: `${siteUrl}/jewelry/`,
+      lastModified: getLatestMtime(pageSources["/jewelry/"]),
+      changeFrequency: "weekly",
+      priority: 0.8,
+    },
+    {
+      url: `${siteUrl}/custom/`,
+      lastModified: getLatestMtime(pageSources["/custom/"]),
+      changeFrequency: "monthly",
+      priority: 0.8,
+    },
+    {
+      url: `${siteUrl}/about/`,
+      lastModified: getLatestMtime(pageSources["/about/"]),
       changeFrequency: "monthly",
       priority: 0.7,
     },
     {
-      ...staticPage("/about/"),
+      url: `${siteUrl}/faq/`,
+      lastModified: getLatestMtime(pageSources["/faq/"]),
       changeFrequency: "monthly",
       priority: 0.6,
     },
     {
-      ...staticPage("/jewelry/"),
+      url: `${siteUrl}/shipping-returns/`,
+      lastModified: getLatestMtime(pageSources["/shipping-returns/"]),
+      changeFrequency: "monthly",
+      priority: 0.6,
+    },
+    {
+      url: `${siteUrl}/blog/`,
+      lastModified: getLatestMtime(pageSources["/blog/"]),
+      changeFrequency: "weekly",
+      priority: 0.8,
+    },
+    {
+      url: `${siteUrl}/contact/`,
+      lastModified: getLatestMtime(pageSources["/contact/"]),
       changeFrequency: "monthly",
       priority: 0.5,
     },
     {
-      ...staticPage("/blog/"),
-      changeFrequency: "weekly",
-      priority: 0.7,
-    },
-    {
-      ...staticPage("/oversized-food-wall-art/"),
-      changeFrequency: "weekly",
-      priority: 0.85,
-    },
-    {
-      ...staticPage("/kitchen-wall-art/"),
-      changeFrequency: "weekly",
-      priority: 0.85,
-    },
-    {
-      ...staticPage("/colorful-wall-art/"),
-      changeFrequency: "weekly",
-      priority: 0.85,
-    },
-    {
-      ...staticPage("/contact/"),
-      changeFrequency: "monthly",
-      priority: 0.6,
+      url: `${siteUrl}/privacy/`,
+      lastModified: getLatestMtime(pageSources["/privacy/"]),
+      changeFrequency: "yearly",
+      priority: 0.3,
     },
   ];
 
-  const productPages: MetadataRoute.Sitemap = products.map((product) => ({
-    url: getAbsoluteUrl(`/product/${product.slug}/`),
-    ...lastModifiedFor([...productPageSources, `public/products/${product.slug}`]),
-    changeFrequency: "monthly" as const,
+  const productPagesLastMod = getLatestMtime([
+    "src/data/products.ts",
+    "src/app/product/[slug]/page.tsx",
+  ]);
+  const productPages: MetadataRoute.Sitemap = products.map((p) => ({
+    url: `${siteUrl}/product/${p.slug}/`,
+    lastModified: productPagesLastMod,
+    changeFrequency: "weekly" as const,
     priority: 0.8,
   }));
 
-  const blogPostPages: MetadataRoute.Sitemap = blogPosts.map((post) => ({
-    url: getAbsoluteUrl(`/blog/${post.slug}/`),
-    lastModified: post.updatedAt ? new Date(post.updatedAt) : new Date(post.publishedAt),
-    changeFrequency: post.category === "how-to" ? ("monthly" as const) : ("yearly" as const),
-    priority: post.category === "how-to" ? 0.8 : 0.7,
+  const blogPages: MetadataRoute.Sitemap = blogPosts.map((post) => ({
+    url: `${siteUrl}/blog/${post.slug}/`,
+    lastModified: new Date(post.updatedAt || post.publishedAt),
+    changeFrequency: "monthly" as const,
+    priority: 0.7,
   }));
 
-  return [...staticPages, ...productPages, ...blogPostPages];
+  return [...staticPages, ...productPages, ...blogPages];
 }

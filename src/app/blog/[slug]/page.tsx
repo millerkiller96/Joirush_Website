@@ -27,10 +27,22 @@ import { ThreeDWallArtContent, ThreeDWallArtSchema } from "./content/3d-wall-art
 import { ChristmasCookieWallArtContent, ChristmasCookieWallArtSchema } from "./content/christmas-cookie-wall-art-vs-prints";
 import { CookieSizeGuideContent, CookieSizeGuideSchema } from "./content/jumbo-cookie-wall-art-size-guide";
 import { GiantCookiePropContent, GiantCookiePropSchema } from "./content/giant-cookie-prop-vs-cookie-wall-art";
+import { GiftsForBakersContent, GiftsForBakersSchema } from "./content/gifts-for-bakers-who-have-everything-cookie-wall-art";
+import { FunkyQuirkyWallArtContent, FunkyQuirkyWallArtSchema } from "./content/funky-quirky-wall-art-ideas";
+import { PinkKitchenCoquetteRoomDecorContent, PinkKitchenCoquetteRoomDecorSchema } from "./content/pink-kitchen-coquette-room-decor-cookie-wall-art";
+import { FakeFoodFakeCookiesContent, FakeFoodFakeCookiesSchema } from "./content/fake-food-and-fake-cookies-for-wall-decor";
+import { IceCreamCandyWallArtContent, IceCreamCandyWallArtSchema } from "./content/ice-cream-and-candy-wall-art-decor-ideas";
+import { MaximalistKitchenDecorContent, MaximalistKitchenDecorSchema } from "./content/maximalist-kitchen-decor-ideas";
 
 type Props = { params: Promise<{ slug: string }> };
 
 const contentMap: Record<string, { Content: () => React.ReactNode; Schema: () => React.ReactNode }> = {
+  "gifts-for-bakers-who-have-everything-cookie-wall-art": { Content: GiftsForBakersContent, Schema: GiftsForBakersSchema },
+  "funky-quirky-wall-art-ideas": { Content: FunkyQuirkyWallArtContent, Schema: FunkyQuirkyWallArtSchema },
+  "pink-kitchen-coquette-room-decor-cookie-wall-art": { Content: PinkKitchenCoquetteRoomDecorContent, Schema: PinkKitchenCoquetteRoomDecorSchema },
+  "fake-food-and-fake-cookies-for-wall-decor": { Content: FakeFoodFakeCookiesContent, Schema: FakeFoodFakeCookiesSchema },
+  "ice-cream-and-candy-wall-art-decor-ideas": { Content: IceCreamCandyWallArtContent, Schema: IceCreamCandyWallArtSchema },
+  "maximalist-kitchen-decor-ideas": { Content: MaximalistKitchenDecorContent, Schema: MaximalistKitchenDecorSchema },
   "dopamine-decor-ideas": { Content: DopamineDecorIdeasContent, Schema: DopamineDecorIdeasSchema },
   "maximalist-decor-ideas": { Content: MaximalistDecorContent, Schema: MaximalistDecorSchema },
   "whimsical-kitsch-decor-ideas": { Content: WhimsicalKitschDecorContent, Schema: WhimsicalKitschDecorSchema },

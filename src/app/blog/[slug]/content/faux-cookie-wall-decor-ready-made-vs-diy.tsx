@@ -58,8 +58,12 @@ const data: BlogPostStructuredData = {
         "label": "Request a Custom Cookie"
       },
       {
-        "href": "/catalogue/",
-        "label": "Shop All Cookies"
+        "href": "/faux-food-wall-art/",
+        "label": "Shop Faux Food Wall Art"
+      },
+      {
+        "href": "/blog/fake-food-and-fake-cookies-for-wall-decor/",
+        "label": "Fake Food & Fake Cookies Guide"
       }
     ]
   },

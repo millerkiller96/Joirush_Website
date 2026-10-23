@@ -1,348 +1,323 @@
 import type { Metadata } from "next";
-import { Image } from "@/components/Image";
+import Image from "next/image";
 import Link from "next/link";
-import { EtsyReviewsHub } from "@/components/EtsyReviewsHub";
+import { products } from "@/data/products";
 import { ProductCard } from "@/components/ProductCard";
-import { SectionHeading } from "@/components/SectionHeading";
-import { getDisplayName, getProduct, type Product } from "@/data/products";
-import { site } from "@/data/site";
-import { getAbsoluteUrl, getImageUrl, siteUrl } from "@/lib/seo";
-
-const pageUrl = getAbsoluteUrl("/colorful-wall-art/");
-const title = "Colorful Wall Art: Bright Handmade Cookie Sculptures";
-const description =
-  "Colorful wall art you can almost taste: candy bright, hot pink, and pastel jumbo cookie sculptures, plus easy ways to build colorful home decor around one piece.";
+import { SectionHeading as Heading } from "@/components/SectionHeading";
+import { EtsyReviewsHub } from "@/components/EtsyReviewsHub";
 
 export const metadata: Metadata = {
-  title,
-  description,
+  title: {
+    absolute: "Colorful Wall Art | Dopamine Decor, Funky, Quirky & Textured 3D Art | JOIRUSH",
+  },
+  description:
+    "Shop colorful 3D wall art and textured wall art by JOIRUSH. Handmade oversized cookie wall sculptures for dopamine decor, pink wall art, funky wall art, quirky wall art, and candy decor rooms. Free U.S. shipping.",
   keywords: [
     "colorful wall art",
-    "colorful home decor",
-    "bright wall art",
-    "candy colored wall decor",
-    "dopamine art",
-    "jumbo cookie wall art",
+    "dopamine decor",
+    "pink wall art",
+    "funky wall art",
+    "quirky wall art",
+    "textured wall art",
+    "candy decor",
+    "dopamine decor wall art",
+    "maximalist wall art",
+    "colorful 3d wall art",
+    "whimsical wall art",
+    "eclectic wall art",
+    "kitsch wall decor",
+    "rainbow cookie wall art",
+    "bright pop art sculpture",
   ],
-  alternates: { canonical: pageUrl },
+  alternates: {
+    canonical: "/colorful-wall-art/",
+  },
   openGraph: {
-    title: `${title} | ${site.name}`,
-    description,
+    title: "Colorful 3D Wall Art | Dopamine Decor, Pink, Funky & Textured Art | JOIRUSH",
+    description:
+      "Handmade 14 to 16 inch colorful cookie wall sculptures for dopamine decor, pink wall art, funky wall art, and candy decor spaces. Free U.S. shipping.",
+    url: "https://joirush.com/colorful-wall-art/",
     type: "website",
-    url: pageUrl,
     images: [
       {
-        url: getImageUrl("/images/products/rainbow.jpg"),
+        url: "/images/products/rainbow.jpg",
         width: 1200,
-        height: 630,
-        alt: "Colorful wall art: rainbow candy jumbo cookie sculpture by JOIRUSH",
+        height: 900,
+        alt: "Rainbow candy cookie colorful 3D textured wall art by JOIRUSH",
       },
     ],
   },
   twitter: {
     card: "summary_large_image",
-    title: `${title} | ${site.name}`,
-    description,
-    images: [getImageUrl("/images/products/rainbow.jpg")],
+    title: "Colorful 3D Wall Art | Dopamine Decor & Funky Wall Art | JOIRUSH",
+    description:
+      "Handmade 14 to 16 inch colorful cookie wall sculptures for dopamine decor and maximalist spaces. Free U.S. shipping.",
+    images: ["/images/products/rainbow.jpg"],
   },
 };
 
-const colorfulSlugs = [
+const colorfulOrderSlugs = [
   "rainbow-candy-cookie",
   "hot-pink-mm-cookie",
   "jumbo-pastel-mm-cookie",
   "jumbo-mm-cookie",
-  "giant-peanut-butter-cookie",
+  "cookie-ice-cream-sandwich",
   "jumbo-christmas-cookie",
-];
-
-const colorfulProducts = colorfulSlugs
-  .map((slug) => getProduct(slug))
-  .filter((p): p is Product => Boolean(p));
-
-const palettes = [
-  {
-    name: "Candy brights",
-    copy: "Every color at once, on warm golden dough. Looks best on white, cream, or a soft neutral wall.",
-    href: "/product/rainbow-candy-cookie/",
-    pieces: "Rainbow candy cookie, classic M&M cookie",
-  },
-  {
-    name: "Hot pink",
-    copy: "One loud color with chocolate and candy accents. Perfect for bold rooms and maximalist walls.",
-    href: "/product/hot-pink-mm-cookie/",
-    pieces: "Hot pink M&M cookie",
-  },
-  {
-    name: "Soft pastels",
-    copy: "Lavender, baby blue, blush, and mint. Colorful but gentle, great for nurseries and sunny kitchens.",
-    href: "/product/jumbo-pastel-mm-cookie/",
-    pieces: "Pastel M&M cookie",
-  },
-  {
-    name: "Holiday color",
-    copy: "Festive candy colors for the season, ready to swap in when the decorations come out.",
-    href: "/product/jumbo-christmas-cookie/",
-    pieces: "Christmas cookie",
-  },
+  "jumbo-white-chocolate-chip-cookie",
+  "jumbo-chocolate-chip-cookie",
+  "giant-peanut-butter-cookie",
+  "giant-double-chocolate-cookie",
+  "mini-jumbo-chocolate-chip-cookie",
 ];
 
 const faqs = [
   {
-    question: "How do I decorate around colorful wall art?",
+    question: "What is dopamine decor wall art?",
     answer:
-      "Pick two or three colors from the art and repeat each one a few times around the room, in pillows, a vase, a rug, or dishes. A calm wall color behind the piece lets the colors stand out.",
+      "Dopamine decor is all about surrounding yourself with bright colors, tactile textures, and joyful objects that spark an instant smile. Our 3D cookie wall sculptures combine candy colors like hot pink, rainbow, and pastel with realistic baked crumb texture to create happy, textured wall art.",
   },
   {
-    question: "What wall color works best behind bright art?",
+    question: "How do I add colorful wall art to a neutral apartment without painting?",
     answer:
-      "White, cream, and soft warm neutrals make candy colors pop. A deeper color like navy or forest green can work too, as long as the art has enough contrast to stand out.",
+      "A single 14 to 16 inch colorful 3D cookie sculpture acts as an instant focal point on white, cream, or beige rental walls. Hang one Rainbow Candy Cookie or Hot Pink M&M Cookie on a single picture hook and echo 1 or 2 of its candy colors with a throw pillow or mug.",
   },
   {
-    question: "Can I mix colorful wall art with neutral decor?",
+    question: "Which JOIRUSH sculptures are best for pink wall art, funky wall art, or candy decor?",
     answer:
-      "Yes, and it is one of the easiest ways to start. One colorful piece in a mostly neutral room becomes the focal point and adds personality without a full makeover.",
-  },
-  {
-    question: "What are these colorful cookies made of?",
-    answer:
-      "Each piece is sculpted by hand from spray foam and painted with acrylics by cookie artist Erynn. They are decorative only, not edible, and each has a built in hanger.",
+      "Collectors building bold gallery walls love pairing the Hot Pink M&M Cookie, Rainbow Candy Cookie, Pastel M&M Cookie, and Cookie Ice Cream Sandwich. Mix and match 2 or more cookies in your cart to unlock automatic bundle savings from 5% up to 25% off.",
   },
 ];
 
-function ColorfulWallArtJsonLd() {
-  const collection = {
-    "@context": "https://schema.org",
-    "@type": "CollectionPage",
-    name: title,
-    description,
-    url: pageUrl,
-    mainEntity: {
-      "@type": "ItemList",
-      numberOfItems: colorfulProducts.length,
-      itemListElement: colorfulProducts.map((product, index) => ({
-        "@type": "ListItem",
-        position: index + 1,
-        url: getAbsoluteUrl(`/product/${product.slug}/`),
-        name: getDisplayName(product),
-      })),
-    },
-  };
+export default function ColorfulWallArtPage() {
+  const orderedProducts = colorfulOrderSlugs
+    .map((slug) => products.find((p) => p.slug === slug))
+    .filter((p): p is NonNullable<typeof p> => Boolean(p));
 
-  const breadcrumb = {
+  const jsonLd = {
     "@context": "https://schema.org",
-    "@type": "BreadcrumbList",
-    itemListElement: [
-      { "@type": "ListItem", position: 1, name: "Home", item: siteUrl },
-      { "@type": "ListItem", position: 2, name: "Colorful Wall Art", item: pageUrl },
+    "@graph": [
+      {
+        "@type": "CollectionPage",
+        "@id": "https://joirush.com/colorful-wall-art/",
+        name: "Colorful Wall Art | Dopamine Decor, Pink, Funky & Textured 3D Cookie Sculptures",
+        description:
+          "Handmade colorful 3D cookie wall sculptures and textured wall art for dopamine decor, pink wall art, funky wall art, and candy decor spaces, crafted in Queens, NY by JOIRUSH.",
+        url: "https://joirush.com/colorful-wall-art/",
+        isPartOf: {
+          "@type": "WebSite",
+          name: "JOIRUSH",
+          url: "https://joirush.com",
+        },
+        publisher: {
+          "@type": "Organization",
+          name: "JOIRUSH",
+          url: "https://joirush.com",
+          logo: {
+            "@type": "ImageObject",
+            url: "https://joirush.com/images/brand/logo.png",
+          },
+        },
+      },
+      {
+        "@type": "BreadcrumbList",
+        itemListElement: [
+          {
+            "@type": "ListItem",
+            position: 1,
+            name: "Home",
+            item: "https://joirush.com/",
+          },
+          {
+            "@type": "ListItem",
+            position: 2,
+            name: "Colorful Wall Art",
+            item: "https://joirush.com/colorful-wall-art/",
+          },
+        ],
+      },
+      {
+        "@type": "FAQPage",
+        mainEntity: faqs.map((faq) => ({
+          "@type": "Question",
+          name: faq.question,
+          acceptedAnswer: {
+            "@type": "Answer",
+            text: faq.answer,
+          },
+        })),
+      },
     ],
   };
 
-  const faq = {
-    "@context": "https://schema.org",
-    "@type": "FAQPage",
-    mainEntity: faqs.map((item) => ({
-      "@type": "Question",
-      name: item.question,
-      acceptedAnswer: { "@type": "Answer", text: item.answer },
-    })),
-  };
-
   return (
-    <>
-      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(collection) }} />
-      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumb) }} />
-      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(faq) }} />
-    </>
-  );
-}
+    <div className="bg-cream py-12 sm:py-16">
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
+      />
 
-export default function ColorfulWallArtPage() {
-  return (
-    <>
-      <ColorfulWallArtJsonLd />
-      <div>
-        <section className="mx-auto grid max-w-7xl items-center gap-10 px-5 py-16 md:grid-cols-2 md:px-8 md:py-20">
-          <div>
-            <nav aria-label="Breadcrumb" className="text-sm text-chocolate-soft">
-              <ol className="flex flex-wrap items-center gap-2">
-                <li>
-                  <Link href="/" className="hover:text-pink">
-                    Home
-                  </Link>
-                </li>
-                <li>/</li>
-                <li className="text-chocolate">Colorful Wall Art</li>
-              </ol>
-            </nav>
-            <h1 className="mt-4 font-display text-5xl leading-tight text-chocolate md:text-6xl">
-              Colorful Wall Art You Can Almost Taste
-            </h1>
-            <p className="mt-5 text-lg text-chocolate-mid">
-              Candy pops of red, yellow, and blue. Hot pink dough. Soft pastel chips. This is{" "}
-              <strong>colorful wall art</strong> with real texture: jumbo cookies sculpted by hand,
-              so the color catches the light from every angle.
-            </p>
-            <p className="mt-4 text-chocolate-mid">
-              One bright piece is also the easiest way to start with colorful home decor. Hang it,
-              then borrow its colors for the rest of the room.
-            </p>
-            <ul className="mt-5 flex flex-wrap gap-x-4 gap-y-1 text-sm text-chocolate-mid">
-              <li>✓ Handmade in {site.shipsFrom}</li>
-              <li>✓ Ships in {site.shippingTime}</li>
-              <li>✓ Free U.S. shipping</li>
-              <li>✓ Bulk savings: Buy 1 get 1 10% off · 3rd cookie 15% off · 3 to 5 cookies 20% off · 5 to 10 cookies 25% off · 10 to 20 cookies 30% off each</li>
-            </ul>
-            <div className="mt-8 flex flex-wrap gap-3">
-              <Link
-                href="#colorful-collection"
-                data-buy-cta="shop"
-                className="rounded-full bg-emerald-600 px-6 py-3 text-sm font-medium text-white hover:bg-emerald-700"
-              >
-                Shop Colorful Wall Art
+      <div className="mx-auto max-w-6xl px-4 sm:px-6">
+        <nav aria-label="Breadcrumb" className="mb-6 text-xs text-cocoa/60">
+          <ol className="flex items-center gap-2">
+            <li>
+              <Link href="/" className="hover:text-caramel transition">
+                Home
               </Link>
-              <Link
-                href="/custom/"
-                className="rounded-full border border-chocolate/15 px-6 py-3 text-sm font-medium"
-              >
-                Request Custom Colors
-              </Link>
+            </li>
+            <li>/</li>
+            <li className="font-semibold text-espresso">Colorful Wall Art</li>
+          </ol>
+        </nav>
+
+        <header className="mb-12 rounded-3xl border border-caramel/20 bg-warm-white p-8 sm:p-12 shadow-soft">
+          <div className="grid gap-8 lg:grid-cols-12 lg:items-center">
+            <div className="lg:col-span-7">
+              <p className="text-xs font-bold uppercase tracking-[0.2em] text-caramel">
+                Dopamine Decor • Funky &amp; Quirky Wall Art • Textured 3D Art
+              </p>
+              <h1 className="mt-2 font-display text-3xl sm:text-5xl font-semibold tracking-tight text-espresso">
+                Colorful 3D Wall Art for Dopamine Decor &amp; Funky Rooms
+              </h1>
+              <p className="mt-4 text-base sm:text-lg leading-relaxed text-cocoa/85">
+                Ready to wake up a quiet room? JOIRUSH <strong>colorful wall art</strong> brings bold candy colors, playful pop art nostalgia, and real 3D sculptural depth to your walls. Each 14 to 16 inch cookie is sculpted and painted by hand in Queens, NY by artist Erynn.
+              </p>
+              <p className="mt-3 text-sm sm:text-base leading-relaxed text-cocoa/80">
+                Whether you are curating a joyful <strong>dopamine decor</strong> apartment, searching for dreamy <strong>pink wall art</strong>, mixing <strong>funky wall art</strong> and <strong>quirky wall art</strong> into a gallery wall, or adding sweet <strong>candy decor</strong> and <strong>textured wall art</strong> to a bedroom or studio, our lightweight sculptures hang in seconds from a single standard hook.
+              </p>
+              <div className="mt-6 flex flex-wrap gap-3">
+                <a
+                  href="#colorful-collection"
+                  className="inline-flex items-center justify-center rounded-full bg-espresso px-6 py-3 text-sm font-semibold text-cream shadow-soft transition hover:bg-caramel"
+                >
+                  Shop Colorful Sculptures
+                </a>
+                <Link
+                  href="/dopamine-decor-wall-art/"
+                  className="inline-flex items-center justify-center rounded-full border border-espresso/20 bg-cream px-6 py-3 text-sm font-semibold text-espresso transition hover:border-caramel hover:text-caramel"
+                >
+                  Explore Dopamine Decor
+                </Link>
+              </div>
+            </div>
+
+            <div className="lg:col-span-5">
+              <div className="relative aspect-[4/3] overflow-hidden rounded-2xl border border-caramel/15 bg-sand shadow-soft">
+                <Image
+                  src="/images/products/rainbow.jpg"
+                  alt="Rainbow candy cookie colorful 3D textured wall art by JOIRUSH"
+                  fill
+                  priority
+                  className="object-cover"
+                  sizes="(max-width: 1024px) 100vw, 40vw"
+                />
+              </div>
             </div>
           </div>
-          <Image
-            src="/images/products/rainbow.jpg"
-            alt="Colorful wall art: rainbow candy jumbo cookie sculpture by JOIRUSH"
-            width={1000}
-            height={1333}
-            className="rounded-[2.2rem] object-cover shadow-card"
-            priority
-          />
-        </section>
+        </header>
 
-        <section
-          id="colorful-collection"
-          data-buy-target=""
-          className="mx-auto max-w-7xl scroll-mt-24 px-5 py-12 outline-none md:px-8"
-        >
-          <SectionHeading
-            eyebrow="The colorful collection"
-            title="Bright Cookies for Bold Walls"
-            copy="Every piece here is about color first. Pick the palette that fits your room, or the one that makes you smile."
+        <section id="colorful-collection" className="scroll-mt-20">
+          <Heading
+            eyebrow="Bright & Bold"
+            title="Shop Colorful 3D Cookie Wall Sculptures"
+            copy="From rainbow candy and hot pink to dreamy pastels and classic chocolate chip. Free U.S. shipping on every order."
           />
-          <div className="mt-10 grid gap-8 sm:grid-cols-2 lg:grid-cols-3">
-            {colorfulProducts.map((product) => (
+
+          <div className="mt-10 grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
+            {orderedProducts.map((product) => (
               <ProductCard key={product.slug} product={product} />
             ))}
           </div>
         </section>
 
-        <section className="bg-cream-deep">
-          <div className="mx-auto max-w-7xl px-5 py-16 md:px-8">
-            <SectionHeading
-              eyebrow="Choose a palette"
-              title="Which Colors Suit Your Room?"
-              copy="Start with the feeling you want. Bright and energetic, bold and confident, or soft and sweet."
-            />
-            <div className="mt-10 grid gap-5 md:grid-cols-2 lg:grid-cols-4">
-              {palettes.map((palette) => (
-                <Link
-                  key={palette.name}
-                  href={palette.href}
-                  className="group rounded-[1.5rem] bg-white p-5 transition hover:shadow-lift"
-                >
-                  <h3 className="font-display text-xl text-chocolate group-hover:text-pink">{palette.name}</h3>
-                  <p className="mt-2 text-sm text-chocolate-mid">{palette.copy}</p>
-                  <p className="mt-3 text-sm font-medium text-pink">{palette.pieces}</p>
-                </Link>
-              ))}
-            </div>
+        <section className="mt-16 grid gap-8 rounded-3xl border border-caramel/20 bg-warm-white p-8 sm:p-10 lg:grid-cols-3">
+          <div>
+            <h2 className="font-display text-xl sm:text-2xl font-semibold text-espresso">
+              Dopamine Decor &amp; Candy Decor Statements
+            </h2>
+            <p className="mt-3 text-sm leading-relaxed text-cocoa/85">
+              Brighten white rental walls without picking up a paintbrush. The <Link href="/product/rainbow-candy-cookie/" className="font-medium text-caramel underline">Rainbow Candy Cookie</Link> and <Link href="/product/jumbo-mm-cookie/" className="font-medium text-caramel underline">Jumbo M&amp;M Cookie</Link> pack five vibrant candy shades into one joyful piece of <strong>candy decor</strong> and <strong>dopamine decor</strong>.
+            </p>
+          </div>
+
+          <div>
+            <h2 className="font-display text-xl sm:text-2xl font-semibold text-espresso">
+              Pink Wall Art &amp; Soft Pastel Dreams
+            </h2>
+            <p className="mt-3 text-sm leading-relaxed text-cocoa/85">
+              Love coquette, Danish pastel, or Y2K aesthetics? Our <Link href="/product/hot-pink-mm-cookie/" className="font-medium text-caramel underline">Hot Pink M&amp;M Cookie</Link>, <Link href="/product/jumbo-pastel-mm-cookie/" className="font-medium text-caramel underline">Jumbo Pastel M&amp;M Cookie</Link>, and <Link href="/product/cookie-ice-cream-sandwich/" className="font-medium text-caramel underline">Cookie Ice Cream Sandwich</Link> bring sweet <strong>pink wall art</strong> energy to bedrooms, dorms, and creative studios.
+            </p>
+          </div>
+
+          <div>
+            <h2 className="font-display text-xl sm:text-2xl font-semibold text-espresso">
+              Funky, Quirky &amp; Textured Gallery Walls
+            </h2>
+            <p className="mt-3 text-sm leading-relaxed text-cocoa/85">
+              Flat posters all sit at the same depth. Adding a round 3D cookie sculpture gives your room real <strong>textured wall art</strong> and <strong>funky wall art</strong> personality. Bundle 2 to 6+ cookies for automatic savings up to 25% off.
+            </p>
           </div>
         </section>
 
-        <section className="mx-auto max-w-7xl px-5 py-16 md:px-8">
-          <SectionHeading
-            eyebrow="Colorful home decor"
-            title="Build a Colorful Room Around One Piece"
-            copy="You do not need to repaint the house. A single bright piece of art can set the palette for everything else."
-          />
-          <div className="mt-10 grid gap-5 md:grid-cols-3">
-            {[
-              {
-                title: "Borrow three colors",
-                copy: "Pick three colors from the art and repeat each one at least three times: a cushion, a mug, a vase, a book spine.",
-              },
-              {
-                title: "Give it a calm backdrop",
-                copy: "White, cream, or a soft warm neutral behind the art lets the candy colors do the talking.",
-              },
-              {
-                title: "Mix in texture",
-                copy: "Glossy ceramics, a woven basket, or a velvet pillow keep a colorful room feeling rich, not flat.",
-              },
-            ].map((item) => (
-              <div key={item.title} className="rounded-[1.8rem] bg-cream p-6">
-                <h3 className="font-display text-2xl">{item.title}</h3>
-                <p className="mt-3 text-chocolate-mid">{item.copy}</p>
+        <section className="mt-16">
+          <h2 className="font-display text-2xl sm:text-3xl font-semibold text-espresso">
+            Colorful Wall Art &amp; Dopamine Decor FAQs
+          </h2>
+          <div className="mt-6 grid gap-4 sm:grid-cols-3">
+            {faqs.map((faq) => (
+              <div
+                key={faq.question}
+                className="rounded-2xl border border-caramel/15 bg-warm-white p-6 shadow-soft"
+              >
+                <h3 className="font-display text-lg font-semibold text-espresso">
+                  {faq.question}
+                </h3>
+                <p className="mt-2 text-sm leading-relaxed text-cocoa/80">
+                  {faq.answer}
+                </p>
               </div>
             ))}
           </div>
-          <p className="mt-8 max-w-3xl text-chocolate-mid">
-            Want more ideas? Read our{" "}
-            <Link href="/blog/dopamine-decor-ideas/" className="text-pink hover:underline">
-              dopamine decor ideas
-            </Link>{" "}
-            for a room by room guide, learn{" "}
-            <Link href="/blog/add-color-to-neutral-home-without-painting/" className="text-pink hover:underline">
-              how to add color to a neutral home without painting
-            </Link>
-            , or see how bright pieces fit into{" "}
-            <Link href="/blog/maximalist-decor-ideas/" className="text-pink hover:underline">
-              maximalist decor
-            </Link>
-            . Decorating the kitchen? Browse{" "}
-            <Link href="/kitchen-wall-art/" className="text-pink hover:underline">
-              kitchen wall art
-            </Link>{" "}
-            by style.
-          </p>
         </section>
 
-        <section className="bg-white">
-          <div className="mx-auto max-w-7xl px-5 py-16 md:px-8">
-            <SectionHeading eyebrow="Common questions" title="Colorful Wall Art FAQ" />
-            <dl className="mt-10 grid gap-4 md:grid-cols-2">
-              {faqs.map((faq) => (
-                <div key={faq.question} className="rounded-[1.5rem] bg-cream p-5">
-                  <dt className="font-display text-lg text-chocolate">{faq.question}</dt>
-                  <dd className="mt-2 text-sm leading-relaxed text-chocolate-mid">{faq.answer}</dd>
-                </div>
-              ))}
-            </dl>
-          </div>
-        </section>
-
-        <EtsyReviewsHub />
-
-        <section className="mx-auto max-w-7xl px-5 pb-20 md:px-8">
-          <div className="overflow-hidden rounded-[2.4rem] bg-emerald-600 px-8 py-14 text-white md:px-14">
-            <p className="text-sm uppercase tracking-[0.22em] text-white/70">Custom colors</p>
-            <h2 className="mt-3 max-w-2xl font-display text-4xl md:text-6xl">
-              Have a color in mind?
-            </h2>
-            <p className="mt-4 max-w-xl text-white/85">
-              Teal dough, purple chips, your favorite team colors. Tell {site.artist} the palette
-              and she will sculpt a one of one cookie for your wall. Ships in 14 days with free U.S.
-              shipping.
-            </p>
-            <Link
-              href="/custom/"
-              className="mt-8 inline-flex rounded-full bg-white px-6 py-3 text-sm font-medium text-chocolate"
-            >
-              Start a Custom Piece
+        <section className="mt-12 rounded-2xl border border-caramel/15 bg-warm-white p-6">
+          <h2 className="font-display text-lg font-semibold text-espresso">
+            Explore More Colorful Decor Guides &amp; Collections
+          </h2>
+          <div className="mt-3 flex flex-wrap gap-2 text-xs sm:text-sm">
+            <Link href="/dopamine-decor-wall-art/" className="rounded-full bg-sand px-4 py-1.5 font-medium text-espresso hover:bg-caramel hover:text-cream transition">
+              Dopamine Decor Wall Art
+            </Link>
+            <Link href="/pink-wall-art/" className="rounded-full bg-sand px-4 py-1.5 font-medium text-espresso hover:bg-caramel hover:text-cream transition">
+              Pink Wall Art &amp; Room Decor
+            </Link>
+            <Link href="/faux-food-wall-art/" className="rounded-full bg-sand px-4 py-1.5 font-medium text-espresso hover:bg-caramel hover:text-cream transition">
+              Faux Food &amp; Fake Cookie Art
+            </Link>
+            <Link href="/oversized-food-wall-art/" className="rounded-full bg-sand px-4 py-1.5 font-medium text-espresso hover:bg-caramel hover:text-cream transition">
+              Oversized Food Wall Art
+            </Link>
+            <Link href="/kitchen-wall-art/" className="rounded-full bg-sand px-4 py-1.5 font-medium text-espresso hover:bg-caramel hover:text-cream transition">
+              Kitchen Wall Art
+            </Link>
+            <Link href="/blog/funky-quirky-wall-art-ideas/" className="rounded-full bg-sand px-4 py-1.5 font-medium text-espresso hover:bg-caramel hover:text-cream transition">
+              Funky &amp; Quirky Wall Art Ideas
+            </Link>
+            <Link href="/blog/ice-cream-and-candy-wall-art-decor-ideas/" className="rounded-full bg-sand px-4 py-1.5 font-medium text-espresso hover:bg-caramel hover:text-cream transition">
+              Ice Cream &amp; Candy Wall Art Ideas
+            </Link>
+            <Link href="/blog/dopamine-decor-ideas/" className="rounded-full bg-sand px-4 py-1.5 font-medium text-espresso hover:bg-caramel hover:text-cream transition">
+              Dopamine Decor Ideas
+            </Link>
+            <Link href="/blog/maximalist-decor-ideas/" className="rounded-full bg-sand px-4 py-1.5 font-medium text-espresso hover:bg-caramel hover:text-cream transition">
+              Maximalist Decor Ideas
             </Link>
           </div>
         </section>
       </div>
-    </>
+
+      <div className="mt-16">
+        <EtsyReviewsHub />
+      </div>
+    </div>
   );
 }

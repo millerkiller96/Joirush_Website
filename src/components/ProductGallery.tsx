@@ -1,6 +1,7 @@
 "use client";
 
 import { useCallback, useEffect, useRef, useState, type KeyboardEvent } from "react";
+import { createPortal } from "react-dom";
 import { asset } from "@/lib/paths";
 import type { GalleryImage } from "@/data/product-galleries";
 
@@ -119,28 +120,39 @@ function Lightbox({
     };
   }, []);
 
-  return (
+  if (typeof document === "undefined") return null;
+
+  return createPortal(
     <div
       role="dialog"
       aria-modal="true"
       aria-label={`${name} photos`}
-      className="fixed inset-0 z-[100] flex flex-col bg-chocolate/95"
+      onClick={() => onClose(indexRef.current)}
+      className="fixed inset-0 z-[200] flex cursor-zoom-out flex-col bg-chocolate/95"
       data-gallery-lightbox
     >
       <div className="flex items-center justify-between px-4 py-3 text-cream md:px-8">
-        <p className="text-sm font-semibold tracking-wide" aria-live="polite">
+        <p
+          onClick={(e) => e.stopPropagation()}
+          className="cursor-default rounded-full bg-black/30 px-3.5 py-1 text-sm font-semibold tracking-wide"
+          aria-live="polite"
+        >
           {index + 1} / {total}
         </p>
         <button
           ref={closeRef}
           type="button"
-          onClick={() => onClose(indexRef.current)}
+          onClick={(e) => {
+            e.stopPropagation();
+            onClose(indexRef.current);
+          }}
           aria-label="Close photo viewer"
-          className="flex h-11 w-11 items-center justify-center rounded-full bg-cream/10 text-cream transition hover:bg-cream/20 focus-visible:outline focus-visible:outline-2 focus-visible:outline-pink"
+          className="flex h-12 items-center justify-center gap-2 rounded-full bg-cream px-5 text-sm font-semibold text-chocolate shadow-lg ring-2 ring-white/30 transition hover:scale-105 hover:bg-pink hover:text-white focus-visible:outline focus-visible:outline-2 focus-visible:outline-pink"
         >
-          <svg width="22" height="22" viewBox="0 0 24 24" fill="none" aria-hidden="true">
-            <path d="M6 6l12 12M18 6L6 18" stroke="currentColor" strokeWidth="2.4" strokeLinecap="round" />
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" aria-hidden="true">
+            <path d="M6 6l12 12M18 6L6 18" stroke="currentColor" strokeWidth="2.6" strokeLinecap="round" />
           </svg>
+          <span>Close</span>
         </button>
       </div>
 
@@ -151,16 +163,38 @@ function Lightbox({
           className="scrollbar-hide flex h-full snap-x snap-mandatory overflow-x-auto overscroll-x-contain"
         >
           {images.map((image, i) => (
-            <div key={image.src} className="flex h-full w-full flex-shrink-0 snap-center items-center justify-center p-2 md:p-6">
-              <img
-                src={asset(image.src)}
-                alt={`${name}, handmade spray foam cookie wall sculpture, photo ${i + 1} of ${total}`}
-                width={image.width}
-                height={image.height}
-                loading={Math.abs(i - startIndex) <= 1 ? "eager" : "lazy"}
-                decoding="async"
-                className="h-auto max-h-full w-auto max-w-full rounded-2xl object-contain"
-              />
+            <div
+              key={image.src}
+              onClick={() => onClose(indexRef.current)}
+              className="flex h-full w-full flex-shrink-0 cursor-zoom-out snap-center items-center justify-center p-4 md:p-10"
+            >
+              <div
+                onClick={(e) => e.stopPropagation()}
+                className="relative inline-flex max-h-full max-w-full cursor-default items-center justify-center"
+              >
+                <img
+                  src={asset(image.src)}
+                  alt={`${name}, handmade spray foam cookie wall sculpture, photo ${i + 1} of ${total}`}
+                  width={image.width}
+                  height={image.height}
+                  loading={Math.abs(i - startIndex) <= 1 ? "eager" : "lazy"}
+                  decoding="async"
+                  className="block h-auto max-h-[calc(100dvh-7rem)] w-auto max-w-full rounded-2xl object-contain shadow-2xl md:max-h-[calc(100dvh-9rem)]"
+                />
+                <button
+                  type="button"
+                  onClick={(e) => {
+                    e.stopPropagation();
+                    onClose(indexRef.current);
+                  }}
+                  aria-label="Close photo viewer"
+                  className="absolute right-3 top-3 z-10 flex h-11 w-11 items-center justify-center rounded-full bg-cream text-chocolate shadow-card ring-2 ring-chocolate/10 transition hover:scale-105 hover:bg-pink hover:text-white focus-visible:outline focus-visible:outline-2 focus-visible:outline-pink"
+                >
+                  <svg width="22" height="22" viewBox="0 0 24 24" fill="none" aria-hidden="true">
+                    <path d="M6 6l12 12M18 6L6 18" stroke="currentColor" strokeWidth="2.6" strokeLinecap="round" />
+                  </svg>
+                </button>
+              </div>
             </div>
           ))}
         </div>
@@ -168,7 +202,10 @@ function Lightbox({
           <>
             <button
               type="button"
-              onClick={() => scrollToIndex(index - 1)}
+              onClick={(e) => {
+                e.stopPropagation();
+                scrollToIndex(index - 1);
+              }}
               disabled={index === 0}
               aria-label="Previous photo"
               className="absolute left-3 top-1/2 hidden h-12 w-12 -translate-y-1/2 items-center justify-center rounded-full bg-cream/90 text-chocolate shadow-card transition hover:bg-cream disabled:opacity-30 md:flex"
@@ -177,7 +214,10 @@ function Lightbox({
             </button>
             <button
               type="button"
-              onClick={() => scrollToIndex(index + 1)}
+              onClick={(e) => {
+                e.stopPropagation();
+                scrollToIndex(index + 1);
+              }}
               disabled={index === total - 1}
               aria-label="Next photo"
               className="absolute right-3 top-1/2 hidden h-12 w-12 -translate-y-1/2 items-center justify-center rounded-full bg-cream/90 text-chocolate shadow-card transition hover:bg-cream disabled:opacity-30 md:flex"
@@ -187,7 +227,8 @@ function Lightbox({
           </>
         )}
       </div>
-    </div>
+    </div>,
+    document.body
   );
 }
 

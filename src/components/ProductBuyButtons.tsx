@@ -72,9 +72,30 @@ export function ProductBuyButtons({ product }: ProductBuyButtonsProps) {
     [quantities]
   );
 
+  // Dynamically resolve the customer's active primary cookie from their selection
+  const activePrimaryProduct = useMemo(() => {
+    if (selectedEntries.length === 1) {
+      return selectedEntries[0].product;
+    }
+    if (selectedEntries.length > 1) {
+      const currentEntry = selectedEntries.find((e) => e.product.slug === currentSlug);
+      const highestEntry = selectedEntries.reduce(
+        (best, cur) => (cur.quantity > best.quantity ? cur : best),
+        selectedEntries[0]
+      );
+      if (currentEntry && currentEntry.quantity >= highestEntry.quantity) {
+        return currentEntry.product;
+      }
+      return highestEntry.product;
+    }
+    return getProduct(currentSlug) ?? products[0];
+  }, [selectedEntries, currentSlug]);
+
+  const activePrimarySlug = activePrimaryProduct.slug;
+
   const bulkOrder = useMemo(
-    () => buildBulkCookieOrder(quantities, currentSlug),
-    [quantities, currentSlug]
+    () => buildBulkCookieOrder(quantities, activePrimarySlug),
+    [quantities, activePrimarySlug]
   );
 
   const activeBulkDiscount = getBulkDiscountPercent(totalCookies);
@@ -87,14 +108,14 @@ export function ProductBuyButtons({ product }: ProductBuyButtonsProps) {
     setQuantities((prev) => {
       const next = { ...prev };
       if (delta > 0) {
-        next[currentSlug] = Math.max(0, next[currentSlug] ?? 0) + delta;
+        next[activePrimarySlug] = Math.max(0, next[activePrimarySlug] ?? 0) + delta;
         return next;
       }
-      // Reduce from currentSlug first, then from other cookies if needed
+      // Reduce from activePrimarySlug first, then from other cookies if needed
       let toRemove = -delta;
-      const currentQty = next[currentSlug] ?? 0;
+      const currentQty = next[activePrimarySlug] ?? 0;
       const removeCurrent = Math.min(currentQty, toRemove);
-      next[currentSlug] = currentQty - removeCurrent;
+      next[activePrimarySlug] = currentQty - removeCurrent;
       toRemove -= removeCurrent;
 
       if (toRemove > 0) {
@@ -112,7 +133,7 @@ export function ProductBuyButtons({ product }: ProductBuyButtonsProps) {
       // Ensure at least 1 cookie remains
       const remaining = Object.values(next).reduce((s, v) => s + (v || 0), 0);
       if (remaining < 1) {
-        next[currentSlug] = 1;
+        next[activePrimarySlug] = 1;
       }
       return next;
     });
@@ -142,10 +163,14 @@ export function ProductBuyButtons({ product }: ProductBuyButtonsProps) {
     });
   }
 
+  function selectOnlyFlavor(slug: string) {
+    setQuantities({ [slug]: Math.max(1, totalCookies) });
+  }
+
   async function handlePrimaryBuyClick() {
     if (totalCookies <= 1) {
       setModalInitialStep("second_cookie");
-      setModalInitialSecondSlug(currentSlug);
+      setModalInitialSecondSlug(activePrimarySlug);
       setModalPrebuiltOrder(null);
       setIsModalOpen(true);
       return;
@@ -153,11 +178,11 @@ export function ProductBuyButtons({ product }: ProductBuyButtonsProps) {
 
     if (totalCookies === 2) {
       // Determine 1st and 2nd cookie slugs from the current selection and trigger the "Want a third?" 15% off prompt!
-      let secondSlug = currentSlug;
+      let secondSlug = activePrimarySlug;
       if (selectedEntries.length === 1) {
         secondSlug = selectedEntries[0].product.slug;
       } else if (selectedEntries.length >= 2) {
-        const other = selectedEntries.find((e) => e.product.slug !== currentSlug);
+        const other = selectedEntries.find((e) => e.product.slug !== activePrimarySlug);
         secondSlug = other ? other.product.slug : selectedEntries[1].product.slug;
       }
       setModalInitialStep("third_cookie");
@@ -182,44 +207,24 @@ export function ProductBuyButtons({ product }: ProductBuyButtonsProps) {
     setIsModalOpen(true);
   }
 
-  const currentHero = getProductGallery(currentSlug, product.image)[0];
+  const currentHero = getProductGallery(activePrimarySlug, activePrimaryProduct.image)[0];
   const currentThumb = asset(currentHero.thumb);
 
   const primaryProductForModal: UpsellModalProduct = useMemo(() => {
-    if (totalCookies === 2 && selectedEntries.length >= 1) {
-      const firstEntry =
-        selectedEntries.find((e) => e.product.slug === currentSlug) ?? selectedEntries[0];
-      const p = firstEntry.product;
-      return {
-        slug: p.slug,
-        name: p.name,
-        shortName: p.shortName,
-        image: p.image,
-        price: p.price,
-        etsyUrl: p.etsyUrl,
-        stripeUrl: p.stripeUrl,
-        stripeUpsellUrl: p.stripeUpsellUrl,
-        stripePairUrls: p.stripePairUrls,
-        upsellPairPrice: p.upsellPairPrice,
-      };
-    }
-    const resolved = getProduct(currentSlug);
-    if (resolved) {
-      return {
-        slug: resolved.slug,
-        name: resolved.name,
-        shortName: resolved.shortName,
-        image: resolved.image,
-        price: resolved.price,
-        etsyUrl: resolved.etsyUrl,
-        stripeUrl: resolved.stripeUrl,
-        stripeUpsellUrl: resolved.stripeUpsellUrl,
-        stripePairUrls: resolved.stripePairUrls,
-        upsellPairPrice: resolved.upsellPairPrice,
-      };
-    }
-    return product;
-  }, [totalCookies, selectedEntries, currentSlug, product]);
+    const p = activePrimaryProduct;
+    return {
+      slug: p.slug,
+      name: p.name,
+      shortName: p.shortName,
+      image: p.image,
+      price: p.price,
+      etsyUrl: p.etsyUrl,
+      stripeUrl: p.stripeUrl,
+      stripeUpsellUrl: p.stripeUpsellUrl,
+      stripePairUrls: p.stripePairUrls,
+      upsellPairPrice: p.upsellPairPrice,
+    };
+  }, [activePrimaryProduct]);
 
   return (
     <>
@@ -317,7 +322,7 @@ export function ProductBuyButtons({ product }: ProductBuyButtonsProps) {
               Quantity (1 to 20 cookies)
             </p>
             <p className="mt-0.5 text-sm font-semibold text-chocolate">
-              {totalCookies === 1 && "1 cookie · Standard price"}
+              {totalCookies === 1 && `1 cookie · ${activePrimaryProduct.shortName} (${formatPrice(activePrimaryProduct.price)})`}
               {totalCookies === 2 && "2 cookies · 2nd cookie 10% off"}
               {totalCookies >= 3 &&
                 `${totalCookies} cookies · ${activeBulkDiscount}% off every cookie`}
@@ -405,12 +410,7 @@ export function ProductBuyButtons({ product }: ProductBuyButtonsProps) {
 
             <button
               type="button"
-              onClick={() => {
-                if (!mixOpen && totalCookies === 1) {
-                  setTotalQuantity(2);
-                }
-                setMixOpen((prev) => !prev);
-              }}
+              onClick={() => setMixOpen((prev) => !prev)}
               data-mix-flavors-toggle=""
               aria-expanded={mixOpen}
               className="inline-flex items-center gap-1.5 rounded-full bg-pink/10 px-3 py-1.5 text-xs font-bold text-pink transition hover:bg-pink/20"
@@ -420,7 +420,7 @@ export function ProductBuyButtons({ product }: ProductBuyButtonsProps) {
                   ? "Done choosing flavors"
                   : totalCookies > 1
                     ? "🍪 Mix & match different cookie flavors"
-                    : "🍪 Want multiple cookies? Mix & match flavors"}
+                    : "🍪 Switch or mix cookie flavors"}
               </span>
               <svg
                 className={`h-4 w-4 transition-transform ${mixOpen ? "rotate-180" : ""}`}
@@ -441,9 +441,9 @@ export function ProductBuyButtons({ product }: ProductBuyButtonsProps) {
             >
               <div className="mb-2 flex items-center justify-between text-xs text-chocolate-soft">
                 <span className="font-semibold text-chocolate">
-                  Select quantities for any cookie flavor ({totalCookies} of {MAX_BULK_COOKIES} selected)
+                  Select quantities or click &ldquo;Only&rdquo; to switch cookie ({totalCookies} of {MAX_BULK_COOKIES} selected)
                 </span>
-                {selectedEntries.length > 1 && (
+                {(selectedEntries.length > 1 || activePrimarySlug !== currentSlug) && (
                   <button
                     type="button"
                     onClick={() => setQuantities({ [currentSlug]: totalCookies })}
@@ -501,6 +501,17 @@ export function ProductBuyButtons({ product }: ProductBuyButtonsProps) {
                       </div>
 
                       <div className="flex shrink-0 items-center gap-1.5">
+                        {(qty !== totalCookies || selectedEntries.length > 1) && (
+                          <button
+                            type="button"
+                            onClick={() => selectOnlyFlavor(item.slug)}
+                            data-flavor-only={item.slug}
+                            className="rounded-full bg-cream-deep px-2 py-1 text-[11px] font-semibold text-chocolate-mid transition hover:bg-chocolate hover:text-cream"
+                            title={`Switch selection to only ${item.shortName}`}
+                          >
+                            Only
+                          </button>
+                        )}
                         <button
                           type="button"
                           onClick={() => updateFlavorQuantity(item.slug, qty - 1)}
@@ -580,14 +591,14 @@ export function ProductBuyButtons({ product }: ProductBuyButtonsProps) {
           {isCheckingOutBulk
             ? "Preparing your Stripe checkout..."
             : totalCookies <= 1
-              ? `Buy Now · ${formatPrice(product.price)}`
+              ? `Buy Now · ${formatPrice(activePrimaryProduct.price)}`
               : totalCookies === 2
                 ? `Buy 2 Cookies (10% off 2nd) · ${formatPrice(bulkOrder.finalTotalUsd)}`
                 : `Buy ${totalCookies} Cookies (${activeBulkDiscount}% off) · ${formatPrice(bulkOrder.finalTotalUsd)}`}
         </button>
         <a
           data-buy-cta="etsy"
-          href={product.etsyUrl}
+          href={activePrimaryProduct.etsyUrl}
           target="_blank"
           rel="noreferrer"
           className="flex w-full items-center justify-center gap-2 rounded-full bg-etsy px-6 py-3 text-sm font-medium text-white transition hover:bg-etsy-dark"

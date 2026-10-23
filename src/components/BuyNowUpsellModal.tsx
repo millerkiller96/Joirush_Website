@@ -12,6 +12,7 @@ import {
 } from "@/data/products";
 import { getProductGallery } from "@/data/product-galleries";
 import {
+  appendClientRef,
   buildPairCookieOrder,
   buildTrioCookieOrder,
   resolveStripeCheckoutUrl,
@@ -116,12 +117,13 @@ export function BuyNowUpsellModal({
   const comboRef = useRef<HTMLDivElement>(null);
   const listRef = useRef<HTMLUListElement>(null);
 
-  const firstProduct = resolveFirstProduct(product);
-  const firstSlug = firstProduct.slug;
-
+  const initialResolvedFirst = resolveFirstProduct(product);
+  const [firstSlug, setFirstSlug] = useState<string>(initialResolvedFirst.slug);
   const [step, setStep] = useState<UpsellModalStep>(initialStep);
-  const [secondSlug, setSecondSlug] = useState<string>(initialSecondSlug || firstSlug);
-  const [thirdSlug, setThirdSlug] = useState<string>(firstSlug);
+  const [secondSlug, setSecondSlug] = useState<string>(
+    initialSecondSlug || initialResolvedFirst.slug
+  );
+  const [thirdSlug, setThirdSlug] = useState<string>(initialResolvedFirst.slug);
   const [dropdownOpen, setDropdownOpen] = useState(false);
   const [activeIndex, setActiveIndex] = useState<number>(-1);
 
@@ -136,6 +138,7 @@ export function BuyNowUpsellModal({
   useEffect(() => {
     if (isOpen) {
       const resolvedFirst = resolveFirstProduct(product);
+      setFirstSlug(resolvedFirst.slug);
       setSecondSlug(initialSecondSlug || resolvedFirst.slug);
       setThirdSlug(resolvedFirst.slug);
       setStep(prebuiltOrder ? "checkout_confirm" : initialStep);
@@ -147,6 +150,8 @@ export function BuyNowUpsellModal({
       preloadCookieThumbs();
     }
   }, [isOpen, product, initialStep, initialSecondSlug, prebuiltOrder]);
+
+  const firstProduct = getProduct(firstSlug) ?? initialResolvedFirst;
 
   const secondIndex = Math.max(
     0,
@@ -178,8 +183,22 @@ export function BuyNowUpsellModal({
   const trioPrice = pairPrice + thirdDiscountedPrice;
   const trioSavings = pairSavings + thirdSavings;
 
+  const pairOrder = buildPairCookieOrder(firstProduct, secondCookie);
+  const singleFirstCheckoutUrl = appendClientRef(firstProduct.stripeUrl, `1x_${firstProduct.slug}`);
+
   const firstHero = getProductGallery(firstSlug, firstProduct.image)[0];
   const firstThumb = asset(firstHero.thumb);
+
+  function handleFirstCookieChange(nextSlug: string) {
+    const prevFirst = firstSlug;
+    setFirstSlug(nextSlug);
+    if (secondSlug === prevFirst) {
+      setSecondSlug(nextSlug);
+    }
+    if (thirdSlug === prevFirst) {
+      setThirdSlug(nextSlug);
+    }
+  }
 
   function scrollOptionIntoView(index: number) {
     const list = listRef.current;
@@ -215,6 +234,9 @@ export function BuyNowUpsellModal({
     if (opt) {
       if (isSecondStep) {
         setSecondSlug(opt.product.slug);
+        if (thirdSlug === firstSlug) {
+          setThirdSlug(opt.product.slug);
+        }
       } else {
         setThirdSlug(opt.product.slug);
       }
@@ -223,6 +245,12 @@ export function BuyNowUpsellModal({
   }
 
   async function handleProceedWithOrder(order: BuiltCheckoutOrder) {
+    if (order.directStripeUrl) {
+      window.open(order.directStripeUrl, "_blank", "noopener,noreferrer");
+      onClose();
+      return;
+    }
+
     setIsRedirecting(true);
     const res = await resolveStripeCheckoutUrl(order);
     setIsRedirecting(false);
@@ -233,7 +261,7 @@ export function BuyNowUpsellModal({
       return;
     }
 
-    // For a 2-cookie order or fallback, show the confirmation view so the exact chosen cookies are preserved
+    // Show the confirmation view so the exact chosen cookies and per-cookie Stripe links are preserved
     setPendingOrder(order);
     setStep("checkout_confirm");
     if (modalRef.current) {
@@ -299,7 +327,7 @@ export function BuyNowUpsellModal({
 
       if (e.key === "Tab" && modalRef.current) {
         const focusableElements = modalRef.current.querySelectorAll<HTMLElement>(
-          'a[href], button:not([disabled]), input:not([disabled]), textarea:not([disabled]), [tabindex]:not([tabindex="-1"])'
+          'a[href], button:not([disabled]), input:not([disabled]), select:not([disabled]), textarea:not([disabled]), [tabindex]:not([tabindex="-1"])'
         );
         const firstElement = focusableElements[0];
         const lastElement = focusableElements[focusableElements.length - 1];
@@ -481,6 +509,49 @@ export function BuyNowUpsellModal({
               </div>
             </div>
 
+            {/* Direct Stripe Checkout Links for Every Chosen Cookie */}
+            <div className="mt-3 rounded-2xl border border-chocolate/12 bg-white p-3.5">
+              <p className="text-xs font-bold uppercase tracking-wider text-chocolate-soft">
+                Instant Stripe Checkout by Chosen Cookie
+              </p>
+              <div className="mt-2 space-y-1.5">
+                {Array.from(new Set(pendingOrder.lineItems.map((i) => i.slug))).map((slug) => {
+                  const cookieProd = getProduct(slug);
+                  if (!cookieProd) return null;
+                  const pairTotal = cookieProd.price + getSecondCookiePrice(cookieProd);
+                  return (
+                    <div
+                      key={slug}
+                      className="flex flex-wrap items-center justify-between gap-2 rounded-xl bg-cream/60 px-2.5 py-2 text-xs"
+                    >
+                      <span className="font-semibold text-chocolate">{cookieProd.shortName}</span>
+                      <div className="flex items-center gap-1.5">
+                        <a
+                          href={appendClientRef(cookieProd.stripeUrl, pendingOrder.clientReferenceId)}
+                          target="_blank"
+                          rel="noreferrer"
+                          className="rounded-full border border-chocolate/20 bg-white px-2.5 py-1 font-semibold text-chocolate transition hover:border-chocolate/40"
+                        >
+                          1× ({formatPrice(cookieProd.price)})
+                        </a>
+                        <a
+                          href={appendClientRef(
+                            cookieProd.stripeUpsellUrl,
+                            pendingOrder.clientReferenceId
+                          )}
+                          target="_blank"
+                          rel="noreferrer"
+                          className="rounded-full bg-success px-2.5 py-1 font-bold text-white transition hover:bg-success-dark"
+                        >
+                          2× 10% off ({formatPrice(pairTotal)})
+                        </a>
+                      </div>
+                    </div>
+                  );
+                })}
+              </div>
+            </div>
+
             {requestStatus === "sent" ? (
               <div className="mt-4 rounded-2xl border border-success/30 bg-success/10 p-4 text-center">
                 <p className="font-display text-lg text-chocolate">
@@ -502,8 +573,8 @@ export function BuyNowUpsellModal({
             ) : (
               <form onSubmit={handleOrderInvoiceSubmit} className="mt-4 space-y-3">
                 <p className="text-xs text-chocolate-mid">
-                  Enter your email to receive an instant Stripe checkout link with your exact cookie flavors
-                  and {pendingOrder.discountSummaryLabel.toLowerCase()} applied, or continue directly to Stripe:
+                  Enter your email to receive an instant Stripe checkout link with your exact mixed
+                  cookie flavors and {pendingOrder.discountSummaryLabel.toLowerCase()} applied:
                 </p>
                 <div>
                   <label className="block text-xs font-semibold uppercase tracking-wider text-chocolate-soft">
@@ -659,10 +730,33 @@ export function BuyNowUpsellModal({
               </p>
             )}
 
+            {/* 1st Cookie Selector so customers can switch Cookie #1 directly if desired */}
+            <div className="mt-3">
+              <label
+                htmlFor={`${uid}-first-cookie-select`}
+                className="block text-[11px] font-semibold uppercase tracking-wider text-chocolate-soft"
+              >
+                1st Cookie (Full Price)
+              </label>
+              <select
+                id={`${uid}-first-cookie-select`}
+                data-first-cookie-select=""
+                value={firstSlug}
+                onChange={(e) => handleFirstCookieChange(e.target.value)}
+                className="mt-1 w-full rounded-xl border border-chocolate/15 bg-white px-3 py-2 text-xs font-semibold text-chocolate outline-none focus:border-pink focus:ring-2 focus:ring-pink/30"
+              >
+                {products.map((item) => (
+                  <option key={item.slug} value={item.slug}>
+                    {item.shortName} ({item.size}) · {formatPrice(item.price)}
+                  </option>
+                ))}
+              </select>
+            </div>
+
             {/* Cookie Dropdown Selector with Thumbnail Photos */}
             <div
               ref={pickerWrapperRef}
-              className="relative mt-4"
+              className="relative mt-3"
               data-second-cookie-picker={isSecondStep ? "" : undefined}
               data-third-cookie-picker={!isSecondStep ? "" : undefined}
             >
@@ -812,6 +906,35 @@ export function BuyNowUpsellModal({
               </ul>
             </div>
 
+            {/* Quick action when customer selects a different 2nd cookie flavor */}
+            {isSecondStep && !isSameAsFirst && (
+              <div className="mt-2.5 flex flex-wrap items-center justify-between gap-2 rounded-xl border border-pink/20 bg-pink/5 px-3 py-2 text-xs">
+                <span className="text-chocolate-mid">
+                  Want <strong>{secondCookie.shortName}</strong> as your main cookie?
+                </span>
+                <div className="flex items-center gap-2">
+                  <button
+                    type="button"
+                    onClick={() => {
+                      setFirstSlug(secondCookie.slug);
+                      setThirdSlug(secondCookie.slug);
+                    }}
+                    className="rounded-full bg-pink/15 px-2.5 py-1 font-semibold text-pink transition hover:bg-pink/25"
+                  >
+                    Make both {secondCookie.shortName}
+                  </button>
+                  <a
+                    href={appendClientRef(secondCookie.stripeUrl, `1x_${secondCookie.slug}`)}
+                    target="_blank"
+                    rel="noreferrer"
+                    className="font-semibold text-chocolate underline hover:text-pink"
+                  >
+                    Just 1 @ {formatPrice(secondCookie.price)}
+                  </a>
+                </div>
+              </div>
+            )}
+
             {/* Itemized Order Breakdown */}
             <div className="mt-4 space-y-2 rounded-xl bg-cream-deep/80 p-3 sm:mt-5 sm:space-y-2.5 sm:rounded-2xl sm:p-4">
               <div className="flex items-center justify-between text-sm text-chocolate-mid">
@@ -909,12 +1032,12 @@ export function BuyNowUpsellModal({
                   Add the second · {formatPrice(pairPrice)}
                 </button>
                 <a
-                  href={firstProduct.stripeUrl}
+                  href={singleFirstCheckoutUrl}
                   target="_blank"
                   rel="noreferrer"
                   className="flex w-full items-center justify-center gap-2 rounded-full border-2 border-chocolate/15 px-5 py-3 text-center text-sm font-medium text-chocolate-soft transition hover:border-chocolate/25 hover:text-chocolate focus:outline-none focus:ring-2 focus:ring-chocolate/30 focus:ring-offset-2 sm:px-6 sm:text-base"
                 >
-                  No thanks · just one @ {formatPrice(unitPrice)}
+                  No thanks · just one {firstProduct.shortName} @ {formatPrice(unitPrice)}
                 </a>
               </div>
             ) : (
@@ -937,17 +1060,28 @@ export function BuyNowUpsellModal({
                     ? "Opening Stripe Checkout..."
                     : `Add the third (15% off) · ${formatPrice(trioPrice)}`}
                 </button>
-                <button
-                  type="button"
-                  disabled={isRedirecting}
-                  onClick={() =>
-                    handleProceedWithOrder(buildPairCookieOrder(firstProduct, secondCookie))
-                  }
-                  data-upsell-keep-two=""
-                  className="flex w-full items-center justify-center gap-2 rounded-full border-2 border-chocolate/15 px-5 py-3 text-center text-sm font-medium text-chocolate-soft transition hover:border-chocolate/25 hover:text-chocolate focus:outline-none focus:ring-2 focus:ring-chocolate/30 focus:ring-offset-2 disabled:opacity-60 sm:px-6 sm:text-base"
-                >
-                  No thanks · just two cookies @ {formatPrice(pairPrice)}
-                </button>
+                {pairOrder.directStripeUrl ? (
+                  <a
+                    href={pairOrder.directStripeUrl}
+                    target="_blank"
+                    rel="noreferrer"
+                    onClick={() => onClose()}
+                    data-upsell-keep-two=""
+                    className="flex w-full items-center justify-center gap-2 rounded-full border-2 border-chocolate/15 px-5 py-3 text-center text-sm font-medium text-chocolate-soft transition hover:border-chocolate/25 hover:text-chocolate focus:outline-none focus:ring-2 focus:ring-chocolate/30 focus:ring-offset-2 sm:px-6 sm:text-base"
+                  >
+                    No thanks · just two cookies @ {formatPrice(pairPrice)}
+                  </a>
+                ) : (
+                  <button
+                    type="button"
+                    disabled={isRedirecting}
+                    onClick={() => handleProceedWithOrder(pairOrder)}
+                    data-upsell-keep-two=""
+                    className="flex w-full items-center justify-center gap-2 rounded-full border-2 border-chocolate/15 px-5 py-3 text-center text-sm font-medium text-chocolate-soft transition hover:border-chocolate/25 hover:text-chocolate focus:outline-none focus:ring-2 focus:ring-chocolate/30 focus:ring-offset-2 disabled:opacity-60 sm:px-6 sm:text-base"
+                  >
+                    No thanks · just two cookies @ {formatPrice(pairPrice)}
+                  </button>
+                )}
                 <button
                   type="button"
                   onClick={() => {

@@ -335,3 +335,98 @@ body {
   }
 }
 
+/*
+ * Eye-catching "knocking / bouncing around" attention animation for the
+ * "Selected Cookies" and "Mix & Match" buttons on product pages.
+ * Runs on both mobile and desktop viewports when reduced-motion is not enabled,
+ * and pauses while the flavor picker drawer is open or the button is hovered/focused.
+ */
+@keyframes knock-around {
+  0%,
+  100% {
+    transform: translate3d(0, 0, 0) rotate(0deg) scale(1);
+  }
+  8% {
+    transform: translate3d(-4px, -4px, 0) rotate(-3.5deg) scale(1.04);
+  }
+  16% {
+    transform: translate3d(4px, -2px, 0) rotate(3.5deg) scale(1.04);
+  }
+  24% {
+    transform: translate3d(-3px, 3px, 0) rotate(-2.5deg) scale(1.03);
+  }
+  32% {
+    transform: translate3d(3px, -3px, 0) rotate(2.5deg) scale(1.03);
+  }
+  40% {
+    transform: translate3d(-2px, 1px, 0) rotate(-1.5deg) scale(1.015);
+  }
+  48% {
+    transform: translate3d(0, 0, 0) rotate(0deg) scale(1);
+  }
+}
+
+@keyframes knock-around-glow-pink {
+  0%,
+  100% {
+    box-shadow:
+      0 8px 20px -4px rgba(255, 75, 139, 0.5),
+      0 0 0 0 rgba(255, 75, 139, 0.45);
+  }
+  25% {
+    box-shadow:
+      0 12px 28px -2px rgba(255, 75, 139, 0.72),
+      0 0 0 6px rgba(255, 75, 139, 0.22);
+  }
+  55% {
+    box-shadow:
+      0 8px 20px -4px rgba(255, 75, 139, 0.45),
+      0 0 0 0 rgba(255, 75, 139, 0);
+  }
+}
+
+@keyframes knock-around-glow-chocolate {
+  0%,
+  100% {
+    box-shadow:
+      0 8px 20px -4px rgba(42, 24, 16, 0.4),
+      0 0 0 0 rgba(255, 75, 139, 0.4);
+  }
+  25% {
+    box-shadow:
+      0 12px 26px -2px rgba(42, 24, 16, 0.58),
+      0 0 0 6px rgba(255, 75, 139, 0.24);
+  }
+  55% {
+    box-shadow:
+      0 8px 20px -4px rgba(42, 24, 16, 0.35),
+      0 0 0 0 rgba(255, 75, 139, 0);
+  }
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  .animate-knock-around {
+    will-change: transform, box-shadow;
+    transform-origin: 50% 50%;
+    animation:
+      knock-around 2.6s cubic-bezier(0.36, 0.07, 0.19, 0.97) infinite,
+      knock-around-glow-chocolate 2.6s ease-in-out infinite;
+  }
+
+  .animate-knock-around-alt {
+    will-change: transform, box-shadow;
+    transform-origin: 50% 50%;
+    animation:
+      knock-around 2.6s cubic-bezier(0.36, 0.07, 0.19, 0.97) 0.45s infinite,
+      knock-around-glow-pink 2.6s ease-in-out 0.45s infinite;
+  }
+
+  .animate-knock-around:hover,
+  .animate-knock-around:focus-visible,
+  .animate-knock-around[aria-expanded="true"],
+  .animate-knock-around-alt:hover,
+  .animate-knock-around-alt:focus-visible,
+  .animate-knock-around-alt[aria-expanded="true"] {
+    animation: none;
+  }
+}

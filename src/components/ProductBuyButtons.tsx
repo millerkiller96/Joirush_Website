@@ -17,8 +17,7 @@ import {
 import { getProductGallery } from "@/data/product-galleries";
 import {
   buildBulkCookieOrder,
-  resolveStripeCheckoutUrl,
-  type BuiltCheckoutOrder,
+  openStripeCheckoutOrder,
 } from "@/lib/checkout";
 import { asset } from "@/lib/paths";
 
@@ -49,8 +48,6 @@ export function ProductBuyButtons({ product }: ProductBuyButtonsProps) {
   const [isModalOpen, setIsModalOpen] = useState(false);
   const [modalInitialStep, setModalInitialStep] = useState<UpsellModalStep>("second_cookie");
   const [modalInitialSecondSlug, setModalInitialSecondSlug] = useState<string>(currentSlug);
-  const [modalPrebuiltOrder, setModalPrebuiltOrder] = useState<BuiltCheckoutOrder | null>(null);
-  const [isCheckingOutBulk, setIsCheckingOutBulk] = useState(false);
 
   const totalCookies = useMemo(
     () =>
@@ -167,11 +164,10 @@ export function ProductBuyButtons({ product }: ProductBuyButtonsProps) {
     setQuantities({ [slug]: Math.max(1, totalCookies) });
   }
 
-  async function handlePrimaryBuyClick() {
+  function handlePrimaryBuyClick() {
     if (totalCookies <= 1) {
       setModalInitialStep("second_cookie");
       setModalInitialSecondSlug(activePrimarySlug);
-      setModalPrebuiltOrder(null);
       setIsModalOpen(true);
       return;
     }
@@ -187,24 +183,13 @@ export function ProductBuyButtons({ product }: ProductBuyButtonsProps) {
       }
       setModalInitialStep("third_cookie");
       setModalInitialSecondSlug(secondSlug);
-      setModalPrebuiltOrder(null);
       setIsModalOpen(true);
       return;
     }
 
-    // 3 to 20 cookies bulk order
-    setIsCheckingOutBulk(true);
-    const res = await resolveStripeCheckoutUrl(bulkOrder);
-    setIsCheckingOutBulk(false);
-
-    if (res.ok) {
-      window.open(res.url, "_blank", "noopener,noreferrer");
-      return;
-    }
-
-    setModalPrebuiltOrder(bulkOrder);
-    setModalInitialStep("checkout_confirm");
-    setIsModalOpen(true);
+    // 3 to 20 cookies bulk order (including 10 cookies of any combination):
+    // Go straight to the single unified Stripe Checkout page with zero intermediate modal!
+    openStripeCheckoutOrder(bulkOrder);
   }
 
   const currentHero = getProductGallery(activePrimarySlug, activePrimaryProduct.image)[0];
@@ -225,6 +210,14 @@ export function ProductBuyButtons({ product }: ProductBuyButtonsProps) {
       upsellPairPrice: p.upsellPairPrice,
     };
   }, [activePrimaryProduct]);
+
+  const selectedSummaryText = useMemo(
+    () =>
+      selectedEntries
+        .map((entry) => `${entry.quantity}× ${entry.product.shortName}`)
+        .join(" + "),
+    [selectedEntries]
+  );
 
   return (
     <>
@@ -385,69 +378,125 @@ export function ProductBuyButtons({ product }: ProductBuyButtonsProps) {
           </p>
         )}
 
-        {/* Multi-Cookie Flavor Picker Toggle & Mix-and-Match Drawer */}
-        <div className="mt-3">
-          <div className="flex flex-wrap items-center justify-between gap-2">
-            <div className="flex flex-wrap items-center gap-1.5">
-              {selectedEntries.map((entry) => (
-                <span
-                  key={entry.product.slug}
-                  className="inline-flex items-center gap-1.5 rounded-full bg-white px-2.5 py-1 text-xs font-semibold text-chocolate ring-1 ring-chocolate/10"
-                >
-                  {/* eslint-disable-next-line @next/next/no-img-element */}
-                  <img
-                    src={entry.thumb || currentThumb}
-                    alt=""
-                    aria-hidden="true"
-                    width={20}
-                    height={20}
-                    className="h-5 w-5 rounded-full object-cover"
-                  />
-                  {entry.quantity}× {entry.product.shortName}
-                </span>
-              ))}
-            </div>
+        {/* Big Eye-Catching Animated "Selected Cookies" & "Mix & Match" Buttons */}
+        <div className="mt-4">
+          <div className="grid grid-cols-1 gap-3 sm:grid-cols-2">
+            {/* Button 1: Selected Cookies Button */}
+            <button
+              type="button"
+              onClick={() => setMixOpen((prev) => !prev)}
+              data-selected-cookies-button=""
+              aria-expanded={mixOpen}
+              className="animate-knock-around group flex w-full items-center justify-between gap-3 rounded-2xl border-2 border-pink/50 bg-chocolate px-4 py-3.5 text-left text-cream shadow-lg transition hover:scale-[1.02] hover:border-pink hover:bg-chocolate-mid focus:outline-none focus:ring-2 focus:ring-pink focus:ring-offset-2 sm:px-5 sm:py-4"
+            >
+              <div className="flex min-w-0 items-center gap-3">
+                <div className="flex shrink-0 -space-x-2">
+                  {selectedEntries.slice(0, 3).map((entry) => (
+                    // eslint-disable-next-line @next/next/no-img-element
+                    <img
+                      key={entry.product.slug}
+                      src={entry.thumb || currentThumb}
+                      alt=""
+                      aria-hidden="true"
+                      width={36}
+                      height={36}
+                      className="h-9 w-9 rounded-full border-2 border-cream object-cover shadow-sm"
+                    />
+                  ))}
+                </div>
+                <div className="min-w-0">
+                  <span className="block text-sm font-extrabold uppercase tracking-wide text-cream sm:text-base">
+                    Selected Cookies ({totalCookies})
+                  </span>
+                  <span className="mt-0.5 block truncate text-xs font-semibold text-cream/85">
+                    {selectedSummaryText}
+                  </span>
+                </div>
+              </div>
+              <span className="shrink-0 rounded-full bg-pink px-2.5 py-1 text-[11px] font-extrabold uppercase tracking-wider text-white shadow-sm">
+                {mixOpen ? "Open" : "Edit"}
+              </span>
+            </button>
 
+            {/* Button 2: Mix & Match Button */}
             <button
               type="button"
               onClick={() => setMixOpen((prev) => !prev)}
               data-mix-flavors-toggle=""
               aria-expanded={mixOpen}
-              className="inline-flex items-center gap-1.5 rounded-full bg-pink/10 px-3 py-1.5 text-xs font-bold text-pink transition hover:bg-pink/20"
+              className="animate-knock-around-alt group flex w-full items-center justify-between gap-3 rounded-2xl border-2 border-white/40 bg-pink px-4 py-3.5 text-left text-white shadow-lg transition hover:scale-[1.02] hover:bg-pink-dark focus:outline-none focus:ring-2 focus:ring-pink focus:ring-offset-2 sm:px-5 sm:py-4"
             >
-              <span>
-                {mixOpen
-                  ? "Done choosing flavors"
-                  : totalCookies > 1
-                    ? "🍪 Mix & match different cookie flavors"
-                    : "🍪 Switch or mix cookie flavors"}
+              <div className="flex min-w-0 items-center gap-3">
+                <span
+                  aria-hidden="true"
+                  className="flex h-10 w-10 shrink-0 items-center justify-center rounded-xl bg-white/20 text-xl shadow-inner"
+                >
+                  🍪
+                </span>
+                <div className="min-w-0">
+                  <span className="block text-sm font-extrabold uppercase tracking-wide text-white sm:text-base">
+                    {mixOpen ? "Done Mixing Flavors" : "Mix & Match Flavors"}
+                  </span>
+                  <span className="mt-0.5 block truncate text-xs font-semibold text-white/90">
+                    {mixOpen
+                      ? "Tap to close flavor picker"
+                      : "Combine any of our 11 cookies"}
+                  </span>
+                </div>
+              </div>
+              <span className="flex h-8 w-8 shrink-0 items-center justify-center rounded-full bg-white/25 text-white">
+                <svg
+                  className={`h-5 w-5 transition-transform ${mixOpen ? "rotate-180" : ""}`}
+                  fill="none"
+                  viewBox="0 0 24 24"
+                  stroke="currentColor"
+                  strokeWidth={2.5}
+                >
+                  <path strokeLinecap="round" strokeLinejoin="round" d="M19 9l-7 7-7-7" />
+                </svg>
               </span>
-              <svg
-                className={`h-4 w-4 transition-transform ${mixOpen ? "rotate-180" : ""}`}
-                fill="none"
-                viewBox="0 0 24 24"
-                stroke="currentColor"
-                strokeWidth={2}
-              >
-                <path strokeLinecap="round" strokeLinejoin="round" d="M19 9l-7 7-7-7" />
-              </svg>
             </button>
+          </div>
+
+          {/* Selected Cookie Chips (each chip also toggles the flavor picker) */}
+          <div className="mt-2.5 flex flex-wrap items-center gap-1.5">
+            {selectedEntries.map((entry) => (
+              <button
+                key={entry.product.slug}
+                type="button"
+                onClick={() => setMixOpen((prev) => !prev)}
+                className="inline-flex items-center gap-1.5 rounded-full bg-white px-3 py-1 text-xs font-bold text-chocolate shadow-sm ring-1 ring-chocolate/15 transition hover:bg-cream-deep hover:ring-pink"
+              >
+                {/* eslint-disable-next-line @next/next/no-img-element */}
+                <img
+                  src={entry.thumb || currentThumb}
+                  alt=""
+                  aria-hidden="true"
+                  width={20}
+                  height={20}
+                  className="h-5 w-5 rounded-full object-cover"
+                />
+                <span>
+                  {entry.quantity}× {entry.product.shortName}
+                </span>
+              </button>
+            ))}
           </div>
 
           {mixOpen && (
             <div
               data-mix-flavors-panel=""
-              className="mt-3 rounded-2xl border border-chocolate/15 bg-white p-3 shadow-inner"
+              className="mt-3 rounded-2xl border-2 border-pink/30 bg-white p-3.5 shadow-md"
             >
-              <div className="mb-2 flex items-center justify-between text-xs text-chocolate-soft">
-                <span className="font-semibold text-chocolate">
-                  Select quantities or click &ldquo;Only&rdquo; to switch cookie ({totalCookies} of {MAX_BULK_COOKIES} selected)
+              <div className="mb-2.5 flex flex-wrap items-center justify-between gap-2 text-xs text-chocolate-soft">
+                <span className="font-bold text-chocolate">
+                  Pick quantities for any cookie flavor ({totalCookies} of {MAX_BULK_COOKIES} selected)
                 </span>
                 {(selectedEntries.length > 1 || activePrimarySlug !== currentSlug) && (
                   <button
                     type="button"
                     onClick={() => setQuantities({ [currentSlug]: totalCookies })}
-                    className="font-medium text-pink hover:underline"
+                    className="font-bold text-pink hover:underline"
                   >
                     Reset to {product.shortName}
                   </button>
@@ -468,7 +517,7 @@ export function ProductBuyButtons({ product }: ProductBuyButtonsProps) {
                       data-flavor-row={item.slug}
                       className={`flex items-center justify-between gap-2 rounded-xl p-2 transition ${
                         qty > 0
-                          ? "bg-success/5 ring-1 ring-success/30"
+                          ? "bg-success/10 ring-1 ring-success/40"
                           : "bg-cream/50 hover:bg-cream"
                       }`}
                     >
@@ -506,7 +555,7 @@ export function ProductBuyButtons({ product }: ProductBuyButtonsProps) {
                             type="button"
                             onClick={() => selectOnlyFlavor(item.slug)}
                             data-flavor-only={item.slug}
-                            className="rounded-full bg-cream-deep px-2 py-1 text-[11px] font-semibold text-chocolate-mid transition hover:bg-chocolate hover:text-cream"
+                            className="rounded-full bg-cream-deep px-2.5 py-1 text-[11px] font-bold text-chocolate-mid transition hover:bg-chocolate hover:text-cream"
                             title={`Switch selection to only ${item.shortName}`}
                           >
                             Only
@@ -577,9 +626,8 @@ export function ProductBuyButtons({ product }: ProductBuyButtonsProps) {
         <button
           type="button"
           data-buy-cta="primary"
-          disabled={isCheckingOutBulk}
           onClick={handlePrimaryBuyClick}
-          className="flex w-full items-center justify-center gap-2 rounded-full bg-success px-8 py-4 text-lg font-bold text-white shadow-lg transition hover:bg-success-dark hover:shadow-xl disabled:opacity-60"
+          className="flex w-full items-center justify-center gap-2 rounded-full bg-success px-8 py-4 text-lg font-bold text-white shadow-lg transition hover:bg-success-dark hover:shadow-xl"
         >
           <svg className="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}>
             <path
@@ -588,13 +636,11 @@ export function ProductBuyButtons({ product }: ProductBuyButtonsProps) {
               d="M3 3h2l.4 2M7 13h10l4-8H5.4M7 13L5.4 5M7 13l-2.293 2.293c-.63.63-.184 1.707.707 1.707H17m0 0a2 2 0 100 4 2 2 0 000-4zm-8 2a2 2 0 11-4 0 2 2 0 014 0z"
             />
           </svg>
-          {isCheckingOutBulk
-            ? "Preparing your Stripe checkout..."
-            : totalCookies <= 1
-              ? `Buy Now · ${formatPrice(activePrimaryProduct.price)}`
-              : totalCookies === 2
-                ? `Buy 2 Cookies (10% off 2nd) · ${formatPrice(bulkOrder.finalTotalUsd)}`
-                : `Buy ${totalCookies} Cookies (${activeBulkDiscount}% off) · ${formatPrice(bulkOrder.finalTotalUsd)}`}
+          {totalCookies <= 1
+            ? `Buy Now · ${formatPrice(activePrimaryProduct.price)}`
+            : totalCookies === 2
+              ? `Buy 2 Cookies (10% off 2nd) · ${formatPrice(bulkOrder.finalTotalUsd)}`
+              : `Buy ${totalCookies} Cookies (${activeBulkDiscount}% off) · ${formatPrice(bulkOrder.finalTotalUsd)}`}
         </button>
         <a
           data-buy-cta="etsy"
@@ -621,7 +667,6 @@ export function ProductBuyButtons({ product }: ProductBuyButtonsProps) {
         onClose={() => setIsModalOpen(false)}
         initialStep={modalInitialStep}
         initialSecondSlug={modalInitialSecondSlug}
-        prebuiltOrder={modalPrebuiltOrder}
       />
     </>
   );

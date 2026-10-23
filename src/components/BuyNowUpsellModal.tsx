@@ -83,7 +83,6 @@ export function BuyNowUpsellModal({ product, isOpen, onClose }: BuyNowUpsellModa
 
   const modalRef = useRef<HTMLDivElement>(null);
   const closeButtonRef = useRef<HTMLButtonElement>(null);
-  const firstFocusableRef = useRef<HTMLAnchorElement>(null);
   const pickerWrapperRef = useRef<HTMLDivElement>(null);
   const comboRef = useRef<HTMLDivElement>(null);
   const listRef = useRef<HTMLUListElement>(null);
@@ -91,18 +90,14 @@ export function BuyNowUpsellModal({ product, isOpen, onClose }: BuyNowUpsellModa
   const firstSlug = resolveFirstProductSlug(product);
   const [secondSlug, setSecondSlug] = useState<string>(firstSlug);
   const [dropdownOpen, setDropdownOpen] = useState(false);
-  const [activeIndex, setActiveIndex] = useState(0);
+  const [activeIndex, setActiveIndex] = useState<number>(-1);
 
   // Reset second cookie selection to match the current product whenever the modal opens for a product.
   useEffect(() => {
     if (isOpen) {
       const defaultSlug = resolveFirstProductSlug(product);
       setSecondSlug(defaultSlug);
-      const idx = Math.max(
-        0,
-        secondCookieOptions.findIndex((o) => o.product.slug === defaultSlug)
-      );
-      setActiveIndex(idx);
+      setActiveIndex(-1);
       setDropdownOpen(false);
       preloadSecondCookieThumbs();
     }
@@ -125,15 +120,33 @@ export function BuyNowUpsellModal({ product, isOpen, onClose }: BuyNowUpsellModa
   const firstHero = getProductGallery(firstSlug, product.image)[0];
   const firstThumb = asset(firstHero.thumb);
 
-  function openDropdown(startIndex = selectedIndex) {
+  function scrollOptionIntoView(index: number) {
+    const list = listRef.current;
+    const option = list?.querySelector<HTMLElement>(`[data-index="${index}"]`);
+    if (!list || !option) return;
+    const listRect = list.getBoundingClientRect();
+    const optionRect = option.getBoundingClientRect();
+    if (optionRect.top < listRect.top) {
+      list.scrollTop -= listRect.top - optionRect.top;
+    } else if (optionRect.bottom > listRect.bottom) {
+      list.scrollTop += optionRect.bottom - listRect.bottom;
+    }
+  }
+
+  function openDropdown(initialKeyboardIndex?: number) {
     preloadSecondCookieThumbs();
-    setActiveIndex(startIndex);
+    if (typeof initialKeyboardIndex === "number") {
+      setActiveIndex(initialKeyboardIndex);
+    } else {
+      setActiveIndex(-1);
+    }
     setDropdownOpen(true);
   }
 
   function closeDropdown(refocus = true) {
     setDropdownOpen(false);
-    if (refocus) comboRef.current?.focus();
+    setActiveIndex(-1);
+    if (refocus) comboRef.current?.focus({ preventScroll: true });
   }
 
   function chooseOption(index: number) {
@@ -153,25 +166,12 @@ export function BuyNowUpsellModal({ product, isOpen, onClose }: BuyNowUpsellModa
         !pickerWrapperRef.current.contains(event.target as Node)
       ) {
         setDropdownOpen(false);
+        setActiveIndex(-1);
       }
     }
     document.addEventListener("pointerdown", handlePointer);
     return () => document.removeEventListener("pointerdown", handlePointer);
   }, [dropdownOpen]);
-
-  // Keep active option visible inside the dropdown list
-  useEffect(() => {
-    if (!dropdownOpen) return;
-    const list = listRef.current;
-    const option = list?.querySelector<HTMLElement>(`[data-index="${activeIndex}"]`);
-    if (!list || !option) return;
-    const top = option.offsetTop;
-    const bottom = top + option.offsetHeight;
-    if (top < list.scrollTop) list.scrollTop = top;
-    else if (bottom > list.scrollTop + list.clientHeight) {
-      list.scrollTop = bottom - list.clientHeight;
-    }
-  }, [dropdownOpen, activeIndex]);
 
   const handleKeyDown = useCallback(
     (e: KeyboardEvent) => {
@@ -179,7 +179,8 @@ export function BuyNowUpsellModal({ product, isOpen, onClose }: BuyNowUpsellModa
         if (dropdownOpen) {
           e.preventDefault();
           setDropdownOpen(false);
-          comboRef.current?.focus();
+          setActiveIndex(-1);
+          comboRef.current?.focus({ preventScroll: true });
           return;
         }
         onClose();
@@ -195,26 +196,36 @@ export function BuyNowUpsellModal({ product, isOpen, onClose }: BuyNowUpsellModa
 
         if (e.shiftKey && document.activeElement === firstElement) {
           e.preventDefault();
-          lastElement?.focus();
+          lastElement?.focus({ preventScroll: true });
         } else if (!e.shiftKey && document.activeElement === lastElement) {
           e.preventDefault();
-          firstElement?.focus();
+          firstElement?.focus({ preventScroll: true });
         }
       }
     },
     [onClose, dropdownOpen]
   );
 
+  // Lock body scroll and focus top close button only when modal opens (never when dropdownOpen toggles)
   useEffect(() => {
-    if (isOpen) {
-      document.addEventListener("keydown", handleKeyDown);
-      document.body.style.overflow = "hidden";
-      firstFocusableRef.current?.focus();
+    if (!isOpen) return;
+    document.body.style.overflow = "hidden";
+    if (modalRef.current) {
+      modalRef.current.scrollTop = 0;
     }
+    closeButtonRef.current?.focus({ preventScroll: true });
 
     return () => {
-      document.removeEventListener("keydown", handleKeyDown);
       document.body.style.overflow = "";
+    };
+  }, [isOpen]);
+
+  // Attach keyboard listener separately so toggling dropdownOpen never re-triggers modal focus/scroll
+  useEffect(() => {
+    if (!isOpen) return;
+    document.addEventListener("keydown", handleKeyDown);
+    return () => {
+      document.removeEventListener("keydown", handleKeyDown);
     };
   }, [isOpen, handleKeyDown]);
 
@@ -233,31 +244,39 @@ export function BuyNowUpsellModal({ product, isOpen, onClose }: BuyNowUpsellModa
         event.preventDefault();
         if (event.key === "Home") openDropdown(0);
         else if (event.key === "End") openDropdown(last);
-        else openDropdown();
+        else openDropdown(selectedIndex);
       }
       return;
     }
     switch (event.key) {
-      case "ArrowDown":
+      case "ArrowDown": {
         event.preventDefault();
-        setActiveIndex((idx) => Math.min(last, idx + 1));
+        const next = activeIndex < 0 ? Math.min(last, selectedIndex + 1) : Math.min(last, activeIndex + 1);
+        setActiveIndex(next);
+        requestAnimationFrame(() => scrollOptionIntoView(next));
         return;
-      case "ArrowUp":
+      }
+      case "ArrowUp": {
         event.preventDefault();
-        setActiveIndex((idx) => Math.max(0, idx - 1));
+        const prev = activeIndex < 0 ? Math.max(0, selectedIndex - 1) : Math.max(0, activeIndex - 1);
+        setActiveIndex(prev);
+        requestAnimationFrame(() => scrollOptionIntoView(prev));
         return;
+      }
       case "Home":
         event.preventDefault();
         setActiveIndex(0);
+        requestAnimationFrame(() => scrollOptionIntoView(0));
         return;
       case "End":
         event.preventDefault();
         setActiveIndex(last);
+        requestAnimationFrame(() => scrollOptionIntoView(last));
         return;
       case "Enter":
       case " ":
         event.preventDefault();
-        chooseOption(activeIndex);
+        chooseOption(activeIndex >= 0 ? activeIndex : selectedIndex);
         return;
       case "Escape":
         event.preventDefault();
@@ -266,6 +285,7 @@ export function BuyNowUpsellModal({ product, isOpen, onClose }: BuyNowUpsellModa
         return;
       case "Tab":
         setDropdownOpen(false);
+        setActiveIndex(-1);
         return;
     }
   }
@@ -335,7 +355,7 @@ export function BuyNowUpsellModal({ product, isOpen, onClose }: BuyNowUpsellModa
         </p>
 
         {/* Second Cookie Dropdown Selector with Thumbnail Photos */}
-        <div ref={pickerWrapperRef} className="mt-4" data-second-cookie-picker="">
+        <div ref={pickerWrapperRef} className="relative mt-4" data-second-cookie-picker="">
           <label
             id={labelId}
             className="block text-xs font-semibold uppercase tracking-wider text-chocolate-soft"
@@ -350,7 +370,7 @@ export function BuyNowUpsellModal({ product, isOpen, onClose }: BuyNowUpsellModa
             aria-haspopup="listbox"
             aria-controls={listId}
             aria-expanded={dropdownOpen}
-            aria-activedescendant={dropdownOpen ? optionId(activeIndex) : undefined}
+            aria-activedescendant={dropdownOpen && activeIndex >= 0 ? optionId(activeIndex) : undefined}
             onClick={() => (dropdownOpen ? closeDropdown() : openDropdown())}
             onKeyDown={handleComboKeyDown}
             onPointerEnter={preloadSecondCookieThumbs}
@@ -411,7 +431,7 @@ export function BuyNowUpsellModal({ product, isOpen, onClose }: BuyNowUpsellModa
             hidden={!dropdownOpen}
             onMouseDown={(event) => event.preventDefault()}
             data-second-cookie-list=""
-            className="mt-2 max-h-60 overflow-y-auto overscroll-contain rounded-2xl border border-chocolate/15 bg-white p-1.5 shadow-card"
+            className=" absolute left-0 right-0 top-full z-20 mt-1.5 max-h-60 overflow-y-auto overscroll-contain rounded-2xl border border-chocolate/15 bg-white p-1.5 shadow-lift"
           >
             {secondCookieOptions.map((option, index) => {
               const isSelected = index === selectedIndex;
@@ -426,9 +446,12 @@ export function BuyNowUpsellModal({ product, isOpen, onClose }: BuyNowUpsellModa
                   data-index={index}
                   data-cookie-slug={option.product.slug}
                   onClick={() => chooseOption(index)}
-                  onPointerMove={() => setActiveIndex(index)}
                   className={`flex cursor-pointer items-center gap-3 rounded-xl px-2.5 py-2 transition ${
-                    isActive ? "bg-cream ring-1 ring-pink/40" : "hover:bg-cream/60"
+                    isActive
+                      ? "bg-cream ring-1 ring-pink/40"
+                      : isSelected
+                        ? "bg-pink/5 hover:bg-cream"
+                        : "hover:bg-cream"
                   }`}
                 >
                   {/* eslint-disable-next-line @next/next/no-img-element */}
@@ -533,7 +556,6 @@ export function BuyNowUpsellModal({ product, isOpen, onClose }: BuyNowUpsellModa
 
         <div className="mt-4 space-y-2 sm:mt-5 sm:space-y-3">
           <a
-            ref={firstFocusableRef}
             href={pairCheckoutUrl}
             target="_blank"
             rel="noreferrer"

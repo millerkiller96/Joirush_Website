@@ -92,6 +92,23 @@ export function renderBlogSchema(data: BlogPostStructuredData) {
   );
 }
 
+function JumboCookieCta({ subtext }: { subtext?: string }) {
+  return (
+    <div className="not-prose my-8 flex flex-col items-center justify-between gap-4 rounded-2xl border border-pink/20 bg-pink/10 px-6 py-5 sm:flex-row">
+      <p className="text-center font-display text-lg text-chocolate sm:text-left">
+        {subtext ?? "Hand sculpted in Florida and ready to hang on your wall."}
+      </p>
+      <Link
+        href="/catalogue/"
+        data-buy-cta="shop"
+        className="inline-flex shrink-0 items-center justify-center rounded-full bg-pink px-6 py-3 text-sm font-semibold text-white no-underline shadow-sm transition hover:bg-pink-hot"
+      >
+        Get your own Jumbo Cookie Now
+      </Link>
+    </div>
+  );
+}
+
 function SectionBlock({ section }: { section: BlogSection }) {
   return (
     <section className="mt-8">
@@ -158,15 +175,21 @@ export function renderBlogContent(data: BlogPostStructuredData) {
         </ul>
       </div>
 
+      <JumboCookieCta subtext="Love sweet wall art? Pick your favorite handmade cookie." />
+
       <SectionBlock section={data.section1} />
 
       <InlineFigure image={data.image1} />
 
       <SectionBlock section={data.section2} />
 
+      <JumboCookieCta subtext="Every piece is sculpted by hand and ships free in the U.S." />
+
       <InlineFigure image={data.image2} />
 
       <SectionBlock section={data.section3} />
+
+      <JumboCookieCta subtext="Ready to brighten up your kitchen or studio wall?" />
 
       <h2 className="mt-10 font-display text-2xl text-chocolate md:text-3xl">
         Quick Questions

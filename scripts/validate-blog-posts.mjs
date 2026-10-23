@@ -52,6 +52,14 @@ function collectVisibleSentences(data) {
   return sentences;
 }
 
+
+const templatePath = path.join(process.cwd(), "src/components/BlogPostTemplate.tsx");
+const templateSrc = fs.readFileSync(templatePath, "utf8");
+if (!templateSrc.includes("Get your own Jumbo Cookie Now")) {
+  console.error("❌ BlogPostTemplate.tsx is missing \"Get your own Jumbo Cookie Now\" CTA button.");
+  process.exit(1);
+}
+
 let failed = false;
 console.log(`Validating ${files.length} blog posts against the JOIRUSH Blog Post Algorithm...\n`);
 

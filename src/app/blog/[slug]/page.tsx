@@ -215,25 +215,34 @@ export default async function BlogPostPage({ params }: Props) {
             {post.title}
           </h1>
           <p className="mt-4 text-lg text-chocolate-mid">{post.excerpt}</p>
-          <div className="mt-6 flex items-center gap-4">
-            <Image
-              src="/images/brand/avatar.jpg"
-              alt={post.author}
-              width={48}
-              height={48}
-              className="rounded-full border-2 border-pink"
-            />
-            <div>
-              <p className="font-medium text-chocolate">{post.author}</p>
-              <p className="text-sm text-chocolate-soft">
-                {new Date(post.publishedAt).toLocaleDateString("en-US", {
-                  month: "long",
-                  day: "numeric",
-                  year: "numeric",
-                  timeZone: "UTC",
-                })}
-              </p>
+          <div className="mt-6 flex flex-wrap items-center justify-between gap-4">
+            <div className="flex items-center gap-4">
+              <Image
+                src="/images/brand/avatar.jpg"
+                alt={post.author}
+                width={48}
+                height={48}
+                className="rounded-full border-2 border-pink"
+              />
+              <div>
+                <p className="font-medium text-chocolate">{post.author}</p>
+                <p className="text-sm text-chocolate-soft">
+                  {new Date(post.publishedAt).toLocaleDateString("en-US", {
+                    month: "long",
+                    day: "numeric",
+                    year: "numeric",
+                    timeZone: "UTC",
+                  })}
+                </p>
+              </div>
             </div>
+            <Link
+              href="/catalogue/"
+              data-buy-cta="shop"
+              className="inline-flex items-center justify-center rounded-full bg-pink px-6 py-3 text-sm font-semibold text-white shadow-sm transition hover:bg-pink-hot"
+            >
+              Get your own Jumbo Cookie Now
+            </Link>
           </div>
         </header>
 
@@ -265,7 +274,7 @@ export default async function BlogPostPage({ params }: Props) {
                 data-buy-cta="shop"
                 className="rounded-full bg-pink px-6 py-3 text-sm font-medium text-white hover:bg-pink-hot"
               >
-                Shop Cookies
+                Get your own Jumbo Cookie Now
               </Link>
               <Link
                 href="/custom/"

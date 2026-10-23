@@ -28,9 +28,9 @@ export const metadata: Metadata = {
     url: `${siteUrl}/contact/`,
     images: [
       {
-        url: getImageUrl("/images/brand/avatar.jpg"),
-        width: 1200,
-        height: 630,
+        url: getImageUrl("/images/brand/logo.png"),
+        width: 800,
+        height: 295,
         alt: "Contact JOIRUSH: cookie artist Erynn",
       },
     ],
@@ -40,7 +40,7 @@ export const metadata: Metadata = {
     title: "Contact Us | Get in Touch with Cookie Artist Erynn | JOIRUSH",
     description:
       "Contact JOIRUSH cookie artist Erynn for questions about sugar cookie wall sculptures, custom cookie art, or wholesale inquiries.",
-    images: [getImageUrl("/images/brand/avatar.jpg")],
+    images: [getImageUrl("/images/brand/logo.png")],
   },
 };
 

@@ -120,11 +120,11 @@ export default function AboutPage() {
           />
           <div className="grid gap-4">
             <Image
-              src="/images/brand/avatar.jpg"
-              alt="Cookie artist portrait: Erynn of JOIRUSH"
-              width={400}
-              height={400}
-              className="h-44 w-full rounded-[2rem] object-cover"
+              src="/images/brand/logo.png"
+              alt="JOIRUSH cookie art studio logo"
+              width={800}
+              height={295}
+              className="h-44 w-full rounded-[2rem] bg-cream-deep p-6 object-contain"
             />
             <Image
               src="/images/brand/about-5.jpg"

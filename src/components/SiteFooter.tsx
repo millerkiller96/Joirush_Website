@@ -15,15 +15,17 @@ export function SiteFooter() {
     <footer data-site-footer="" className="bg-chocolate text-cream">
       <div className="mx-auto grid max-w-7xl gap-10 px-5 py-16 md:grid-cols-4 md:px-8">
         <div className="md:col-span-2">
-          <div className="flex items-center gap-3">
-            <Image
-              src="/images/brand/avatar.jpg"
-              alt="JOIRUSH: Cookie Art Studio by Cookie Artist Erynn"
-              width={48}
-              height={48}
-              className="rounded-full object-cover"
-            />
-            <p className="font-display text-3xl">JOIRUSH</p>
+          <div className="flex items-center">
+            <Link href="/" className="inline-flex items-center">
+              <Image
+                src="/images/brand/logo.png"
+                alt="JOIRUSH: Cookie Art Studio by Cookie Artist Erynn"
+                width={220}
+                height={81}
+                className="h-14 w-auto object-contain md:h-16"
+              />
+              <span className="sr-only">JOIRUSH</span>
+            </Link>
           </div>
           <p className="mt-4 max-w-md text-cream/75">
             Cookie art studio by cookie artist {site.artist}. Handmade sugar cookie wall sculptures, art cookies, 

@@ -118,7 +118,7 @@ function ArticleJsonLd({ post }: { post: NonNullable<ReturnType<typeof getBlogPo
       name: site.name,
       logo: {
         "@type": "ImageObject",
-        url: getImageUrl("/images/brand/avatar.jpg"),
+        url: getImageUrl("/images/brand/logo.png"),
       },
     },
     mainEntityOfPage: {
@@ -218,11 +218,11 @@ export default async function BlogPostPage({ params }: Props) {
           <div className="mt-6 flex flex-wrap items-center justify-between gap-4">
             <div className="flex items-center gap-4">
               <Image
-                src="/images/brand/avatar.jpg"
+                src="/images/brand/logo.png"
                 alt={post.author}
-                width={48}
-                height={48}
-                className="rounded-full border-2 border-pink"
+                width={120}
+                height={44}
+                className="h-11 w-auto object-contain"
               />
               <div>
                 <p className="font-medium text-chocolate">{post.author}</p>

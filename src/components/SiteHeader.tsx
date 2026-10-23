@@ -30,18 +30,16 @@ export function SiteHeader() {
   return (
     <header className="sticky top-0 z-50 border-b border-chocolate/10 bg-cream/85 backdrop-blur-xl">
       <div className="mx-auto flex max-w-7xl items-center justify-between gap-6 px-5 py-3.5 md:px-8">
-        <Link href="/" className="flex items-center gap-3" onClick={() => setOpen(false)}>
+        <Link href="/" className="flex items-center" onClick={() => setOpen(false)}>
           <Image
-            src="/images/brand/avatar.jpg"
+            src="/images/brand/logo.png"
             alt="JOIRUSH: Cookie Art Studio by Cookie Artist Erynn"
-            width={44}
-            height={44}
-            className="rounded-full border-2 border-pink object-cover"
+            width={200}
+            height={74}
+            className="h-12 w-auto object-contain md:h-14"
             priority
           />
-          <span className="font-display text-2xl font-semibold tracking-tight text-chocolate">
-            JOIRUSH
-          </span>
+          <span className="sr-only">JOIRUSH</span>
         </Link>
 
         <nav className="hidden items-center gap-7 lg:flex">

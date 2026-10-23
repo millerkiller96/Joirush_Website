@@ -104,7 +104,7 @@ function OrganizationSchema() {
     name: site.name,
     alternateName: "Joi Rush by EBABYxo",
     url: siteUrl,
-    logo: getImageUrl("/images/brand/avatar.jpg"),
+    logo: getImageUrl("/images/brand/logo.png"),
     description:
       "Cookie art studio creating handmade sugar cookie wall sculptures and faux food wall art. Cookie artist Erynn crafts giant cookie canvas pieces and oversized dessert decor in Daytona Beach, Florida.",
     foundingLocation: {

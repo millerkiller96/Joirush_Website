@@ -91,6 +91,8 @@ function doPost(e) {
     if (!type) type = data.review ? "review" : "giveaway"; // older site builds sent no type
     if (type === "giveaway") return json_(handleGiveaway_(data));
     if (type === "review") return json_(handleReview_(data));
+    if (type === "checkout") return json_(handleStripeCheckout_(data));
+    if (type === "bulk_order") return json_(handleBulkOrder_(data));
     return json_({ ok: false, error: "Unknown type." });
   } catch (err) {
     Logger.log("doPost error: " + err);
@@ -540,4 +542,226 @@ function countHourly_(kind) {
 
 function json_(obj) {
   return ContentService.createTextOutput(JSON.stringify(obj)).setMimeType(ContentService.MimeType.JSON);
+}
+
+
+/* ================================================================== */
+/* Dynamic Stripe Checkout Sessions (Multi-Cookie & Bulk Tiers)       */
+/* ================================================================== */
+
+var STRIPE_SHIPPING_RATE_ID = "shr_1UIs5g8dNREsB4xBpIhVBs6y";
+var STRIPE_CATALOG = {
+  "jumbo-chocolate-chip-cookie": {
+    productId: "prod_VInUXaAP2bjrGc",
+    unitPriceId: "price_1UIBtx8dNREsB4xBV16Vh5FF",
+    second10PriceId: "price_1UIs5S8dNREsB4xBgEhSim2q",
+    priceUsd: 100,
+    second10Usd: 90
+  },
+  "jumbo-white-chocolate-chip-cookie": {
+    productId: "prod_VInVwq4gwbHX7W",
+    unitPriceId: "price_1UIBu48dNREsB4xBJU4XWWaG",
+    second10PriceId: "price_1UIs5Z8dNREsB4xBATCXEZ7W",
+    priceUsd: 115,
+    second10Usd: 103
+  },
+  "rainbow-candy-cookie": {
+    productId: "prod_VInVAr2A30To1r",
+    unitPriceId: "price_1UIBu68dNREsB4xBvnCx5qG0",
+    second10PriceId: "price_1UIs5a8dNREsB4xBQM6AXYap",
+    priceUsd: 90,
+    second10Usd: 81
+  },
+  "mini-jumbo-chocolate-chip-cookie": {
+    productId: "prod_VInVMu4LI8B4Yp",
+    unitPriceId: "price_1UIBu88dNREsB4xBTNS59vIX",
+    second10PriceId: "price_1UIs5a8dNREsB4xBWxtJaEv3",
+    priceUsd: 90,
+    second10Usd: 81
+  },
+  "jumbo-pastel-mm-cookie": {
+    productId: "prod_VInV5JgsOOBYsl",
+    unitPriceId: "price_1UIBuA8dNREsB4xBPy2WFC92",
+    second10PriceId: "price_1UIs5b8dNREsB4xBPn1XjWuu",
+    priceUsd: 115,
+    second10Usd: 103
+  },
+  "jumbo-christmas-cookie": {
+    productId: "prod_VInVVIXb3NPwt0",
+    unitPriceId: "price_1UIBuC8dNREsB4xBn3wpHOZO",
+    second10PriceId: "price_1UIs5c8dNREsB4xBvh6VC7vj",
+    priceUsd: 100,
+    second10Usd: 90
+  },
+  "giant-peanut-butter-cookie": {
+    productId: "prod_VInVIoE0t4agYj",
+    unitPriceId: "price_1UIBuE8dNREsB4xBZ5sbwIL2",
+    second10PriceId: "price_1UIs5d8dNREsB4xBshDuVkkF",
+    priceUsd: 100,
+    second10Usd: 90
+  },
+  "giant-double-chocolate-cookie": {
+    productId: "prod_VInVAztIr2Mo7D",
+    unitPriceId: "price_1UIBuG8dNREsB4xBp4640Aby",
+    second10PriceId: "price_1UIs5e8dNREsB4xBBcGskFlB",
+    priceUsd: 110,
+    second10Usd: 99
+  },
+  "cookie-ice-cream-sandwich": {
+    productId: "prod_VInVDITITvdjRz",
+    unitPriceId: "price_1UIBuI8dNREsB4xBGkiyAYnR",
+    second10PriceId: "price_1UIs5f8dNREsB4xB7tAbAeJU",
+    priceUsd: 220,
+    second10Usd: 198
+  },
+  "jumbo-mm-cookie": {
+    productId: "prod_VInV2orrtkSQHB",
+    unitPriceId: "price_1UIBuK8dNREsB4xBpRTIIqyJ",
+    second10PriceId: "price_1UIs5g8dNREsB4xBXOFeeVQA",
+    priceUsd: 115,
+    second10Usd: 103
+  },
+  "hot-pink-mm-cookie": {
+    productId: "prod_VInVfyjuGE81ol",
+    unitPriceId: "price_1UIBuM8dNREsB4xBUYv9o4uL",
+    second10PriceId: "price_1UIs5g8dNREsB4xBhDA0yXs5",
+    priceUsd: 115,
+    second10Usd: 103
+  }
+};
+
+/**
+ * Creates a live Stripe Checkout Session reflecting the exact cookie products,
+ * quantities, and bundle/bulk discounts selected by the customer.
+ * Requires Script Property STRIPE_SECRET_KEY on the JOIRUSH Stripe account (acct_1UIAw68dNREsB4xB).
+ */
+function handleStripeCheckout_(data) {
+  var secretKey = PropertiesService.getScriptProperties().getProperty("STRIPE_SECRET_KEY");
+  if (!secretKey) {
+    return { ok: false, error: "STRIPE_SECRET_KEY is not configured in Script Properties." };
+  }
+
+  var mode = String(data.mode || "bulk_tier");
+  var rawItems = Array.isArray(data.lineItems) ? data.lineItems : [];
+  if (!rawItems.length) {
+    return { ok: false, error: "No cookie line items provided." };
+  }
+
+  var formParts = [];
+  function addParam(k, v) {
+    formParts.push(encodeURIComponent(k) + "=" + encodeURIComponent(String(v)));
+  }
+
+  addParam("mode", "payment");
+  addParam("shipping_address_collection[allowed_countries][0]", "US");
+  addParam("shipping_options[0][shipping_rate]", STRIPE_SHIPPING_RATE_ID);
+  addParam("billing_address_collection", "required");
+
+  var successUrl = String(data.successUrl || "https://joirush.com/catalogue/?checkout=success");
+  var cancelUrl = String(data.cancelUrl || "https://joirush.com/catalogue/");
+  if (successUrl.indexOf("https://joirush.com") !== 0 && successUrl.indexOf("http://localhost") !== 0) {
+    successUrl = "https://joirush.com/catalogue/?checkout=success";
+  }
+  if (cancelUrl.indexOf("https://joirush.com") !== 0 && cancelUrl.indexOf("http://localhost") !== 0) {
+    cancelUrl = "https://joirush.com/catalogue/";
+  }
+  addParam("success_url", successUrl);
+  addParam("cancel_url", cancelUrl);
+
+  if (data.clientReferenceId) {
+    addParam("client_reference_id", String(data.clientReferenceId).slice(0, 200));
+  }
+  addParam("metadata[order_mode]", mode);
+
+  if (mode === "pair_bogo10" && rawItems.length === 2) {
+    var first = STRIPE_CATALOG[String(rawItems[0].slug || "")];
+    var second = STRIPE_CATALOG[String(rawItems[1].slug || "")];
+    if (!first || !second) return { ok: false, error: "Invalid cookie slug." };
+
+    addParam("line_items[0][price]", first.unitPriceId);
+    addParam("line_items[0][quantity]", 1);
+    addParam("line_items[1][price]", second.second10PriceId);
+    addParam("line_items[1][quantity]", 1);
+  } else if (mode === "trio_third15" && rawItems.length === 3) {
+    var c1 = STRIPE_CATALOG[String(rawItems[0].slug || "")];
+    var c2 = STRIPE_CATALOG[String(rawItems[1].slug || "")];
+    var c3 = STRIPE_CATALOG[String(rawItems[2].slug || "")];
+    if (!c1 || !c2 || !c3) return { ok: false, error: "Invalid cookie slug." };
+
+    var thirdCents = Math.round(c3.priceUsd * 0.85) * 100;
+    addParam("line_items[0][price]", c1.unitPriceId);
+    addParam("line_items[0][quantity]", 1);
+    addParam("line_items[1][price]", c2.second10PriceId);
+    addParam("line_items[1][quantity]", 1);
+    addParam("line_items[2][price_data][currency]", "usd");
+    addParam("line_items[2][price_data][product]", c3.productId);
+    addParam("line_items[2][price_data][unit_amount]", thirdCents);
+    addParam("line_items[2][quantity]", 1);
+  } else {
+    // Bulk tier (3 to 20 cookies)
+    var totalQty = 0;
+    var validated = [];
+    for (var i = 0; i < rawItems.length; i++) {
+      var slug = String(rawItems[i].slug || "");
+      var cat = STRIPE_CATALOG[slug];
+      var qty = Math.max(0, Math.min(20, Math.floor(Number(rawItems[i].quantity) || 0)));
+      if (!cat || qty <= 0) continue;
+      totalQty += qty;
+      validated.push({ slug: slug, cat: cat, qty: qty });
+    }
+    if (totalQty < 1 || totalQty > 20 || !validated.length) {
+      return { ok: false, error: "Bulk order quantity must be between 1 and 20 cookies." };
+    }
+    var discountPct = totalQty >= 10 ? 30 : totalQty >= 5 ? 25 : totalQty >= 3 ? 20 : 0;
+    addParam("metadata[bulk_discount_percent]", String(discountPct));
+    addParam("metadata[total_cookies]", String(totalQty));
+
+    for (var j = 0; j < validated.length; j++) {
+      var entry = validated[j];
+      var unitUsd = discountPct > 0 ? Math.round(entry.cat.priceUsd * (1 - discountPct / 100)) : entry.cat.priceUsd;
+      addParam("line_items[" + j + "][price_data][currency]", "usd");
+      addParam("line_items[" + j + "][price_data][product]", entry.cat.productId);
+      addParam("line_items[" + j + "][price_data][unit_amount]", unitUsd * 100);
+      addParam("line_items[" + j + "][quantity]", entry.qty);
+    }
+  }
+
+  var resp = UrlFetchApp.fetch("https://api.stripe.com/v1/checkout/sessions", {
+    method: "post",
+    headers: {
+      Authorization: "Bearer " + secretKey,
+      "Content-Type": "application/x-www-form-urlencoded"
+    },
+    payload: formParts.join("&"),
+    muteHttpExceptions: true
+  });
+
+  var parsed = JSON.parse(resp.getContentText() || "{}");
+  if (resp.getResponseCode() >= 200 && resp.getResponseCode() < 300 && parsed.url) {
+    return { ok: true, id: parsed.id, url: parsed.url };
+  }
+  Logger.log("Stripe session error: " + resp.getContentText());
+  return { ok: false, error: (parsed.error && parsed.error.message) || "Could not create Stripe Checkout session." };
+}
+
+function handleBulkOrder_(data) {
+  var ss = getSpreadsheet_();
+  var sheet = ss.getSheetByName("Bulk Orders");
+  if (!sheet) {
+    sheet = ss.insertSheet("Bulk Orders");
+    sheet.appendRow(["Timestamp", "Name", "Email", "Total Cookies", "Tier", "Final Total USD", "Savings USD", "Selected Cookies", "Notes"]);
+  }
+  var stamp = Utilities.formatDate(new Date(), TIME_ZONE, "yyyy-MM-dd HH:mm:ss");
+  sheet.appendRow([
+    stamp,
+    clean_(data.name, 80),
+    clean_(data.email, 254),
+    Number(data.totalCookies) || 0,
+    clean_(data.discountSummaryLabel, 120),
+    Number(data.finalTotalUsd) || 0,
+    Number(data.totalSavingsUsd) || 0,
+    clean_(data.items, 2000),
+    clean_(data.notes, 500)
+  ]);
+  return { ok: true };
 }

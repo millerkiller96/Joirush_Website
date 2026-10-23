@@ -54,6 +54,19 @@ export type EtsySyncData = {
 
 const syncData = etsySyncData as EtsySyncData;
 
+export type StripeTierPriceIds = {
+  third15Off?: string;
+  bulk20Off?: string;
+  bulk25Off?: string;
+  bulk30Off?: string;
+};
+
+export type StripeBulkTierUrls = {
+  bulk20Off?: string;
+  bulk25Off?: string;
+  bulk30Off?: string;
+};
+
 export type Product = {
   slug: string;
   name: string;
@@ -67,7 +80,12 @@ export type Product = {
   etsyUrl: string;
   stripeUrl: string;
   stripeUpsellUrl: string;
+  stripeProductId: string;
+  stripeUnitPriceId: string;
+  stripeSecond10OffPriceId: string;
+  stripeTierPriceIds?: StripeTierPriceIds;
   stripePairUrls?: Record<string, string>;
+  stripeBulkTierUrls?: StripeBulkTierUrls;
   upsellPairPrice: number;
   tagline: string;
   /** Optional search snippet lead (no price; the page appends price + shipping). */
@@ -77,6 +95,70 @@ export type Product = {
   materials: string;
   faqs: ProductFAQ[];
 };
+
+export const JOIRUSH_STRIPE_ACCOUNT_ID = "acct_1UIAw68dNREsB4xB";
+export const JOIRUSH_FREE_SHIPPING_RATE_ID = "shr_1UIs5g8dNREsB4xBpIhVBs6y";
+
+export type BulkPricingTierInfo = {
+  id: "bogo10" | "third15" | "bulk20" | "bulk25" | "bulk30";
+  label: string;
+  shortLabel: string;
+  discountPercent: number;
+  minQty: number;
+  maxQty: number;
+  description: string;
+};
+
+export const BULK_PRICING_TIERS: BulkPricingTierInfo[] = [
+  {
+    id: "bogo10",
+    label: "Buy 1, get 1 10% off",
+    shortLabel: "2 cookies (2nd 10% off)",
+    discountPercent: 10,
+    minQty: 2,
+    maxQty: 2,
+    description: "2nd cookie is 10% off",
+  },
+  {
+    id: "third15",
+    label: "Want a third? 15% off",
+    shortLabel: "3rd cookie 15% off",
+    discountPercent: 15,
+    minQty: 3,
+    maxQty: 3,
+    description: "Add a 3rd cookie in checkout for 15% off",
+  },
+  {
+    id: "bulk20",
+    label: "3 to 5 cookies: 20% off",
+    shortLabel: "3 to 5 (20% off)",
+    discountPercent: 20,
+    minQty: 3,
+    maxQty: 5,
+    description: "20% off each cookie",
+  },
+  {
+    id: "bulk25",
+    label: "5 to 10 cookies: 25% off",
+    shortLabel: "5 to 10 (25% off)",
+    discountPercent: 25,
+    minQty: 5,
+    maxQty: 10,
+    description: "25% off each cookie",
+  },
+  {
+    id: "bulk30",
+    label: "10 to 20 cookies: 30% off each",
+    shortLabel: "10 to 20 (30% off)",
+    discountPercent: 30,
+    minQty: 10,
+    maxQty: 20,
+    description: "30% off each cookie",
+  },
+];
+
+export const BULK_PRICING_SUMMARY_BULLET =
+  "Bundle and bulk savings: Buy 1 get 1 10% off · 3rd cookie 15% off · 3 to 5 cookies 20% off · 5 to 10 cookies 25% off · 10 to 20 cookies 30% off each";
 
 export const defaultFAQs: ProductFAQ[] = [
   {
@@ -123,6 +205,9 @@ export const products: Product[] = [
     etsyUrl: "https://www.etsy.com/listing/1831819997/jumbo-chocolate-chip-cookie-wall-art",
     stripeUrl: "https://buy.stripe.com/bJe9AN6B5eQ66DW1z69fW00",
     stripeUpsellUrl: "https://buy.stripe.com/00wbIV4sX0Zg3rK91y9fW0r",
+    stripeProductId: "prod_VInUXaAP2bjrGc",
+    stripeUnitPriceId: "price_1UIBtx8dNREsB4xBV16Vh5FF",
+    stripeSecond10OffPriceId: "price_1UIs5S8dNREsB4xBgEhSim2q",
     upsellPairPrice: 190,
     tagline: "The cookie art that started it all. Golden crumble. Glossy chips. Zero guilt.",
     description:
@@ -158,6 +243,9 @@ export const products: Product[] = [
     etsyUrl: "https://www.etsy.com/listing/4452647836/jumbo-white-chocolate-chip-cookie-wall",
     stripeUrl: "https://buy.stripe.com/fZu7sF1gLdM22nGfpW9fW06",
     stripeUpsellUrl: "https://buy.stripe.com/cNibIV8JdfUaaUc91y9fW0B",
+    stripeProductId: "prod_VInVwq4gwbHX7W",
+    stripeUnitPriceId: "price_1UIBu48dNREsB4xBJU4XWWaG",
+    stripeSecond10OffPriceId: "price_1UIs5Z8dNREsB4xBATCXEZ7W",
     upsellPairPrice: 218,
     tagline: "Soft vanilla vibes. Creamy white chips. Dreamy energy.",
     description:
@@ -184,6 +272,9 @@ export const products: Product[] = [
     etsyUrl: "https://www.etsy.com/listing/4452645632/colorful-candy-cookie-wall-decor",
     stripeUrl: "https://buy.stripe.com/28EdR3gbF6jA5zSelS9fW08",
     stripeUpsellUrl: "https://buy.stripe.com/6oU3cpe3x23kgewelS9fW0D",
+    stripeProductId: "prod_VInVAr2A30To1r",
+    stripeUnitPriceId: "price_1UIBu68dNREsB4xBvnCx5qG0",
+    stripeSecond10OffPriceId: "price_1UIs5a8dNREsB4xBQM6AXYap",
     upsellPairPrice: 171,
     tagline: "Jewel bright cookie art. Pure dopamine. $90.",
     description:
@@ -211,6 +302,9 @@ export const products: Product[] = [
     etsyUrl: "https://www.etsy.com/listing/4452643820/mini-jumbo-chocolate-chip-cookie-wall",
     stripeUrl: "https://buy.stripe.com/3cIbIVcZtgYe5zS91y9fW0a",
     stripeUpsellUrl: "https://buy.stripe.com/5kQdR34sX37o3rK6Tq9fW0F",
+    stripeProductId: "prod_VInVMu4LI8B4Yp",
+    stripeUnitPriceId: "price_1UIBu88dNREsB4xBTNS59vIX",
+    stripeSecond10OffPriceId: "price_1UIs5a8dNREsB4xBWxtJaEv3",
     upsellPairPrice: 171,
     tagline: "Big impact. Smaller footprint. Same irresistible crumble.",
     description:
@@ -236,6 +330,9 @@ export const products: Product[] = [
     etsyUrl: "https://www.etsy.com/listing/4452635945/jumbo-pastel-mm-cookie-wall-art",
     stripeUrl: "https://buy.stripe.com/bJefZbe3x9vM9Q8dhO9fW0c",
     stripeUpsellUrl: "https://buy.stripe.com/eVqbIV9NhdM20fyfpW9fW0G",
+    stripeProductId: "prod_VInV5JgsOOBYsl",
+    stripeUnitPriceId: "price_1UIBuA8dNREsB4xBPy2WFC92",
+    stripeSecond10OffPriceId: "price_1UIs5b8dNREsB4xBPn1XjWuu",
     upsellPairPrice: 218,
     tagline: "Candy vibes. Softer palette. Still stops the room.",
     description:
@@ -261,6 +358,9 @@ export const products: Product[] = [
     etsyUrl: "https://www.etsy.com/listing/4438064219/jumbo-christmas-chocolate-chip-cookie",
     stripeUrl: "https://buy.stripe.com/00waERe3xazQ8M41z69fW0e",
     stripeUpsellUrl: "https://buy.stripe.com/7sYdR3f7BdM28M42Da9fW0L",
+    stripeProductId: "prod_VInVVIXb3NPwt0",
+    stripeUnitPriceId: "price_1UIBuC8dNREsB4xBn3wpHOZO",
+    stripeSecond10OffPriceId: "price_1UIs5c8dNREsB4xBvh6VC7vj",
     upsellPairPrice: 190,
     tagline: "Christmas cookie wall art with festive candy color and zero crumbs.",
     description:
@@ -286,6 +386,9 @@ export const products: Product[] = [
     etsyUrl: "https://www.etsy.com/listing/1817504830/giant-peanut-butter-cookie-wall-art",
     stripeUrl: "https://buy.stripe.com/6oU7sFgbFbDU6DW91y9fW0g",
     stripeUpsellUrl: "https://buy.stripe.com/9B64gtbVp37ofas7Xu9fW0M",
+    stripeProductId: "prod_VInVIoE0t4agYj",
+    stripeUnitPriceId: "price_1UIBuE8dNREsB4xBZ5sbwIL2",
+    stripeSecond10OffPriceId: "price_1UIs5d8dNREsB4xBshDuVkkF",
     upsellPairPrice: 190,
     tagline: "Rich peanut butter dough. Candy pops. Pure nostalgia.",
     description:
@@ -311,6 +414,9 @@ export const products: Product[] = [
     etsyUrl: "https://www.etsy.com/listing/1817632262/giant-faux-double-chocolate-chip-cookie",
     stripeUrl: "https://buy.stripe.com/3cIeV7f7B37o2nG91y9fW0i",
     stripeUpsellUrl: "https://buy.stripe.com/9B628lgbF0Zgd2kcdK9fW0N",
+    stripeProductId: "prod_VInVAztIr2Mo7D",
+    stripeUnitPriceId: "price_1UIBuG8dNREsB4xBp4640Aby",
+    stripeSecond10OffPriceId: "price_1UIs5e8dNREsB4xBBcGskFlB",
     upsellPairPrice: 209,
     tagline: "Twice the chocolate. Twice the temptation. Zero regrets.",
     description:
@@ -337,6 +443,9 @@ export const products: Product[] = [
     etsyUrl: "https://www.etsy.com/listing/1892110346/jumbo-chocolate-chip-cookie-ice-cream",
     stripeUrl: "https://buy.stripe.com/00wcMZ1gL6jA1jC5Pm9fW0k",
     stripeUpsellUrl: "https://buy.stripe.com/9B614h6B50Zg7I01z69fW0O",
+    stripeProductId: "prod_VInVDITITvdjRz",
+    stripeUnitPriceId: "price_1UIBuI8dNREsB4xBGkiyAYnR",
+    stripeSecond10OffPriceId: "price_1UIs5f8dNREsB4xB7tAbAeJU",
     upsellPairPrice: 418,
     tagline: "The showstopper cookie art. Two cookies. Vanilla slab. Zero melt.",
     description:
@@ -370,7 +479,10 @@ export const products: Product[] = [
     image: "/images/products/mm-classic.jpg",
     etsyUrl: "https://www.etsy.com/listing/1831839675/jumbo-mm-cookie-wall-art-candyland",
     stripeUrl: "https://buy.stripe.com/cNidR3cZt5fwbYg0v29fW0m",
-    stripeUpsellUrl: "https://buy.stripe.com/aFa6oBe3xfUa5zS51y9fW0P",
+    stripeUpsellUrl: "https://buy.stripe.com/aFa6oBe3xfUa5zS91y9fW0P",
+    stripeProductId: "prod_VInV2orrtkSQHB",
+    stripeUnitPriceId: "price_1UIBuK8dNREsB4xBpRTIIqyJ",
+    stripeSecond10OffPriceId: "price_1UIs5g8dNREsB4xBXOFeeVQA",
     upsellPairPrice: 218,
     tagline: "Golden dough. Candy confetti. Instant serotonin.",
     description:
@@ -397,6 +509,9 @@ export const products: Product[] = [
     etsyUrl: "https://www.etsy.com/listing/1831836105/hot-pink-jumbo-mm-cookie-candyland-wall",
     stripeUrl: "https://buy.stripe.com/4gMfZb2kPgYefas4Li9fW0o",
     stripeUpsellUrl: "https://buy.stripe.com/3cI9AN7F98rIbYg0v29fW0Q",
+    stripeProductId: "prod_VInVfyjuGE81ol",
+    stripeUnitPriceId: "price_1UIBuM8dNREsB4xBUYv9o4uL",
+    stripeSecond10OffPriceId: "price_1UIs5g8dNREsB4xBhDA0yXs5",
     upsellPairPrice: 218,
     tagline: "Loud. Pink. Unapologetic. The main character cookie art.",
     description:
@@ -460,6 +575,35 @@ export function calculateSavings(price: number, compareAtPrice: number) {
   const savings = compareAtPrice - price;
   const percent = Math.round((savings / compareAtPrice) * 100);
   return { savings, percent };
+}
+
+/** 10% off price for the second cookie in a BOGO 10% off pair. */
+export function getSecondCookiePrice(product: Pick<Product, "price" | "upsellPairPrice">): number {
+  return product.upsellPairPrice - product.price;
+}
+
+/** 15% off price for the third cookie in the "Want a third?" prompt. */
+export function getThirdCookiePrice(product: Pick<Product, "price">): number {
+  return Math.round(product.price * 0.85);
+}
+
+/**
+ * Bulk tier discount percentage for a given total cookie count (for bulk orders of 3 to 20 cookies).
+ * - 10 to 20 cookies: 30% off each
+ * - 5 to 9 cookies: 25% off each (covers "5 to 10 cookies: 25% off", with 10+ getting 30% off)
+ * - 3 to 4 cookies: 20% off each (covers "3 to 5 cookies: 20% off", with 5+ getting 25% off)
+ */
+export function getBulkDiscountPercent(totalCookies: number): 0 | 20 | 25 | 30 {
+  if (totalCookies >= 10) return 30;
+  if (totalCookies >= 5) return 25;
+  if (totalCookies >= 3) return 20;
+  return 0;
+}
+
+/** Discounted unit price in whole USD for a given percentage discount (e.g. 15, 20, 25, 30). */
+export function getDiscountedUnitPrice(price: number, discountPercent: number): number {
+  if (discountPercent <= 0) return price;
+  return Math.round(price * (1 - discountPercent / 100));
 }
 
 /**

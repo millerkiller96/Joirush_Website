@@ -185,6 +185,7 @@ export default function OversizedFoodWallArtPage() {
               <li>✓ Free U.S. shipping</li>
               <li>✓ Lightweight, so most pieces hang on a nail</li>
               <li>✓ Handmade in Daytona Beach, FL</li>
+              <li>✓ Bulk savings: Buy 1 get 1 10% off · 3rd cookie 15% off · 3 to 5 cookies 20% off · 5 to 10 cookies 25% off · 10 to 20 cookies 30% off each</li>
             </ul>
             <div className="mt-8 flex flex-wrap gap-3">
               <Link

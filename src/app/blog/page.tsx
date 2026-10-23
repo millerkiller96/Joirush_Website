@@ -55,7 +55,7 @@ function BlogJsonLd() {
       name: site.name,
       logo: {
         "@type": "ImageObject",
-        url: getImageUrl("/images/brand/avatar.jpg"),
+        url: getImageUrl("/images/brand/logo.png"),
       },
     },
     blogPost: blogPosts.map((post) => ({

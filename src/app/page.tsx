@@ -97,7 +97,7 @@ function HomeJsonLd() {
     "@type": "Organization",
     name: site.name,
     url: siteUrl,
-    logo: getImageUrl("/images/brand/avatar.jpg"),
+    logo: getImageUrl("/images/brand/logo.png"),
     description:
       "Jumbo cookie wall art studio creating handmade sugar cookie wall sculptures, art cookies wall sculpture pieces, and faux food wall art by cookie artist Erynn in Daytona Beach, Florida.",
     founder: {

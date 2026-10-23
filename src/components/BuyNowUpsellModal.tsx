@@ -15,7 +15,9 @@ import {
   appendClientRef,
   buildPairCookieOrder,
   buildTrioCookieOrder,
+  getDirectStripeCheckoutUrl,
   logCheckoutOrder,
+  prefetchMultiFlavorStripeUrl,
 } from "@/lib/checkout";
 import { asset } from "@/lib/paths";
 
@@ -170,6 +172,19 @@ export function BuyNowUpsellModal({
 
   const pairOrder = buildPairCookieOrder(firstProduct, secondCookie);
   const trioOrder = buildTrioCookieOrder(firstProduct, secondCookie, thirdCookie);
+  const [resolvedTrioUrl, setResolvedTrioUrl] = useState<string | null>(null);
+
+  useEffect(() => {
+    setResolvedTrioUrl(null);
+    if (!isOpen || step !== "third_cookie" || !trioOrder.needsDynamicMultiFlavorLink) return;
+    let cancelled = false;
+    void prefetchMultiFlavorStripeUrl(trioOrder).then((url) => {
+      if (!cancelled && url) setResolvedTrioUrl(url);
+    });
+    return () => {
+      cancelled = true;
+    };
+  }, [isOpen, step, firstSlug, secondSlug, thirdSlug]);
   const singleFirstCheckoutUrl = appendClientRef(firstProduct.stripeUrl, `1x_${firstProduct.slug}`);
 
   const firstHero = getProductGallery(firstSlug, firstProduct.image)[0];
@@ -807,7 +822,7 @@ export function BuyNowUpsellModal({
         ) : (
           <div className="mt-4 space-y-2 sm:mt-5 sm:space-y-3">
             <a
-              href={trioOrder.directStripeUrl}
+              href={resolvedTrioUrl || getDirectStripeCheckoutUrl(trioOrder)}
               target="_blank"
               rel="noreferrer"
               onClick={() => {

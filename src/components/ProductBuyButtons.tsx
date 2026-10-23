@@ -1,6 +1,6 @@
 "use client";
 
-import { useState, useMemo } from "react";
+import { useState, useMemo, useEffect } from "react";
 import Link from "next/link";
 import {
   BuyNowUpsellModal,
@@ -17,7 +17,9 @@ import {
 import { getProductGallery } from "@/data/product-galleries";
 import {
   buildBulkCookieOrder,
+  JOIRUSH_CHECKOUT_SERVICE_URL,
   openStripeCheckoutOrder,
+  prefetchMultiFlavorStripeUrl,
 } from "@/lib/checkout";
 import { asset } from "@/lib/paths";
 
@@ -96,6 +98,21 @@ export function ProductBuyButtons({ product }: ProductBuyButtonsProps) {
   );
 
   const activeBulkDiscount = getBulkDiscountPercent(totalCookies);
+
+  // Warm up multi-flavor checkout endpoint when Mix & Match drawer opens
+  useEffect(() => {
+    if (!mixOpen) return;
+    fetch(`${JOIRUSH_CHECKOUT_SERVICE_URL}/health`).catch(() => {});
+  }, [mixOpen]);
+
+  // Pre-create and cache the exact multi-item Stripe Payment Link whenever the user mixes multiple flavors
+  useEffect(() => {
+    if (!bulkOrder.needsDynamicMultiFlavorLink) return;
+    const timer = window.setTimeout(() => {
+      void prefetchMultiFlavorStripeUrl(bulkOrder);
+    }, 120);
+    return () => window.clearTimeout(timer);
+  }, [bulkOrder]);
 
   function setTotalQuantity(nextTotal: number) {
     const clamped = Math.max(1, Math.min(MAX_BULK_COOKIES, nextTotal));
@@ -187,7 +204,7 @@ export function ProductBuyButtons({ product }: ProductBuyButtonsProps) {
       return;
     }
 
-    // 3 to 20 cookies bulk order (including 10 cookies of any combination):
+    // 3 to 20 cookies bulk order (including 20 cookies of any single or mixed combination):
     // Go straight to the single unified Stripe Checkout page with zero intermediate modal!
     openStripeCheckoutOrder(bulkOrder);
   }
@@ -378,110 +395,53 @@ export function ProductBuyButtons({ product }: ProductBuyButtonsProps) {
           </p>
         )}
 
-        {/* Big Eye-Catching Animated "Selected Cookies" & "Mix & Match" Buttons */}
+        {/* Single Big Eye-Catching Animated "Mix & Match Flavors" Button */}
         <div className="mt-4">
-          <div className="grid grid-cols-1 gap-3 sm:grid-cols-2">
-            {/* Button 1: Selected Cookies Button */}
-            <button
-              type="button"
-              onClick={() => setMixOpen((prev) => !prev)}
-              data-selected-cookies-button=""
-              aria-expanded={mixOpen}
-              className="animate-knock-around group flex w-full items-center justify-between gap-3 rounded-2xl border-2 border-pink/50 bg-chocolate px-4 py-3.5 text-left text-cream shadow-lg transition hover:scale-[1.02] hover:border-pink hover:bg-chocolate-mid focus:outline-none focus:ring-2 focus:ring-pink focus:ring-offset-2 sm:px-5 sm:py-4"
-            >
-              <div className="flex min-w-0 items-center gap-3">
-                <div className="flex shrink-0 -space-x-2">
-                  {selectedEntries.slice(0, 3).map((entry) => (
-                    // eslint-disable-next-line @next/next/no-img-element
-                    <img
-                      key={entry.product.slug}
-                      src={entry.thumb || currentThumb}
-                      alt=""
-                      aria-hidden="true"
-                      width={36}
-                      height={36}
-                      className="h-9 w-9 rounded-full border-2 border-cream object-cover shadow-sm"
-                    />
-                  ))}
-                </div>
-                <div className="min-w-0">
-                  <span className="block text-sm font-extrabold uppercase tracking-wide text-cream sm:text-base">
-                    Selected Cookies ({totalCookies})
-                  </span>
-                  <span className="mt-0.5 block truncate text-xs font-semibold text-cream/85">
-                    {selectedSummaryText}
-                  </span>
-                </div>
+          <button
+            type="button"
+            onClick={() => setMixOpen((prev) => !prev)}
+            data-mix-flavors-toggle=""
+            aria-expanded={mixOpen}
+            className="animate-knock-around group flex w-full items-center justify-between gap-3 rounded-2xl border-2 border-white/40 bg-pink px-4 py-4 text-left text-white shadow-lg transition hover:scale-[1.02] hover:bg-pink-dark focus:outline-none focus:ring-2 focus:ring-pink focus:ring-offset-2 sm:px-5 sm:py-4"
+          >
+            <div className="flex min-w-0 items-center gap-3">
+              <div className="flex shrink-0 items-center -space-x-2">
+                {selectedEntries.slice(0, 3).map((entry) => (
+                  // eslint-disable-next-line @next/next/no-img-element
+                  <img
+                    key={entry.product.slug}
+                    src={entry.thumb || currentThumb}
+                    alt=""
+                    aria-hidden="true"
+                    width={40}
+                    height={40}
+                    className="h-10 w-10 rounded-full border-2 border-white object-cover shadow-sm"
+                  />
+                ))}
               </div>
-              <span className="shrink-0 rounded-full bg-pink px-2.5 py-1 text-[11px] font-extrabold uppercase tracking-wider text-white shadow-sm">
-                {mixOpen ? "Open" : "Edit"}
-              </span>
-            </button>
-
-            {/* Button 2: Mix & Match Button */}
-            <button
-              type="button"
-              onClick={() => setMixOpen((prev) => !prev)}
-              data-mix-flavors-toggle=""
-              aria-expanded={mixOpen}
-              className="animate-knock-around-alt group flex w-full items-center justify-between gap-3 rounded-2xl border-2 border-white/40 bg-pink px-4 py-3.5 text-left text-white shadow-lg transition hover:scale-[1.02] hover:bg-pink-dark focus:outline-none focus:ring-2 focus:ring-pink focus:ring-offset-2 sm:px-5 sm:py-4"
-            >
-              <div className="flex min-w-0 items-center gap-3">
-                <span
-                  aria-hidden="true"
-                  className="flex h-10 w-10 shrink-0 items-center justify-center rounded-xl bg-white/20 text-xl shadow-inner"
-                >
-                  🍪
+              <div className="min-w-0">
+                <span className="block text-base font-extrabold uppercase tracking-wide text-white sm:text-lg">
+                  {mixOpen ? "Done Mixing Flavors" : "🍪 Mix & Match Cookie Flavors"}
                 </span>
-                <div className="min-w-0">
-                  <span className="block text-sm font-extrabold uppercase tracking-wide text-white sm:text-base">
-                    {mixOpen ? "Done Mixing Flavors" : "Mix & Match Flavors"}
-                  </span>
-                  <span className="mt-0.5 block truncate text-xs font-semibold text-white/90">
-                    {mixOpen
-                      ? "Tap to close flavor picker"
-                      : "Combine any of our 11 cookies"}
-                  </span>
-                </div>
+                <span className="mt-0.5 block truncate text-xs font-semibold text-white/95 sm:text-sm">
+                  {mixOpen
+                    ? `In cart (${totalCookies}): ${selectedSummaryText}`
+                    : `In cart (${totalCookies}): ${selectedSummaryText} · Tap to mix all 11 cookies`}
+                </span>
               </div>
-              <span className="flex h-8 w-8 shrink-0 items-center justify-center rounded-full bg-white/25 text-white">
-                <svg
-                  className={`h-5 w-5 transition-transform ${mixOpen ? "rotate-180" : ""}`}
-                  fill="none"
-                  viewBox="0 0 24 24"
-                  stroke="currentColor"
-                  strokeWidth={2.5}
-                >
-                  <path strokeLinecap="round" strokeLinejoin="round" d="M19 9l-7 7-7-7" />
-                </svg>
-              </span>
-            </button>
-          </div>
-
-          {/* Selected Cookie Chips (each chip also toggles the flavor picker) */}
-          <div className="mt-2.5 flex flex-wrap items-center gap-1.5">
-            {selectedEntries.map((entry) => (
-              <button
-                key={entry.product.slug}
-                type="button"
-                onClick={() => setMixOpen((prev) => !prev)}
-                className="inline-flex items-center gap-1.5 rounded-full bg-white px-3 py-1 text-xs font-bold text-chocolate shadow-sm ring-1 ring-chocolate/15 transition hover:bg-cream-deep hover:ring-pink"
+            </div>
+            <span className="flex h-9 w-9 shrink-0 items-center justify-center rounded-full bg-white/25 text-white">
+              <svg
+                className={`h-5 w-5 transition-transform ${mixOpen ? "rotate-180" : ""}`}
+                fill="none"
+                viewBox="0 0 24 24"
+                stroke="currentColor"
+                strokeWidth={2.5}
               >
-                {/* eslint-disable-next-line @next/next/no-img-element */}
-                <img
-                  src={entry.thumb || currentThumb}
-                  alt=""
-                  aria-hidden="true"
-                  width={20}
-                  height={20}
-                  className="h-5 w-5 rounded-full object-cover"
-                />
-                <span>
-                  {entry.quantity}× {entry.product.shortName}
-                </span>
-              </button>
-            ))}
-          </div>
+                <path strokeLinecap="round" strokeLinejoin="round" d="M19 9l-7 7-7-7" />
+              </svg>
+            </span>
+          </button>
 
           {mixOpen && (
             <div

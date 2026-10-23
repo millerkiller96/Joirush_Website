@@ -191,6 +191,7 @@ export default function ColorfulWallArtPage() {
               <li>✓ Handmade in {site.shipsFrom}</li>
               <li>✓ Ships in {site.shippingTime}</li>
               <li>✓ Free U.S. shipping</li>
+              <li>✓ Bulk savings: Buy 1 get 1 10% off · 3rd cookie 15% off · 3 to 5 cookies 20% off · 5 to 10 cookies 25% off · 10 to 20 cookies 30% off each</li>
             </ul>
             <div className="mt-8 flex flex-wrap gap-3">
               <Link

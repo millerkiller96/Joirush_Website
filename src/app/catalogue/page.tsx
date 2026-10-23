@@ -173,12 +173,12 @@ export default function CataloguePage() {
           <li>✓ Buy directly or via Etsy</li>
         </ul>
 
+        <ReviewHighlight />
+
         <div id="catalogue-grid" data-buy-target="" className="mt-10 scroll-mt-24 outline-none">
           <CatalogueGrid />
         </div>
       </div>
-
-      <ReviewHighlight />
 
       <StudioVideoCarousel />
 

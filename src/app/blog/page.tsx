@@ -177,7 +177,7 @@ export default function BlogPage() {
               data-buy-cta="shop"
               className="rounded-full bg-pink px-6 py-3 text-sm font-medium text-white hover:bg-pink-hot"
             >
-              Shop Cookies
+              Get your own Jumbo Cookie Now
             </Link>
             <Link
               href="/custom/"

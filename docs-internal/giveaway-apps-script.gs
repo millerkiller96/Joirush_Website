@@ -87,7 +87,7 @@ function doPost(e) {
   try {
     lock.waitLock(10000);
     var data = parseBody_(e);
-    var type = String(data.type || "").toLowerCase();
+    var type = String(data.type || (data.action === "create_checkout" ? "checkout" : "")).toLowerCase();
     if (!type) type = data.review ? "review" : "giveaway"; // older site builds sent no type
     if (type === "giveaway") return json_(handleGiveaway_(data));
     if (type === "review") return json_(handleReview_(data));
@@ -555,6 +555,10 @@ var STRIPE_CATALOG = {
     productId: "prod_VInUXaAP2bjrGc",
     unitPriceId: "price_1UIBtx8dNREsB4xBV16Vh5FF",
     second10PriceId: "price_1UIs5S8dNREsB4xBgEhSim2q",
+    third15PriceId: "price_1UTXKR8dNREsB4xBbjHQB1C0",
+    bulk20PriceId: "price_1UTXKS8dNREsB4xB65irUAY2",
+    bulk25PriceId: "price_1UTXKT8dNREsB4xBoGMSEhDY",
+    bulk30PriceId: "price_1UTXKU8dNREsB4xBCEaWH8a8",
     priceUsd: 100,
     second10Usd: 90
   },
@@ -562,6 +566,10 @@ var STRIPE_CATALOG = {
     productId: "prod_VInVwq4gwbHX7W",
     unitPriceId: "price_1UIBu48dNREsB4xBJU4XWWaG",
     second10PriceId: "price_1UIs5Z8dNREsB4xBATCXEZ7W",
+    third15PriceId: "price_1UTXKV8dNREsB4xBgaTkODBx",
+    bulk20PriceId: "price_1UTXKX8dNREsB4xBdR8J216N",
+    bulk25PriceId: "price_1UTXKY8dNREsB4xBxba7CIve",
+    bulk30PriceId: "price_1UTXKZ8dNREsB4xBEF5txp8R",
     priceUsd: 115,
     second10Usd: 103
   },
@@ -569,6 +577,10 @@ var STRIPE_CATALOG = {
     productId: "prod_VInVAr2A30To1r",
     unitPriceId: "price_1UIBu68dNREsB4xBvnCx5qG0",
     second10PriceId: "price_1UIs5a8dNREsB4xBQM6AXYap",
+    third15PriceId: "price_1UTXKa8dNREsB4xBpXYxbrM5",
+    bulk20PriceId: "price_1UTXKc8dNREsB4xBMpvbZE6D",
+    bulk25PriceId: "price_1UTXKe8dNREsB4xB7qtmGxjU",
+    bulk30PriceId: "price_1UTXKe8dNREsB4xB24Xa5O8z",
     priceUsd: 90,
     second10Usd: 81
   },
@@ -576,6 +588,10 @@ var STRIPE_CATALOG = {
     productId: "prod_VInVMu4LI8B4Yp",
     unitPriceId: "price_1UIBu88dNREsB4xBTNS59vIX",
     second10PriceId: "price_1UIs5a8dNREsB4xBWxtJaEv3",
+    third15PriceId: "price_1UTXKf8dNREsB4xBXnfRWmlc",
+    bulk20PriceId: "price_1UTXKh8dNREsB4xBZAuLXILT",
+    bulk25PriceId: "price_1UTXKi8dNREsB4xBuE87OG4S",
+    bulk30PriceId: "price_1UTXKj8dNREsB4xBm6rp5Izz",
     priceUsd: 90,
     second10Usd: 81
   },
@@ -583,6 +599,10 @@ var STRIPE_CATALOG = {
     productId: "prod_VInV5JgsOOBYsl",
     unitPriceId: "price_1UIBuA8dNREsB4xBPy2WFC92",
     second10PriceId: "price_1UIs5b8dNREsB4xBPn1XjWuu",
+    third15PriceId: "price_1UTXKk8dNREsB4xBQaTPZe6h",
+    bulk20PriceId: "price_1UTXKm8dNREsB4xBYeT8pzr2",
+    bulk25PriceId: "price_1UTXKn8dNREsB4xBsY0Pg5dG",
+    bulk30PriceId: "price_1UTXKo8dNREsB4xBoT8y0jKu",
     priceUsd: 115,
     second10Usd: 103
   },
@@ -590,6 +610,10 @@ var STRIPE_CATALOG = {
     productId: "prod_VInVVIXb3NPwt0",
     unitPriceId: "price_1UIBuC8dNREsB4xBn3wpHOZO",
     second10PriceId: "price_1UIs5c8dNREsB4xBvh6VC7vj",
+    third15PriceId: "price_1UTXKq8dNREsB4xBj8KbWQGW",
+    bulk20PriceId: "price_1UTXKr8dNREsB4xB1yt3tGWc",
+    bulk25PriceId: "price_1UTXKs8dNREsB4xBUY0OMkSW",
+    bulk30PriceId: "price_1UTXKu8dNREsB4xBRHtlHEZI",
     priceUsd: 100,
     second10Usd: 90
   },
@@ -597,6 +621,10 @@ var STRIPE_CATALOG = {
     productId: "prod_VInVIoE0t4agYj",
     unitPriceId: "price_1UIBuE8dNREsB4xBZ5sbwIL2",
     second10PriceId: "price_1UIs5d8dNREsB4xBshDuVkkF",
+    third15PriceId: "price_1UTXL38dNREsB4xBpnzoCb1S",
+    bulk20PriceId: "price_1UTXL58dNREsB4xBj1JvJkfN",
+    bulk25PriceId: "price_1UTXL68dNREsB4xBGA65T79l",
+    bulk30PriceId: "price_1UTXL78dNREsB4xBwjpbBBav",
     priceUsd: 100,
     second10Usd: 90
   },
@@ -604,6 +632,10 @@ var STRIPE_CATALOG = {
     productId: "prod_VInVAztIr2Mo7D",
     unitPriceId: "price_1UIBuG8dNREsB4xBp4640Aby",
     second10PriceId: "price_1UIs5e8dNREsB4xBBcGskFlB",
+    third15PriceId: "price_1UTXL88dNREsB4xBp7E8OBdv",
+    bulk20PriceId: "price_1UTXL98dNREsB4xBQp21PRSB",
+    bulk25PriceId: "price_1UTXLA8dNREsB4xBtRc9hjGZ",
+    bulk30PriceId: "price_1UTXLC8dNREsB4xB16ML906I",
     priceUsd: 110,
     second10Usd: 99
   },
@@ -611,6 +643,10 @@ var STRIPE_CATALOG = {
     productId: "prod_VInVDITITvdjRz",
     unitPriceId: "price_1UIBuI8dNREsB4xBGkiyAYnR",
     second10PriceId: "price_1UIs5f8dNREsB4xB7tAbAeJU",
+    third15PriceId: "price_1UTXLD8dNREsB4xBdSBxMHVT",
+    bulk20PriceId: "price_1UTXLF8dNREsB4xBxsVELwiF",
+    bulk25PriceId: "price_1UTXLF8dNREsB4xBg1GZCLWg",
+    bulk30PriceId: "price_1UTXLH8dNREsB4xBAGIGbuP7",
     priceUsd: 220,
     second10Usd: 198
   },
@@ -618,6 +654,10 @@ var STRIPE_CATALOG = {
     productId: "prod_VInV2orrtkSQHB",
     unitPriceId: "price_1UIBuK8dNREsB4xBpRTIIqyJ",
     second10PriceId: "price_1UIs5g8dNREsB4xBXOFeeVQA",
+    third15PriceId: "price_1UTXLI8dNREsB4xBQ7vz6QxM",
+    bulk20PriceId: "price_1UTXLJ8dNREsB4xBEOqI4f0P",
+    bulk25PriceId: "price_1UTXLK8dNREsB4xBX8kKmvSI",
+    bulk30PriceId: "price_1UTXLL8dNREsB4xBUdq4i5Qx",
     priceUsd: 115,
     second10Usd: 103
   },
@@ -625,6 +665,10 @@ var STRIPE_CATALOG = {
     productId: "prod_VInVfyjuGE81ol",
     unitPriceId: "price_1UIBuM8dNREsB4xBUYv9o4uL",
     second10PriceId: "price_1UIs5g8dNREsB4xBhDA0yXs5",
+    third15PriceId: "price_1UTXLM8dNREsB4xB5sbvE1ol",
+    bulk20PriceId: "price_1UTXLO8dNREsB4xBpWZAvZyz",
+    bulk25PriceId: "price_1UTXLP8dNREsB4xByAL1zzY2",
+    bulk30PriceId: "price_1UTXLS8dNREsB4xBJ9bd9V73",
     priceUsd: 115,
     second10Usd: 103
   }
@@ -688,14 +732,11 @@ function handleStripeCheckout_(data) {
     var c3 = STRIPE_CATALOG[String(rawItems[2].slug || "")];
     if (!c1 || !c2 || !c3) return { ok: false, error: "Invalid cookie slug." };
 
-    var thirdCents = Math.round(c3.priceUsd * 0.85) * 100;
     addParam("line_items[0][price]", c1.unitPriceId);
     addParam("line_items[0][quantity]", 1);
     addParam("line_items[1][price]", c2.second10PriceId);
     addParam("line_items[1][quantity]", 1);
-    addParam("line_items[2][price_data][currency]", "usd");
-    addParam("line_items[2][price_data][product]", c3.productId);
-    addParam("line_items[2][price_data][unit_amount]", thirdCents);
+    addParam("line_items[2][price]", c3.third15PriceId);
     addParam("line_items[2][quantity]", 1);
   } else {
     // Bulk tier (3 to 20 cookies)
@@ -718,10 +759,8 @@ function handleStripeCheckout_(data) {
 
     for (var j = 0; j < validated.length; j++) {
       var entry = validated[j];
-      var unitUsd = discountPct > 0 ? Math.round(entry.cat.priceUsd * (1 - discountPct / 100)) : entry.cat.priceUsd;
-      addParam("line_items[" + j + "][price_data][currency]", "usd");
-      addParam("line_items[" + j + "][price_data][product]", entry.cat.productId);
-      addParam("line_items[" + j + "][price_data][unit_amount]", unitUsd * 100);
+      var tierPriceId = discountPct >= 30 ? entry.cat.bulk30PriceId : discountPct >= 25 ? entry.cat.bulk25PriceId : discountPct >= 20 ? entry.cat.bulk20PriceId : entry.cat.unitPriceId;
+      addParam("line_items[" + j + "][price]", tierPriceId);
       addParam("line_items[" + j + "][quantity]", entry.qty);
     }
   }

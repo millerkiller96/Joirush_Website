@@ -55,6 +55,8 @@ export type EtsySyncData = {
 const syncData = etsySyncData as EtsySyncData;
 
 export type StripeTierPriceIds = {
+  unit?: string;
+  second10Off?: string;
   third15Off?: string;
   bulk20Off?: string;
   bulk25Off?: string;
@@ -208,6 +210,14 @@ export const products: Product[] = [
     stripeProductId: "prod_VInUXaAP2bjrGc",
     stripeUnitPriceId: "price_1UIBtx8dNREsB4xBV16Vh5FF",
     stripeSecond10OffPriceId: "price_1UIs5S8dNREsB4xBgEhSim2q",
+    stripeTierPriceIds: {
+      unit: "price_1UIBtx8dNREsB4xBV16Vh5FF",
+      second10Off: "price_1UIs5S8dNREsB4xBgEhSim2q",
+      third15Off: "price_1UTXKR8dNREsB4xBbjHQB1C0",
+      bulk20Off: "price_1UTXKS8dNREsB4xB65irUAY2",
+      bulk25Off: "price_1UTXKT8dNREsB4xBoGMSEhDY",
+      bulk30Off: "price_1UTXKU8dNREsB4xBCEaWH8a8",
+    },
     upsellPairPrice: 190,
     tagline: "The cookie art that started it all. Golden crumble. Glossy chips. Zero guilt.",
     description:
@@ -246,6 +256,14 @@ export const products: Product[] = [
     stripeProductId: "prod_VInVwq4gwbHX7W",
     stripeUnitPriceId: "price_1UIBu48dNREsB4xBJU4XWWaG",
     stripeSecond10OffPriceId: "price_1UIs5Z8dNREsB4xBATCXEZ7W",
+    stripeTierPriceIds: {
+      unit: "price_1UIBu48dNREsB4xBJU4XWWaG",
+      second10Off: "price_1UIs5Z8dNREsB4xBATCXEZ7W",
+      third15Off: "price_1UTXKV8dNREsB4xBgaTkODBx",
+      bulk20Off: "price_1UTXKX8dNREsB4xBdR8J216N",
+      bulk25Off: "price_1UTXKY8dNREsB4xBxba7CIve",
+      bulk30Off: "price_1UTXKZ8dNREsB4xBEF5txp8R",
+    },
     upsellPairPrice: 218,
     tagline: "Soft vanilla vibes. Creamy white chips. Dreamy energy.",
     description:
@@ -275,6 +293,14 @@ export const products: Product[] = [
     stripeProductId: "prod_VInVAr2A30To1r",
     stripeUnitPriceId: "price_1UIBu68dNREsB4xBvnCx5qG0",
     stripeSecond10OffPriceId: "price_1UIs5a8dNREsB4xBQM6AXYap",
+    stripeTierPriceIds: {
+      unit: "price_1UIBu68dNREsB4xBvnCx5qG0",
+      second10Off: "price_1UIs5a8dNREsB4xBQM6AXYap",
+      third15Off: "price_1UTXKa8dNREsB4xBpXYxbrM5",
+      bulk20Off: "price_1UTXKc8dNREsB4xBMpvbZE6D",
+      bulk25Off: "price_1UTXKe8dNREsB4xB7qtmGxjU",
+      bulk30Off: "price_1UTXKe8dNREsB4xB24Xa5O8z",
+    },
     upsellPairPrice: 171,
     tagline: "Jewel bright cookie art. Pure dopamine. $90.",
     description:
@@ -305,6 +331,14 @@ export const products: Product[] = [
     stripeProductId: "prod_VInVMu4LI8B4Yp",
     stripeUnitPriceId: "price_1UIBu88dNREsB4xBTNS59vIX",
     stripeSecond10OffPriceId: "price_1UIs5a8dNREsB4xBWxtJaEv3",
+    stripeTierPriceIds: {
+      unit: "price_1UIBu88dNREsB4xBTNS59vIX",
+      second10Off: "price_1UIs5a8dNREsB4xBWxtJaEv3",
+      third15Off: "price_1UTXKf8dNREsB4xBXnfRWmlc",
+      bulk20Off: "price_1UTXKh8dNREsB4xBZAuLXILT",
+      bulk25Off: "price_1UTXKi8dNREsB4xBuE87OG4S",
+      bulk30Off: "price_1UTXKj8dNREsB4xBm6rp5Izz",
+    },
     upsellPairPrice: 171,
     tagline: "Big impact. Smaller footprint. Same irresistible crumble.",
     description:
@@ -333,6 +367,14 @@ export const products: Product[] = [
     stripeProductId: "prod_VInV5JgsOOBYsl",
     stripeUnitPriceId: "price_1UIBuA8dNREsB4xBPy2WFC92",
     stripeSecond10OffPriceId: "price_1UIs5b8dNREsB4xBPn1XjWuu",
+    stripeTierPriceIds: {
+      unit: "price_1UIBuA8dNREsB4xBPy2WFC92",
+      second10Off: "price_1UIs5b8dNREsB4xBPn1XjWuu",
+      third15Off: "price_1UTXKk8dNREsB4xBQaTPZe6h",
+      bulk20Off: "price_1UTXKm8dNREsB4xBYeT8pzr2",
+      bulk25Off: "price_1UTXKn8dNREsB4xBsY0Pg5dG",
+      bulk30Off: "price_1UTXKo8dNREsB4xBoT8y0jKu",
+    },
     upsellPairPrice: 218,
     tagline: "Candy vibes. Softer palette. Still stops the room.",
     description:
@@ -361,6 +403,14 @@ export const products: Product[] = [
     stripeProductId: "prod_VInVVIXb3NPwt0",
     stripeUnitPriceId: "price_1UIBuC8dNREsB4xBn3wpHOZO",
     stripeSecond10OffPriceId: "price_1UIs5c8dNREsB4xBvh6VC7vj",
+    stripeTierPriceIds: {
+      unit: "price_1UIBuC8dNREsB4xBn3wpHOZO",
+      second10Off: "price_1UIs5c8dNREsB4xBvh6VC7vj",
+      third15Off: "price_1UTXKq8dNREsB4xBj8KbWQGW",
+      bulk20Off: "price_1UTXKr8dNREsB4xB1yt3tGWc",
+      bulk25Off: "price_1UTXKs8dNREsB4xBUY0OMkSW",
+      bulk30Off: "price_1UTXKu8dNREsB4xBRHtlHEZI",
+    },
     upsellPairPrice: 190,
     tagline: "Christmas cookie wall art with festive candy color and zero crumbs.",
     description:
@@ -389,6 +439,14 @@ export const products: Product[] = [
     stripeProductId: "prod_VInVIoE0t4agYj",
     stripeUnitPriceId: "price_1UIBuE8dNREsB4xBZ5sbwIL2",
     stripeSecond10OffPriceId: "price_1UIs5d8dNREsB4xBshDuVkkF",
+    stripeTierPriceIds: {
+      unit: "price_1UIBuE8dNREsB4xBZ5sbwIL2",
+      second10Off: "price_1UIs5d8dNREsB4xBshDuVkkF",
+      third15Off: "price_1UTXL38dNREsB4xBpnzoCb1S",
+      bulk20Off: "price_1UTXL58dNREsB4xBj1JvJkfN",
+      bulk25Off: "price_1UTXL68dNREsB4xBGA65T79l",
+      bulk30Off: "price_1UTXL78dNREsB4xBwjpbBBav",
+    },
     upsellPairPrice: 190,
     tagline: "Rich peanut butter dough. Candy pops. Pure nostalgia.",
     description:
@@ -417,6 +475,14 @@ export const products: Product[] = [
     stripeProductId: "prod_VInVAztIr2Mo7D",
     stripeUnitPriceId: "price_1UIBuG8dNREsB4xBp4640Aby",
     stripeSecond10OffPriceId: "price_1UIs5e8dNREsB4xBBcGskFlB",
+    stripeTierPriceIds: {
+      unit: "price_1UIBuG8dNREsB4xBp4640Aby",
+      second10Off: "price_1UIs5e8dNREsB4xBBcGskFlB",
+      third15Off: "price_1UTXL88dNREsB4xBp7E8OBdv",
+      bulk20Off: "price_1UTXL98dNREsB4xBQp21PRSB",
+      bulk25Off: "price_1UTXLA8dNREsB4xBtRc9hjGZ",
+      bulk30Off: "price_1UTXLC8dNREsB4xB16ML906I",
+    },
     upsellPairPrice: 209,
     tagline: "Twice the chocolate. Twice the temptation. Zero regrets.",
     description:
@@ -446,6 +512,14 @@ export const products: Product[] = [
     stripeProductId: "prod_VInVDITITvdjRz",
     stripeUnitPriceId: "price_1UIBuI8dNREsB4xBGkiyAYnR",
     stripeSecond10OffPriceId: "price_1UIs5f8dNREsB4xB7tAbAeJU",
+    stripeTierPriceIds: {
+      unit: "price_1UIBuI8dNREsB4xBGkiyAYnR",
+      second10Off: "price_1UIs5f8dNREsB4xB7tAbAeJU",
+      third15Off: "price_1UTXLD8dNREsB4xBdSBxMHVT",
+      bulk20Off: "price_1UTXLF8dNREsB4xBxsVELwiF",
+      bulk25Off: "price_1UTXLF8dNREsB4xBg1GZCLWg",
+      bulk30Off: "price_1UTXLH8dNREsB4xBAGIGbuP7",
+    },
     upsellPairPrice: 418,
     tagline: "The showstopper cookie art. Two cookies. Vanilla slab. Zero melt.",
     description:
@@ -483,6 +557,14 @@ export const products: Product[] = [
     stripeProductId: "prod_VInV2orrtkSQHB",
     stripeUnitPriceId: "price_1UIBuK8dNREsB4xBpRTIIqyJ",
     stripeSecond10OffPriceId: "price_1UIs5g8dNREsB4xBXOFeeVQA",
+    stripeTierPriceIds: {
+      unit: "price_1UIBuK8dNREsB4xBpRTIIqyJ",
+      second10Off: "price_1UIs5g8dNREsB4xBXOFeeVQA",
+      third15Off: "price_1UTXLI8dNREsB4xBQ7vz6QxM",
+      bulk20Off: "price_1UTXLJ8dNREsB4xBEOqI4f0P",
+      bulk25Off: "price_1UTXLK8dNREsB4xBX8kKmvSI",
+      bulk30Off: "price_1UTXLL8dNREsB4xBUdq4i5Qx",
+    },
     upsellPairPrice: 218,
     tagline: "Golden dough. Candy confetti. Instant serotonin.",
     description:
@@ -512,6 +594,14 @@ export const products: Product[] = [
     stripeProductId: "prod_VInVfyjuGE81ol",
     stripeUnitPriceId: "price_1UIBuM8dNREsB4xBUYv9o4uL",
     stripeSecond10OffPriceId: "price_1UIs5g8dNREsB4xBhDA0yXs5",
+    stripeTierPriceIds: {
+      unit: "price_1UIBuM8dNREsB4xBUYv9o4uL",
+      second10Off: "price_1UIs5g8dNREsB4xBhDA0yXs5",
+      third15Off: "price_1UTXLM8dNREsB4xB5sbvE1ol",
+      bulk20Off: "price_1UTXLO8dNREsB4xBpWZAvZyz",
+      bulk25Off: "price_1UTXLP8dNREsB4xByAL1zzY2",
+      bulk30Off: "price_1UTXLS8dNREsB4xBJ9bd9V73",
+    },
     upsellPairPrice: 218,
     tagline: "Loud. Pink. Unapologetic. The main character cookie art.",
     description:

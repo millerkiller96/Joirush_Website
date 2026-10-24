@@ -5,7 +5,7 @@ export default function Buy4Banner({ className = "" }: { className?: string }) {
       data-buy4-banner=""
       className={`rounded-2xl border-2 border-pink bg-pink-blush/60 px-4 py-4 text-center shadow-sm sm:px-6 sm:py-5 ${className}`}
     >
-      <p className="font-display text-2xl font-bold leading-tight text-chocolate sm:text-4xl">
+      <p className="break-words font-display text-2xl font-bold leading-tight text-chocolate sm:text-4xl">
         🍪 Buy 4 or more cookies and get{" "}
         <span className="text-success-dark">10% off each cookie</span>
       </p>

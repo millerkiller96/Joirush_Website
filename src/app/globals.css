@@ -323,6 +323,11 @@ body {
   margin-inline: auto;
 }
 
+/* Mobile: single column that can shrink below its content's max-content width. */
+.product-layout {
+  grid-template-columns: minmax(0, 1fr);
+}
+
 @media (min-width: 768px) {
   .product-layout {
     grid-template-columns: min(50% - 1.25rem, max(20rem, min(75vh, 100vh - 20rem))) minmax(0, 1fr);

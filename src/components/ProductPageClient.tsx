@@ -123,7 +123,7 @@ export function ProductPageClient({ product, related }: ProductPageClientProps) 
         <div className="product-layout mt-6 grid items-start gap-10">
           <ProductGallery images={galleryImages} name={galleryName} />
 
-          <div>
+          <div className="min-w-0">
             <p className="text-sm font-semibold uppercase tracking-[0.22em] text-pink">
               Looks good enough to eat
             </p>

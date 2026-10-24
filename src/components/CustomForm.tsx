@@ -14,7 +14,7 @@ const sizes = [
   "Not sure yet",
 ];
 
-const budgets = ["$90 to $150", "$150 to $225", "$225 and up", "Not sure yet"];
+const budgets = ["$70 to $150", "$150 to $225", "$225 and up", "Not sure yet"];
 
 const fieldClass =
   "w-full rounded-2xl border border-chocolate/10 bg-cream px-4 py-3 outline-none ring-pink focus:ring-2";

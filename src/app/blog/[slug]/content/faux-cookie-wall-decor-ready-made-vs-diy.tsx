@@ -34,11 +34,11 @@ const data: BlogPostStructuredData = {
     "links": [
       {
         "href": "/product/mini-jumbo-chocolate-chip-cookie/",
-        "label": "Mini Chocolate Chip ($90)"
+        "label": "Mini Chocolate Chip ($70)"
       },
       {
         "href": "/product/rainbow-candy-cookie/",
-        "label": "Rainbow Candy Cookie ($90)"
+        "label": "Rainbow Candy Cookie ($70)"
       }
     ]
   },
@@ -74,7 +74,7 @@ const data: BlogPostStructuredData = {
     },
     {
       "question": "How much do JOIRUSH cookies cost?",
-      "answer": "Prices run from $90 to $220 with free U.S. shipping."
+      "answer": "Prices run from $70 to $175 with free U.S. shipping."
     }
   ]
 };

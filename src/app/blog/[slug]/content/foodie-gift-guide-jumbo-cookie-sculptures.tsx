@@ -79,7 +79,7 @@ const data: BlogPostStructuredData = {
     },
     {
       "question": "Which cookie is the safest gift choice?",
-      "answer": "The 16 inch Jumbo Chocolate Chip Cookie ($100) fits almost any kitchen or coffee bar."
+      "answer": "The 16 inch Jumbo Chocolate Chip Cookie ($80) fits almost any kitchen or coffee bar."
     }
   ]
 };

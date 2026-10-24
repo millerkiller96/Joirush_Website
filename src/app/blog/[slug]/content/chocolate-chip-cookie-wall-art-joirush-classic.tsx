@@ -9,7 +9,7 @@ const data: BlogPostStructuredData = {
   "quickFactsTitle": "The First Classic",
   "quickFacts": [
     "Size & Weight: 16 inches wide, 2 to 4 lbs.",
-    "Price: $100 with free U.S. shipping (or $90 for the 14 inch Mini size).",
+    "Price: $80 with free U.S. shipping (or $70 for the 14 inch Mini size).",
     "Made from: Hand shaped spray foam and acrylic paint.",
     "Made in: Daytona Beach, FL, and ships in 14 days."
   ],
@@ -22,11 +22,11 @@ const data: BlogPostStructuredData = {
     "links": [
       {
         "href": "/product/jumbo-chocolate-chip-cookie/",
-        "label": "16 Inch Jumbo Chocolate Chip ($100)"
+        "label": "16 Inch Jumbo Chocolate Chip ($80)"
       },
       {
         "href": "/product/mini-jumbo-chocolate-chip-cookie/",
-        "label": "14 Inch Mini Chocolate Chip ($90)"
+        "label": "14 Inch Mini Chocolate Chip ($70)"
       }
     ]
   },
@@ -66,7 +66,7 @@ const data: BlogPostStructuredData = {
   "faqs": [
     {
       "question": "Should I get the 16 inch or 14 inch chocolate chip cookie?",
-      "answer": "Pick the 16 inch ($100) for open walls and dining tables. Pick the 14 inch ($90) for skinny walls or small coffee bars."
+      "answer": "Pick the 16 inch ($80) for open walls and dining tables. Pick the 14 inch ($70) for skinny walls or small coffee bars."
     },
     {
       "question": "Can I pair the 16 inch and 14 inch together?",

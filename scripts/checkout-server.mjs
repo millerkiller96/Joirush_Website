@@ -168,7 +168,7 @@ const server = http.createServer(async (req, res) => {
 
   if (reqUrl.pathname === "/health" || reqUrl.pathname === "/") {
     res.writeHead(200, { "Content-Type": "application/json" });
-    res.end(JSON.stringify({ ok: true, service: "joirush-checkout" }));
+    res.end(JSON.stringify({ ok: true, service: "joirush-checkout", pricingRule: "buy4_10off" }));
     return;
   }
 

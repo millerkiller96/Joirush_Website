@@ -7,6 +7,12 @@ export interface StudioVideo {
 
 export const studioVideos: StudioVideo[] = [
   {
+    id: "De1-S-qtEe5",
+    src: "/videos/De1-S-qtEe5.mp4",
+    instagramUrl: "https://www.instagram.com/ebabyofficial/reel/De1-S-qtEe5/",
+    account: "ebabyofficial",
+  },
+  {
     id: "DefE1JXvzZ8",
     src: "/videos/DefE1JXvzZ8.mp4",
     instagramUrl: "https://www.instagram.com/ebabyofficial/reel/DefE1JXvzZ8/",
@@ -71,11 +77,5 @@ export const studioVideos: StudioVideo[] = [
     src: "/videos/DYpQIntOJmw.mp4",
     instagramUrl: "https://www.instagram.com/ebabyofficial/reel/DYpQIntOJmw/",
     account: "ebabyofficial",
-  },
-  {
-    id: "DUyRvrCjrG1",
-    src: "/videos/DUyRvrCjrG1.mp4",
-    instagramUrl: "https://www.instagram.com/joirushshop/reel/DUyRvrCjrG1/",
-    account: "joirushshop",
   },
 ];

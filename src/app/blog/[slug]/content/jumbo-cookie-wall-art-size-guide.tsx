@@ -8,9 +8,9 @@ const data: BlogPostStructuredData = {
   "lead": "Not sure which cookie size fits your wall? Here are the real sizes and weights for every JOIRUSH cookie so you can pick in two minutes.",
   "quickFactsTitle": "Every Size at a Glance",
   "quickFacts": [
-    "14 inch cookies (2 to 3 lbs): Mini Chocolate Chip ($90) and Rainbow Candy ($90).",
-    "16 inch cookies (2 to 4 lbs): Chocolate Chip ($100), Peanut Butter ($100), Christmas ($100), Double Chocolate ($110), White Chocolate ($115), Classic M&M ($115), Pastel M&M ($115), and Hot Pink M&M ($115).",
-    "16 inch tall x 5 inch thick (4 to 5 lbs): Cookie Ice Cream Sandwich ($220).",
+    "14 inch cookies (2 to 3 lbs): Mini Chocolate Chip ($70) and Rainbow Candy ($70).",
+    "16 inch cookies (2 to 4 lbs): Chocolate Chip ($80), Peanut Butter ($80), Christmas ($80), Double Chocolate ($80), White Chocolate ($80), Classic M&M ($80), Pastel M&M ($80), and Hot Pink M&M ($80).",
+    "16 inch tall x 5 inch thick (4 to 5 lbs): Cookie Ice Cream Sandwich ($175).",
     "Tip: Hold a 16 inch pizza box on your wall to see how big a 16 inch cookie looks."
   ],
   "section1": {

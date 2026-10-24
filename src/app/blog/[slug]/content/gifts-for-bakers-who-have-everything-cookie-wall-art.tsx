@@ -79,7 +79,7 @@ const data: BlogPostStructuredData = {
   "faqs": [
     {
       "question": "What is the best gift for a baker who has everything?",
-      "answer": "Our 16 inch Jumbo Chocolate Chip Cookie ($100) is warm baking decor that fits any kitchen wall."
+      "answer": "Our 16 inch Jumbo Chocolate Chip Cookie ($80) is warm baking decor that fits any kitchen wall."
     },
     {
       "question": "How does a baker hang the cookie on the wall?",

@@ -12,7 +12,7 @@ import { getAbsoluteUrl, getImageUrl, siteUrl } from "@/lib/seo";
 export const metadata: Metadata = {
   title: "Jumbo Cookie Wall Art | Handmade Sugar Cookie Sculptures | JOIRUSH",
   description:
-    "Handmade jumbo cookie wall art by cookie artist Erynn. Colorful, playful cookie sculptures for kitchens and happy homes, from $90 with free U.S. shipping.",
+    "Handmade jumbo cookie wall art by cookie artist Erynn. Colorful, playful cookie sculptures for kitchens and happy homes, from $70 with free U.S. shipping.",
   keywords: [
     "jumbo cookie wall art",
     "cookie art",
@@ -387,7 +387,7 @@ export default function HomePage() {
                   copy: "Hangs on a single nail. No contractor needed.",
                 },
                 {
-                  stat: "$90 to $220",
+                  stat: "$70 to $175",
                   label: "Real Art Pricing",
                   copy: "Not $350+ for factory fiberglass.",
                 },

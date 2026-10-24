@@ -8,7 +8,7 @@ const data: BlogPostStructuredData = {
   "lead": "Welcome to our guide to JOIRUSH cookie wall art! Here is all you need to know to pick your first cookie or grow your wall set.",
   "quickFactsTitle": "Quick Buyer Guide",
   "quickFacts": [
-    "11 cookies in stock, from $90 to $220.",
+    "11 cookies in stock, from $70 to $175.",
     "Every piece is one of a kind, made by Erynn in Daytona Beach, FL.",
     "Made of light spray foam and acrylic paint (for display only).",
     "Pick any second cookie in checkout for 10% off.",
@@ -18,20 +18,20 @@ const data: BlogPostStructuredData = {
     "heading": "How to Pick Your First Cookie",
     "paragraphs": [
       "Most people start in one of two ways: a warm bake shop classic or a bright candy pop.",
-      "If your room has wood tables and plain walls, start with the 16 inch Jumbo Chocolate Chip Cookie ($100). If you love bold color, start with the Rainbow Candy Cookie ($90) or Classic M&M Cookie ($115)."
+      "If your room has wood tables and plain walls, start with the 16 inch Jumbo Chocolate Chip Cookie ($80). If you love bold color, start with the Rainbow Candy Cookie ($70) or Classic M&M Cookie ($80)."
     ],
     "links": [
       {
         "href": "/product/jumbo-chocolate-chip-cookie/",
-        "label": "Jumbo Chocolate Chip ($100)"
+        "label": "Jumbo Chocolate Chip ($80)"
       },
       {
         "href": "/product/rainbow-candy-cookie/",
-        "label": "Rainbow Candy Cookie ($90)"
+        "label": "Rainbow Candy Cookie ($70)"
       },
       {
         "href": "/product/jumbo-mm-cookie/",
-        "label": "Classic M&M Cookie ($115)"
+        "label": "Classic M&M Cookie ($80)"
       }
     ]
   },

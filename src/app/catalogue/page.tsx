@@ -11,7 +11,7 @@ const siteUrl = "https://joirush.com";
 export const metadata: Metadata = {
   title: "Cookies: Handmade Jumbo Cookie Wall Art",
   description:
-    "Browse all handmade jumbo cookie wall art by cookie artist Erynn: 14 to 16 inch 3D sugar cookie sculptures, $90 to $220 with free U.S. shipping.",
+    "Browse all handmade jumbo cookie wall art by cookie artist Erynn: 14 to 16 inch 3D sugar cookie sculptures, $70 to $175 with free U.S. shipping.",
   keywords: [
     "cookies wall art",
     "oversized cookie wall decor",

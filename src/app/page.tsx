@@ -8,6 +8,7 @@ import { StudioVideoCarousel } from "@/components/StudioVideoCarousel";
 import { getFeaturedProducts } from "@/data/products";
 import { site } from "@/data/site";
 import { getAbsoluteUrl, getImageUrl, siteUrl } from "@/lib/seo";
+import Buy4Banner from "@/components/Buy4Banner";
 
 export const metadata: Metadata = {
   title: "Jumbo Cookie Wall Art | Handmade Sugar Cookie Sculptures | JOIRUSH",
@@ -222,6 +223,7 @@ export default function HomePage() {
               <h1 className="mt-4 font-display text-5xl leading-[0.95] text-chocolate md:text-7xl">
                 Jumbo Cookie Wall Art That Stops People Mid Sentence
               </h1>
+              <Buy4Banner className="mt-5" />
               <p className="mt-6 max-w-lg text-lg leading-relaxed text-chocolate-mid">
                 Golden brown crumble. Glossy melty chips. Thick, craggy edges begging for a bite. 
                 These <strong>jumbo cookie wall art</strong> pieces look so real, guests reach out 
@@ -232,7 +234,6 @@ export default function HomePage() {
                 <li>✓ Handmade to order</li>
                 <li>✓ Ships in {site.shippingTime}</li>
                 <li>✓ Free U.S. shipping</li>
-                <li>✓ Multi cookie savings: Buy 4 or more cookies and get 10% off each cookie (mix and match any flavors)</li>
               </ul>
               <div className="mt-8 flex flex-wrap gap-4">
                 <Link

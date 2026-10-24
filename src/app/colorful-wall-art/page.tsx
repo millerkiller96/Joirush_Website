@@ -5,6 +5,7 @@ import { products } from "@/data/products";
 import { ProductCard } from "@/components/ProductCard";
 import { SectionHeading as Heading } from "@/components/SectionHeading";
 import { EtsyReviewsHub } from "@/components/EtsyReviewsHub";
+import Buy4Banner from "@/components/Buy4Banner";
 
 export const metadata: Metadata = {
   title: {
@@ -178,6 +179,7 @@ export default function ColorfulWallArtPage() {
               <h1 className="mt-2 font-display text-3xl sm:text-5xl font-semibold tracking-tight text-espresso">
                 Colorful 3D Wall Art for Dopamine Decor &amp; Funky Rooms
               </h1>
+              <Buy4Banner className="mt-5" />
               <p className="mt-4 text-base sm:text-lg leading-relaxed text-cocoa/85">
                 Ready to wake up a quiet room? JOIRUSH <strong>colorful wall art</strong> brings bold candy colors, playful pop art nostalgia, and real 3D sculptural depth to your walls. Each 14 to 16 inch cookie is sculpted and painted by hand in Queens, NY by artist Erynn.
               </p>

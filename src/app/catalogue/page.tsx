@@ -5,6 +5,7 @@ import { EtsyReviewsHub } from "@/components/EtsyReviewsHub";
 import { ReviewHighlight } from "@/components/ReviewHighlight";
 import { StudioVideoCarousel } from "@/components/StudioVideoCarousel";
 import { getDisplayName, products } from "@/data/products";
+import Buy4Banner from "@/components/Buy4Banner";
 
 const siteUrl = "https://joirush.com";
 
@@ -154,10 +155,10 @@ export default function CataloguePage() {
         <h1 className="mt-3 max-w-3xl font-display text-5xl text-chocolate md:text-6xl">
           Cookies: Pick Your Flavor
         </h1>
+        <Buy4Banner className="mt-5" />
         <p className="mt-4 max-w-2xl text-chocolate-mid">
           Browse every piece of <strong>handmade cookie wall art</strong> in our shop.
           Every sugar cookie wall sculpture is sculpted by hand from spray foam and acrylic paint by cookie artist Erynn in Daytona Beach, FL, and ships in 14 days with free U.S. shipping.
-          Want more than one? Buy 4 or more cookies and get 10% off each cookie. Mix and match any flavors.
         </p>
         <p className="mt-2 max-w-2xl text-sm text-chocolate-soft">
           Exploring by room or palette? Check out our{" "}
@@ -171,7 +172,6 @@ export default function CataloguePage() {
           <li>✓ Handmade by cookie artist Erynn</li>
           <li>✓ Attached hanger</li>
           <li>✓ Buy directly or via Etsy</li>
-          <li>✓ Multi cookie savings: Buy 4 or more cookies and get 10% off each cookie (mix and match any flavors)</li>
         </ul>
 
         <ReviewHighlight />

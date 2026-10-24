@@ -34,7 +34,7 @@ export function ProductCard({ product }: { product: Product }) {
             <p className="rounded-full bg-success/10 px-3 py-1 text-sm font-bold text-success-dark">
               {formatPrice(product.price)}
             </p>
-            <p className="mt-1 text-sm text-chocolate-soft line-through">
+            <p className="mt-1 text-sm font-semibold text-red-700 line-through">
               {formatPrice(product.compareAtPrice)}
             </p>
           </div>

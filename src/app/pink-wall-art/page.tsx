@@ -5,6 +5,7 @@ import { products } from "@/data/products";
 import { ProductCard } from "@/components/ProductCard";
 import { SectionHeading } from "@/components/SectionHeading";
 import { EtsyReviewsHub } from "@/components/EtsyReviewsHub";
+import Buy4Banner from "@/components/Buy4Banner";
 
 export const metadata: Metadata = {
   title: {
@@ -181,6 +182,7 @@ export default function PinkWallArtPage() {
               <h1 className="mt-2 font-display text-3xl sm:text-5xl font-semibold tracking-tight text-espresso">
                 Pink Wall Art &amp; Sweet 3D Cookie Room Decor
               </h1>
+              <Buy4Banner className="mt-5" />
               <p className="mt-4 text-base sm:text-lg leading-relaxed text-cocoa/85">
                 From bold hot pink statements to soft blush and candy pastels, JOIRUSH <strong>pink wall art</strong> brings sweet 3D charm to your favorite spaces. Every 14 to 16 inch sculpture is crafted and painted by hand in Queens, NY by artist Erynn.
               </p>

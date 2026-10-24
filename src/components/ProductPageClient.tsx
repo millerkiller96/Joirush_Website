@@ -13,6 +13,7 @@ import {
   type Product,
 } from "@/data/products";
 import { site, reviews } from "@/data/site";
+import Buy4Banner from "@/components/Buy4Banner";
 
 type ProductPageClientProps = {
   product: Product;
@@ -133,16 +134,17 @@ export function ProductPageClient({ product, related }: ProductPageClientProps) 
 
             <div className="mt-5">
               <div className="flex items-baseline gap-3">
-                <span className="text-3xl font-bold text-chocolate">
+                <span className="text-3xl font-bold text-success-dark">
                   {formatPrice(product.price)}
                 </span>
-                <span className="text-xl text-chocolate-soft line-through">
+                <span className="text-xl font-semibold text-red-700 line-through">
                   {formatPrice(product.compareAtPrice)}
                 </span>
               </div>
               <p className="mt-1 inline-block rounded-full bg-success/10 px-3 py-1 text-sm font-semibold text-success-dark">
                 Save {formatPrice(savings)} ({percent}% off)
               </p>
+              <Buy4Banner className="mt-4" />
             </div>
 
             <div className="mt-5 flex flex-wrap gap-x-5 gap-y-2.5 text-base text-chocolate">

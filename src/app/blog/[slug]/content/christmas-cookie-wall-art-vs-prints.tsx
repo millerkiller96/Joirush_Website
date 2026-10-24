@@ -33,7 +33,7 @@ const data: BlogPostStructuredData = {
   "section2": {
     "heading": "Build a Holiday Cocoa Bar Wall",
     "paragraphs": [
-      "Hang the Jumbo Christmas Cookie above your cocoa bar or stove. It fits right in with your gingerbread decor. Want a bigger display? Add a second cookie at checkout for 10% off.",
+      "Hang the Jumbo Christmas Cookie above your cocoa bar or stove. It fits right in with your gingerbread decor. Want a bigger display? Buy 4 or more cookies and get 10% off each cookie.",
       "Pair it with the White Chocolate Chip Cookie or Classic Chocolate Chip Cookie for a sweet winter wall."
     ],
     "links": [

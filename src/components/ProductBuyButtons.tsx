@@ -190,7 +190,7 @@ export function ProductBuyButtons({ product }: ProductBuyButtonsProps) {
     }
 
     if (totalCookies === 2) {
-      // Determine 1st and 2nd cookie slugs from the current selection and trigger the "Want a third?" 15% off prompt!
+      // Determine 1st and 2nd cookie slugs from the current selection and offer a third cookie.
       let secondSlug = activePrimarySlug;
       if (selectedEntries.length === 1) {
         secondSlug = selectedEntries[0].product.slug;
@@ -204,7 +204,7 @@ export function ProductBuyButtons({ product }: ProductBuyButtonsProps) {
       return;
     }
 
-    // 3 to 20 cookies bulk order (including 20 cookies of any single or mixed combination):
+    // 3 to 20 cookies order (including 20 cookies of any single or mixed combination):
     // Go straight to the single unified Stripe Checkout page with zero intermediate modal!
     openStripeCheckoutOrder(bulkOrder);
   }
@@ -223,7 +223,6 @@ export function ProductBuyButtons({ product }: ProductBuyButtonsProps) {
       etsyUrl: p.etsyUrl,
       stripeUrl: p.stripeUrl,
       stripeUpsellUrl: p.stripeUpsellUrl,
-      stripePairUrls: p.stripePairUrls,
       upsellPairPrice: p.upsellPairPrice,
     };
   }, [activePrimaryProduct]);
@@ -242,7 +241,7 @@ export function ProductBuyButtons({ product }: ProductBuyButtonsProps) {
         {/* Pricing Groups Bullet Header */}
         <div className="flex flex-wrap items-center justify-between gap-2">
           <p className="text-xs font-bold uppercase tracking-wider text-pink">
-            🍪 Bundle &amp; Bulk Savings
+            🍪 Buy 4, Save 10%
           </p>
           <span className="rounded-full bg-success/10 px-2.5 py-0.5 text-xs font-semibold text-success-dark">
             Mix &amp; match any cookie flavors
@@ -251,59 +250,29 @@ export function ProductBuyButtons({ product }: ProductBuyButtonsProps) {
 
         <ul
           data-bulk-tier-bullets=""
-          className="mt-2.5 grid grid-cols-1 gap-1.5 text-xs text-chocolate-mid sm:grid-cols-2"
+          className="mt-2.5 grid grid-cols-1 gap-1.5 text-xs text-chocolate-mid"
         >
           <li className="flex items-center gap-1.5">
             <span className="font-bold text-success">•</span>
             <span>
-              <strong>Buy 1, get 1:</strong> 10% off 2nd cookie
+              <strong>Buy 4 or more cookies</strong> and get 10% off each cookie
             </span>
           </li>
           <li className="flex items-center gap-1.5">
             <span className="font-bold text-success">•</span>
-            <span>
-              <strong>Want a third?</strong> 15% off 3rd cookie
-            </span>
-          </li>
-          <li className="flex items-center gap-1.5">
-            <span className="font-bold text-success">•</span>
-            <span>
-              <strong>3 to 5 cookies:</strong> 20% off each
-            </span>
-          </li>
-          <li className="flex items-center gap-1.5">
-            <span className="font-bold text-success">•</span>
-            <span>
-              <strong>5 to 10 cookies:</strong> 25% off each
-            </span>
-          </li>
-          <li className="flex items-center gap-1.5 sm:col-span-2">
-            <span className="font-bold text-success">•</span>
-            <span>
-              <strong>10 to 20 cookies:</strong> 30% off each cookie
-            </span>
+            <span>1 to 3 cookies are full price. Mix and match any flavors.</span>
           </li>
         </ul>
 
-        {/* Quick Tier Preset Pills */}
+        {/* Quick Quantity Preset Pills */}
         <div className="mt-3.5 flex flex-wrap gap-1.5" role="group" aria-label="Quick quantity presets">
           {[
             { qty: 1, label: "1 Cookie" },
-            { qty: 2, label: "2 (2nd 10% off)" },
-            { qty: 3, label: "3 to 5 (20% off)" },
-            { qty: 5, label: "5 to 10 (25% off)" },
-            { qty: 10, label: "10 to 20 (30% off)" },
+            { qty: 2, label: "2 Cookies" },
+            { qty: 3, label: "3 Cookies" },
+            { qty: 4, label: "4 or more (10% off each)" },
           ].map((preset) => {
-            const isActive =
-              preset.qty === 1
-                ? totalCookies === 1
-                : preset.qty === 2
-                  ? totalCookies === 2
-                  : preset.qty === 3
-                    ? totalCookies >= 3 && totalCookies < 5
-                    : preset.qty === 5
-                      ? totalCookies >= 5 && totalCookies < 10
-                      : totalCookies >= 10;
+            const isActive = preset.qty === 4 ? totalCookies >= 4 : totalCookies === preset.qty;
             return (
               <button
                 key={preset.qty}
@@ -333,9 +302,8 @@ export function ProductBuyButtons({ product }: ProductBuyButtonsProps) {
             </p>
             <p className="mt-0.5 text-sm font-semibold text-chocolate">
               {totalCookies === 1 && `1 cookie · ${activePrimaryProduct.shortName} (${formatPrice(activePrimaryProduct.price)})`}
-              {totalCookies === 2 && "2 cookies · 2nd cookie 10% off"}
-              {totalCookies >= 3 &&
-                `${totalCookies} cookies · ${activeBulkDiscount}% off every cookie`}
+              {totalCookies >= 2 && totalCookies < 4 && `${totalCookies} cookies at full price`}
+              {totalCookies >= 4 && `${totalCookies} cookies · 10% off each cookie`}
             </p>
           </div>
 
@@ -370,28 +338,16 @@ export function ProductBuyButtons({ product }: ProductBuyButtonsProps) {
           </div>
         </div>
 
-        {/* Next-tier savings nudge */}
-        {totalCookies === 2 && (
+        {/* Buy 4 discount nudge */}
+        {totalCookies >= 2 && totalCookies < 4 && (
           <p className="mt-2 text-xs font-medium text-success-dark">
-            💡 Tip: Click Buy Now to unlock <strong>15% off a 3rd cookie</strong>, or add 1 more here for{" "}
-            <strong>20% off every cookie</strong>!
+            💡 Add {4 - totalCookies} more {4 - totalCookies === 1 ? "cookie" : "cookies"} to get{" "}
+            <strong>10% off each cookie</strong>.
           </p>
         )}
-        {totalCookies >= 3 && totalCookies < 5 && (
+        {totalCookies >= 4 && (
           <p className="mt-2 text-xs font-medium text-success-dark">
-            🎉 <strong>20% off every cookie</strong> unlocked! Add {5 - totalCookies} more{" "}
-            {5 - totalCookies === 1 ? "cookie" : "cookies"} for <strong>25% off each</strong>.
-          </p>
-        )}
-        {totalCookies >= 5 && totalCookies < 10 && (
-          <p className="mt-2 text-xs font-medium text-success-dark">
-            🎉 <strong>25% off every cookie</strong> unlocked! Add {10 - totalCookies} more{" "}
-            {10 - totalCookies === 1 ? "cookie" : "cookies"} for <strong>30% off each</strong>.
-          </p>
-        )}
-        {totalCookies >= 10 && (
-          <p className="mt-2 text-xs font-medium text-success-dark">
-            🔥 Maximum <strong>30% bulk discount</strong> unlocked on every cookie!
+            🎉 <strong>10% off each cookie</strong> unlocked!
           </p>
         )}
 
@@ -556,7 +512,7 @@ export function ProductBuyButtons({ product }: ProductBuyButtonsProps) {
           )}
         </div>
 
-        {/* Live Bundle / Bulk Order Summary Bar when >= 2 cookies */}
+        {/* Live Order Summary Bar when >= 2 cookies */}
         {totalCookies >= 2 && (
           <div className="mt-3.5 flex items-center justify-between rounded-xl bg-success/10 px-3.5 py-2.5 text-sm">
             <div>
@@ -571,12 +527,16 @@ export function ProductBuyButtons({ product }: ProductBuyButtonsProps) {
               <span className="font-bold text-success-dark">
                 {formatPrice(bulkOrder.finalTotalUsd)}
               </span>
-              <span className="ml-1.5 text-xs text-chocolate-soft line-through">
-                {formatPrice(bulkOrder.originalTotalUsd)}
-              </span>
-              <span className="ml-1.5 text-xs font-semibold text-success-dark">
-                Save {formatPrice(bulkOrder.totalSavingsUsd)}
-              </span>
+              {bulkOrder.totalSavingsUsd > 0 && (
+                <>
+                  <span className="ml-1.5 text-xs text-chocolate-soft line-through">
+                    {formatPrice(bulkOrder.originalTotalUsd)}
+                  </span>
+                  <span className="ml-1.5 text-xs font-semibold text-success-dark">
+                    Save {formatPrice(bulkOrder.totalSavingsUsd)}
+                  </span>
+                </>
+              )}
             </div>
           </div>
         )}
@@ -598,9 +558,9 @@ export function ProductBuyButtons({ product }: ProductBuyButtonsProps) {
           </svg>
           {totalCookies <= 1
             ? `Buy Now · ${formatPrice(activePrimaryProduct.price)}`
-            : totalCookies === 2
-              ? `Buy 2 Cookies (10% off 2nd) · ${formatPrice(bulkOrder.finalTotalUsd)}`
-              : `Buy ${totalCookies} Cookies (${activeBulkDiscount}% off) · ${formatPrice(bulkOrder.finalTotalUsd)}`}
+            : totalCookies < 4
+              ? `Buy ${totalCookies} Cookies · ${formatPrice(bulkOrder.finalTotalUsd)}`
+              : `Buy ${totalCookies} Cookies (10% off each) · ${formatPrice(bulkOrder.finalTotalUsd)}`}
         </button>
         <a
           data-buy-cta="etsy"

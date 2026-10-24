@@ -70,7 +70,7 @@ const data: BlogPostStructuredData = {
     },
     {
       "question": "Can I pair the 16 inch and 14 inch together?",
-      "answer": "Yes! Tap Buy Now on the 16 inch cookie and pick the 14 inch Mini Chocolate Chip in the menu for 10% off."
+      "answer": "Yes! Tap Buy Now on the 16 inch cookie and pick the 14 inch Mini Chocolate Chip in the menu. Buy 4 or more cookies and get 10% off each cookie."
     }
   ]
 };

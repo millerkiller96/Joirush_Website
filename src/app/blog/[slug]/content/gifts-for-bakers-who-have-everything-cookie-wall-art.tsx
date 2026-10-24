@@ -42,7 +42,7 @@ const data: BlogPostStructuredData = {
     "heading": "Sweet Choices for Bright Kitchens",
     "paragraphs": [
       "Does your friend bake bright treats with sprinkles and frosting? Pick the 14 inch Rainbow Candy Cookie or 16 inch Pastel M&M Cookie for their wall.",
-      "You can also add a second cookie at checkout for 10% off. That makes a sweet two piece baking decor gift set."
+      "You can also add a second cookie at checkout, and if you buy 4 or more cookies you get 10% off each cookie. That makes a sweet two piece baking decor gift set."
     ],
     "links": [
       {

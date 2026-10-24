@@ -96,7 +96,6 @@ export function ProductPageClient({ product, related }: ProductPageClientProps) 
     stripeUrl: product.stripeUrl,
     stripeUpsellUrl: product.stripeUpsellUrl,
     upsellPairPrice: product.upsellPairPrice,
-    stripePairUrls: product.stripePairUrls,
   };
 
   return (

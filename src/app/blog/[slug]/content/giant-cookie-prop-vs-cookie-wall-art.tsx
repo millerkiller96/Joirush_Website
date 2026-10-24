@@ -75,7 +75,7 @@ const data: BlogPostStructuredData = {
     },
     {
       "question": "Can I get two different cookies?",
-      "answer": "Yes. Tap Buy Now on any cookie and pick any second cookie from the menu for 10% off."
+      "answer": "Yes. Tap Buy Now on any cookie and pick a second cookie from the menu. Buy 4 or more cookies and get 10% off each cookie."
     }
   ]
 };

@@ -35,10 +35,10 @@ const data: BlogPostStructuredData = {
     "caption": "Bright candy cookies bring happy color to kitchen walls."
   },
   "section2": {
-    "heading": "Add a Second Cookie for 10% Off",
+    "heading": "Buy 4 or More Cookies for 10% Off Each",
     "paragraphs": [
       "Next, pick a second flavor that looks great next to your first one. Pair a bright candy cookie with a warm Classic Chocolate Chip or a 14 inch Rainbow Candy Cookie.",
-      "When you tap Buy Now, use the menu with photos to pick any second cookie for 10% off."
+      "When you tap Buy Now, use the menu with photos to pick a second cookie. Buy 4 or more cookies and get 10% off each cookie."
     ],
     "links": [
       {

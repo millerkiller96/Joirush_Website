@@ -42,7 +42,7 @@ const data: BlogPostStructuredData = {
     "heading": "The Ultimate Showstopper Gift",
     "paragraphs": [
       "Want one of the most memorable gifts for foodies? The Cookie Ice Cream Sandwich pairs two chocolate chip cookies with a thick scoop of faux ice cream in the middle.",
-      "At checkout, you can also add a second cookie at 10% off to build a two piece gift set."
+      "At checkout, you can also add a second cookie to build a two piece gift set. Buy 4 or more cookies and get 10% off each cookie."
     ],
     "links": [
       {

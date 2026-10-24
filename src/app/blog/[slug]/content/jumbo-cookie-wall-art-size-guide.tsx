@@ -39,7 +39,7 @@ const data: BlogPostStructuredData = {
     "heading": "When to Pick a 16 Inch Cookie",
     "paragraphs": [
       "Our 16 inch cookies are our top sellers. They fill an open wall over a kitchen table, a bar cart, or a door with ease.",
-      "Want a bigger look? Pick a second cookie in checkout for 10% off and hang the pair 4 inches apart."
+      "Want a bigger look? Pick a second cookie in checkout and hang the pair 4 inches apart. Buy 4 or more cookies and get 10% off each cookie."
     ],
     "links": [
       {

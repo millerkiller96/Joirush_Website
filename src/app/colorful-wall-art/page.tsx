@@ -84,7 +84,7 @@ const faqs = [
   {
     question: "Which JOIRUSH sculptures are best for pink wall art, funky wall art, or candy decor?",
     answer:
-      "Collectors building bold gallery walls love pairing the Hot Pink M&M Cookie, Rainbow Candy Cookie, Pastel M&M Cookie, and Cookie Ice Cream Sandwich. Mix and match 2 or more cookies in your cart to unlock automatic bundle savings from 5% up to 25% off.",
+      "Collectors building bold gallery walls love pairing the Hot Pink M&M Cookie, Rainbow Candy Cookie, Pastel M&M Cookie, and Cookie Ice Cream Sandwich. Buy 4 or more cookies in any mix and get 10% off each cookie.",
   },
 ];
 
@@ -253,7 +253,7 @@ export default function ColorfulWallArtPage() {
               Funky, Quirky &amp; Textured Gallery Walls
             </h2>
             <p className="mt-3 text-sm leading-relaxed text-cocoa/85">
-              Flat posters all sit at the same depth. Adding a round 3D cookie sculpture gives your room real <strong>textured wall art</strong> and <strong>funky wall art</strong> personality. Bundle 2 to 6+ cookies for automatic savings up to 25% off.
+              Flat posters all sit at the same depth. Adding a round 3D cookie sculpture gives your room real <strong>textured wall art</strong> and <strong>funky wall art</strong> personality. Buy 4 or more cookies and get 10% off each cookie.
             </p>
           </div>
         </section>

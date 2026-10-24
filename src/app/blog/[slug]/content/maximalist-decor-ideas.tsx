@@ -37,7 +37,7 @@ const data: BlogPostStructuredData = {
   "section2": {
     "heading": "Pair Two Cookies for Big Walls",
     "paragraphs": [
-      "Big walls love pairs. In checkout, you can pick any second cookie from our menu at 10% off to hang next to your first one.",
+      "Big walls love pairs. In checkout, you can pick any second cookie from our menu to hang next to your first one. Buy 4 or more cookies and get 10% off each cookie.",
       "Try a Double Chocolate Cookie next to a Hot Pink M&M Cookie for bold contrast."
     ],
     "links": [

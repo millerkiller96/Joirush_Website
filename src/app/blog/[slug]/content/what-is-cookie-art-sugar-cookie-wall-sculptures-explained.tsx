@@ -49,7 +49,7 @@ const data: BlogPostStructuredData = {
   "section3": {
     "heading": "Where People Hang Them",
     "paragraphs": [
-      "People hang their cookies in kitchens, dining nooks, coffee bars, playrooms, and offices. Hang one star cookie or pair two flavors in checkout for 10% off the second one."
+      "People hang their cookies in kitchens, dining nooks, coffee bars, playrooms, and offices. Hang one star cookie or pair two flavors. Buy 4 or more cookies and get 10% off each cookie."
     ],
     "links": [
       {

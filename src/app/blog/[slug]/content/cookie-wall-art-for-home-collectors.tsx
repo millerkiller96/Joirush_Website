@@ -11,7 +11,7 @@ const data: BlogPostStructuredData = {
     "11 cookies in stock, from $70 to $175.",
     "Every piece is one of a kind, made by Erynn in Daytona Beach, FL.",
     "Made of light spray foam and acrylic paint (for display only).",
-    "Pick any second cookie in checkout for 10% off.",
+    "Buy 4 or more cookies and get 10% off each cookie.",
     "Ships in 14 days with free U.S. shipping."
   ],
   "section1": {
@@ -43,7 +43,7 @@ const data: BlogPostStructuredData = {
   "section2": {
     "heading": "How the Second Cookie Deal Works",
     "paragraphs": [
-      "Lots of homes hang two or three cookies together. When you tap Buy Now on any cookie, a popup lets you pick any second cookie in our shop from a photo menu at 10% off.",
+      "Lots of homes hang two or three cookies together. When you tap Buy Now on any cookie, a popup lets you pick any second cookie in our shop from a photo menu. Buy 4 or more cookies and get 10% off each cookie.",
       "You can get two matching twins or mix two fun flavors!"
     ]
   },

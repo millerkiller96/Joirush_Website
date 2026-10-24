@@ -38,7 +38,7 @@ const data: BlogPostStructuredData = {
     "heading": "Bright Candy Wall Art for Any Room",
     "paragraphs": [
       "Love bright candy decor? Our 14 inch Rainbow Candy Cookie and 16 inch Hot Pink M&M Cookie pack shiny candy colors onto warm baked dough.",
-      "Mix and match two or more pieces of sweet decor in your cart. You will save 5% to 25% right away."
+      "Mix and match two or more pieces of sweet decor in your cart. Buy 4 or more cookies and get 10% off each cookie."
     ],
     "links": [
       {

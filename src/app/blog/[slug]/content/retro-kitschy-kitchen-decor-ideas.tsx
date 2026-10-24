@@ -68,7 +68,7 @@ const data: BlogPostStructuredData = {
     },
     {
       "question": "Can I pair two cookies for a diner booth wall?",
-      "answer": "Yes! Pick any second cookie in the checkout popup to get 10% off your second piece."
+      "answer": "Yes! Pick any second cookie in the checkout popup. Buy 4 or more cookies and get 10% off each cookie."
     }
   ]
 };

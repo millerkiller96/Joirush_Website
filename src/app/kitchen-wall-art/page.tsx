@@ -258,7 +258,7 @@ export default function KitchenWallArtPage() {
               3. Maximalist Kitchen Dessert Gallery Walls
             </h2>
             <p className="mt-3 text-sm leading-relaxed text-cocoa/85">
-              Building a bold <strong>maximalist kitchen</strong> wall? Combine 2 or 3 <strong>cookie decor</strong> sculptures in a vertical stack or triangle arrangement. You automatically save 5% on 2, 10% on 3, 15% on 4, 20% on 5, or 25% on 6+ cookies in your cart.
+              Building a bold <strong>maximalist kitchen</strong> wall? Combine 2 or 3 <strong>cookie decor</strong> sculptures in a vertical stack or triangle arrangement. Buy 4 or more cookies and get 10% off each cookie.
             </p>
           </div>
         </section>

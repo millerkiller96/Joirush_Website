@@ -42,7 +42,7 @@ const data: BlogPostStructuredData = {
     "heading": "Make a Sweet Statement Corner",
     "paragraphs": [
       "Great unique wall art works in small spaces too. Hang the Cookie Ice Cream Sandwich above a bar cart, desk, or reading chair for instant charm.",
-      "Want a bigger wall display? Bundle two or more cookies in your cart to save 5% to 25% automatically."
+      "Want a bigger wall display? Buy 4 or more cookies and get 10% off each cookie."
     ],
     "links": [
       {

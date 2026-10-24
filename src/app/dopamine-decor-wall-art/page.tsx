@@ -5,6 +5,7 @@ import { products } from "@/data/products";
 import { ProductCard } from "@/components/ProductCard";
 import { SectionHeading } from "@/components/SectionHeading";
 import { EtsyReviewsHub } from "@/components/EtsyReviewsHub";
+import Buy4Banner from "@/components/Buy4Banner";
 
 export const metadata: Metadata = {
   title: {
@@ -181,6 +182,7 @@ export default function DopamineDecorWallArtPage() {
               <h1 className="mt-2 font-display text-3xl sm:text-5xl font-semibold tracking-tight text-espresso">
                 Dopamine Decor Wall Art &amp; Joyful 3D Cookie Sculptures
               </h1>
+              <Buy4Banner className="mt-5" />
               <p className="mt-4 text-base sm:text-lg leading-relaxed text-cocoa/85">
                 Your home should make you smile the second you walk through the door. JOIRUSH <strong>dopamine decor</strong> brings bold candy colors, sweet childhood nostalgia, and tactile 3D texture to your walls with 14 to 16 inch handmade <strong>cookie decor</strong> sculpted by artist Erynn in Queens, NY.
               </p>

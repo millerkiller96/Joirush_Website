@@ -5,6 +5,7 @@ import { products } from "@/data/products";
 import { ProductCard } from "@/components/ProductCard";
 import { SectionHeading } from "@/components/SectionHeading";
 import { EtsyReviewsHub } from "@/components/EtsyReviewsHub";
+import Buy4Banner from "@/components/Buy4Banner";
 
 export const metadata: Metadata = {
   title: {
@@ -183,6 +184,7 @@ export default function KitchenWallArtPage() {
               <h1 className="mt-2 font-display text-3xl sm:text-5xl font-semibold tracking-tight text-espresso">
                 Fun Kitchen Wall Art &amp; 3D Cookie Decor
               </h1>
+              <Buy4Banner className="mt-5" />
               <p className="mt-4 text-base sm:text-lg leading-relaxed text-cocoa/85">
                 Your kitchen is where everyone gathers, so its walls deserve more than generic grocery store signs. JOIRUSH <strong>kitchen wall art</strong> brings the warmth of fresh baked cookies straight to your wall with handmade 14 to 16 inch 3D <strong>cookie decor</strong> sculpted and painted by hand in Queens, NY.
               </p>

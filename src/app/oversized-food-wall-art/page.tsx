@@ -5,6 +5,7 @@ import { products } from "@/data/products";
 import { ProductCard } from "@/components/ProductCard";
 import { SectionHeading } from "@/components/SectionHeading";
 import { EtsyReviewsHub } from "@/components/EtsyReviewsHub";
+import Buy4Banner from "@/components/Buy4Banner";
 
 export const metadata: Metadata = {
   title: {
@@ -166,6 +167,7 @@ export default function OversizedFoodWallArtPage() {
               <h1 className="mt-2 font-display text-3xl sm:text-5xl font-semibold tracking-tight text-espresso">
                 Oversized Food Wall Art &amp; 3D Cookie Wall Sculptures
               </h1>
+              <Buy4Banner className="mt-5" />
               <p className="mt-4 text-base sm:text-lg leading-relaxed text-cocoa/85">
                 Flat prints blend into the background. <strong>Oversized food wall art</strong> turns a plain wall into the happiest spot in your home. Each JOIRUSH piece is a 14 to 16 inch handmade <strong>food sculpture</strong> sculpted from lightweight foam and hand painted in Queens, NY by artist Erynn to look warm, golden, and fresh from the oven.
               </p>

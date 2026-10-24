@@ -457,7 +457,7 @@ export function ProductBuyButtons({ product }: ProductBuyButtonsProps) {
                               {formatPrice(perUnitUsd)} each
                             </span>
                             {activeBulkDiscount > 0 && (
-                              <span className="ml-1 line-through">
+                              <span className="ml-1 font-semibold text-red-700 line-through">
                                 {formatPrice(item.price)}
                               </span>
                             )}
@@ -529,7 +529,7 @@ export function ProductBuyButtons({ product }: ProductBuyButtonsProps) {
               </span>
               {bulkOrder.totalSavingsUsd > 0 && (
                 <>
-                  <span className="ml-1.5 text-xs text-chocolate-soft line-through">
+                  <span className="ml-1.5 text-xs font-semibold text-red-700 line-through">
                     {formatPrice(bulkOrder.originalTotalUsd)}
                   </span>
                   <span className="ml-1.5 text-xs font-semibold text-success-dark">

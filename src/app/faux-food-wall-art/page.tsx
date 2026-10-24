@@ -5,6 +5,7 @@ import { products } from "@/data/products";
 import { ProductCard } from "@/components/ProductCard";
 import { SectionHeading } from "@/components/SectionHeading";
 import { EtsyReviewsHub } from "@/components/EtsyReviewsHub";
+import Buy4Banner from "@/components/Buy4Banner";
 
 export const metadata: Metadata = {
   title: {
@@ -181,6 +182,7 @@ export default function FauxFoodWallArtPage() {
               <h1 className="mt-2 font-display text-3xl sm:text-5xl font-semibold tracking-tight text-espresso">
                 Faux Food Wall Art: Realistic Fake Cookies &amp; Fake Ice Cream Sculptures
               </h1>
+              <Buy4Banner className="mt-5" />
               <p className="mt-4 text-base sm:text-lg leading-relaxed text-cocoa/85">
                 Great <strong>faux food wall art</strong> makes everyone do a happy double take. In her Queens, NY studio, artist Erynn hand sculpts oversized <strong>fake cookies</strong> and <strong>fake ice cream</strong> from lightweight spray foam and layers of warm acrylic paint so every piece looks fresh from the oven without ever melting or crumbing.
               </p>

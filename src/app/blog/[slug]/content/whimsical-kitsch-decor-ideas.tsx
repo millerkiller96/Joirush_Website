@@ -49,7 +49,7 @@ const data: BlogPostStructuredData = {
   "section3": {
     "heading": "Mix Two Flavors in Checkout",
     "paragraphs": [
-      "Want a two cookie wall? Tap Buy Now on your favorite cookie and use the dropdown with photos to pick any second cookie for 10% off."
+      "Want a two cookie wall? Tap Buy Now on your favorite cookie and use the dropdown with photos to pick a second cookie. Buy 4 or more cookies and get 10% off each cookie."
     ],
     "links": [
       {

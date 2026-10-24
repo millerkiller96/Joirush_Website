@@ -157,7 +157,7 @@ export default function CataloguePage() {
         <p className="mt-4 max-w-2xl text-chocolate-mid">
           Browse every piece of <strong>handmade cookie wall art</strong> in our shop.
           Every sugar cookie wall sculpture is sculpted by hand from spray foam and acrylic paint by cookie artist Erynn in Daytona Beach, FL, and ships in 14 days with free U.S. shipping.
-          Want more than one? Buy 1 get 1 10% off, add a 3rd cookie for 15% off, or mix and match 3 to 20 cookies for 20% to 30% off each.
+          Want more than one? Buy 4 or more cookies and get 10% off each cookie. Mix and match any flavors.
         </p>
         <p className="mt-2 max-w-2xl text-sm text-chocolate-soft">
           Exploring by room or palette? Check out our{" "}
@@ -171,7 +171,7 @@ export default function CataloguePage() {
           <li>✓ Handmade by cookie artist Erynn</li>
           <li>✓ Attached hanger</li>
           <li>✓ Buy directly or via Etsy</li>
-          <li>✓ Bulk savings: Buy 1 get 1 10% off · 3rd cookie 15% off · 3 to 5 cookies 20% off · 5 to 10 cookies 25% off · 10 to 20 cookies 30% off each</li>
+          <li>✓ Multi cookie savings: Buy 4 or more cookies and get 10% off each cookie (mix and match any flavors)</li>
         </ul>
 
         <ReviewHighlight />

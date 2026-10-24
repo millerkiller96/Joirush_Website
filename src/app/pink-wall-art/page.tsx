@@ -262,7 +262,7 @@ export default function PinkWallArtPage() {
               3. Pink Kitchen Decor &amp; Sweet Gallery Bundles
             </h2>
             <p className="mt-3 text-sm leading-relaxed text-cocoa/85">
-              Style a sweet pink coffee bar with the <Link href="/product/cookie-ice-cream-sandwich/" className="font-medium text-caramel underline">Cookie Ice Cream Sandwich</Link> and <Link href="/product/rainbow-candy-cookie/" className="font-medium text-caramel underline">Rainbow Candy Cookie</Link>. Mix and match 2 or more cookies in your <Link href="/catalogue/" className="font-medium text-caramel underline">catalogue</Link> cart to save 5% on 2, 10% on 3, 15% on 4, 20% on 5, or 25% on 6+ pieces.
+              Style a sweet pink coffee bar with the <Link href="/product/cookie-ice-cream-sandwich/" className="font-medium text-caramel underline">Cookie Ice Cream Sandwich</Link> and <Link href="/product/rainbow-candy-cookie/" className="font-medium text-caramel underline">Rainbow Candy Cookie</Link>. Buy 4 or more cookies from the <Link href="/catalogue/" className="font-medium text-caramel underline">catalogue</Link> and get 10% off each cookie.
             </p>
           </div>
         </section>

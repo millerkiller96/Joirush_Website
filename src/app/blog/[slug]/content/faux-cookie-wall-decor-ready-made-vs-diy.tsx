@@ -50,7 +50,7 @@ const data: BlogPostStructuredData = {
   "section3": {
     "heading": "Want Custom Colors With Zero Mess?",
     "paragraphs": [
-      "If you wanted to DIY just to get your own colors, you can ask Erynn for a custom cookie! Or pair any two cookies in checkout for 10% off the second one."
+      "If you wanted to DIY just to get your own colors, you can ask Erynn for a custom cookie! Or buy 4 or more cookies and get 10% off each cookie."
     ],
     "links": [
       {

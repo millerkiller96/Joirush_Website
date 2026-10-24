@@ -38,7 +38,7 @@ const data: BlogPostStructuredData = {
     "heading": "Best Fake Cookies for Kitchen and Room Walls",
     "paragraphs": [
       "For classic fake food decor above a coffee bar, try the 16 inch Giant Peanut Butter Cookie or Giant Double Chocolate Cookie.",
-      "Want a colorful treat? Pick the Rainbow Candy Cookie or bundle 2 or more fake cookies in your cart to save up to 25%."
+      "Want a colorful treat? Pick the Rainbow Candy Cookie, or buy 4 or more fake cookies and get 10% off each cookie."
     ],
     "links": [
       {

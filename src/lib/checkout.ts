@@ -4,8 +4,6 @@ import {
   getDisplayName,
   getDiscountedUnitPrice,
   getProduct,
-  getSecondCookiePrice,
-  getThirdCookiePrice,
   JOIRUSH_FREE_SHIPPING_RATE_ID,
   JOIRUSH_STRIPE_ACCOUNT_ID,
   products,
@@ -15,7 +13,7 @@ import { GOOGLE_SCRIPT_URL, postToGoogleScript, submitWeb3Form, type SubmitResul
 
 export const JOIRUSH_CHECKOUT_SERVICE_URL = "https://joirush-checkout.onrender.com";
 
-export type CheckoutOrderMode = "single" | "pair_bogo10" | "trio_third15" | "bulk_tier";
+export type CheckoutOrderMode = "single" | "multi_full_price" | "buy4_10off";
 
 export type CheckoutLineItem = {
   slug: string;
@@ -206,234 +204,87 @@ export async function prefetchMultiFlavorStripeUrl(
 }
 
 /**
- * Build a 1-cookie order (full unit price).
+ * Pricing rule: 1 to 3 cookies are full price. 4 or more cookies (any mix of flavors)
+ * are 10% off each. The checkout server enforces the same rule on generated links.
  */
-export function buildSingleCookieOrder(product: Product): BuiltCheckoutOrder {
-  const clientReferenceId = sanitizeClientRef(`1x_${product.slug}`);
-  const lineItems: CheckoutLineItem[] = [
-    {
+export const BUY4_DISCOUNT_MIN_COOKIES = 4;
+export const BUY4_DISCOUNT_PERCENT = 10;
+
+type CookieEntry = { product: Product; quantity: number };
+
+function buildCookieOrder(entries: CookieEntry[], dominantProduct: Product): BuiltCheckoutOrder {
+  const totalCookies = entries.reduce((sum, entry) => sum + entry.quantity, 0);
+  const discountPercent = getBulkDiscountPercent(totalCookies);
+  const isDiscounted = discountPercent > 0;
+
+  const lineItems: CheckoutLineItem[] = entries.map(({ product, quantity }) => {
+    const discountedUnitUsd = getDiscountedUnitPrice(product.price, discountPercent);
+    const unitAmountCents = Math.round(discountedUnitUsd * 100);
+    const lineTotalUsd = (unitAmountCents * quantity) / 100;
+    return {
       slug: product.slug,
       shortName: product.shortName,
       name: getDisplayName(product),
       image: product.image,
       stripeProductId: product.stripeProductId,
-      stripePriceId: product.stripeTierPriceIds?.unit ?? product.stripeUnitPriceId,
-      quantity: 1,
+      stripePriceId: isDiscounted
+        ? product.stripeTierPriceIds?.buy4TenOff ?? product.stripeBuy4PriceId
+        : product.stripeTierPriceIds?.unit ?? product.stripeUnitPriceId,
+      quantity,
       originalUnitUsd: product.price,
-      discountedUnitUsd: product.price,
-      unitAmountCents: product.price * 100,
-      lineTotalUsd: product.price,
-      lineSavingsUsd: 0,
-      discountPercent: 0,
-      tierLabel: "Full price",
-    },
-  ];
-  const baseSingleUrl = product.stripeQuantityUrls?.["1"] ?? product.stripeUrl;
-  const directUrl = appendClientRef(baseSingleUrl, clientReferenceId);
-  return {
-    mode: "single",
-    totalCookies: 1,
-    originalTotalUsd: product.price,
-    finalTotalUsd: product.price,
-    totalSavingsUsd: 0,
-    discountSummaryLabel: "Single cookie",
-    clientReferenceId,
-    lineItems,
-    directStripeUrl: directUrl,
-    fallbackStripeUrl: directUrl,
-  };
-}
-
-/**
- * Build a 2-cookie order (Buy 1, get 2nd cookie 10% off).
- * All 11x11 cookie combinations have dedicated pre-created Stripe Payment Links
- * in firstProduct.stripePairUrls[secondProduct.slug].
- */
-export function buildPairCookieOrder(
-  firstProduct: Product,
-  secondProduct: Product
-): BuiltCheckoutOrder {
-  const secondDiscountedUsd = getSecondCookiePrice(secondProduct);
-  const originalTotalUsd = firstProduct.price + secondProduct.price;
-  const finalTotalUsd = firstProduct.price + secondDiscountedUsd;
-  const totalSavingsUsd = originalTotalUsd - finalTotalUsd;
-  const isSameFlavor = firstProduct.slug === secondProduct.slug;
-  const couponCode = "JOIRUSH10";
-
-  const clientReferenceId = sanitizeClientRef(
-    `pair10_1x_${firstProduct.slug}__1x_${secondProduct.slug}`
-  );
-
-  const lineItems: CheckoutLineItem[] = [
-    {
-      slug: firstProduct.slug,
-      shortName: firstProduct.shortName,
-      name: getDisplayName(firstProduct),
-      image: firstProduct.image,
-      stripeProductId: firstProduct.stripeProductId,
-      stripePriceId: firstProduct.stripeTierPriceIds?.unit ?? firstProduct.stripeUnitPriceId,
-      quantity: 1,
-      originalUnitUsd: firstProduct.price,
-      discountedUnitUsd: firstProduct.price,
-      unitAmountCents: firstProduct.price * 100,
-      lineTotalUsd: firstProduct.price,
-      lineSavingsUsd: 0,
-      discountPercent: 0,
-      tierLabel: "1st cookie (full price)",
-    },
-    {
-      slug: secondProduct.slug,
-      shortName: secondProduct.shortName,
-      name: getDisplayName(secondProduct),
-      image: secondProduct.image,
-      stripeProductId: secondProduct.stripeProductId,
-      stripePriceId:
-        secondProduct.stripeTierPriceIds?.second10Off ?? secondProduct.stripeSecond10OffPriceId,
-      quantity: 1,
-      originalUnitUsd: secondProduct.price,
-      discountedUnitUsd: secondDiscountedUsd,
-      unitAmountCents: secondDiscountedUsd * 100,
-      lineTotalUsd: secondDiscountedUsd,
-      lineSavingsUsd: secondProduct.price - secondDiscountedUsd,
-      discountPercent: 10,
-      tierLabel: "2nd cookie (10% off)",
-    },
-  ];
-
-  const basePairUrl =
-    firstProduct.stripePairUrls?.[secondProduct.slug] ??
-    (isSameFlavor ? firstProduct.stripeUpsellUrl : firstProduct.stripeUpsellUrl);
-
-  const directStripeUrl = buildStripePaymentLinkUrl(basePairUrl, {
-    clientReferenceId,
-    utmCampaign: "pair_10off_2cookies",
-    utmContent: `1x_${firstProduct.slug}_1x_${secondProduct.slug}_${finalTotalUsd}usd`,
+      discountedUnitUsd,
+      unitAmountCents,
+      lineTotalUsd,
+      lineSavingsUsd: Math.round((product.price * quantity - lineTotalUsd) * 100) / 100,
+      discountPercent,
+      tierLabel: isDiscounted ? "10% off (4 or more cookies)" : "Full price",
+    };
   });
 
-  return {
-    mode: "pair_bogo10",
-    totalCookies: 2,
-    originalTotalUsd,
-    finalTotalUsd,
-    totalSavingsUsd,
-    discountSummaryLabel: "Buy 1, get 1 10% off",
-    clientReferenceId,
-    couponCode,
-    lineItems,
-    directStripeUrl,
-    fallbackStripeUrl: directStripeUrl,
-  };
-}
+  const originalTotalUsd = lineItems.reduce((sum, item) => sum + item.originalUnitUsd * item.quantity, 0);
+  const finalTotalUsd = Math.round(lineItems.reduce((sum, item) => sum + item.lineTotalUsd, 0) * 100) / 100;
+  const totalSavingsUsd = Math.round((originalTotalUsd - finalTotalUsd) * 100) / 100;
 
-/**
- * Build a 3-cookie order ("Want a third?" step: 1st full, 2nd 10% off, 3rd 15% off).
- */
-export function buildTrioCookieOrder(
-  firstProduct: Product,
-  secondProduct: Product,
-  thirdProduct: Product
-): BuiltCheckoutOrder {
-  const secondDiscountedUsd = getSecondCookiePrice(secondProduct);
-  const thirdDiscountedUsd = getThirdCookiePrice(thirdProduct);
-  const originalTotalUsd = firstProduct.price + secondProduct.price + thirdProduct.price;
-  const finalTotalUsd = firstProduct.price + secondDiscountedUsd + thirdDiscountedUsd;
-  const totalSavingsUsd = originalTotalUsd - finalTotalUsd;
-  const couponCode = "JOIRUSH15";
+  const mode: CheckoutOrderMode = totalCookies <= 1 ? "single" : isDiscounted ? "buy4_10off" : "multi_full_price";
+  const prefix = totalCookies <= 1 ? "" : isDiscounted ? "buy4off10_" : "full_";
+  const mix = lineItems.map((item) => `${item.quantity}x_${item.slug}`).join("__");
+  const clientReferenceId =
+    (prefix + mix).length <= 200 ? sanitizeClientRef(prefix + mix) : buildBulkClientReferenceId(discountPercent, lineItems);
 
-  const clientReferenceId = sanitizeClientRef(
-    `trio15_1x_${firstProduct.slug}__1x_${secondProduct.slug}__1x_${thirdProduct.slug}`
-  );
-
-  const lineItems: CheckoutLineItem[] = [
-    {
-      slug: firstProduct.slug,
-      shortName: firstProduct.shortName,
-      name: getDisplayName(firstProduct),
-      image: firstProduct.image,
-      stripeProductId: firstProduct.stripeProductId,
-      stripePriceId: firstProduct.stripeTierPriceIds?.unit ?? firstProduct.stripeUnitPriceId,
-      quantity: 1,
-      originalUnitUsd: firstProduct.price,
-      discountedUnitUsd: firstProduct.price,
-      unitAmountCents: firstProduct.price * 100,
-      lineTotalUsd: firstProduct.price,
-      lineSavingsUsd: 0,
-      discountPercent: 0,
-      tierLabel: "1st cookie (full price)",
-    },
-    {
-      slug: secondProduct.slug,
-      shortName: secondProduct.shortName,
-      name: getDisplayName(secondProduct),
-      image: secondProduct.image,
-      stripeProductId: secondProduct.stripeProductId,
-      stripePriceId:
-        secondProduct.stripeTierPriceIds?.second10Off ?? secondProduct.stripeSecond10OffPriceId,
-      quantity: 1,
-      originalUnitUsd: secondProduct.price,
-      discountedUnitUsd: secondDiscountedUsd,
-      unitAmountCents: secondDiscountedUsd * 100,
-      lineTotalUsd: secondDiscountedUsd,
-      lineSavingsUsd: secondProduct.price - secondDiscountedUsd,
-      discountPercent: 10,
-      tierLabel: "2nd cookie (10% off)",
-    },
-    {
-      slug: thirdProduct.slug,
-      shortName: thirdProduct.shortName,
-      name: getDisplayName(thirdProduct),
-      image: thirdProduct.image,
-      stripeProductId: thirdProduct.stripeProductId,
-      stripePriceId: thirdProduct.stripeTierPriceIds?.third15Off,
-      quantity: 1,
-      originalUnitUsd: thirdProduct.price,
-      discountedUnitUsd: thirdDiscountedUsd,
-      unitAmountCents: thirdDiscountedUsd * 100,
-      lineTotalUsd: thirdDiscountedUsd,
-      lineSavingsUsd: thirdProduct.price - thirdDiscountedUsd,
-      discountPercent: 15,
-      tierLabel: "3rd cookie (15% off)",
-    },
-  ];
-
-  // Check if two of the three cookies share a flavor so we can use a pre-created Trio Payment Link
-  let staticTrioUrl: string | undefined;
-  if (firstProduct.slug === secondProduct.slug) {
-    staticTrioUrl =
-      firstProduct.stripeTrioUrls?.[thirdProduct.slug] ?? firstProduct.stripeTrioUrl;
-  } else if (firstProduct.slug === thirdProduct.slug) {
-    staticTrioUrl = firstProduct.stripeTrioUrls?.[secondProduct.slug];
-  } else if (secondProduct.slug === thirdProduct.slug) {
-    staticTrioUrl = secondProduct.stripeTrioUrls?.[firstProduct.slug];
-  }
-
+  const qtyKey = String(Math.min(20, Math.max(1, totalCookies)));
+  const singleFlavorUrl =
+    lineItems.length === 1
+      ? entries[0].product.stripeQuantityUrls?.[qtyKey] ?? (totalCookies === 1 ? entries[0].product.stripeUrl : undefined)
+      : undefined;
   const fallbackBaseUrl =
-    staticTrioUrl ??
-    firstProduct.stripeTrioUrls?.[thirdProduct.slug] ??
-    firstProduct.stripeTrioUrl ??
-    firstProduct.stripeQuantityUrls?.["3"] ??
-    firstProduct.stripeUpsellUrl;
+    singleFlavorUrl ?? dominantProduct.stripeQuantityUrls?.[qtyKey] ?? dominantProduct.stripeUrl;
 
-  const fallbackStripeUrl = buildStripePaymentLinkUrl(fallbackBaseUrl, {
-    clientReferenceId,
-    utmCampaign: "trio_15off_3cookies",
-    utmContent: `${firstProduct.slug}_${secondProduct.slug}_${thirdProduct.slug}_${finalTotalUsd}usd`,
-  });
+  const fallbackStripeUrl =
+    totalCookies <= 1
+      ? appendClientRef(fallbackBaseUrl, clientReferenceId)
+      : buildStripePaymentLinkUrl(fallbackBaseUrl, {
+          clientReferenceId,
+          utmCampaign: isDiscounted ? `buy4_10off_${totalCookies}cookies` : `full_price_${totalCookies}cookies`,
+          utmContent: `${lineItems.map((i) => `${i.quantity}x_${i.slug.replace(/-cookie$/, "")}`).join("__")}_${finalTotalUsd}usd`,
+        });
 
-  const needsDynamicMultiFlavorLink = !staticTrioUrl;
+  const needsDynamicMultiFlavorLink = !singleFlavorUrl;
   const directStripeUrl = needsDynamicMultiFlavorLink
     ? buildDynamicMultiItemCheckoutUrl(lineItems, clientReferenceId, fallbackStripeUrl)
     : fallbackStripeUrl;
 
   return {
-    mode: "trio_third15",
-    totalCookies: 3,
+    mode,
+    totalCookies,
     originalTotalUsd,
     finalTotalUsd,
     totalSavingsUsd,
-    discountSummaryLabel: "2nd cookie 10% off + 3rd cookie 15% off",
+    discountSummaryLabel: isDiscounted
+      ? "4 or more cookies (10% off each)"
+      : totalCookies <= 1
+        ? "Single cookie"
+        : `${totalCookies} cookies (full price)`,
     clientReferenceId,
-    couponCode,
     lineItems,
     directStripeUrl,
     fallbackStripeUrl,
@@ -441,12 +292,37 @@ export function buildTrioCookieOrder(
   };
 }
 
+function mergeEntries(list: Product[]): CookieEntry[] {
+  const out: CookieEntry[] = [];
+  for (const product of list) {
+    const existing = out.find((e) => e.product.slug === product.slug);
+    if (existing) existing.quantity += 1;
+    else out.push({ product, quantity: 1 });
+  }
+  return out;
+}
+
+/** Build a 1 cookie order (full price). */
+export function buildSingleCookieOrder(product: Product): BuiltCheckoutOrder {
+  return buildCookieOrder([{ product, quantity: 1 }], product);
+}
+
+/** Build a 2 cookie order (full price, since the discount starts at 4 cookies). */
+export function buildPairCookieOrder(firstProduct: Product, secondProduct: Product): BuiltCheckoutOrder {
+  return buildCookieOrder(mergeEntries([firstProduct, secondProduct]), firstProduct);
+}
+
+/** Build a 3 cookie order (full price, since the discount starts at 4 cookies). */
+export function buildTrioCookieOrder(
+  firstProduct: Product,
+  secondProduct: Product,
+  thirdProduct: Product
+): BuiltCheckoutOrder {
+  return buildCookieOrder(mergeEntries([firstProduct, secondProduct, thirdProduct]), firstProduct);
+}
+
 /**
- * Build a bulk multi-cookie order (for 3 to 20 cookies across any mix of flavors):
- * - 3 to 4 cookies: 20% off each
- * - 5 to 9 cookies: 25% off each
- * - 10 to 20 cookies: 30% off each
- * (Also handles 1 or 2 cookies if passed.)
+ * Build an order for any mix of 1 to 20 cookies. 4 or more cookies get 10% off each.
  */
 export function buildBulkCookieOrder(
   quantitiesBySlug: Record<string, number>,
@@ -459,7 +335,6 @@ export function buildBulkCookieOrder(
     }))
     .filter((entry) => entry.quantity > 0);
 
-  // Place primarySlug first only if it has quantity > 0; otherwise sort by quantity desc
   const entries = [...rawEntries].sort((a, b) => {
     if (primarySlug) {
       if (a.product.slug === primarySlug) return -1;
@@ -469,121 +344,14 @@ export function buildBulkCookieOrder(
   });
 
   const dominantProduct =
-    entries.reduce(
-      (best, cur) => (cur.quantity > best.quantity ? cur : best),
-      entries[0]
-    )?.product ??
+    entries.reduce((best, cur) => (cur.quantity > best.quantity ? cur : best), entries[0])?.product ??
     (primarySlug ? getProduct(primarySlug) : undefined) ??
     products[0];
 
-  const totalCookies = entries.reduce((sum, entry) => sum + entry.quantity, 0);
-
-  if (totalCookies <= 1) {
-    return buildSingleCookieOrder(entries[0]?.product ?? dominantProduct);
+  if (entries.length === 0) {
+    return buildSingleCookieOrder(dominantProduct);
   }
-
-  if (totalCookies === 2) {
-    if (entries.length === 1) {
-      return buildPairCookieOrder(entries[0].product, entries[0].product);
-    }
-    return buildPairCookieOrder(entries[0].product, entries[1].product);
-  }
-
-  const discountPercent = getBulkDiscountPercent(totalCookies);
-  const tierKey =
-    discountPercent === 30
-      ? "bulk30Off"
-      : discountPercent === 25
-        ? "bulk25Off"
-        : "bulk20Off";
-
-  const couponCode =
-    discountPercent === 30
-      ? "JOIRUSH30"
-      : discountPercent === 25
-        ? "JOIRUSH25"
-        : "JOIRUSH20";
-
-  const tierRangeLabel =
-    discountPercent === 30
-      ? "10 to 20 cookies (30% off each)"
-      : discountPercent === 25
-        ? "5 to 10 cookies (25% off each)"
-        : "3 to 5 cookies (20% off each)";
-
-  const lineItems: CheckoutLineItem[] = entries.map(({ product, quantity }) => {
-    const discountedUnitUsd = getDiscountedUnitPrice(product.price, discountPercent);
-    const originalLineUsd = product.price * quantity;
-    const lineTotalUsd = discountedUnitUsd * quantity;
-    return {
-      slug: product.slug,
-      shortName: product.shortName,
-      name: getDisplayName(product),
-      image: product.image,
-      stripeProductId: product.stripeProductId,
-      stripePriceId: product.stripeTierPriceIds?.[tierKey],
-      quantity,
-      originalUnitUsd: product.price,
-      discountedUnitUsd,
-      unitAmountCents: discountedUnitUsd * 100,
-      lineTotalUsd,
-      lineSavingsUsd: originalLineUsd - lineTotalUsd,
-      discountPercent,
-      tierLabel: `${discountPercent}% off bulk tier`,
-    };
-  });
-
-  const originalTotalUsd = lineItems.reduce(
-    (sum, item) => sum + item.originalUnitUsd * item.quantity,
-    0
-  );
-  const finalTotalUsd = lineItems.reduce((sum, item) => sum + item.lineTotalUsd, 0);
-  const totalSavingsUsd = originalTotalUsd - finalTotalUsd;
-
-  const clientReferenceId = buildBulkClientReferenceId(discountPercent, lineItems);
-
-  const clampedQtyKey = String(Math.min(20, Math.max(3, totalCookies)));
-  const singleFlavorExactQtyUrl =
-    lineItems.length === 1
-      ? entries[0].product.stripeQuantityUrls?.[clampedQtyKey] ??
-        entries[0].product.stripeBulkTierUrls?.[tierKey]
-      : undefined;
-
-  const fallbackBaseUrl =
-    singleFlavorExactQtyUrl ??
-    dominantProduct.stripeQuantityUrls?.[clampedQtyKey] ??
-    dominantProduct.stripeBulkTierUrls?.[tierKey] ??
-    dominantProduct.stripeUpsellUrl;
-
-  const compactSummary = lineItems
-    .map((item) => `${item.quantity}x_${item.slug.replace(/-cookie$/, "")}`)
-    .join("__");
-
-  const fallbackStripeUrl = buildStripePaymentLinkUrl(fallbackBaseUrl, {
-    clientReferenceId,
-    utmCampaign: `bulk_${discountPercent}off_${totalCookies}cookies`,
-    utmContent: `${compactSummary}_${finalTotalUsd}usd`,
-  });
-
-  const needsDynamicMultiFlavorLink = lineItems.length > 1;
-  const directStripeUrl = needsDynamicMultiFlavorLink
-    ? buildDynamicMultiItemCheckoutUrl(lineItems, clientReferenceId, fallbackStripeUrl)
-    : fallbackStripeUrl;
-
-  return {
-    mode: "bulk_tier",
-    totalCookies,
-    originalTotalUsd,
-    finalTotalUsd,
-    totalSavingsUsd,
-    discountSummaryLabel: tierRangeLabel,
-    clientReferenceId,
-    couponCode,
-    lineItems,
-    directStripeUrl,
-    fallbackStripeUrl,
-    needsDynamicMultiFlavorLink,
-  };
+  return buildCookieOrder(entries, dominantProduct);
 }
 
 /**

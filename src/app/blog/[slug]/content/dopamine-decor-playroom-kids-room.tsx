@@ -59,7 +59,7 @@ const data: BlogPostStructuredData = {
   "section3": {
     "heading": "Pick Two Flavors in Checkout",
     "paragraphs": [
-      "Do two kids share a room? Let each kid pick a cookie! When you tap Buy Now, pick the second cookie from the menu for 10% off."
+      "Do two kids share a room? Let each kid pick a cookie! When you tap Buy Now, pick the second cookie from the menu. Buy 4 or more cookies and get 10% off each cookie."
     ],
     "links": [
       {

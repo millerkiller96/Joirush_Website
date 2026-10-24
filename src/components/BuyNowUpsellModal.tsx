@@ -30,7 +30,6 @@ export type UpsellModalProduct = {
   etsyUrl: string;
   stripeUrl: string;
   stripeUpsellUrl: string;
-  stripePairUrls?: Record<string, string>;
   upsellPairPrice: number;
 };
 
@@ -162,13 +161,10 @@ export function BuyNowUpsellModal({
 
   const unitPrice = firstProduct.price;
   const secondDiscountedPrice = secondOption.secondPrice;
-  const pairSavings = secondOption.secondSavings;
   const pairPrice = unitPrice + secondDiscountedPrice;
 
   const thirdDiscountedPrice = thirdOption.thirdPrice;
-  const thirdSavings = thirdOption.thirdSavings;
   const trioPrice = pairPrice + thirdDiscountedPrice;
-  const trioSavings = pairSavings + thirdSavings;
 
   const pairOrder = buildPairCookieOrder(firstProduct, secondCookie);
   const trioOrder = buildTrioCookieOrder(firstProduct, secondCookie, thirdCookie);
@@ -427,7 +423,7 @@ export function BuyNowUpsellModal({
                 : "bg-success/15 text-success-dark"
             }`}
           >
-            {isSecondStep ? "Step 1: 2nd Cookie (10% off)" : "✓ 2nd Cookie Added (10% off)"}
+            {isSecondStep ? "Step 1: 2nd Cookie" : "✓ 2nd Cookie Added"}
           </span>
           <span className="text-chocolate-soft">→</span>
           <span
@@ -437,7 +433,7 @@ export function BuyNowUpsellModal({
                 : "bg-cream-deep text-chocolate-soft"
             }`}
           >
-            Step 2: 3rd Cookie (15% off)
+            Step 2: 3rd Cookie
           </span>
         </div>
 
@@ -479,7 +475,7 @@ export function BuyNowUpsellModal({
           </div>
           <div>
             <p className="text-xs font-medium uppercase tracking-wider text-pink sm:text-sm">
-              {isSecondStep ? "🍪 Double the sweetness" : "🍪 Triple the sweetness · 15% off"}
+              {isSecondStep ? "🍪 Double the sweetness" : "🍪 Triple the sweetness"}
             </p>
             <h2 id="upsell-modal-title" className="mt-0.5 font-display text-xl text-chocolate sm:text-2xl">
               {isSecondStep
@@ -494,16 +490,15 @@ export function BuyNowUpsellModal({
         {isSecondStep ? (
           <p className="text-sm text-chocolate-mid sm:text-base">
             Add a second cookie to your{" "}
-            <span className="font-semibold text-chocolate">{firstProduct.shortName}</span> and save{" "}
-            <span className="font-bold text-success-dark">{formatPrice(pairSavings)}</span>. You get{" "}
-            <span className="font-bold text-success-dark">10% off</span> whichever second cookie you pick!
+            <span className="font-semibold text-chocolate">{firstProduct.shortName}</span> and hang a
+            matching pair or mix two flavors. Buy 4 or more cookies and get{" "}
+            <span className="font-bold text-success-dark">10% off each cookie</span>.
           </p>
         ) : (
           <p className="text-sm text-chocolate-mid sm:text-base">
-            Complete your trio! Add a third cookie for{" "}
-            <span className="font-bold text-success-dark">15% off</span> (save{" "}
-            <span className="font-bold text-success-dark">{formatPrice(thirdSavings)}</span> on your third
-            piece, or <span className="font-bold text-success-dark">{formatPrice(trioSavings)}</span> total).
+            Complete your trio with a third cookie. Want more? Buy 4 or more cookies and get{" "}
+            <span className="font-bold text-success-dark">10% off each cookie</span> by choosing your
+            quantities on the product page.
           </p>
         )}
 
@@ -513,7 +508,7 @@ export function BuyNowUpsellModal({
             htmlFor={`${uid}-first-cookie-select`}
             className="block text-[11px] font-semibold uppercase tracking-wider text-chocolate-soft"
           >
-            1st Cookie (Full Price)
+            1st Cookie
           </label>
           <select
             id={`${uid}-first-cookie-select`}
@@ -542,8 +537,8 @@ export function BuyNowUpsellModal({
             className="block text-xs font-semibold uppercase tracking-wider text-chocolate-soft"
           >
             {isSecondStep
-              ? "Choose your second cookie (10% off)"
-              : "Choose your third cookie (15% off)"}
+              ? "Choose your second cookie"
+              : "Choose your third cookie"}
           </label>
           <div
             ref={comboRef}
@@ -578,16 +573,12 @@ export function BuyNowUpsellModal({
                 <span className="truncate font-semibold text-chocolate">
                   {currentCookie.shortName}
                 </span>
-                <span className="shrink-0 rounded-full bg-success/15 px-2 py-0.5 text-[11px] font-semibold text-success-dark">
-                  {isSecondStep ? "10% off" : "15% off"}
-                </span>
               </div>
               <p className="text-xs text-chocolate-soft">
                 {currentCookie.size} ·{" "}
                 <span className="font-semibold text-success-dark">
                   +{formatPrice(isSecondStep ? currentOption.secondPrice : currentOption.thirdPrice)}
-                </span>{" "}
-                <span className="line-through">{formatPrice(currentCookie.price)}</span>
+                </span>
               </p>
             </div>
             <svg
@@ -662,8 +653,7 @@ export function BuyNowUpsellModal({
                       {option.product.size} ·{" "}
                       <span className="font-semibold text-success-dark">
                         +{formatPrice(optionDiscountedPrice)}
-                      </span>{" "}
-                      <span className="line-through">{formatPrice(option.product.price)}</span>
+                      </span>
                     </p>
                   </div>
                   {isSelected && (
@@ -741,7 +731,7 @@ export function BuyNowUpsellModal({
                 height={24}
                 className="h-6 w-6 shrink-0 rounded-md object-cover"
               />
-              <span className="truncate">2. {secondCookie.shortName} (10% off)</span>
+              <span className="truncate">2. {secondCookie.shortName}</span>
             </span>
             <span className="font-semibold text-success-dark">
               +{formatPrice(secondDiscountedPrice)}
@@ -759,7 +749,7 @@ export function BuyNowUpsellModal({
                   height={24}
                   className="h-6 w-6 shrink-0 rounded-md object-cover"
                 />
-                <span className="truncate">3. {thirdCookie.shortName} (15% off)</span>
+                <span className="truncate">3. {thirdCookie.shortName}</span>
               </span>
               <span className="font-semibold text-success-dark">
                 +{formatPrice(thirdDiscountedPrice)}
@@ -773,9 +763,6 @@ export function BuyNowUpsellModal({
             <div className="text-right">
               <span className="text-lg font-bold text-success-dark">
                 {formatPrice(isSecondStep ? pairPrice : trioPrice)}
-              </span>
-              <span className="ml-2 text-sm text-success">
-                (save {formatPrice(isSecondStep ? pairSavings : trioSavings)})
               </span>
             </div>
           </div>
@@ -807,7 +794,7 @@ export function BuyNowUpsellModal({
               <svg className="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}>
                 <path strokeLinecap="round" strokeLinejoin="round" d="M12 4v16m8-8H4" />
               </svg>
-              Add the second · {formatPrice(pairPrice)}
+              Add the second for {formatPrice(pairPrice)}
             </button>
             <a
               href={singleFirstCheckoutUrl}
@@ -816,7 +803,7 @@ export function BuyNowUpsellModal({
               onClick={() => onClose()}
               className="flex w-full items-center justify-center gap-2 rounded-full border-2 border-chocolate/15 px-5 py-3 text-center text-sm font-medium text-chocolate-soft transition hover:border-chocolate/25 hover:text-chocolate focus:outline-none focus:ring-2 focus:ring-chocolate/30 focus:ring-offset-2 sm:px-6 sm:text-base"
             >
-              No thanks · just one {firstProduct.shortName} @ {formatPrice(unitPrice)}
+              No thanks, just one {firstProduct.shortName} @ {formatPrice(unitPrice)}
             </a>
           </div>
         ) : (
@@ -835,7 +822,7 @@ export function BuyNowUpsellModal({
               <svg className="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}>
                 <path strokeLinecap="round" strokeLinejoin="round" d="M12 4v16m8-8H4" />
               </svg>
-              Add the third (15% off) · {formatPrice(trioPrice)}
+              Add the third for {formatPrice(trioPrice)}
             </a>
             <a
               href={pairOrder.directStripeUrl}
@@ -848,7 +835,7 @@ export function BuyNowUpsellModal({
               data-upsell-keep-two=""
               className="flex w-full items-center justify-center gap-2 rounded-full border-2 border-chocolate/15 px-5 py-3 text-center text-sm font-medium text-chocolate-soft transition hover:border-chocolate/25 hover:text-chocolate focus:outline-none focus:ring-2 focus:ring-chocolate/30 focus:ring-offset-2 sm:px-6 sm:text-base"
             >
-              No thanks · just two cookies @ {formatPrice(pairPrice)}
+              No thanks, just two cookies @ {formatPrice(pairPrice)}
             </a>
             <button
               type="button"

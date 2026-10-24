@@ -82,7 +82,7 @@ const faqs = [
   {
     question: "Which cookies are the brightest choices for dopamine art gallery walls?",
     answer:
-      "Our collectors love combining the Rainbow Candy Cookie, Hot Pink M&M Cookie, Pastel M&M Cookie, and Cookie Ice Cream Sandwich. When you bundle 2 or more cookies in your cart, you automatically save 5% on 2, 10% on 3, 15% on 4, 20% on 5, or 25% on 6+ sculptures.",
+      "Our collectors love combining the Rainbow Candy Cookie, Hot Pink M&M Cookie, Pastel M&M Cookie, and Cookie Ice Cream Sandwich. Buy 4 or more cookies in any mix and get 10% off each cookie.",
   },
   {
     question: "Are the sculptures heavy to hang on bedroom or studio drywall?",
@@ -222,7 +222,7 @@ export default function DopamineDecorWallArtPage() {
           <SectionHeading
             eyebrow="Joy Sparking Sculptures"
             title="Shop Dopamine Decor & Happy 3D Wall Art"
-            copy="Hand sculpted and painted in Queens, NY. Save up to 25% when you bundle 2 or more cookies, with free U.S. shipping."
+            copy="Hand sculpted and painted in Queens, NY. Buy 4 or more cookies and get 10% off each, with free U.S. shipping."
           />
 
           <div className="mt-10 grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
@@ -256,7 +256,7 @@ export default function DopamineDecorWallArtPage() {
               3. Bundle &amp; Save on Colorful 3D Gallery Walls
             </h2>
             <p className="mt-3 text-sm leading-relaxed text-cocoa/85">
-              Round 3D sculptures break up boxy picture frames and add real depth to a gallery wall. Mix and match any styles in your cart to save 5% on 2, 10% on 3, 15% on 4, 20% on 5, or 25% on 6+ pieces of <strong>dopamine art</strong>.
+              Round 3D sculptures break up boxy picture frames and add real depth to a gallery wall. Buy 4 or more pieces of <strong>dopamine art</strong> in any mix and get 10% off each cookie.
             </p>
           </div>
         </section>

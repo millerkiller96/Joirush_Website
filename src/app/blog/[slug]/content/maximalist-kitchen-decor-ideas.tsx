@@ -10,7 +10,7 @@ const data: BlogPostStructuredData = {
   "quickFacts": [
     "Start your wall with one or two 16 inch 3D food pieces.",
     "Mix warm baked browns with bright pink, yellow, or blue.",
-    "Save 5% to 25% when you bundle 2 to 6+ cookies in your cart."
+    "Buy 4 or more cookies and get 10% off each cookie."
   ],
   "section1": {
     "heading": "Bring Pop Art Sculpture Into the Kitchen",

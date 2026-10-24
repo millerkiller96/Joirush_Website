@@ -233,7 +233,7 @@ export default function OversizedFoodWallArtPage() {
                 <strong className="text-espresso">True pop art sculpture energy:</strong> Inspired by classic giant food art and sweet nostalgia, a jumbo cookie <strong>food sculpture</strong> brings warmth and humor to apartments, dorms, kitchens, and collector walls.
               </li>
               <li>
-                <strong className="text-espresso">Bundle and save on gallery walls:</strong> Save 5% on 2, 10% on 3, 15% on 4, 20% on 5, or 25% on 6+ cookies when you mix and match any styles in your cart.
+                <strong className="text-espresso">Bundle and save on gallery walls:</strong> Buy 4 or more cookies in any mix of styles and get 10% off each cookie.
               </li>
             </ul>
           </div>

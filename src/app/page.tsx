@@ -232,7 +232,7 @@ export default function HomePage() {
                 <li>✓ Handmade to order</li>
                 <li>✓ Ships in {site.shippingTime}</li>
                 <li>✓ Free U.S. shipping</li>
-                <li>✓ Bulk savings: Buy 1 get 1 10% off · 3rd cookie 15% off · 3 to 5 cookies 20% off · 5 to 10 cookies 25% off · 10 to 20 cookies 30% off each</li>
+                <li>✓ Multi cookie savings: Buy 4 or more cookies and get 10% off each cookie (mix and match any flavors)</li>
               </ul>
               <div className="mt-8 flex flex-wrap gap-4">
                 <Link
@@ -309,7 +309,7 @@ export default function HomePage() {
               {
                 href: "/catalogue/",
                 title: "All Cookies",
-                copy: "Every flavor and size of giant cookie wall decor. Buy 1 get 1 10% off, add a 3rd for 15% off, or mix and match 3 to 20 cookies for 20% to 30% off each.",
+                copy: "Every flavor and size of giant cookie wall decor. Buy 4 or more cookies and get 10% off each cookie, in any mix of flavors.",
                 image: "/images/products/rainbow.jpg",
                 alt: "All cookies: rainbow sprinkle cookie sculpture by JOIRUSH",
               },

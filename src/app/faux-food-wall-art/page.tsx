@@ -87,7 +87,7 @@ const faqs = [
   {
     question: "Can I bundle multiple fake food sculptures for a dessert gallery wall?",
     answer:
-      "Yes. When you mix and match any fake cookies or fake ice cream sculptures in your cart, you automatically save 5% on 2, 10% on 3, 15% on 4, 20% on 5, or 25% on 6+ pieces, with free U.S. shipping.",
+      "Yes. Buy 4 or more cookies in any mix of flavors and get 10% off each cookie, with free U.S. shipping.",
   },
 ];
 
@@ -256,7 +256,7 @@ export default function FauxFoodWallArtPage() {
               3. Lightweight Spray Foam Craftsmanship
             </h2>
             <p className="mt-3 text-sm leading-relaxed text-cocoa/85">
-              Unlike fragile clay DIY projects or heavy theater props, our <strong>faux food</strong> sculptures weigh just 2 to 4 lbs with built in hanging hardware. Bundle 2 to 6+ pieces of <strong>fake food decor</strong> in your cart to save 5% to 25% automatically.
+              Unlike fragile clay DIY projects or heavy theater props, our <strong>faux food</strong> sculptures weigh just 2 to 4 lbs with built in hanging hardware. Buy 4 or more pieces of <strong>fake food decor</strong> and get 10% off each cookie.
             </p>
           </div>
         </section>

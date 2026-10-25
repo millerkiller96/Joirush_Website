@@ -120,11 +120,8 @@ function ProductJsonLd({ product }: { product: NonNullable<ReturnType<typeof get
         },
       },
     },
-    aggregateRating: {
-      "@type": "AggregateRating",
-      ratingValue: site.stats.rating,
-      reviewCount: site.stats.reviews,
-    },
+    // No aggregateRating: shop wide Etsy totals are not reviews of this product,
+    // and republished Etsy reviews are self serving for Google review snippets.
     material: product.materials,
     size: product.size,
     manufacturer: {

@@ -1,6 +1,6 @@
 "use client";
 
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import Link from "next/link";
 import { asset } from "@/lib/paths";
 import { Lightbox } from "@/components/ProductGallery";
@@ -8,7 +8,7 @@ import { ReviewStars } from "@/components/ReviewStars";
 import { getProduct } from "@/data/products";
 import { formatReviewDate, type EtsyCookieReview } from "@/data/etsy-cookie-reviews";
 
-function ReviewCard({ review }: { review: EtsyCookieReview }) {
+function ReviewCard({ review, anchor, highlight }: { review: EtsyCookieReview; anchor: boolean; highlight: boolean }) {
   const [lightboxIndex, setLightboxIndex] = useState<number | null>(null);
   const product = getProduct(review.productSlug);
   const hasPhotos = review.photos.length > 0;
@@ -16,8 +16,13 @@ function ReviewCard({ review }: { review: EtsyCookieReview }) {
 
   return (
     <article
+      id={anchor ? review.productSlug : undefined}
       data-review-card={hasPhotos ? "photo" : "text"}
-      className={`min-w-0 overflow-hidden rounded-3xl border border-chocolate/10 bg-white shadow-card ${
+      data-product-slug={review.productSlug}
+      data-highlight={highlight ? "true" : undefined}
+      className={`min-w-0 scroll-mt-28 overflow-hidden rounded-3xl border bg-white shadow-card transition ${
+        highlight ? "border-pink-hot ring-4 ring-pink-hot/40" : "border-chocolate/10"
+      } ${
         hasPhotos ? "md:col-span-2 md:grid md:grid-cols-[minmax(0,1fr)_minmax(0,1.1fr)]" : ""
       }`}
     >
@@ -87,10 +92,26 @@ function ReviewCard({ review }: { review: EtsyCookieReview }) {
 }
 
 export function ReviewsGrid({ reviews }: { reviews: EtsyCookieReview[] }) {
+  const [target, setTarget] = useState("");
+  useEffect(() => {
+    const read = () => setTarget(decodeURIComponent(window.location.hash.slice(1)));
+    read();
+    window.addEventListener("hashchange", read);
+    return () => window.removeEventListener("hashchange", read);
+  }, []);
+  useEffect(() => {
+    if (target) document.getElementById(target)?.scrollIntoView({ behavior: "smooth", block: "start" });
+  }, [target]);
+  const seen = new Set<string>();
   return (
     <div className="grid gap-6 md:grid-cols-2" data-reviews-grid>
       {reviews.map((review) => (
-        <ReviewCard key={review.id} review={review} />
+        <ReviewCard
+          key={review.id}
+          review={review}
+          anchor={!seen.has(review.productSlug) && !!seen.add(review.productSlug)}
+          highlight={target === review.productSlug}
+        />
       ))}
     </div>
   );

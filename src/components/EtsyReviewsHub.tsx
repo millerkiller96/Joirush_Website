@@ -1,5 +1,7 @@
 "use client";
 
+import Link from "next/link";
+import { etsyCookieReviews, getEtsyCookieReviewAverage } from "@/data/etsy-cookie-reviews";
 import { useEffect, useState } from "react";
 import { reviews as siteReviews, site } from "@/data/site";
 import { getShopReviews, type EtsySyncReview } from "@/data/products";
@@ -122,22 +124,22 @@ export function EtsyReviewsHub({ product }: EtsyReviewsHubProps = {}) {
 
   const displayedReviews = expanded ? allReviews : allReviews.slice(0, 6);
   const hasMore = allReviews.length > 6;
-  const totalReviewCount = site.stats.reviews;
+  const totalReviewCount = etsyCookieReviews.length;
+  const cookieAverage = getEtsyCookieReviewAverage().toFixed(1);
 
   return (
     <section className="mx-auto max-w-7xl px-5 py-16 md:px-8">
       <div className="text-center">
-        <div className="inline-flex items-center gap-2 rounded-full bg-etsy/10 px-4 py-2">
+        <Link href="/reviews/" data-hub-rating className="inline-flex flex-wrap items-center justify-center gap-2 rounded-full bg-etsy/10 px-4 py-2 transition hover:bg-etsy/20">
           <EtsyIcon className="h-5 w-5 text-etsy" />
           <div className="flex items-center gap-1">
             {[...Array(5)].map((_, i) => (
               <StarIcon key={i} className="h-4 w-4 text-caramel" filled />
             ))}
           </div>
-          <span className="font-semibold text-chocolate">{site.stats.rating}</span>
-          <span className="text-chocolate-soft">·</span>
-          <span className="text-chocolate-mid">{totalReviewCount} reviews on Etsy</span>
-        </div>
+          <span className="font-semibold text-chocolate">{cookieAverage}</span>
+          <span className="text-chocolate-mid underline underline-offset-4">from {totalReviewCount} Etsy cookie reviews</span>
+        </Link>
         <h2 className="mt-6 font-display text-4xl text-chocolate md:text-5xl">
           What Collectors Say
         </h2>

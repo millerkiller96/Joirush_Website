@@ -14,6 +14,11 @@ import {
 } from "@/data/products";
 import { site, reviews } from "@/data/site";
 import Buy4Banner from "@/components/Buy4Banner";
+import { ReviewStars } from "@/components/ReviewStars";
+import { etsyCookieReviews, getEtsyCookieReviewAverage } from "@/data/etsy-cookie-reviews";
+
+const reviewTotal = etsyCookieReviews.length;
+const reviewAverage = getEtsyCookieReviewAverage().toFixed(1);
 
 type ProductPageClientProps = {
   product: Product;
@@ -83,6 +88,7 @@ function FAQAccordion({ faqs }: { faqs: { question: string; answer: string }[] }
 export function ProductPageClient({ product, related }: ProductPageClientProps) {
   const { savings, percent } = calculateSavings(product.price, product.compareAtPrice);
   const relevantReviews = getRelevantReviews().slice(0, 2);
+  const productReviewCount = etsyCookieReviews.filter((r) => r.productSlug === product.slug).length;
   const galleryImages = getProductGallery(product.slug, product.image);
   // Alt text uses the name before any " | " qualifier, e.g. "Jumbo M&M Cookie Wall Art".
   const galleryName = getDisplayName(product);
@@ -132,6 +138,25 @@ export function ProductPageClient({ product, related }: ProductPageClientProps) 
               {galleryName}
             </h1>
 
+            <Link
+              href={productReviewCount > 0 ? `/reviews/#${product.slug}` : "/reviews/"}
+              data-product-rating
+              className="group mt-3 flex flex-wrap items-center gap-x-3 gap-y-1 rounded-xl hover:opacity-90 focus:outline-none focus-visible:ring-2 focus-visible:ring-pink-hot"
+              aria-label={`Rated ${reviewAverage} out of 5 from ${reviewTotal} Etsy reviews. Read the reviews`}
+            >
+              <span className="flex items-center gap-1.5">
+                <ReviewStars rating={Number(reviewAverage)} className="h-5 w-5" />
+                <span className="font-semibold text-chocolate">{reviewAverage}</span>
+              </span>
+              <span className="text-sm font-semibold text-chocolate underline decoration-caramel/50 underline-offset-4 group-hover:decoration-pink-hot">
+                {reviewTotal} Etsy reviews
+                {productReviewCount > 0 && `, ${productReviewCount} for this cookie`}
+              </span>
+              <span className="text-sm text-chocolate-soft">
+                {site.stats.sales}+ sold, {site.stats.years} years on Etsy
+              </span>
+            </Link>
+
             <div className="mt-5">
               <div className="flex items-baseline gap-3">
                 <span className="text-3xl font-bold text-success-dark">
@@ -146,28 +171,9 @@ export function ProductPageClient({ product, related }: ProductPageClientProps) 
               </p>
             </div>
 
+            {relevantReviews.length > 0 && (
             <div className="mt-5 rounded-2xl bg-cream-deep/60 p-4">
-              <div className="flex items-center gap-4">
-                <div className="flex items-center gap-1">
-                  {[...Array(5)].map((_, i) => (
-                    <svg
-                      key={i}
-                      className="h-5 w-5 text-caramel"
-                      fill="currentColor"
-                      viewBox="0 0 20 20"
-                    >
-                      <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z" />
-                    </svg>
-                  ))}
-                  <span className="ml-1 font-semibold text-chocolate">{site.stats.rating}</span>
-                </div>
-                <span className="text-sm text-chocolate-soft">
-                  {site.stats.reviews} reviews · {site.stats.sales}+ sold · {site.stats.years} years on Etsy
-                </span>
-              </div>
-
-              {relevantReviews.length > 0 && (
-                <div className="mt-4 space-y-3">
+                <div className="space-y-3">
                   {relevantReviews.map((review, idx) => (
                     <blockquote key={idx} className="border-l-2 border-caramel/30 pl-3 text-sm italic text-chocolate-mid">
                       "{review.quote.length > 120 ? review.quote.slice(0, 120) + "..." : review.quote}"
@@ -177,8 +183,8 @@ export function ProductPageClient({ product, related }: ProductPageClientProps) 
                     </blockquote>
                   ))}
                 </div>
-              )}
             </div>
+            )}
 
             <div className="mt-5 flex flex-wrap gap-x-5 gap-y-2.5 text-base text-chocolate">
               <span className="flex items-center gap-2 font-semibold">

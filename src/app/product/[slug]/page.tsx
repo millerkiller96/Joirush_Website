@@ -28,8 +28,9 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
 
   // Keep titles short enough to show in full on search results: names that already
   // carry a subtitle stand alone, shorter names get a brief handmade cookie art suffix.
+  const baseName = product.name.replace(/\s*\|\s*JOIRUSH$/, "");
   const seoTitle = product.name.includes("|")
-    ? product.name
+    ? { absolute: product.name }
     : `${product.name} | Handmade Cookie Art`;
 
   return {
@@ -53,7 +54,7 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
       canonical: productUrl,
     },
     openGraph: {
-      title: `${product.name} | Cookie Art by ${site.name}`,
+      title: `${baseName} | Cookie Art by ${site.name}`,
       description: `${product.tagline} Handmade ${product.size} sugar cookie wall sculpture by cookie artist Erynn. ${formatPrice(product.price)} with free U.S. shipping.`,
       type: "website",
       url: productUrl,
@@ -68,7 +69,7 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
     },
     twitter: {
       card: "summary_large_image",
-      title: `${product.name} | Cookie Art by ${site.name}`,
+      title: `${baseName} | Cookie Art by ${site.name}`,
       description: `${product.tagline} ${formatPrice(product.price)} with free U.S. shipping.`,
       images: [imageUrl],
     },

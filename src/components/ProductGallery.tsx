@@ -77,7 +77,7 @@ function useSnapTrack(count: number, onIndex: (index: number) => void) {
   return { trackRef, scrollToIndex, onScroll };
 }
 
-function Lightbox({
+export function Lightbox({
   images,
   name,
   startIndex,

@@ -17,6 +17,7 @@ function InstagramIcon({ className }: { className?: string }) {
 const links = [
   { href: "/", label: "Home" },
   { href: "/catalogue/", label: "Cookies" },
+  { href: "/reviews/", label: "Reviews" },
   { href: "/blog/", label: "Blog" },
   { href: "/custom/", label: "Custom" },
   { href: "/about/", label: "Cookie Artist" },

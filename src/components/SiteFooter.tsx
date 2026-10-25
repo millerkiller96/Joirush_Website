@@ -72,6 +72,9 @@ export function SiteFooter() {
             <Link href="/about/" className="hover:text-pink-blush">
               Meet Cookie Artist Erynn
             </Link>
+            <Link href="/reviews/" className="hover:text-pink-blush">
+              Cookie Reviews
+            </Link>
             <Link href="/faq/" className="hover:text-pink-blush">
               FAQ
             </Link>

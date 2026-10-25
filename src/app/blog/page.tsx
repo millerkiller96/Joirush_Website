@@ -9,7 +9,7 @@ import { site } from "@/data/site";
 import { getAbsoluteUrl, getImageUrl } from "@/lib/seo";
 
 export const metadata: Metadata = {
-  title: "Cookie Art Blog | Decor Ideas & Sugar Cookie Art Tips",
+  title: "Cookie Art Blog | Decor Ideas and Tips",
   description:
     "Decor ideas and cookie art tips from cookie artist Erynn: dopamine decor, kitschy kitchens, cookie canvas comparisons, and how to hang sugar cookie art.",
   keywords: [

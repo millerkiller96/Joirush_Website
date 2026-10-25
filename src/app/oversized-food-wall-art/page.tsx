@@ -9,10 +9,10 @@ import Buy4Banner from "@/components/Buy4Banner";
 
 export const metadata: Metadata = {
   title: {
-    absolute: "Oversized Food Wall Art | 3D Food Sculpture & Faux Food Wall Sculptures | JOIRUSH",
+    absolute: "Oversized Food Wall Art | 3D Cookie Sculptures | JOIRUSH",
   },
   description:
-    "Shop handmade oversized food wall art and 3D wall sculptures by JOIRUSH. Realistic faux food and fake food pop art sculpture cookies sculpted by hand in Queens, NY. Lightweight sculptural wall art with free U.S. shipping.",
+    "Shop handmade oversized food wall art by JOIRUSH. Realistic 3D cookie sculptures sculpted by hand. Free U.S. shipping.",
   keywords: [
     "oversized food wall art",
     "sculptural wall art",

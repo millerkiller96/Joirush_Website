@@ -9,10 +9,10 @@ import Buy4Banner from "@/components/Buy4Banner";
 
 export const metadata: Metadata = {
   title: {
-    absolute: "Pink Wall Art | Pink Room Decor, Pink Kitchen & Coquette Wall Art | JOIRUSH",
+    absolute: "Pink Wall Art | 3D Cookie Sculptures | JOIRUSH",
   },
   description:
-    "Shop handmade pink wall art and 3D pink cookie wall art by JOIRUSH. Sweet 14 to 16 inch sculptures for pink room decor, pink kitchen decor, coquette room decor, danish pastel, and y2k room decor. Free U.S. shipping.",
+    "Handmade pink wall art by JOIRUSH. Sweet 3D cookie sculptures for pink room decor and coquette spaces. Free U.S. shipping.",
   keywords: [
     "pink wall art",
     "pink room decor",

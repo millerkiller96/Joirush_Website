@@ -9,10 +9,10 @@ import Buy4Banner from "@/components/Buy4Banner";
 
 export const metadata: Metadata = {
   title: {
-    absolute: "Dopamine Decor Wall Art | Happy 3D Cookie Decor & Dopamine Art | JOIRUSH",
+    absolute: "Dopamine Decor Wall Art | 3D Cookie Decor | JOIRUSH",
   },
   description:
-    "Shop handmade dopamine decor wall art and happy 3D cookie decor by JOIRUSH. Bright 14 to 16 inch colorful 3D wall art sculptures crafted in Queens, NY for joyful bedrooms, kitchens, apartments, and studios. Free U.S. shipping.",
+    "Handmade dopamine decor wall art by JOIRUSH. Bright 14 to 16 inch 3D cookie sculptures for joyful rooms. Free U.S. shipping.",
   keywords: [
     "dopamine decor",
     "dopamine wall art",

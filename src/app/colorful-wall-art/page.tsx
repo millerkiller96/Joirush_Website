@@ -9,10 +9,10 @@ import Buy4Banner from "@/components/Buy4Banner";
 
 export const metadata: Metadata = {
   title: {
-    absolute: "Colorful Wall Art | Dopamine Decor, Funky, Quirky & Textured 3D Art | JOIRUSH",
+    absolute: "Colorful Wall Art | 3D Cookie Sculptures | JOIRUSH",
   },
   description:
-    "Shop colorful 3D wall art and textured wall art by JOIRUSH. Handmade oversized cookie wall sculptures for dopamine decor, pink wall art, funky wall art, quirky wall art, and candy decor rooms. Free U.S. shipping.",
+    "Handmade colorful 3D cookie wall art by JOIRUSH. Bright sculptures for dopamine decor and quirky rooms. Free U.S. shipping.",
   keywords: [
     "colorful wall art",
     "dopamine decor",

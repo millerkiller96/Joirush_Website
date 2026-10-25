@@ -95,6 +95,267 @@ function resolveFirstProduct(product: UpsellModalProduct): Product {
   return found ?? products[0];
 }
 
+type CookiePickerProps = {
+  idPrefix: string;
+  label: string;
+  selectedSlug: string;
+  onSelect: (slug: string) => void;
+  priceFor: (option: CookieChoiceOption) => number;
+  pricePrefix: string;
+  matchSlug?: string;
+  onOpenChange?: (open: boolean) => void;
+  dataAttrs?: Record<string, string>;
+  triggerAttrs?: Record<string, string>;
+  listAttrs?: Record<string, string>;
+  zClass?: string;
+};
+
+/** Photo based cookie picker used for every cookie slot in the upsell popup. */
+function CookiePicker({
+  idPrefix,
+  label,
+  selectedSlug,
+  onSelect,
+  priceFor,
+  pricePrefix,
+  matchSlug,
+  onOpenChange,
+  dataAttrs,
+  triggerAttrs,
+  listAttrs,
+  zClass = "z-20",
+}: CookiePickerProps) {
+  const labelId = `${idPrefix}-label`;
+  const listId = `${idPrefix}-list`;
+  const optionId = (index: number) => `${idPrefix}-opt-${index}`;
+  const wrapperRef = useRef<HTMLDivElement>(null);
+  const comboRef = useRef<HTMLDivElement>(null);
+  const listRef = useRef<HTMLUListElement>(null);
+  const [open, setOpenState] = useState(false);
+  const [activeIndex, setActiveIndex] = useState<number>(-1);
+
+  const selectedIndex = Math.max(
+    0,
+    cookieChoiceOptions.findIndex((o) => o.product.slug === selectedSlug)
+  );
+  const current = cookieChoiceOptions[selectedIndex] ?? cookieChoiceOptions[0];
+
+  function setOpen(next: boolean) {
+    setOpenState(next);
+    onOpenChange?.(next);
+  }
+
+  function scrollOptionIntoView(index: number) {
+    const list = listRef.current;
+    const option = list?.querySelector<HTMLElement>(`[data-index="${index}"]`);
+    if (!list || !option) return;
+    const listRect = list.getBoundingClientRect();
+    const optionRect = option.getBoundingClientRect();
+    if (optionRect.top < listRect.top) list.scrollTop -= listRect.top - optionRect.top;
+    else if (optionRect.bottom > listRect.bottom) list.scrollTop += optionRect.bottom - listRect.bottom;
+  }
+
+  function openDropdown(initialKeyboardIndex?: number) {
+    preloadCookieThumbs();
+    setActiveIndex(typeof initialKeyboardIndex === "number" ? initialKeyboardIndex : -1);
+    setOpen(true);
+  }
+
+  function closeDropdown(refocus = true) {
+    setOpen(false);
+    setActiveIndex(-1);
+    if (refocus) comboRef.current?.focus({ preventScroll: true });
+  }
+
+  function chooseOption(index: number) {
+    const opt = cookieChoiceOptions[index];
+    if (opt) onSelect(opt.product.slug);
+    closeDropdown();
+  }
+
+  useEffect(() => {
+    if (!open) return;
+    function handlePointer(event: PointerEvent) {
+      if (wrapperRef.current && !wrapperRef.current.contains(event.target as Node)) {
+        setOpen(false);
+        setActiveIndex(-1);
+      }
+    }
+    document.addEventListener("pointerdown", handlePointer);
+    return () => document.removeEventListener("pointerdown", handlePointer);
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [open]);
+
+  function handleKeyDown(event: React.KeyboardEvent<HTMLDivElement>) {
+    const last = cookieChoiceOptions.length - 1;
+    if (!open) {
+      if (["Enter", " ", "ArrowDown", "ArrowUp", "Home", "End"].includes(event.key)) {
+        event.preventDefault();
+        if (event.key === "Home") openDropdown(0);
+        else if (event.key === "End") openDropdown(last);
+        else openDropdown(selectedIndex);
+      }
+      return;
+    }
+    const move = (i: number) => {
+      setActiveIndex(i);
+      requestAnimationFrame(() => scrollOptionIntoView(i));
+    };
+    switch (event.key) {
+      case "ArrowDown":
+        event.preventDefault();
+        move(activeIndex < 0 ? Math.min(last, selectedIndex + 1) : Math.min(last, activeIndex + 1));
+        return;
+      case "ArrowUp":
+        event.preventDefault();
+        move(activeIndex < 0 ? Math.max(0, selectedIndex - 1) : Math.max(0, activeIndex - 1));
+        return;
+      case "Home":
+        event.preventDefault();
+        move(0);
+        return;
+      case "End":
+        event.preventDefault();
+        move(last);
+        return;
+      case "Enter":
+      case " ":
+        event.preventDefault();
+        chooseOption(activeIndex >= 0 ? activeIndex : selectedIndex);
+        return;
+      case "Escape":
+        event.preventDefault();
+        event.stopPropagation();
+        closeDropdown();
+        return;
+      case "Tab":
+        setOpen(false);
+        setActiveIndex(-1);
+        return;
+    }
+  }
+
+  return (
+    <div ref={wrapperRef} className="relative mt-3" {...dataAttrs}>
+      <label id={labelId} className="block text-xs font-semibold uppercase tracking-wider text-chocolate-soft">
+        {label}
+      </label>
+      <div
+        ref={comboRef}
+        role="combobox"
+        tabIndex={0}
+        aria-labelledby={labelId}
+        aria-haspopup="listbox"
+        aria-controls={listId}
+        aria-expanded={open}
+        aria-activedescendant={open && activeIndex >= 0 ? optionId(activeIndex) : undefined}
+        onClick={() => (open ? closeDropdown() : openDropdown())}
+        onKeyDown={handleKeyDown}
+        onPointerEnter={preloadCookieThumbs}
+        onFocus={preloadCookieThumbs}
+        {...triggerAttrs}
+        className={`mt-1.5 flex min-h-[3.75rem] w-full cursor-pointer select-none items-center gap-3 rounded-2xl border bg-white px-3 py-2 outline-none ring-pink transition focus:ring-2 ${
+          open ? "border-pink ring-2" : "border-chocolate/15 hover:border-chocolate/30"
+        }`}
+      >
+        {/* eslint-disable-next-line @next/next/no-img-element */}
+        <img
+          src={current.thumb}
+          alt=""
+          aria-hidden="true"
+          width={48}
+          height={48}
+          decoding="async"
+          className="h-12 w-12 shrink-0 rounded-xl bg-cream object-cover"
+        />
+        <div className="min-w-0 flex-1">
+          <span className="block truncate font-semibold text-chocolate">{current.product.shortName}</span>
+          <p className="text-xs text-chocolate-soft">
+            {current.product.size} ·{" "}
+            <span className="font-semibold text-success-dark">
+              {pricePrefix}
+              {formatPrice(priceFor(current))}
+            </span>
+          </p>
+        </div>
+        <svg
+          className={`h-5 w-5 shrink-0 text-chocolate-soft transition-transform ${open ? "rotate-180" : ""}`}
+          fill="none"
+          stroke="currentColor"
+          viewBox="0 0 24 24"
+          aria-hidden="true"
+        >
+          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 9l-7 7-7-7" />
+        </svg>
+      </div>
+
+      <ul
+        ref={listRef}
+        id={listId}
+        role="listbox"
+        aria-labelledby={labelId}
+        tabIndex={-1}
+        hidden={!open}
+        onMouseDown={(event) => event.preventDefault()}
+        {...listAttrs}
+        className={`absolute left-0 right-0 top-full ${zClass} mt-1.5 max-h-60 overflow-y-auto overscroll-contain rounded-2xl border border-chocolate/15 bg-white p-1.5 shadow-lift`}
+      >
+        {cookieChoiceOptions.map((option, index) => {
+          const isSelected = index === selectedIndex;
+          const isActive = index === activeIndex;
+          const isMatching = matchSlug !== undefined && option.product.slug === matchSlug;
+          return (
+            <li
+              key={option.product.slug}
+              id={optionId(index)}
+              role="option"
+              aria-selected={isSelected}
+              data-index={index}
+              data-cookie-slug={option.product.slug}
+              onClick={() => chooseOption(index)}
+              className={`flex cursor-pointer items-center gap-3 rounded-xl px-2.5 py-2 transition ${
+                isActive ? "bg-cream ring-1 ring-pink/40" : isSelected ? "bg-pink/5 hover:bg-cream" : "hover:bg-cream"
+              }`}
+            >
+              {/* eslint-disable-next-line @next/next/no-img-element */}
+              <img
+                src={option.thumb}
+                alt={option.product.shortName}
+                width={48}
+                height={48}
+                decoding="async"
+                className="h-12 w-12 shrink-0 rounded-xl bg-cream object-cover"
+              />
+              <div className="min-w-0 flex-1">
+                <div className="flex items-center gap-1.5">
+                  <span className="truncate text-sm font-semibold text-chocolate">{option.product.shortName}</span>
+                  {isMatching && (
+                    <span className="shrink-0 rounded-full bg-pink/15 px-2 py-0.5 text-[10px] font-semibold text-pink">
+                      Matching
+                    </span>
+                  )}
+                </div>
+                <p className="text-xs text-chocolate-soft">
+                  {option.product.size} ·{" "}
+                  <span className="font-semibold text-success-dark">
+                    {pricePrefix}
+                    {formatPrice(priceFor(option))}
+                  </span>
+                </p>
+              </div>
+              {isSelected && (
+                <svg className="h-5 w-5 shrink-0 text-pink" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true">
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2.5} d="M5 13l4 4L19 7" />
+                </svg>
+              )}
+            </li>
+          );
+        })}
+      </ul>
+    </div>
+  );
+}
+
 export function BuyNowUpsellModal({
   product,
   isOpen,
@@ -103,15 +364,9 @@ export function BuyNowUpsellModal({
   initialSecondSlug,
 }: BuyNowUpsellModalProps) {
   const uid = useId();
-  const labelId = `${uid}-cookie-label`;
-  const listId = `${uid}-cookie-list`;
-  const optionId = (index: number) => `${uid}-cookie-opt-${index}`;
 
   const modalRef = useRef<HTMLDivElement>(null);
   const closeButtonRef = useRef<HTMLButtonElement>(null);
-  const pickerWrapperRef = useRef<HTMLDivElement>(null);
-  const comboRef = useRef<HTMLDivElement>(null);
-  const listRef = useRef<HTMLUListElement>(null);
 
   const initialResolvedFirst = resolveFirstProduct(product);
   const [firstSlug, setFirstSlug] = useState<string>(initialResolvedFirst.slug);
@@ -120,8 +375,9 @@ export function BuyNowUpsellModal({
     initialSecondSlug || initialResolvedFirst.slug
   );
   const [thirdSlug, setThirdSlug] = useState<string>(initialResolvedFirst.slug);
-  const [dropdownOpen, setDropdownOpen] = useState(false);
-  const [activeIndex, setActiveIndex] = useState<number>(-1);
+  const [firstPickerOpen, setFirstPickerOpen] = useState(false);
+  const [nextPickerOpen, setNextPickerOpen] = useState(false);
+  const dropdownOpen = firstPickerOpen || nextPickerOpen;
 
   // Reset state whenever the modal opens for a product.
   useEffect(() => {
@@ -131,8 +387,8 @@ export function BuyNowUpsellModal({
       setSecondSlug(initialSecondSlug || resolvedFirst.slug);
       setThirdSlug(resolvedFirst.slug);
       setStep(initialStep);
-      setActiveIndex(-1);
-      setDropdownOpen(false);
+      setFirstPickerOpen(false);
+      setNextPickerOpen(false);
       preloadCookieThumbs();
     }
   }, [isOpen, product, initialStep, initialSecondSlug]);
@@ -197,83 +453,28 @@ export function BuyNowUpsellModal({
     }
   }
 
-  function scrollOptionIntoView(index: number) {
-    const list = listRef.current;
-    const option = list?.querySelector<HTMLElement>(`[data-index="${index}"]`);
-    if (!list || !option) return;
-    const listRect = list.getBoundingClientRect();
-    const optionRect = option.getBoundingClientRect();
-    if (optionRect.top < listRect.top) {
-      list.scrollTop -= listRect.top - optionRect.top;
-    } else if (optionRect.bottom > listRect.bottom) {
-      list.scrollTop += optionRect.bottom - listRect.bottom;
-    }
-  }
-
-  function openDropdown(initialKeyboardIndex?: number) {
-    preloadCookieThumbs();
-    if (typeof initialKeyboardIndex === "number") {
-      setActiveIndex(initialKeyboardIndex);
+  function chooseNextCookie(slug: string) {
+    if (isSecondStep) {
+      setSecondSlug(slug);
+      if (thirdSlug === firstSlug) setThirdSlug(slug);
     } else {
-      setActiveIndex(-1);
+      setThirdSlug(slug);
     }
-    setDropdownOpen(true);
-  }
-
-  function closeDropdown(refocus = true) {
-    setDropdownOpen(false);
-    setActiveIndex(-1);
-    if (refocus) comboRef.current?.focus({ preventScroll: true });
-  }
-
-  function chooseOption(index: number) {
-    const opt = cookieChoiceOptions[index];
-    if (opt) {
-      if (isSecondStep) {
-        setSecondSlug(opt.product.slug);
-        if (thirdSlug === firstSlug) {
-          setThirdSlug(opt.product.slug);
-        }
-      } else {
-        setThirdSlug(opt.product.slug);
-      }
-    }
-    closeDropdown();
   }
 
   function handleAdvanceToThirdCookie() {
-    setDropdownOpen(false);
-    setActiveIndex(-1);
+    setNextPickerOpen(false);
     setStep("third_cookie");
     if (modalRef.current) {
       modalRef.current.scrollTop = 0;
     }
   }
 
-  // Close dropdown on outside pointerdown inside the modal
-  useEffect(() => {
-    if (!dropdownOpen) return;
-    function handlePointer(event: PointerEvent) {
-      if (
-        pickerWrapperRef.current &&
-        !pickerWrapperRef.current.contains(event.target as Node)
-      ) {
-        setDropdownOpen(false);
-        setActiveIndex(-1);
-      }
-    }
-    document.addEventListener("pointerdown", handlePointer);
-    return () => document.removeEventListener("pointerdown", handlePointer);
-  }, [dropdownOpen]);
-
   const handleKeyDown = useCallback(
     (e: KeyboardEvent) => {
       if (e.key === "Escape") {
         if (dropdownOpen) {
-          e.preventDefault();
-          setDropdownOpen(false);
-          setActiveIndex(-1);
-          comboRef.current?.focus({ preventScroll: true });
+          // An open picker closes itself on Escape.
           return;
         }
         onClose();
@@ -329,65 +530,6 @@ export function BuyNowUpsellModal({
       onClose();
     }
   };
-
-  function handleComboKeyDown(event: React.KeyboardEvent<HTMLDivElement>) {
-    const last = cookieChoiceOptions.length - 1;
-    if (!dropdownOpen) {
-      if (["Enter", " ", "ArrowDown", "ArrowUp", "Home", "End"].includes(event.key)) {
-        event.preventDefault();
-        if (event.key === "Home") openDropdown(0);
-        else if (event.key === "End") openDropdown(last);
-        else openDropdown(currentPickerIndex);
-      }
-      return;
-    }
-    switch (event.key) {
-      case "ArrowDown": {
-        event.preventDefault();
-        const next =
-          activeIndex < 0
-            ? Math.min(last, currentPickerIndex + 1)
-            : Math.min(last, activeIndex + 1);
-        setActiveIndex(next);
-        requestAnimationFrame(() => scrollOptionIntoView(next));
-        return;
-      }
-      case "ArrowUp": {
-        event.preventDefault();
-        const prev =
-          activeIndex < 0
-            ? Math.max(0, currentPickerIndex - 1)
-            : Math.max(0, activeIndex - 1);
-        setActiveIndex(prev);
-        requestAnimationFrame(() => scrollOptionIntoView(prev));
-        return;
-      }
-      case "Home":
-        event.preventDefault();
-        setActiveIndex(0);
-        requestAnimationFrame(() => scrollOptionIntoView(0));
-        return;
-      case "End":
-        event.preventDefault();
-        setActiveIndex(last);
-        requestAnimationFrame(() => scrollOptionIntoView(last));
-        return;
-      case "Enter":
-      case " ":
-        event.preventDefault();
-        chooseOption(activeIndex >= 0 ? activeIndex : currentPickerIndex);
-        return;
-      case "Escape":
-        event.preventDefault();
-        event.stopPropagation();
-        closeDropdown();
-        return;
-      case "Tab":
-        setDropdownOpen(false);
-        setActiveIndex(-1);
-        return;
-    }
-  }
 
   return (
     <div
@@ -502,176 +644,37 @@ export function BuyNowUpsellModal({
           </p>
         )}
 
-        {/* 1st Cookie Selector so customers can switch Cookie #1 directly if desired */}
-        <div className="mt-3">
-          <label
-            htmlFor={`${uid}-first-cookie-select`}
-            className="block text-[11px] font-semibold uppercase tracking-wider text-chocolate-soft"
-          >
-            1st Cookie
-          </label>
-          <select
-            id={`${uid}-first-cookie-select`}
-            data-first-cookie-select=""
-            value={firstSlug}
-            onChange={(e) => handleFirstCookieChange(e.target.value)}
-            className="mt-1 w-full rounded-xl border border-chocolate/15 bg-white px-3 py-2 text-xs font-semibold text-chocolate outline-none focus:border-pink focus:ring-2 focus:ring-pink/30"
-          >
-            {products.map((item) => (
-              <option key={item.slug} value={item.slug}>
-                {item.shortName} ({item.size}) · {formatPrice(item.price)}
-              </option>
-            ))}
-          </select>
-        </div>
+        {/* 1st Cookie picker (same photo picker as the 2nd cookie) */}
+        <CookiePicker
+          idPrefix={`${uid}-first`}
+          label="1st Cookie"
+          selectedSlug={firstSlug}
+          onSelect={handleFirstCookieChange}
+          priceFor={(o) => o.product.price}
+          pricePrefix=""
+          onOpenChange={setFirstPickerOpen}
+          dataAttrs={{ "data-first-cookie-picker": "" }}
+          triggerAttrs={{ "data-first-cookie-trigger": "" }}
+          listAttrs={{ "data-first-cookie-list": "" }}
+          zClass="z-30"
+        />
 
-        {/* Cookie Dropdown Selector with Thumbnail Photos */}
-        <div
-          ref={pickerWrapperRef}
-          className="relative mt-3"
-          data-second-cookie-picker={isSecondStep ? "" : undefined}
-          data-third-cookie-picker={!isSecondStep ? "" : undefined}
-        >
-          <label
-            id={labelId}
-            className="block text-xs font-semibold uppercase tracking-wider text-chocolate-soft"
-          >
-            {isSecondStep
-              ? "Choose your second cookie"
-              : "Choose your third cookie"}
-          </label>
-          <div
-            ref={comboRef}
-            role="combobox"
-            tabIndex={0}
-            aria-labelledby={labelId}
-            aria-haspopup="listbox"
-            aria-controls={listId}
-            aria-expanded={dropdownOpen}
-            aria-activedescendant={dropdownOpen && activeIndex >= 0 ? optionId(activeIndex) : undefined}
-            onClick={() => (dropdownOpen ? closeDropdown() : openDropdown())}
-            onKeyDown={handleComboKeyDown}
-            onPointerEnter={preloadCookieThumbs}
-            onFocus={preloadCookieThumbs}
-            data-second-cookie-trigger=""
-            className={`mt-1.5 flex min-h-[3.75rem] w-full cursor-pointer select-none items-center gap-3 rounded-2xl border bg-white px-3 py-2 outline-none ring-pink transition focus:ring-2 ${
-              dropdownOpen ? "border-pink ring-2" : "border-chocolate/15 hover:border-chocolate/30"
-            }`}
-          >
-            {/* eslint-disable-next-line @next/next/no-img-element */}
-            <img
-              src={currentOption.thumb}
-              alt=""
-              aria-hidden="true"
-              width={48}
-              height={48}
-              decoding="async"
-              className="h-12 w-12 shrink-0 rounded-xl bg-cream object-cover"
-            />
-            <div className="min-w-0 flex-1">
-              <div className="flex items-center gap-1.5">
-                <span className="truncate font-semibold text-chocolate">
-                  {currentCookie.shortName}
-                </span>
-              </div>
-              <p className="text-xs text-chocolate-soft">
-                {currentCookie.size} ·{" "}
-                <span className="font-semibold text-success-dark">
-                  +{formatPrice(isSecondStep ? currentOption.secondPrice : currentOption.thirdPrice)}
-                </span>
-              </p>
-            </div>
-            <svg
-              className={`h-5 w-5 shrink-0 text-chocolate-soft transition-transform ${
-                dropdownOpen ? "rotate-180" : ""
-              }`}
-              fill="none"
-              stroke="currentColor"
-              viewBox="0 0 24 24"
-              aria-hidden="true"
-            >
-              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 9l-7 7-7-7" />
-            </svg>
-          </div>
-
-          <ul
-            ref={listRef}
-            id={listId}
-            role="listbox"
-            aria-labelledby={labelId}
-            tabIndex={-1}
-            hidden={!dropdownOpen}
-            onMouseDown={(event) => event.preventDefault()}
-            data-second-cookie-list=""
-            className="absolute left-0 right-0 top-full z-20 mt-1.5 max-h-60 overflow-y-auto overscroll-contain rounded-2xl border border-chocolate/15 bg-white p-1.5 shadow-lift"
-          >
-            {cookieChoiceOptions.map((option, index) => {
-              const isSelected = index === currentPickerIndex;
-              const isActive = index === activeIndex;
-              const isMatching = option.product.slug === firstSlug;
-              const optionDiscountedPrice = isSecondStep
-                ? option.secondPrice
-                : option.thirdPrice;
-              return (
-                <li
-                  key={option.product.slug}
-                  id={optionId(index)}
-                  role="option"
-                  aria-selected={isSelected}
-                  data-index={index}
-                  data-cookie-slug={option.product.slug}
-                  onClick={() => chooseOption(index)}
-                  className={`flex cursor-pointer items-center gap-3 rounded-xl px-2.5 py-2 transition ${
-                    isActive
-                      ? "bg-cream ring-1 ring-pink/40"
-                      : isSelected
-                        ? "bg-pink/5 hover:bg-cream"
-                        : "hover:bg-cream"
-                  }`}
-                >
-                  {/* eslint-disable-next-line @next/next/no-img-element */}
-                  <img
-                    src={option.thumb}
-                    alt={option.product.shortName}
-                    width={48}
-                    height={48}
-                    decoding="async"
-                    className="h-12 w-12 shrink-0 rounded-xl bg-cream object-cover"
-                  />
-                  <div className="min-w-0 flex-1">
-                    <div className="flex items-center gap-1.5">
-                      <span className="truncate text-sm font-semibold text-chocolate">
-                        {option.product.shortName}
-                      </span>
-                      {isMatching && (
-                        <span className="shrink-0 rounded-full bg-pink/15 px-2 py-0.5 text-[10px] font-semibold text-pink">
-                          Matching
-                        </span>
-                      )}
-                    </div>
-                    <p className="text-xs text-chocolate-soft">
-                      {option.product.size} ·{" "}
-                      <span className="font-semibold text-success-dark">
-                        +{formatPrice(optionDiscountedPrice)}
-                      </span>
-                    </p>
-                  </div>
-                  {isSelected && (
-                    <svg
-                      className="h-5 w-5 shrink-0 text-pink"
-                      fill="none"
-                      stroke="currentColor"
-                      viewBox="0 0 24 24"
-                      aria-hidden="true"
-                    >
-                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2.5} d="M5 13l4 4L19 7" />
-                    </svg>
-                  )}
-                </li>
-              );
-            })}
-          </ul>
-        </div>
+        {/* 2nd or 3rd Cookie picker */}
+        <CookiePicker
+          key={step}
+          idPrefix={`${uid}-${isSecondStep ? "second" : "third"}`}
+          label={isSecondStep ? "Choose your second cookie" : "Choose your third cookie"}
+          selectedSlug={isSecondStep ? secondSlug : thirdSlug}
+          onSelect={chooseNextCookie}
+          priceFor={(o) => (isSecondStep ? o.secondPrice : o.thirdPrice)}
+          pricePrefix="+"
+          matchSlug={firstSlug}
+          onOpenChange={setNextPickerOpen}
+          dataAttrs={isSecondStep ? { "data-second-cookie-picker": "" } : { "data-third-cookie-picker": "" }}
+          triggerAttrs={{ "data-second-cookie-trigger": "" }}
+          listAttrs={{ "data-second-cookie-list": "" }}
+          zClass="z-20"
+        />
 
         {/* Quick action when customer selects a different 2nd cookie flavor */}
         {isSecondStep && !isSameAsFirst && (
@@ -840,8 +843,7 @@ export function BuyNowUpsellModal({
             <button
               type="button"
               onClick={() => {
-                setDropdownOpen(false);
-                setActiveIndex(-1);
+                setNextPickerOpen(false);
                 setStep("second_cookie");
               }}
               className="block w-full pt-1 text-center text-xs font-medium text-chocolate-soft hover:text-pink"

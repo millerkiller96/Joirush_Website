@@ -34,6 +34,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
     "/custom/": ["src/app/custom/page.tsx"],
     "/about/": ["src/app/about/page.tsx", "src/data/site.ts"],
     "/faq/": ["src/app/faq/page.tsx"],
+    "/reviews/": ["src/app/reviews/page.tsx", "src/data/etsy-cookie-reviews.ts"],
     "/shipping-returns/": ["src/app/shipping-returns/page.tsx"],
     "/blog/": ["src/app/blog/page.tsx", "src/data/blog/posts.ts"],
     "/contact/": ["src/app/contact/page.tsx"],
@@ -103,6 +104,12 @@ export default function sitemap(): MetadataRoute.Sitemap {
     {
       url: `${siteUrl}/about/`,
       lastModified: getLatestMtime(pageSources["/about/"]),
+      changeFrequency: "monthly",
+      priority: 0.7,
+    },
+    {
+      url: `${siteUrl}/reviews/`,
+      lastModified: getLatestMtime(pageSources["/reviews/"]),
       changeFrequency: "monthly",
       priority: 0.7,
     },

@@ -9,7 +9,7 @@ import { getAbsoluteUrl, getImageUrl } from "@/lib/seo";
 const siteUrl = "https://joirush.com";
 
 export const metadata: Metadata = {
-  title: "Meet Cookie Artist Erynn | Handmade Sugar Cookie Art",
+  title: "Meet Cookie Artist Erynn",
   description:
     "Meet Erynn, the cookie artist behind JOIRUSH in Daytona Beach, Florida, hand sculpting sugar cookie wall sculptures and faux food wall art since 2021.",
   keywords: [

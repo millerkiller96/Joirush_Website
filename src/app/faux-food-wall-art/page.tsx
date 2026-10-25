@@ -9,10 +9,10 @@ import Buy4Banner from "@/components/Buy4Banner";
 
 export const metadata: Metadata = {
   title: {
-    absolute: "Faux Food Wall Art | Realistic Fake Cookies, Fake Ice Cream & Fake Food Decor | JOIRUSH",
+    absolute: "Faux Food Wall Art | Fake Cookie Sculptures | JOIRUSH",
   },
   description:
-    "Shop handmade faux food wall art, realistic fake cookies, and fake ice cream wall sculptures by JOIRUSH. Lightweight 14 to 16 inch fake food decor and pop art sculpture crafted by hand in Queens, NY. Free U.S. shipping.",
+    "Handmade faux food wall art by JOIRUSH. Realistic fake cookies and ice cream sculptures. Free U.S. shipping.",
   keywords: [
     "faux food wall art",
     "fake food",

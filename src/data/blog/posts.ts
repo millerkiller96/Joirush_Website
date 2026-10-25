@@ -20,7 +20,7 @@ export const blogPosts: BlogPost[] = [
   {
     slug: "gifts-for-bakers-who-have-everything-cookie-wall-art",
     title: "Gifts for Bakers Who Have Everything: Handmade Cookie Wall Art",
-    seoTitle: "Gifts for Bakers Who Have Everything: 3D Cookie Gifts & Baking Decor",
+    seoTitle: "Gifts for Bakers Who Have Everything | JOIRUSH",
     metaDescription:
       "Searching for gifts for bakers who already own every pan and mixer? Give handmade 16 inch 3D cookie wall art and baking decor crafted in Queens, NY with free U.S. shipping.",
     excerpt:
@@ -44,7 +44,7 @@ export const blogPosts: BlogPost[] = [
   {
     slug: "funky-quirky-wall-art-ideas",
     title: "Funky and Quirky Wall Art Ideas for Rooms That Feel Like You",
-    seoTitle: "Funky Wall Art & Quirky Wall Art Ideas for Fun Home Decor",
+    seoTitle: "Funky and Quirky Wall Art Ideas | JOIRUSH",
     metaDescription:
       "Tired of boring flat posters? Explore funky wall art, quirky wall art, and weird 3D pop art cookie sculptures handmade in Queens, NY for bedrooms, apartments, and studios.",
     excerpt:
@@ -68,7 +68,7 @@ export const blogPosts: BlogPost[] = [
   {
     slug: "pink-kitchen-coquette-room-decor-cookie-wall-art",
     title: "Pink Kitchen and Coquette Room Decor with Jumbo Cookie Art",
-    seoTitle: "Pink Room Decor, Pink Kitchen Decor & Coquette Wall Art Ideas",
+    seoTitle: "Pink Kitchen and Coquette Room Decor | JOIRUSH",
     metaDescription:
       "Style dreamy pink room decor, pink kitchen decor, coquette room decor, danish pastel, and y2k room decor with handmade 14 to 16 inch 3D cookie wall art by JOIRUSH.",
     excerpt:
@@ -92,7 +92,7 @@ export const blogPosts: BlogPost[] = [
   {
     slug: "fake-food-and-fake-cookies-for-wall-decor",
     title: "Fake Food and Fake Cookies for Your Wall That Look Real",
-    seoTitle: "Realistic Fake Food & Fake Cookies for Faux Food Wall Decor",
+    seoTitle: "Fake Food and Fake Cookies for Walls | JOIRUSH",
     metaDescription:
       "Discover how artist Erynn hand sculpts realistic fake food and fake cookies from lightweight foam and acrylic paint for faux food wall decor that never spoils.",
     excerpt:
@@ -116,7 +116,7 @@ export const blogPosts: BlogPost[] = [
   {
     slug: "ice-cream-and-candy-wall-art-decor-ideas",
     title: "Ice Cream and Candy Wall Art Ideas for a Sweet Room",
-    seoTitle: "Fake Ice Cream & Candy Wall Art Ideas for Sweet Room Decor",
+    seoTitle: "Ice Cream and Candy Wall Art Ideas | JOIRUSH",
     metaDescription:
       "Brighten bedrooms, kitchens, and studios with handmade fake ice cream wall art and candy decor by JOIRUSH. Lightweight 3D sweet decor crafted in Queens, NY.",
     excerpt:
@@ -140,7 +140,7 @@ export const blogPosts: BlogPost[] = [
   {
     slug: "maximalist-kitchen-decor-ideas",
     title: "Maximalist Kitchen Ideas with Bold Cookie Wall Sculptures",
-    seoTitle: "Maximalist Kitchen & Kitschy Kitchen Ideas with 3D Cookie Decor",
+    seoTitle: "Maximalist Kitchen Decor Ideas | JOIRUSH",
     metaDescription:
       "Style a bold maximalist kitchen or cozy kitschy kitchen with handmade 16 inch 3D cookie decor and pop art sculptural wall art by JOIRUSH. Free U.S. shipping.",
     excerpt:
@@ -163,7 +163,7 @@ export const blogPosts: BlogPost[] = [
   {
     slug: "giant-cookie-prop-vs-cookie-wall-art",
     title: "Giant Cookie Prop vs Cookie Wall Art: Which Giant Cookie Should You Buy?",
-    seoTitle: "Giant Cookie Prop vs Cookie Wall Art: Which to Buy",
+    seoTitle: "Cookie Prop vs Cookie Wall Art | JOIRUSH",
     metaDescription:
       "Giant cookie prop or cookie wall art? How party props and handmade wall sculptures differ in size, finish, and hanging, and which fits your home or event.",
     excerpt:
@@ -187,7 +187,7 @@ export const blogPosts: BlogPost[] = [
   {
     slug: "jumbo-cookie-wall-art-size-guide",
     title: "Jumbo Cookie Wall Art Size Guide: How Big Is a Giant Cookie on Your Wall?",
-    seoTitle: "Jumbo Cookie Wall Art Size Guide: Real Sizes and Weights",
+    seoTitle: "Jumbo Cookie Wall Art Size Guide | JOIRUSH",
     metaDescription:
       "How big is jumbo cookie wall art? Real sizes and weights for every JOIRUSH cookie sculpture, plus how to pick a size for your kitchen, nook, or gallery wall.",
     excerpt:
@@ -211,7 +211,7 @@ export const blogPosts: BlogPost[] = [
   {
     slug: "christmas-cookie-wall-art-vs-prints",
     title: "Christmas Cookie Wall Art: Why a 3D Holiday Cookie Beats Another Print",
-    seoTitle: "Christmas Cookie Wall Art, Christmas Kitchen Decor & Gingerbread Decor",
+    seoTitle: "Christmas Cookie Wall Art | JOIRUSH",
     metaDescription: "Upgrade your christmas kitchen decor and gingerbread decor with a 16 inch handmade 3D Christmas cookie wall sculpture. Free U.S. shipping from Queens, NY.",
     excerpt:
       "Most holiday wall signs feel flat. See how a 16 inch handmade 3D Christmas cookie sculpture brings warm christmas kitchen decor and gingerbread decor charm to your walls year after year.",
@@ -236,6 +236,7 @@ export const blogPosts: BlogPost[] = [
   {
     slug: "dopamine-decor-ideas",
     title: "Dopamine Decor Ideas: How to Make Your Home Feel Happy",
+    seoTitle: "Dopamine Decor Ideas | JOIRUSH",
     excerpt:
       "Dopamine decor ideas for every room: color, pattern, texture, and dopamine art that makes you smile. Practical tips to keep a joyful home from tipping into chaos.",
     publishedAt: "2026-10-08",
@@ -256,6 +257,7 @@ export const blogPosts: BlogPost[] = [
   {
     slug: "maximalist-decor-ideas",
     title: "Maximalist Decor Ideas (and How Eclectic Decor Fits In)",
+    seoTitle: "Maximalist Decor Ideas | JOIRUSH",
     excerpt:
       "Maximalist decor ideas that feel collected, not cluttered: how to pick an anchor piece, build a palette, mix patterns, and where eclectic decor fits in.",
     publishedAt: "2026-10-08",
@@ -276,6 +278,7 @@ export const blogPosts: BlogPost[] = [
   {
     slug: "whimsical-kitsch-decor-ideas",
     title: "Whimsical Decor & Kitsch Decor Ideas for a Playful Home",
+    seoTitle: "Whimsical and Kitsch Decor Ideas | JOIRUSH",
     excerpt:
       "Whimsical decor and kitsch decor ideas that look styled instead of silly: food as art, playful scale, retro kitchens, and how to keep collections tidy.",
     publishedAt: "2026-10-08",
@@ -296,6 +299,7 @@ export const blogPosts: BlogPost[] = [
   {
     slug: "eclectic-decor-ideas-mix-styles",
     title: "Eclectic Decor Ideas: How to Mix Styles Without Chaos",
+    seoTitle: "Eclectic Decor Ideas | JOIRUSH",
     excerpt:
       "Eclectic decor ideas for mixing old and new, modern and vintage, serious and silly. A simple framework for a room that looks collected, not random.",
     publishedAt: "2026-10-08",
@@ -309,7 +313,7 @@ export const blogPosts: BlogPost[] = [
   {
     slug: "kitchen-wall-decor-ideas-coffee-bar-small-kitchens",
     title: "Kitchen Wall Decor Ideas for Coffee Bars and Small Kitchens",
-    seoTitle: "Kitchen Wall Decor for Coffee Bars and Small Kitchens",
+    seoTitle: "Kitchen Wall Decor Ideas | JOIRUSH",
     excerpt:
       "Kitchen wall decor ideas for the tricky spots: the coffee bar, the breakfast nook, above the cabinets, skinny walls, and rentals. What to hang and how high.",
     publishedAt: "2026-10-08",
@@ -336,7 +340,7 @@ export const blogPosts: BlogPost[] = [
   {
     slug: "retro-kitschy-kitchen-decor-ideas",
     title: "Retro Kitchen Decor Ideas: How to Do a Kitschy Kitchen Right",
-    seoTitle: "Retro Kitchen Decor Ideas for a Kitschy Kitchen",
+    seoTitle: "Retro Kitchen Decor Ideas | JOIRUSH",
     excerpt:
       "Retro and kitschy kitchen decor ideas without a renovation: diner colors, checks and gingham, thrifted collections, playful appliances, and fun food art.",
     publishedAt: "2026-10-08",
@@ -350,6 +354,7 @@ export const blogPosts: BlogPost[] = [
   {
     slug: "add-color-to-neutral-home-without-painting",
     title: "How to Add Color to a Neutral Home Without Painting",
+    seoTitle: "Add Color to a Neutral Home | JOIRUSH",
     excerpt:
       "Love your neutral walls but want more color? Ten renter friendly ways to add color to a neutral home, starting with one piece of art and a three color rule.",
     publishedAt: "2026-10-08",
@@ -363,6 +368,7 @@ export const blogPosts: BlogPost[] = [
   {
     slug: "3d-wall-art-vs-flat-prints",
     title: "3D Wall Art vs Flat Prints: When Sculptural Decor Wins",
+    seoTitle: "3D Wall Art vs Flat Prints | JOIRUSH",
     excerpt:
       "3D wall art vs flat prints: how depth, shadow, and texture change a wall, where sculptural wall decor works best, and how to mix both on one wall.",
     publishedAt: "2026-10-08",
@@ -376,7 +382,7 @@ export const blogPosts: BlogPost[] = [
   {
     slug: "spray-foam-cookie-wall-art-how-theyre-made",
     title: "Spray Foam Cookie Wall Art: How Collectors' Sculptures Are Made",
-    seoTitle: "Spray Foam Cookie Wall Art: How It's Made",
+    seoTitle: "Spray Foam Cookie Wall Art | JOIRUSH",
     metaDescription: "How spray foam cookie wall art is sculpted, painted, and sealed by hand, and why each jumbo cookie sculpture weighs just 2 to 4 lbs.",
     excerpt:
       "Learn how spray foam cookie wall art is sculpted, painted, and sealed. Discover why this lightweight material creates realistic jumbo cookie sculptures that weigh just 2 to 4 lbs and hang on a single nail.",
@@ -399,7 +405,7 @@ export const blogPosts: BlogPost[] = [
   {
     slug: "faux-cookie-wall-decor-ready-made-vs-diy",
     title: "Faux Cookie Wall Decor: Ready Made Sculptures vs DIY Giant Cookies",
-    seoTitle: "Faux Cookie Wall Decor: Ready Made vs DIY",
+    seoTitle: "Faux Cookie Wall Decor Guide | JOIRUSH",
     metaDescription: "DIY giant cookie projects vs handmade spray foam cookie sculptures: weight, texture, durability, and which faux cookie wall decor really lasts.",
     excerpt:
       "Comparing DIY faux cookie projects (foam board, salt dough tutorials) to buying handmade spray foam sugar cookie wall sculptures. Weight, texture, durability, and why collectors who want it done right choose ready made cookie art.",
@@ -423,7 +429,7 @@ export const blogPosts: BlogPost[] = [
   {
     slug: "cookie-canvas-vs-3d-cookie-wall-sculptures",
     title: "Cookie Canvas Prints vs Handmade 3D Cookie Wall Sculptures: What Collectors Actually Hang",
-    seoTitle: "Cookie Canvas Prints vs 3D Cookie Wall Sculptures",
+    seoTitle: "Cookie Canvas vs 3D Sculptures | JOIRUSH",
     metaDescription: "Cookie canvas prints vs handmade 3D cookie wall sculptures: how they compare on depth, texture, and price, and which one collectors actually hang.",
     excerpt:
       "Flat cookie canvas prints vs 3D spray foam cookie wall sculptures: what's the difference and which do collectors actually hang? Learn why handmade sugar cookie wall sculptures from JOIRUSH offer the depth, texture, and statement piece impact that flat prints can't match.",
@@ -448,7 +454,7 @@ export const blogPosts: BlogPost[] = [
   {
     slug: "cookie-wall-art-for-home-collectors",
     title: "Cookie Wall Art for Home Collectors: Faux Sugar Cookie Sculptures That Last Forever",
-    seoTitle: "Cookie Wall Art for Home Collectors: A Buying Guide",
+    seoTitle: "Cookie Wall Art Buying Guide | JOIRUSH",
     metaDescription: "A collector's guide to cookie wall art: faux sugar cookie sculptures that look real, last forever, and hang on one nail. How to choose your piece.",
     excerpt:
       "A collector's guide to cookie wall art: faux sugar cookie wall sculptures that look real but aren't edible. Learn what makes these spray foam cookie sculptures different from royal icing cookies and how to choose the perfect piece for your home.",
@@ -472,7 +478,7 @@ export const blogPosts: BlogPost[] = [
   {
     slug: "what-is-cookie-art-sugar-cookie-wall-sculptures-explained",
     title: "What is Cookie Art? A Guide to Sugar Cookie Wall Sculptures & Art Cookies",
-    seoTitle: "What Is Cookie Art? Sugar Cookie Art Explained",
+    seoTitle: "What Is Cookie Art? | JOIRUSH",
     metaDescription: "Cookie art can mean edible royal icing cookies or sugar cookie wall sculptures that last forever. How art cookies differ and what a cookie artist makes.",
     excerpt:
       "Discover cookie art, the emerging trend of decorative sugar cookie wall sculptures that look real but last forever. Learn what makes art cookies different from edible sugar cookies and why cookie artists are creating faux food wall art for homes and kitchens.",
@@ -495,7 +501,7 @@ export const blogPosts: BlogPost[] = [
   {
     slug: "how-to-hang-jumbo-cookie-wall-art",
     title: "How to Hang Jumbo Cookie Wall Art: Sugar Cookie Sculpture Display Guide",
-    seoTitle: "How to Hang Jumbo Cookie Wall Art",
+    seoTitle: "How to Hang Cookie Wall Art | JOIRUSH",
     metaDescription: "How to hang jumbo cookie wall art: the right hardware, gallery wall layouts, and care tips for lightweight sugar cookie sculptures (2 to 4 lbs).",
     excerpt:
       "Learn how to hang jumbo cookie wall art safely and beautifully. Hardware tips, gallery wall layouts, and care for lightweight sugar cookie wall sculptures (2 to 4 lbs) made for home collectors.",
@@ -519,7 +525,7 @@ export const blogPosts: BlogPost[] = [
   {
     slug: "kitchen-dopamine-decor-dessert-gallery-wall",
     title: "Kitchen Dopamine Decor: How to Build a Dessert Gallery Wall",
-    seoTitle: "Kitchen Dopamine Decor: Dessert Gallery Wall Ideas",
+    seoTitle: "Kitchen Dopamine Decor Ideas | JOIRUSH",
     metaDescription: "Bring dopamine decor into the kitchen with a dessert gallery wall: how to pick a statement cookie, plan the layout, and choose joyful colors.",
     excerpt:
       "Bring dopamine decor into the kitchen with a dessert gallery wall. How to pick a statement cookie, plan the layout, and choose colors that feel joyful and intentional.",
@@ -541,7 +547,7 @@ export const blogPosts: BlogPost[] = [
   {
     slug: "foodie-gift-guide-jumbo-cookie-sculptures",
     title: "The Ultimate Foodie Gift Guide: Cookie Gifts They Will Never Forget",
-    seoTitle: "Foodie Gifts & Cookie Lover Gift Guide: 3D Cookie Wall Art",
+    seoTitle: "Foodie Gifts and Cookie Lover Guide | JOIRUSH",
     metaDescription:
       "Shopping for foodie gifts or a unique cookie lover gift? Explore handmade 14 to 16 inch 3D cookie gifts and sculptures with free U.S. shipping from Queens, NY.",
     excerpt:
@@ -571,7 +577,7 @@ export const blogPosts: BlogPost[] = [
   {
     slug: "chocolate-chip-cookie-wall-art-joirush-classic",
     title: "The Story Behind the Classic: Cookie Artist Erynn's Signature Cookie Art",
-    seoTitle: "The Story Behind Erynn's Classic Cookie Art",
+    seoTitle: "Behind the Classic Cookie Art | JOIRUSH",
     metaDescription: "How cookie artist Erynn's love of nostalgia and realistic sculpture became the signature JOIRUSH chocolate chip cookie wall art piece.",
     excerpt:
       "Every sugar cookie wall sculpture tells a story. Discover how cookie artist Erynn's love for nostalgia and realistic sculpture became the signature JOIRUSH cookie art piece.",

@@ -9,10 +9,10 @@ import Buy4Banner from "@/components/Buy4Banner";
 
 export const metadata: Metadata = {
   title: {
-    absolute: "Kitchen Wall Art | Cookie Decor, Kitschy Kitchen & Baking Decor | JOIRUSH",
+    absolute: "Kitchen Wall Art | 3D Cookie Decor | JOIRUSH",
   },
   description:
-    "Brighten your kitchen, coffee bar, or breakfast nook with handmade 3D cookie decor and kitchen art by JOIRUSH. Giant 14 to 16 inch cookie wall sculptures for kitschy kitchen, maximalist kitchen, and baking decor. Free U.S. shipping.",
+    "Handmade 3D cookie wall art for kitchens, coffee bars, and breakfast nooks by JOIRUSH. 14 to 16 inch sculptures. Free U.S. shipping.",
   keywords: [
     "kitchen wall art",
     "cookie decor",

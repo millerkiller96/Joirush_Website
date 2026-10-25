@@ -33,11 +33,10 @@ export default function sitemap(): MetadataRoute.Sitemap {
     "/jewelry/": ["src/app/jewelry/page.tsx", "src/data/jewelry.ts"],
     "/custom/": ["src/app/custom/page.tsx"],
     "/about/": ["src/app/about/page.tsx", "src/data/site.ts"],
-    "/faq/": ["src/app/faq/page.tsx", "src/data/faqs.ts"],
+    "/faq/": ["src/app/faq/page.tsx"],
     "/shipping-returns/": ["src/app/shipping-returns/page.tsx"],
     "/blog/": ["src/app/blog/page.tsx", "src/data/blog/posts.ts"],
     "/contact/": ["src/app/contact/page.tsx"],
-    "/privacy/": ["src/app/privacy/page.tsx"],
   };
 
   const staticPages: MetadataRoute.Sitemap = [
@@ -130,12 +129,6 @@ export default function sitemap(): MetadataRoute.Sitemap {
       lastModified: getLatestMtime(pageSources["/contact/"]),
       changeFrequency: "monthly",
       priority: 0.5,
-    },
-    {
-      url: `${siteUrl}/privacy/`,
-      lastModified: getLatestMtime(pageSources["/privacy/"]),
-      changeFrequency: "yearly",
-      priority: 0.3,
     },
   ];
 

@@ -152,7 +152,7 @@ export const defaultFAQs: ProductFAQ[] = [
 export const products: Product[] = [
   {
     slug: "jumbo-chocolate-chip-cookie",
-    name: "Jumbo Chocolate Chip Cookie Wall Art | Classic Sugar Cookie Sculpture",
+    name: "Jumbo Chocolate Chip Cookie Wall Art | JOIRUSH",
     shortName: "Classic Chocolate Chip",
     price: 80,
     compareAtPrice: 100,
@@ -216,7 +216,7 @@ export const products: Product[] = [
   },
   {
     slug: "jumbo-white-chocolate-chip-cookie",
-    name: "Jumbo White Chocolate Chip Cookie Wall Art",
+    name: "White Chocolate Chip Cookie Wall Art | JOIRUSH",
     shortName: "White Chocolate Chip",
     price: 80,
     compareAtPrice: 115,
@@ -271,7 +271,7 @@ export const products: Product[] = [
   },
   {
     slug: "rainbow-candy-cookie",
-    name: "Rainbow Jumbo Cookie Wall Art | Colorful Sugar Cookie Sculpture",
+    name: "Rainbow Candy Cookie Wall Art | JOIRUSH",
     shortName: "Rainbow Candy Cookie",
     price: 70,
     compareAtPrice: 90,
@@ -328,7 +328,7 @@ export const products: Product[] = [
   },
   {
     slug: "mini-jumbo-chocolate-chip-cookie",
-    name: "Mini Jumbo Chocolate Chip Cookie Wall Art",
+    name: "Mini Chocolate Chip Cookie Wall Art | JOIRUSH",
     shortName: "Mini Jumbo Chip",
     price: 70,
     compareAtPrice: 90,
@@ -382,7 +382,7 @@ export const products: Product[] = [
   },
   {
     slug: "jumbo-pastel-mm-cookie",
-    name: "Jumbo Pastel M&M Cookie Wall Art",
+    name: "Pastel M&M Cookie Wall Art | JOIRUSH",
     shortName: "Pastel M&M Cookie",
     price: 80,
     compareAtPrice: 115,
@@ -436,7 +436,7 @@ export const products: Product[] = [
   },
   {
     slug: "jumbo-christmas-cookie",
-    name: "Jumbo Christmas Cookie Wall Art",
+    name: "Christmas Cookie Wall Art | JOIRUSH",
     shortName: "Christmas Cookie",
     price: 80,
     compareAtPrice: 100,
@@ -490,7 +490,7 @@ export const products: Product[] = [
   },
   {
     slug: "giant-peanut-butter-cookie",
-    name: "Giant Peanut Butter Cookie Wall Art",
+    name: "Peanut Butter Cookie Wall Art | JOIRUSH",
     shortName: "Peanut Butter Cookie",
     price: 80,
     compareAtPrice: 100,
@@ -544,7 +544,7 @@ export const products: Product[] = [
   },
   {
     slug: "giant-double-chocolate-cookie",
-    name: "Giant Double Chocolate Cookie Wall Art | Jumbo Faux Cookie",
+    name: "Giant Double Chocolate Cookie Wall Art | JOIRUSH",
     shortName: "Double Chocolate",
     price: 80,
     compareAtPrice: 110,
@@ -598,7 +598,7 @@ export const products: Product[] = [
   },
   {
     slug: "cookie-ice-cream-sandwich",
-    name: "Jumbo Ice Cream Sandwich Cookie Wall Art | Statement Sculpture",
+    name: "Cookie Ice Cream Sandwich Wall Art | JOIRUSH",
     shortName: "Ice Cream Sandwich",
     price: 175,
     compareAtPrice: 220,
@@ -661,7 +661,7 @@ export const products: Product[] = [
   },
   {
     slug: "jumbo-mm-cookie",
-    name: "Jumbo M&M Cookie Wall Art",
+    name: "M&M Cookie Wall Art | JOIRUSH",
     shortName: "Classic M&M Cookie",
     price: 80,
     compareAtPrice: 115,
@@ -716,7 +716,7 @@ export const products: Product[] = [
   },
   {
     slug: "hot-pink-mm-cookie",
-    name: "Hot Pink M&M Cookie Wall Art | Jumbo Sugar Cookie Sculpture",
+    name: "Hot Pink M&M Cookie Wall Art | JOIRUSH",
     shortName: "Hot Pink M&M Cookie",
     price: 80,
     compareAtPrice: 115,

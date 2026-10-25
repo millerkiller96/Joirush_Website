@@ -27,7 +27,7 @@ const outfit = Outfit({
 
 export const metadata: Metadata = {
   title: {
-    default: `Cookie Art & Sugar Cookie Wall Sculptures | Handmade by Cookie Artist | ${site.name}`,
+    default: `Cookie Art and Sugar Cookie Wall Sculptures | ${site.name}`,
     template: `%s | ${site.name}`,
   },
   icons: {
@@ -41,7 +41,7 @@ export const metadata: Metadata = {
     ],
   },
   description:
-    "Shop handmade cookie art and sugar cookie wall sculptures by cookie artist Erynn. Jumbo faux food wall art, oversized cookie decor, and giant cookie canvas pieces. Free U.S. shipping from Daytona Beach, FL.",
+    "Handmade cookie wall art by cookie artist Erynn. Jumbo cookie sculptures from $70 with free U.S. shipping.",
   keywords: [
     "cookie art",
     "sugar cookie art",

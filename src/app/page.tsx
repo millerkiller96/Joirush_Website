@@ -11,7 +11,7 @@ import { getAbsoluteUrl, getImageUrl, siteUrl } from "@/lib/seo";
 import Buy4Banner from "@/components/Buy4Banner";
 
 export const metadata: Metadata = {
-  title: "Jumbo Cookie Wall Art | Handmade Sugar Cookie Sculptures | JOIRUSH",
+  title: "Jumbo Cookie Wall Art | Handmade Sculptures | JOIRUSH",
   description:
     "Handmade jumbo cookie wall art by cookie artist Erynn. Colorful, playful cookie sculptures for kitchens and happy homes, from $70 with free U.S. shipping.",
   keywords: [

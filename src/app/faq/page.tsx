@@ -4,14 +4,14 @@ import { site } from "@/data/site";
 import { siteUrl, getAbsoluteUrl } from "@/lib/seo";
 
 export const metadata: Metadata = {
-  title: "FAQ",
+  title: "Jumbo Cookie Wall Art FAQ",
   description:
     "Common questions about JOIRUSH jumbo cookie wall art: materials, weight, hanging, shipping, custom orders, and the 10% off 4 or more cookies deal.",
   alternates: {
     canonical: `${siteUrl}/faq/`,
   },
   openGraph: {
-    title: "FAQ | JOIRUSH",
+    title: "Jumbo Cookie Wall Art FAQ | JOIRUSH",
     description:
       "Common questions about JOIRUSH jumbo cookie wall art: materials, weight, hanging, shipping, custom orders, and more.",
     url: `${siteUrl}/faq/`,
@@ -100,7 +100,7 @@ export default function FAQPage() {
       <FAQJsonLd />
       <div className="mx-auto max-w-3xl px-5 py-16 md:py-20">
         <h1 className="font-display text-4xl text-chocolate md:text-5xl">
-          Frequently Asked Questions
+          Jumbo Cookie Wall Art FAQ
         </h1>
         <p className="mt-4 text-lg text-chocolate-mid">
           Everything you need to know about JOIRUSH jumbo cookie wall art, from what they are made of to how to hang them.

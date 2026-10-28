@@ -11,13 +11,14 @@ import {
 } from "@/data/etsy-cookie-reviews";
 
 export const metadata: Metadata = {
-  title: "Cookie Reviews",
+  title: "JOIRUSH Reviews: Jumbo Cookie Wall Art",
   description:
-    "Real Etsy reviews of JOIRUSH jumbo cookie wall art, with customer photos first. Handmade cookie sculptures by cookie artist Erynn.",
+    "Read real JOIRUSH reviews from Etsy buyers of our handmade jumbo cookie wall art. Customer photos first, plus the average star rating.",
   alternates: { canonical: `${siteUrl}/reviews/` },
   openGraph: {
-    title: "Cookie Reviews | JOIRUSH",
-    description: "Real Etsy reviews of JOIRUSH jumbo cookie wall art, with customer photos first.",
+    title: "JOIRUSH Reviews: Jumbo Cookie Wall Art | JOIRUSH",
+    description:
+      "Read real JOIRUSH reviews from Etsy buyers of our handmade jumbo cookie wall art. Customer photos first, plus the average star rating.",
     url: `${siteUrl}/reviews/`,
     type: "website",
   },
@@ -41,7 +42,7 @@ export default function ReviewsPage() {
         data-reviews-summary
       >
         <p className="text-sm font-semibold uppercase tracking-[0.22em] text-pink">Cookie Reviews</p>
-        <h1 className="mt-3 font-display text-4xl text-chocolate md:text-5xl">What collectors say</h1>
+        <h1 className="mt-3 font-display text-4xl text-chocolate md:text-5xl">JOIRUSH reviews: what collectors say</h1>
         <div className="mt-6 flex flex-col items-center gap-3">
           <p className="font-display text-7xl font-bold leading-none text-chocolate sm:text-8xl">{averageLabel}</p>
           <div className="flex items-center gap-1" role="img" aria-label={`${averageLabel} out of 5 stars`}>

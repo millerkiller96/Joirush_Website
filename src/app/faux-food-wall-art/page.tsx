@@ -34,7 +34,7 @@ export const metadata: Metadata = {
   openGraph: {
     title: "Faux Food Wall Art | Realistic Fake Cookies & Fake Ice Cream Decor | JOIRUSH",
     description:
-      "Handmade 14 to 16 inch fake cookies and fake ice cream wall art sculpted from lightweight foam and acrylic in Queens, NY. Free U.S. shipping.",
+      "Handmade 14 to 16 inch fake cookies and fake ice cream wall art sculpted from lightweight foam and acrylic in Daytona Beach, FL. Free U.S. shipping.",
     url: "https://joirush.com/faux-food-wall-art/",
     type: "website",
     images: [
@@ -50,7 +50,7 @@ export const metadata: Metadata = {
     card: "summary_large_image",
     title: "Faux Food Wall Art | Realistic Fake Cookies & Fake Food Decor | JOIRUSH",
     description:
-      "Handmade 14 to 16 inch realistic fake cookies and fake ice cream wall sculptures crafted in Queens, NY. Free U.S. shipping.",
+      "Handmade 14 to 16 inch realistic fake cookies and fake ice cream wall sculptures crafted in Daytona Beach, FL. Free U.S. shipping.",
     images: ["/images/products/ice-cream.jpg"],
   },
 };
@@ -73,7 +73,7 @@ const faqs = [
   {
     question: "How does Erynn make JOIRUSH faux food wall art look like real baked cookies?",
     answer:
-      "Artist Erynn hand sculpts each piece of fake food in her Queens, NY studio using expanding spray foam over a sturdy wood base. Once cured, she layers custom mixed warm golden, cocoa, and candy acrylic paints to create realistic fake food texture that never melts, crumbs, or fades.",
+      "Artist Erynn hand sculpts each piece of fake food in her Daytona Beach, FL studio using expanding spray foam over a sturdy wood base. Once cured, she layers custom mixed warm golden, cocoa, and candy acrylic paints to create realistic fake food texture that never melts, crumbs, or fades.",
   },
   {
     question: "Will fake cookies or fake ice cream wall art attract bugs or spoil?",
@@ -105,7 +105,7 @@ export default function FauxFoodWallArtPage() {
         "@id": "https://joirush.com/faux-food-wall-art/",
         name: "Faux Food Wall Art | Realistic Fake Cookies, Fake Ice Cream & Fake Food Decor",
         description:
-          "Handmade faux food wall art, realistic fake cookies, and fake ice cream pop art sculptures crafted in Queens, NY by JOIRUSH.",
+          "Handmade faux food wall art, realistic fake cookies, and fake ice cream pop art sculptures crafted in Daytona Beach, FL by JOIRUSH.",
         url: "https://joirush.com/faux-food-wall-art/",
         isPartOf: {
           "@type": "WebSite",
@@ -184,7 +184,7 @@ export default function FauxFoodWallArtPage() {
               </h1>
               <Buy4Banner className="mt-5" />
               <p className="mt-4 text-base sm:text-lg leading-relaxed text-cocoa/85">
-                Great <strong>faux food wall art</strong> makes everyone do a happy double take. In her Queens, NY studio, artist Erynn hand sculpts oversized <strong>fake cookies</strong> and <strong>fake ice cream</strong> from lightweight spray foam and layers of warm acrylic paint so every piece looks fresh from the oven without ever melting or crumbing.
+                Great <strong>faux food wall art</strong> makes everyone do a happy double take. In her Daytona Beach, FL studio, artist Erynn hand sculpts oversized <strong>fake cookies</strong> and <strong>fake ice cream</strong> from lightweight spray foam and layers of warm acrylic paint so every piece looks fresh from the oven without ever melting or crumbing.
               </p>
               <p className="mt-3 text-sm sm:text-base leading-relaxed text-cocoa/80">
                 Unlike tiny plastic kitchen magnets or heavy resin props, each JOIRUSH <strong>food sculpture</strong> is a 14 to 16 inch <strong>pop art sculpture</strong> built specifically for home walls. Hang our <strong>realistic fake food</strong> and <strong>faux food decor</strong> in your kitchen, bedroom, apartment, or home studio in seconds on a single nail or hook.
@@ -224,7 +224,7 @@ export default function FauxFoodWallArtPage() {
           <SectionHeading
             eyebrow="Handmade Fake Food Art"
             title="Shop Realistic Fake Cookies & Fake Ice Cream Wall Art"
-            copy="Every piece of fake food decor is hand sculpted and painted in Queens, NY. Free shipping on all U.S. orders."
+            copy="Every piece of fake food decor is hand sculpted and painted in Daytona Beach, FL. Free shipping on all U.S. orders."
           />
 
           <div className="mt-10 grid gap-6 sm:grid-cols-2 lg:grid-cols-3">

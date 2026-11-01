@@ -107,7 +107,7 @@ export default function KitchenWallArtPage() {
         "@id": "https://joirush.com/kitchen-wall-art/",
         name: "Kitchen Wall Art | 3D Cookie Decor, Kitschy Kitchen & Baking Decor",
         description:
-          "Handmade 3D cookie wall art, cookie decor, and baking decor for kitchens, coffee bars, and dining nooks, crafted in Queens, NY by JOIRUSH.",
+          "Handmade 3D cookie wall art, cookie decor, and baking decor for kitchens, coffee bars, and dining nooks, crafted in Daytona Beach, FL by JOIRUSH.",
         url: "https://joirush.com/kitchen-wall-art/",
         isPartOf: {
           "@type": "WebSite",
@@ -186,7 +186,7 @@ export default function KitchenWallArtPage() {
               </h1>
               <Buy4Banner className="mt-5" />
               <p className="mt-4 text-base sm:text-lg leading-relaxed text-cocoa/85">
-                Your kitchen is where everyone gathers, so its walls deserve more than generic grocery store signs. JOIRUSH <strong>kitchen wall art</strong> brings the warmth of fresh baked cookies straight to your wall with handmade 14 to 16 inch 3D <strong>cookie decor</strong> sculpted and painted by hand in Queens, NY.
+                Your kitchen is where everyone gathers, so its walls deserve more than generic grocery store signs. JOIRUSH <strong>kitchen wall art</strong> brings the warmth of fresh baked cookies straight to your wall with handmade 14 to 16 inch 3D <strong>cookie decor</strong> sculpted and painted by hand in Daytona Beach, FL.
               </p>
               <p className="mt-3 text-sm sm:text-base leading-relaxed text-cocoa/80">
                 From warm golden brown chocolate chip and crosshatch peanut butter to bright candy coated statement pieces, our lightweight <strong>kitchen art</strong> brings joyful personality to coffee bars, breakfast nooks, cozy <strong>baking decor</strong> corners, retro <strong>kitschy kitchen</strong> walls, and bold <strong>maximalist kitchen</strong> spaces.
@@ -226,7 +226,7 @@ export default function KitchenWallArtPage() {
           <SectionHeading
             eyebrow="Kitchen Favorites"
             title="Shop 3D Cookie Decor for Kitchens & Coffee Bars"
-            copy="Hand sculpted in Queens, NY. Lightweight (2 to 4 lbs), ready to hang on a single hook, with free U.S. shipping."
+            copy="Hand sculpted in Daytona Beach, FL. Lightweight (2 to 4 lbs), ready to hang on a single hook, with free U.S. shipping."
           />
 
           <div className="mt-10 grid gap-6 sm:grid-cols-2 lg:grid-cols-3">

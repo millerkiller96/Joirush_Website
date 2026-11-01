@@ -184,7 +184,7 @@ export default function PinkWallArtPage() {
               </h1>
               <Buy4Banner className="mt-5" />
               <p className="mt-4 text-base sm:text-lg leading-relaxed text-cocoa/85">
-                From bold hot pink statements to soft blush and candy pastels, JOIRUSH <strong>pink wall art</strong> brings sweet 3D charm to your favorite spaces. Every 14 to 16 inch sculpture is crafted and painted by hand in Queens, NY by artist Erynn.
+                From bold hot pink statements to soft blush and candy pastels, JOIRUSH <strong>pink wall art</strong> brings sweet 3D charm to your favorite spaces. Every 14 to 16 inch sculpture is crafted and painted by hand in Daytona Beach, FL by artist Erynn.
               </p>
               <p className="mt-3 text-sm sm:text-base leading-relaxed text-cocoa/80">
                 Whether you are styling <strong>pink room decor</strong> for a bedroom or dorm, adding <strong>pink kitchen decor</strong> above an espresso bar, or curating <strong>coquette room decor</strong>, <strong>danish pastel</strong>, <strong>y2k room decor</strong>, and <strong>girly room decor</strong>, our lightweight <strong>pink cookie wall art</strong> hangs in minutes on a single hook.
@@ -230,7 +230,7 @@ export default function PinkWallArtPage() {
           <SectionHeading
             eyebrow="Sweet & Sculptural"
             title="Shop Pink & Pastel 3D Cookie Wall Art"
-            copy="Hand sculpted in Queens, NY. Lightweight (2 to 4 lbs), ready to hang, with free U.S. shipping on every order."
+            copy="Hand sculpted in Daytona Beach, FL. Lightweight (2 to 4 lbs), ready to hang, with free U.S. shipping on every order."
           />
 
           <div className="mt-10 grid gap-6 sm:grid-cols-2 lg:grid-cols-3">

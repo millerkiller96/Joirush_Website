@@ -67,7 +67,7 @@ const data: BlogPostStructuredData = {
   "section3": {
     "heading": "Easy to Hang in Dorms and Homes",
     "paragraphs": [
-      "Every JOIRUSH cookie is made by hand in Queens, NY. It arrives ready to hang on one nail with free U.S. shipping."
+      "Every JOIRUSH cookie is made by hand in Daytona Beach, FL. It arrives ready to hang on one nail with free U.S. shipping."
     ],
     "links": [
       {

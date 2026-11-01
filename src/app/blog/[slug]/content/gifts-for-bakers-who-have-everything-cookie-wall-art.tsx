@@ -8,7 +8,7 @@ const data: BlogPostStructuredData = {
   "lead": "Shopping for gifts for bakers is hard when they own every pan and whisk. Handmade 3D cookie art gives them sweet baking decor they do not have yet.",
   "quickFactsTitle": "Why Bakers Love 3D Cookie Gifts",
   "quickFacts": [
-    "Hand sculpted in Queens, NY by artist Erynn from light foam.",
+    "Hand sculpted in Daytona Beach, FL by artist Erynn from light foam.",
     "Looks like a warm 16 inch cookie fresh from the oven.",
     "Weighs 2 to 4 lbs and hangs on one nail with free U.S. shipping."
   ],

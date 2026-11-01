@@ -102,7 +102,7 @@ export default function ColorfulWallArtPage() {
         "@id": "https://joirush.com/colorful-wall-art/",
         name: "Colorful Wall Art | Dopamine Decor, Pink, Funky & Textured 3D Cookie Sculptures",
         description:
-          "Handmade colorful 3D cookie wall sculptures and textured wall art for dopamine decor, pink wall art, funky wall art, and candy decor spaces, crafted in Queens, NY by JOIRUSH.",
+          "Handmade colorful 3D cookie wall sculptures and textured wall art for dopamine decor, pink wall art, funky wall art, and candy decor spaces, crafted in Daytona Beach, FL by JOIRUSH.",
         url: "https://joirush.com/colorful-wall-art/",
         isPartOf: {
           "@type": "WebSite",
@@ -181,7 +181,7 @@ export default function ColorfulWallArtPage() {
               </h1>
               <Buy4Banner className="mt-5" />
               <p className="mt-4 text-base sm:text-lg leading-relaxed text-cocoa/85">
-                Ready to wake up a quiet room? JOIRUSH <strong>colorful wall art</strong> brings bold candy colors, playful pop art nostalgia, and real 3D sculptural depth to your walls. Each 14 to 16 inch cookie is sculpted and painted by hand in Queens, NY by artist Erynn.
+                Ready to wake up a quiet room? JOIRUSH <strong>colorful wall art</strong> brings bold candy colors, playful pop art nostalgia, and real 3D sculptural depth to your walls. Each 14 to 16 inch cookie is sculpted and painted by hand in Daytona Beach, FL by artist Erynn.
               </p>
               <p className="mt-3 text-sm sm:text-base leading-relaxed text-cocoa/80">
                 Whether you are curating a joyful <strong>dopamine decor</strong> apartment, searching for dreamy <strong>pink wall art</strong>, mixing <strong>funky wall art</strong> and <strong>quirky wall art</strong> into a gallery wall, or adding sweet <strong>candy decor</strong> and <strong>textured wall art</strong> to a bedroom or studio, our lightweight sculptures hang in seconds from a single standard hook.

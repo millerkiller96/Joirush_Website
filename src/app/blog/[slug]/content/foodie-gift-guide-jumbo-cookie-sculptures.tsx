@@ -8,7 +8,7 @@ const data: BlogPostStructuredData = {
   "lead": "Shopping for foodie gifts is hard when your friend already owns every pan and mixer. A handmade 3D cookie sculpture is a sweet cookie gift that never goes stale.",
   "quickFactsTitle": "Why Food Lovers Adore Cookie Wall Art",
   "quickFacts": [
-    "Hand sculpted in Queens, NY by artist Erynn from light spray foam.",
+    "Hand sculpted in Daytona Beach, FL by artist Erynn from light spray foam.",
     "Hangs on one nail or hook right out of the box.",
     "Ships free across the U.S. in safe, padded gift packaging."
   ],
@@ -75,7 +75,7 @@ const data: BlogPostStructuredData = {
   "faqs": [
     {
       "question": "Does JOIRUSH charge for shipping on gifts?",
-      "answer": "No. Every U.S. order ships free from our Queens, NY studio."
+      "answer": "No. Every U.S. order ships free from our Daytona Beach, FL studio."
     },
     {
       "question": "Which cookie is the safest gift choice?",

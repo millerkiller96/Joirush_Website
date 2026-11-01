@@ -105,7 +105,7 @@ export default function DopamineDecorWallArtPage() {
         "@id": "https://joirush.com/dopamine-decor-wall-art/",
         name: "Dopamine Decor Wall Art | Happy 3D Cookie Decor & Dopamine Art",
         description:
-          "Handmade dopamine decor wall art, happy wall art, and colorful 3D cookie decor sculpted in Queens, NY by JOIRUSH.",
+          "Handmade dopamine decor wall art, happy wall art, and colorful 3D cookie decor sculpted in Daytona Beach, FL by JOIRUSH.",
         url: "https://joirush.com/dopamine-decor-wall-art/",
         isPartOf: {
           "@type": "WebSite",
@@ -177,14 +177,14 @@ export default function DopamineDecorWallArtPage() {
           <div className="grid gap-8 lg:grid-cols-12 lg:items-center">
             <div className="lg:col-span-7">
               <p className="text-xs font-bold uppercase tracking-[0.2em] text-caramel">
-                Dopamine Decor • Happy Wall Art • Handmade in Queens, NY
+                Dopamine Decor • Happy Wall Art • Handmade in Daytona Beach, FL
               </p>
               <h1 className="mt-2 font-display text-3xl sm:text-5xl font-semibold tracking-tight text-espresso">
                 Dopamine Decor Wall Art &amp; Joyful 3D Cookie Sculptures
               </h1>
               <Buy4Banner className="mt-5" />
               <p className="mt-4 text-base sm:text-lg leading-relaxed text-cocoa/85">
-                Your home should make you smile the second you walk through the door. JOIRUSH <strong>dopamine decor</strong> brings bold candy colors, sweet childhood nostalgia, and tactile 3D texture to your walls with 14 to 16 inch handmade <strong>cookie decor</strong> sculpted by artist Erynn in Queens, NY.
+                Your home should make you smile the second you walk through the door. JOIRUSH <strong>dopamine decor</strong> brings bold candy colors, sweet childhood nostalgia, and tactile 3D texture to your walls with 14 to 16 inch handmade <strong>cookie decor</strong> sculpted by artist Erynn in Daytona Beach, FL.
               </p>
               <p className="mt-3 text-sm sm:text-base leading-relaxed text-cocoa/80">
                 Whether you are looking for statement <strong>dopamine wall art</strong> above your bed, playful <strong>dopamine art</strong> for a home office or creative studio, or vibrant <strong>colorful 3d wall art</strong> and <strong>dopamine home decor</strong> for your kitchen or apartment, every piece hangs effortlessly from a single standard hook with free U.S. shipping.
@@ -224,7 +224,7 @@ export default function DopamineDecorWallArtPage() {
           <SectionHeading
             eyebrow="Joy Sparking Sculptures"
             title="Shop Dopamine Decor & Happy 3D Wall Art"
-            copy="Hand sculpted and painted in Queens, NY. Buy 4 or more cookies and get 10% off each, with free U.S. shipping."
+            copy="Hand sculpted and painted in Daytona Beach, FL. Buy 4 or more cookies and get 10% off each, with free U.S. shipping."
           />
 
           <div className="mt-10 grid gap-6 sm:grid-cols-2 lg:grid-cols-3">

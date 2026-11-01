@@ -37,7 +37,7 @@ export const metadata: Metadata = {
   openGraph: {
     title: "Oversized Food Wall Art | 3D Food Sculpture & Sculptural Wall Art | JOIRUSH",
     description:
-      "Handmade 14 to 16 inch 3D cookie wall sculptures and faux food art. Realistic fake food pop art sculpture made by hand in Queens, NY with free U.S. shipping.",
+      "Handmade 14 to 16 inch 3D cookie wall sculptures and faux food art. Realistic fake food pop art sculpture made by hand in Daytona Beach, FL with free U.S. shipping.",
     url: "https://joirush.com/oversized-food-wall-art/",
     type: "website",
     images: [
@@ -62,7 +62,7 @@ const faqs = [
   {
     question: "What is oversized food wall art?",
     answer:
-      "Oversized food wall art is three dimensional sculptural wall art shaped like larger than life treats and desserts. At JOIRUSH, every food sculpture is a handmade 14 to 16 inch cookie or ice cream sandwich crafted in Queens, NY by artist Erynn. It blends realistic faux food texture with joyful pop art sculpture energy for kitchens, dining rooms, bedrooms, apartments, and home studios.",
+      "Oversized food wall art is three dimensional sculptural wall art shaped like larger than life treats and desserts. At JOIRUSH, every food sculpture is a handmade 14 to 16 inch cookie or ice cream sandwich crafted in Daytona Beach, FL by artist Erynn. It blends realistic faux food texture with joyful pop art sculpture energy for kitchens, dining rooms, bedrooms, apartments, and home studios.",
   },
   {
     question: "What are JOIRUSH fake food wall sculptures made of?",
@@ -77,7 +77,7 @@ const faqs = [
   {
     question: "Are each of the faux food sculptures unique?",
     answer:
-      "Yes. Every piece of fake food art is sculpted and painted individually by hand in our Queens, NY studio, so no two cookies have the exact same crumb texture, chocolate chip placement, or candy color pattern.",
+      "Yes. Every piece of fake food art is sculpted and painted individually by hand in our Daytona Beach, FL studio, so no two cookies have the exact same crumb texture, chocolate chip placement, or candy color pattern.",
   },
 ];
 
@@ -90,7 +90,7 @@ export default function OversizedFoodWallArtPage() {
         "@id": "https://joirush.com/oversized-food-wall-art/",
         name: "Oversized Food Wall Art | 3D Cookie Wall Sculptures & Faux Food Art",
         description:
-          "Handmade oversized food wall art, sculptural wall art, and 3D cookie wall sculptures crafted in Queens, NY by JOIRUSH.",
+          "Handmade oversized food wall art, sculptural wall art, and 3D cookie wall sculptures crafted in Daytona Beach, FL by JOIRUSH.",
         url: "https://joirush.com/oversized-food-wall-art/",
         isPartOf: {
           "@type": "WebSite",
@@ -162,14 +162,14 @@ export default function OversizedFoodWallArtPage() {
           <div className="grid gap-8 lg:grid-cols-12 lg:items-center">
             <div className="lg:col-span-7">
               <p className="text-xs font-bold uppercase tracking-[0.2em] text-caramel">
-                Handmade in Queens, NY • Free U.S. Shipping
+                Handmade in Daytona Beach, FL • Free U.S. Shipping
               </p>
               <h1 className="mt-2 font-display text-3xl sm:text-5xl font-semibold tracking-tight text-espresso">
                 Oversized Food Wall Art &amp; 3D Cookie Wall Sculptures
               </h1>
               <Buy4Banner className="mt-5" />
               <p className="mt-4 text-base sm:text-lg leading-relaxed text-cocoa/85">
-                Flat prints blend into the background. <strong>Oversized food wall art</strong> turns a plain wall into the happiest spot in your home. Each JOIRUSH piece is a 14 to 16 inch handmade <strong>food sculpture</strong> sculpted from lightweight foam and hand painted in Queens, NY by artist Erynn to look warm, golden, and fresh from the oven.
+                Flat prints blend into the background. <strong>Oversized food wall art</strong> turns a plain wall into the happiest spot in your home. Each JOIRUSH piece is a 14 to 16 inch handmade <strong>food sculpture</strong> sculpted from lightweight foam and hand painted in Daytona Beach, FL by artist Erynn to look warm, golden, and fresh from the oven.
               </p>
               <p className="mt-3 text-sm sm:text-base leading-relaxed text-cocoa/80">
                 Whether you love realistic <strong>faux food</strong>, playful <strong>fake food</strong> display pieces, or bold <strong>pop art sculpture</strong> for your kitchen, apartment, bedroom, or home studio, our 3D <strong>wall sculptures</strong> hang in seconds from a single standard hook or nail.
@@ -209,7 +209,7 @@ export default function OversizedFoodWallArtPage() {
           <SectionHeading
             eyebrow="The Collection"
             title="Shop Oversized 3D Cookie Wall Sculptures"
-            copy="Every piece of sculptural wall art is sculpted and painted by hand in Queens, NY. Free shipping on every U.S. order."
+            copy="Every piece of sculptural wall art is sculpted and painted by hand in Daytona Beach, FL. Free shipping on every U.S. order."
           />
 
           <div className="mt-10 grid gap-6 sm:grid-cols-2 lg:grid-cols-3">

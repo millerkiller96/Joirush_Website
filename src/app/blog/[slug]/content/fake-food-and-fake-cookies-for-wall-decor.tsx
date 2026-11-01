@@ -15,7 +15,7 @@ const data: BlogPostStructuredData = {
   "section1": {
     "heading": "How Erynn Makes Realistic Fake Food",
     "paragraphs": [
-      "In her Queens, NY studio, artist Erynn shapes each fake cookie by hand from expanding foam. She paints every golden edge and dark chip with rich acrylic paint.",
+      "In her Daytona Beach, FL studio, artist Erynn shapes each fake cookie by hand from expanding foam. She paints every golden edge and dark chip with rich acrylic paint.",
       "The result is faux food that looks warm from the oven but weighs only 2 to 4 lbs."
     ],
     "links": [

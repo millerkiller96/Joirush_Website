@@ -61,7 +61,7 @@ const data: BlogPostStructuredData = {
     "caption": "Round 3D cookie art breaks up straight lines on a gallery wall."
   },
   "section3": {
-    "heading": "Handmade in Queens, NY",
+    "heading": "Handmade in Daytona Beach, FL",
     "paragraphs": [
       "Every JOIRUSH cookie is sculpted and painted by hand by artist Erynn. Each piece weighs just 2 to 4 lbs and ships free in the U.S."
     ],

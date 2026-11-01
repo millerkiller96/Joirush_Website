@@ -63,7 +63,7 @@ const data: BlogPostStructuredData = {
   "section3": {
     "heading": "Light, Renter Friendly, and Easy to Hang",
     "paragraphs": [
-      "Each JOIRUSH piece is made from light spray foam in Queens, NY. It weighs 2 to 4 lbs, hangs on one nail, and ships free in the U.S."
+      "Each JOIRUSH piece is made from light spray foam in Daytona Beach, FL. It weighs 2 to 4 lbs, hangs on one nail, and ships free in the U.S."
     ],
     "links": [
       {

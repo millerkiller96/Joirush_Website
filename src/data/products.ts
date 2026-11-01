@@ -258,6 +258,8 @@ export const products: Product[] = [
     },
     upsellPairPrice: 160,
     tagline: "Soft vanilla vibes. Creamy white chips. Dreamy energy.",
+    metaDescription:
+      "White chocolate chip cookie wall art, a handmade 16 inch sculpture by cookie artist Erynn. Hangs on one nail, ships in 14 days.",
     description:
       "The same golden crumble as the classic, with a softer palette: creamy white chips on warm golden dough. It's the white chocolate lover's fantasy, frozen in sculpture. Craggy edges. That just baked glow. Perfect for kitchens that lean light, bright, and sweet.",
     details: [
@@ -369,6 +371,8 @@ export const products: Product[] = [
     },
     upsellPairPrice: 140,
     tagline: "Big impact. Smaller footprint. Same irresistible crumble.",
+    metaDescription:
+      "Mini chocolate chip cookie wall art, a handmade 14 inch sculpture for smaller walls by cookie artist Erynn. Ships in 14 days.",
     description:
       "All the golden brown goodness of the jumbo classic, sized for cozier spaces. Glossy chips. Thick, craggy texture. Still makes people reach out. Still makes them laugh when they realize it's not real. The entry point to cookie wall art addiction.",
     details: [
@@ -423,6 +427,8 @@ export const products: Product[] = [
     },
     upsellPairPrice: 160,
     tagline: "Candy vibes. Softer palette. Still stops the room.",
+    metaDescription:
+      "Pastel M&M cookie wall art, a handmade 16 inch sculpture in soft candy colors by cookie artist Erynn. Ships in 14 days.",
     description:
       "Lavender. Baby blue. Blush. Mint. Pastel candy pops on golden sculpted dough. All the fun of Candyland with a gentler, dreamier aesthetic. Perfect for nurseries, whimsical playrooms, soft maximalist kitchens, or anyone who wants bold art in a softer color story. Loud texture, quiet palette.",
     details: [
@@ -477,6 +483,8 @@ export const products: Product[] = [
     },
     upsellPairPrice: 160,
     tagline: "Christmas cookie wall art with festive candy color and zero crumbs.",
+    metaDescription:
+      "Christmas cookie wall art, a handmade 16 inch holiday cookie sculpture by cookie artist Erynn. A fun gift that ships in 14 days.",
     description:
       "Holiday candy colors on golden dough make this Christmas cookie wall art a seasonal statement for holiday wall decor. Hang it in November, keep it through New Year's (or all year, we won't judge). No crumbs. No calories. Just festive faux cookie sculpture dopamine that lasts forever.",
     details: [
@@ -531,6 +539,8 @@ export const products: Product[] = [
     },
     upsellPairPrice: 160,
     tagline: "Rich peanut butter dough. Candy pops. Pure nostalgia.",
+    metaDescription:
+      "Peanut butter cookie wall art, a handmade 16 inch sculpture by cookie artist Erynn. Decorative, not edible, and ships in 14 days.",
     description:
       "Warm, nutty peanut butter tones with candy confetti on top, like grandma's kitchen, but cooler. Craggy handmade texture that begs to be touched. This is comfort food as kitchen wall art, for anyone who grew up sneaking cookies from the cooling rack.",
     details: [
@@ -585,6 +595,8 @@ export const products: Product[] = [
     },
     upsellPairPrice: 160,
     tagline: "Twice the chocolate. Twice the temptation. Zero regrets.",
+    metaDescription:
+      "Giant double chocolate cookie wall art, a handmade 16 inch sculpture by cookie artist Erynn. Hangs on one nail, ships in 14 days.",
     description:
       "Dark cocoa dough. Glossy chocolate chips. This is for the people who look at a regular chocolate chip cookie and think 'needs more chocolate.' Moody, decadent, and absolutely showstopping. It's the darkest piece in the collection.",
     details: [
@@ -703,6 +715,8 @@ export const products: Product[] = [
     },
     upsellPairPrice: 160,
     tagline: "Golden dough. Candy confetti. Instant serotonin.",
+    metaDescription:
+      "Jumbo M&M cookie wall art, a handmade 16 inch candy cookie sculpture by cookie artist Erynn. Hangs on one nail, ships in 14 days.",
     description:
       "Classic M&M cookie energy: golden sculpted dough scattered with glossy candy pieces and chocolate chunks. Reads as pop art from across the room, with just the right amount of kitsch. The kind of piece that makes people smile before they even realize they're smiling.",
     details: [

@@ -10,7 +10,7 @@ const data: BlogPostStructuredData = {
   "quickFacts": [
     "3D faux ice cream and candy shells that never melt or fade.",
     "Light foam build (2 to 5 lbs) hangs on one wall hook.",
-    "Made and painted by hand in Queens, NY with free U.S. shipping."
+    "Made and painted by hand in Daytona Beach, FL with free U.S. shipping."
   ],
   "section1": {
     "heading": "Fake Ice Cream Wall Art That Never Melts",

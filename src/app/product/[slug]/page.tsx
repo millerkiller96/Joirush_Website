@@ -33,11 +33,13 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
     ? { absolute: product.name }
     : `${product.name} | Handmade Cookie Art`;
 
+  const seoDescription = product.metaDescription
+    ? `${product.metaDescription} ${formatPrice(product.price)} with free U.S. shipping.`
+    : `${product.tagline} Handmade spray foam cookie wall art by cookie artist Erynn. ${formatPrice(product.price)} with free U.S. shipping.`;
+
   return {
     title: seoTitle,
-    description: product.metaDescription
-      ? `${product.metaDescription} ${formatPrice(product.price)} with free U.S. shipping.`
-      : `${product.tagline} Handmade spray foam cookie wall art by cookie artist Erynn. ${formatPrice(product.price)} with free U.S. shipping.`,
+    description: seoDescription,
     keywords: [
       "jumbo cookie wall art",
       "cookie art",
@@ -55,7 +57,9 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
     },
     openGraph: {
       title: `${baseName} | Cookie Art by ${site.name}`,
-      description: `${product.tagline} Handmade ${product.size} sugar cookie wall sculpture by cookie artist Erynn. ${formatPrice(product.price)} with free U.S. shipping.`,
+      description: product.metaDescription
+        ? seoDescription
+        : `${product.tagline} Handmade ${product.size} sugar cookie wall sculpture by cookie artist Erynn. ${formatPrice(product.price)} with free U.S. shipping.`,
       type: "website",
       url: productUrl,
       images: [
@@ -70,7 +74,9 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
     twitter: {
       card: "summary_large_image",
       title: `${baseName} | Cookie Art by ${site.name}`,
-      description: `${product.tagline} ${formatPrice(product.price)} with free U.S. shipping.`,
+      description: product.metaDescription
+        ? seoDescription
+        : `${product.tagline} ${formatPrice(product.price)} with free U.S. shipping.`,
       images: [imageUrl],
     },
   };

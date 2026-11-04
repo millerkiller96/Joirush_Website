@@ -9,7 +9,7 @@ const siteUrl = "https://joirush.com";
 export const metadata: Metadata = {
   title: "Custom Cookie Art: Commission a Cookie Sculpture",
   description:
-    "Commission custom cookie art from cookie artist Erynn: a sugar cookie sculpture in your colors, flavor, or design. Handmade in Daytona Beach, free U.S. shipping.",
+    "Commission custom cookie art from cookie artist Erynn: a sugar cookie sculpture in your colors, flavor, or design. Handmade in Florida, free U.S. shipping.",
   keywords: [
     "custom cookie art",
     "commission cookie artist",

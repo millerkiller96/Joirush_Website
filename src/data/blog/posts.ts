@@ -22,7 +22,7 @@ export const blogPosts: BlogPost[] = [
     title: "Gifts for Bakers Who Have Everything: Handmade Cookie Wall Art",
     seoTitle: "Gifts for Bakers Who Have Everything | JOIRUSH",
     metaDescription:
-      "Searching for gifts for bakers who already own every pan and mixer? Give handmade 16 inch 3D cookie wall art and baking decor crafted in Daytona Beach, FL with free U.S. shipping.",
+      "Gifts for bakers who own every pan and mixer: handmade 16 inch 3D cookie wall art and baking decor from Daytona Beach, FL, with free U.S. shipping.",
     excerpt:
       "Shopping for baker gifts is tough when they already own every whisk and stand mixer. Discover handmade 3D cookie gifts and baking decor they will treasure on their kitchen wall.",
     publishedAt: "2026-10-23",
@@ -46,7 +46,7 @@ export const blogPosts: BlogPost[] = [
     title: "Funky and Quirky Wall Art Ideas for Rooms That Feel Like You",
     seoTitle: "Funky and Quirky Wall Art Ideas | JOIRUSH",
     metaDescription:
-      "Tired of boring flat posters? Explore funky wall art, quirky wall art, and weird 3D pop art cookie sculptures handmade in Daytona Beach, FL for bedrooms, apartments, and studios.",
+      "Tired of flat posters? Explore funky, quirky 3D pop art cookie sculptures handmade in Daytona Beach, FL for bedrooms, apartments, and studios.",
     excerpt:
       "Swap generic framed prints for funky wall art and quirky home decor with real 3D texture. See how oversized handmade cookie sculptures wake up any blank wall.",
     publishedAt: "2026-10-23",
@@ -70,7 +70,7 @@ export const blogPosts: BlogPost[] = [
     title: "Pink Kitchen and Coquette Room Decor with Jumbo Cookie Art",
     seoTitle: "Pink Kitchen and Coquette Room Decor | JOIRUSH",
     metaDescription:
-      "Style dreamy pink room decor, pink kitchen decor, coquette room decor, danish pastel, and y2k room decor with handmade 14 to 16 inch 3D cookie wall art by JOIRUSH.",
+      "Style a dreamy pink kitchen, coquette room, or danish pastel space with handmade 14 to 16 inch 3D cookie wall art by JOIRUSH.",
     excerpt:
       "From soft blush danish pastel and coquette room decor to bold hot pink y2k room decor, see how handmade 3D cookie wall art brings sweet charm to bedrooms and kitchens.",
     publishedAt: "2026-10-23",
@@ -118,7 +118,7 @@ export const blogPosts: BlogPost[] = [
     title: "Ice Cream and Candy Wall Art Ideas for a Sweet Room",
     seoTitle: "Ice Cream and Candy Wall Art Ideas | JOIRUSH",
     metaDescription:
-      "Brighten bedrooms, kitchens, and studios with handmade fake ice cream wall art and candy decor by JOIRUSH. Lightweight 3D sweet decor crafted in Daytona Beach, FL.",
+      "Brighten bedrooms and kitchens with handmade fake ice cream wall art and candy decor by JOIRUSH. Lightweight 3D sweet decor from Daytona Beach, FL.",
     excerpt:
       "Turn any plain wall into the sweetest spot in your home with 3D fake ice cream wall art and bright candy decor sculptures that never melt or fade.",
     publishedAt: "2026-10-23",
@@ -211,8 +211,8 @@ export const blogPosts: BlogPost[] = [
   {
     slug: "christmas-cookie-wall-art-vs-prints",
     title: "Christmas Cookie Wall Art: Why a 3D Holiday Cookie Beats Another Print",
-    seoTitle: "Christmas Cookie Wall Art | JOIRUSH",
-    metaDescription: "Upgrade your christmas kitchen decor and gingerbread decor with a 16 inch handmade 3D Christmas cookie wall sculpture. Free U.S. shipping from Daytona Beach, FL.",
+    seoTitle: "Christmas Cookie Wall Art vs Prints | JOIRUSH",
+    metaDescription: "Christmas cookie wall art vs prints: why a handmade 16 inch 3D Christmas cookie sculpture makes cozier holiday kitchen decor. Free U.S. shipping.",
     excerpt:
       "Most holiday wall signs feel flat. See how a 16 inch handmade 3D Christmas cookie sculpture brings warm christmas kitchen decor and gingerbread decor charm to your walls year after year.",
     publishedAt: "2026-09-20",
@@ -238,7 +238,7 @@ export const blogPosts: BlogPost[] = [
     title: "Dopamine Decor Ideas: How to Make Your Home Feel Happy",
     seoTitle: "Dopamine Decor Ideas | JOIRUSH",
     excerpt:
-      "Dopamine decor ideas for every room: color, pattern, texture, and dopamine art that makes you smile. Practical tips to keep a joyful home from tipping into chaos.",
+      "Dopamine decor ideas for every room: color, pattern, and art that makes you smile, plus simple tips to keep a joyful home from tipping into chaos.",
     publishedAt: "2026-10-08",
     author: "Erynn",
     image: "/images/products/rainbow.jpg",
@@ -549,7 +549,7 @@ export const blogPosts: BlogPost[] = [
     title: "The Ultimate Foodie Gift Guide: Cookie Gifts They Will Never Forget",
     seoTitle: "Foodie Gifts and Cookie Lover Guide | JOIRUSH",
     metaDescription:
-      "Shopping for foodie gifts or a unique cookie lover gift? Explore handmade 14 to 16 inch 3D cookie gifts and sculptures with free U.S. shipping from Daytona Beach, FL.",
+      "Shopping for a foodie or cookie lover? Give handmade 14 to 16 inch 3D cookie sculptures, made in Daytona Beach, FL, with free U.S. shipping.",
     excerpt:
       "Looking for unforgettable gifts for foodies or a sweet cookie gift for the baker in your life? These handmade 3D cookie wall sculptures last forever with free U.S. shipping.",
     publishedAt: "2024-09-10",

@@ -79,7 +79,9 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
   const metaDescription = post.metaDescription || post.excerpt;
 
   return {
-    title: metaTitle,
+    // The root layout template already appends "| JOIRUSH", so strip it here
+    // to avoid a doubled brand suffix in the <title>.
+    title: metaTitle.replace(/\s*\|\s*JOIRUSH\s*$/i, ""),
     description: metaDescription,
     keywords: post.keywords,
     authors: [{ name: post.author }],

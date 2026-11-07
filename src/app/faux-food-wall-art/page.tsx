@@ -12,7 +12,7 @@ export const metadata: Metadata = {
     absolute: "Faux Food Wall Art | Fake Cookie Sculptures | JOIRUSH",
   },
   description:
-    "Handmade faux food wall art by JOIRUSH. Realistic fake cookies and ice cream sculptures. Free U.S. shipping.",
+    "Handmade faux food wall art: realistic fake cookies and a cookie ice cream sandwich, 14 to 16 inch spray foam sculptures from $70 with free U.S. shipping.",
   keywords: [
     "faux food wall art",
     "fake food",

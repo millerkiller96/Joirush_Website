@@ -48,8 +48,18 @@ const styleGuideLinks: Record<Product["category"], { href: string; label: string
     { href: "/blog/whimsical-kitsch-decor-ideas/", label: "Whimsical and kitsch decor ideas" },
   ],
   seasonal: [
-    { href: "/blog/whimsical-kitsch-decor-ideas/", label: "Whimsical and kitsch decor ideas" },
+    { href: "/blog/christmas-cookie-wall-art-vs-prints/", label: "Christmas cookie wall art vs holiday prints" },
     { href: "/colorful-wall-art/", label: "Colorful wall art and how to style it" },
+  ],
+};
+
+// Extra guide for specific pieces that have their own story post.
+const productGuideLinks: Record<string, { href: string; label: string }[]> = {
+  "jumbo-chocolate-chip-cookie": [
+    {
+      href: "/blog/chocolate-chip-cookie-wall-art-joirush-classic/",
+      label: "The story behind the classic chocolate chip cookie",
+    },
   ],
 };
 
@@ -256,6 +266,16 @@ export function ProductPageClient({ product, related }: ProductPageClientProps) 
                   </Link>
                 </li>
                 <li>
+                  <Link href="/blog/how-to-hang-jumbo-cookie-wall-art/" className="text-pink hover:underline">
+                    How to hang jumbo cookie wall art →
+                  </Link>
+                </li>
+                <li>
+                  <Link href="/blog/cookie-wall-art-for-home-collectors/" className="text-pink hover:underline">
+                    Cookie wall art buying guide for collectors →
+                  </Link>
+                </li>
+                <li>
                   <Link href="/blog/spray-foam-cookie-wall-art-how-theyre-made/" className="text-pink hover:underline">
                     How spray foam cookie sculptures are made →
                   </Link>
@@ -270,7 +290,7 @@ export function ProductPageClient({ product, related }: ProductPageClientProps) 
                     Faux cookie wall decor: ready made vs DIY →
                   </Link>
                 </li>
-                {styleGuideLinks[product.category].map((link) => (
+                {[...styleGuideLinks[product.category], ...(productGuideLinks[product.slug] ?? [])].map((link) => (
                   <li key={link.href}>
                     <Link href={link.href} className="text-pink hover:underline">
                       {link.label} →

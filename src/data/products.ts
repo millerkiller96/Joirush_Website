@@ -716,7 +716,7 @@ export const products: Product[] = [
     upsellPairPrice: 160,
     tagline: "Golden dough. Candy confetti. Instant serotonin.",
     metaDescription:
-      "Jumbo M&M cookie wall art, a handmade 16 inch candy cookie sculpture by cookie artist Erynn. Hangs on one nail, ships in 14 days.",
+      "Jumbo M&M cookie wall art, a handmade 16 inch candy cookie sculpture by artist Erynn. Hangs on one nail, ships in 14 days.",
     description:
       "Classic M&M cookie energy: golden sculpted dough scattered with glossy candy pieces and chocolate chunks. Reads as pop art from across the room, with just the right amount of kitsch. The kind of piece that makes people smile before they even realize they're smiling.",
     details: [

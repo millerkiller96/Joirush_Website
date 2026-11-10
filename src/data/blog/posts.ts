@@ -26,7 +26,7 @@ export const blogPosts: BlogPost[] = [
     excerpt:
       "Shopping for baker gifts is tough when they already own every whisk and stand mixer. Discover handmade 3D cookie gifts and baking decor they will treasure on their kitchen wall.",
     publishedAt: "2026-10-23",
-    updatedAt: "2026-10-23",
+    updatedAt: "2026-11-10",
     author: "Erynn",
     image: "/images/products/choc-chip.jpg",
     imageAlt: "Jumbo chocolate chip cookie wall art gift for baker by JOIRUSH",
@@ -216,7 +216,7 @@ export const blogPosts: BlogPost[] = [
     excerpt:
       "Most holiday wall signs feel flat. See how a 16 inch handmade 3D Christmas cookie sculpture brings warm christmas kitchen decor and gingerbread decor charm to your walls year after year.",
     publishedAt: "2026-09-20",
-    updatedAt: "2026-10-23",
+    updatedAt: "2026-11-10",
     author: "Erynn",
     image: "/images/products/christmas.jpg",
     imageAlt: "Jumbo Christmas cookie wall art with red and green candies for christmas kitchen decor by JOIRUSH",
@@ -553,7 +553,7 @@ export const blogPosts: BlogPost[] = [
     excerpt:
       "Looking for unforgettable gifts for foodies or a sweet cookie gift for the baker in your life? These handmade 3D cookie wall sculptures last forever with free U.S. shipping.",
     publishedAt: "2024-09-10",
-    updatedAt: "2026-10-23",
+    updatedAt: "2026-11-10",
     author: "Erynn",
     image: "/images/products/christmas.jpg",
     imageAlt: "Handmade jumbo cookie wall art foodie gift by cookie artist Erynn",
@@ -602,14 +602,16 @@ export function getBlogPost(slug: string) {
 }
 
 export function getRelatedPosts(slug: string, limit = 3) {
-  const current = getBlogPost(slug);
-  if (!current) return blogPosts.slice(0, limit);
-  return blogPosts
-    .filter((post) => post.slug !== slug)
-    .sort((a, b) => {
-      const aMatch = a.category === current.category ? 0 : 1;
-      const bMatch = b.category === current.category ? 0 : 1;
-      return aMatch - bMatch;
-    })
-    .slice(0, limit);
+  const currentIndex = blogPosts.findIndex((post) => post.slug === slug);
+  if (currentIndex === -1) return blogPosts.slice(0, limit);
+  const current = blogPosts[currentIndex];
+  // Rotate through the list starting right after the current post so every
+  // post gets linked from its neighbors instead of always the first few.
+  const rotated = [
+    ...blogPosts.slice(currentIndex + 1),
+    ...blogPosts.slice(0, currentIndex),
+  ];
+  const sameCategory = rotated.filter((post) => post.category === current.category);
+  const otherCategory = rotated.filter((post) => post.category !== current.category);
+  return [...sameCategory, ...otherCategory].slice(0, limit);
 }

@@ -63,9 +63,18 @@ const data: BlogPostStructuredData = {
   "section3": {
     "heading": "Ready to Gift With Free U.S. Shipping",
     "paragraphs": [
-      "Every JOIRUSH cookie is signed on the back, packed with care, and shipped free in the U.S. so your gift arrives ready to hang."
+      "Every JOIRUSH cookie is signed on the back, packed with care, and shipped free in the U.S. so your gift arrives ready to hang.",
+      "Need a holiday gift? The Christmas Cookie is a cozy pick for a foodie. Order early, since each cookie ships in 14 days."
     ],
     "links": [
+      {
+        "href": "/product/jumbo-christmas-cookie/",
+        "label": "Christmas Cookie Wall Art"
+      },
+      {
+        "href": "/blog/gifts-for-bakers-who-have-everything-cookie-wall-art/",
+        "label": "Gifts for Bakers"
+      },
       {
         "href": "/catalogue/",
         "label": "Shop All Cookie Gifts"

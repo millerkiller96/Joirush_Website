@@ -63,9 +63,18 @@ const data: BlogPostStructuredData = {
   "section3": {
     "heading": "Signed and Shipped Free in the U.S.",
     "paragraphs": [
-      "Each JOIRUSH cookie gift is signed on the back. It ships free in the U.S. in safe gift wrap and hangs in five minutes."
+      "Each JOIRUSH cookie gift is signed on the back. It ships free in the U.S. in safe gift wrap and hangs in five minutes.",
+      "Shopping for the holidays? Our Christmas Cookie has red and green candy bits. Order early, since each cookie ships in 14 days."
     ],
     "links": [
+      {
+        "href": "/product/jumbo-christmas-cookie/",
+        "label": "Christmas Cookie Wall Art"
+      },
+      {
+        "href": "/blog/christmas-cookie-wall-art-vs-prints/",
+        "label": "Christmas Cookie Art vs Prints"
+      },
       {
         "href": "/catalogue/",
         "label": "Browse All Cookie Gifts"

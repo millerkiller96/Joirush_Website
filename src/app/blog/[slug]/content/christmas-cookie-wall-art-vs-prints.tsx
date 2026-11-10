@@ -65,6 +65,10 @@ const data: BlogPostStructuredData = {
       {
         "href": "/catalogue/",
         "label": "Browse All Cookies"
+      },
+      {
+        "href": "/blog/gifts-for-bakers-who-have-everything-cookie-wall-art/",
+        "label": "Holiday Gifts for Bakers"
       }
     ]
   },

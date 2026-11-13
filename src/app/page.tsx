@@ -83,7 +83,7 @@ const homepageFaqs = [
   {
     question: "How big is jumbo cookie wall art?",
     answer:
-      "Most pieces are about 16 inches across, roughly the size of a large dinner platter. A few designs are 14 inches, the sets come as two matching cookies, and the ice cream sandwich is a larger statement piece. Our size guide lists every cookie.",
+      "Most pieces are about 16 inches across, roughly the size of a large dinner platter. A few designs are 14 inches, and the Cookie Ice Cream Sandwich is our big statement piece. Want two cookies? Pick a second one in the Buy Now popup. Our size guide lists every cookie.",
   },
   {
     question: "How heavy are the sculptures?",

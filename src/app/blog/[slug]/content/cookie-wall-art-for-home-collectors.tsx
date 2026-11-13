@@ -41,7 +41,7 @@ const data: BlogPostStructuredData = {
     "caption": "Many people pair a candy cookie with a classic chocolate chip."
   },
   "section2": {
-    "heading": "How the Second Cookie Deal Works",
+    "heading": "How to Add a Second Cookie",
     "paragraphs": [
       "Lots of homes hang two or three cookies together. When you tap Buy Now on any cookie, a popup lets you pick any second cookie in our shop from a photo menu. Buy 4 or more cookies and get 10% off each cookie.",
       "You can get two matching twins or mix two fun flavors!"

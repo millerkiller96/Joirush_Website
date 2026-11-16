@@ -7,6 +7,7 @@ import { StudioVideoCarousel } from "@/components/StudioVideoCarousel";
 import { getDisplayName, products } from "@/data/products";
 import Buy4Banner from "@/components/Buy4Banner";
 
+import { offerShippingDetails, offerReturnPolicy } from "@/lib/seo";
 const siteUrl = "https://joirush.com";
 
 export const metadata: Metadata = {
@@ -79,18 +80,8 @@ function CatalogueSchema() {
             priceCurrency: "USD",
             availability: "https://schema.org/InStock",
             url: `${siteUrl}/product/${product.slug}/`,
-            shippingDetails: {
-              "@type": "OfferShippingDetails",
-              shippingRate: {
-                "@type": "MonetaryAmount",
-                value: "0",
-                currency: "USD",
-              },
-              shippingDestination: {
-                "@type": "DefinedRegion",
-                addressCountry: "US",
-              },
-            },
+            shippingDetails: offerShippingDetails,
+            hasMerchantReturnPolicy: offerReturnPolicy,
           },
         },
       })),

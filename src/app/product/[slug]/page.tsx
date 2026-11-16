@@ -9,7 +9,7 @@ import {
   products,
 } from "@/data/products";
 import { site } from "@/data/site";
-import { siteUrl, getAbsoluteUrl, getImageUrl } from "@/lib/seo";
+import { siteUrl, getAbsoluteUrl, getImageUrl, offerShippingDetails, offerReturnPolicy } from "@/lib/seo";
 import { getProductGallery } from "@/data/product-galleries";
 
 type Props = { params: Promise<{ slug: string }> };
@@ -113,18 +113,8 @@ function ProductJsonLd({ product }: { product: NonNullable<ReturnType<typeof get
         "@type": "Organization",
         name: site.name,
       },
-      shippingDetails: {
-        "@type": "OfferShippingDetails",
-        shippingRate: {
-          "@type": "MonetaryAmount",
-          value: "0",
-          currency: "USD",
-        },
-        shippingDestination: {
-          "@type": "DefinedRegion",
-          addressCountry: "US",
-        },
-      },
+      shippingDetails: offerShippingDetails,
+      hasMerchantReturnPolicy: offerReturnPolicy,
     },
     // No aggregateRating: shop wide Etsy totals are not reviews of this product,
     // and republished Etsy reviews are self serving for Google review snippets.

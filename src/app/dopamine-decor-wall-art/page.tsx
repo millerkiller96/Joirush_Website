@@ -9,13 +9,13 @@ import Buy4Banner from "@/components/Buy4Banner";
 
 export const metadata: Metadata = {
   title: {
-    absolute: "Dopamine Decor Wall Art | 3D Cookie Decor | JOIRUSH",
+    absolute: "Dopamine Wall Art | Joyful 3D Cookie Decor | JOIRUSH",
   },
   description:
-    "Handmade dopamine decor wall art by JOIRUSH. Bright 14 to 16 inch 3D cookie sculptures for joyful rooms. Free U.S. shipping.",
+    "Handmade dopamine wall art by JOIRUSH. Bright 3D cookie sculptures that bring dopamine decor to any room, from $70 with free U.S. shipping.",
   keywords: [
-    "dopamine decor",
     "dopamine wall art",
+    "dopamine decor",
     "dopamine art",
     "dopamine home decor",
     "happy wall art",
@@ -32,9 +32,9 @@ export const metadata: Metadata = {
     canonical: "/dopamine-decor-wall-art/",
   },
   openGraph: {
-    title: "Dopamine Decor Wall Art | Happy 3D Cookie Decor & Dopamine Art | JOIRUSH",
+    title: "Dopamine Wall Art | Happy 3D Cookie Sculptures for Dopamine Decor | JOIRUSH",
     description:
-      "Handmade 14 to 16 inch colorful 3D cookie wall sculptures for dopamine decor bedrooms, kitchens, apartments, and studios. Free U.S. shipping.",
+      "Handmade dopamine wall art: colorful 3D cookie sculptures for dopamine decor bedrooms, kitchens, apartments, and studios. Free U.S. shipping.",
     url: "https://joirush.com/dopamine-decor-wall-art/",
     type: "website",
     images: [
@@ -48,9 +48,9 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: "summary_large_image",
-    title: "Dopamine Decor Wall Art | Happy 3D Cookie Decor | JOIRUSH",
+    title: "Dopamine Wall Art | Joyful 3D Cookie Decor | JOIRUSH",
     description:
-      "Handmade 14 to 16 inch colorful 3D cookie wall sculptures for joyful dopamine home decor. Free U.S. shipping.",
+      "Handmade dopamine wall art: colorful 3D cookie sculptures for joyful dopamine home decor. Free U.S. shipping.",
     images: ["/images/products/rainbow.jpg"],
   },
 };
@@ -103,9 +103,9 @@ export default function DopamineDecorWallArtPage() {
       {
         "@type": "CollectionPage",
         "@id": "https://joirush.com/dopamine-decor-wall-art/",
-        name: "Dopamine Decor Wall Art | Happy 3D Cookie Decor & Dopamine Art",
+        name: "Dopamine Wall Art and Joyful 3D Cookie Decor by JOIRUSH",
         description:
-          "Handmade dopamine decor wall art, happy wall art, and colorful 3D cookie decor sculpted in Daytona Beach, FL by JOIRUSH.",
+          "Handmade dopamine wall art, dopamine decor, and colorful 3D cookie sculptures made in Daytona Beach, FL by JOIRUSH.",
         url: "https://joirush.com/dopamine-decor-wall-art/",
         isPartOf: {
           "@type": "WebSite",
@@ -134,7 +134,7 @@ export default function DopamineDecorWallArtPage() {
           {
             "@type": "ListItem",
             position: 2,
-            name: "Dopamine Decor Wall Art",
+            name: "Dopamine Wall Art",
             item: "https://joirush.com/dopamine-decor-wall-art/",
           },
         ],
@@ -169,7 +169,7 @@ export default function DopamineDecorWallArtPage() {
               </Link>
             </li>
             <li>/</li>
-            <li className="font-semibold text-espresso">Dopamine Decor Wall Art</li>
+            <li className="font-semibold text-espresso">Dopamine Wall Art</li>
           </ol>
         </nav>
 
@@ -180,14 +180,14 @@ export default function DopamineDecorWallArtPage() {
                 Dopamine Decor • Happy Wall Art • Handmade in Daytona Beach, FL
               </p>
               <h1 className="mt-2 font-display text-3xl sm:text-5xl font-semibold tracking-tight text-espresso">
-                Dopamine Decor Wall Art &amp; Joyful 3D Cookie Sculptures
+                Dopamine Wall Art: Joyful 3D Cookie Sculptures
               </h1>
               <Buy4Banner className="mt-5" />
               <p className="mt-4 text-base sm:text-lg leading-relaxed text-cocoa/85">
-                Your home should make you smile the second you walk through the door. JOIRUSH <strong>dopamine decor</strong> brings bold candy colors, sweet childhood nostalgia, and tactile 3D texture to your walls with 14 to 16 inch handmade <strong>cookie decor</strong> sculpted by artist Erynn in Daytona Beach, FL.
+                Your home should make you smile the second you walk through the door. JOIRUSH <strong>dopamine wall art</strong> brings bold candy colors, sweet childhood nostalgia, and tactile 3D texture to your walls. It is easy <strong>dopamine decor</strong>: 14 to 16 inch handmade cookies and a 20 by 20 inch ice cream sandwich, sculpted by artist Erynn in Daytona Beach, FL.
               </p>
               <p className="mt-3 text-sm sm:text-base leading-relaxed text-cocoa/80">
-                Whether you are looking for statement <strong>dopamine wall art</strong> above your bed, playful <strong>dopamine art</strong> for a home office or creative studio, or vibrant <strong>colorful 3d wall art</strong> and <strong>dopamine home decor</strong> for your kitchen or apartment, every piece hangs effortlessly from a single standard hook with free U.S. shipping.
+                Whether you want a statement piece above your bed, playful <strong>dopamine art</strong> for a home office or creative studio, or vibrant <strong>colorful 3d wall art</strong> and <strong>dopamine home decor</strong> for your kitchen or apartment, every piece hangs effortlessly from a single standard hook with free U.S. shipping.
               </p>
               <div className="mt-6 flex flex-wrap gap-3">
                 <a
@@ -223,7 +223,7 @@ export default function DopamineDecorWallArtPage() {
         <section id="dopamine-collection" className="scroll-mt-20">
           <SectionHeading
             eyebrow="Joy Sparking Sculptures"
-            title="Shop Dopamine Decor & Happy 3D Wall Art"
+            title="Shop Dopamine Wall Art & Happy 3D Cookie Decor"
             copy="Hand sculpted and painted in Daytona Beach, FL. Buy 4 or more cookies and get 10% off each, with free U.S. shipping."
           />
 
@@ -265,7 +265,7 @@ export default function DopamineDecorWallArtPage() {
 
         <section className="mt-16">
           <h2 className="font-display text-2xl sm:text-3xl font-semibold text-espresso">
-            Dopamine Decor Wall Art FAQs
+            Dopamine Wall Art FAQs
           </h2>
           <div className="mt-6 grid gap-4 sm:grid-cols-2">
             {faqs.map((faq) => (
@@ -296,10 +296,13 @@ export default function DopamineDecorWallArtPage() {
               Pink Wall Art &amp; Coquette Decor
             </Link>
             <Link href="/faux-food-wall-art/" className="rounded-full bg-sand px-4 py-1.5 font-medium text-espresso hover:bg-caramel hover:text-cream transition">
-              Faux Food &amp; Fake Cookie Art
+              Fake Food Decor
+            </Link>
+            <Link href="/dessert-wall-art/" className="rounded-full bg-sand px-4 py-1.5 font-medium text-espresso hover:bg-caramel hover:text-cream transition">
+              Dessert &amp; Candy Wall Art
             </Link>
             <Link href="/oversized-food-wall-art/" className="rounded-full bg-sand px-4 py-1.5 font-medium text-espresso hover:bg-caramel hover:text-cream transition">
-              Oversized Food Wall Art
+              Food Sculpture Wall Art
             </Link>
             <Link href="/kitchen-wall-art/" className="rounded-full bg-sand px-4 py-1.5 font-medium text-espresso hover:bg-caramel hover:text-cream transition">
               Kitchen Wall Art

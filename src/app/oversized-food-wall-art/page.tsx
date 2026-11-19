@@ -9,18 +9,21 @@ import Buy4Banner from "@/components/Buy4Banner";
 
 export const metadata: Metadata = {
   title: {
-    absolute: "Oversized Food Wall Art | 3D Cookie Sculptures | JOIRUSH",
+    absolute: "Food Sculpture Wall Art | Oversized 3D Cookies | JOIRUSH",
   },
   description:
-    "Shop handmade oversized food wall art by JOIRUSH. Realistic 3D cookie sculptures sculpted by hand. Free U.S. shipping.",
+    "Handmade food sculpture wall art: jumbo 3D cookies and a cookie ice cream sandwich sculpture. Oversized food wall art from $70 with free U.S. shipping.",
   keywords: [
+    "food sculpture",
+    "food wall art",
     "oversized food wall art",
+    "ice cream sculptures",
+    "3d food sculpture",
     "sculptural wall art",
     "wall sculptures",
     "faux food",
     "fake food",
     "food art",
-    "food sculpture",
     "pop art sculpture",
     "3d food wall art",
     "giant cookie wall art",
@@ -35,9 +38,9 @@ export const metadata: Metadata = {
     canonical: "/oversized-food-wall-art/",
   },
   openGraph: {
-    title: "Oversized Food Wall Art | 3D Food Sculpture & Sculptural Wall Art | JOIRUSH",
+    title: "Food Sculpture Wall Art | Oversized 3D Food Wall Art | JOIRUSH",
     description:
-      "Handmade 14 to 16 inch 3D cookie wall sculptures and faux food art. Realistic fake food pop art sculpture made by hand in Daytona Beach, FL with free U.S. shipping.",
+      "Handmade food sculpture wall art: 14 to 16 inch 3D cookies and a 20 by 20 inch ice cream sandwich, made in Daytona Beach, FL. Free U.S. shipping.",
     url: "https://joirush.com/oversized-food-wall-art/",
     type: "website",
     images: [
@@ -45,24 +48,24 @@ export const metadata: Metadata = {
         url: "/images/products/choc-chip.jpg",
         width: 1200,
         height: 900,
-        alt: "Oversized chocolate chip cookie 3D food wall art sculpture by JOIRUSH",
+        alt: "Oversized chocolate chip cookie food sculpture wall art by JOIRUSH",
       },
     ],
   },
   twitter: {
     card: "summary_large_image",
-    title: "Oversized Food Wall Art | 3D Food Sculpture & Faux Food Art | JOIRUSH",
+    title: "Food Sculpture Wall Art | Oversized Food Wall Art | JOIRUSH",
     description:
-      "Handmade 14 to 16 inch 3D cookie wall sculptures and sculptural wall art. Lightweight, ready to hang, free U.S. shipping.",
+      "Handmade food sculptures for your wall: jumbo 3D cookies and an ice cream sandwich. Lightweight, ready to hang, free U.S. shipping.",
     images: ["/images/products/choc-chip.jpg"],
   },
 };
 
 const faqs = [
   {
-    question: "What is oversized food wall art?",
+    question: "What is a food sculpture for the wall?",
     answer:
-      "Oversized food wall art is three dimensional sculptural wall art shaped like larger than life treats and desserts. At JOIRUSH, every food sculpture is a handmade 14 to 16 inch cookie or ice cream sandwich crafted in Daytona Beach, FL by artist Erynn. It blends realistic faux food texture with joyful pop art sculpture energy for kitchens, dining rooms, bedrooms, apartments, and home studios.",
+      "A food sculpture for the wall is three dimensional art shaped like a larger than life treat. People also call it oversized food wall art. At JOIRUSH, every food sculpture is a handmade 14 to 16 inch cookie or a 20 by 20 inch ice cream sandwich crafted in Daytona Beach, FL by artist Erynn. It blends realistic faux food texture with joyful pop art sculpture energy for kitchens, dining rooms, bedrooms, apartments, and home studios.",
   },
   {
     question: "What are JOIRUSH fake food wall sculptures made of?",
@@ -88,9 +91,9 @@ export default function OversizedFoodWallArtPage() {
       {
         "@type": "CollectionPage",
         "@id": "https://joirush.com/oversized-food-wall-art/",
-        name: "Oversized Food Wall Art | 3D Cookie Wall Sculptures & Faux Food Art",
+        name: "Food Sculpture Wall Art and Oversized Food Wall Art by JOIRUSH",
         description:
-          "Handmade oversized food wall art, sculptural wall art, and 3D cookie wall sculptures crafted in Daytona Beach, FL by JOIRUSH.",
+          "Handmade food sculptures, food wall art, and oversized 3D cookie and ice cream sandwich sculptures crafted in Daytona Beach, FL by JOIRUSH.",
         url: "https://joirush.com/oversized-food-wall-art/",
         isPartOf: {
           "@type": "WebSite",
@@ -119,7 +122,7 @@ export default function OversizedFoodWallArtPage() {
           {
             "@type": "ListItem",
             position: 2,
-            name: "Oversized Food Wall Art",
+            name: "Food Sculpture Wall Art",
             item: "https://joirush.com/oversized-food-wall-art/",
           },
         ],
@@ -154,7 +157,7 @@ export default function OversizedFoodWallArtPage() {
               </Link>
             </li>
             <li>/</li>
-            <li className="font-semibold text-espresso">Oversized Food Wall Art</li>
+            <li className="font-semibold text-espresso">Food Sculpture Wall Art</li>
           </ol>
         </nav>
 
@@ -165,14 +168,14 @@ export default function OversizedFoodWallArtPage() {
                 Handmade in Daytona Beach, FL • Free U.S. Shipping
               </p>
               <h1 className="mt-2 font-display text-3xl sm:text-5xl font-semibold tracking-tight text-espresso">
-                Oversized Food Wall Art &amp; 3D Cookie Wall Sculptures
+                Food Sculpture Wall Art: Oversized 3D Cookies &amp; Ice Cream
               </h1>
               <Buy4Banner className="mt-5" />
               <p className="mt-4 text-base sm:text-lg leading-relaxed text-cocoa/85">
-                Flat prints blend into the background. <strong>Oversized food wall art</strong> turns a plain wall into the happiest spot in your home. Each JOIRUSH piece is a 14 to 16 inch handmade <strong>food sculpture</strong> sculpted from lightweight foam and hand painted in Daytona Beach, FL by artist Erynn to look warm, golden, and fresh from the oven.
+                Flat prints blend into the background. A handmade <strong>food sculpture</strong> turns a plain wall into the happiest spot in your home. Each JOIRUSH piece of <strong>food wall art</strong> is a 14 to 16 inch cookie or a 20 by 20 inch ice cream sandwich, sculpted from lightweight foam on a wood base and hand painted in Daytona Beach, FL by artist Erynn to look warm, golden, and fresh from the oven.
               </p>
               <p className="mt-3 text-sm sm:text-base leading-relaxed text-cocoa/80">
-                Whether you love realistic <strong>faux food</strong>, playful <strong>fake food</strong> display pieces, or bold <strong>pop art sculpture</strong> for your kitchen, apartment, bedroom, or home studio, our 3D <strong>wall sculptures</strong> hang in seconds from a single standard hook or nail.
+                Whether you love realistic <strong>faux food</strong>, playful <strong>fake food</strong> display pieces, or bold <strong>pop art sculpture</strong> for your kitchen, apartment, bedroom, or home studio, our <strong>oversized food wall art</strong> hangs in seconds from a single standard hook or nail.
               </p>
               <div className="mt-6 flex flex-wrap gap-3">
                 <a
@@ -208,7 +211,7 @@ export default function OversizedFoodWallArtPage() {
         <section id="collection" className="scroll-mt-20">
           <SectionHeading
             eyebrow="The Collection"
-            title="Shop Oversized 3D Cookie Wall Sculptures"
+            title="Shop Food Sculptures and Oversized 3D Cookies"
             copy="Every piece of sculptural wall art is sculpted and painted by hand in Daytona Beach, FL. Free shipping on every U.S. order."
           />
 
@@ -233,6 +236,9 @@ export default function OversizedFoodWallArtPage() {
               </li>
               <li>
                 <strong className="text-espresso">True pop art sculpture energy:</strong> Inspired by classic giant food art and sweet nostalgia, a jumbo cookie <strong>food sculpture</strong> brings warmth and humor to apartments, dorms, kitchens, and collector walls.
+              </li>
+              <li>
+                <strong className="text-espresso">Ice cream sculptures that never melt:</strong> Our <Link href="/product/cookie-ice-cream-sandwich/" className="underline hover:text-caramel">Cookie Ice Cream Sandwich</Link> is one of our favorite <strong>ice cream sculptures</strong>. It is 20 by 20 inches, $175, and made of foam and acrylic, so it is art, not food.
               </li>
               <li>
                 <strong className="text-espresso">Bundle and save on gallery walls:</strong> Buy 4 or more cookies in any mix of styles and get 10% off each cookie.
@@ -283,7 +289,7 @@ export default function OversizedFoodWallArtPage() {
               <tbody className="divide-y divide-caramel/15 text-cocoa/85">
                 <tr>
                   <td className="py-3 pr-4 font-medium text-espresso">Depth &amp; Texture</td>
-                  <td className="py-3 px-4">14 to 16 inches wide, 2 to 3 inches of 3D depth</td>
+                  <td className="py-3 px-4">14 to 20 inches wide, 2 to 3 inches of 3D depth</td>
                   <td className="py-3 pl-4">Flat paper or canvas behind glass</td>
                 </tr>
                 <tr>
@@ -308,7 +314,7 @@ export default function OversizedFoodWallArtPage() {
 
         <section className="mt-16">
           <h2 className="font-display text-2xl sm:text-3xl font-semibold text-espresso">
-            Frequently Asked Questions About Oversized Food Wall Art
+            Food Sculpture and Oversized Food Wall Art FAQs
           </h2>
           <div className="mt-6 grid gap-4 sm:grid-cols-2">
             {faqs.map((faq) => (
@@ -333,10 +339,13 @@ export default function OversizedFoodWallArtPage() {
           </h2>
           <div className="mt-3 flex flex-wrap gap-2 text-xs sm:text-sm">
             <Link href="/faux-food-wall-art/" className="rounded-full bg-sand px-4 py-1.5 font-medium text-espresso hover:bg-caramel hover:text-cream transition">
-              Faux Food &amp; Fake Cookie Wall Art
+              Fake Food Decor &amp; Faux Food Wall Art
+            </Link>
+            <Link href="/dessert-wall-art/" className="rounded-full bg-sand px-4 py-1.5 font-medium text-espresso hover:bg-caramel hover:text-cream transition">
+              Dessert &amp; Candy Wall Art
             </Link>
             <Link href="/dopamine-decor-wall-art/" className="rounded-full bg-sand px-4 py-1.5 font-medium text-espresso hover:bg-caramel hover:text-cream transition">
-              Dopamine Decor Wall Art
+              Dopamine Wall Art
             </Link>
             <Link href="/pink-wall-art/" className="rounded-full bg-sand px-4 py-1.5 font-medium text-espresso hover:bg-caramel hover:text-cream transition">
               Pink Wall Art &amp; Room Decor

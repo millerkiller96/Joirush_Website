@@ -9,19 +9,21 @@ import Buy4Banner from "@/components/Buy4Banner";
 
 export const metadata: Metadata = {
   title: {
-    absolute: "Faux Food Wall Art | Fake Cookie Sculptures | JOIRUSH",
+    absolute: "Fake Food Decor | Handmade Faux Food Wall Art | JOIRUSH",
   },
   description:
-    "Handmade faux food wall art: realistic fake cookies and a cookie ice cream sandwich, 14 to 16 inch spray foam sculptures from $70 with free U.S. shipping.",
+    "Fake food decor that looks fresh baked. Handmade faux food decor: jumbo cookies from $70 and a 20 by 20 inch ice cream sandwich. Free U.S. shipping.",
   keywords: [
+    "fake food decor",
+    "faux food decor",
     "faux food wall art",
+    "fake desserts for display",
+    "fake desserts for decoration",
     "fake food",
     "faux food",
     "fake cookies",
     "fake cookie",
     "fake ice cream",
-    "faux food decor",
-    "fake food decor",
     "realistic fake food",
     "food sculpture",
     "pop art sculpture",
@@ -32,9 +34,9 @@ export const metadata: Metadata = {
     canonical: "/faux-food-wall-art/",
   },
   openGraph: {
-    title: "Faux Food Wall Art | Realistic Fake Cookies & Fake Ice Cream Decor | JOIRUSH",
+    title: "Fake Food Decor | Realistic Faux Food Decor for Your Walls | JOIRUSH",
     description:
-      "Handmade 14 to 16 inch fake cookies and fake ice cream wall art sculpted from lightweight foam and acrylic in Daytona Beach, FL. Free U.S. shipping.",
+      "Handmade fake food decor: jumbo fake cookies and a fake ice cream sandwich sculpted from foam and acrylic in Daytona Beach, FL. Free U.S. shipping.",
     url: "https://joirush.com/faux-food-wall-art/",
     type: "website",
     images: [
@@ -48,9 +50,9 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: "summary_large_image",
-    title: "Faux Food Wall Art | Realistic Fake Cookies & Fake Food Decor | JOIRUSH",
+    title: "Fake Food Decor | Faux Food Wall Art Sculptures | JOIRUSH",
     description:
-      "Handmade 14 to 16 inch realistic fake cookies and fake ice cream wall sculptures crafted in Daytona Beach, FL. Free U.S. shipping.",
+      "Handmade faux food decor: realistic fake cookies and fake ice cream wall sculptures crafted in Daytona Beach, FL. Free U.S. shipping.",
     images: ["/images/products/ice-cream.jpg"],
   },
 };
@@ -103,9 +105,9 @@ export default function FauxFoodWallArtPage() {
       {
         "@type": "CollectionPage",
         "@id": "https://joirush.com/faux-food-wall-art/",
-        name: "Faux Food Wall Art | Realistic Fake Cookies, Fake Ice Cream & Fake Food Decor",
+        name: "Fake Food Decor and Faux Food Wall Art by JOIRUSH",
         description:
-          "Handmade faux food wall art, realistic fake cookies, and fake ice cream pop art sculptures crafted in Daytona Beach, FL by JOIRUSH.",
+          "Handmade fake food decor and faux food decor: realistic fake cookies and fake ice cream sculptures for your walls, crafted in Daytona Beach, FL by JOIRUSH.",
         url: "https://joirush.com/faux-food-wall-art/",
         isPartOf: {
           "@type": "WebSite",
@@ -134,7 +136,7 @@ export default function FauxFoodWallArtPage() {
           {
             "@type": "ListItem",
             position: 2,
-            name: "Faux Food Wall Art",
+            name: "Fake Food Decor",
             item: "https://joirush.com/faux-food-wall-art/",
           },
         ],
@@ -169,7 +171,7 @@ export default function FauxFoodWallArtPage() {
               </Link>
             </li>
             <li>/</li>
-            <li className="font-semibold text-espresso">Faux Food Wall Art</li>
+            <li className="font-semibold text-espresso">Fake Food Decor</li>
           </ol>
         </nav>
 
@@ -180,14 +182,14 @@ export default function FauxFoodWallArtPage() {
                 Faux Food Decor • Realistic Fake Cookies &amp; Fake Ice Cream
               </p>
               <h1 className="mt-2 font-display text-3xl sm:text-5xl font-semibold tracking-tight text-espresso">
-                Faux Food Wall Art: Realistic Fake Cookies &amp; Fake Ice Cream Sculptures
+                Fake Food Decor: Faux Food Wall Art That Looks Fresh Baked
               </h1>
               <Buy4Banner className="mt-5" />
               <p className="mt-4 text-base sm:text-lg leading-relaxed text-cocoa/85">
-                Great <strong>faux food wall art</strong> makes everyone do a happy double take. In her Daytona Beach, FL studio, artist Erynn hand sculpts oversized <strong>fake cookies</strong> and <strong>fake ice cream</strong> from lightweight spray foam and layers of warm acrylic paint so every piece looks fresh from the oven without ever melting or crumbing.
+                Great <strong>fake food decor</strong> makes everyone do a happy double take. In her Daytona Beach, FL studio, artist Erynn hand sculpts oversized <strong>fake cookies</strong> and <strong>fake ice cream</strong> from lightweight spray foam and layers of warm acrylic paint so every piece of <strong>faux food decor</strong> looks fresh from the oven. It never melts, crumbs, or spoils, and it is not edible.
               </p>
               <p className="mt-3 text-sm sm:text-base leading-relaxed text-cocoa/80">
-                Unlike tiny plastic kitchen magnets or heavy resin props, each JOIRUSH <strong>food sculpture</strong> is a 14 to 16 inch <strong>pop art sculpture</strong> built specifically for home walls. Hang our <strong>realistic fake food</strong> and <strong>faux food decor</strong> in your kitchen, bedroom, apartment, or home studio in seconds on a single nail or hook.
+                Unlike tiny plastic kitchen magnets or heavy resin props, each JOIRUSH piece of <strong>faux food wall art</strong> is a 14 to 16 inch cookie or a 20 by 20 inch ice cream sandwich, built for home walls. Hang our <strong>realistic fake food</strong> in your kitchen, bedroom, apartment, or home studio in seconds on a single nail or hook.
               </p>
               <div className="mt-6 flex flex-wrap gap-3">
                 <a
@@ -263,6 +265,18 @@ export default function FauxFoodWallArtPage() {
           </div>
         </section>
 
+        <section id="fake-desserts-for-display" className="mt-16 rounded-3xl border border-caramel/20 bg-warm-white p-8 sm:p-10">
+          <h2 className="font-display text-2xl sm:text-3xl font-semibold text-espresso">
+            Fake Desserts for Display and Decoration
+          </h2>
+          <p className="mt-4 text-sm sm:text-base leading-relaxed text-cocoa/85">
+            Want <strong>fake desserts for display</strong> on a shelf, a bar cart, or a kitchen wall? Our <Link href="/product/cookie-ice-cream-sandwich/" className="font-medium text-caramel underline">Cookie Ice Cream Sandwich</Link> is a 20 by 20 inch scoop of faux vanilla between two chocolate chip cookies. The <Link href="/product/rainbow-candy-cookie/" className="font-medium text-caramel underline">Rainbow Candy Cookie</Link> adds bright candy color in a 14 inch size.
+          </p>
+          <p className="mt-3 text-sm sm:text-base leading-relaxed text-cocoa/85">
+            These <strong>fake desserts for decoration</strong> are made of spray foam and acrylic on a wood base, so they stay perfect for years. They are art, not food, so please do not eat them. See more sweet picks on our <Link href="/dessert-wall-art/" className="font-medium text-caramel underline">dessert wall art</Link> page.
+          </p>
+        </section>
+
         <section className="mt-16">
           <h2 className="font-display text-2xl sm:text-3xl font-semibold text-espresso">
             Faux Food &amp; Fake Cookie Wall Art FAQs
@@ -290,13 +304,16 @@ export default function FauxFoodWallArtPage() {
           </h2>
           <div className="mt-3 flex flex-wrap gap-2 text-xs sm:text-sm">
             <Link href="/oversized-food-wall-art/" className="rounded-full bg-sand px-4 py-1.5 font-medium text-espresso hover:bg-caramel hover:text-cream transition">
-              Oversized Food Wall Art
+              Food Sculpture Wall Art
+            </Link>
+            <Link href="/dessert-wall-art/" className="rounded-full bg-sand px-4 py-1.5 font-medium text-espresso hover:bg-caramel hover:text-cream transition">
+              Dessert &amp; Candy Wall Art
             </Link>
             <Link href="/kitchen-wall-art/" className="rounded-full bg-sand px-4 py-1.5 font-medium text-espresso hover:bg-caramel hover:text-cream transition">
               Kitchen Wall Art &amp; Cookie Decor
             </Link>
             <Link href="/dopamine-decor-wall-art/" className="rounded-full bg-sand px-4 py-1.5 font-medium text-espresso hover:bg-caramel hover:text-cream transition">
-              Dopamine Decor Wall Art
+              Dopamine Wall Art
             </Link>
             <Link href="/pink-wall-art/" className="rounded-full bg-sand px-4 py-1.5 font-medium text-espresso hover:bg-caramel hover:text-cream transition">
               Pink Wall Art &amp; Room Decor

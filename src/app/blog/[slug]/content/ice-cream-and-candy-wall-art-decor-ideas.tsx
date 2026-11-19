@@ -52,6 +52,10 @@ const data: BlogPostStructuredData = {
       {
         "href": "/product/hot-pink-mm-cookie/",
         "label": "Hot Pink M&M Cookie"
+      },
+      {
+        "href": "/dessert-wall-art/",
+        "label": "Shop Dessert Wall Art"
       }
     ]
   },

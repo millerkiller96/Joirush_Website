@@ -129,7 +129,7 @@ function HomeJsonLd() {
     "@type": "WebSite",
     name: site.name,
     url: siteUrl,
-    description: "Jumbo cookie wall art and sugar cookie wall sculptures by cookie artist Erynn. Handmade art cookies wall sculpture pieces and faux food wall art.",
+    description: "Jumbo cookie wall art and 3D cookie sculptures by cookie artist Erynn. Handmade art cookies wall sculpture pieces and faux food wall art.",
     publisher: {
       "@type": "Organization",
       name: site.name,
@@ -291,7 +291,7 @@ export default function HomePage() {
             <SectionHeading
               eyebrow="Bestselling jumbo cookie wall art"
               title="The Ones Collectors Can't Stop Buying"
-              copy="Golden chips. Candy pops. That just baked texture you can practically smell. These jumbo cookie wall art pieces are the art cookies wall sculptures that sell out first."
+              copy="Golden chips. Candy pops. That just baked texture you can practically smell. Each 3D cookie sculpture is handmade, and these are the ones that sell out first."
             />
             <Link href="/catalogue/" data-buy-cta="shop" className="text-sm font-medium text-pink hover:underline">
               See all cookies →

@@ -48,6 +48,10 @@ const data: BlogPostStructuredData = {
       {
         "href": "/product/rainbow-candy-cookie/",
         "label": "Rainbow Candy Cookie (14 in)"
+      },
+      {
+        "href": "/dessert-wall-art/",
+        "label": "Dessert Wall Art"
       }
     ]
   },

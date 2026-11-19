@@ -30,6 +30,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
     "/dopamine-decor-wall-art/": ["src/app/dopamine-decor-wall-art/page.tsx", "src/data/products.ts"],
     "/pink-wall-art/": ["src/app/pink-wall-art/page.tsx", "src/data/products.ts"],
     "/faux-food-wall-art/": ["src/app/faux-food-wall-art/page.tsx", "src/data/products.ts"],
+    "/dessert-wall-art/": ["src/app/dessert-wall-art/page.tsx", "src/data/products.ts"],
     "/jewelry/": ["src/app/jewelry/page.tsx", "src/data/jewelry.ts"],
     "/custom/": ["src/app/custom/page.tsx"],
     "/about/": ["src/app/about/page.tsx", "src/data/site.ts"],
@@ -86,6 +87,12 @@ export default function sitemap(): MetadataRoute.Sitemap {
     {
       url: `${siteUrl}/faux-food-wall-art/`,
       lastModified: getLatestMtime(pageSources["/faux-food-wall-art/"]),
+      changeFrequency: "weekly",
+      priority: 0.9,
+    },
+    {
+      url: `${siteUrl}/dessert-wall-art/`,
+      lastModified: getLatestMtime(pageSources["/dessert-wall-art/"]),
       changeFrequency: "weekly",
       priority: 0.9,
     },

@@ -125,7 +125,7 @@ export const defaultFAQs: ProductFAQ[] = [
   },
   {
     question: "What is cookie art?",
-    answer: "Cookie art refers to decorative sugar cookie wall sculptures, handmade faux food wall art that looks like real cookies. Unlike edible sugar cookie art, these pieces are crafted from durable materials by a cookie artist and designed to hang on your wall permanently.",
+    answer: "Cookie art refers to decorative sugar cookie wall sculptures, handmade faux food wall art that looks like real cookies. Each piece is a 3D cookie sculpture made of spray foam and acrylic on a wood base. Unlike edible sugar cookie art, these pieces are crafted from durable materials by a cookie artist and designed to hang on your wall permanently.",
   },
   {
     question: "How long does shipping take?",

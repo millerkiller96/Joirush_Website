@@ -40,7 +40,7 @@ export function SiteFooter() {
               Cookies
             </Link>
             <Link href="/oversized-food-wall-art/" className="hover:text-pink-blush">
-              Oversized Food Wall Art
+              Food Sculpture Wall Art
             </Link>
             <Link href="/kitchen-wall-art/" className="hover:text-pink-blush">
               Kitchen Wall Art
@@ -49,13 +49,16 @@ export function SiteFooter() {
               Colorful Wall Art
             </Link>
             <Link href="/dopamine-decor-wall-art/" className="hover:text-pink-blush">
-              Dopamine Decor Wall Art
+              Dopamine Wall Art
             </Link>
             <Link href="/pink-wall-art/" className="hover:text-pink-blush">
               Pink Wall Art
             </Link>
             <Link href="/faux-food-wall-art/" className="hover:text-pink-blush">
-              Faux Food Wall Art
+              Fake Food Decor
+            </Link>
+            <Link href="/dessert-wall-art/" className="hover:text-pink-blush">
+              Dessert Wall Art
             </Link>
             <Link href="/custom/" className="hover:text-pink-blush">
               Custom Cookie Art

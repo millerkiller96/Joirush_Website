@@ -129,25 +129,35 @@ export const defaultFAQs: ProductFAQ[] = [
   },
   {
     question: "How long does shipping take?",
-    answer: "Each cookie art piece ships in 14 days. Every sugar cookie wall sculpture is handcrafted to order by cookie artist Erynn. The 14 day timeline includes handmade production and shipping. True artistry takes time.",
+    answer: "Each piece is handmade to order by cookie artist Erynn and ships within 14 days from Daytona Beach, FL. U.S. shipping is always free, and you get tracking once it ships.",
   },
   {
     question: "How do I hang this cookie canvas on my wall?",
     answer: "Each cookie art piece comes with an attached wall hanger on the back. Simply use a nail or picture hook rated for the weight (most pieces weigh 2 to 4 lbs). These sugar cookie wall sculptures are lightweight and easy to hang.",
   },
   {
-    question: "How big is this art cookie?",
-    answer: "Most jumbo cookie art pieces are approximately 16 inches in diameter. Check the specific listing for exact dimensions of each sugar cookie wall sculpture.",
-  },
-  {
     question: "Do you ship cookie art internationally?",
-    answer: "Currently we offer free U.S. shipping with 14 day handmade production and delivery. For international cookie art orders, please contact us through the custom order form for a shipping quote.",
+    answer: "Right now we offer free U.S. shipping, and every piece ships within 14 days. For an order outside the U.S., reach out through the custom order form for a shipping quote.",
   },
   {
     question: "Can I commission custom cookie art?",
     answer: "Absolutely! Visit our custom orders page to commission sugar cookie wall sculptures in specific colors, sizes, or flavors. Cookie artist Erynn loves creating one of a kind art cookies.",
   },
 ];
+
+/** Default FAQs plus a size answer that matches this exact cookie. */
+function productFaqs(sizeAnswer: string, extra: ProductFAQ[] = []): ProductFAQ[] {
+  const [first, second, third, fourth, ...rest] = defaultFAQs;
+  return [
+    first,
+    second,
+    third,
+    fourth,
+    { question: "How big is this art cookie?", answer: sizeAnswer },
+    ...rest,
+    ...extra,
+  ];
+}
 
 export const products: Product[] = [
   {
@@ -206,13 +216,15 @@ export const products: Product[] = [
       "Perfect for kitchens, playrooms, and spaces that need joy",
     ],
     materials: "Spray foam, acrylic paint",
-    faqs: [
-      ...defaultFAQs,
+    faqs: productFaqs(
+      "This cookie is about 16 inches across, big enough to be the star of a kitchen or coffee bar wall. It weighs only 2 to 4 lbs.",
+      [
       {
         question: "What makes this cookie art different from commercial food props?",
         answer: "Unlike heavy fiberglass commercial props that cost $350+, this is a lightweight (~2 lb) handmade sugar cookie wall sculpture that's easy to hang. Each art cookie is individually sculpted by cookie artist Erynn with unique texture and character.",
       },
-    ],
+      ],
+    ),
   },
   {
     slug: "jumbo-white-chocolate-chip-cookie",
@@ -269,7 +281,7 @@ export const products: Product[] = [
       "Dreamy dessert decor energy",
     ],
     materials: "Spray foam, acrylic paint",
-    faqs: defaultFAQs,
+    faqs: productFaqs("This cookie is about 16 inches across, big enough to be the star of a kitchen or coffee bar wall. It weighs only 2 to 4 lbs."),
   },
   {
     slug: "rainbow-candy-cookie",
@@ -326,7 +338,7 @@ export const products: Product[] = [
       "Attached hanger, so this cookie canvas goes up with no tools",
     ],
     materials: "Spray foam, acrylic paint",
-    faqs: defaultFAQs,
+    faqs: productFaqs("This cookie is about 14 inches across, a great fit for smaller walls, shelves, and cozy corners. It weighs only 2 to 4 lbs."),
   },
   {
     slug: "mini-jumbo-chocolate-chip-cookie",
@@ -382,7 +394,7 @@ export const products: Product[] = [
       "The gateway cookie",
     ],
     materials: "Spray foam, acrylic paint",
-    faqs: defaultFAQs,
+    faqs: productFaqs("This cookie is about 14 inches across, a great fit for smaller walls, shelves, and cozy corners. It weighs only 2 to 4 lbs."),
   },
   {
     slug: "jumbo-pastel-mm-cookie",
@@ -438,7 +450,7 @@ export const products: Product[] = [
       "Attached hanger, ready to display",
     ],
     materials: "Spray foam, acrylic paint",
-    faqs: defaultFAQs,
+    faqs: productFaqs("This cookie is about 16 inches across, big enough to be the star of a kitchen or coffee bar wall. It weighs only 2 to 4 lbs."),
   },
   {
     slug: "jumbo-christmas-cookie",
@@ -494,7 +506,7 @@ export const products: Product[] = [
       "Attached hanger, ready for festive decor swaps",
     ],
     materials: "Spray foam, acrylic paint",
-    faqs: defaultFAQs,
+    faqs: productFaqs("This cookie is about 16 inches across, big enough to be the star of a kitchen or coffee bar wall. It weighs only 2 to 4 lbs."),
   },
   {
     slug: "giant-peanut-butter-cookie",
@@ -550,7 +562,7 @@ export const products: Product[] = [
       "Attached hanger, so you can hang it today",
     ],
     materials: "Spray foam, acrylic paint",
-    faqs: defaultFAQs,
+    faqs: productFaqs("This cookie is about 16 inches across, big enough to be the star of a kitchen or coffee bar wall. It weighs only 2 to 4 lbs."),
   },
   {
     slug: "giant-double-chocolate-cookie",
@@ -606,7 +618,7 @@ export const products: Product[] = [
       "Attached hanger: moody decor, easy install",
     ],
     materials: "Spray foam, acrylic paint",
-    faqs: defaultFAQs,
+    faqs: productFaqs("This cookie is about 16 inches across, big enough to be the star of a kitchen or coffee bar wall. It weighs only 2 to 4 lbs."),
   },
   {
     slug: "cookie-ice-cream-sandwich",
@@ -663,13 +675,15 @@ export const products: Product[] = [
       "Still only about 4 to 5 lbs, so it hangs on standard hooks",
     ],
     materials: "Spray foam, acrylic paint",
-    faqs: [
-      ...defaultFAQs,
+    faqs: productFaqs(
+      "This is our biggest piece, about 20 by 20 inches. It still weighs only about 4 to 5 lbs, so it hangs on a standard picture hook.",
+      [
       {
         question: "How heavy is this cookie art statement piece?",
         answer: "Despite its size, this sugar cookie wall sculpture is lightweight at around 4 to 5 lbs. It's designed to hang securely on standard picture hooks.",
       },
-    ],
+      ],
+    ),
   },
   {
     slug: "jumbo-mm-cookie",
@@ -726,7 +740,7 @@ export const products: Product[] = [
       "Attached hanger, ready to display",
     ],
     materials: "Spray foam, acrylic paint",
-    faqs: defaultFAQs,
+    faqs: productFaqs("This cookie is about 16 inches across, big enough to be the star of a kitchen or coffee bar wall. It weighs only 2 to 4 lbs."),
   },
   {
     slug: "hot-pink-mm-cookie",
@@ -783,7 +797,7 @@ export const products: Product[] = [
       "Attached hanger, so this faux food wall art commands attention right away",
     ],
     materials: "Spray foam, acrylic paint",
-    faqs: defaultFAQs,
+    faqs: productFaqs("This cookie is about 16 inches across, big enough to be the star of a kitchen or coffee bar wall. It weighs only 2 to 4 lbs."),
   },
 ];
 

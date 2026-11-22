@@ -302,6 +302,13 @@ export default function HomePage() {
               <ProductCard key={product.slug} product={product} />
             ))}
           </div>
+          <p className="mt-8 text-center text-sm text-chocolate-mid">
+            Shopping for the holidays? Our{" "}
+            <Link href="/product/jumbo-christmas-cookie/" className="font-medium text-pink hover:underline">
+              Christmas cookie wall art
+            </Link>{" "}
+            is a 16 inch 3D holiday cookie that makes a fun gift. Plan about three weeks ahead for Christmas.
+          </p>
         </section>
 
         <section className="mx-auto max-w-7xl px-5 py-8 md:px-8">

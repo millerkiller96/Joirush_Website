@@ -83,6 +83,8 @@ export type Product = {
   tagline: string;
   /** Optional search snippet lead (no price; the page appends price + shipping). */
   metaDescription?: string;
+  /** Optional full search title. Leave unset to use the product name. */
+  seoTitle?: string;
   description: string;
   details: string[];
   materials: string;
@@ -455,6 +457,7 @@ export const products: Product[] = [
   {
     slug: "jumbo-christmas-cookie",
     name: "Christmas Cookie Wall Art | JOIRUSH",
+    seoTitle: "Christmas Cookie Wall Art | 3D Holiday Decor | JOIRUSH",
     shortName: "Christmas Cookie",
     price: 80,
     compareAtPrice: 100,
@@ -506,7 +509,19 @@ export const products: Product[] = [
       "Attached hanger, ready for festive decor swaps",
     ],
     materials: "Spray foam, acrylic paint",
-    faqs: productFaqs("This cookie is about 16 inches across, big enough to be the star of a kitchen or coffee bar wall. It weighs only 2 to 4 lbs."),
+    faqs: productFaqs(
+      "This cookie is about 16 inches across, big enough to be the star of a kitchen or coffee bar wall. It weighs only 2 to 4 lbs.",
+      [
+        {
+          question: "Will my Christmas cookie arrive in time for Christmas?",
+          answer: "Each Christmas cookie is made by hand after you order and ships within 14 days, then needs a few more days in the mail. For a Christmas gift, plan about three weeks ahead. Running late? Message us before you order and we will tell you what is possible.",
+        },
+        {
+          question: "Can I keep this Christmas cookie up after the holidays?",
+          answer: "Yes. It is spray foam and acrylic paint on a wood base, so it never goes stale. Many people hang it every December, and some keep it up all year in the kitchen.",
+        },
+      ],
+    ),
   },
   {
     slug: "giant-peanut-butter-cookie",

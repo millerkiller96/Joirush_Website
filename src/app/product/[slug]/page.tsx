@@ -29,7 +29,9 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
   // Keep titles short enough to show in full on search results: names that already
   // carry a subtitle stand alone, shorter names get a brief handmade cookie art suffix.
   const baseName = product.name.replace(/\s*\|\s*JOIRUSH$/, "");
-  const seoTitle = product.name.includes("|")
+  const seoTitle = product.seoTitle
+    ? { absolute: product.seoTitle }
+    : product.name.includes("|")
     ? { absolute: product.name }
     : `${product.name} | Handmade Cookie Art`;
 
